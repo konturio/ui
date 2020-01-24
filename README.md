@@ -73,7 +73,7 @@ Must be one of the following:
 * **test**: Adding missing tests or correcting existing tests
 
 ### Scope
-* **module3**
+* **(module_name<, module_name>)**
 
 ### TODO:
  - Commit message validation at local development (Husky)?

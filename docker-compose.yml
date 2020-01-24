@@ -1,0 +1,36 @@
+version: "3"
+
+services:
+  nginx:
+    build:
+      context: proxy
+      dockerfile: Dockerfile
+    image: proxy:latest
+    container_name: "nginx"
+    links:
+      - k2-front-end
+    depends_on:
+      - k2-front-end
+    ports:
+      - 9000:9000
+    expose:
+      - 9000
+
+  k2-front-end:
+    image: k2-front-end:latest
+    container_name: "k2-front-end"
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: npm run dev
+    volumes:
+    - ./node_modules:/app/node_modules:cached
+    - ./package.json:/app/package.json
+#    - ./webpack.config.js:/app/webpack.config.js
+#    - ./.env:/app/.env
+#    env_file:
+#    - .env
+    ports:
+    - 8080:8080
+    expose:
+    - 8080

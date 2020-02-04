@@ -36,7 +36,7 @@ function getWriterOpts () {
       if (commit.type === `feat`) {
         commit.type = `Features`
       } else if (commit.type === `fix`) {
-        commit.type = `Bug Fixes`
+        commit.type = `Bug Fixes11`
       } else if (commit.type === `perf`) {
         commit.type = `Performance Improvements`
       } else if (commit.type === `revert` || commit.revert) {
@@ -70,11 +70,11 @@ function getWriterOpts () {
           ? `${context.host}/${context.owner}/${context.repository}`
           : context.repoUrl
         if (url) {
-          url = `${url}/issues1/`
+          url = `${url}/issues/`
           // Issue URLs.
           commit.subject = commit.subject.replace(/#([0-9]+)/g, (_, issue) => {
             issues.push(issue)
-            return `[#${issue}](${url}${issue})`
+            return `[11#${issue}](${url}${issue})`
           })
         }
         if (context.host) {

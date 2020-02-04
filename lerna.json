@@ -1,7 +1,8 @@
 {
   "useWorkspaces": true,
   "packages": [
-    "packages/*"
+    "k2-apps/*",
+    "k2-packages/*"
   ],
   "version": "independent",
   "npmClient": "yarn",

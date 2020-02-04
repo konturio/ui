@@ -1,11 +1,8 @@
-.DS_Store
-
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio
 *.iml
 .idea
 
-## Directory-based project format:
-.idea/
+# Directory-based project format:
 # if you remove the above rule, at least ignore the following:
 
 # User-specific stuff:
@@ -20,9 +17,35 @@
 # .idea/dynamic.xml
 # .idea/uiDesigner.xml
 
-node_modules
-
-*.log
 *.cache
-package-lock.json
 yarn.lock
+
+# Builds
+k2-apps/**/tsclib
+k2-apps**/*tscbuildinfo
+k2-packages/**/tsclib
+k2-packages**/*tscbuildinfo
+k2-apps/**/dist
+k2-packages/**/dist
+
+# Logs
+#*.log
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Dependency directories
+node_modules/
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# dotenv environment variables file
+.env
+

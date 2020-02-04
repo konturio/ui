@@ -1,0 +1,11 @@
+{
+  "extends": "./tsconfig.settings.json",
+  "include": [
+    "k2-apps/*/src/**/*.ts",
+    "k2-apps/*/src/**/*.d.ts",
+    "k2-apps/*/src/**/*.tsx",
+    "k2-packages/*/src/**/*.ts",
+    "k2-packages/*/src/**/*.d.ts",
+    "k2-packages/*/src/**/*.tsx"
+  ]
+}

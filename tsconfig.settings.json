@@ -1,0 +1,39 @@
+{
+  "compilerOptions": {
+    "noErrorTruncation": true,
+    "noImplicitAny": false,
+    "suppressImplicitAnyIndexErrors": false,
+    "strictNullChecks": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": false,
+    "noImplicitThis": false,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "target": "es6",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "jsx": "react",
+    "lib": ["DOM", "ESnext"],
+    "strict": true,
+
+    "sourceMap": true,
+    "composite": true,
+    "declarationMap": true,
+    "declaration": true,
+    "allowSyntheticDefaultImports": true
+  },
+
+  "exclude": [
+    "./node_modules/**/*",
+    "k2-apps/*/node_modules",
+    "k2-apps/*/tsclib",
+    "k2-packages/*/node_modules",
+    "k2-packages/*/tsclib"
+  ]
+}

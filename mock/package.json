@@ -1,0 +1,17 @@
+{
+  "name": "kontur-mock-tool",
+  "version": "1.0.0",
+  "description": "Kontur spec tool helps to write mocks, spec and generate tests from those mocks",
+  "main": "index.js",
+  "author": "Kontur inc.",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "mock": "nodemon ./index.js"
+  },
+  "dependencies": {
+    "chalk": "^3.0.0",
+    "esm": "^3.2.25",
+    "nodemon": "^2.0.2"
+  }
+}

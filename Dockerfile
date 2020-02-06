@@ -1,7 +1,16 @@
 FROM node:latest as k2-front-end
 
-ADD . /app
 WORKDIR /app
-COPY . .
+COPY package.json ./
+COPY lerna.json ./
 
-RUN npm install --only=dev
+COPY tsconfig.json ./
+COPY tsconfig.settings.json ./
+COPY tsconfig.lint.json ./
+
+COPY babel.config.js ./
+COPY jest.config.js ./
+
+RUN npm install -g yarn
+RUN npm install -g lerna
+RUN npm install -g typescript

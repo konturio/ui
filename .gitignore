@@ -23,9 +23,9 @@ yarn.lock
 # Builds
 k2-apps/**/tsclib
 k2-apps**/*tscbuildinfo
+k2-apps/**/dist
 k2-packages/**/tsclib
 k2-packages**/*tscbuildinfo
-k2-apps/**/dist
 k2-packages/**/dist
 
 # Logs

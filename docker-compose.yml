@@ -9,12 +9,26 @@ services:
     container_name: "nginx"
     links:
       - k2-front-end
+      - k2-mock-tool
     depends_on:
       - k2-front-end
+      - k2-mock-tool
     ports:
       - 9000:9000
     expose:
       - 9000
+
+  k2-mock-tool:
+    image: k2-mock-tool
+    container_name: "k2-mock-tool"
+    build:
+      context: mock
+      dockerfile: Dockerfile
+    command: npm run mock
+    ports:
+    - 5000:5000
+    expose:
+    - 5000
 
   k2-front-end:
     image: k2-front-end:latest
@@ -22,13 +36,11 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    command: npm run dev
+    command: yarn run start
     volumes:
     - ./node_modules:/app/node_modules:cached
-    - ./package.json:/app/package.json
-    - ./package.json:/app/package.json
-#    - ./webpack.config.js:/app/webpack.config.js
-#    - ./.env:/app/.env
+    - ./k2-apps:/app/k2-apps
+    - ./k2-packages:/app/k2-packages
 #    env_file:
 #    - .env
     ports:

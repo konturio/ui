@@ -18,9 +18,9 @@ module.exports = {
     symlinks: true,
   },
   devServer: {
-    noInfo: true,
-    port: 3000,
+    port: 8080,
     open: true,
+    inline: true,
     publicPath: '/k2-front-end',
     openPage: 'k2-front-end',
   },

@@ -12,6 +12,7 @@ module.exports = function babelConfig(api) {
         {
           modules: false,
           useBuiltIns: 'usage',
+          corejs: "3.1.3",
           targets: {
             browsers: ['> 1%'],
           },

@@ -1,10 +1,11 @@
 {
   "references": [
     {
-      "path": "k2-packages/module"
+      "path": "./k2-packages/module",
+      "prepend": true
     },
     {
-      "path": "k2-apps/base"
+      "path": "./k2-apps/base"
     }
   ],
   "files": [],

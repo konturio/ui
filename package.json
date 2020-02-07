@@ -6,9 +6,8 @@
     "k2-apps/*"
   ],
   "scripts": {
-    "bootstrap": "lerna bootstrap",
+    "bootstrap": "lerna link && lerna bootstrap",
     "dev": "lerna run dev --stream",
-    "build": "tsc -b",
     "start": "lerna link && lerna bootstrap && tsc -b && lerna run dev --stream",
     "test": "lerna run test --stream",
     "compile": "tsc --build --force tsconfig.json",

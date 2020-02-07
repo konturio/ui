@@ -21,9 +21,17 @@ Respectively apps and packages folders.
 
 ### Getting Started
 
+
+Install toolset.
+```sh
+$ npm install yarn -g
+$ npm install lerna -g
+$ npm install typescript -g
+```
+
 Install dependencies and links any cross-dependencies.
 ```sh
-$ lerna bootstrap
+$ yarn run bootstrap
 ```
 
 To add dependency to all packages.
@@ -36,9 +44,9 @@ To add module3 as dependency to module2.
 lerna add @k2-packages/module3 --scope=@k2-packages/module2
 ```
 
-To create module4 package.
+To create package.
 ```sh
-lerna create module4
+lerna create module_name
 ```
 
 To run tests over packages.
@@ -71,9 +79,6 @@ Must be one of the following:
 * **refactor**: A code change that neither fixes a bug nor adds a feature
 * **style**: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
 * **test**: Adding missing tests or correcting existing tests
-
-### Scope
-* **(module_name<, module_name>)**
 
 ### TODO:
  - Commit message validation at local development (Husky)?

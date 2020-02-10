@@ -19,6 +19,8 @@ Current approach rely on two workspaces:
 
 Respectively k2-apps and k2-packages folders.
 
+## Setup
+
 ### Development with Docker
 
 Build and start dev environment
@@ -34,7 +36,7 @@ $ docker-compose down
 
 Your application available at http://localhost:9000/k2-front-end
 
-### Getting Started
+### Local development environment
 
 Install toolset.
 ```sh
@@ -48,6 +50,7 @@ Install dependencies and links any cross-dependencies.
 $ yarn run bootstrap
 ```
 
+### Package management
 To add dependency to all packages.
 ```sh
 lerna add @k2-packages/module3
@@ -82,7 +85,7 @@ Commit message format:
 <footer>
 ```
 
-### Type
+
 Must be one of the following:
 * **build**: Changes that affect the build system or external dependencies (example scopes: webpack, babel, npm)
 * **ci**: Changes to our CI configuration files and scripts (example scopes: .env, Docker, Ansible, configs)

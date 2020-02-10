@@ -14,10 +14,10 @@ Version track starts from v1.0.0 at `dev` branch.
 
 Current approach rely on two workspaces:
 
- - `@apps`, customs apps to consume shared packages;
+ - `@k2-apps`, customs apps to consume shared packages;
  - `@k2-packages`, versioned application modules;
 
-Respectively apps and packages folders.
+Respectively k2-apps and k2-packages folders.
 
 ### Development with Docker
 
@@ -31,6 +31,8 @@ Stop dev environment
 ```sh
 $ docker-compose down
 ```
+
+Your application available at http://localhost:9000/k2-front-end
 
 ### Getting Started
 

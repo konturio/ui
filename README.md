@@ -19,8 +19,20 @@ Current approach rely on two workspaces:
 
 Respectively apps and packages folders.
 
-### Getting Started
+### Development with Docker
 
+Build and start dev environment
+```sh
+$ docker-compose up
+```
+
+
+Stop dev environment
+```sh
+$ docker-compose down
+```
+
+### Getting Started
 
 Install toolset.
 ```sh

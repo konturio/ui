@@ -23,14 +23,15 @@ const LoadingState = (
 
 const BasicRouting = () => (
     <Suspense fallback={LoadingState}>
-        <h2>Base</h2>
         {/*<BrowserRouter>*/}
+            <h2>Base11</h2>
             <Module>
                 {/*<a href={`${routePrefix}/async`}>Hard redirect to /async</a>*/}
                 {/*<br />*/}
                 {/*<a href={`${routePrefix}/`}>Hard redirect to /</a>*/}
                 {/*<br />*/}
                 {/*<br />*/}
+
 
                 {/* We can still use external routing (e.g. page redirects) to load components. */}
                 {/*<Route exact={true} path={routePrefix} component={Module} />*/}

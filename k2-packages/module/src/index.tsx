@@ -14,7 +14,7 @@ function createSquare(config: SquareConfig): { color: string; area: number } {
     };
 }
 
-let mySquare = createSquare({ color: "red", width: 100 });
+let mySquare = createSquare({ color: "red", width: 101 });
 console.log(mySquare);
 
 

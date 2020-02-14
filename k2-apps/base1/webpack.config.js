@@ -17,7 +17,7 @@ module.exports = {
     symlinks: true,
   },
   devServer: {
-    port: 8081,
+    port: 8082,
     // open: true,
     // inline: true,
     publicPath: '/',

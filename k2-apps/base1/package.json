@@ -1,5 +1,5 @@
 {
-  "name": "@k2-apps/base",
+  "name": "@k2-apps/base1",
   "version": "1.0.0",
   "main": "src/index.tsx",
   "types": "tsclib",

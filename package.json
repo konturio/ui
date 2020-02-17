@@ -8,8 +8,8 @@
   "scripts": {
     "bootstrap": "lerna link && lerna bootstrap",
     "dev": "lerna run dev --stream",
-    "start": "lerna link && lerna bootstrap && tsc -b && jest --stream && lerna run dev --stream",
-    "test": "lerna run test --stream",
+    "start": "lerna link && lerna bootstrap && tsc -b && yarn run test && lerna run dev --stream",
+    "test": "jest",
     "compile": "tsc --build --force tsconfig.json",
     "update:version": "lerna version --include-merged-tags",
     "create:release": "lerna version --include-merged-tags conventional-changelog -p angular -i CHANGELOG.md -w --writer-opts ./writer-opts.js"

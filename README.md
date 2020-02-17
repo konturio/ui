@@ -34,10 +34,9 @@ Stop dev environment
 $ docker-compose down
 ```
 
-Your application available at http://localhost:9000/k2-front-end
+Your application available at http://localhost:9000
 
 ### Local development environment
-
 Install toolset.
 ```sh
 $ npm install yarn -g

@@ -29,7 +29,7 @@ k2-packages/**/*.tsbuildinfo
 k2-packages/**/dist
 
 # Logs
-#*.log
+*.log
 
 # Runtime data
 pids

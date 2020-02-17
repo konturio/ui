@@ -3,7 +3,7 @@ import React, { Suspense } from 'react';
 import { render } from 'react-dom';
 import { BrowserRouter, Route } from 'react-router-dom';
 
-const routePrefix = '/k2-cloud';
+const routePrefix = '/';
 
 // Create an async wrapper around Module component.
 // We only want to load this component on the '/async' path

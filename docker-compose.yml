@@ -8,10 +8,10 @@ services:
     image: proxy:latest
     container_name: "nginx"
     links:
-      - k2-cloud
+      - k2-dev
       - k2-mock-tool
     depends_on:
-      - k2-cloud
+      - k2-dev
       - k2-mock-tool
     ports:
       - 9000:9000
@@ -30,16 +30,16 @@ services:
     expose:
     - 5000
 
-  k2-cloud:
+  k2-dev:
     image: k2-workspace:latest
-    container_name: "k2-cloud"
+    container_name: "k2-dev"
     build:
       context: .
       dockerfile: Dockerfile
     command: yarn run start
     volumes:
     - ./node_modules:/app/node_modules:cached
-    - ./k2-cloud:/app/k2-cloud
+    - ./k2-dev:/app/k2-dev
     - ./k2-packages:/app/k2-packages
 #    env_file:
 #    - .env

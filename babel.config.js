@@ -3,7 +3,7 @@ module.exports = function babelConfig(api) {
   return {
     babelrcRoots: [
       '.',
-      './k2-apps/*',
+      './k2-dev/*',
       './k2-packages/*'
     ],
     presets: [
@@ -12,7 +12,7 @@ module.exports = function babelConfig(api) {
         {
           modules: false,
           useBuiltIns: 'usage',
-          corejs: "3.1.3",
+          corejs: "3",
           targets: {
             browsers: ['> 1%'],
           },

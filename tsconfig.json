@@ -5,7 +5,7 @@
       "prepend": true
     },
     {
-      "path": "./k2-cloud/base"
+      "path": "./k2-dev/base"
     }
   ],
   "files": [],

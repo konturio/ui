@@ -8,8 +8,8 @@
   "scripts": {
     "bootstrap": "lerna link && lerna bootstrap",
     "dev": "lerna run dev --stream",
-    "start": "lerna link && lerna bootstrap && tsc -b && jest --stream && lerna run dev --stream",
-    "test": "lerna run test --stream",
+    "start": "lerna link && lerna bootstrap && tsc -b && yarn run test && lerna run dev --stream",
+    "test": "jest",
     "compile": "tsc --build --force tsconfig.json",
     "update:version": "lerna version --include-merged-tags",
     "create:release": "lerna version --include-merged-tags conventional-changelog -p angular -i CHANGELOG.md -w --writer-opts ./writer-opts.js"
@@ -28,11 +28,8 @@
     "@types/react-router-dom": "^5.1.2",
     "babel-loader": "^8.0.0",
     "core-js": "3",
-    "express": "^4.17.1",
-    "fs": "^0.0.1-security",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.0.6",
-    "http": "^0.0.0",
     "jest": "^25.1.0",
     "source-map-loader": "^0.2.3",
     "webpack": "^4.0.0",

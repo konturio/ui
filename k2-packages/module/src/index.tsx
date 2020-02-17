@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Module = () => <div>Sync Module!</div>;
+const Module = ():any => <div>Sync Module!</div>;
 
 interface SquareConfig {
     color: string;
@@ -14,8 +14,7 @@ function createSquare(config: SquareConfig): { color: string; area: number } {
     };
 }
 
-let mySquare = createSquare({ color: "red", width: 101 });
+let mySquare = createSquare({ color: "red", width: 100 });
 console.log(mySquare);
-
 
 export default Module;

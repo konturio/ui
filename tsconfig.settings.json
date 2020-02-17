@@ -31,9 +31,9 @@
 
   "exclude": [
     "./node_modules/**/*",
-    "k2-apps/*/node_modules",
-    "k2-apps/*/tsclib",
-    "k2-packages/*/node_modules",
-    "k2-packages/*/tsclib"
+    "k2-cloud/*/node_modules",
+    "k2-cloud/*/tsclib",
+    "k2-cloud/*/node_modules",
+    "k2-cloud/*/tsclib"
   ]
 }

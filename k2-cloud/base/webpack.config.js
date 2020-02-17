@@ -1,4 +1,5 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin');
+const path = require('path');
 
 module.exports = {
   entry: {
@@ -7,7 +8,7 @@ module.exports = {
   output: {
     filename: '[name].js',
     chunkFilename: '[name].js',
-    publicPath: '/'
+    path: path.resolve(__dirname, 'dist')
   },
   resolve: {
     modules: [
@@ -17,11 +18,8 @@ module.exports = {
     symlinks: true,
   },
   devServer: {
-    port: 8081,
-    // open: true,
-    // inline: true,
-    publicPath: '/',
-    // openPage: 'base',
+    port: 8080,
+    publicPath: '/'
   },
   plugins: [
     new HtmlWebPackPlugin({

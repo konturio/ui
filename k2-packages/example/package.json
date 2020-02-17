@@ -7,9 +7,7 @@
     "type": "git",
     "url": "git@gitlab.com:kontur-private/k2/k2-front-end.git"
   },
-  "scripts": {
-
-  },
+  "scripts": {},
   "dependencies": {
 
   }

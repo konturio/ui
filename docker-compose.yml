@@ -8,12 +8,10 @@ services:
     image: proxy:latest
     container_name: "nginx"
     links:
-      - k2-apps-base
-      - k2-apps-base1
+      - k2-cloud
       - k2-mock-tool
     depends_on:
-      - k2-apps-base
-      - k2-apps-base1
+      - k2-cloud
       - k2-mock-tool
     ports:
       - 9000:9000
@@ -32,38 +30,20 @@ services:
     expose:
     - 5000
 
-  k2-apps-base:
+  k2-cloud:
     image: k2-workspace:latest
-    container_name: "k2-apps-base"
+    container_name: "k2-cloud"
     build:
       context: .
       dockerfile: Dockerfile
     command: yarn run start
     volumes:
     - ./node_modules:/app/node_modules:cached
-    - ./k2-apps/base:/app/k2-apps/base
+    - ./k2-cloud:/app/k2-cloud
     - ./k2-packages:/app/k2-packages
 #    env_file:
 #    - .env
     ports:
-    - 8001:8001
+    - 8080:8080
     expose:
-    - 8001
-
-  k2-apps-base1:
-    image: k2-workspace:latest
-    container_name: "k2-apps-base1"
-    build:
-      context: .
-      dockerfile: Dockerfile
-    command: yarn run start
-    volumes:
-    - ./node_modules:/app/node_modules:cached
-    - ./k2-apps/base1:/app/k2-apps/base1
-    - ./k2-packages:/app/k2-packages
-    #    env_file:
-    #    - .env
-    ports:
-    - 8002:8002
-    expose:
-    - 8002
+    - 8080

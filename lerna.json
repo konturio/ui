@@ -1,7 +1,7 @@
 {
   "useWorkspaces": true,
   "packages": [
-    "k2-apps/*",
+    "k2-cloud/*",
     "k2-packages/*"
   ],
   "version": "independent",

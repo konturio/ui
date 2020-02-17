@@ -3,12 +3,12 @@
   "private": true,
   "workspaces": [
     "k2-packages/*",
-    "k2-apps/*"
+    "k2-cloud/*"
   ],
   "scripts": {
     "bootstrap": "lerna link && lerna bootstrap",
     "dev": "lerna run dev --stream",
-    "start": "lerna link && tsc -b && lerna run dev --stream",
+    "start": "lerna link && lerna bootstrap && tsc -b && lerna run dev --stream",
     "test": "lerna run test --stream",
     "compile": "tsc --build --force tsconfig.json",
     "update:version": "lerna version --include-merged-tags",

@@ -21,9 +21,9 @@
 package-lock.json
 
 # Builds
-k2-apps/**/tsclib
-k2-apps/**/*.tsbuildinfo
-k2-apps/**/dist
+k2-cloud/**/tsclib
+k2-cloud/**/*.tsbuildinfo
+k2-cloud/**/dist
 k2-packages/**/tsclib
 k2-packages/**/*.tsbuildinfo
 k2-packages/**/dist

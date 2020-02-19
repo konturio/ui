@@ -1,7 +1,9 @@
-import Module from '@k2-packages/module';
 import React, { Suspense } from 'react';
 import { render } from 'react-dom';
 import { BrowserRouter, Route } from 'react-router-dom';
+import Module from '@k2-packages/module';
+import Dummy from '@k2-packages/dummy'
+/* !not-delete! cli:import */
 
 const routePrefix = '/';
 
@@ -29,6 +31,9 @@ const BasicRouting = () => (
             <div>
                 {/* We can still use external routing (e.g. page redirects) to load components. */}
                 <Route exact={true} path={routePrefix} component={Module} />
+                <Route exact={true} path={ routePrefix + 'dummy' } component={Dummy} />
+                {/* !not-delete! cli:route */}
+
                 {/*<Route path={`${routePrefix}/async`} component={LoadableAsyncModule} />*/}
             </div>
         </BrowserRouter>

@@ -3,6 +3,7 @@ import { render } from 'react-dom';
 import { BrowserRouter as Router, Switch, Link, Route } from 'react-router-dom';
 import Dummy from '@k2-packages/dummy';
 import Module from '@k2-packages/module';
+/* !not-delete! cli:import */
 
 const LoadingState = (
     <div style={{ background: 'aqua', width: '100px', height: '100px' }}>
@@ -31,6 +32,7 @@ const BasicRouting = () => (
                     <Route path="/dummy">
                         <Dummy />
                     </Route>
+                    {/* !not-delete! cli:route */}
                 </Switch>
             </div>
         </Router>

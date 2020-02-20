@@ -23,6 +23,7 @@ const BasicRouting = () => (
                     <li>
                         <Link to="/dummy">Dummy</Link>
                     </li>
+                    {/* !not-delete! cli:link */}
                 </ul>
                 <hr />
                 <Switch>

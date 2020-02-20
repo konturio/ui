@@ -129,7 +129,6 @@ module.exports = plop => {
             )
           });
 
-          const pad = 
           actions.push({
             type: 'modify',
             path: './k2-dev/base/src/index.tsx',
@@ -139,6 +138,18 @@ module.exports = plop => {
               '    <{{pascalCase moduleName}} />',
               '</Route>',
               '{/* !not-delete! cli:route */}'
+            ].join('\n                    ')
+          });
+
+          actions.push({
+            type: 'modify',
+            path: './k2-dev/base/src/index.tsx',
+            pattern: /\{\/\* !not-delete! cli:link \*\/\}/,
+            template: [
+              '<li>',
+              '    <Link to="/{{routeName}}">{{ moduleName }}</Link>',
+              '</li>',
+              '{/* !not-delete! cli:link */}'
             ].join('\n                    ')
           });
 

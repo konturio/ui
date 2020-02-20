@@ -8,7 +8,7 @@ module.exports = {
   output: {
     filename: '[name].js',
     chunkFilename: '[name].js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, '/dist')
   },
   resolve: {
     modules: [
@@ -19,10 +19,10 @@ module.exports = {
   },
   devServer: {
     port: 8080,
-    publicPath: '/',
-    historyApiFallback: {
-      index: 'index.html'
-    }
+    open: true,
+    noInfo: true,
+    historyApiFallback: true,
+    contentBase: path.resolve(__dirname, '/dist')
   },
   plugins: [
     new HtmlWebPackPlugin({

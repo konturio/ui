@@ -1,7 +1,7 @@
 import React from 'react';
 
-function Dummy() {
-  return <div>Hello world!</div>
-}
+const Dummy = () => {
+    return <div>Hello world, Dummy!</div>
+};
 
 export default Dummy;

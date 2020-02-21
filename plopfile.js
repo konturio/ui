@@ -133,10 +133,24 @@ module.exports = plop => {
             type: 'modify',
             path: './k2-dev/base/src/index.tsx',
             pattern: /\{\/\* !not-delete! cli:route \*\/\}/,
-            template: (
-              `<Route exact={true} path={ routePrefix + '{{routeName}}' } component={{ curly (pascalCase moduleName) }} />` + 
-              `\n{/* !not-delete! cli:route */}`
-            )
+            template: [
+              '<Route path="/{{routeName}}">',
+              '    <{{pascalCase moduleName}} />',
+              '</Route>',
+              '{/* !not-delete! cli:route */}'
+            ].join('\n                    ')
+          });
+
+          actions.push({
+            type: 'modify',
+            path: './k2-dev/base/src/index.tsx',
+            pattern: /\{\/\* !not-delete! cli:link \*\/\}/,
+            template: [
+              '<li>',
+              '    <Link to="/{{routeName}}">{{ moduleName }}</Link>',
+              '</li>',
+              '{/* !not-delete! cli:link */}'
+            ].join('\n                    ')
           });
 
         }
@@ -145,5 +159,3 @@ module.exports = plop => {
       }
   });
 };
-
-

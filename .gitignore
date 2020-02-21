@@ -31,6 +31,9 @@ k2-packages/**/dist
 # Logs
 *.log
 
+# Test
+k2-packages/coverage
+
 # Runtime data
 pids
 *.pid

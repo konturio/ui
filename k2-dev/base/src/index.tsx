@@ -1,7 +1,7 @@
 import React, { Suspense } from 'react';
 import { render } from 'react-dom';
 import { BrowserRouter as Router, Switch, Link, Route } from 'react-router-dom';
-import Dummy from '@k2-packages/dummy';
+// import Dummy from '@k2-packages/dummy';
 import Module from '@k2-packages/module';
 
 const LoadingState = (
@@ -12,7 +12,7 @@ const LoadingState = (
 
 const BasicRouting = () => (
     <Suspense fallback={LoadingState}>
-        <h2>Base app</h2>
+        <h2>Base app111</h2>
         <Router>
             <div>
                 <ul>
@@ -29,7 +29,7 @@ const BasicRouting = () => (
                         <Module />
                     </Route>
                     <Route path="/dummy">
-                        <Dummy />
+                        {/*<Dummy />*/}
                     </Route>
                 </Switch>
             </div>

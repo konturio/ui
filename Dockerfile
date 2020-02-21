@@ -13,3 +13,4 @@ COPY jest.config.js ./
 
 RUN npm install -g lerna
 RUN npm install -g typescript
+RUN npm install -g jest

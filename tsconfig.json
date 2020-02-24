@@ -1,6 +1,9 @@
 {
   "references": [
     {
+      "path": "./k2-packages/geocoder"
+    },
+    {
       "path": "./k2-packages/module"
     },
     {

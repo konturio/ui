@@ -13,7 +13,7 @@
     "compile": "tsc --build --force tsconfig.json",
     "update:version": "lerna version --include-merged-tags",
     "create:release": "lerna version --include-merged-tags conventional-changelog -p angular -i CHANGELOG.md -w --writer-opts ./writer-opts.js",
-    "new:module": "npx plop"
+    "new:module": "./scripts/fixFolderPermissions.sh && npx plop"
   },
   "devDependencies": {
     "@babel/cli": "^7.8.4",

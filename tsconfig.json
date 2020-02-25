@@ -1,15 +1,21 @@
 {
+//  "references": [
+//    {
+//      "path": "./k2-packages/module",
+//      "prepend": true
+//    },
+//    {
+//      "path": "./k2-dev/base"
+//    }
   "references": [
     {
-      "path": "./k2-packages/dummy"
-    },
-    {
-      "path": "./k2-packages/module"
-    },
-    {
-      "path": "./k2-dev/base"
+      "path": ["./k2-packages", "./k2-dev"]
     }
   ],
-  "files": [],
-  "include": []
+  "include": ["*/src/*.ts?"],
+  "exclude": [
+    "node_modules/**",
+    "k2-dev/**/node_modules",
+    "k2-packages/**/node_modules"
+  ]
 }

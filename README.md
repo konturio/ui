@@ -53,13 +53,11 @@ $ yarn run bootstrap
 To add dependency to all packages.
 ```sh
 $ lerna add @k2-packages/module3
-$ lerna link
 ```
 
 To add module3 as dependency to module2.
 ```sh
 $ lerna add @k2-packages/module3 --scope=@k2-packages/module2
-$ lerna link
 ```
 
 To run tests over packages.

@@ -22,19 +22,13 @@
     "lib": ["dom", "ESnext"],
     "strict": true,
 
+    "typeRoots": ["./node_modules/@types"],
+    "outDir": "tsclib",
+
     "sourceMap": true,
     "composite": true,
     "declarationMap": true,
     "declaration": true,
     "allowSyntheticDefaultImports": true
-  },
-
-  "exclude": [
-    "./node_modules/**/*",
-    "k2-dev/*/node_modules",
-    "k2-dev/*/tsclib",
-    "k2-dev/*/node_modules",
-    "k2-dev/*/tsclib",
-    "./templates/**/*.*"
-  ]
+  }
 }

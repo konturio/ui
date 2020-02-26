@@ -1,5 +1,19 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
-const Module = () => (<div>Hello world, Module!</div>);
+const Module = ({ temperature }) => (<div>Hello world, Module!, { temperature }</div>);
 
-export default Module;
+const mapStateToProps = state => {
+  if (!state.geocoderState) {
+    return {
+      loading: true,
+    };
+  }
+
+  return {
+    temperature: Math.round(state.geocoderState.weather.main.temp),
+  };
+};
+
+const ConnectedModule = connect(mapStateToProps)(Module);
+export default ConnectedModule;

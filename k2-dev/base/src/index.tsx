@@ -42,6 +42,7 @@ const BasicRouting = () => (
                         </Route>
                         <Route path="/geocoder">
                             <LazyGeocoder />
+                            <Module />
                         </Route>
                         {/* !not-delete! cli:route */}
                     </Switch>

@@ -1,12 +1,4 @@
 {
-//  "references": [
-//    {
-//      "path": "./k2-packages/module",
-//      "prepend": true
-//    },
-//    {
-//      "path": "./k2-dev/base"
-//    }
   "references": [
     {
       "path": ["./k2-packages", "./k2-dev"]

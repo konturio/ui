@@ -94,7 +94,10 @@ module.exports = plop => {
         if (answers.isGlobalDeps) {
           actions.push({
             type: 'exec',
-            command: ({ moduleName }) => `lerna add @k2-packages/${moduleName}`,
+            command: ({ moduleName }) => ([
+              `lerna add @k2-packages/${moduleName}`,
+              'lerna link'
+            ]),
             abortOnFail: false,
             onError: handleLernaError
           });
@@ -103,9 +106,10 @@ module.exports = plop => {
         else if (answers.depends && answers.depends.length > 0) {
           actions.push({
             type: 'exec',
-            command: ({ depends, moduleName }) => depends.map(module => (
-              `lerna add @k2-packages/${moduleName} --scope=@k2-packages/${module}`
-            )),
+            command: ({ depends, moduleName }) => depends.map(module => ([
+              `lerna add @k2-packages/${moduleName} --scope=@k2-packages/${module}`,
+              'lerna link'
+            ])),
             abortOnFail: false,
             onError: handleLernaError
           }); 
@@ -114,7 +118,10 @@ module.exports = plop => {
         if (answers.needRoute && answers.routeName) {
           actions.push({
             type: 'exec',
-            command: ({ moduleName }) => `lerna add @k2-packages/${moduleName} --scope=@k2-dev/base`,
+            command: ({ moduleName }) => ([
+              `lerna add @k2-packages/${moduleName} --scope=@k2-dev/base`,
+              'lerna link'
+            ]),
             abortOnFail: false,
             onError: handleLernaError
           });

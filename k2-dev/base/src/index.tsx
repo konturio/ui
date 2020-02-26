@@ -14,7 +14,7 @@ const LoadingState = (
 
 const BasicRouting = () => (
     <Suspense fallback={LoadingState}>
-        <h2>Base app</h2>
+        <h2>Base app22</h2>
         <Router>
             <div>
                 <ul>
@@ -22,9 +22,8 @@ const BasicRouting = () => (
                         <Link to="/">Module</Link>
                     </li>
                     <li>
-                        <Link to="/dummy">Dummy</Link>
+                        <Link to="/dummy">Dummy2</Link>
                     </li>
-                    {/* !not-delete! cli:link */}
                 </ul>
                 <hr />
                 <Switch>
@@ -34,7 +33,6 @@ const BasicRouting = () => (
                     <Route path="/dummy">
                         <Dummy2 />
                     </Route>
-                    {/* !not-delete! cli:route */}
                 </Switch>
             </div>
         </Router>

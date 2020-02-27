@@ -1,15 +1,11 @@
 {
+  "files": [],
   "references": [
     {
-      "path": "./k2-packages/geocoder"
+      "path": "k2-packages"
     },
     {
-      "path": "./k2-packages/module"
-    },
-    {
-      "path": "./k2-dev/base"
+      "path": "k2-dev"
     }
-  ],
-  "files": [],
-  "include": []
+  ]
 }

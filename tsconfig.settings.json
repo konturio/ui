@@ -18,23 +18,22 @@
     "target": "es6",
     "module": "commonjs",
     "moduleResolution": "node",
-    "jsx": "react",
+    "jsx": "preserve",
     "lib": ["dom", "ESnext"],
     "strict": true,
 
-    "sourceMap": true,
+    "typeRoots": ["./node_modules/@types"],
+
     "composite": true,
-    "declarationMap": true,
     "declaration": true,
+    "declarationMap": true,
     "allowSyntheticDefaultImports": true
   },
-
   "exclude": [
-    "./node_modules/**/*",
+    "node_modules",
     "k2-dev/*/node_modules",
     "k2-dev/*/tsclib",
-    "k2-dev/*/node_modules",
-    "k2-dev/*/tsclib",
-    "./templates/**/*.*"
+    "k2-packages/*/node_modules",
+    "k2-packages/*/tsclib"
   ]
 }

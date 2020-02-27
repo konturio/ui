@@ -20,7 +20,7 @@ module.exports = {
   devServer: {
     port: 8080,
     open: true,
-    noInfo: true,
+    // noInfo: true,
     historyApiFallback: true,
     contentBase: path.resolve(__dirname, '/dist')
   },

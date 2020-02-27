@@ -5,7 +5,7 @@ module.exports.capitalize = capitalize;
 
 
 function camelCase(string) {
-  return string.toLowerCase().replaceAll('_', ' ').split(' ')
+  return string.replace(/_/gm, ' ').split(' ')
     .map((word, i) => i > 0 ? capitalize(word) : word).join('')
 }
 module.exports.camelCase = camelCase;

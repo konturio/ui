@@ -11,7 +11,11 @@ function handleLernaError(error) {
       'For fix `EACCES: permission denied` error run ./scripts/fixFolderPermissions.sh'
     ));
   }
+}
 
+
+function getDockerImageContext(imageName) {
+  return (...commands) => commands.map(command => `docker exec -t ${imageName} bash -c "${command}"`)
 }
 
 module.exports = plop => {
@@ -79,25 +83,37 @@ module.exports = plop => {
               './templates/module/**/*.*'
             ]
           },
+          // {
+          //   type: 'modifyJson',
+          //   location: './tsconfig.json',
+          //   onEdit: (json, answers) => {
+          //     json.references.unshift({
+          //       path: `./k2-packages/${answers.moduleName}`
+          //     });
+          //     return json;
+          //   }
+          // },
           {
-            type: 'modifyJson',
-            location: './tsconfig.json',
-            onEdit: (json, answers) => {
-              json.references.unshift({
-                path: `./k2-packages/${answers.moduleName}`
-              });
-              return json;
-            }
+            type: 'exec',
+            command: ({ moduleName }) => ([
+              `cd ./k2-packages/${moduleName}`,
+              `tsc --build --force tsconfig.json`
+            ]),
+            abortOnFail: false,
+            onError: handleLernaError
           }
         ];
+
+        
+  
 
         if (answers.isGlobalDeps) {
           actions.push({
             type: 'exec',
-            command: ({ moduleName }) => ([
+            command: ({ moduleName }) => getDockerImageContext('k2-dev')(
               `lerna add @k2-packages/${moduleName}`,
               'lerna link'
-            ]),
+            ),
             abortOnFail: false,
             onError: handleLernaError
           });
@@ -106,22 +122,26 @@ module.exports = plop => {
         else if (answers.depends && answers.depends.length > 0) {
           actions.push({
             type: 'exec',
-            command: ({ depends, moduleName }) => depends.map(module => ([
-              `lerna add @k2-packages/${moduleName} --scope=@k2-packages/${module}`,
-              'lerna link'
-            ])),
+            command: ({ depends, moduleName }) => depends.map(module => (
+              getDockerImageContext('k2-dev')(
+                `lerna add @k2-packages/${moduleName} --scope=@k2-packages/${module}`,
+                'lerna link'
+              )
+            )),
             abortOnFail: false,
             onError: handleLernaError
           }); 
         }
 
+
+
         if (answers.needRoute && answers.routeName) {
           actions.push({
             type: 'exec',
-            command: ({ moduleName }) => ([
+            command: ({ moduleName }) => getDockerImageContext('k2-dev')(
               `lerna add @k2-packages/${moduleName} --scope=@k2-dev/base`,
               'lerna link'
-            ]),
+            ),
             abortOnFail: false,
             onError: handleLernaError
           });

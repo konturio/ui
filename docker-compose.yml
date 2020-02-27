@@ -36,13 +36,14 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    command: yarn run start
+    command: "yarn start"
     volumes:
+    - ./.plop:/app/plop
+    - ./templates:/app/temmplates
     - ./node_modules:/app/node_modules:cached
     - ./k2-dev:/app/k2-dev
     - ./k2-packages:/app/k2-packages
-#    env_file:
-#    - .env
+    - ./package.json:/app/package.json
     ports:
     - 8080:8080
     expose:

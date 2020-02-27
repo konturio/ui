@@ -1,14 +1,14 @@
 {
-  "extends": "../tsconfig.settings.json",
+  "files": [],
   "references": [
     {
-      "path": "./dummy"
+      "path": "dummy"
     },
     {
-      "path": "./dummy2"
+      "path": "dummy2"
     },
     {
-      "path": "./module"
+      "path": "module"
     }
   ]
 }

@@ -3,7 +3,10 @@
   "compilerOptions": {
     "rootDir": "src",
     "outDir": "tsclib",
-    "baseUrl": "src"
+    "module": "esnext"
   },
-  "include": ["./src/"]
+  "include": ["./src/*.ts?"],
+  "exclude": [
+    "node_modules"
+  ]
 }

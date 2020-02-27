@@ -1,22 +1,13 @@
 const ls = require('fs').readdirSync;
-const chalk = require('chalk');
 const { camelCase } = require('./.plop/utils/formatters');
 const modifyJson = require('./.plop/actions/modifyJson');
 const exec = require('./.plop/actions/exec');
+const { getDockerImageContext } = require('./.plop/utils/getDockerImageContext');
 
-function handleLernaError(error) {
+function handleLernaError(error, answers) {
   console.error(error.message)
-  if (error.stdout.includes('EACCES: permission denied')) {
-    console.log(chalk.yellowBright(
-      'For fix `EACCES: permission denied` error run ./scripts/fixFolderPermissions.sh'
-    ));
-  }
 }
 
-
-function getDockerImageContext(imageName) {
-  return (...commands) => commands.map(command => `docker exec -t ${imageName} bash -c "${command}"`)
-}
 
 module.exports = plop => {
   plop.setPrompt('checkbox-autocomplete', require('inquirer-checkbox-plus-prompt'));
@@ -83,21 +74,20 @@ module.exports = plop => {
               './templates/module/**/*.*'
             ]
           },
-          // {
-          //   type: 'modifyJson',
-          //   location: './tsconfig.json',
-          //   onEdit: (json, answers) => {
-          //     json.references.unshift({
-          //       path: `./k2-packages/${answers.moduleName}`
-          //     });
-          //     return json;
-          //   }
-          // },
+          {
+            type: 'modifyJson',
+            location: './k2-packages/tsconfig.json',
+            onEdit: (json, answers) => {
+              json.references.unshift({
+                path: `${answers.moduleName}`
+              });
+              return json;
+            }
+          },
           {
             type: 'exec',
-            command: ({ moduleName }) => ([
-              `cd ./k2-packages/${moduleName}`,
-              `tsc --build --force tsconfig.json`
+            command: () => ([
+              `tsc -b tsconfig.json`
             ]),
             abortOnFail: false,
             onError: handleLernaError

@@ -2,12 +2,6 @@
   "files": [],
   "references": [
     {
-      "path": "dummy"
-    },
-    {
-      "path": "dummy2"
-    },
-    {
       "path": "module"
     }
   ]

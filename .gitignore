@@ -27,6 +27,9 @@ k2-dev/**/dist
 k2-packages/**/tsclib
 k2-packages/**/*.tsbuildinfo
 k2-packages/**/dist
+templates/**/tsclib
+templates/**/*.tsbuildinfo
+templates/**/dist
 
 # Logs
 *.log

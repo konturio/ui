@@ -1,9 +1,7 @@
 import React, { Suspense } from 'react';
 import { render } from 'react-dom';
 import { BrowserRouter as Router, Switch, Link, Route } from 'react-router-dom';
-// import Dummy from '@k2-packages/dummy';
-// import Dummy2 from '@k2-packages/dummy2';
-// import Module from '@k2-packages/module';
+import Module from '@k2-packages/module';
 /* !not-delete! cli:import */
 
 const LoadingState = (
@@ -21,18 +19,15 @@ const BasicRouting = () => (
                     <li>
                         <Link to="/">Module</Link>
                     </li>
-                    <li>
-                        <Link to="/dummy">Dummy2</Link>
-                    </li>
+                    {/* !not-delete! cli:link */}
                 </ul>
                 <hr />
                 <Switch>
                     <Route exact path="/">
-                        {/*<Module />*/}
+                        <Module />
                     </Route>
-                    <Route path="/dummy">
-                        {/*<Dummy2 />*/}
-                    </Route>
+    
+                    {/* !not-delete! cli:route */}
                 </Switch>
             </div>
         </Router>

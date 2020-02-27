@@ -83,21 +83,20 @@ module.exports = plop => {
               './templates/module/**/*.*'
             ]
           },
-          // {
-          //   type: 'modifyJson',
-          //   location: './tsconfig.json',
-          //   onEdit: (json, answers) => {
-          //     json.references.unshift({
-          //       path: `./k2-packages/${answers.moduleName}`
-          //     });
-          //     return json;
-          //   }
-          // },
+          {
+            type: 'modifyJson',
+            location: './k2-packages/tsconfig.json',
+            onEdit: (json, answers) => {
+              json.references.unshift({
+                path: `${answers.moduleName}`
+              });
+              return json;
+            }
+          },
           {
             type: 'exec',
-            command: ({ moduleName }) => ([
-              `cd ./k2-packages/${moduleName}`,
-              `tsc --build --force tsconfig.json`
+            command: () => ([
+              `tsc -b tsconfig.json`
             ]),
             abortOnFail: false,
             onError: handleLernaError

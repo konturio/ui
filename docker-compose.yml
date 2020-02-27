@@ -36,9 +36,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    command: >
-      bash -c "yarn run compile
-      && yarn run start"
+    command: "yarn run start"
     volumes:
     - ./.plop:/app/plop
     - ./templates:/app/temmplates

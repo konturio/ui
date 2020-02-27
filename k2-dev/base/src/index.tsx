@@ -2,8 +2,8 @@ import React, { Suspense } from 'react';
 import { render } from 'react-dom';
 import { BrowserRouter as Router, Switch, Link, Route } from 'react-router-dom';
 // import Dummy from '@k2-packages/dummy';
-import Dummy2 from '@k2-packages/dummy2';
-import Module from '@k2-packages/module';
+// import Dummy2 from '@k2-packages/dummy2';
+// import Module from '@k2-packages/module';
 /* !not-delete! cli:import */
 
 const LoadingState = (
@@ -14,7 +14,7 @@ const LoadingState = (
 
 const BasicRouting = () => (
     <Suspense fallback={LoadingState}>
-        <h2>Base app22</h2>
+        <h2>Base app1</h2>
         <Router>
             <div>
                 <ul>
@@ -28,10 +28,10 @@ const BasicRouting = () => (
                 <hr />
                 <Switch>
                     <Route exact path="/">
-                        <Module />
+                        {/*<Module />*/}
                     </Route>
                     <Route path="/dummy">
-                        <Dummy2 />
+                        {/*<Dummy2 />*/}
                     </Route>
                 </Switch>
             </div>

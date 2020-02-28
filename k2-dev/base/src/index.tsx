@@ -5,6 +5,10 @@ import { Provider } from 'react-redux';
 import Loadable from 'react-loadable';
 import store from './store';
 
+function loadOnce(loadedComponent) {
+    return () => loadedComponent
+}
+
 // Modules:
 import Module from '@k2-packages/module';
 /* !not-delete! cli:import */
@@ -15,10 +19,13 @@ const LoadingState = (
     </div>
 );
 
+
 const LazyGeocoder = Loadable({
     loader: () => import('@k2-packages/geocoder'),
     loading: () => <div>Loading Scripts...</div>,
-});
+})
+
+
 
 
 const BasicRouting = () => (

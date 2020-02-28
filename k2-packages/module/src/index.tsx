@@ -1,19 +1,23 @@
 import React from 'react';
-import { connect } from 'react-redux';
 
-const Module = ({ temperature }) => (<div>Hello world, Module!, { temperature }</div>);
+const Module = () => <div>
+    Sync Module!
+</div>;
 
-const mapStateToProps = state => {
-  if (!state.geocoderState) {
+interface SquareConfig {
+    color: string;
+    width: number;
+}
+
+function createSquare(config: SquareConfig): { color: string; area: number } {
     return {
-      loading: true,
+        color: config.color,
+        area: config.width
     };
-  }
+}
 
-  return {
-    temperature: Math.round(state.geocoderState.weather.main.temp),
-  };
-};
+let mySquare = createSquare({ color: "red", width: 100 });
+console.log(mySquare);
 
-const ConnectedModule = connect(mapStateToProps)(Module);
-export default ConnectedModule;
+
+export default Module;

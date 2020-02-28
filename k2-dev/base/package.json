@@ -7,6 +7,7 @@
   "dependencies": {
     "@k2-packages/geocoder": "^1.0.0",
     "@k2-packages/module": "^1.0.0",
+    "@types/react-redux": "^7.1.7",
     "immer": "^5.3.6",
     "react": "^16.8.2",
     "react-dom": "^16.8.0",

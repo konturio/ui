@@ -3,6 +3,9 @@
   "references": [
     {
       "path": "module"
+    },
+    {
+      "path": "module1"
     }
   ]
 }

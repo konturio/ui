@@ -6,6 +6,7 @@
   "private": true,
   "dependencies": {
     "@k2-packages/module": "^1.0.0",
+    "@k2-packages/module1": "^1.0.0",
     "react": "^16.8.2",
     "react-dom": "^16.8.0",
     "react-router-dom": "^5.1.2"

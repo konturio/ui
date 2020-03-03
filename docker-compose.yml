@@ -44,7 +44,10 @@ services:
       - ./k2-dev:/app/k2-dev
       - ./k2-packages:/app/k2-packages
       - ./package.json:/app/package.json
+    environment:
+      - kcfirebrigadeURL=k2-geocoder-sevice
+      - development=true
     ports:
-    - 8080:8080
+      - 8080:8080
     expose:
-    - 8080
+      - 8080

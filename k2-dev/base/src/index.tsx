@@ -17,7 +17,7 @@ const BasicRouting = () => (
             <div>
                 <ul>
                     <li>
-                        <Link to="/module">Module</Link>
+                        <Link to="/module">Module!</Link>
                     </li>
                     {/* !not-delete! cli:link */}
                 </ul>

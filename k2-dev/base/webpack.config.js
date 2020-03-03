@@ -20,7 +20,19 @@ module.exports = {
   devServer: {
     port: 8080,
     inline: true,
-    clientLogLevel: 'debug',
+    quiet: false,
+    noInfo: false,
+    stats: {
+      all: false,
+      wds: true,
+      assets: false,
+      colors: true,
+      version: false,
+      hash: false,
+      timings: false,
+      chunks: false,
+      chunkModules: false,
+    },
     historyApiFallback: true,
     contentBase: path.resolve(__dirname, '/dist')
   },

@@ -26,9 +26,9 @@ services:
       dockerfile: Dockerfile
     command: npm run mock
     ports:
-    - 5000:5000
+      - 5000:5000
     expose:
-    - 5000
+      - 5000
 
   k2-dev:
     image: k2-workspace:latest
@@ -36,15 +36,18 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    command: "yarn start"
+    command: "yarn dev"
     volumes:
-    - ./.plop:/app/plop
-    - ./templates:/app/temmplates
-    - ./node_modules:/app/node_modules:cached
-    - ./k2-dev:/app/k2-dev
-    - ./k2-packages:/app/k2-packages
-    - ./package.json:/app/package.json
+      - ./.plop:/app/plop
+      - ./templates:/app/temmplates
+      - ./node_modules:/app/node_modules:cached
+      - ./k2-dev:/app/k2-dev
+      - ./k2-packages:/app/k2-packages
+      - ./package.json:/app/package.json
+    environment:
+      - kcfirebrigadeURL=k2-geocoder-sevice
+      - development=true
     ports:
-    - 8080:8080
+      - 8080:8080
     expose:
-    - 8080
+      - 8080

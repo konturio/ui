@@ -1,2 +1,2 @@
-FROM nginx as web
+FROM nginx as proxy
 COPY default.conf /etc/nginx/conf.d/

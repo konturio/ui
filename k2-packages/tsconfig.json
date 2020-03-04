@@ -2,10 +2,10 @@
   "files": [],
   "references": [
     {
-      "path": "k2-packages"
+      "path": "module"
     },
     {
-      "path": "k2-dev"
+      "path": "geocoder"
     }
   ]
 }

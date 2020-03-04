@@ -1,20 +1,13 @@
-import Module from '@k2-packages/module';
 import React, { Suspense } from 'react';
 import { render } from 'react-dom';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Link, Route } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import store from './store';
 
-const routePrefix = '/';
-
-// Create an async wrapper around Module component.
-// We only want to load this component on the '/async' path
-/* tslint:disable prettier */
-// const LoadableAsyncModule = React.lazy(() => {
-// We are intentionally ignoring here as this module is in JS not TS. This is useful
-// if you want to progressively update your packages over to TS.
-// @ts-ignore
-// return import(/* webpackChunkName: 'module' */ '@k2-packages/async')
-// });
-/* tslint:enable */
+// Modules:
+import Module from '@k2-packages/module';
+import Geocoder from '@k2-packages/geocoder';
+/* !not-delete! cli:import */
 
 const LoadingState = (
     <div style={{ background: 'aqua', width: '100px', height: '100px' }}>
@@ -22,16 +15,37 @@ const LoadingState = (
     </div>
 );
 
+
+
+
 const BasicRouting = () => (
     <Suspense fallback={LoadingState}>
-        <h2>Base app</h2>
-        <BrowserRouter>
-            <div>
-                {/* We can still use external routing (e.g. page redirects) to load components. */}
-                <Route exact={true} path={routePrefix} component={Module} />
-                {/*<Route path={`${routePrefix}/async`} component={LoadableAsyncModule} />*/}
-            </div>
-        </BrowserRouter>
+        <Provider store={store}>
+            <h2>Base app</h2>
+            <Router>
+                <div>
+                    <ul>
+                        <li>
+                            <Link to="/">Module</Link>
+                        </li>
+                        <li>
+                            <Link to="/geocoder">geocoder</Link>
+                        </li>
+                        {/* !not-delete! cli:link */}
+                    </ul>
+                    <hr />
+                    <Switch>
+                        <Route exact path="/">
+                            <Module />
+                        </Route>
+                        <Route path="/geocoder">
+                            <Geocoder />
+                        </Route>
+                        {/* !not-delete! cli:route */}
+                    </Switch>
+                </div>
+            </Router>
+        </Provider>
     </Suspense>
 );
 

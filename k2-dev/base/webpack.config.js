@@ -8,8 +8,9 @@ module.exports = {
   output: {
     filename: '[name].js',
     chunkFilename: '[name].js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, '/dist')
   },
+  devtool: "inline-source-map",
   resolve: {
     modules: [
       'node_modules',
@@ -19,7 +20,22 @@ module.exports = {
   },
   devServer: {
     port: 8080,
-    publicPath: '/'
+    inline: true,
+    quiet: false,
+    noInfo: false,
+    stats: {
+      all: false,
+      wds: true,
+      assets: false,
+      colors: true,
+      version: false,
+      hash: false,
+      timings: false,
+      chunks: false,
+      chunkModules: false,
+    },
+    historyApiFallback: true,
+    contentBase: path.resolve(__dirname, '/dist')
   },
   plugins: [
     new HtmlWebPackPlugin({

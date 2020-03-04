@@ -36,38 +36,33 @@ $ docker-compose down
 
 Your application available at http://localhost:9000
 
-### Local development environment
-Install toolset.
+Connect to docker container
 ```sh
-$ npm install yarn -g
-$ npm install lerna -g
-$ npm install typescript -g
-```
-
-Install dependencies and links any cross-dependencies.
-```sh
-$ yarn run bootstrap
+$ docker exec -it <container_name> bash
 ```
 
 ### Package management
 To add dependency to all packages.
 ```sh
-lerna add @k2-packages/module3
+$ lerna add @k2-packages/module3
+```
+or
+```
+$ docker exec -t <container_name> bash lerna add @k2-packages/module3
 ```
 
 To add module3 as dependency to module2.
 ```sh
-lerna add @k2-packages/module3 --scope=@k2-packages/module2
+$ lerna add @k2-packages/module3 --scope=@k2-packages/module2
+```
+or
+```
+$ docker exec -t <container_name> bash lerna add @k2-packages/module3 --scope=@k2-packages/module2
 ```
 
-To create package.
+To link packages use:
 ```sh
-lerna create module_name
-```
-
-To run tests over packages.
-```sh
-lerna run test --stream
+$ docker exec -t <container_name> bash lerna link
 ```
 
 ### Version release

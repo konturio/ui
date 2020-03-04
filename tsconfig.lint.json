@@ -7,5 +7,6 @@
     "k2-packages/*/src/**/*.ts",
     "k2-packages/*/src/**/*.d.ts",
     "k2-packages/*/src/**/*.tsx"
-  ]
+  ],
+  "exclude": []
 }

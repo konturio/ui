@@ -1,5 +1,5 @@
 {
-  "name": "@k2-packages/module_namme",
+  "name": "@k2-packages/{{moduleName}}",
   "version": "1.0.0",
   "main": "src/index.tsx",
   "types": "tsclib",
@@ -9,6 +9,8 @@
   },
   "scripts": {},
   "dependencies": {
-
+    "react": "^16.8.2",
+    "react-dom": "^16.8.0",
+    "react-router-dom": "^5.1.2"
   }
 }

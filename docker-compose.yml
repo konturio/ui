@@ -45,8 +45,8 @@ services:
       - ./k2-packages:/app/k2-packages
       - ./package.json:/app/package.json
     environment:
-      - kcfirebrigadeURL=k2-geocoder-sevice
-      - development=true
+      - NODE_ENV=development
+      - API=kcapi
     ports:
       - 8080:8080
     expose:

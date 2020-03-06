@@ -34,15 +34,14 @@ test:
   script:
     - yarn test
   dependencies:
-    - bootstrap
+    - install
 
 build:
   stage: build
   script:
     - yarn build
   dependencies:
-    - bootstrap
-    - test
+    - install
 
 release:
   stage: release

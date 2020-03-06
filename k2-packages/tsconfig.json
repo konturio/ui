@@ -2,9 +2,6 @@
   "files": [],
   "references": [
     {
-      "path": "default-theme"
-    },
-    {
       "path": "module"
     },
     {

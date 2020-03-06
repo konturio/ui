@@ -15,9 +15,6 @@ const LoadingState = (
     </div>
 );
 
-
-
-
 const BasicRouting = () => (
     <Suspense fallback={LoadingState}>
         <Provider store={store}>

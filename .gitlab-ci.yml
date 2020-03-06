@@ -1,6 +1,7 @@
 image: node:13
 
 stages:
+  - install
   - bootstrap
   - test
   - build
@@ -9,10 +10,10 @@ stages:
 variables:
   npm_config_cache: "$CI_PROJECT_DIR/.npm"
 
-bootstrap:
-  stage: bootstrap
+install:
+  stage: install
   script:
-    - yarn bootstrap
+    - yarn install
   artifacts:
     name: "artifacts"
     untracked: true
@@ -21,16 +22,31 @@ bootstrap:
       - .npm/
       - node_modules/
 
+bootstrap:
+  stage: bootstrap
+  script:
+    - npm bootstrap
+  dependencies:
+    - install
+
 test:
   stage: test
   script:
-    - yarn run test
+    - yarn test
   dependencies:
     - bootstrap
 
 build:
   stage: build
   script:
-    - yarn run build
+    - yarn build
   dependencies:
+    - bootstrap
     - test
+
+release:
+  stage: release
+  script:
+    - lerna -v
+  dependencies:
+    - build

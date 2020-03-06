@@ -1,0 +1,36 @@
+image: node:13
+
+stages:
+  - bootstrap
+  - test
+  - build
+  - release
+
+variables:
+  npm_config_cache: "$CI_PROJECT_DIR/.npm"
+
+bootstrap:
+  stage: bootstrap
+  script:
+    - yarn bootstrap
+  artifacts:
+    name: "artifacts"
+    untracked: true
+    expire_in: 60 mins
+    paths:
+      - .npm/
+      - node_modules/
+
+test:
+  stage: test
+  script:
+    - yarn run test
+  dependencies:
+    - bootstrap
+
+build:
+  stage: build
+  script:
+    - yarn run build
+  dependencies:
+    - test

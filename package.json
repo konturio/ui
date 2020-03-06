@@ -11,7 +11,7 @@
     "dev": "run-p start test:watch",
     "start": "lerna bootstrap && lerna link && lerna run dev --stream",
     "test:watch": "jest --watchAll",
-    "verify": "jest",
+    "test": "jest",
     "build": "tsc -b && lerna run build --stream",
     "update:version": "lerna version --yes --no-git-tag-version",
     "new:module": "./scripts/fixFolderPermissions.sh && npx plop"

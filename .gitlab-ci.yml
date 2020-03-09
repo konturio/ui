@@ -48,4 +48,4 @@ release:
   script:
     - lerna -v
   dependencies:
-    - build
+    - install

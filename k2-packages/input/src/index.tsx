@@ -16,6 +16,7 @@ function createOnType(onType: IInputProps['onType']) {
 }
 
 export default function Input({
+  className,
   error,
   successes, 
   loading, 
@@ -40,7 +41,7 @@ export default function Input({
 
   return (
     <div className={clsx(style.root, dynamicClasses)}>
-      <div className={style.inputBox}>
+      <div className={clsx(style.inputBox, className)}>
         <input
           {...props}
           onChange={e => ((onChange && onChange(e), onTypeHandler(e)))}

@@ -8,7 +8,8 @@ import './index.scss';
 // Modules:
 import Module from '@k2-packages/module';
 import Geocoder from '@k2-packages/geocoder';
-import { Input } from '@k2-packages/ui-kit';
+import UI from '@k2-packages/ui-kit';
+
 /* !not-delete! cli:import */
 
 const LoadingState = (
@@ -46,19 +47,19 @@ const BasicRouting = () => (
             <Route path="/kit">
               <form className="inputs">
                 <div>Default</div>
-                <Input placeholder="Some text" />
+                <UI.Input placeholder="Some text" />
                 <div>Successes</div>
-                <Input successes={true} />
+                <UI.Input successes={true} />
                 <div>Error</div>
-                <Input error={true} />
+                <UI.Input error={true} />
                 <div>Error with message</div>
-                <Input error={true} errorMessage="Something bag happen" />
+                <UI.Input error={true} errorMessage="Something bag happen" />
                 <div>Disabled</div>
-                <Input disabled />
+                <UI.Input disabled />
                 <div>With icon</div>
-                <Input>
+                <UI.Input>
                   <div>: )</div>
-                </Input>
+                </UI.Input>
               </form>
             </Route>
             {/* !not-delete! cli:route */}

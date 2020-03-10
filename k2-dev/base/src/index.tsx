@@ -45,11 +45,17 @@ const BasicRouting = () => (
                         </Route>
                         <Route path="/kit">
                             <form className="inputs">
+                                <div>Default</div>
+                                <Input placeholder="Some text"/>
+                                <div>Successes</div>
                                 <Input successes={true} />
+                                <div>Error</div>
                                 <Input error={true} />
-                                <Input error={true} errorMessage="something bag happen"/>
-                                <Input loading={true} />
+                                <div>Error with message</div>
+                                <Input error={true} errorMessage="Something bag happen"/>
+                                <div>Disabled</div>
                                 <Input disabled />
+                                <div>With icon</div>
                                 <Input>
                                     <div>: )</div>
                                 </Input>

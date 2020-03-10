@@ -9,8 +9,8 @@
   },
   "scripts": {},
   "dependencies": {
-    "react": "^16.8.2",
-    "react-dom": "^16.8.0",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
     "react-router-dom": "^5.1.2"
   }
 }

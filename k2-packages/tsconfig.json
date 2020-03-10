@@ -2,7 +2,7 @@
   "files": [],
   "references": [
     {
-      "path": "input"
+      "path": "ui-kit"
     },
     {
       "path": "module"

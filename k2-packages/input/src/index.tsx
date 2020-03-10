@@ -17,15 +17,15 @@ function createOnType(onType: IInputProps['onType']) {
 
 export default function Input({
   error,
-  successes, 
-  loading, 
-  children, 
-  errorMessage, 
-  onChange, 
+  successes,
+  loading,
+  children,
+  errorMessage,
+  onChange,
   onFocus,
   onBlur,
-  onType, 
-  disabled, 
+  onType,
+  disabled,
   ...props
 }: IInputProps) {
   const onTypeHandler = createOnType(onType);

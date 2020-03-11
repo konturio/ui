@@ -36,15 +36,9 @@ module.exports = {
     'comma-dangle': 'warn',
     'import/extensions': 'off'
   },
-  // settings: {
-  //   'import/resolver': {
-  //     webpack: {
-  //       config: {
-  //         resolve: {
-  //           extensions: ['.js', '.jsx', '.ts', '.tsx', '.mjs'],
-  //         },
-  //       },
-  //     },
-  //   },
-  // }
+  settings: {
+    'import/resolver': {
+      typescript: {} // this loads <rootdir>/tsconfig.json to eslint
+    },
+  }
 }

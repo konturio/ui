@@ -15,18 +15,14 @@ $white: #fff;
 $primary-color: #514a9d;
 $primary-text-color: #fff;
 
-$secondary-color: #085078;
+$secondary-color: #F57B51;
 $secondary-text-color: #fff;
 
 // Palette / Shades of gray
-$grey-10: hsla(0, 0%, 90%, 1);
-$grey-20: hsla(0, 0%, 80%, 1);
+$grey-1: hsla(0, 0%, 95%, 1);
+$grey-2: hsla(0, 0%, 90%, 1);
+$grey-3: hsla(0, 0%, 50%, 1);
 $grey-30: hsla(0, 0%, 70%, 1);
-$grey-40: hsla(0, 0%, 60%, 1);
-$grey-50: hsla(0, 0%, 50%, 1);
-$grey-60: hsla(0, 0%, 40%, 1);
-$grey-70: hsla(0, 0%, 30%, 1);
-$grey-80: hsla(0, 0%, 20%, 1);
 
 // Palette / Service colors
 $default-color: hsla(0, 0%, 0, 0.3);
@@ -46,7 +42,7 @@ $success-text-color: #fff;
 
 // Shadows
 $shadow-0: none;
-$shadow-1: 0px 4px 4px rgba(0, 0, 0, 0.25);
+$shadow-1: 0px 2px 5px -2px rgba(0, 0, 0, 0.25), 0px 4px 7px 0 rgba(0, 0, 0, 0.08), 0px 6px 14px 0 rgba(0, 0, 0, 0.08);
 
 // Typography
 $font: 16px 'Roboto', sans-serif;

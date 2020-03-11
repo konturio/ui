@@ -1,5 +1,5 @@
 {
-  "name": "@k2-packages/input",
+  "name": "@k2-packages/ui-kit",
   "version": "1.0.0",
   "main": "src/index.tsx",
   "types": "tsclib",

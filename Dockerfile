@@ -1,6 +1,8 @@
-FROM node:latest as k2-workspace
+FROM node:13 as k2-workspace
 
 WORKDIR /app
+
+#COPY package.json ./
 COPY lerna.json ./
 
 COPY tsconfig.json ./

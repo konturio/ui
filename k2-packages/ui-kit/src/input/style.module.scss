@@ -10,11 +10,14 @@
     flex: 1;
     background-color: transparent;
     outline: none;
+    padding: 0;
   }
 }
 
 .icons {
-  color: red;
+  color: $default-text-color;
+  display: flex;
+  flex-flow: row nowrap;
 }
 
 .inputBox {
@@ -24,19 +27,32 @@
   border-radius: $border-radius;
   padding: $unit;
   color: $default-text-color;
+  position: relative;
+}
+
+.inputBox:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: $border-radius;
+  pointer-events: none;
 }
 
 // States
 
 .focus {
-  .inputBox {
+  .inputBox:before {
     box-shadow: outline-shadow($primary-color)
   }
 }
 
 .disabled {
   .inputBox {
-    background-color: $grey-10;
+    background-color: $grey-1;
   }
   input {
     cursor: default;
@@ -49,7 +65,7 @@
   }
 
   &.focus {
-    .inputBox {
+    .inputBox:before {
       box-shadow: outline-shadow($success-color)
     }
   }
@@ -62,7 +78,7 @@
   }
 
   &.focus {
-    .inputBox {
+    .inputBox:before {
       box-shadow: outline-shadow($error-color)
     }
   }

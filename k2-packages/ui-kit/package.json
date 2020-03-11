@@ -1,0 +1,17 @@
+{
+  "name": "@k2-packages/ui-kit",
+  "version": "1.0.0",
+  "main": "src/index.tsx",
+  "types": "tsclib",
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.com:kontur-private/k2/k2-front-end.git"
+  },
+  "scripts": {},
+  "dependencies": {
+    "@k2-packages/default-theme": "^1.0.0",
+    "react": "^16.8.2",
+    "react-dom": "^16.8.0",
+    "react-router-dom": "^5.1.2"
+  }
+}

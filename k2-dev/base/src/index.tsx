@@ -5,12 +5,16 @@ import {
 } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './store';
-import './base.module.scss';
+
+// Styles
+import './base.scss';
+import styles from './index.module.scss';
+
 // Modules:
 import Module from '@k2-packages/module';
 import Geocoder from '@k2-packages/geocoder';
+import UI from '@k2-packages/ui-kit';
 import MapboxMap from '@k2-packages/mapbox-map';
-import styles from './index.module.scss';
 /* !not-delete! cli:import */
 
 const mapboxConfig: {
@@ -42,6 +46,9 @@ const BasicRouting = () => (
               <Link to="/geocoder">geocoder</Link>
             </li>
             <li>
+              <Link to="/kit">UI Kit</Link>
+            </li>
+            <li>
               <Link to="/mapbox-map">mapbox-map</Link>
             </li>
             {/* !not-delete! cli:link */}
@@ -53,6 +60,24 @@ const BasicRouting = () => (
             </Route>
             <Route path="/geocoder">
               <Geocoder />
+            </Route>
+            <Route path="/kit">
+              <form className="inputs">
+                <div>Default</div>
+                <UI.Input placeholder="Some text" />
+                <div>Successes</div>
+                <UI.Input successes={true} />
+                <div>Error</div>
+                <UI.Input error={true} />
+                <div>Error with message</div>
+                <UI.Input error={true} errorMessage="Something bag happen" />
+                <div>Disabled</div>
+                <UI.Input disabled />
+                <div>With icon</div>
+                <UI.Input>
+                  <div>: )</div>
+                </UI.Input>
+              </form>
             </Route>
             <Route path="/mapbox-map">
               <MapboxMap

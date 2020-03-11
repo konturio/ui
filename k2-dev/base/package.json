@@ -5,9 +5,11 @@
   "types": "tsclib",
   "private": true,
   "dependencies": {
+    "@k2-packages/default-theme": "^1.0.0",
     "@k2-packages/geocoder": "^1.0.0",
     "@k2-packages/mapbox-map": "^1.0.0",
     "@k2-packages/module": "^1.0.0",
+    "@k2-packages/ui-kit": "^1.0.0",
     "@types/react-redux": "^7.1.7",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",

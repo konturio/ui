@@ -8,6 +8,7 @@ stages:
 
 variables:
   npm_config_cache: "$CI_PROJECT_DIR/.npm"
+  API: "kcfirebrigade"
 
 install:
   stage: install
@@ -38,6 +39,7 @@ bootstrap:
 build:
   stage: build
   script:
+    - echo $API
     - yarn build
   dependencies:
     - install

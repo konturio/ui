@@ -36,7 +36,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    command: "yarn dev"
+    command: "yarn start"
     volumes:
       - ./.plop:/app/plop
       - ./templates:/app/temmplates

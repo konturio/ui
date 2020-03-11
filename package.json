@@ -27,6 +27,7 @@
     "@types/react": "^16.8.2",
     "@types/react-dom": "^16.8.0",
     "@types/react-router-dom": "^5.1.2",
+    "babel-jest": "^25.1.0",
     "babel-loader": "^8.0.0",
     "babel-plugin-dynamic-import-node": "^2.3.0",
     "chalk": "^3.0.0",
@@ -72,13 +73,11 @@
     },
     "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
     "moduleFileExtensions": [
-      "scss",
       "ts",
       "tsx",
       "js",
       "jsx",
-      "json",
-      "node"
+      "json"
     ]
   }
 }

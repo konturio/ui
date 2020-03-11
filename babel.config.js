@@ -27,6 +27,7 @@ module.exports = function babelConfig(api) {
     ],
     env: {
       test: {
+        plugins: ["dynamic-import-node"],
         presets: [
           [
             '@babel/env',

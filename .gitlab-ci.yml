@@ -3,7 +3,7 @@ image: node:13
 stages:
   - install
   - bootstrap
-  - test
+#  - test
   - build
 
 variables:
@@ -28,12 +28,12 @@ bootstrap:
   dependencies:
     - install
 
-test:
-  stage: test
-  script:
-    - yarn test
-  dependencies:
-    - install
+#test:
+#  stage: test
+#  script:
+#    - yarn test
+#  dependencies:
+#    - install
 
 build:
   stage: build

@@ -39,7 +39,7 @@ module.exports = {
       chunkModules: false,
     },
     historyApiFallback: true,
-    contentBase: path.resolve(__dirname, '/dist')
+    contentBase: path.resolve(__dirname, '/dist'),
   },
   plugins: [
     new webpack.DefinePlugin({
@@ -49,7 +49,7 @@ module.exports = {
     new HtmlWebPackPlugin({
       template: './src/index.html',
       filename: 'index.html',
-    })
+    }),
   ],
   module: {
     rules: [
@@ -93,6 +93,22 @@ module.exports = {
             }
           }
         ],
+      },
+      {
+        test: /\.css$/i,
+        use: [
+          'style-loader',
+          'css-modules-typescript-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              sourceMap: true,
+              modules: {
+                localIdentName: '[local]-[hash:base64:5]'
+              }
+            }
+          }
+        ]
       }
     ],
   },

@@ -7,8 +7,8 @@ interface IState {
 
 const store: IModuleStore<IState> = createStore({
   initialState: { /** initial state */ },
-  enhancers: [ /** enhancers to include */ ], 
-  extensions: [ getSagaExtension() ]
+  enhancers: [/** enhancers to include */],
+  extensions: [getSagaExtension()],
 });
 
 export default store;

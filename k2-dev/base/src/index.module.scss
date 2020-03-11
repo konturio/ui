@@ -2,3 +2,33 @@
   height: 500px;
   width: 100%;
 }
+
+.navigation {
+  background-color: black;
+  display: flex;
+  flex-flow: row nowrap;
+  padding: 8px;
+  font-size: 13px;
+}
+.navigation a {
+  padding: 4px 8px;
+  color: gray;
+  display: block;
+  text-decoration: none;
+}
+
+.navigation a:hover {
+  text-decoration: underline;
+}
+
+.inputs {
+  padding: 16px;
+}
+
+.inputs > div {
+  margin-bottom: 8px
+}
+
+.activeLink a {
+  color: white;
+}

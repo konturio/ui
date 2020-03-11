@@ -2,6 +2,9 @@
 // Please do not change this file!
 interface CssExports {
   'Map': string;
+  'activeLink': string;
+  'inputs': string;
+  'navigation': string;
 }
 export const cssExports: CssExports;
 export default cssExports;

@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 const webpack = require('webpack');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const path = require('path');
@@ -14,7 +15,7 @@ module.exports = {
     chunkFilename: '[name].js',
     path: path.join(__dirname, './dist'),
   },
-  devtool: "inline-source-map",
+  devtool: 'inline-source-map',
   resolve: {
     modules: [
       'node_modules',
@@ -82,16 +83,16 @@ module.exports = {
             options: {
               sourceMap: true,
               modules: {
-                localIdentName: '[local]-[hash:base64:5]'
-              }
-            }
+                localIdentName: '[local]-[hash:base64:5]',
+              },
+            },
           },
           {
             loader: 'sass-loader',
             options: {
-              sourceMap: true
-            }
-          }
+              sourceMap: true,
+            },
+          },
         ],
       },
       {
@@ -104,12 +105,12 @@ module.exports = {
             options: {
               sourceMap: true,
               modules: {
-                localIdentName: '[local]-[hash:base64:5]'
-              }
-            }
-          }
-        ]
-      }
+                localIdentName: '[local]-[hash:base64:5]',
+              },
+            },
+          },
+        ],
+      },
     ],
   },
   optimization: {

@@ -25,10 +25,25 @@ module.exports = {
     'prettier'
   ],
   rules: {
-    'react/jsx-filename-extension': [2, { 'extensions': ['.js', '.jsx', '.ts', '.tsx'] }],
-    '@typescript-eslint/no-unused-vars': [ 2, { args: 'none' } ],
+    'react/jsx-filename-extension': [2, { 'extensions': ['.jsx', '.tsx'] }],
+    '@typescript-eslint/no-unused-vars': [2, { args: 'none' }],
     'no-use-before-define': 'off',
     'consistent-return': 'off',
-    'no-param-reassign': ['error', { 'props': true, 'ignorePropertyModificationsFor': ['acc', 'draft'] }] 
-  }
-};
+    'no-param-reassign': ['error', { 'props': true, 'ignorePropertyModificationsFor': ['acc', 'draft'] }],
+    'react/jsx-props-no-spreading': 'off',
+    'arrow-parens': 'off',
+    'no-trailing-spaces': 'warn',
+    'comma-dangle': 'warn',
+  },
+  // settings: {
+  //   'import/resolver': {
+  //     webpack: {
+  //       config: {
+  //         resolve: {
+  //           extensions: ['.js', '.jsx', '.ts', '.tsx', '.mjs'],
+  //         },
+  //       },
+  //     },
+  //   },
+  // }
+}

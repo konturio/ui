@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import Geocoder, { geocoderStateField } from '@k2-packages/geocoder';
 import MapboxMap from '@k2-packages/mapbox-map';
 import AppLayout, { ISlots } from './AppLayout';
-
+import { LngLatBoundsLike } from 'mapbox-gl';
 import style from './style.module.scss';
 
 const mapboxConfig: {
@@ -15,11 +15,18 @@ const mapboxConfig: {
   style: 'mapbox://styles/nshkutov/ck6ca2wfb397m1imrknjlqd2l',
 };
 
-function FireBrigadeApp({ selected }) {
-  const [bounds, setBounds] = useState();
+interface ISelected {
+  bounds: LngLatBoundsLike
+}
+interface IFireBrigadeApp {
+  selected: ISelected
+}
+
+function FireBrigadeApp({ selected }: IFireBrigadeApp) {
+  const [bounds, setBounds] = useState<LngLatBoundsLike | undefined>();
 
   useEffect(() => {
-    if (selected) {
+    if (selected && selected.bounds !== undefined) {
       setBounds(selected.bounds);
     }
   }, [selected]);

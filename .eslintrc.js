@@ -34,7 +34,9 @@ module.exports = {
     'arrow-parens': 'off',
     'no-trailing-spaces': 'warn',
     'comma-dangle': 'warn',
-    'import/extensions': 'off'
+    'import/extensions': 'off',
+    'quotes': 'warn',
+    'no-multiple-empty-lines': 'warn'
   },
   settings: {
     'import/resolver': {

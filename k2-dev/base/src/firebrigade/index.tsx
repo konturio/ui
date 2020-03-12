@@ -37,8 +37,8 @@ function FireBrigadeApp({ selected }: IFireBrigadeApp) {
         style={mapboxConfig.style}
         accessToken={mapboxConfig.accessToken}
         className={style.map}
-        onClick={console.log}
-        onLoad={console.log}
+        onClick={() => {}}
+        onLoad={() => {}}
         bounds={bounds}
       />
     ),

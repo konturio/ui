@@ -14,7 +14,8 @@
     "test": "jest",
     "build": "tsc -b && lerna run build --stream",
     "update:version": "lerna version --yes --no-git-tag-version",
-    "new:module": "./scripts/fixFolderPermissions.sh && npx plop"
+    "plop:new": "npx plop new",
+    "plop:add": "npx plop add"
   },
   "devDependencies": {
     "@babel/cli": "^7.8.4",

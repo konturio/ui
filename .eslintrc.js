@@ -36,7 +36,8 @@ module.exports = {
     'comma-dangle': 'warn',
     'import/extensions': 'off',
     'quotes': 'warn',
-    'no-multiple-empty-lines': 'warn'
+    'no-multiple-empty-lines': 'warn',
+    'padded-blocks': 'warn',
   },
   settings: {
     'import/resolver': {

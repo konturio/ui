@@ -42,6 +42,7 @@ build:
     NODE_ENV: "production"
   script:
     - echo $API
+    - echo $NODE_ENV
     - yarn build
   dependencies:
     - install

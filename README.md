@@ -14,10 +14,10 @@ Version track starts from v1.0.0 at `dev` branch.
 
 Current approach rely on two workspaces:
 
- - `@k2-apps`, customs apps to consume shared packages;
+ - `@k2-dev`, customs apps to consume shared packages;
  - `@k2-packages`, versioned application modules;
 
-Respectively k2-apps and k2-packages folders.
+Respectively k2-dev and k2-packages folders.
 
 ## Setup
 

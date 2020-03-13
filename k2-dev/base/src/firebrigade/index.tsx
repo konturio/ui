@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 import Geocoder, { geocoderStateField } from '@k2-packages/geocoder';
 import MapboxMap from '@k2-packages/mapbox-map';
 import AppLayout, { ISlots } from './AppLayout';
-import styles from "./style.styl";
+import List from './components/List';
+import style from './style.styl';
 
 const mapboxConfig: {
   accessToken: string;
@@ -37,13 +38,40 @@ function FireBrigadeApp({ selected }: IFireBrigadeApp) {
       <MapboxMap
         style={mapboxConfig.style}
         accessToken={mapboxConfig.accessToken}
-        className={styles.map}
+        className={style.map}
         onClick={() => {}}
         onLoad={() => {}}
         bounds={bounds}
       />
     ),
-    topLeft: <Geocoder className={styles.search} />
+    topLeft: (
+      <Geocoder
+        className={style.search}
+      />
+    ),
+    topRight: (
+      <List items={[
+        {
+          name: 'Пожарная часть №13',
+          meters: 1200,
+          minutes: 12,
+          contacts: ['8017 123 - 45 - 67', '8017 765 - 43 - 21'],
+          units: [
+            { type: 'АЦ-5,0-50', count: 1 }, { type: 'АЦ 5,0-50/4', count: 2 },
+          ],
+        },
+        {
+          name: 'Пожарная часть №14',
+          meters: 1200,
+          minutes: 12,
+          contacts: ['8017 123 - 45 - 67', '8017 765 - 43 - 21'],
+          units: [
+            { type: 'АЦ-5,0-50', count: 1 }, { type: 'АЦ 5,0-50/4', count: 2 },
+          ],
+        },
+      ]}
+      />
+    ),
   };
 
   return <AppLayout slots={slots} />;
@@ -52,7 +80,7 @@ function FireBrigadeApp({ selected }: IFireBrigadeApp) {
 function mapStateToProps(state) {
   const geocoderState = state[geocoderStateField];
   return {
-    selected: geocoderState?.selected
+    selected: geocoderState?.selected,
   };
 }
 const ConnectedGeoCoderComponent = connect(mapStateToProps)(FireBrigadeApp);

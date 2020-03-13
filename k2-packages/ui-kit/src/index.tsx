@@ -1,5 +1,7 @@
-import Input from '@k2-packages/ui-kit/src/input';
+import Input from './Input';
+import Card from './Card';
 
 export default {
-  Input
-}
+  Input,
+  Card,
+};

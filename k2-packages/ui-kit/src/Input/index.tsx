@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import clsx from "clsx";
-import styles from "./style.styl";
+import React, { useState } from 'react';
+import clsx from 'clsx';
+import style from './style.styl';
 
 interface IInputProps extends React.HTMLProps<HTMLInputElement> {
   onType?: (text: string) => void;
@@ -11,7 +11,7 @@ interface IInputProps extends React.HTMLProps<HTMLInputElement> {
   errorMessage?: string;
 }
 
-function createOnType(onType: IInputProps["onType"]) {
+function createOnType(onType: IInputProps['onType']) {
   return ({ target }) => onType && onType((target as HTMLInputElement).value);
 }
 
@@ -33,25 +33,25 @@ export default function Input({
   const [focus, setFocus] = useState(false);
 
   const dynamicClasses = {
-    [styles.successes]: successes,
-    [styles.error]: error,
-    [styles.focus]: focus,
-    [styles.disabled]: disabled
+    [style.successes]: successes,
+    [style.error]: error,
+    [style.focus]: focus,
+    [style.disabled]: disabled,
   };
 
   return (
-    <div className={clsx(styles.root, dynamicClasses)}>
-      <div className={clsx(styles.inputBox, className)}>
+    <div className={clsx(style.root, dynamicClasses)}>
+      <div className={clsx(style.inputBox, className)}>
         <input
           {...props}
-          onChange={e => (onChange && onChange(e), onTypeHandler(e))}
-          onFocus={e => (onFocus && onFocus(e), setFocus(true))}
-          onBlur={e => (onBlur && onBlur(e), setFocus(false))}
+          onChange={e => ((onChange && onChange(e), onTypeHandler(e)))}
+          onFocus={e => ((onFocus && onFocus(e), setFocus(true)))}
+          onBlur={e => ((onBlur && onBlur(e), setFocus(false)))}
           disabled={disabled}
         />
-        <div className={styles.icons}>{children}</div>
+        <div className={style.icons}>{children}</div>
       </div>
-      {errorMessage && <div className={styles.message}>{errorMessage}</div>}
+      {errorMessage && <div className={style.message}>{errorMessage}</div>}
     </div>
   );
 }

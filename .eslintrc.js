@@ -33,7 +33,9 @@ module.exports = {
     'import/extensions': 'off',
     quotes: 'warn',
     'no-multiple-empty-lines': 'warn',
-    'padded-blocks': 'warn'
+    'padded-blocks': 'warn',
+    'react/jsx-one-expression-per-line': 'off',
+    'react/jsx-wrap-multilines':  'warn',
   },
   settings: {
     'import/resolver': {

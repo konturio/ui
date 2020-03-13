@@ -1,0 +1,99 @@
+@import "~@k2-packages/default-theme/index.scss";
+
+@function outline-shadow($color) {
+  @return 0px 0px 0px 3px rgba($color, 0.3);
+}
+.title {
+  margin: 0
+}
+
+.subtitle {
+  opacity: .8;
+  font-size: .8rem;
+}
+
+.checkbox {
+  opacity: 0;
+  position: absolute;
+}
+
+.rootList, .rootList ul {
+  list-style: none;
+  margin: 0;
+  padding: 0
+}
+
+.label {
+  margin: 0;
+  display: block;
+  opacity: 1;
+  transition: ease-out .2s opacity;
+  cursor: pointer;
+  padding: $unit * 2;
+  position: relative;
+}
+
+
+.checkbox:checked ~ .label {
+  opacity: .3;
+}
+
+.checkbox:focus ~ .label:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  box-shadow: outline-shadow($primary-color);
+  border-radius: $border-radius;
+}
+
+.header {
+  margin: $unit 0 $unit*2  0
+}
+
+.units {
+  color: black;
+  margin-bottom: $unit * 2;
+  & .cell {
+    padding: $unit / 2
+  }
+}
+
+.rootList .contacts {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: flex-start;
+}
+
+.contact {
+  margin-bottom: $unit;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+
+.contactBtn::-moz-focus-inner {
+  border: 0;
+}
+.contactBtn {
+  display: inline-block;
+  background-color: $gray-1;
+  border-radius: $border-radius / 2;
+  padding: $unit;
+  cursor: pointer;
+  border: none;
+  &:hover {
+    background-color: $gray-2;
+  }
+  &:focus {
+    box-shadow: outline-shadow($primary-color);
+  }
+}
+
+.delimiter {
+  height: $unit;
+  background-color: $gray-1;
+}

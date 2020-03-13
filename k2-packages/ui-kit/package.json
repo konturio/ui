@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@k2-packages/default-theme": "^1.0.0",
+    "clsx": "^1.1.0",
     "react": "^16.8.2",
     "react-dom": "^16.8.0",
     "react-router-dom": "^5.1.2"

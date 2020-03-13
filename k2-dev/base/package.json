@@ -21,6 +21,6 @@
   },
   "scripts": {
     "dev": "webpack-dev-server --mode development --host 0.0.0.0 --disable-host-check --color",
-    "build": "webpack --mode production"
+    "build": "webpack --env.NODE_ENV=production --env.API=kcfirebrigade"
   }
 }

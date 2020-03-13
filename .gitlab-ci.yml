@@ -38,6 +38,8 @@ bootstrap:
 
 build:
   stage: build
+  variables:
+    NODE_ENV: "production"
   script:
     - echo $API
     - yarn build

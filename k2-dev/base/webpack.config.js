@@ -10,7 +10,7 @@ module.exports = {
   entry: {
     main: './src/index.tsx',
   },
-  mode: process.env.NODE_ENV,
+  mode: JSON.stringify(process.env.NODE_ENV),
   output: {
     filename: '[name].js',
     chunkFilename: '[name].js',
@@ -45,8 +45,8 @@ module.exports = {
   },
   plugins: [
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': process.env.NODE_ENV,
-      'process.env.API': process.env.API,
+      'process.env.NODE_ENV': `${process.env.NODE_ENV}`,
+      'process.env.API': `${process.env.API}`,
     }),
     new HtmlWebPackPlugin({
       template: './src/index.html',

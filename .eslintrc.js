@@ -13,8 +13,8 @@ module.exports = {
     ecmaFeatures: {
       jsx: true
     },
-    ecmaVersion: 2018,
-    sourceType: 'module'
+    ecmaVersion: 2019,
+    sourceType: 'module',
   },
   plugins: ['react', '@typescript-eslint', 'prettier'],
   rules: {
@@ -36,6 +36,8 @@ module.exports = {
     'padded-blocks': 'warn',
     'react/jsx-one-expression-per-line': 'off',
     'react/jsx-wrap-multilines':  'warn',
+    'no-useless-constructor': 'off',
+    'no-empty-function': ["error", { "allow": ["constructors"] }],
   },
   settings: {
     'import/resolver': {

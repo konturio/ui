@@ -1,22 +1,8 @@
 import React from 'react';
 import UI from '@k2-packages/ui-kit';
 import style from './style.module.scss';
-import T from './i18n.json';
-
-type Contact = string;
-
-interface IUnit {
-  type: string;
-  count: number;
-}
-
-interface IFireStation {
-  name: string;
-  meters: number;
-  minutes: number;
-  contacts: Contact[],
-  units: IUnit[]
-}
+import T from '../i18n.json';
+import { IFireStation } from '../types';
 
 function FireStation({ fStation }: { fStation: IFireStation }) {
   return (

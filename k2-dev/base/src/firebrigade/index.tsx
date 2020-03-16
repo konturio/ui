@@ -4,6 +4,9 @@ import Geocoder, { geocoderStateField } from '@k2-packages/geocoder';
 import MapboxMap from '@k2-packages/mapbox-map';
 import AppLayout, { ISlots } from './AppLayout';
 import List from './components/List';
+import { IFireBrigadeApp, bbox } from './types';
+import useFireStations from './api/useFireStations';
+
 import style from './style.styl';
 
 const mapboxConfig: {
@@ -15,17 +18,9 @@ const mapboxConfig: {
   style: 'mapbox://styles/nshkutov/ck6ca2wfb397m1imrknjlqd2l',
 };
 
-type bbox = [number, number, number, number];
-
-interface ISelected {
-  bounds: bbox
-}
-interface IFireBrigadeApp {
-  selected: ISelected;
-}
-
 function FireBrigadeApp({ selected }: IFireBrigadeApp) {
   const [bounds, setBounds] = useState<bbox | undefined>();
+  const fireStations = useFireStations(selected.center);
 
   useEffect(() => {
     if (selected && selected.bounds !== undefined) {
@@ -39,8 +34,12 @@ function FireBrigadeApp({ selected }: IFireBrigadeApp) {
         style={mapboxConfig.style}
         accessToken={mapboxConfig.accessToken}
         className={style.map}
-        onClick={() => {}}
-        onLoad={() => {}}
+        onClick={() => {
+          // do nothing
+        }}
+        onLoad={() => {
+          // do nothing
+        }}
         bounds={bounds}
       />
     ),
@@ -50,27 +49,7 @@ function FireBrigadeApp({ selected }: IFireBrigadeApp) {
       />
     ),
     topRight: (
-      <List items={[
-        {
-          name: 'Пожарная часть №13',
-          meters: 1200,
-          minutes: 12,
-          contacts: ['8017 123 - 45 - 67', '8017 765 - 43 - 21'],
-          units: [
-            { type: 'АЦ-5,0-50', count: 1 }, { type: 'АЦ 5,0-50/4', count: 2 },
-          ],
-        },
-        {
-          name: 'Пожарная часть №14',
-          meters: 1200,
-          minutes: 12,
-          contacts: ['8017 123 - 45 - 67', '8017 765 - 43 - 21'],
-          units: [
-            { type: 'АЦ-5,0-50', count: 1 }, { type: 'АЦ 5,0-50/4', count: 2 },
-          ],
-        },
-      ]}
-      />
+      fireStations ? <List items={fireStations} /> : undefined
     ),
   };
 

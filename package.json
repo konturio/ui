@@ -8,7 +8,7 @@
   "scripts": {
     "clean": "lerna clean --yes",
     "bootstrap": "lerna bootstrap && lerna link",
-    "dev": "npm-run-all start test:watch",
+    "dev": "npx npm-run-all start test:watch",
     "start": "lerna bootstrap && lerna link && lerna run dev --stream",
     "test:watch": "jest --watchAll",
     "test": "jest",

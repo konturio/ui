@@ -9,32 +9,32 @@ const WORKSPACE = chalk.yellow('Add to Workspace (Project root)');
 const BASE_APP = chalk.yellow('Add to k2-dev (Base app)');
 
 /* Actions */
-const addPackageToAnotherPackage = {
+const addPackageToAnotherPackage = package => ({
   type: 'exec',
-  command: ({ whatPackage, targetPackage }) => getDockerImageContext('k2-dev')(
-    `lerna add ${whatPackage} --scope=@k2-packages/${targetPackage}`,
+  command: ({ whatPackage }) => getDockerImageContext('k2-dev')(
+    `lerna add ${whatPackage} --scope=@k2-packages/${package}`,
   ),
   abortOnFail: false,
   onError: handleLernaError,
-};
+});
 
-const addPackageToWorkSpace = {
+const addPackageToWorkSpace = () => ({
   type: 'exec',
-  command: ({ whatPackage, targetPackage }) => getDockerImageContext('k2-dev')(
+  command: ({ whatPackage }) => getDockerImageContext('k2-dev')(
     `yarn add ${whatPackage} -D -W`,
   ),
   abortOnFail: false,
   onError: handleLernaError,
-};
+});
 
-const addPackageToBaseApp = {
+const addPackageToBaseApp = () => ({
   type: 'exec',
-  command: ({ whatPackage, targetPackage }) => getDockerImageContext('k2-dev')(
+  command: ({ whatPackage }) => getDockerImageContext('k2-dev')(
     `lerna add ${whatPackage} --scope=@k2-dev/base`,
   ),
   abortOnFail: false,
   onError: handleLernaError,
-};
+});
 
 /* Dialogue */
 module.exports = packages => ({
@@ -48,7 +48,7 @@ module.exports = packages => ({
     },
     {
       message: 'Where we add it?\n' + chalk.blue('[Space] for choice, [Enter] for confirm') + '\n',
-      name: 'targetPackage',
+      name: 'targetPackages',
       type: 'checkbox-autocomplete',
       highlight: true,
       searchable: true,
@@ -57,12 +57,13 @@ module.exports = packages => ({
     },
   ],
   actions: (answers) => {
+    console.log(answers)
     const actionMap = {
       [WORKSPACE]: addPackageToWorkSpace,
       [BASE_APP]: addPackageToBaseApp,
       _default: addPackageToAnotherPackage,
     }
-    const actions = [actionMap[answers.targetPackage] || actionMap._default];
+    const actions = answers.targetPackages.map(package => (actionMap[package] || actionMap._default)(package));
     return actions;
   },
 })

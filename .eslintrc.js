@@ -38,6 +38,8 @@ module.exports = {
     'react/jsx-wrap-multilines':  'warn',
     'no-useless-constructor': 'off',
     'no-empty-function': ["error", { "allow": ["constructors"] }],
+    'import/prefer-default-export': 'off',
+    'no-plusplus': 'off'
   },
   settings: {
     'import/resolver': {

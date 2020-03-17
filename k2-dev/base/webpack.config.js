@@ -27,19 +27,19 @@ module.exports = {
   devServer: {
     port: 8080,
     inline: true,
-    quiet: false,
-    noInfo: false,
-    stats: {
-      // all: false,
-      // wds: true,
-      // assets: false,
-      // colors: true,
-      // version: false,
-      // hash: false,
-      // timings: false,
-      // chunks: false,
-      // chunkModules: true,
-    },
+    // quiet: false,
+    // noInfo: false,
+    // stats: {
+    //   all: false,
+    //   wds: true,
+    //   assets: false,
+    //   colors: true,
+    //   version: false,
+    //   hash: false,
+    //   timings: false,
+    //   chunks: false,
+    //   chunkModules: false,
+    // },
     historyApiFallback: true,
     contentBase: path.resolve(__dirname, '/dist'),
   },
@@ -61,12 +61,12 @@ module.exports = {
       {
         test: /\.(tsx?)|(ts?)$/,
         exclude: /node_modules/,
-        use: {
-          loader: require.resolve('babel-loader'),
-          options: {
-            rootMode: 'upward',
+        use: [
+          {
+            loader: require.resolve('babel-loader'),
+            options: { rootMode: 'upward' },
           },
-        },
+        ]
       },
       {
         test: /\.html$/,

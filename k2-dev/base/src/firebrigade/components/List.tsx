@@ -45,14 +45,14 @@ function FireStation({ fStation }: { fStation: IFireStation }) {
 
 export default function List({ items }: { items: IFireStation[] }) {
   return (
-    <UI.Card title={T['Nearest fire stations']}>
+    <UI.Card title={T['Nearest fire stations']} className={style.fullHeight}>
       <div className={style.delimiter} />
       <ul className={style.rootList}>
         {items.map((fStation, i) => (
-          <>
-            <FireStation key={fStation.name} fStation={fStation} />
+          <div key={fStation.id}>
+            <FireStation fStation={fStation} />
             {(i === items.length - 1) ? '' : <div className={style.delimiter} />}
-          </>
+          </div>
         ))}
       </ul>
     </UI.Card>

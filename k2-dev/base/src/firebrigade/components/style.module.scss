@@ -20,7 +20,9 @@
 .rootList, .rootList ul {
   list-style: none;
   margin: 0;
-  padding: 0
+  padding: 0;
+  padding: 6px;
+  overflow: auto;
 }
 
 .label {
@@ -74,6 +76,9 @@
   }
 }
 
+.fullHeight {
+  height: 100%;
+}
 
 .contactBtn::-moz-focus-inner {
   border: 0;

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
-import Geocoder, { geocoderStateField } from '@k2-packages/geocoder';
+import Geocoder, { geocoderStateField, GeocoderState } from '@k2-packages/geocoder';
 import MapboxMap from '@k2-packages/mapbox-map';
 import AppLayout, { ISlots } from './AppLayout';
 import List from './components/List';
@@ -20,7 +20,7 @@ const mapboxConfig: {
 
 function FireBrigadeApp({ selected }: IFireBrigadeApp) {
   const [bounds, setBounds] = useState<bbox | undefined>();
-  const fireStations = useFireStations(selected.center);
+  const fireStations = useFireStations(selected?.center);
 
   useEffect(() => {
     if (selected && selected.bounds !== undefined) {
@@ -56,8 +56,8 @@ function FireBrigadeApp({ selected }: IFireBrigadeApp) {
   return <AppLayout slots={slots} />;
 }
 
-function mapStateToProps(state) {
-  const geocoderState = state[geocoderStateField];
+function mapStateToProps(state): IFireBrigadeApp {
+  const geocoderState: GeocoderState = state[geocoderStateField];
   return {
     selected: geocoderState?.selected,
   };

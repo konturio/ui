@@ -7,6 +7,7 @@ interface CssExports {
   'contactBtn': string;
   'contacts': string;
   'delimiter': string;
+  'fullHeight': string;
   'header': string;
   'label': string;
   'rootList': string;

@@ -17,10 +17,10 @@
     "emitDecoratorMetadata": true,
     "resolveJsonModule": true,
     "target": "es6",
-    "module": "commonjs",
+    "module": "ESNext",
     "moduleResolution": "node",
     "jsx": "preserve",
-    "lib": ["dom", "ESnext"],
+    "lib": ["dom", "ESNext"],
     "strict": true,
 
     "typeRoots": ["./node_modules/@types"],

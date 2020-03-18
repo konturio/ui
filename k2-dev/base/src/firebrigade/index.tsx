@@ -18,6 +18,8 @@ const mapboxConfig: {
   style: 'mapbox://styles/nshkutov/ck6ca2wfb397m1imrknjlqd2l',
 };
 
+const MINSK_BOUNDS = [27.33330, 53.98395, 28.10165, 53.78159];
+
 function FireBrigadeApp({ selected }: IFireBrigadeApp) {
   const [bounds, setBounds] = useState<bbox | undefined>();
   const fireStations = useFireStations(selected?.center);
@@ -46,6 +48,7 @@ function FireBrigadeApp({ selected }: IFireBrigadeApp) {
     topLeft: (
       <Geocoder
         className={style.search}
+        bounds={MINSK_BOUNDS}
       />
     ),
     topRight: (

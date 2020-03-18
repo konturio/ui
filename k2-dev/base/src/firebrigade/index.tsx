@@ -18,7 +18,7 @@ const mapboxConfig: {
   style: 'mapbox://styles/nshkutov/ck6ca2wfb397m1imrknjlqd2l',
 };
 
-const MINSK_BOUNDS = [27.33330, 53.98395, 28.10165, 53.78159];
+const MINSK_BOUNDS: [number, number, number, number] = [27.33330, 53.98395, 28.10165, 53.78159];
 
 function FireBrigadeApp({ selected }: IFireBrigadeApp) {
   const [bounds, setBounds] = useState<bbox | undefined>();

@@ -8,7 +8,6 @@ stages:
   - release
 
 variables:
-  npm_config_cache: "$CI_PROJECT_DIR/.npm"
   API: "kcfirebrigade"
   NODE_ENV: "production"
 
@@ -19,9 +18,11 @@ install:
   artifacts:
     name: "artifacts"
     untracked: true
-    expire_in: 60 mins
+    expire_in: 1 day
     paths:
       - .npm/
+      - k2-dev/
+      - k2-packages/
       - node_modules/
 
 bootstrap:

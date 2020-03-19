@@ -2,7 +2,7 @@ image: node:13
 
 stages:
   - install
-#  - bootstrap
+  - bootstrap
 #  - test
   - build
   - release
@@ -22,13 +22,13 @@ install:
     paths:
       - .npm/
       - node_modules/
-#
-#bootstrap:
-#  stage: bootstrap
-#  script:
-#    - yarn bootstrap
-#  dependencies:
-#    - install
+
+bootstrap:
+  stage: bootstrap
+  script:
+    - yarn bootstrap
+  dependencies:
+    - install
 
 #test:
 #  stage: test
@@ -52,13 +52,11 @@ build:
     paths:
       - k2-dev/base/dist
 
-
 release:
   stage: release
   script:
+    - echo $API
     - echo $NODE_ENV
-    - yarn bootstrap
-    - yarn build
     - yarn update:version
     - yarn publish:version
   dependencies:

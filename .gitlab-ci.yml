@@ -27,6 +27,7 @@ install:
 bootstrap:
   stage: bootstrap
   script:
+    - yarn add lerna -g -W
     - yarn bootstrap
   dependencies:
     - install
@@ -43,6 +44,8 @@ build:
   script:
     - echo $API
     - echo $NODE_ENV
+    - yarn add lerna -g -W
+    - yarn add typescript -g -W
     - yarn build
   dependencies:
     - install

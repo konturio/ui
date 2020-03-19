@@ -10,6 +10,7 @@ stages:
 variables:
   npm_config_cache: "$CI_PROJECT_DIR/.npm"
   API: "kcfirebrigade"
+  NODE_ENV: "production"
 
 install:
   stage: install
@@ -39,8 +40,6 @@ bootstrap:
 
 build:
   stage: build
-  variables:
-    NODE_ENV: "production"
   script:
     - echo $API
     - echo $NODE_ENV

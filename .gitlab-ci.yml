@@ -44,7 +44,6 @@ build:
   script:
     - echo $API
     - echo $NODE_ENV
-    - yarn bootstrap
     - yarn build
   dependencies:
     - install

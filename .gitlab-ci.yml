@@ -15,7 +15,7 @@ variables:
 install:
   stage: install
   script:
-    - yarn install
+    - npm install
   artifacts:
     name: "artifacts"
     untracked: true
@@ -27,8 +27,7 @@ install:
 bootstrap:
   stage: bootstrap
   script:
-    - yarn add lerna -g -W
-    - yarn bootstrap
+    - npm run bootstrap
   dependencies:
     - install
 
@@ -44,9 +43,7 @@ build:
   script:
     - echo $API
     - echo $NODE_ENV
-    - yarn add lerna -g -W
-    - yarn add typescript -g -W
-    - yarn build
+    - npm run build
   dependencies:
     - install
   artifacts:
@@ -59,6 +56,6 @@ release:
     - echo $API
     - echo $NODE_ENV
     - echo $NEXUS_NPM_TOKEN
-    - yarn publish
+    - npm run publish
   dependencies:
     - install

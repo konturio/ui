@@ -19,6 +19,7 @@
 
 *.cache
 package-lock.json
+yarn.lock
 
 # Builds
 k2-dev/**/tsclib
@@ -52,7 +53,3 @@ node_modules/
 # Optional eslint cache
 .eslintcache
 
-# dotenv environment variables file
-.env
-
-.vscode/settings.json

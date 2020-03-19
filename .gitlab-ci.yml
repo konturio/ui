@@ -19,7 +19,7 @@ install:
   artifacts:
     name: "artifacts"
     untracked: true
-    expire_in: 60 mins
+    expire_in: 1 day
     paths:
       - .npm/
       - node_modules/

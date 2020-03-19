@@ -13,8 +13,8 @@
     "test:watch": "jest --watchAll",
     "test": "jest",
     "build": "tsc -b && lerna run build --stream",
-    "update:version": "lerna version --yes --no-git-tag-version --no-push",
-    "publish:version": "lerna publish --yes --registry https://nexus.kontur.io/repository/npm-snapshots-a/:_authToken=${NEXUS_NPM_TOKEN}",
+    "version": "lerna version --yes --no-git-tag-version --no-push",
+    "publish": "lerna publish from-package --yes --registry https://nexus.kontur.io/repository/npm-snapshots-a/:_authToken=${NEXUS_NPM_TOKEN}",
     "plop:new": "npx plop new",
     "plop:add": "npx plop add"
   },

@@ -56,7 +56,7 @@ release:
   script:
     - echo $API
     - echo $NODE_ENV
-    - yarn update:version
-    - yarn publish:version
+    - yarn version
+    - yarn version
   dependencies:
     - install

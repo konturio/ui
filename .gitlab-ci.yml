@@ -5,6 +5,7 @@ stages:
   - bootstrap
 #  - test
   - build
+  - release
 
 variables:
   npm_config_cache: "$CI_PROJECT_DIR/.npm"
@@ -51,9 +52,11 @@ build:
       - k2-dev/base/dist
 
 
-#release:
-#  stage: release
-#  script:
-#    - lerna -v
-#  dependencies:
-#    - install
+release:
+  stage: release
+  script:
+    - yarn update:version
+    - yarn publish:version
+  dependencies:
+    - install
+    - build

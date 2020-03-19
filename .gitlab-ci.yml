@@ -2,7 +2,7 @@ image: node:13
 
 stages:
   - install
-#   - bootstrap
+  - bootstrap
 #  - test
   - build
   - release
@@ -24,12 +24,12 @@ install:
       - .npm/
       - node_modules/
 
-# bootstrap:
-#   stage: bootstrap
-#   script:
-#     - yarn bootstrap
-#   dependencies:
-#     - install
+bootstrap:
+  stage: bootstrap
+  script:
+    - yarn bootstrap
+  dependencies:
+    - install
 
 #test:
 #  stage: test

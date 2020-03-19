@@ -27,6 +27,7 @@ install:
 bootstrap:
   stage: bootstrap
   script:
+    - yarn install
     - yarn bootstrap
   dependencies:
     - install

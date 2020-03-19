@@ -15,7 +15,7 @@ variables:
 install:
   stage: install
   script:
-    - npm install
+    - yarn install
   artifacts:
     name: "artifacts"
     untracked: true
@@ -27,7 +27,7 @@ install:
 bootstrap:
   stage: bootstrap
   script:
-    - npm run bootstrap
+    - yarn bootstrap
   dependencies:
     - install
 
@@ -43,7 +43,7 @@ build:
   script:
     - echo $API
     - echo $NODE_ENV
-    - npm run build
+    - yarn build
   dependencies:
     - install
   artifacts:
@@ -56,6 +56,6 @@ release:
     - echo $API
     - echo $NODE_ENV
     - echo $NEXUS_NPM_TOKEN
-    - npm run publish
+    - yarn publish
   dependencies:
     - install

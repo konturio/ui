@@ -13,14 +13,14 @@
     "test:watch": "jest --watchAll",
     "test": "jest",
     "build": "tsc -b && lerna run build --stream",
-    "version": "lerna version --yes --skip-git --no-git-tag-version --no-push",
-    "publish": "lerna publish from-package --yes --skip-git --registry https://nexus.kontur.io/repository/npm-snapshots-a/:_authToken=${NEXUS_NPM_TOKEN}",
+    "publish": "lerna publish x.y.z --no-git-tag-version --yes",
     "plop:new": "npx plop new",
     "plop:add": "npx plop add"
   },
   "devDependencies": {
     "@babel/cli": "^7.8.4",
     "@babel/core": "^7.8.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.8.3",
     "@babel/preset-env": "^7.8.4",
     "@babel/preset-react": "^7.0.0",
     "@babel/preset-typescript": "^7.1.0",

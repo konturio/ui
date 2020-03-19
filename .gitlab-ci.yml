@@ -22,8 +22,6 @@ install:
     expire_in: 1 day
     paths:
       - .npm/
-      - k2-dev/
-      - k2-packages/
       - node_modules/
 
 bootstrap:

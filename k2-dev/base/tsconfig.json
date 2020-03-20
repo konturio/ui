@@ -5,7 +5,12 @@
     "outDir": "tsclib",
     "module": "esnext"
   },
-  "include": ["./../../global.d.ts", "./src/**/*.ts", "./src/**/*.tsx"],
+  "include": [
+    "./../../global.d.ts",
+    "./src/**/*.ts",
+    "./src/**/*.tsx",
+    "./src/**/*.json"
+  ],
   "exclude": [
     "node_modules"
   ]

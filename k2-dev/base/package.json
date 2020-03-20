@@ -5,6 +5,7 @@
   "types": "tsclib",
   "private": true,
   "dependencies": {
+    "@k2-packages/client": "^1.0.0",
     "@k2-packages/default-theme": "^1.0.0",
     "@k2-packages/geocoder": "^1.0.0",
     "@k2-packages/mapbox-map": "^1.0.0",

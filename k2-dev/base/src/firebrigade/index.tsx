@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import Geocoder, { geocoderStateField } from '@k2-packages/geocoder';
 import MapboxMap from '@k2-packages/mapbox-map';
 import AppLayout, { ISlots } from './AppLayout';
-import style from './style.module.scss';
+import styles from "./style.styl";
 
 const mapboxConfig: {
   accessToken: string;
@@ -20,7 +20,7 @@ interface ISelected {
   bounds: bbox
 }
 interface IFireBrigadeApp {
-  selected: ISelected
+  selected: ISelected;
 }
 
 function FireBrigadeApp({ selected }: IFireBrigadeApp) {
@@ -37,17 +37,13 @@ function FireBrigadeApp({ selected }: IFireBrigadeApp) {
       <MapboxMap
         style={mapboxConfig.style}
         accessToken={mapboxConfig.accessToken}
-        className={style.map}
+        className={styles.map}
         onClick={() => {}}
         onLoad={() => {}}
         bounds={bounds}
       />
     ),
-    topLeft: (
-      <Geocoder
-        className={style.search}
-      />
-    ),
+    topLeft: <Geocoder className={styles.search} />
   };
 
   return <AppLayout slots={slots} />;
@@ -56,7 +52,7 @@ function FireBrigadeApp({ selected }: IFireBrigadeApp) {
 function mapStateToProps(state) {
   const geocoderState = state[geocoderStateField];
   return {
-    selected: geocoderState?.selected,
+    selected: geocoderState?.selected
   };
 }
 const ConnectedGeoCoderComponent = connect(mapStateToProps)(FireBrigadeApp);

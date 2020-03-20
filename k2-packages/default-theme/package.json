@@ -1,7 +1,7 @@
 {
   "name": "@k2-packages/default-theme",
   "version": "1.0.0",
-  "main": "index.scss",
+  "main": "index.styl",
   "repository": {
     "type": "git",
     "url": "git@gitlab.com:kontur-private/k2/k2-front-end.git"

@@ -1,7 +1,7 @@
-/* eslint-disable import/no-extraneous-dependencies */
 const webpack = require('webpack');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 console.log('process.NODE_ENV:', process.env.NODE_ENV);
 console.log('process.API:', process.env.API);
@@ -51,6 +51,10 @@ module.exports = {
       template: './src/index.html',
       filename: 'index.html',
     }),
+    new MiniCssExtractPlugin({
+      filename: '[name].css?[chunkhash]',
+      chunkFilename: '[id].css?[chunkhash]'
+    })
   ],
   module: {
     rules: [
@@ -74,42 +78,24 @@ module.exports = {
         ],
       },
       {
-        test: /\.s[ac]ss$/i,
+        test: /\.styl$/,
         use: [
-          'style-loader',
-          'css-modules-typescript-loader',
+          MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
             options: {
               sourceMap: true,
               modules: {
-                localIdentName: '[local]-[hash:base64:5]',
-              },
-            },
+                localIdentName: '[local]__[hash:base64:5]'
+              }
+            }
           },
-          {
-            loader: 'sass-loader',
-            options: {
-              sourceMap: true,
-            },
-          },
-        ],
+          'stylus-loader'
+        ]
       },
       {
-        test: /\.css$/i,
-        use: [
-          'style-loader',
-          'css-modules-typescript-loader',
-          {
-            loader: 'css-loader',
-            options: {
-              sourceMap: true,
-              modules: {
-                localIdentName: '[local]-[hash:base64:5]',
-              },
-            },
-          },
-        ],
+        test: /\.css$/,
+        use: [MiniCssExtractPlugin.loader, 'css-loader']
       },
     ],
   },

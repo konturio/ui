@@ -1,6 +1,7 @@
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio
 *.iml
 .idea
+.vscode/settings.json
 
 # Directory-based project format:
 # if you remove the above rule, at least ignore the following:
@@ -19,7 +20,6 @@
 
 *.cache
 package-lock.json
-yarn.lock
 
 # Builds
 k2-dev/**/tsclib
@@ -31,6 +31,7 @@ k2-packages/**/dist
 templates/**/tsclib
 templates/**/*.tsbuildinfo
 templates/**/dist
+*.d.ts
 
 # Logs
 *.log
@@ -53,3 +54,5 @@ node_modules/
 # Optional eslint cache
 .eslintcache
 
+# dotenv environment variables file
+.env

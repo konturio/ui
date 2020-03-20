@@ -12,6 +12,12 @@
     },
     {
       "path": "geocoder"
+    },
+    {
+      "path": "default-theme"
     }
-  ]
+  ],
+  "compilerOptions": {
+    "composite": true
+  }
 }

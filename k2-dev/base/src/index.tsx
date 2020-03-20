@@ -1,38 +1,32 @@
-import React, { Suspense } from 'react';
-import { render } from 'react-dom';
-import {
-  BrowserRouter as Router, Switch, Route,
-} from 'react-router-dom';
-import { Provider } from 'react-redux';
+import React, { Suspense } from "react";
+import { render } from "react-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Provider } from "react-redux";
 
+import "./base.styl";
 // Modules:
-import Module from '@k2-packages/module';
-import Geocoder from '@k2-packages/geocoder';
-import UI from '@k2-packages/ui-kit';
-import MapboxMap from '@k2-packages/mapbox-map';
-import FireBrigade from './firebrigade';
-import NavigationMenu from './NavigationMenu';
+import Module from "@k2-packages/module";
+import Geocoder from "@k2-packages/geocoder";
+import UI from "@k2-packages/ui-kit";
+import MapboxMap from "@k2-packages/mapbox-map";
+import styles from "./index.styl";
+import FireBrigade from "./firebrigade";
+import NavigationMenu from "./NavigationMenu";
 
 /* !not-delete! cli:import */
 
-import store from './store';
-
-// Styles
-import './base.scss';
-import style from './index.module.scss';
-
-
+import store from "./store";
 const mapboxConfig: {
   accessToken: string;
   style: string;
 } = {
   accessToken:
-    'pk.eyJ1IjoibnNoa3V0b3YiLCJhIjoiY2s2Y2ExODFvMGpoaDNrb3ZueXYyMDBmZiJ9.d2VPRqEfvCd4fvH7edB6tg',
-  style: 'mapbox://styles/nshkutov/ck6ca2wfb397m1imrknjlqd2l',
+    "pk.eyJ1IjoibnNoa3V0b3YiLCJhIjoiY2s2Y2ExODFvMGpoaDNrb3ZueXYyMDBmZiJ9.d2VPRqEfvCd4fvH7edB6tg",
+  style: "mapbox://styles/nshkutov/ck6ca2wfb397m1imrknjlqd2l"
 };
 
 const LoadingState = (
-  <div style={{ background: 'aqua', width: '100px', height: '100px' }}>
+  <div style={{ background: "aqua", width: "100px", height: "100px" }}>
     Loading...
   </div>
 );
@@ -44,11 +38,11 @@ const BasicRouting = () => (
         <NavigationMenu
           links={[
             /* eslint-disable no-multi-spaces */
-            { to: '/',             label: 'Module', exact: true },
-            { to: '/geocoder',     label: 'Geocoder' },
-            { to: '/kit',          label: 'UI Kit' },
-            { to: '/mapbox-map',   label: 'Mapbox-map' },
-            { to: '/fire-brigade', label: 'Fire brigade' },
+            { to: "/", label: "Module", exact: true },
+            { to: "/geocoder", label: "Geocoder" },
+            { to: "/kit", label: "UI Kit" },
+            { to: "/mapbox-map", label: "Mapbox-map" },
+            { to: "/fire-brigade", label: "Fire brigade" }
             /* eslint-enable no-multi-spaces */
           ]}
         />
@@ -61,7 +55,7 @@ const BasicRouting = () => (
             <Geocoder />
           </Route>
           <Route path="/kit">
-            <form className={style.inputs}>
+            <form className={styles.inputs}>
               <div>Default</div>
               <UI.Input placeholder="Some text" />
               <div>Successes</div>
@@ -82,7 +76,7 @@ const BasicRouting = () => (
             <MapboxMap
               style={mapboxConfig.style}
               accessToken={mapboxConfig.accessToken}
-              className={style.Map}
+              className={styles.Map}
               onClick={console.log}
               onLoad={console.log}
             />
@@ -97,5 +91,5 @@ const BasicRouting = () => (
   </Suspense>
 );
 
-const container = document.getElementById('react-root');
+const container = document.getElementById("react-root");
 render(<BasicRouting />, container);

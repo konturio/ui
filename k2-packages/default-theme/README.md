@@ -1,6 +1,6 @@
 ## Default theme
 
-Main `index.scss` file contain variables which can be used to style components.
+Main `index.styl` file contain variables which can be used to style components.
 
 If you want to use it you need install this package as dependency in your module:
 

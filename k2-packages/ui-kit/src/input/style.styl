@@ -1,0 +1,72 @@
+@import "~@k2-packages/default-theme"
+
+outline-shadow(color)
+  0px 0px 0px 2px rgba(color, 0.3)
+
+.root 
+  input 
+    border none
+    flex 1
+    background-color transparent
+    outline none
+    padding 0
+
+.icons 
+  color default-text-color
+  display flex
+  flex-flow row nowrap
+
+.inputBox 
+  display flex
+  flex-flow row nowrap
+  border input-border
+  border-radius border-radius
+  padding unit
+  color default-text-color
+  position relative
+
+.inputBoxbefore 
+  content ''
+  display block
+  position absolute
+  top 0
+  bottom 0
+  left 0
+  right 0
+  border-radius border-radius
+  pointer-events none
+
+// States
+
+.focus 
+  .inputBoxbefore 
+    box-shadow outline-shadow(primary-color)
+
+.disabled 
+  .inputBox 
+    background-color grey-1
+  
+  input 
+    cursor default
+
+.successes 
+  .inputBox 
+    border-color success-color
+
+  &.focus 
+    .inputBoxbefore 
+      box-shadow outline-shadow(success-color)
+
+.error 
+  .inputBox 
+    border-color error-color
+
+  &.focus 
+    .inputBoxbefore 
+      box-shadow outline-shadow(error-color)
+
+  .message 
+    color error-color
+    font-size unit * 1.5
+    font-weight bold
+    padding unit * 0.5 unit

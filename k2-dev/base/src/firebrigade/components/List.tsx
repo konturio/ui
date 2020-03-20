@@ -1,8 +1,8 @@
 import React from 'react';
 import UI from '@k2-packages/ui-kit';
-import style from './style.module.scss';
 import T from '../i18n.json';
 import { IFireStation } from '../types';
+import style from './style.styl';
 
 function FireStation({ fStation }: { fStation: IFireStation }) {
   return (

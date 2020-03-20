@@ -1,11 +1,11 @@
 image: node:13
 
 stages:
-  - install
-  - bootstrap
-  #  - test
-  - build
-  - release
+- install
+- bootstrap
+#  - test
+- build
+- release
 
 variables:
   npm_config_cache: "$CI_PROJECT_DIR/.npm"
@@ -15,21 +15,21 @@ variables:
 install:
   stage: install
   script:
-    - yarn install
+  - yarn install
   artifacts:
     name: "artifacts"
     untracked: true
-    expire_in: 60 mins
+    expire_in: 1 day
     paths:
-      - .npm/
-      - node_modules/
+    - .npm/
+    - node_modules/
 
 bootstrap:
   stage: bootstrap
   script:
-    - yarn bootstrap
+  - yarn bootstrap
   dependencies:
-    - install
+  - install
 
 #test:
 #  stage: test
@@ -41,11 +41,11 @@ bootstrap:
 build:
   stage: build
   script:
-    - echo $API
-    - echo $NODE_ENV
-    - yarn build
+  - echo $API
+  - echo $NODE_ENV
+  - yarn build
   dependencies:
-    - install
+  - install
   artifacts:
     paths:
     - k2-dev/base/dist
@@ -55,8 +55,8 @@ release:
   variables:
     NODE_ENV: "production"
   script:
-    - echo $API
-    - echo $NODE_ENV
-    - yarn publish
+  - echo $API
+  - echo $NODE_ENV
+  - yarn publish
   dependencies:
-    - install
+  - install

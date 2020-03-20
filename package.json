@@ -1,6 +1,6 @@
 {
   "name": "k2-front-end",
-  "private": true,
+  "private": false,
   "workspaces": [
     "k2-packages/*",
     "k2-dev/*"

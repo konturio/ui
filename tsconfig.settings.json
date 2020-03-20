@@ -35,5 +35,8 @@
     "k2-dev/*/tsclib",
     "k2-packages/*/node_modules",
     "k2-packages/*/tsclib"
+  ],
+  "include": [
+    "./global.d.ts"
   ]
 }

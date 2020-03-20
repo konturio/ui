@@ -4,5 +4,8 @@
     {
       "path": "base"
     }
-  ]
+  ],
+  "compilerOptions": {
+    "composite": true
+  }
 }

@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
-import Geocoder, { geocoderStateField } from '@k2-packages/geocoder';
+import Geocoder, { geocoderStateField, GeocoderState } from '@k2-packages/geocoder';
 import MapboxMap from '@k2-packages/mapbox-map';
 import AppLayout, { ISlots } from './AppLayout';
-import styles from "./style.styl";
+import List from './components/List';
+import { IFireBrigadeApp, bbox } from './types';
+import useFireStations from './api/useFireStations';
+
+import style from './style.styl';
 
 const mapboxConfig: {
   accessToken: string;
@@ -14,17 +18,11 @@ const mapboxConfig: {
   style: 'mapbox://styles/nshkutov/ck6ca2wfb397m1imrknjlqd2l',
 };
 
-type bbox = [number, number, number, number];
-
-interface ISelected {
-  bounds: bbox
-}
-interface IFireBrigadeApp {
-  selected: ISelected;
-}
+const MINSK_BOUNDS: [number, number, number, number] = [27.33330, 53.98395, 28.10165, 53.78159];
 
 function FireBrigadeApp({ selected }: IFireBrigadeApp) {
   const [bounds, setBounds] = useState<bbox | undefined>();
+  const fireStations = useFireStations(selected?.center);
 
   useEffect(() => {
     if (selected && selected.bounds !== undefined) {
@@ -37,22 +35,34 @@ function FireBrigadeApp({ selected }: IFireBrigadeApp) {
       <MapboxMap
         style={mapboxConfig.style}
         accessToken={mapboxConfig.accessToken}
-        className={styles.map}
-        onClick={() => {}}
-        onLoad={() => {}}
+        className={style.map}
+        onClick={() => {
+          // do nothing
+        }}
+        onLoad={() => {
+          // do nothing
+        }}
         bounds={bounds}
       />
     ),
-    topLeft: <Geocoder className={styles.search} />
+    topLeft: (
+      <Geocoder
+        className={style.search}
+        bounds={MINSK_BOUNDS}
+      />
+    ),
+    topRight: (
+      fireStations ? <List items={fireStations} /> : undefined
+    ),
   };
 
   return <AppLayout slots={slots} />;
 }
 
-function mapStateToProps(state) {
-  const geocoderState = state[geocoderStateField];
+function mapStateToProps(state): IFireBrigadeApp {
+  const geocoderState: GeocoderState = state[geocoderStateField];
   return {
-    selected: geocoderState?.selected
+    selected: geocoderState?.selected,
   };
 }
 const ConnectedGeoCoderComponent = connect(mapStateToProps)(FireBrigadeApp);

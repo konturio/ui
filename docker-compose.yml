@@ -46,7 +46,7 @@ services:
       - ./package.json:/app/package.json
     environment:
       - NODE_ENV=development
-      - API=kcapi
+      - API=proxy
     ports:
       - 8080:8080
     expose:

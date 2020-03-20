@@ -1,0 +1,37 @@
+@import "~@k2-packages/default-theme"
+
+outline-shadow(color) 
+  box-shadow: 0px 0px 0px 3px rgba(color, 0.3)
+
+
+.card 
+  display: flex
+  flex-flow: column nowrap
+  border-radius: border-radius
+  color: default-text-color
+  background-color: white
+  position: relative
+  box-shadow: shadow-1
+  &:focus 
+    &:before 
+      outline-shadow(primary-color)
+    
+
+.card:before 
+  content: ''
+  display: block
+  position: absolute
+  top: 0
+  bottom: 0
+  left: 0
+  right: 0
+  border-radius: border-radius
+  pointer-events: none
+
+
+.title 
+  text-transform: uppercase
+  margin: unit*2
+  font-weight: bold
+  font-size: .9rem
+

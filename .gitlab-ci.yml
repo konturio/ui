@@ -10,7 +10,6 @@ stages:
 variables:
   npm_config_cache: "$CI_PROJECT_DIR/.npm"
   API: "kcfirebrigade"
-  NODE_ENV: "production"
 
 install:
   stage: install

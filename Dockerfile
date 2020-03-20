@@ -2,7 +2,7 @@ FROM node:13 as k2-workspace
 
 WORKDIR /app
 
-COPY _lerna.json ./
+COPY lerna.json ./
 
 COPY tsconfig.json ./
 COPY tsconfig.settings.json ./

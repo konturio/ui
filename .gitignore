@@ -31,7 +31,6 @@ k2-packages/**/dist
 templates/**/tsclib
 templates/**/*.tsbuildinfo
 templates/**/dist
-*.d.ts
 
 # Logs
 *.log

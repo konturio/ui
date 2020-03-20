@@ -1,11 +1,11 @@
 {
   "name": "@k2-packages/module",
   "version": "1.0.0",
+  "main": "src/index.tsx",
+  "types": "tsclib",
   "publishConfig": {
     "access": "public"
   },
-  "types": "./tsclib/index.d.ts",
-  "main": "./tsclib/index.jsx",
   "repository": {
     "type": "git",
     "url": "git@gitlab.com:kontur-private/k2/k2-front-end.git"

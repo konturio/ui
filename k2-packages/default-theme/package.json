@@ -1,7 +1,7 @@
 {
   "name": "@k2-packages/default-theme",
   "version": "1.0.0",
-  "main": "./index.styl",
+  "main": "index.styl",
   "publishConfig": {
     "access": "public"
   },

@@ -45,7 +45,7 @@ module.exports = {
   },
   plugins: [
     new webpack.DefinePlugin({
-      'process.env.API': JSON.stringify(process.env.API)
+      'process.env.API': JSON.stringify(process.env.API),
     }),
     new HtmlWebPackPlugin({
       template: './src/index.html',
@@ -53,8 +53,8 @@ module.exports = {
     }),
     new MiniCssExtractPlugin({
       filename: '[name].css?[chunkhash]',
-      chunkFilename: '[id].css?[chunkhash]'
-    })
+      chunkFilename: '[id].css?[chunkhash]',
+    }),
   ],
   module: {
     rules: [
@@ -66,7 +66,7 @@ module.exports = {
             loader: require.resolve('babel-loader'),
             options: { rootMode: 'upward' },
           },
-        ]
+        ],
       },
       {
         test: /\.html$/,
@@ -86,16 +86,16 @@ module.exports = {
             options: {
               sourceMap: true,
               modules: {
-                localIdentName: '[local]__[hash:base64:5]'
-              }
-            }
+                localIdentName: '[local]__[hash:base64:5]',
+              },
+            },
           },
-          'stylus-loader'
-        ]
+          'stylus-loader',
+        ],
       },
       {
         test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader']
+        use: [MiniCssExtractPlugin.loader, 'css-loader'],
       },
     ],
   },
@@ -104,6 +104,6 @@ module.exports = {
       name: true,
       chunks: 'all',
     },
-    minimize: false
+    minimize: false,
   },
 };

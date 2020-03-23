@@ -13,7 +13,7 @@
     "test:watch": "jest --watchAll",
     "test": "jest",
     "build": "tsc -b && lerna run build --stream",
-    "lerna:publish": "lerna publish from-git --yes",
+    "lerna:publish": "lerna publish from-package --yes",
     "plop:new": "npx plop new",
     "plop:add": "npx plop add"
   },

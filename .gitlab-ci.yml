@@ -11,6 +11,11 @@ variables:
   npm_config_cache: "$CI_PROJECT_DIR/.npm"
   API: "kcfirebrigade"
 
+.default-job-settings:
+  tags:
+  - npm
+  - docker
+
 install:
   stage: install
   script:

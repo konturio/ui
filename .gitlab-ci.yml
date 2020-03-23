@@ -13,8 +13,8 @@ variables:
 
 .default-job-settings:
   tags:
-  - npm
-  - docker
+    - npm
+    - docker
 
 install:
   extends: .default-job-settings

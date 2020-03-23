@@ -17,6 +17,7 @@ variables:
   - docker
 
 install:
+  extends: .default-job-settings
   stage: install
   script:
     - yarn install
@@ -29,6 +30,7 @@ install:
       - node_modules/
 
 bootstrap:
+  extends: .default-job-settings
   stage: bootstrap
   script:
     - yarn bootstrap
@@ -43,6 +45,7 @@ bootstrap:
 #    - install
 
 build:
+  extends: .default-job-settings
   stage: build
   script:
     - echo $API
@@ -55,6 +58,7 @@ build:
       - k2-dev/base/dist
 
 release:
+  extends: .default-job-settings
   stage: release
   script:
     - yarn lerna:publish

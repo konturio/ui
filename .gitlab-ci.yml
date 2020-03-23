@@ -51,11 +51,7 @@ build:
 
 release:
   stage: release
-  variables:
-    NODE_ENV: "production"
   script:
-    - echo $API
-    - echo $NODE_ENV
-    - lerna publish from-package --yes --regidtry https://nexus.kontur.io/repository/npm-snapshots-a/:_authToken=$NEXUS_NPM_TOKEN
+    - yarn lerna:publish
   dependencies:
     - install

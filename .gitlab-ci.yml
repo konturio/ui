@@ -48,6 +48,8 @@ bootstrap:
 build:
   extends: .default-job-settings
   stage: build
+  variables:
+    NODE_ENV: "production"
   script:
     - echo $API
     - echo $NODE_ENV

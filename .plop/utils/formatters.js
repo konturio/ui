@@ -16,6 +16,8 @@ function pascalCase(string) {
     .map((word, i) =>  capitalize(word)).join('')
 }
 
+module.exports.pascalCase = pascalCase;
+
 
 function kebabCase(string) {
   let result = string;

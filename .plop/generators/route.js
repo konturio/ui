@@ -46,8 +46,8 @@ module.exports = packages => ({
         path: './k2-dev/base/src/index.tsx',
         pattern: /\/\* !not-delete! cli:link \*\//,
         template: [
-          `{ to: '/{{routeName}}', label: '{{routeName}}' }`,
-          '\n/* !not-delete! cli:link */',
+          `{ to: '/{{routeName}}', label: '{{routeName}}' },`,
+          '/* !not-delete! cli:link */',
         ].join('\n            '),
       },
       {
@@ -56,9 +56,9 @@ module.exports = packages => ({
         pattern: /\{\/\* !not-delete! cli:route \*\/\}/,
         template: [
           '<Route path="/{{routeName}}">',
-          '  <{{targetPackage}} />',
+          '  <{{ pascalCase targetPackage }} />',
           '</Route>',
-          '{/* !not-delete! cli:link */}',
+          '{/* !not-delete! cli:route */}',
         ].join('\n          '),
       }
     ];

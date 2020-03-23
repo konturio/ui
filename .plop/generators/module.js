@@ -1,4 +1,4 @@
-const { camelCase } = require('../utils/formatters');
+const { pascalCase, kebabCase } = require('../utils/formatters');
 const { getDockerImageContext } = require('../utils/getDockerImageContext');
 
 function handleLernaError(error, answers) {
@@ -9,10 +9,10 @@ module.exports = packages => ({
   description: 'Create new module',
   prompts: [
     {
-      message: 'How we name it?',
+      message: 'How we name module (in PascalCase)?',
       name: 'moduleName',
       type: 'input',
-      filter: camelCase,
+      filter: pascalCase,
       validate: name => name.length > 2,
     },
     {
@@ -38,7 +38,7 @@ module.exports = packages => ({
         type: 'addMany',
         verbose: true,
         abortOnFail: true,
-        destination: './k2-packages/{{moduleName}}',
+        destination: './k2-packages/{{kebabCase moduleName}}',
         base: './templates/module',
         templateFiles: [
           './templates/module/**/*.*',
@@ -49,7 +49,7 @@ module.exports = packages => ({
         location: './k2-packages/tsconfig.json',
         onEdit: (json, answers) => {
           json.references.unshift({
-            path: `${answers.moduleName}`,
+            path: `${kebabCase(answers.moduleName)}`,
           });
           return json;
         },

@@ -56,6 +56,6 @@ release:
   script:
     - echo $API
     - echo $NODE_ENV
-    - yarn lerna:publish
+    - lerna publish from-package --yes --regidtry https://nexus.kontur.io/repository/npm-snapshots-a/:_authToken=$NEXUS_NPM_TOKEN
   dependencies:
     - install

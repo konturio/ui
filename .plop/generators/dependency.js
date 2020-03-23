@@ -57,7 +57,6 @@ module.exports = packages => ({
     },
   ],
   actions: (answers) => {
-    console.log(answers)
     const actionMap = {
       [WORKSPACE]: addPackageToWorkSpace,
       [BASE_APP]: addPackageToBaseApp,

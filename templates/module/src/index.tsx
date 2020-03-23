@@ -1,7 +1,18 @@
 import React from 'react';
+import { DynamicModuleLoader } from 'redux-dynamic-modules-react';
+import ConnectedComponent from './component';
+import getModule from './redux/module';
 
-function {{ pascalCase moduleName }}() {
-  return <div>Hello world, I am {{ moduleName }}!</div>
+export { {{moduleName}}StateField, {{moduleName}}State } from './redux/types';
+
+export interface I{{moduleName}}Props {
+  className?: string;
 }
 
-export default {{ pascalCase moduleName }};
+export default function Geocoder({ className }: I{{moduleName}}Props) {
+  return (
+    <DynamicModuleLoader modules={[getModule()]}>
+      <ConnectedComponent className={className} />
+    </DynamicModuleLoader>
+  );
+}

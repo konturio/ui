@@ -1,0 +1,29 @@
+@import "~@k2-packages/default-theme"
+
+.input 
+  padding-left unit * 1.5
+  padding-right unit * 1.5
+
+.card 
+  box-shadow shadow-1
+  border none
+
+.icon 
+  width unit * 3.75
+  height unit * 3.75
+  display flex
+  align-items center
+  justify-content center
+  border-radius 50%
+  cursor pointer
+  margin-left unit
+  color grey-30
+  &:hover
+    background-color grey-1
+    color grey-3
+  
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration
+  -webkit-appearance none

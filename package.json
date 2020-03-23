@@ -15,7 +15,8 @@
     "build": "tsc -b && lerna run build --stream",
     "lerna:publish": "lerna publish from-package --yes",
     "plop:new": "npx plop new",
-    "plop:add": "npx plop add"
+    "plop:add": "npx plop add",
+    "plop:route": "npx plop route"
   },
   "devDependencies": {
     "@babel/cli": "^7.8.4",

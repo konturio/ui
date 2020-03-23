@@ -45,6 +45,7 @@ const BasicRouting = () => (
             { to: '/kit', label: 'UI Kit' },
             { to: '/mapbox-map', label: 'Mapbox-map' },
             { to: '/fire-brigade', label: 'Fire brigade' },
+            /* !not-delete! cli:link */
             /* eslint-enable no-multi-spaces */
           ]}
         />

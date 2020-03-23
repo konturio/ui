@@ -15,6 +15,7 @@ variables:
   tags:
     - npm
     - docker
+    - yarn
 
 install:
   extends: .default-job-settings

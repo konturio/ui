@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "main": "index.styl",
   "publishConfig": {
-    "access": "public",
-    "registry": "https://nexus.kontur.io/repository/npm-snapshots-a"
+    "access": "restricted"
   },
   "repository": {
     "type": "git",

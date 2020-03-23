@@ -12,7 +12,7 @@
     },
     "publish": {
       "conventionalCommits": true,
-      "registry": "https://nexus.kontur.io/repository/npm-snapshots-a/:_authToken=$NEXUS_NPM_TOKEN"
+      "registry": "https://nexus.kontur.io/repository/npm-snapshots-a/"
     },
     "bootstrap": {
       "npmClientArgs": ["--no-package-lock"]

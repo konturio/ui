@@ -2,7 +2,7 @@ import React, { useState, forwardRef } from 'react';
 import clsx from 'clsx';
 import style from './style.styl';
 
-interface IInputProps extends React.HTMLProps<HTMLInputElement> {
+export interface IInputProps extends React.HTMLProps<HTMLInputElement> {
   onType?: (text: string) => void;
   className?: string;
   successes?: boolean;

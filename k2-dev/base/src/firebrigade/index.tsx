@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { connect } from 'react-redux';
 import Geocoder, { geocoderStateField, GeocoderState } from '@k2-packages/geocoder';
 import MapboxMap from '@k2-packages/mapbox-map';
@@ -29,7 +29,7 @@ function FireBrigadeApp({ selected }: IFireBrigadeApp) {
       setBounds(selected.bounds);
     }
   }, [selected]);
-
+  const searchBoxRef = useRef();
   const slots: ISlots = {
     background: (
       <MapboxMap
@@ -49,6 +49,7 @@ function FireBrigadeApp({ selected }: IFireBrigadeApp) {
       <Geocoder
         className={style.search}
         bounds={MINSK_BOUNDS}
+        inputRef={searchBoxRef}
       />
     ),
     topRight: (
@@ -65,5 +66,5 @@ function mapStateToProps(state): IFireBrigadeApp {
     selected: geocoderState?.selected,
   };
 }
-const ConnectedGeoCoderComponent = connect(mapStateToProps)(FireBrigadeApp);
-export default ConnectedGeoCoderComponent;
+const ConnectedFireBrigadeComponent = connect(mapStateToProps)(FireBrigadeApp);
+export default ConnectedFireBrigadeComponent;

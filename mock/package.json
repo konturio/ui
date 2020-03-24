@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Kontur spec tool helps to write mocks, spec and generate tests from those mocks",
   "main": "index.js",
-  "author": "Kontur inc.",
+  "author": "Kontur, Inc.",
   "license": "MIT",
   "private": true,
   "scripts": {

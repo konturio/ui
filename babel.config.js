@@ -22,27 +22,8 @@ module.exports = function babelConfig(api) {
       '@babel/react',
     ],
     plugins: [
-      '@babel/proposal-class-properties',
       '@babel/proposal-object-rest-spread',
-    ],
-    env: {
-      test: {
-        plugins: ["dynamic-import-node"],
-        presets: [
-          [
-            '@babel/env',
-            {
-              useBuiltIns: 'usage', // 'usage' | 'entry' | false, defaults to false.
-              corejs: '3',
-              targets: {
-                browsers: ['> 1%'],
-              },
-            },
-          ],
-          '@babel/typescript',
-          '@babel/react',
-        ],
-      },
-    },
+      '@babel/plugin-proposal-class-properties'
+    ]
   };
 };

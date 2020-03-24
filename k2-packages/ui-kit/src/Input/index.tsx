@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, forwardRef } from 'react';
 import clsx from 'clsx';
 import style from './style.styl';
 
@@ -15,7 +15,7 @@ function createOnType(onType: IInputProps['onType']) {
   return ({ target }) => onType && onType((target as HTMLInputElement).value);
 }
 
-export default function Input({
+function Input({
   className,
   error,
   successes,
@@ -28,7 +28,7 @@ export default function Input({
   onType,
   disabled,
   ...props
-}: IInputProps) {
+}: IInputProps, ref) {
   const onTypeHandler = createOnType(onType);
   const [focus, setFocus] = useState(false);
 
@@ -44,6 +44,7 @@ export default function Input({
       <div className={clsx(style.inputBox, className)}>
         <input
           {...props}
+          ref={ref}
           onChange={e => ((onChange && onChange(e), onTypeHandler(e)))}
           onFocus={e => ((onFocus && onFocus(e), setFocus(true)))}
           onBlur={e => ((onBlur && onBlur(e), setFocus(false)))}
@@ -55,3 +56,5 @@ export default function Input({
     </div>
   );
 }
+
+export default forwardRef(Input);

@@ -3,7 +3,7 @@ export interface I{{moduleName}}State {
   bar: null | string;
 }
 
-export const {{moduleName}}StateField = 'geocoderState';
+export const {{moduleName}}StateField = '{{moduleName}}State';
 
 export const SOME_ACTION = '{{moduleName}}/some-action';
 export interface ISomeAction {

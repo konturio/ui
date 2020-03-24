@@ -9,7 +9,7 @@ export interface I{{moduleName}}Props {
   className?: string;
 }
 
-export default function Geocoder({ className }: I{{moduleName}}Props) {
+export default function {{moduleName}}({ className }: I{{moduleName}}Props) {
   return (
     <DynamicModuleLoader modules={[getModule()]}>
       <ConnectedComponent className={className} />

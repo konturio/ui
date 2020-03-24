@@ -31,9 +31,9 @@ function {{moduleName}}Component({
 }
 
 const mapStateToProps = (state, ownProps) => {
-  const geocoderState: I{{moduleName}}State = state[{{moduleName}}StateField];
+  const {{moduleName}}State: I{{moduleName}}State = state[{{moduleName}}StateField];
   return {
-    foo: geocoderState.foo
+    foo: {{moduleName}}State.foo
   };
 };
 

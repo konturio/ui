@@ -65,6 +65,59 @@ To link packages use:
 $ docker exec -t <container_name> bash lerna link
 ```
 
+### Plop
+
+You can use plop scripts wizards as:
+```
+yarn plop:<script-name>
+```
+Currently available new scripts:
+ - new - generate new modules boilerplate
+ ```
+ yarn plop:new
+
+ > module name
+ ExampleModule
+
+ > add as dependency to another module? (Y/N)
+ N
+
+ Done!
+ ```
+ - add - add dependency to module  
+  Examples:
+  ```bash
+  # add `lodash` to my-module
+  yarn plop:add
+
+  > Type module name:
+  lodash
+
+  > Select module:
+  my-module
+
+  Done!
+
+  # or you can use short version without dialogue
+  yarn plop:add lodash my-module
+  ```
+ - route - adding route for module in base app
+ Examples:
+ ```bash
+ yarn plop:route
+
+ > route name:
+ foo
+
+ > select module:
+ myModule
+
+ Done!
+
+ # short version
+ yarn plop:route foo myModule
+ ```
+
 ### Version release
 
 To build automation on top of lerna and packages version management we have to follow `Conventional commits` specification.

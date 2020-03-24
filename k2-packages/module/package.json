@@ -4,7 +4,7 @@
   "main": "src/index.tsx",
   "types": "tsclib",
   "publishConfig": {
-    "access": "public"
+    "access": "restricted"
   },
   "repository": {
     "type": "git",

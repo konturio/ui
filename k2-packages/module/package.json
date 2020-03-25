@@ -11,9 +11,9 @@
     "url": "git@gitlab.com:kontur-private/k2/k2-front-end.git"
   },
   "dependencies": {
+    "@k2-packages/default-theme": "^1.0.0",
     "@types/react-redux": "^7.1.7",
     "immer": "^5.3.6",
-    "@k2-packages/default-theme": "^1.0.0",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-router-dom": "^5.1.2"

@@ -6,7 +6,6 @@ COPY lerna.json ./
 
 COPY tsconfig.json ./
 COPY tsconfig.settings.json ./
-COPY tsconfig.lint.json ./
 
 COPY babel.config.js ./
 

@@ -10,7 +10,7 @@ stages:
 variables:
   npm_config_cache: "$CI_PROJECT_DIR/.npm"
   API: "kcfirebrigade"
-#  CI_DEBUG_TRACE: "true"
+  CI_DEBUG_TRACE: "true"
 
 .default-job-settings:
   tags:

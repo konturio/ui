@@ -4,6 +4,10 @@
   "main": "src/index.tsx",
   "types": "tsclib",
   "private": true,
+  "scripts": {
+    "dev": "webpack-dev-server --mode development --host 0.0.0.0 --disable-host-check --color",
+    "build": "webpack"
+  },
   "dependencies": {
     "@k2-packages/client": "^1.0.0",
     "@k2-packages/default-theme": "^1.0.0",
@@ -19,9 +23,5 @@
     "react-router-dom": "^5.1.2",
     "redux-dynamic-modules": "^5.2.0",
     "redux-dynamic-modules-saga": "^5.2.0"
-  },
-  "scripts": {
-    "dev": "webpack-dev-server --mode development --host 0.0.0.0 --disable-host-check --color",
-    "build": "webpack"
   }
 }

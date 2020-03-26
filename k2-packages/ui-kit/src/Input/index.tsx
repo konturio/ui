@@ -8,7 +8,7 @@ export interface IInputProps extends React.HTMLProps<HTMLInputElement> {
   successes?: boolean;
   loading?: boolean;
   error?: boolean;
-  errorMessage?: string;
+  message?: string;
 }
 
 function createOnType(onType: IInputProps['onType']) {
@@ -21,7 +21,7 @@ function Input({
   successes,
   loading,
   children,
-  errorMessage,
+  message,
   onChange,
   onFocus,
   onBlur,
@@ -52,7 +52,7 @@ function Input({
         />
         <div className={style.icons}>{children}</div>
       </div>
-      {errorMessage && <div className={style.message}>{errorMessage}</div>}
+      {message && <div className={style.message}>{message}</div>}
     </div>
   );
 }

@@ -18,6 +18,9 @@
     },
     {
       "path": "default-theme"
+    },
+    {
+      "path": "default-icons"
     }
   ],
   "compilerOptions": {

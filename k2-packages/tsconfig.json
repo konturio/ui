@@ -14,10 +14,13 @@
       "path": "module"
     },
     {
-      "path": "geocoder"
+      "path": "default-icons"
     },
     {
       "path": "default-theme"
+    },
+    {
+      "path": "geocoder"
     }
   ],
   "compilerOptions": {

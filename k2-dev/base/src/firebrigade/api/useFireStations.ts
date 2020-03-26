@@ -20,7 +20,7 @@ function convertResponse(response: MVPFireStation): IFireStation {
     name: response.name,
     meters: response.distance,
     minutes: response.duration,
-    contacts: response.contacts.split(','),
+    contacts: response.contacts.split(',').filter(c => c !== ''),
     units: [{
       type: 'Цистерны',
       count: response.waterTenders,

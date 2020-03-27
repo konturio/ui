@@ -1,30 +1,25 @@
 import React from 'react';
-import styles from './style.styl';
+import clsx from 'clsx';
+import style from './style.styl';
 
 export interface ISlots {
   background?: React.ReactChild | React.ReactChild[];
-  topLeft?: React.ReactChild | React.ReactChild[];
-  topRight?: React.ReactChild | React.ReactChild[];
-  bottomLeft?: React.ReactChild | React.ReactChild[];
-  bottomRight?: React.ReactChild | React.ReactChild[];
+  left?: React.ReactChild | React.ReactChild[];
+  right?: React.ReactChild | React.ReactChild[];
 }
 
 export default function AppLayout({ slots }: { slots: ISlots }) {
   return (
-    <section className={styles.fireBrigade}>
-      { slots.background }
-      <div className={styles.overMap}>
-        <div className={styles.topLeftSlot}>
-          { slots.topLeft }
+    <section className={style.fireBrigade}>
+      <div className={clsx(style.background)}>
+        {slots.background}
+      </div>
+      <div className={style.slots}>
+        <div className={clsx(style.slot, style.left)}>
+          {slots.left}
         </div>
-        <div className={styles.topRightSlot}>
-          { slots.topRight }
-        </div>
-        <div className={styles.bottomLeftSlot}>
-          { slots.bottomLeft }
-        </div>
-        <div className={styles.bottomRightSlot}>
-          { slots.bottomRight }
+        <div className={clsx(style.slot, style.right)}>
+          {slots.right}
         </div>
       </div>
     </section>

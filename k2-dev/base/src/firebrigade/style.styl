@@ -3,60 +3,44 @@
 .fireBrigade 
   flex 1
   position relative
-
+  display: flex;
+  flex-flow: column nowrap;
+  min-height: 0;
 
 .map 
   height 100%
   width 100%
 
-
 .search 
   width 300px
 
 
-.overMap 
+.background 
   position absolute
   top 0
   bottom 0
   right 0
   left 0
-  pointer-events none
-  margin 8px
-  display flex
 
-.topLeftSlot 
-  position absolute
-  top: 0
-  left: 0
-  bottom: 0
-  pointer-events all
-  display flex
-  flex-flow: column
 
-.topRightSlot 
-  position: absolute
-  top: 0
-  right: 0
-  bottom: 0
-  pointer-events: all
+.slots
+  display flex
+  flex-flow: row wrap
+  min-height: 0;
+  
+.slot
+  z-index 0
+  outline: 1px solid cyan
+  flex-basis: 50%;
   display flex
   flex-flow: column
+  padding: 8px
+  overflow: hidden
+  height: 100%
 
 
-.bottomLeftSlot 
-  position absolute
-  bottom 0
-  left 0
-  pointer-events all
-  display flex
-  flex-flow: column
+.right
+  align-items: flex-end
 
-
-.bottomRightSlot 
-  position absolute
-  bottom 0
-  right 0
-  pointer-events all
-  display flex
-  flex-flow: column
-
+.left
+  align-items: flex-start

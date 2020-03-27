@@ -45,14 +45,14 @@ function FireBrigadeApp({ selected }: IFireBrigadeApp) {
         bounds={bounds}
       />
     ),
-    topLeft: (
+    left: (
       <Geocoder
         className={style.search}
         bounds={MINSK_BOUNDS}
         inputRef={searchBoxRef}
       />
     ),
-    topRight: (
+    right: (
       fireStations ? <List items={fireStations} /> : undefined
     ),
   };

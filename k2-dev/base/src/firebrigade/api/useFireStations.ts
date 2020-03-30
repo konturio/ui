@@ -14,12 +14,15 @@ interface MVPFireStation {
 }
 
 // While backend work in MVP mode response need to fix
+function secToMin(sec: number) {
+  return Math.round(sec / 60);
+}
 function convertResponse(response: MVPFireStation): IFireStation {
   return {
     id: response.id,
     name: response.name,
     meters: response.distance,
-    minutes: response.duration,
+    minutes: secToMin(response.duration),
     contacts: response.contacts.split(',').filter(c => c !== ''),
     units: [{
       type: 'Цистерны',

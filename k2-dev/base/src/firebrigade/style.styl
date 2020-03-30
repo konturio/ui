@@ -27,17 +27,18 @@
   display flex
   flex-flow: row wrap
   min-height: 0;
-  
+  pointer-events: none;
+
 .slot
   z-index 0
-  outline: 1px solid cyan
   flex-basis: 50%;
   display flex
   flex-flow: column
   padding: 8px
   overflow: hidden
   height: 100%
-
+  & > *
+    pointer-events: all;
 
 .right
   align-items: flex-end

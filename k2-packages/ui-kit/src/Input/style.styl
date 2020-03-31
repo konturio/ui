@@ -1,10 +1,5 @@
 @import "~@k2-packages/default-theme"
 
-
-outline-shadow(color) 
-  box-shadow: 0px 0px 0px 3px rgba(color, 0.3);
-
-
 .root 
   input 
     border: none;
@@ -18,7 +13,12 @@ outline-shadow(color)
   display: flex;
   flex-flow: row nowrap;
 
-
+.message
+  font-size: unit * 1.5;
+  padding: unit * 0.5 unit
+  color: text-color
+  border-radius: border-radius;
+  box-shadow: shadow-2
 .inputBox 
   display: flex;
   flex-flow: row nowrap;
@@ -84,9 +84,6 @@ outline-shadow(color)
 
   .message 
     color: error-color;
-    font-size: unit * 1.5;
-    font-weight: bold;
-    padding: unit * 0.5 unit
   
 
 

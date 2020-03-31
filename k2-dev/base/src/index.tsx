@@ -66,7 +66,7 @@ const BasicRouting = () => (
               <div>Error</div>
               <UI.Input error />
               <div>Error with message</div>
-              <UI.Input error errorMessage="Something bag happen" />
+              <UI.Input error message="Something bag happen" />
               <div>Disabled</div>
               <UI.Input disabled />
               <div>With icon</div>

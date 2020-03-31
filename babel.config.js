@@ -4,7 +4,7 @@ module.exports = function babelConfig(api) {
     babelrcRoots: [
       '.',
       './k2-dev/*',
-      './k2-packages/*'
+      './k2-packages/*',
     ],
     presets: [
       [
@@ -23,7 +23,7 @@ module.exports = function babelConfig(api) {
     ],
     plugins: [
       '@babel/proposal-object-rest-spread',
-      '@babel/plugin-proposal-class-properties'
-    ]
+      '@babel/plugin-proposal-class-properties',
+    ],
   };
 };

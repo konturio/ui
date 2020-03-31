@@ -118,7 +118,15 @@ Currently available new scripts:
  yarn plop:route foo myModule
  ```
 
-### Version release
+### Git branch naming
+
+For every feature you must create new branch in format
+```
+{type}/{scope}#{task_number}
+```
+* types same as commits types
+
+### Commit naming
 
 To build automation on top of lerna and packages version management we have to follow `Conventional commits` specification.
 
@@ -143,6 +151,34 @@ Must be one of the following:
 * **refactor**: A code change that neither fixes a bug nor adds a feature
 * **style**: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
 * **test**: Adding missing tests or correcting existing tests
+
+###  Version release
+After you have finished working with the branch:
+1. Push and publish it into the git:  
+`git push --set-upstream origin <branch_name>`
+
+2. Open Merge Request (MR) into dev  
+ - Select `Delete source branch`
+ - Select `Squash commits`  
+ - Write changelog in description of MR (it will be added in change log of all modules that depend on your MR)
+
+3. Make sure that all CI stages were successful and choice reviewer
+
+4. Make sure that all issues identified in the review process closed,
+and request have at least one :like: (not yours). If CI/CD pipeline without errors - accept MR.
+
+If you need release modules in NPM nexus repo, you need some extra steps:
+
+5. Clone fresh `dev` branch with merged request
+6. `lerna versions --no-git-tag-version`
+7. Commit changes
+```
+git add .
+git commit  -m 'modules release'
+git push
+```
+8. What until pipeline task 'release' was success
+9. Rebuild the app where you want to use the new modules
 
 ### TODO:
  - Commit message validation at local development (Husky)?

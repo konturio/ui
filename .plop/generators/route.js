@@ -1,4 +1,3 @@
-const { camelCase } = require('../utils/formatters');
 const { getDockerImageContext } = require('../utils/getDockerImageContext');
 const chalk = require('chalk');
 

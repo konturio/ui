@@ -5,7 +5,10 @@
       "path": "client"
     },
     {
-      "path": "ui-kit"
+      "path": "default-icons"
+    },
+    {
+      "path": "default-theme"
     },
     {
       "path": "mapbox-map"
@@ -14,10 +17,7 @@
       "path": "module"
     },
     {
-      "path": "default-icons"
-    },
-    {
-      "path": "default-theme"
+      "path": "ui-kit"
     },
     {
       "path": "geocoder"

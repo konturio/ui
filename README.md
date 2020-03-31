@@ -68,10 +68,23 @@ $ docker exec -t <container_name> bash lerna link
 ### Plop
 
 You can use plop scripts wizards as:
+
 ```
 yarn plop:<script-name>
 ```
+
 Currently available new scripts:
+
+- ref - update references is tsconfig.json. Highly recommended run this task after other plop tasks
+ ```
+ yarn plop:ref
+
+ > Sure?
+ Y
+ 
+ Done!
+ ```
+
  - new - generate new modules boilerplate
  ```
  yarn plop:new

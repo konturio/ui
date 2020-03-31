@@ -170,14 +170,14 @@ and request have at least one :like: (not yours). If CI/CD pipeline without erro
 If you need release modules in NPM nexus repo, you need some extra steps:
 
 5. Clone fresh `dev` branch with merged request
-6. `lerna versions --no-git-tag-version`
+6. `lerna version --no-git-tag-version`
 7. Commit changes
 ```
 git add .
 git commit  -m 'modules release'
 git push
 ```
-8. What until pipeline task 'release' was success
+8. Wait until pipeline task 'release' was success
 9. Rebuild the app where you want to use the new modules
 
 ### TODO:

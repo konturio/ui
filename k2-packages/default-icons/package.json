@@ -2,7 +2,7 @@
   "name": "@k2-packages/default-icons",
   "version": "1.0.1",
   "main": "src/index.tsx",
-  "types": "tsclib",
+  "types": "src/index.tsx",
   "publishConfig": {
     "access": "restricted"
   },

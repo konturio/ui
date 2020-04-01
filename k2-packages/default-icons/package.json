@@ -1,6 +1,6 @@
 {
   "name": "@k2-packages/default-icons",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "src/index.tsx",
   "types": "src/index.tsx",
   "publishConfig": {

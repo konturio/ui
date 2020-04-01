@@ -16,7 +16,8 @@
     "lerna:publish": "lerna publish from-package --yes",
     "plop:new": "npx plop new",
     "plop:add": "npx plop add",
-    "plop:route": "npx plop route"
+    "plop:route": "npx plop route",
+    "plop:ref": "npx plop ref"
   },
   "devDependencies": {
     "@babel/cli": "^7.8.4",
@@ -72,12 +73,14 @@
       "\\.(styl|css)$": "<rootDir>/.jest/css-mock.js"
     },
     "moduleDirectories": [
-      "k2-dev",
-      "k2-packages"
+      "node_modules"
     ],
+    "testPathIgnorePatterns": [
+      "tsclib"
+    ],
+    "verbose": true,
     "projects": [
-      "<rootDir>/k2-packages/*/src",
-      "<rootDir>/k2-dev/*/src"
+      "<rootDir>/k2-packages/**/*/src"
     ],
     "transform": {
       ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js",

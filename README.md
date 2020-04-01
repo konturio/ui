@@ -81,7 +81,7 @@ Currently available new scripts:
 
  > Sure?
  Y
- 
+
  Done!
  ```
 
@@ -97,7 +97,7 @@ Currently available new scripts:
 
  Done!
  ```
- - add - add dependency to module  
+ - add - add dependency to module
   Examples:
   ```bash
   # add `lodash` to my-module
@@ -167,12 +167,12 @@ Must be one of the following:
 
 ###  Version release
 After you have finished working with the branch:
-1. Push and publish it into the git:  
+1. Push and publish it into the git:
 `git push --set-upstream origin <branch_name>`
 
-2. Open Merge Request (MR) into dev  
+2. Open Merge Request (MR) into dev
  - Select `Delete source branch`
- - Select `Squash commits`  
+ - Select `Squash commits`
  - Write changelog in description of MR (it will be added in change log of all modules that depend on your MR)
 
 3. Make sure that all CI stages were successful and choice reviewer
@@ -183,7 +183,7 @@ and request have at least one :like: (not yours). If CI/CD pipeline without erro
 If you need release modules in NPM nexus repo, you need some extra steps:
 
 5. Clone fresh `dev` branch with merged request
-6. `lerna version --no-git-tag-version`
+6. `lerna version --no-push`
 7. Commit changes
 ```
 git add .

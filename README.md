@@ -187,7 +187,7 @@ If you need release modules in NPM nexus repo, you need some extra steps:
 7. Commit changes
 ```
 git add .
-git commit  -m 'build: modules version bummp'
+git commit  -m 'build: modules version bump'
 git push origin --tags
 ```
 8. Wait until pipeline task 'release' was success

@@ -41,10 +41,12 @@ function Input({
   }, [isFocused]);
 
   useEffect(() => {
-    if (focus) {
-      ref.current.focus();
-    } else {
-      ref.current.blur();
+    if (ref?.current?.focus) {
+      if (focus) {
+        ref.current.focus();
+      } else {
+        ref.current.blur();
+      }
     }
   }, [focus]);
 

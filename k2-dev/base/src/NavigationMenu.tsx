@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useRouteMatch } from 'react-router-dom';
-import styles from './index.styl';
+import style from './style.styl';
 
 interface ILink {
   to: string;
@@ -15,7 +15,7 @@ function HighlightedLink({ to, label, exact }: ILink) {
   });
 
   return (
-    <div className={match ? styles.activeLink : ''}>
+    <div className={match ? style.activeLink : ''}>
       <Link to={to}>{label}</Link>
     </div>
   );
@@ -23,7 +23,7 @@ function HighlightedLink({ to, label, exact }: ILink) {
 
 export default function NavigationMenu({ links }: { links: ILink[] }) {
   return (
-    <nav className={styles.navigation}>
+    <nav className={style.navigation}>
       {links.map(props => <HighlightedLink key={props.to} {...props} />)}
     </nav>
   );

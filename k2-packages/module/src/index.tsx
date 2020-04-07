@@ -1,6 +1,6 @@
 import React from 'react';
-import styles from './index.styl'
+import style from './style.styl'
 
-const Module = () => (<div className={styles.ModuleName}>Hello world, Module!</div>);
+const Module = () => (<div className={style.ModuleName}>Hello world, Module!</div>);
 
 export default Module;

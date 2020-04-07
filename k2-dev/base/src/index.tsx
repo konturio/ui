@@ -10,13 +10,21 @@ import UI from '@k2-packages/ui-kit';
 import MapboxMap from '@k2-packages/mapbox-map';
 import FireBrigade from './firebrigade';
 import NavigationMenu from './NavigationMenu';
+import {
+  SearchIcon,
+  CallIcon,
+  CloseIcon,
+  FlameIcon,
+  FireTruckIcon,
+  HydrantIcon
+} from '@k2-packages/default-icons';
 /* !not-delete! cli:import */
 
 import store from './store';
 
 // Styles
 import './base.styl';
-import style from './index.styl';
+import style from './style.styl';
 
 const mapboxConfig: {
   accessToken: string;
@@ -24,7 +32,7 @@ const mapboxConfig: {
 } = {
   accessToken:
     'pk.eyJ1IjoibnNoa3V0b3YiLCJhIjoiY2s2Y2ExODFvMGpoaDNrb3ZueXYyMDBmZiJ9.d2VPRqEfvCd4fvH7edB6tg',
-  style: 'mapbox://styles/nshkutov/ck6ca2wfb397m1imrknjlqd2l',
+  style: 'mapbox://styles/nshkutov/ck6ca2wfb397m1imrknjlqd2l'
 };
 
 const LoadingState = (
@@ -45,6 +53,7 @@ const BasicRouting = () => (
             { to: '/kit', label: 'UI Kit' },
             { to: '/mapbox-map', label: 'Mapbox-map' },
             { to: '/fire-brigade', label: 'Fire brigade' },
+            { to: '/icons', label: 'Icons' }
             /* !not-delete! cli:link */
             /* eslint-enable no-multi-spaces */
           ]}
@@ -83,6 +92,14 @@ const BasicRouting = () => (
               onClick={console.log}
               onLoad={console.log}
             />
+          </Route>
+          <Route path="/icons">
+            <SearchIcon />
+            <CallIcon />
+            <CloseIcon />
+            <FlameIcon />
+            <FireTruckIcon />
+            <HydrantIcon />
           </Route>
           <Route path="/fire-brigade">
             <FireBrigade />

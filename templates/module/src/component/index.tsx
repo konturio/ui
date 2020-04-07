@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import clsx from 'clsx';
-import style from './index.styl';
+import style from './style.styl';
 
 import { I{{moduleName}}State, {{moduleName}}StateField } from './redux/types';
 

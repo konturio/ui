@@ -53,3 +53,26 @@ node_modules/
 # Optional eslint cache
 .eslintcache
 tsconfig.tsbuildinfo
+coverage/clover.xml
+coverage/coverage-final.json
+coverage/lcov.info
+coverage/lcov-report/base.css
+coverage/lcov-report/block-navigation.js
+coverage/lcov-report/favicon.png
+coverage/lcov-report/index.html
+coverage/lcov-report/prettify.css
+coverage/lcov-report/prettify.js
+coverage/lcov-report/sort-arrow-sprite.png
+coverage/lcov-report/sorter.js
+coverage/lcov-report/client/src/index.html
+coverage/lcov-report/client/src/index.ts.html
+coverage/lcov-report/module/src/index.html
+coverage/lcov-report/module/src/index.tsx.html
+coverage/lcov-report/ui-kit/src/Card/index.html
+coverage/lcov-report/ui-kit/src/Card/index.tsx.html
+coverage/lcov-report/ui-kit/src/DropDown/HighlightSpan.tsx.html
+coverage/lcov-report/ui-kit/src/DropDown/index.html
+coverage/lcov-report/ui-kit/src/DropDown/index.tsx.html
+coverage/lcov-report/ui-kit/src/DropDown/SelectableElement.tsx.html
+coverage/lcov-report/ui-kit/src/Input/index.html
+coverage/lcov-report/ui-kit/src/Input/index.tsx.html

@@ -13,8 +13,8 @@ module.exports = {
   //   "k2-packages"
   // ],
   // "projects": [
-  //   "<rootDir>/k2-packages/*/src",
-  //   "<rootDir>/k2-dev/*/src"
+  //   "<rootDir>/k2-packages/",
+  //   "<rootDir>/k2-dev/"
   // ],
   verbose: true,
   transform: {

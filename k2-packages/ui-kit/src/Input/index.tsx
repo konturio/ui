@@ -14,9 +14,19 @@ export interface IInputProps extends React.HTMLProps<HTMLInputElement> {
   isFocused?: boolean;
 }
 
+/* Cancel default behavior and extend it */
 function createOnType(onType: IInputProps['onType']) {
   return ({ target }) => onType && onType((target as HTMLInputElement).value);
 }
+
+function preventDefault(e: { preventDefault?: () => void }): void {
+  /* istanbul ignore if */
+  if (e.preventDefault) e.preventDefault();
+}
+
+function isFunc<T>(maybeFn: any): maybeFn is (T) => {} {
+  return typeof maybeFn === 'function';
+} 
 
 function Input({
   className,
@@ -41,28 +51,24 @@ function Input({
   }, [isFocused]);
 
   useEffect(() => {
-    if (ref?.current?.focus) {
+    if (ref?.current) {
       if (focus) {
-        ref.current.focus();
+        isFunc(ref.current.focus) && ref.current.focus()
       } else {
-        ref.current.blur();
+        isFunc(ref.current.blur) && ref.current.blur()
       }
     }
   }, [focus]);
 
   const nativeFocusEventHandler = useCallback(e => {
-    e.preventDefault(); // Cancel default behavior and extend it
-    if (typeof onFocus === 'function') {
-      onFocus(e);
-    }
+    preventDefault(e); 
+    isFunc<typeof e>(onFocus) && onFocus(e)
     setFocus(true); // Delegate default behavior to effect
   }, [onFocus]);
 
   const nativeBlurEventHandler = useCallback(e => {
-    e.preventDefault(); // Cancel default behavior and extend it
-    if (typeof onBlur === 'function') {
-      onBlur(e);
-    }
+    preventDefault(e); 
+    isFunc<typeof e>(onBlur) && onBlur(e)
     setFocus(false); // Delegate default behavior to effect
   }, [onBlur]);
 

@@ -19,12 +19,11 @@
     "target": "es6",
     "module": "ESNext",
     "moduleResolution": "node",
-    "jsx": "preserve",
+    "jsx": "react",
     "lib": ["dom", "ESNext"],
     "strict": true,
-
+    "esModuleInterop": true,
     "typeRoots": ["./node_modules/@types"],
-
     "composite": true,
     "declaration": true,
     "declarationMap": true,

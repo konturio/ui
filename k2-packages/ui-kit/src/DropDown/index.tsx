@@ -18,12 +18,11 @@ interface IOption {
 
 interface IDropDownProps {
   onChange(event): void;
-  selected: IOption['value'] | null;
+  selected?: IOption['value'] | null;
   options: IOption[];
-  highlightText: string;
+  highlightText?: string;
   isFocused?: boolean;
 }
-
 
 export default function DropDown({
   options,
@@ -46,7 +45,11 @@ export default function DropDown({
             i < 9 ? <span className={style.bind}>{i + 1}</span> : undefined
           }
         >
-          <HighlightSpan highlight={highlightText}>{label}</HighlightSpan>
+          {
+            highlightText
+              ? <HighlightSpan highlight={highlightText}>{label}</HighlightSpan>
+              : label
+            }
         </SelectableElement>
       ))}
     </div>

@@ -1,7 +1,8 @@
 module.exports = {
   env: {
     browser: true,
-    es6: true
+    es6: true,
+    "jest/globals": true
   },
   extends: ['plugin:react/recommended', 'airbnb'],
   globals: {
@@ -16,7 +17,7 @@ module.exports = {
     ecmaVersion: 2019,
     sourceType: 'module',
   },
-  plugins: ['react', '@typescript-eslint', 'prettier'],
+  plugins: ['react', '@typescript-eslint', 'prettier', 'jest'],
   rules: {
     'react/jsx-filename-extension': [2, { extensions: ['.jsx', '.tsx'] }],
     '@typescript-eslint/no-unused-vars': [2, { args: 'none' }],
@@ -39,7 +40,8 @@ module.exports = {
     'no-useless-constructor': 'off',
     'no-empty-function': ["error", { "allow": ["constructors"] }],
     'import/prefer-default-export': 'off',
-    'no-plusplus': 'off'
+    'no-plusplus': 'off',
+    'no-undef': 'off'
   },
   settings: {
     'import/resolver': {

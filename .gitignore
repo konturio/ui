@@ -37,6 +37,7 @@ templates/**/dist
 
 # Test
 k2-packages/coverage
+coverage/
 
 # Runtime data
 pids
@@ -52,3 +53,4 @@ node_modules/
 
 # Optional eslint cache
 .eslintcache
+tsconfig.tsbuildinfo

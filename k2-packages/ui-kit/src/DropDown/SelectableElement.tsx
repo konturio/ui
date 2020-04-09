@@ -8,7 +8,7 @@ interface ISelectableElement {
   onChange: (e) => void
   value: string | number;
   id: string;
-  isSelected: boolean;
+  isSelected?: boolean;
   badge?: string | React.ReactChild | React.ReactChild[];
 }
 
@@ -31,10 +31,8 @@ export default function SelectableElement({
         className={style.radio}
       />
       <label htmlFor={id} className={style.option}>
-        <span className={style.badge}>{badge}</span>
-        <div>
-          {children}
-        </div>
+        { badge && <span className={style.badge}>{badge}</span> }
+        <div> {children} </div> 
       </label>
     </div>
   );

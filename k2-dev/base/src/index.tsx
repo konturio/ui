@@ -91,6 +91,13 @@ const BasicRouting = () => (
               className={style.Map}
               onClick={console.log}
               onLoad={console.log}
+              bounds={[
+                [27.24, 53.81],
+                [27.83, 54.01]
+              ]}
+              boundsOptions={{
+                padding: 50
+              }}
             />
           </Route>
           <Route path="/icons">

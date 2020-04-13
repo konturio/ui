@@ -10,7 +10,9 @@
     "type": "git",
     "url": "git@gitlab.com:kontur-private/k2/k2-front-end.git"
   },
-  "dependencies": {
+  "scripts": {},
+  "dependencies": {},
+  "peerDependencies": {
     "react": "^16.13.0"
   }
 }

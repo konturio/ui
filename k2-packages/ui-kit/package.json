@@ -10,8 +10,11 @@
     "type": "git",
     "url": "git@gitlab.com:kontur-private/k2/k2-front-end.git"
   },
+  "scripts": {},
   "dependencies": {
-    "@k2-packages/default-theme": "^1.4.0",
+    "@k2-packages/default-theme": "^1.4.0"
+  },
+  "peerDependencies": {
     "clsx": "^1.1.0",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",

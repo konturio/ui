@@ -24,7 +24,7 @@ function preventDefault(e: { preventDefault?: () => void }): void {
   if (e.preventDefault) e.preventDefault();
 }
 
-function isFunc<T>(maybeFn: any): maybeFn is (T) => {} {
+function isFunc<T>(maybeFn: any): maybeFn is (T) => void {
   return typeof maybeFn === 'function';
 } 
 

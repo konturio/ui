@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.5.0](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@1.4.0...@k2-packages/ui-kit@1.5.0) (2020-04-13)
+
+
+### Bug Fixes
+
+* **dependencies:** unify for dependecies ([4fd5b9f](https://gitlab.com/kontur-private/k2/k2-front-end/commit/4fd5b9fae0e550d2aa30af4334f9e3dbe892e476))
+* component crush ([8750b5b](https://gitlab.com/kontur-private/k2/k2-front-end/commit/8750b5b3c8748be4a34bff551afce32fda6e83a9))
+
+
+### Features
+
+* add support mapbox layers spec ([bf36c2e](https://gitlab.com/kontur-private/k2/k2-front-end/commit/bf36c2e65e1258b07528a8fa055068a507787a03))
+
+
+
+
+
 # 1.4.0 (2020-04-01)
 
 

@@ -1,6 +1,6 @@
 {
   "name": "@k2-dev/base",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "main": "src/index.tsx",
   "types": "tsclib",
   "private": true,
@@ -9,12 +9,12 @@
     "build": "webpack"
   },
   "dependencies": {
-    "@k2-packages/client": "^1.4.0",
-    "@k2-packages/default-theme": "^1.4.0",
-    "@k2-packages/geocoder": "^1.4.0",
-    "@k2-packages/mapbox-map": "^1.4.0",
-    "@k2-packages/module": "^1.4.0",
-    "@k2-packages/ui-kit": "^1.4.0"
+    "@k2-packages/client": "^1.5.0",
+    "@k2-packages/default-theme": "^1.4.1",
+    "@k2-packages/geocoder": "^1.4.1",
+    "@k2-packages/mapbox-map": "^1.5.0",
+    "@k2-packages/module": "^1.4.1",
+    "@k2-packages/ui-kit": "^1.5.0"
   },
   "peerDependencies": {
     "@types/react-redux": "^7.1.7",

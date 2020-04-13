@@ -1,6 +1,6 @@
 {
   "name": "@k2-packages/default-theme",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "main": "index.styl",
   "publishConfig": {
     "access": "restricted"
@@ -9,7 +9,5 @@
     "type": "git",
     "url": "git@gitlab.com:kontur-private/k2/k2-front-end.git"
   },
-  "scripts": {},
-  "dependencies": {},
-  "peerDependencies": {}
+  "scripts": {}
 }

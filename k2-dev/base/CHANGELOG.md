@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.1](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-dev/base@1.4.0...@k2-dev/base@1.4.1) (2020-04-13)
+
+
+### Bug Fixes
+
+* **dependencies:** unify for dependecies ([4fd5b9f](https://gitlab.com/kontur-private/k2/k2-front-end/commit/4fd5b9fae0e550d2aa30af4334f9e3dbe892e476))
+
+
+
+
+
 # 1.4.0 (2020-04-01)
 
 

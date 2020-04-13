@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.4](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/default-icons@1.0.3...@k2-packages/default-icons@1.0.4) (2020-04-13)
+
+
+### Bug Fixes
+
+* **dependencies:** unify for dependecies ([4fd5b9f](https://gitlab.com/kontur-private/k2/k2-front-end/commit/4fd5b9fae0e550d2aa30af4334f9e3dbe892e476))
+
+
+
+
+
 ## 1.0.3 (2020-04-01)
 
 

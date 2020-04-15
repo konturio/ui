@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.6.0](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@1.5.0...@k2-packages/ui-kit@1.6.0) (2020-04-15)
+
+
+### Bug Fixes
+
+* disable widh ([fd70322](https://gitlab.com/kontur-private/k2/k2-front-end/commit/fd70322d74ac452c7d722635d0ea6ae99b517b87))
+
+
+### Features
+
+* add styling features ([2cbbc9a](https://gitlab.com/kontur-private/k2/k2-front-end/commit/2cbbc9ae51d02d0a5c8585cf042ba9e6c6673d28))
+
+
+
+
+
 # [1.5.0](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@1.4.0...@k2-packages/ui-kit@1.5.0) (2020-04-13)
 
 

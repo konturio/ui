@@ -20,6 +20,13 @@ describe('<HighlightSpan> component', () => {
 
   });
 
+  it('Highlight not crush when prop not set', () => {
+    const text = '[\\^$.|?*+()';
+    shallow(
+      <HighlightSpan>{text}</HighlightSpan>
+    );
+  });
+
   it('Escape special chars', () => {
     const text = '[\\^$.|?*+()';
     const wrapper = shallow(

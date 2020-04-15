@@ -2,7 +2,7 @@ import React from 'react';
 import style from './style.styl';
 
 const NEED_ESCAPE = ['[', '\\', '^', '$', '.', '|', '?', '*', '+', '(', ')'];
-function escapeSpecialCharacters(dangerString: string): string {
+function escapeSpecialCharacters(dangerString: string = ''): string {
   let safeString = '';
   for (let i = 0; i < dangerString.length; i++) {
     const char = dangerString.charAt(i);
@@ -16,7 +16,7 @@ function escapeSpecialCharacters(dangerString: string): string {
 }
 
 interface IHighlightSpan {
-  highlight: string;
+  highlight?: string;
   children: string;
 }
 

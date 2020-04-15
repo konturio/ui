@@ -12,7 +12,7 @@ import SelectableElement from './SelectableElement';
 // const stopBlurEvent = e => e.preventDefault();
 
 interface IOption {
-  label: string;
+  label: string | React.ReactChild | React.ReactChild[];
   value: string | number;
 }
 
@@ -22,6 +22,9 @@ interface IDropDownProps {
   options: IOption[];
   highlightText?: string;
   isFocused?: boolean;
+  className?: string;
+  badgeClass?: string;
+
 }
 
 export default function DropDown({
@@ -30,9 +33,11 @@ export default function DropDown({
   onChange,
   highlightText,
   isFocused,
+  className,
+  badgeClass,
 }: IDropDownProps) {
   return (
-    <div className={clsx(style.root, { [style.focus]: isFocused })}>
+    <div className={clsx(className, { [style.focus]: isFocused })}>
       {options.map(({ value, label }, i) => (
         <SelectableElement
           // eslint-disable-next-line react/no-array-index-key
@@ -41,12 +46,13 @@ export default function DropDown({
           value={value}
           onChange={onChange}
           isSelected={value === selected}
+          badgeClass={badgeClass}
           badge={
             i < 9 ? <span className={style.bind}>{i + 1}</span> : undefined
           }
         >
           {
-            highlightText
+            highlightText && typeof label === 'string'
               ? <HighlightSpan highlight={highlightText}>{label}</HighlightSpan>
               : label
             }

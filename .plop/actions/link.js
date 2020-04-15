@@ -14,8 +14,10 @@ async function link(answers, { linkFile, abortOnFail = true, onError }, plop) {
   ls(os.homedir() + '/.config/yarn/link/@k2-packages')
     .forEach(k2 => registered.push('@k2-packages/' + k2));
 
-  json.packages.push('react');
-  json.packages.push('react-dom');
+  json.packages.push('./node_modules/react');
+  json.packages.push('./node_modules/react-dom');
+  json.packages.push('./node_modules/redux');
+  json.packages.push('./node_modules/react-redux');
 
   const [ already, notYet ] = json.packages.reduce((acc, package) => {
     registered.includes(package)
@@ -39,7 +41,7 @@ async function link(answers, { linkFile, abortOnFail = true, onError }, plop) {
   try {
     const { stdout, stderr } = await exec([
       `cd ${json.project}`,
-      ...json.packages.map(pack => `yarn link ${pack}`)
+      ...json.packages.map(pack => `yarn link ${pack.replace('./node_modules/', '')}`)
     ].join('&&'));
     
     console.log('package', stdout)

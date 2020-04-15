@@ -10,14 +10,15 @@ interface ISelectableElement {
   id: string;
   isSelected?: boolean;
   badge?: string | React.ReactChild | React.ReactChild[];
+  badgeClass?: string;
 }
 
 export default function SelectableElement({
-  children, value, id, isSelected, badge, onChange,
+  children, value, id, isSelected, badge, onChange, badgeClass
 }: ISelectableElement) {
   return (
     <div
-      className={clsx({
+      className={clsx(style.selectable, {
         [style.selected]: isSelected,
       })}
     >
@@ -31,7 +32,7 @@ export default function SelectableElement({
         className={style.radio}
       />
       <label htmlFor={id} className={style.option}>
-        { badge && <span className={style.badge}>{badge}</span> }
+        { badge && <span className={clsx(style.badge, badgeClass)}>{badge}</span> }
         <div> {children} </div> 
       </label>
     </div>

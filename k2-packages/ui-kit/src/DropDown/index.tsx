@@ -3,6 +3,8 @@ import clsx from 'clsx';
 import style from './style.styl';
 import HighlightSpan from './HighlightSpan';
 import SelectableElement from './SelectableElement';
+import { useKeyPress } from './useKeyPress';
+
 /**
  * Blur event trigger closing dropdown before onClick fired.
  * For fix that we must reorder events: 'click' before 'blur'
@@ -20,11 +22,15 @@ interface IDropDownProps {
   onChange(event): void;
   selected?: IOption['value'] | null;
   options: IOption[];
+  /** Work only with string label */
   highlightText?: string;
+  /** Enable onKeyPress handler */
   isFocused?: boolean;
   className?: string;
+  /** Need for positioning badge in list */
   badgeClass?: string;
-
+  /** trigger only in focused state */
+  onKeyPress?: (keyCode: number) => void;
 }
 
 export default function DropDown({
@@ -35,7 +41,9 @@ export default function DropDown({
   isFocused,
   className,
   badgeClass,
+  onKeyPress,
 }: IDropDownProps) {
+  useKeyPress(onKeyPress, isFocused)
   return (
     <div className={clsx(className, { [style.focus]: isFocused })}>
       {options.map(({ value, label }, i) => (

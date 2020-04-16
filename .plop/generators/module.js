@@ -1,4 +1,4 @@
-const { pascalCase, kebabCase } = require('../utils/formatters');
+const { kebabCase } = require('../utils/formatters');
 const { getDockerImageContext } = require('../utils/getDockerImageContext');
 
 module.exports = packages => ({
@@ -8,7 +8,7 @@ module.exports = packages => ({
       message: 'How we name module (in PascalCase)?',
       name: 'moduleName',
       type: 'input',
-      filter: pascalCase,
+      filter: kebabCase,
       validate: name => name.length > 2,
     },
     {

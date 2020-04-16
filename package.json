@@ -20,7 +20,7 @@
     "plop:route": "npx plop route",
     "plop:ref": "npx plop ref",
     "plop:link": "npx plop link",
-    "fix:dependencies": "npx syncpack fix-mismatches --peer"
+    "fix:dependencies": "npx syncpack fix-mismatches --peer",
     "lint:ts": "yarn tslint -c tslint.json -p tsconfig-lint.json"
   },
   "devDependencies": {

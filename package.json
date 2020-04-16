@@ -19,6 +19,7 @@
     "plop:add": "npx plop add",
     "plop:route": "npx plop route",
     "plop:ref": "npx plop ref",
+    "plop:link": "npx plop link",
     "fix:dependencies": "npx syncpack fix-mismatches --peer",
     "lint:ts": "yarn tslint -c tslint.json -p tsconfig-lint.json"
   },
@@ -58,6 +59,7 @@
     "html-webpack-plugin": "^3.0.6",
     "identity-obj-proxy": "^3.0.0",
     "inquirer-checkbox-plus-prompt": "^1.0.1",
+    "inquirer-fuzzy-path": "^2.2.0",
     "jest": "^25.1.0",
     "jest-css-modules-transform": "^4.0.0",
     "jest-fetch-mock": "^3.0.3",

@@ -1,10 +1,6 @@
 const { pascalCase, kebabCase } = require('../utils/formatters');
 const { getDockerImageContext } = require('../utils/getDockerImageContext');
 
-function handleLernaError(error, answers) {
-  console.error(error.message);
-}
-
 module.exports = packages => ({
   description: 'Create new module',
   prompts: [
@@ -54,14 +50,6 @@ module.exports = packages => ({
           return json;
         },
       },
-      {
-        type: 'exec',
-        command: () => ([
-          'tsc -b tsconfig.json',
-        ]),
-        abortOnFail: false,
-        onError: handleLernaError,
-      },
     ];
 
     if (answers.depends && answers.depends.length > 0) {
@@ -73,7 +61,7 @@ module.exports = packages => ({
           )
         )),
         abortOnFail: false,
-        onError: handleLernaError,
+        onError: error => console.log('Are you run docker-compose up?', error),
       });
     }
 

@@ -7,7 +7,7 @@ import { I{{moduleName}}State, {{moduleName}}StateField } from './redux/types';
 
 interface IComponentProps {
   className: string,
-  onChange: () => void
+  onChange: (text: string) => any
 }
 
 function {{moduleName}}Component({

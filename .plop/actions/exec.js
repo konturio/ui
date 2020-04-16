@@ -7,7 +7,7 @@ const { getDockerImageContext } = require('../utils/getDockerImageContext');
 async function execAction(answers, { command, abortOnFail = true, onError }, plop) {
   const output = command(answers);
   const commands = Array.isArray(output) ? output : [output];
-  for (com of commands) {
+  for (let com of commands) {
     try {
       const { stdout, stderr } = await exec(com);
       return (
@@ -17,7 +17,7 @@ async function execAction(answers, { command, abortOnFail = true, onError }, plo
         `\n${stdout}`
       );
     } catch (error) {
-      if (error.stdout.includes(com + ' - EACCES: permission denied')) {
+      if (error.stdout &&error.stdout.includes(com + ' - EACCES: permission denied')) {
         onError({
           message: warning(`'EACCES: permission denied' error detected, trying to fix that`)
         });

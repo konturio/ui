@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.7.0](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@1.6.1...@k2-packages/ui-kit@1.7.0) (2020-04-16)
+
+
+### Features
+
+* **geocoder:** improve focus logick ([1d53b68](https://gitlab.com/kontur-private/k2/k2-front-end/commit/1d53b68fe00b7a88e435dc7c2e074be3a386c8de))
+
+
+
+
+
 ## [1.6.1](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@1.6.0...@k2-packages/ui-kit@1.6.1) (2020-04-15)
 
 **Note:** Version bump only for package @k2-packages/ui-kit

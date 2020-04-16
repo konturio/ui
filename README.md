@@ -75,7 +75,7 @@ yarn plop:<script-name>
 
 Currently available new scripts:
 
-- ref - update references is tsconfig.json. Highly recommended run this task after other plop tasks
+- ref - update references in tsconfig.json. Highly recommended run this task after other plop tasks
  ```
  yarn plop:ref
 
@@ -135,10 +135,8 @@ Currently available new scripts:
 
 For every feature you must create new branch in format
 ```
-{type}/{scope}#{task_number}
+{fibery-task-id}-{tas-title}
 ```
-* types same as commits types
-
 ### Commit naming
 
 To build automation on top of lerna and packages version management we have to follow `Conventional commits` specification.

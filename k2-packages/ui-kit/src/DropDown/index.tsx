@@ -32,6 +32,8 @@ interface IDropDownProps {
   /** trigger only in focused state */
   onKeyPress?: (keyCode: number) => void;
   onFocus?: (e: React.FormEvent<HTMLInputElement>) => void;
+  /** Set focus to selected item */
+  focusOnSelect?: boolean;
 }
 
 export default function DropDown({
@@ -43,7 +45,8 @@ export default function DropDown({
   className,
   badgeClass,
   onKeyPress,
-  onFocus
+  onFocus,
+  focusOnSelect
 }: IDropDownProps) {
   useKeyPress(onKeyPress, isFocused);
   return (
@@ -55,6 +58,7 @@ export default function DropDown({
           value={value}
           onChange={onChange}
           onFocus={onFocus}
+          isFocused={focusOnSelect && value === selected}
           isSelected={value === selected}
           badgeClass={badgeClass}
           badge={

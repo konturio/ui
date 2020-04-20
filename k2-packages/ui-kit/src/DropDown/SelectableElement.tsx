@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import clsx from 'clsx';
 import style from './style.styl';
 
@@ -9,14 +9,24 @@ interface ISelectableElement {
   value: string | number;
   id: string;
   isSelected?: boolean;
+  isFocused?: boolean;
   badge?: string | React.ReactChild | React.ReactChild[];
   badgeClass?: string;
   onFocus?: (e: React.FormEvent<HTMLInputElement>) => void;
 }
 
 export default function SelectableElement({
-  children, value, id, isSelected, badge, onChange, badgeClass, onFocus
+  children, value, id, isSelected, isFocused, badge, onChange, badgeClass, onFocus
 }: ISelectableElement) {
+  const inputRef = useRef<HTMLInputElement>(null); 
+  useEffect(() => {
+    if (isFocused === true) {
+      inputRef.current?.focus();
+    }
+    if (isFocused === false) {
+      inputRef.current?.blur();
+    }
+  }, [isFocused])
   return (
     <div
       className={clsx(style.selectable, {
@@ -25,6 +35,7 @@ export default function SelectableElement({
     >
       <input
         type="radio"
+        ref={inputRef}
         id={id}
         name={id}
         value={value}

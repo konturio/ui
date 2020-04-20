@@ -31,6 +31,7 @@ interface IDropDownProps {
   badgeClass?: string;
   /** trigger only in focused state */
   onKeyPress?: (keyCode: number) => void;
+  onFocus?: (e: React.FormEvent<HTMLInputElement>) => void;
 }
 
 export default function DropDown({
@@ -42,17 +43,18 @@ export default function DropDown({
   className,
   badgeClass,
   onKeyPress,
+  onFocus
 }: IDropDownProps) {
-  useKeyPress(onKeyPress, isFocused)
+  useKeyPress(onKeyPress, isFocused);
   return (
     <div className={clsx(className, { [style.focus]: isFocused })}>
       {options.map(({ value, label }, i) => (
         <SelectableElement
-          // eslint-disable-next-line react/no-array-index-key
           key={`${value}-${i}`}
           id={`${value}-${i}`}
           value={value}
           onChange={onChange}
+          onFocus={onFocus}
           isSelected={value === selected}
           badgeClass={badgeClass}
           badge={

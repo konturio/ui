@@ -9,19 +9,19 @@ console.log('process.API:', process.env.API);
 
 module.exports = {
   entry: {
-    main: './src/index.tsx'
+    main: './src/index.tsx',
   },
   mode: process.env.NODE_ENV,
   output: {
     filename: '[name].js',
     chunkFilename: '[name].js',
-    path: path.join(__dirname, './dist')
+    path: path.join(__dirname, './dist'),
   },
   devtool: 'inline-source-map',
   resolve: {
     modules: ['node_modules'],
     extensions: ['.ts', '.tsx', '.js', '.json'],
-    symlinks: true
+    symlinks: true,
   },
   devServer: {
     port: 8080,
@@ -40,20 +40,20 @@ module.exports = {
     //   chunkModules: false,
     // },
     historyApiFallback: true,
-    contentBase: path.resolve(__dirname, '/dist')
+    contentBase: path.resolve(__dirname, '/dist'),
   },
   plugins: [
     new webpack.DefinePlugin({
-      'process.env.API': JSON.stringify(process.env.API)
+      'process.env.API': JSON.stringify(process.env.API),
     }),
     new HtmlWebPackPlugin({
       template: './src/index.html',
-      filename: 'index.html'
+      filename: 'index.html',
     }),
     new MiniCssExtractPlugin({
       filename: '[name].css?[chunkhash]',
-      chunkFilename: '[id].css?[chunkhash]'
-    })
+      chunkFilename: '[id].css?[chunkhash]',
+    }),
   ],
   module: {
     rules: [
@@ -63,18 +63,18 @@ module.exports = {
         use: [
           {
             loader: require.resolve('babel-loader'),
-            options: { rootMode: 'upward' }
-          }
-        ]
+            options: { rootMode: 'upward' },
+          },
+        ],
       },
       {
         test: /\.html$/,
         use: [
           {
             loader: 'html-loader',
-            options: { minimize: true }
-          }
-        ]
+            options: { minimize: true },
+          },
+        ],
       },
       {
         test: /\.styl$/,
@@ -85,30 +85,30 @@ module.exports = {
             options: {
               sourceMap: true,
               modules: {
-                localIdentName: '[local]__[hash:base64:5]'
-              }
-            }
+                localIdentName: '[local]__[hash:base64:5]',
+              },
+            },
           },
           {
             loader: 'postcss-loader',
             options: {
-              plugins: [Autoprefixer]
-            }
+              plugins: [Autoprefixer],
+            },
           },
-          'stylus-loader'
-        ]
+          'stylus-loader',
+        ],
       },
       {
         test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader']
-      }
-    ]
+        use: [MiniCssExtractPlugin.loader, 'css-loader'],
+      },
+    ],
   },
   optimization: {
     splitChunks: {
       name: true,
-      chunks: 'all'
+      chunks: 'all',
     },
-    minimize: false
-  }
+    minimize: false,
+  },
 };

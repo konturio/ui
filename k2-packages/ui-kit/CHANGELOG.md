@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.8.0](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@1.6.1...@k2-packages/ui-kit@1.8.0) (2020-04-21)
+
+
+### Bug Fixes
+
+* bug with wrong value on focues event ([aad2451](https://gitlab.com/kontur-private/k2/k2-front-end/commit/aad245159852e3d0da66a16d09dbf97572a43db6))
+
+
+### Features
+
+* focus on select feature ([5ce3ac4](https://gitlab.com/kontur-private/k2/k2-front-end/commit/5ce3ac4f30240198b1641be0e7b81c4f5d5cc44c))
+* onFocus event support ([10e015d](https://gitlab.com/kontur-private/k2/k2-front-end/commit/10e015d60bfcb860c78b2bfc941ed9963d9de86e))
+* **geocoder:** improve focus logick ([1d53b68](https://gitlab.com/kontur-private/k2/k2-front-end/commit/1d53b68fe00b7a88e435dc7c2e074be3a386c8de))
+
+
+
+
+
 # [1.7.0](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@1.6.1...@k2-packages/ui-kit@1.7.0) (2020-04-16)
 
 

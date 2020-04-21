@@ -1,21 +1,32 @@
 
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import clsx from 'clsx';
 import style from './style.styl';
 
 interface ISelectableElement {
   children: string | React.ReactChild | React.ReactChild[];
-  onChange: (e) => void
+  onChange: (e: React.FormEvent<HTMLInputElement>) => void
   value: string | number;
   id: string;
   isSelected?: boolean;
+  isFocused?: boolean;
   badge?: string | React.ReactChild | React.ReactChild[];
   badgeClass?: string;
+  onFocus?: (e: React.FormEvent<HTMLInputElement>) => void;
 }
 
 export default function SelectableElement({
-  children, value, id, isSelected, badge, onChange, badgeClass
+  children, value, id, isSelected, isFocused, badge, onChange, badgeClass, onFocus
 }: ISelectableElement) {
+  const inputRef = useRef<HTMLInputElement>(null); 
+  useEffect(() => {
+    if (isFocused === true) {
+      inputRef.current?.focus();
+    }
+    if (isFocused === false) {
+      inputRef.current?.blur();
+    }
+  }, [isFocused])
   return (
     <div
       className={clsx(style.selectable, {
@@ -24,12 +35,14 @@ export default function SelectableElement({
     >
       <input
         type="radio"
+        ref={inputRef}
         id={id}
         name={id}
         value={value}
         checked={isSelected}
         onChange={onChange}
         className={style.radio}
+        onFocus={onFocus}
       />
       <label htmlFor={id} className={style.option}>
         { badge && <span className={clsx(style.badge, badgeClass)}>{badge}</span> }

@@ -53,8 +53,8 @@ export default function DropDown({
     <div className={clsx(className, { [style.focus]: isFocused })}>
       {options.map(({ value, label }, i) => (
         <SelectableElement
-          key={`${value}-${i}`}
-          id={`${value}-${i}`}
+          key={value}
+          id={String(value)}
           value={value}
           onChange={onChange}
           onFocus={onFocus}

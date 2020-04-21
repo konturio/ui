@@ -82,6 +82,7 @@ const BasicRouting = () => (
               <UI.Input>
                 <div>: )</div>
               </UI.Input>
+              <UI.Checkbox label={'Позвонили'} />
             </form>
           </Route>
           <Route path="/mapbox-map">

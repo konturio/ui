@@ -1,0 +1,39 @@
+@import "~@k2-packages/default-theme"
+
+.checkbox
+  appearance none
+  display inline-flex
+  justify-content center
+  align-items center
+  width 20px
+  height 20px
+  border 2px solid primary-color
+  border-radius (unit / 2)
+  outline none
+  margin 0
+  cursor pointer
+  margin-right unit
+
+  &:disabled
+    border 2px solid alpha(primary-color, 20%)
+    cursor no-drop
+
+  &:focus
+    box-shadow 0 0 0 2px alpha(primary-color, 50%)
+
+  &:checked::before
+    content ""
+    display block
+    width 10px
+    height 10px
+    background-color primary-color
+    border-radius 2px
+
+  &:disabled:checked::before
+    background-color alpha(primary-color, 20%)
+
+.label
+  display inline-flex
+  align-items center
+  font-family inherit
+  font-size inherit

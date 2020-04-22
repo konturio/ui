@@ -1,6 +1,7 @@
 
 import React, { useEffect, useRef } from 'react';
 import clsx from 'clsx';
+import { scrollIntoView } from './scrollIntoView';
 import style from './style.styl';
 
 interface ISelectableElement {
@@ -26,7 +27,14 @@ export default function SelectableElement({
     if (isFocused === false) {
       inputRef.current?.blur();
     }
-  }, [isFocused])
+  }, [isFocused]);
+
+  useEffect(() => {
+    if (isSelected) {
+      scrollIntoView(inputRef.current);
+    }
+  }, [isSelected]);
+  
   return (
     <div
       className={clsx(style.selectable, {

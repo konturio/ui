@@ -10,17 +10,16 @@ const routeGenerator = require('./.plop/generators/route');
 const referencesGenerator = require('./.plop/generators/references-generator');
 const linker = require('./.plop/generators/linker');
 
-module.exports = plop => {
+module.exports = (plop) => {
   plop.setPrompt('checkbox-autocomplete', require('inquirer-checkbox-plus-prompt'));
   plop.setPrompt('fuzzypath', require('inquirer-fuzzy-path'));
-  plop.setHelper('curly', text => `{${text}}`);
+  plop.setHelper('curly', (text) => `{${text}}`);
   plop.setActionType('modifyJson', modifyJson);
   plop.setActionType('exec', exec);
   plop.setActionType('link', link);
 
-
   const exclude = ['coverage', 'tsconfig.json'];
-  const packages = ls('./k2-packages/').filter(fileName => !exclude.includes(fileName));
+  const packages = ls('./k2-packages/').filter((fileName) => !exclude.includes(fileName));
 
   plop.setGenerator('new', getModuleGenerator(packages));
   plop.setGenerator('add', getAddDependencyToPackageGenerator(packages));

@@ -9,6 +9,7 @@ const getAddDependencyToPackageGenerator = require('./.plop/generators/dependenc
 const routeGenerator = require('./.plop/generators/route');
 const referencesGenerator = require('./.plop/generators/references-generator');
 const linker = require('./.plop/generators/linker');
+const unLinker = require('./.plop/generators/unLinker');
 
 module.exports = (plop) => {
   plop.setPrompt('checkbox-autocomplete', require('inquirer-checkbox-plus-prompt'));
@@ -26,4 +27,5 @@ module.exports = (plop) => {
   plop.setGenerator('route', routeGenerator(packages));
   plop.setGenerator('ref', referencesGenerator());
   plop.setGenerator('link', linker(packages));
+  plop.setGenerator('unlink', unLinker());
 };

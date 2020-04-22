@@ -6,13 +6,22 @@ function handleLernaError(error, answers) {
   console.error(error.message);
 }
 
+const PEERS = [
+  'react',
+  'react-dom',
+  'react-redux'
+];
+
 const IfNotLast = string => `{{#if @last}}{{else}}${string}{{/if}}`
 const template = `
 {
   "project": "{{project}}",
   "packages": [
+    {{#if withPeers}}
+    ${PEERS.map(p => `"${p}"`).join(',\n    ') + ','}
+    {{/if}}
     {{#each packages}}
-     "@k2-packages/{{this}}"${IfNotLast(',')}
+    "@k2-packages/{{this}}"${IfNotLast(',')}
     {{/each}}
   ]
 }
@@ -40,6 +49,18 @@ module.exports = packages => ({
       excludePath: nodePath => nodePath.startsWith('node_modules') || nodePath.startsWith('.git') || nodePath.startsWith('.plop') ,
       itemType: 'directory',
     },
+    {
+      when: async ({ project }) => {
+        const { stdout, stderr } = await exec(`cd ${project} && find -L $(find node_modules -type l) -type d -prune`);
+        const peersPaths = PEERS.map(p => 'node_modules/' + p);
+        const currentlyLinked = stdout.split('\n');
+        const isPeerMissing = peersPaths.some(peer => !currentlyLinked.includes(peer));
+        return isPeerMissing;
+      },
+      message: `This project missing required peers (${PEERS.join(', ')}) \nAdd it?`,
+      name: 'withPeers',
+      type: 'confirm',
+    }
   ],
   actions: answers => {
     const timestamp = Date.now();

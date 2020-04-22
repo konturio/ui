@@ -6,8 +6,15 @@ const os = require('os');
  */
 function checkRegistration(wantToRegister) {
   const registered = ls(os.homedir() + '/.config/yarn/link');
+  let registeredK2 = [];
+  try {
+    registeredK2 = ls(os.homedir() + '/.config/yarn/link/@k2-packages').map(pack => '@k2-packages/' + pack);
+  } catch(e) {
+
+  }
+  const allRegisteredPackages = [...registered, ...registeredK2];
   return wantToRegister.packages.reduce((acc, pckg) => {
-    registered.includes(pckg)
+    allRegisteredPackages.includes(pckg)
       ? acc[0].push(pckg)
       : acc[1].push(pckg)
     return acc;

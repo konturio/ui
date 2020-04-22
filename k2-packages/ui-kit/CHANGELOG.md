@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.9.0](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@1.8.2...@k2-packages/ui-kit@1.9.0) (2020-04-22)
+
+
+### Bug Fixes
+
+* scroll position on tab ([3816420](https://gitlab.com/kontur-private/k2/k2-front-end/commit/3816420ce8612895a4e8dd48addcfa73cd936ab4))
+
+
+### Features
+
+* scroll to selected ([5b70a3c](https://gitlab.com/kontur-private/k2/k2-front-end/commit/5b70a3c18e5823b6ffd93d46f235cac69f7407d7))
+
+
+
+
+
 ## [1.8.2](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@1.8.1...@k2-packages/ui-kit@1.8.2) (2020-04-21)
 
 **Note:** Version bump only for package @k2-packages/ui-kit

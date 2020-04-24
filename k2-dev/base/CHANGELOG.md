@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.10](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-dev/base@1.4.9...@k2-dev/base@1.4.10) (2020-04-24)
+
+
+### Bug Fixes
+
+* drop old firebrigade ([ba90363](https://gitlab.com/kontur-private/k2/k2-front-end/commit/ba903633272bbbd7fadd3a581c735895f16c4064))
+
+
+
+
+
 ## [1.4.9](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-dev/base@1.4.8...@k2-dev/base@1.4.9) (2020-04-22)
 
 **Note:** Version bump only for package @k2-dev/base

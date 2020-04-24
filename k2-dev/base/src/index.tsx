@@ -8,7 +8,6 @@ import Module from '@k2-packages/module';
 import Geocoder from '@k2-packages/geocoder';
 import UI from '@k2-packages/ui-kit';
 import MapboxMap from '@k2-packages/mapbox-map';
-import FireBrigade from './firebrigade';
 import NavigationMenu from './NavigationMenu';
 import {
   SearchIcon,
@@ -108,9 +107,6 @@ const BasicRouting = () => (
             <FlameIcon />
             <FireTruckIcon />
             <HydrantIcon />
-          </Route>
-          <Route path="/fire-brigade">
-            <FireBrigade />
           </Route>
           {/* !not-delete! cli:route */}
         </Switch>

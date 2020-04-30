@@ -15,7 +15,7 @@ import {
   CloseIcon,
   FlameIcon,
   FireTruckIcon,
-  HydrantIcon
+  HydrantIcon,
 } from '@k2-packages/default-icons';
 /* !not-delete! cli:import */
 
@@ -31,7 +31,7 @@ const mapboxConfig: {
 } = {
   accessToken:
     'pk.eyJ1IjoibnNoa3V0b3YiLCJhIjoiY2s2Y2ExODFvMGpoaDNrb3ZueXYyMDBmZiJ9.d2VPRqEfvCd4fvH7edB6tg',
-  style: 'mapbox://styles/nshkutov/ck6ca2wfb397m1imrknjlqd2l'
+  style: 'mapbox://styles/nshkutov/ck6ca2wfb397m1imrknjlqd2l',
 };
 
 const LoadingState = (
@@ -52,7 +52,7 @@ const BasicRouting = () => (
             { to: '/kit', label: 'UI Kit' },
             { to: '/mapbox-map', label: 'Mapbox-map' },
             { to: '/fire-brigade', label: 'Fire brigade' },
-            { to: '/icons', label: 'Icons' }
+            { to: '/icons', label: 'Icons' },
             /* !not-delete! cli:link */
             /* eslint-enable no-multi-spaces */
           ]}
@@ -81,7 +81,7 @@ const BasicRouting = () => (
               <UI.Input>
                 <div>: )</div>
               </UI.Input>
-              <UI.Checkbox label={'Позвонили'} />
+              <UI.Checkbox label="Позвонили" />
             </form>
           </Route>
           <Route path="/mapbox-map">
@@ -93,15 +93,15 @@ const BasicRouting = () => (
               onLoad={console.log}
               bounds={[
                 [27.24, 53.81],
-                [27.83, 54.01]
+                [27.83, 54.01],
               ]}
               boundsOptions={{
-                padding: 50
+                padding: 50,
               }}
             />
           </Route>
           <Route path="/icons">
-            <SearchIcon />
+            <SearchIcon className="hello" />
             <CallIcon />
             <CloseIcon />
             <FlameIcon />

@@ -8,3 +8,6 @@ env:
     jest/globals: true
 globals:
     jsdom: false
+rules:
+    "react/jsx-filename-extension": [1, { "extensions": [".tsx"] }]
+    "react/jsx-props-no-spreading": 0

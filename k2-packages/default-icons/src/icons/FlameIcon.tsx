@@ -1,6 +1,6 @@
-import React, { FC } from 'react';
+import React from 'react';
 
-const FlameIcon: FC = (props: React.SVGProps<SVGSVGElement>) => (
+const FlameIcon = React.memo((props: React.SVGProps<SVGSVGElement>) => (
   <svg width="24" height="24" viewBox="0 0 24 24" {...props}>
     <path
       fillRule="evenodd"
@@ -9,6 +9,6 @@ const FlameIcon: FC = (props: React.SVGProps<SVGSVGElement>) => (
       d="M6.34315 19.5736C3.21895 16.3384 3.21895 11.0931 6.34315 7.85786L6.44057 7.75698C7.65679 9.8159 8.24605 10.5185 9 11C8.38813 7.49125 9.16738 5.52009 12 2L17.6569 7.85786C20.781 11.0931 20.781 16.3384 17.6569 19.5736C14.5327 22.8088 9.46734 22.8088 6.34315 19.5736ZM9.17157 18.7868C7.60948 17.1692 7.60948 14.5465 9.17157 12.9289L9.22028 12.8785C9.8284 13.9079 10.123 14.2592 10.5 14.5C10.1941 12.7456 10.5837 11.76 12 10L14.8284 12.9289C16.3905 14.5465 16.3905 17.1692 14.8284 18.7868C13.2663 20.4044 10.7337 20.4044 9.17157 18.7868Z"
     />
   </svg>
-);
+));
 
-export default React.memo(FlameIcon);
+export default FlameIcon;

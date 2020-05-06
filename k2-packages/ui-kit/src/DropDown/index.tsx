@@ -13,15 +13,15 @@ import { useKeyPress } from './useKeyPress';
  */
 // const stopBlurEvent = e => e.preventDefault();
 
-interface IOption {
+interface Option {
   label: string | React.ReactChild | React.ReactChild[];
   value: string | number;
 }
 
-interface IDropDownProps {
+interface DropDownProps {
   onChange(event): void;
-  selected?: IOption['value'] | null;
-  options: IOption[];
+  selected?: Option['value'] | null;
+  options: Option[];
   /** Work only with string label */
   highlightText?: string;
   /** Enable onKeyPress handler */
@@ -46,8 +46,8 @@ export default function DropDown({
   badgeClass,
   onKeyPress,
   onFocus,
-  focusOnSelect
-}: IDropDownProps) {
+  focusOnSelect,
+}: DropDownProps) {
   useKeyPress(onKeyPress, isFocused);
   return (
     <div className={clsx(className, { [style.focus]: isFocused })}>
@@ -61,15 +61,13 @@ export default function DropDown({
           isFocused={focusOnSelect && value === selected}
           isSelected={value === selected}
           badgeClass={badgeClass}
-          badge={
-            i < 9 ? <span className={style.bind}>{i + 1}</span> : undefined
-          }
+          badge={i < 9 ? <span className={style.bind}>{i + 1}</span> : undefined}
         >
-          {
-            highlightText && typeof label === 'string'
-              ? <HighlightSpan highlight={highlightText}>{label}</HighlightSpan>
-              : label
-            }
+          {highlightText && typeof label === 'string' ? (
+            <HighlightSpan highlight={highlightText}>{label}</HighlightSpan>
+          ) : (
+            label
+          )}
         </SelectableElement>
       ))}
     </div>

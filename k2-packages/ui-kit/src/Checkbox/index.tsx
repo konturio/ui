@@ -1,7 +1,7 @@
 import React, { ChangeEvent } from 'react';
 import style from './style.styl';
 
-export interface ICheckbox {
+interface Checkbox {
   id?: string;
   name?: string;
   value?: string;
@@ -24,8 +24,8 @@ export default function Checkbox({
   disabled,
   checked,
   required,
-  onChange
-}: ICheckbox): React.ReactElement {
+  onChange,
+}: Checkbox): React.ReactElement {
   return (
     <label htmlFor={id} className={style.label}>
       <input

@@ -2,13 +2,13 @@ import React from 'react';
 import { Link, useRouteMatch } from 'react-router-dom';
 import style from './style.styl';
 
-interface ILink {
+interface HighlightedLinkProps {
   to: string;
   label: string;
   exact?: boolean;
 }
 
-function HighlightedLink({ to, label, exact }: ILink) {
+function HighlightedLink({ to, label, exact }: HighlightedLinkProps) {
   const match = useRouteMatch({
     path: to,
     exact,
@@ -21,10 +21,12 @@ function HighlightedLink({ to, label, exact }: ILink) {
   );
 }
 
-export default function NavigationMenu({ links }: { links: ILink[] }) {
+export default function NavigationMenu({ links }: { links: HighlightedLinkProps[] }) {
   return (
     <nav className={style.navigation}>
-      {links.map(props => <HighlightedLink key={props.to} {...props} />)}
+      {links.map((props) => (
+        <HighlightedLink key={props.to} {...props} />
+      ))}
     </nav>
   );
 }

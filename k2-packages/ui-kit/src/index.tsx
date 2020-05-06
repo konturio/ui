@@ -7,5 +7,5 @@ export default {
   Input,
   Card,
   DropDown,
-  Checkbox
+  Checkbox,
 };

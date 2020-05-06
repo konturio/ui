@@ -19,13 +19,13 @@ describe('<Checkbox /> component', () => {
       disabled: true,
       checked: true,
       required: true,
-      onChange: mockOnChange
+      onChange: mockOnChange,
     };
     const wrapper = shallow(<Checkbox {...mockProps} />);
     const input = wrapper.find('input');
     expect(input.props()).toEqual({
       ...mockProps,
-      className: 'checkbox ' + mockProps.className
+      className: 'checkbox ' + mockProps.className,
     });
   });
 });

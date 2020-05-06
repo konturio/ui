@@ -9,14 +9,7 @@ import Geocoder from '@k2-packages/geocoder';
 import UI from '@k2-packages/ui-kit';
 import MapboxMap from '@k2-packages/mapbox-map';
 import NavigationMenu from './NavigationMenu';
-import {
-  SearchIcon,
-  CallIcon,
-  CloseIcon,
-  FlameIcon,
-  FireTruckIcon,
-  HydrantIcon,
-} from '@k2-packages/default-icons';
+import { SearchIcon, CallIcon, CloseIcon, FlameIcon, FireTruckIcon, HydrantIcon } from '@k2-packages/default-icons';
 /* !not-delete! cli:import */
 
 import store from './store';
@@ -29,16 +22,11 @@ const mapboxConfig: {
   accessToken: string;
   style: string;
 } = {
-  accessToken:
-    'pk.eyJ1IjoibnNoa3V0b3YiLCJhIjoiY2s2Y2ExODFvMGpoaDNrb3ZueXYyMDBmZiJ9.d2VPRqEfvCd4fvH7edB6tg',
+  accessToken: 'pk.eyJ1IjoibnNoa3V0b3YiLCJhIjoiY2s2Y2ExODFvMGpoaDNrb3ZueXYyMDBmZiJ9.d2VPRqEfvCd4fvH7edB6tg',
   style: 'mapbox://styles/nshkutov/ck6ca2wfb397m1imrknjlqd2l',
 };
 
-const LoadingState = (
-  <div style={{ background: 'aqua', width: '100px', height: '100px' }}>
-    Loading...
-  </div>
-);
+const LoadingState = <div style={{ background: 'aqua', width: '100px', height: '100px' }}>Loading...</div>;
 
 const BasicRouting = () => (
   <Suspense fallback={LoadingState}>

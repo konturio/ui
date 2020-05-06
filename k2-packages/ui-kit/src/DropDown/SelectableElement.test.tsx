@@ -5,17 +5,13 @@ import style from './style.styl';
 
 describe('<SelectableElement> component', () => {
   it('Should call `onChange` on changes', () => {
-    const onChange = jest.fn()
+    const onChange = jest.fn();
     const wrapper = shallow(
-      <SelectableElement
-        id="foo"
-        value="bar"
-        onChange={onChange}
-      >
+      <SelectableElement id="foo" value="bar" onChange={onChange}>
         Here can be your ad
-      </SelectableElement>
+      </SelectableElement>,
     );
-    wrapper.find('input').simulate('change', {})
+    wrapper.find('input').simulate('change', {});
     expect(onChange).toBeCalled();
   });
 
@@ -24,27 +20,31 @@ describe('<SelectableElement> component', () => {
       <SelectableElement
         id="foo"
         value="bar"
-        onChange={() => {}}
+        onChange={() => {
+          // do nothing
+        }}
         isSelected={true}
       >
         Here can be your ad
-      </SelectableElement>
+      </SelectableElement>,
     );
 
     expect(wrapper.hasClass(style.selected)).toBe(true);
   });
 
   it('Should render Badge', () => {
-    const badgeId = "badge"
+    const badgeId = 'badge';
     const wrapper = shallow(
       <SelectableElement
         id="foo"
         value="bar"
-        onChange={() => {}}
+        onChange={() => {
+          // do nothing
+        }}
         badge={<div id={badgeId}> Badge! </div>}
       >
         Here can be your ad
-      </SelectableElement>
+      </SelectableElement>,
     );
 
     expect(wrapper.find('label').exists(`#${badgeId}`)).toBe(true);

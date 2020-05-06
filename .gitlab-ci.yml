@@ -3,7 +3,7 @@ image: node:13
 stages:
   - install
   - bootstrap
-#  - lint
+  - lint
   - test
 #  - coverage
   - build
@@ -41,15 +41,15 @@ bootstrap:
   dependencies:
     - install
 
-#lint:
-#  extends: .default-job-settings
-#  stage: lint
-#  variables:
-#    NODE_ENV: "development"
-#  script:
-#    - yarn lint:ts
-#  dependencies:
-#    - install
+lint:
+ extends: .default-job-settings
+ stage: lint
+ variables:
+   NODE_ENV: "development"
+ script:
+   - yarn lint:ts
+ dependencies:
+   - install
 
 test:
   extends: .default-job-settings

@@ -1,12 +1,11 @@
-
 import React, { useEffect, useRef } from 'react';
 import clsx from 'clsx';
 import { scrollIntoView } from './scrollIntoView';
 import style from './style.styl';
 
-interface ISelectableElement {
+interface SelectableElement {
   children: string | React.ReactChild | React.ReactChild[];
-  onChange: (e: React.FormEvent<HTMLInputElement>) => void
+  onChange: (e: React.FormEvent<HTMLInputElement>) => void;
   value: string | number;
   id: string;
   isSelected?: boolean;
@@ -17,9 +16,17 @@ interface ISelectableElement {
 }
 
 export default function SelectableElement({
-  children, value, id, isSelected, isFocused, badge, onChange, badgeClass, onFocus
-}: ISelectableElement) {
-  const inputRef = useRef<HTMLInputElement>(null); 
+  children,
+  value,
+  id,
+  isSelected,
+  isFocused,
+  badge,
+  onChange,
+  badgeClass,
+  onFocus,
+}: SelectableElement) {
+  const inputRef = useRef<HTMLInputElement>(null);
   useEffect(() => {
     if (isFocused === true) {
       inputRef.current?.focus();
@@ -34,7 +41,7 @@ export default function SelectableElement({
       scrollIntoView(inputRef.current);
     }
   }, [isSelected]);
-  
+
   return (
     <div
       className={clsx(style.selectable, {
@@ -53,8 +60,8 @@ export default function SelectableElement({
         onFocus={onFocus}
       />
       <label htmlFor={id} className={style.option}>
-        { badge && <span className={clsx(style.badge, badgeClass)}>{badge}</span> }
-        <div> {children} </div> 
+        {badge && <span className={clsx(style.badge, badgeClass)}>{badge}</span>}
+        <div> {children} </div>
       </label>
     </div>
   );

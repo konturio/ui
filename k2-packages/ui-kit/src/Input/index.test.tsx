@@ -5,51 +5,41 @@ import style from './style.styl';
 
 describe('<Input> component', () => {
   it('Call onChange callback', () => {
-    const onChange = jest.fn()
-    const wrapper = shallow(
-      <Input onChange={onChange}/>
-    );
-    wrapper.find('input').simulate('change', {})
+    const onChange = jest.fn();
+    const wrapper = shallow(<Input onChange={onChange} />);
+    wrapper.find('input').simulate('change', {});
     expect(onChange).toBeCalled();
   });
 
   it('Call onFocus callback', () => {
-    const onFocus = jest.fn()
-    const wrapper = shallow(
-      <Input onFocus={onFocus}/>
-    );
-    wrapper.find('input').simulate('focus', {})
+    const onFocus = jest.fn();
+    const wrapper = shallow(<Input onFocus={onFocus} />);
+    wrapper.find('input').simulate('focus', {});
     expect(onFocus).toBeCalled();
   });
 
   it('Call onBlur callback', () => {
-    const onBlur = jest.fn()
-    const wrapper = shallow(
-      <Input onBlur={onBlur}/>
-    );
-    wrapper.find('input').simulate('blur', {})
+    const onBlur = jest.fn();
+    const wrapper = shallow(<Input onBlur={onBlur} />);
+    wrapper.find('input').simulate('blur', {});
     expect(onBlur).toBeCalled();
   });
 
   it('Call onType callback', () => {
     const onType = jest.fn();
     const expectedValue = 'x';
-    const wrapper = shallow(
-      <Input onType={onType}/>
-    );
+    const wrapper = shallow(<Input onType={onType} />);
     wrapper.find('input').simulate('change', {
       target: {
-        value: expectedValue
-      }
-    })
+        value: expectedValue,
+      },
+    });
     expect(onType).toBeCalledWith(expectedValue);
   });
 
   it('Set focus state and call onFocus when isFocused true', () => {
     const onFocus = jest.fn();
-    const wrapper = shallow(
-      <Input isFocused={false} onFocus={onFocus} ref={{ current: null }} />
-    );
+    const wrapper = shallow(<Input isFocused={false} onFocus={onFocus} ref={{ current: null }} />);
     wrapper.setProps({ isFocused: true });
     expect(wrapper.hasClass(style.focus)).toBe(true);
     setTimeout(() => expect(onFocus).toBeCalled(), 250);
@@ -57,40 +47,51 @@ describe('<Input> component', () => {
 
   it('Remove focus state and call onBlur when isFocused false', () => {
     const onBlur = jest.fn();
-    const wrapper = shallow(
-      <Input isFocused={true} onBlur={onBlur} ref={{ current: null }} />
-    );
+    const wrapper = shallow(<Input isFocused={true} onBlur={onBlur} ref={{ current: null }} />);
     wrapper.setProps({ isFocused: false });
     expect(wrapper.hasClass(style.focus)).toBe(false);
     setTimeout(() => expect(onBlur).toBeCalled(), 250);
   });
 
   it('Not crush if ref not provided', () => {
-    const wrapper = shallow(
-      <Input isFocused={true} />
-    );
+    const wrapper = shallow(<Input isFocused={true} />);
     wrapper.setProps({ isFocused: false });
   });
 
   it('Not crush if ref provided without blur method', () => {
     const wrapper = mount(
-      <Input isFocused={false}  ref={{ current: { focus: () => {} } }} />
+      <Input
+        isFocused={false}
+        ref={{
+          current: {
+            focus: () => {
+              /* do nothing */
+            },
+          },
+        }}
+      />,
     );
-    wrapper.setProps({ isFocused: true })
+    wrapper.setProps({ isFocused: true });
   });
 
   it('Not crush if ref provided without focus method', () => {
     const wrapper = mount(
-      <Input isFocused={true}  ref={{ current: { blur: () => {} } }} />
+      <Input
+        isFocused={true}
+        ref={{
+          current: {
+            blur: () => {
+              /* do nothing */
+            },
+          },
+        }}
+      />,
     );
-    wrapper.setProps({ isFocused: false })
+    wrapper.setProps({ isFocused: false });
   });
 
-
   it('Show message', () => {
-    const wrapper = shallow(
-      <Input message="Hello world" ref={{ current: null }} />
-    );
-    expect(wrapper.find(`.${style.message}`).text()).toBe('Hello world')
-  })
+    const wrapper = shallow(<Input message="Hello world" ref={{ current: null }} />);
+    expect(wrapper.find(`.${style.message}`).text()).toBe('Hello world');
+  });
 });

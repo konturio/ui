@@ -1,10 +1,8 @@
-import React, {
-  useState, forwardRef, useEffect, useCallback,
-} from 'react';
+import React, { useState, forwardRef, useEffect, useCallback } from 'react';
 import clsx from 'clsx';
 import style from './style.styl';
 
-export interface IInputProps extends React.HTMLProps<HTMLInputElement> {
+export interface InputProps extends React.HTMLProps<HTMLInputElement> {
   onType?: (text: string) => void;
   className?: string;
   successes?: boolean;
@@ -15,7 +13,7 @@ export interface IInputProps extends React.HTMLProps<HTMLInputElement> {
 }
 
 /* Cancel default behavior and extend it */
-function createOnType(onType: IInputProps['onType']) {
+function createOnType(onType: InputProps['onType']) {
   return ({ target }) => onType && onType((target as HTMLInputElement).value);
 }
 
@@ -26,23 +24,26 @@ function preventDefault(e: { preventDefault?: () => void }): void {
 
 function isFunc<T>(maybeFn: any): maybeFn is (T) => void {
   return typeof maybeFn === 'function';
-} 
+}
 
-function Input({
-  className,
-  error,
-  successes,
-  loading,
-  children,
-  message,
-  onChange,
-  onFocus,
-  onBlur,
-  onType,
-  disabled,
-  isFocused,
-  ...props
-}: IInputProps, ref) {
+function Input(
+  {
+    className,
+    error,
+    successes,
+    loading,
+    children,
+    message,
+    onChange,
+    onFocus,
+    onBlur,
+    onType,
+    disabled,
+    isFocused,
+    ...props
+  }: InputProps,
+  ref,
+) {
   const onTypeHandler = createOnType(onType);
   const [focus, setFocus] = useState(isFocused);
 
@@ -53,24 +54,30 @@ function Input({
   useEffect(() => {
     if (ref?.current) {
       if (focus) {
-        isFunc(ref.current.focus) && ref.current.focus()
+        isFunc(ref.current.focus) && ref.current.focus();
       } else {
-        isFunc(ref.current.blur) && ref.current.blur()
+        isFunc(ref.current.blur) && ref.current.blur();
       }
     }
   }, [focus]);
 
-  const nativeFocusEventHandler = useCallback(e => {
-    preventDefault(e); 
-    isFunc<typeof e>(onFocus) && onFocus(e)
-    setFocus(true); // Delegate default behavior to effect
-  }, [onFocus]);
+  const nativeFocusEventHandler = useCallback(
+    (e) => {
+      preventDefault(e);
+      isFunc<typeof e>(onFocus) && onFocus(e);
+      setFocus(true); // Delegate default behavior to effect
+    },
+    [onFocus],
+  );
 
-  const nativeBlurEventHandler = useCallback(e => {
-    preventDefault(e); 
-    isFunc<typeof e>(onBlur) && onBlur(e)
-    setFocus(false); // Delegate default behavior to effect
-  }, [onBlur]);
+  const nativeBlurEventHandler = useCallback(
+    (e) => {
+      preventDefault(e);
+      isFunc<typeof e>(onBlur) && onBlur(e);
+      setFocus(false); // Delegate default behavior to effect
+    },
+    [onBlur],
+  );
 
   const dynamicClasses = {
     [style.successes]: successes,
@@ -85,7 +92,7 @@ function Input({
         <input
           {...props}
           ref={ref}
-          onChange={e => ((onChange && onChange(e), onTypeHandler(e)))}
+          onChange={(e) => (onChange && onChange(e), onTypeHandler(e))}
           onFocus={nativeFocusEventHandler}
           onBlur={nativeBlurEventHandler}
           disabled={disabled}

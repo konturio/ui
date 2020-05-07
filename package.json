@@ -21,6 +21,7 @@
     "plop:ref": "npx plop ref",
     "plop:link": "npx plop link",
     "plop:unlink": "npx plop unlink",
+    "plop:release": "npx plop release",
     "fix:dependencies": "npx syncpack fix-mismatches --peer",
     "lint:ts": "eslint '*/**/*.{ts,tsx}' --quiet",
     "lint:fix": "eslint '*/**/*.{ts,tsx}' --quiet --fix"

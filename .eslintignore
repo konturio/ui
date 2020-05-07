@@ -1,3 +1,5 @@
 templates/**/*
 **/node_modules/**/*
 **/tsclib/**/*
+.plop/**/*
+plopfile.js

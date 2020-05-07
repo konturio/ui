@@ -13,8 +13,9 @@ async function execAction(answers, { command, abortOnFail = true, onError }, plo
       return (
         `\nExecuted:` +
         `\n  ${commands.join('\n  ')}` +
-        `\nstdout:` +
-        `\n${stdout}`
+        `\nMessage:` +
+        `\n${stdout}` +
+        `\n${stderr}`
       );
     } catch (error) {
       if (error.stdout &&error.stdout.includes(com + ' - EACCES: permission denied')) {

@@ -3,6 +3,7 @@
 const ls = require('fs').readdirSync;
 const modifyJson = require('./.plop/actions/modifyJson');
 const exec = require('./.plop/actions/exec');
+const spawn = require('./.plop/actions/spawn');
 const link = require('./.plop/actions/link');
 const getModuleGenerator = require('./.plop/generators/module');
 const getAddDependencyToPackageGenerator = require('./.plop/generators/dependency');
@@ -10,6 +11,7 @@ const routeGenerator = require('./.plop/generators/route');
 const referencesGenerator = require('./.plop/generators/references-generator');
 const linker = require('./.plop/generators/linker');
 const unLinker = require('./.plop/generators/unLinker');
+const release = require('./.plop/generators/release');
 
 module.exports = (plop) => {
   plop.setPrompt('checkbox-autocomplete', require('inquirer-checkbox-plus-prompt'));
@@ -17,6 +19,7 @@ module.exports = (plop) => {
   plop.setHelper('curly', (text) => `{${text}}`);
   plop.setActionType('modifyJson', modifyJson);
   plop.setActionType('exec', exec);
+  plop.setActionType('spawn', spawn);
   plop.setActionType('link', link);
 
   const exclude = ['coverage', 'tsconfig.json'];
@@ -28,4 +31,5 @@ module.exports = (plop) => {
   plop.setGenerator('ref', referencesGenerator());
   plop.setGenerator('link', linker(packages));
   plop.setGenerator('unlink', unLinker());
+  plop.setGenerator('release', release());
 };

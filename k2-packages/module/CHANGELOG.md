@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.2](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/module@1.4.1...@k2-packages/module@1.4.2) (2020-05-07)
+
+
+### Bug Fixes
+
+* tslint to eslint ([2f551c3](https://gitlab.com/kontur-private/k2/k2-front-end/commit/2f551c33e6e273744bcd312c100b7296e6abfde8))
+
+
+
+
+
 ## [1.4.1](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/module@1.4.0...@k2-packages/module@1.4.1) (2020-04-13)
 
 

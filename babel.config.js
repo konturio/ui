@@ -24,6 +24,7 @@ module.exports = function babelConfig(api) {
     plugins: [
       '@babel/proposal-object-rest-spread',
       '@babel/plugin-proposal-class-properties',
+      // "i18next-extract"
     ],
   };
 };

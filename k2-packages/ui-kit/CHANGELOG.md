@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.10.0](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@1.7.0...@k2-packages/ui-kit@1.10.0) (2020-05-12)
+
+
+### Bug Fixes
+
+* bug with wrong value on focues event ([aad2451](https://gitlab.com/kontur-private/k2/k2-front-end/commit/aad245159852e3d0da66a16d09dbf97572a43db6))
+* scroll position on tab ([3816420](https://gitlab.com/kontur-private/k2/k2-front-end/commit/3816420ce8612895a4e8dd48addcfa73cd936ab4))
+* tslint to eslint ([2f551c3](https://gitlab.com/kontur-private/k2/k2-front-end/commit/2f551c33e6e273744bcd312c100b7296e6abfde8))
+
+
+### Features
+
+* focus on select feature ([5ce3ac4](https://gitlab.com/kontur-private/k2/k2-front-end/commit/5ce3ac4f30240198b1641be0e7b81c4f5d5cc44c))
+* onFocus event support ([10e015d](https://gitlab.com/kontur-private/k2/k2-front-end/commit/10e015d60bfcb860c78b2bfc941ed9963d9de86e))
+* scroll to selected ([5b70a3c](https://gitlab.com/kontur-private/k2/k2-front-end/commit/5b70a3c18e5823b6ffd93d46f235cac69f7407d7))
+
+
+
+
+
 ## [1.9.1](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@1.9.0...@k2-packages/ui-kit@1.9.1) (2020-05-07)
 
 

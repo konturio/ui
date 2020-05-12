@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.14](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-dev/base@1.4.5...@k2-dev/base@1.4.14) (2020-05-12)
+
+
+### Bug Fixes
+
+* drop old firebrigade ([ba90363](https://gitlab.com/kontur-private/k2/k2-front-end/commit/ba903633272bbbd7fadd3a581c735895f16c4064))
+* tslint to eslint ([2f551c3](https://gitlab.com/kontur-private/k2/k2-front-end/commit/2f551c33e6e273744bcd312c100b7296e6abfde8))
+
+
+
+
+
 ## [1.4.13](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-dev/base@1.4.12...@k2-dev/base@1.4.13) (2020-05-07)
 
 

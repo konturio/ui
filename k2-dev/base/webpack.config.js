@@ -3,6 +3,7 @@ const HtmlWebPackPlugin = require('html-webpack-plugin');
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const Autoprefixer = require('autoprefixer');
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 console.log('process.NODE_ENV:', process.env.NODE_ENV);
 console.log('process.API:', process.env.API);
@@ -26,23 +27,12 @@ module.exports = {
   devServer: {
     port: 8080,
     inline: true,
-    // quiet: false,
-    // noInfo: false,
-    // stats: {
-    //   all: false,
-    //   wds: true,
-    //   assets: false,
-    //   colors: true,
-    //   version: false,
-    //   hash: false,
-    //   timings: false,
-    //   chunks: false,
-    //   chunkModules: false,
-    // },
+    stats: "errors-only",
     historyApiFallback: true,
     contentBase: path.resolve(__dirname, '/dist'),
   },
   plugins: [
+    new CopyWebpackPlugin([{ from: "src/locales", to: 'locales', ignore: ['*.js']}]),
     new webpack.DefinePlugin({
       'process.env.API': JSON.stringify(process.env.API),
     }),

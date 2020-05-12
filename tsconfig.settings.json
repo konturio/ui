@@ -31,6 +31,7 @@
   },
   "exclude": [
     "node_modules",
+    "templates",
     "k2-dev/*/node_modules",
     "k2-dev/*/tsclib",
     "k2-packages/*/node_modules",

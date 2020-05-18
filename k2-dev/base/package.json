@@ -1,6 +1,6 @@
 {
   "name": "@k2-dev/base",
-  "version": "1.4.16",
+  "version": "1.4.17",
   "main": "src/index.tsx",
   "types": "tsclib",
   "private": true,
@@ -9,10 +9,10 @@
     "build": "webpack"
   },
   "dependencies": {
-    "@k2-packages/client": "^1.8.1",
+    "@k2-packages/client": "^1.9.0",
     "@k2-packages/default-theme": "^1.4.1",
-    "@k2-packages/geocoder": "^1.9.2",
-    "@k2-packages/mapbox-map": "^1.10.0",
+    "@k2-packages/geocoder": "^1.9.3",
+    "@k2-packages/mapbox-map": "^1.11.0",
     "@k2-packages/module": "^1.4.4",
     "@k2-packages/ui-kit": "^1.10.1"
   },

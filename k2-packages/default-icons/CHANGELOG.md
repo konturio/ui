@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.8](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/default-icons@1.0.7...@k2-packages/default-icons@1.0.8) (2020-05-20)
+
+**Note:** Version bump only for package @k2-packages/default-icons
+
+
+
+
+
 ## [1.0.7](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/default-icons@1.0.5...@k2-packages/default-icons@1.0.7) (2020-05-13)
 
 **Note:** Version bump only for package @k2-packages/default-icons

@@ -3,6 +3,7 @@ import Card from './Card';
 import DropDown from './DropDown';
 import Checkbox from './Checkbox';
 import LanguageSelect from './LanguageSelect';
+import Selector from './Selector';
 
 export default {
   Input,
@@ -10,4 +11,5 @@ export default {
   DropDown,
   Checkbox,
   LanguageSelect,
+  Selector,
 };

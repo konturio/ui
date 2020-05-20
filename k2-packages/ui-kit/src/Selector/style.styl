@@ -1,0 +1,34 @@
+@import "~@k2-packages/default-theme"
+
+.form
+  display: flex;
+  position relative;
+  box-shadow: shadow-1
+  border-radius: border-radius
+  overflow hidden
+
+.selector
+  display: flex;
+  &.vertical
+    flex-flow: column nowrap;
+  &.horizontal
+    flex-flow: row nowrap;
+    
+.option
+  cursor pointer
+  background-color: white
+  text-align: center
+  padding: (unit/2) unit
+  display: flex
+  align-items: center
+  justify-content: center
+  input
+    visibility: hidden
+    position absolute
+  :hover
+    background-color: rgba(primary-color, .2)
+  &.checked
+    background-color: secondary-color
+    color: secondary-text-color
+
+  

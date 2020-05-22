@@ -47,7 +47,7 @@ export default function DropDown({
   onKeyPress,
   onFocus,
   focusOnSelect,
-}: DropDownProps) {
+}: DropDownProps): JSX.Element {
   useKeyPress(onKeyPress, isFocused);
   return (
     <div className={clsx(className, { [style.focus]: isFocused })}>

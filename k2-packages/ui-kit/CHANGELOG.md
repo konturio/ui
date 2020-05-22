@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.11.0](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@1.10.2...@k2-packages/ui-kit@1.11.0) (2020-05-22)
+
+
+### Features
+
+* add reset by esc ability ([a1c2623](https://gitlab.com/kontur-private/k2/k2-front-end/commit/a1c2623e5f11d0eb253e1ae6b341dd7de3735f58))
+
+
+
+
+
 ## [1.10.2](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@1.10.1...@k2-packages/ui-kit@1.10.2) (2020-05-20)
 
 

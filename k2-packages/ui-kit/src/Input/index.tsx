@@ -1,4 +1,4 @@
-import React, { useState, forwardRef, useEffect, useCallback } from 'react';
+import React, { useState, forwardRef, useEffect, useCallback, useRef, useImperativeHandle } from 'react';
 import clsx from 'clsx';
 import style from './style.styl';
 
@@ -43,7 +43,7 @@ function Input(
     ...props
   }: InputProps,
   ref,
-) {
+): JSX.Element {
   const onTypeHandler = createOnType(onType);
   const [focus, setFocus] = useState(isFocused);
 
@@ -86,12 +86,19 @@ function Input(
     [style.disabled]: disabled,
   };
 
+  const inputRef = useRef<HTMLInputElement>(null);
+  useImperativeHandle(ref, () => ({
+    focus: (): void => inputRef.current?.focus(),
+    blur: (): void => inputRef.current?.blur(),
+    selectText: (): void => inputRef.current?.select(),
+  }));
+
   return (
     <div className={clsx(style.root, dynamicClasses)}>
       <div className={clsx(style.inputBox, className)}>
         <input
           {...props}
-          ref={ref}
+          ref={inputRef}
           onChange={(e) => (onChange && onChange(e), onTypeHandler(e))}
           onFocus={nativeFocusEventHandler}
           onBlur={nativeBlurEventHandler}

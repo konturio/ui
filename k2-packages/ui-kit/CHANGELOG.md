@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.11.1](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@1.11.0...@k2-packages/ui-kit@1.11.1) (2020-05-25)
+
+
+### Bug Fixes
+
+* try to fix 2478 ([2f7ffbf](https://gitlab.com/kontur-private/k2/k2-front-end/commit/2f7ffbff862ce0c29f57846c1709fb4ca4c16203))
+
+
+
+
+
 # [1.11.0](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@1.10.2...@k2-packages/ui-kit@1.11.0) (2020-05-22)
 
 

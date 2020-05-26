@@ -1,66 +1,62 @@
-import React, { useCallback, useMemo } from 'react';
-import clsx from 'clsx';
-import style from './style.styl';
-
-type Option = {
-  label: string;
-  value: string;
-};
+/* eslint-disable prettier/prettier */
+import React, { useCallback } from 'react';
+import { Option } from './Option';
+import SelectedItems from './SelectedItems';
+import SimpleSelector from './SimpleSelector';
 
 type changeEvent = React.ChangeEvent<HTMLInputElement>;
 
-interface OptionElement extends Option {
-  isChecked: boolean;
-  onChange: (event: changeEvent) => void;
-}
-
-function Option({ isChecked, onChange, value, label }: OptionElement): JSX.Element {
-  return (
-    <label key={value} className={clsx(isChecked && style.checked, style.option)}>
-      {label}
-      {/* eslint-disable-next-line prettier/prettier */}
-      <input
-        name={label}
-        value={value}
-        type="checkbox"
-        checked={isChecked}
-        onChange={onChange}
-      />
-    </label>
-  );
+function createChecker(selected: Selector['selected']): (value: Option) => boolean {
+  if (selected === undefined) return () => false;
+  const selectedValues = Array.isArray(selected) ? selected : [selected];
+  return (option): boolean => selectedValues.includes(option.value);
 }
 
 export interface Selector {
   options: Option[];
   onChange: (value: Option['value'], e: changeEvent) => void;
-  checked: Option['value'] | Option['value'][];
+  selected?: Option['value'] | Option['value'][];
   className?: string;
   orientation?: 'vertical' | 'horizontal';
+  multi?: boolean;
+  placeholder?: string;
+  collapse?: boolean;
 }
 
 export default function Selector({
   options,
+  selected,
   onChange,
-  checked,
   className,
   orientation = 'vertical',
+  collapse = false,
+  placeholder = 'Click for select',
+  multi = false,
 }: Selector): JSX.Element {
   const onChangeHandler = useCallback((event: changeEvent) => onChange(event.target.value, event), [onChange]);
-  const checkedValues = useMemo(() => (Array.isArray(checked) ? checked : [checked]), [checked]);
-  return (
-    <form className={clsx(style.form, className)}>
-      {/* extra div it's form-flex fix */}
-      <div className={clsx(style.selector, style[orientation])}>
-        {options.map(({ label, value }) => (
-          <Option
-            key={value}
-            label={label}
-            value={value}
-            onChange={onChangeHandler}
-            isChecked={checkedValues.includes(value)}
-          />
-        ))}
-      </div>
-    </form>
-  );
+  const checkSelected = createChecker(selected);
+  return collapse
+    ? <SelectedItems
+        options={options}
+        selected={selected}
+        placeholder={placeholder}
+        className={className}
+        checkSelected={checkSelected}
+      >
+        <SimpleSelector
+          options={options}
+          onChange={onChangeHandler}
+          orientation='vertical'
+          multi={false}
+          checkSelected={checkSelected}
+        />
+      </SelectedItems> 
+    : <SimpleSelector
+        options={options}
+        onChange={onChangeHandler}
+        orientation={orientation}
+        className={className}
+        multi={multi}
+        checkSelected={checkSelected}
+      />
 }

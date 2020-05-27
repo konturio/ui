@@ -1,47 +1,9 @@
 @import "~@k2-packages/default-theme"
 
-.selector
-  display: inline-flex;
-  position relative;
-  box-shadow: shadow-1
+.nestedSelector
+  width: 100%
+
+.shade
+  box-shadow: shadow-2
   border-radius: border-radius
-  overflow hidden
-  &.vertical
-    flex-flow: column nowrap;
-    padding-top: unit
-    padding-bottom: unit
-
-  &.horizontal
-    flex-flow: row nowrap;
-    padding-right: unit
-    padding-left: unit
-
-.line 
-  display: flex
-  flex-flow: row nowrap
-  align-items: center
-  justify-content: center
-  background-color: white
-  :hover
-    background-color: rgba(primary-color, .2)
-  &.selected
-    background-color: secondary-color
-    color: secondary-text-color
-
-.btn
-  padding: (unit/2) unit
-  width: 24px
-  height: 24px
-
-.option
-  cursor pointer
-  text-align: center
-  padding: (unit/2) unit
-  display: flex
-  align-items: center
-  justify-content: center
-  flex: 1
-  input
-    visibility: hidden
-    position absolute
-
+  border: input-border

@@ -1,8 +1,10 @@
 /* eslint-disable prettier/prettier */
 import React, { useCallback } from 'react';
+import clsx from 'clsx';
 import { Option } from './Option';
 import SelectedItems from './SelectedItems';
 import SimpleSelector from './SimpleSelector';
+import style from './style.styl';
 
 type changeEvent = React.ChangeEvent<HTMLInputElement>;
 
@@ -21,6 +23,7 @@ export interface Selector {
   multi?: boolean;
   placeholder?: string;
   collapse?: boolean;
+  small?: boolean;
 }
 
 export default function Selector({
@@ -32,6 +35,7 @@ export default function Selector({
   collapse = false,
   placeholder = 'Click for select',
   multi = false,
+  small = false
 }: Selector): JSX.Element {
   const onChangeHandler = useCallback((event: changeEvent) => onChange(event.target.value, event), [onChange]);
   const checkSelected = createChecker(selected);
@@ -41,6 +45,7 @@ export default function Selector({
         selected={selected}
         placeholder={placeholder}
         className={className}
+        small={small}
         checkSelected={checkSelected}
       >
         <SimpleSelector
@@ -48,15 +53,18 @@ export default function Selector({
           onChange={onChangeHandler}
           orientation='vertical'
           multi={false}
+          small={small}
           checkSelected={checkSelected}
+          className={style.nestedSelector}
         />
       </SelectedItems> 
     : <SimpleSelector
         options={options}
         onChange={onChangeHandler}
         orientation={orientation}
-        className={className}
+        className={clsx(className, style.shade)}
         multi={multi}
+        small={small}
         checkSelected={checkSelected}
       />
 }

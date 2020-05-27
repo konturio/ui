@@ -5,6 +5,7 @@ import style from './style.styl';
 const options = [
   { label: 'foo', value: 'foo-value' },
   { label: 'bar', value: 'bar-value' },
+  { label: 'disabled', value: 'disabled', disabled: true },
   { label: 'baz', value: 'baz-value' },
 ];
 
@@ -40,6 +41,24 @@ export default function Kit(): JSX.Element {
         <UI.Selector
           selected={selected}
           orientation="horizontal"
+          onChange={(value): void => setSelected(value)}
+          options={options}
+        />
+      </div>
+      <div className={style.box}>
+        <UI.Selector
+          selected={selected}
+          collapse={true}
+          small={true}
+          onChange={(value): void => setSelected(value)}
+          options={options}
+        />
+      </div>
+      <div className={style.box}>
+        <UI.Selector
+          selected={selected}
+          orientation="horizontal"
+          small={true}
           onChange={(value): void => setSelected(value)}
           options={options}
         />

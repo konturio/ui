@@ -1,7 +1,7 @@
 /* eslint-disable prettier/prettier */
 import React from 'react';
 import clsx from 'clsx';
-import style from './style.styl';
+import style from './simpleSelector.styl';
 import Option, { Option as TOption } from './Option';
 
 type changeEvent = React.ChangeEvent<HTMLInputElement>;
@@ -13,6 +13,7 @@ interface BaseSelector {
   placeholder?: string;
   multi?: boolean;
   checkSelected: (value: TOption) => boolean;
+  small?: boolean
 }
 
 interface VerticalSelector extends BaseSelector {
@@ -32,7 +33,8 @@ export default function SimpleSelector({
   className,
   checkSelected,
   onChange,
-  orientation = 'vertical'
+  orientation = 'vertical',
+  small = false
 }: SimpleSelector): JSX.Element {
   return (
     <div className={clsx(style.selector, className, style[orientation])}>
@@ -41,7 +43,9 @@ export default function SimpleSelector({
           key={opt.value}
           label={opt.label}
           value={opt.value}
-          onChange={onChange}
+          onChange={opt.disabled ? onChange : () => { /* Do nothing */}}
+          disabled={opt.disabled}
+          small={small}
           selected={checkSelected(opt)}
         />
       ))}

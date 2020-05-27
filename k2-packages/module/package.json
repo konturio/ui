@@ -1,6 +1,6 @@
 {
   "name": "@k2-packages/module",
-  "version": "1.4.4",
+  "version": "1.4.5",
   "main": "src/index.tsx",
   "types": "src/index.tsx",
   "publishConfig": {
@@ -12,7 +12,7 @@
   },
   "skripts": {},
   "dependencies": {
-    "@k2-packages/default-theme": "^1.4.1"
+    "@k2-packages/default-theme": "^1.4.2"
   },
   "peerDependencies": {
     "@types/react-redux": "^7.1.7",

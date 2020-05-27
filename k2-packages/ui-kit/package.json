@@ -1,6 +1,6 @@
 {
   "name": "@k2-packages/ui-kit",
-  "version": "1.11.1",
+  "version": "1.11.2",
   "main": "src/index.tsx",
   "types": "src/index.tsx",
   "publishConfig": {
@@ -12,7 +12,7 @@
   },
   "scripts": {},
   "dependencies": {
-    "@k2-packages/default-theme": "^1.4.1"
+    "@k2-packages/default-theme": "^1.4.2"
   },
   "peerDependencies": {
     "clsx": "^1.1.0",

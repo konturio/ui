@@ -1,6 +1,6 @@
 {
   "name": "@k2-dev/base",
-  "version": "1.4.25",
+  "version": "1.4.26",
   "main": "src/index.tsx",
   "types": "tsclib",
   "private": true,
@@ -11,10 +11,10 @@
   "dependencies": {
     "@k2-packages/client": "^1.9.2",
     "@k2-packages/default-theme": "^1.4.2",
-    "@k2-packages/geocoder": "^1.10.3",
+    "@k2-packages/geocoder": "^1.10.4",
     "@k2-packages/mapbox-map": "^1.13.0",
     "@k2-packages/module": "^1.4.5",
-    "@k2-packages/ui-kit": "^1.11.2"
+    "@k2-packages/ui-kit": "^1.11.3"
   },
   "peerDependencies": {
     "@types/react-redux": "^7.1.7",

@@ -13,6 +13,7 @@ interface SelectableElement {
   badge?: string | React.ReactChild | React.ReactChild[];
   badgeClass?: string;
   onFocus?: (e: React.FormEvent<HTMLInputElement>) => void;
+  disabled?: boolean;
 }
 
 export default function SelectableElement({
@@ -25,7 +26,8 @@ export default function SelectableElement({
   onChange,
   badgeClass,
   onFocus,
-}: SelectableElement) {
+  disabled = false,
+}: SelectableElement): JSX.Element {
   const inputRef = useRef<HTMLInputElement>(null);
   useEffect(() => {
     if (isFocused === true) {
@@ -58,6 +60,7 @@ export default function SelectableElement({
         onChange={onChange}
         className={style.radio}
         onFocus={onFocus}
+        disabled={disabled}
       />
       <label htmlFor={id} className={style.option}>
         {badge && <span className={clsx(style.badge, badgeClass)}>{badge}</span>}

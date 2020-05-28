@@ -16,6 +16,7 @@ import { useKeyPress } from './useKeyPress';
 interface Option {
   label: string | React.ReactChild | React.ReactChild[];
   value: string | number;
+  disabled?: boolean;
 }
 
 interface DropDownProps {
@@ -51,10 +52,11 @@ export default function DropDown({
   useKeyPress(onKeyPress, isFocused);
   return (
     <div className={clsx(className, { [style.focus]: isFocused })}>
-      {options.map(({ value, label }, i) => (
+      {options.map(({ value, label, disabled }, i) => (
         <SelectableElement
           key={value}
           id={String(value)}
+          disabled={disabled}
           value={value}
           onChange={onChange}
           onFocus={onFocus}

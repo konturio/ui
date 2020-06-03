@@ -11,7 +11,7 @@ const options = [
 
 export default function Kit(): JSX.Element {
   const [selected, setSelected] = useState<string>();
-  console.log(selected)
+
   return (
     <form className={style.inputs}>
       <div>Default</div>

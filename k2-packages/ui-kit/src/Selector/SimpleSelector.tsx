@@ -43,7 +43,7 @@ export default function SimpleSelector({
           key={opt.value}
           label={opt.label}
           value={opt.value}
-          onChange={opt.disabled ? onChange : () => { /* Do nothing */}}
+          onChange={opt.disabled ? () => { /* Do nothing */} : onChange }
           disabled={opt.disabled}
           small={small}
           selected={checkSelected(opt)}

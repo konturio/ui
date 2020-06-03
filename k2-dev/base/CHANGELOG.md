@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.28](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-dev/base@1.4.27...@k2-dev/base@1.4.28) (2020-06-03)
+
+
+### Bug Fixes
+
+* **kit:** incorrect disable state in selector ([ef67869](https://gitlab.com/kontur-private/k2/k2-front-end/commit/ef678698f5b8f11a0c1c1f4d34cd47c67964e62c))
+
+
+
+
+
 ## [1.4.27](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-dev/base@1.4.26...@k2-dev/base@1.4.27) (2020-06-02)
 
 **Note:** Version bump only for package @k2-dev/base

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.11.4](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@1.11.3...@k2-packages/ui-kit@1.11.4) (2020-06-03)
+
+
+### Bug Fixes
+
+* **kit:** incorrect disable state in selector ([ef67869](https://gitlab.com/kontur-private/k2/k2-front-end/commit/ef678698f5b8f11a0c1c1f4d34cd47c67964e62c))
+
+
+
+
+
 ## [1.11.3](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@1.11.2...@k2-packages/ui-kit@1.11.3) (2020-05-28)
 
 **Note:** Version bump only for package @k2-packages/ui-kit

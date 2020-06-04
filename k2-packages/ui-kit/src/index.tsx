@@ -4,6 +4,8 @@ import DropDown from './DropDown';
 import Checkbox from './Checkbox';
 import LanguageSelect from './LanguageSelect';
 import Selector from './Selector';
+import Slider from './Slider';
+import TimeSlider from './TimeSlider';
 
 export default {
   Input,
@@ -12,4 +14,6 @@ export default {
   Checkbox,
   LanguageSelect,
   Selector,
+  Slider,
+  TimeSlider,
 };

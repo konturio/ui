@@ -11,7 +11,7 @@ const options = [
 
 export default function Kit(): JSX.Element {
   const [selected, setSelected] = useState<string>();
-
+  const [sliderValue, setSliderValue] = useState<number>(25);
   return (
     <form className={style.inputs}>
       <div>Default</div>
@@ -61,6 +61,18 @@ export default function Kit(): JSX.Element {
           small={true}
           onChange={(value): void => setSelected(value)}
           options={options}
+        />
+      </div>
+      <div className={style.box}>
+        <UI.TimeSlider
+          rulerNumbers={[5, 10, 15, 25, 30]}
+          sliderValue={sliderValue}
+          colorsLegend={[
+            'rgba(255, 0, 0)',
+            'rgba(0, 255, 0)',
+            'rgba(0, 0, 255)',
+          ]}
+          onSliderChange={(value): void => setSliderValue(value)}
         />
       </div>
     </form>

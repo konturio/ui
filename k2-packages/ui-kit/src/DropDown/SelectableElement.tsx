@@ -86,7 +86,7 @@ export default function SelectableElement({
         name={id}
         value={value}
         checked={isSelected}
-        onChange={focusAsSelect ? doNothing : onFocus}
+        onChange={focusAsSelect ? doNothing : onChange}
         className={style.radio}
         onFocus={focusHandler}
         disabled={disabled}

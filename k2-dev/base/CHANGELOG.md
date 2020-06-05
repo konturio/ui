@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.5.0](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-dev/base@1.4.30...@k2-dev/base@1.5.0) (2020-06-05)
+
+
+### Bug Fixes
+
+* build crush ([0fd276f](https://gitlab.com/kontur-private/k2/k2-front-end/commit/0fd276f98126eb7cceeec607be00931d7e680a34))
+
+
+### Features
+
+* **kit:** add slider ([bdcc1b2](https://gitlab.com/kontur-private/k2/k2-front-end/commit/bdcc1b2b44e0b37d7ccb8bc5dc26da6e42c35ad7))
+
+
+
+
+
 ## [1.4.30](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-dev/base@1.4.29...@k2-dev/base@1.4.30) (2020-06-03)
 
 **Note:** Version bump only for package @k2-dev/base

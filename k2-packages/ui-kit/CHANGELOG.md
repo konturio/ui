@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.12.0](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@1.11.5...@k2-packages/ui-kit@1.12.0) (2020-06-05)
+
+
+### Features
+
+* **kit:** add slider ([bdcc1b2](https://gitlab.com/kontur-private/k2/k2-front-end/commit/bdcc1b2b44e0b37d7ccb8bc5dc26da6e42c35ad7))
+
+
+
+
+
 ## [1.11.5](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@1.11.4...@k2-packages/ui-kit@1.11.5) (2020-06-03)
 
 

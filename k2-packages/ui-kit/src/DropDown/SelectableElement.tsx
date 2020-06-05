@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useCallback, useState } from 'react';
 import clsx from 'clsx';
 import { scrollIntoView } from './scrollIntoView';
 import style from './style.styl';
@@ -14,7 +14,10 @@ interface SelectableElement {
   badgeClass?: string;
   onFocus?: (e: React.FormEvent<HTMLInputElement>) => void;
   disabled?: boolean;
+  focusAsSelect?: boolean;
 }
+
+const doNothing = () => {};
 
 export default function SelectableElement({
   children,
@@ -27,8 +30,11 @@ export default function SelectableElement({
   badgeClass,
   onFocus,
   disabled = false,
+  focusAsSelect = false,
 }: SelectableElement): JSX.Element {
   const inputRef = useRef<HTMLInputElement>(null);
+
+  /* Convert boolean props isFocused to native DOM api calls */
   useEffect(() => {
     if (isFocused === true) {
       inputRef.current?.focus();
@@ -37,6 +43,29 @@ export default function SelectableElement({
       inputRef.current?.blur();
     }
   }, [isFocused]);
+
+  /**
+   * For support `focusAsSelect` prop I must change 'checked' state of input when it got focus.
+   * I see three ways:
+   * 1) use internal checked stated and change it on focus
+   * 2) simulate user click when it in focus
+   * 3) Just switch onFocus to onChange
+   * Last one looks more clear for me/
+   */
+  const focusHandler = useCallback(
+    (e) => {
+      if (onFocus) onFocus(e);
+      if (focusAsSelect) onChange(e);
+    },
+    [focusAsSelect, onFocus, onChange],
+  );
+
+  /* Focus when programmatically select outside */
+  useEffect(() => {
+    if (focusAsSelect && isSelected && !isFocused) {
+      inputRef.current?.focus();
+    }
+  }, [focusAsSelect, isSelected, isFocused]);
 
   useEffect(() => {
     if (isSelected) {
@@ -57,9 +86,9 @@ export default function SelectableElement({
         name={id}
         value={value}
         checked={isSelected}
-        onChange={onChange}
+        onChange={focusAsSelect ? doNothing : onFocus}
         className={style.radio}
-        onFocus={onFocus}
+        onFocus={focusHandler}
         disabled={disabled}
       />
       <label htmlFor={id} className={style.option}>

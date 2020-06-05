@@ -17,7 +17,12 @@ interface SelectableElement {
   focusAsSelect?: boolean;
 }
 
-const doNothing = () => {};
+const doNothing = (): void => {
+  /* Do nothing */
+};
+
+// Safari suck https://bugs.webkit.org/show_bug.cgi?id=13724
+const fixSafariBug = (e): void => e.target.focus();
 
 export default function SelectableElement({
   children,
@@ -87,6 +92,7 @@ export default function SelectableElement({
         value={value}
         checked={isSelected}
         onChange={focusAsSelect ? doNothing : onChange}
+        onClick={fixSafariBug}
         className={style.radio}
         onFocus={focusHandler}
         disabled={disabled}

@@ -45,7 +45,7 @@ const BasicRouting = (): JSX.Element => (
             <Module />
           </Route>
           <Route path="/geocoder">
-            <Geocoder />
+            <Geocoder notFoundMessage={'Че ты там за ересь вбил'} />
           </Route>
           <Route path="/kit">
             <Kit />

@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.12.1](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@1.12.0...@k2-packages/ui-kit@1.12.1) (2020-06-08)
+
+
+### Bug Fixes
+
+* another ([7a0736e](https://gitlab.com/kontur-private/k2/k2-front-end/commit/7a0736e285ec0aa446efbd9c8f19bd1d36f07003))
+* mistake on handlers ([3d80788](https://gitlab.com/kontur-private/k2/k2-front-end/commit/3d8078823eff0a86d0e8410dc45426dfb42d8714))
+* selection on focus in safary ([6efb0a4](https://gitlab.com/kontur-private/k2/k2-front-end/commit/6efb0a4764b4d299413a860e226d852b6e6bef9b))
+
+
+
+
+
 # [1.12.0](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@1.11.5...@k2-packages/ui-kit@1.12.0) (2020-06-05)
 
 

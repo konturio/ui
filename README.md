@@ -191,6 +191,15 @@ git push origin --tags
 8. Wait until pipeline task 'release' was success
 9. Rebuild the app where you want to use the new modules
 
+
+### Localization
+Localization done with a complete solution of i18next.
+Each product build on top of k2 platform:
+
+- Initialize i18nex object [Example](https://gitlab.com/kontur-private/kcloud/kcfirebrigade-fe/-/blob/master/src/i18n/index.ts)
+- Define localization files location [Example](https://gitlab.com/kontur-private/kcloud/kcfirebrigade-fe/-/tree/master/src/locales)
+- Add language selector [Example](https://gitlab.com/kontur-private/kcloud/kcfirebrigade-fe/-/blob/master/src/components/HomePage/index.tsx#L205)
+
 ### TODO:
  - Commit message validation at local development (Husky)?
  - CI add git hook for commit lint.

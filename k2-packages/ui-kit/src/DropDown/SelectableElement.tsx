@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useCallback, useState } from 'react';
+import React, { useEffect, useRef, useCallback } from 'react';
 import clsx from 'clsx';
 import { scrollIntoView } from './scrollIntoView';
 import style from './style.styl';

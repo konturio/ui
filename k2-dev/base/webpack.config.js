@@ -5,9 +5,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const Autoprefixer = require('autoprefixer');
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 
-console.log('process.NODE_ENV:', process.env.NODE_ENV);
-console.log('process.API:', process.env.API);
-
 module.exports = {
   entry: {
     main: './src/index.tsx',

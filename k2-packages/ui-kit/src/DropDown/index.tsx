@@ -33,8 +33,8 @@ interface DropDownProps {
   /** trigger only in focused state */
   onKeyPress?: (keyCode: number) => void;
   onFocus?: (e: React.FormEvent<HTMLInputElement>) => void;
-  /** Set focus to selected item */
-  focusOnSelect?: boolean;
+  /** Join focus and select event into one event */
+  focusAsSelect?: boolean;
 }
 
 export default function DropDown({
@@ -47,7 +47,7 @@ export default function DropDown({
   badgeClass,
   onKeyPress,
   onFocus,
-  focusOnSelect,
+  focusAsSelect,
 }: DropDownProps): JSX.Element {
   useKeyPress(onKeyPress, isFocused);
   return (
@@ -60,7 +60,7 @@ export default function DropDown({
           value={value}
           onChange={onChange}
           onFocus={onFocus}
-          isFocused={focusOnSelect && value === selected}
+          focusAsSelect={focusAsSelect}
           isSelected={value === selected}
           badgeClass={badgeClass}
           badge={i < 9 ? <span className={style.bind}>{i + 1}</span> : undefined}

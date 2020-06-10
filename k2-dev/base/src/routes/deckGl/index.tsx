@@ -22,8 +22,10 @@ const FEMALE_COLOR = [255, 0, 128];
 
 export default function DeckGlRoute(): JSX.Element {
   const deckRef = useRef();
+  const mapBoxRef = useRef();
   useEffect(() => {
     console.log(deckRef.current);
+    console.log(mapBoxRef.current);
   }, []);
 
   const layers = [
@@ -50,6 +52,7 @@ export default function DeckGlRoute(): JSX.Element {
         onLoad={() => {
           /* Do nothing */
         }}
+        ref={mapBoxRef}
       />
     </DeckGl>
   );

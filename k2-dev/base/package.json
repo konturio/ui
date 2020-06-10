@@ -9,7 +9,9 @@
     "build": "webpack"
   },
   "dependencies": {
+    "@deck.gl/core": "^8.1.9",
     "@k2-packages/client": "^1.9.2",
+    "@k2-packages/deck-gl": "^1.0.0",
     "@k2-packages/default-theme": "^1.4.2",
     "@k2-packages/geocoder": "^1.10.10",
     "@k2-packages/mapbox-map": "^1.13.0",

@@ -24,8 +24,8 @@ export default function DeckGlRoute(): JSX.Element {
   const deckRef = useRef();
   const mapBoxRef = useRef();
   useEffect(() => {
-    console.log(deckRef.current);
-    console.log(mapBoxRef.current);
+    console.log('deckRef', deckRef.current);
+    console.log('mapBoxRef', mapBoxRef.current);
   }, []);
 
   const layers = [

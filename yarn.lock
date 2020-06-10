@@ -944,6 +944,21 @@
     mjolnir.js "^2.3.0"
     probe.gl "^3.2.1"
 
+"@deck.gl/layers@^8.1.9":
+  version "8.1.9"
+  resolved "https://registry.yarnpkg.com/@deck.gl/layers/-/layers-8.1.9.tgz#7f0c6b25b332019c7cdb45dc2f1659f55fc50ae4"
+  integrity sha512-0geHxt48Fkaj/O/qJ+ppW5KrMqP6h8ZQHGrW8xOe3jDyT6Pkxfuhc1gLCd5ZLUZliJ5N30hqpLNvjW99h2RIOg==
+  dependencies:
+    "@loaders.gl/core" "^2.1.6"
+    "@loaders.gl/images" "^2.1.6"
+    "@mapbox/tiny-sdf" "^1.1.0"
+    earcut "^2.0.6"
+
+"@deck.gl/mapbox@^8.1.9":
+  version "8.1.9"
+  resolved "https://registry.yarnpkg.com/@deck.gl/mapbox/-/mapbox-8.1.9.tgz#6f7e35e2c3d16c1a91e84ddda8ce8e001a2b1961"
+  integrity sha512-qJMNtUK3aVVeXNbpAkn3posQXkJSxjn9yvV4QB58mvYqVWGksWBMr1byqNoBfpEoR4BvWFuk2jcxAmqqOIgSjQ==
+
 "@evocateur/libnpmaccess@^3.1.2":
   version "3.1.2"
   resolved "https://nexus.kontur.io/repository/npm-a/@evocateur/libnpmaccess/-/libnpmaccess-3.1.2.tgz#ecf7f6ce6b004e9f942b098d92200be4a4b1c845"
@@ -1993,7 +2008,7 @@
   resolved "https://nexus.kontur.io/repository/npm-a/@mapbox/point-geometry/-/point-geometry-0.1.0.tgz#8a83f9335c7860effa2eeeca254332aa0aeed8f2"
   integrity sha1-ioP5M1x4YO/6Lu7KJUMyqgru2PI=
 
-"@mapbox/tiny-sdf@^1.1.1":
+"@mapbox/tiny-sdf@^1.1.0", "@mapbox/tiny-sdf@^1.1.1":
   version "1.1.1"
   resolved "https://nexus.kontur.io/repository/npm-a/@mapbox/tiny-sdf/-/tiny-sdf-1.1.1.tgz#16a20c470741bfe9191deb336f46e194da4a91ff"
   integrity sha512-Ihn1nZcGIswJ5XGbgFAvVumOgWpvIjBX9jiRlIl46uQG9vJOF51ViBYHF95rEZupuyQbEmhLaDPLQlU7fUTsBg==
@@ -4850,7 +4865,7 @@ duplexify@^3.4.2, duplexify@^3.6.0:
     readable-stream "^2.0.0"
     stream-shift "^1.0.0"
 
-earcut@^2.2.2:
+earcut@^2.0.6, earcut@^2.2.2:
   version "2.2.2"
   resolved "https://nexus.kontur.io/repository/npm-a/earcut/-/earcut-2.2.2.tgz#41b0bc35f63e0fe80da7cddff28511e7e2e80d11"
   integrity sha512-eZoZPPJcUHnfRZ0PjLvx2qBordSiO8ofC3vt+qACLM95u+4DovnbYNpQtJh0DNsWj8RnxrQytD4WA8gj5cRIaQ==

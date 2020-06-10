@@ -11,27 +11,21 @@ const BASE_APP = chalk.yellow('Add to k2-dev (Base app)');
 /* Actions */
 const addPackageToAnotherPackage = package => ({
   type: 'exec',
-  command: ({ whatPackage }) => getDockerImageContext('k2-dev')(
-    `lerna add ${whatPackage} --scope=@k2-packages/${package}`,
-  ),
+  command: ({ whatPackage }) => `lerna add ${whatPackage} --scope=@k2-packages/${package}`,
   abortOnFail: false,
   onError: handleLernaError,
 });
 
 const addPackageToWorkSpace = () => ({
   type: 'exec',
-  command: ({ whatPackage }) => getDockerImageContext('k2-dev')(
-    `yarn add ${whatPackage} -D -W`,
-  ),
+  command: ({ whatPackage }) => `yarn add ${whatPackage} -D -W`,
   abortOnFail: false,
   onError: handleLernaError,
 });
 
 const addPackageToBaseApp = () => ({
   type: 'exec',
-  command: ({ whatPackage }) => getDockerImageContext('k2-dev')(
-    `lerna add ${whatPackage} --scope=@k2-dev/base`,
-  ),
+  command: ({ whatPackage }) => `lerna add ${whatPackage} --scope=@k2-dev/base`,
   abortOnFail: false,
   onError: handleLernaError,
 });

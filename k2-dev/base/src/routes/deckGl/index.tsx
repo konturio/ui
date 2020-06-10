@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import DeckGl from '@k2-packages/deck-gl';
 import MapboxMap from '@k2-packages/mapbox-map';
+import { ScatterplotLayer } from '@deck.gl/layers';
 import style from './style.styl';
 
 const mapboxConfig: {
@@ -11,16 +12,36 @@ const mapboxConfig: {
   style: 'mapbox://styles/nshkutov/ck6ca2wfb397m1imrknjlqd2l',
 };
 
+const mapStyle = {
+  version: 0,
+  center: [-74, 40.76],
+  zoom: 11,
+};
+const MALE_COLOR = [0, 128, 255];
+const FEMALE_COLOR = [255, 0, 128];
+
 export default function DeckGlRoute(): JSX.Element {
   const deckRef = useRef();
   useEffect(() => {
     console.log(deckRef.current);
   }, []);
 
+  const layers = [
+    new ScatterplotLayer({
+      id: 'scatter-plot',
+      data: 'https://raw.githubusercontent.com/visgl/deck.gl-data/master/examples/scatterplot/manhattan.json',
+      radiusScale: 10,
+      radiusMinPixels: 0.5,
+      getPosition: d => [d[0], d[1], 0],
+      getColor: d => (d[2] === 1 ? MALE_COLOR : FEMALE_COLOR)
+    }),
+  ];
+
   return (
-    <DeckGl ref={deckRef}>
+    <DeckGl ref={deckRef} layers={layers}>
       <MapboxMap
         style={mapboxConfig.style}
+        mapStyle={mapStyle}
         accessToken={mapboxConfig.accessToken}
         className={style.Map}
         onClick={() => {
@@ -28,13 +49,6 @@ export default function DeckGlRoute(): JSX.Element {
         }}
         onLoad={() => {
           /* Do nothing */
-        }}
-        bounds={[
-          [27.24, 53.81],
-          [27.83, 54.01],
-        ]}
-        boundsOptions={{
-          padding: 50,
         }}
       />
     </DeckGl>

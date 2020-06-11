@@ -1,8 +1,8 @@
 stages:
   - install
-  - bootstrap
-  - lint
-  - test
+  #- bootstrap
+  #- lint
+  #- test
 #  - coverage
   - build
   - release
@@ -82,7 +82,7 @@ release:
   extends: .default-job-settings
   stage: release
   script:
-    #- yarn config set registry 'https://nexus.kontur.io/repository/npm-snapshot-a/'
-    - npm run lerna:publish
+    - yarn config set registry "https://nexus.kontur.io/repository/npm-snapshots-a/:_authToken=$NEXUS_NPM_TOKEN"
+    - yarn lerna:publish
   dependencies:
     - install

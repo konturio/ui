@@ -14,9 +14,10 @@ variables:
 
 .default-job-settings:
   tags:
-    - npm
-#   - docker
-    - yarn
+#    - npm
+#    - docker
+#    - yarn
+    - nexus01-gitlab1
 
 install:
   extends: .default-job-settings

@@ -20,7 +20,8 @@ import '@k2-packages/ui-kit/src/reset.css';
 import Kit from './routes/kit';
 import MapBoxMap from './routes/mapbox-map';
 import Icons from './routes/icons';
-import DeckGl from './routes/deckGl';
+import DeckGl from './routes/deck-gl';
+import MapDrawTools from './routes/draw-tools';
 
 const LoadingState = <div style={{ background: 'aqua', width: '100px', height: '100px' }}>Loading...</div>;
 
@@ -59,6 +60,9 @@ const BasicRouting = (): JSX.Element => (
           </Route>
           <Route path="/deck-gl">
             <DeckGl />
+          </Route>
+          <Route path="/draw-tools">
+            <MapDrawTools />
           </Route>
           {/* !not-delete! cli:route */}
         </Switch>

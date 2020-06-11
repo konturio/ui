@@ -9,7 +9,6 @@
     "build": "webpack"
   },
   "dependencies": {
-    "@deck.gl/core": "^8.1.9",
     "@deck.gl/layers": "^8.1.9",
     "@k2-packages/client": "^1.9.2",
     "@k2-packages/deck-gl": "^1.0.0",
@@ -17,7 +16,8 @@
     "@k2-packages/geocoder": "^1.10.10",
     "@k2-packages/mapbox-map": "^1.13.0",
     "@k2-packages/module": "^1.4.5",
-    "@k2-packages/ui-kit": "^1.12.1"
+    "@k2-packages/ui-kit": "^1.12.1",
+    "@k2-packages/map-draw-tools": "^1.0.0"
   },
   "peerDependencies": {
     "@types/react-redux": "^7.1.7",

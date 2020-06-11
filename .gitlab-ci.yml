@@ -23,7 +23,7 @@ install:
   stage: install
   script:
     - yarn install
-  chache:
+  cache:
     paths:
       - .npm/
       - node_modules/

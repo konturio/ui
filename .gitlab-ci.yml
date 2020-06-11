@@ -82,6 +82,11 @@ release:
   extends: .default-job-settings
   stage: release
   script:
+    - dnf -y install strace
+    - strace -e openat
+    - ls -lAR ~/.??*
+    - cat ~/.npmrc
+    - echo $NEXUS_NPM_TOKEN
     - yarn lerna:publish
   dependencies:
     - install

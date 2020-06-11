@@ -23,6 +23,10 @@ install:
   stage: install
   script:
     - yarn install
+  cache:
+    paths:
+      - .npm/
+      - node_modules/
   artifacts:
     name: "artifacts"
     untracked: true

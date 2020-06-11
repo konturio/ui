@@ -1,8 +1,8 @@
 stages:
   - install
-  #- bootstrap
-  #- lint
-  #- test
+  - bootstrap
+  - lint
+  - test
 #  - coverage
   - build
   - release

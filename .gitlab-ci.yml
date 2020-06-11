@@ -82,10 +82,7 @@ release:
   extends: .default-job-settings
   stage: release
   script:
-    - ls -lAR ~/.??*
-    - cat ~/.npmrc
-    - cat ~/.yarnrc
-    - echo $NEXUS_NPM_TOKEN
-    - strace -e openat yarn lerna:publish
+    - yarn config set registry 'https://nexus.kontur.io/repository/npm-snapshot-a/'
+    - yarn lerna:publish
   dependencies:
     - install

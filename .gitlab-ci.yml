@@ -23,7 +23,14 @@ install:
   stage: install
   script:
     - yarn install
-  cache:
+  chache:
+    paths:
+      - .npm/
+      - node_modules/
+  artifacts:
+    name: "artifacts"
+    untracked: true
+    expire_in: 60 mins
     paths:
       - .npm/
       - node_modules/
@@ -33,6 +40,8 @@ bootstrap:
   stage: bootstrap
   script:
     - yarn bootstrap
+  dependencies:
+    - install
 
 lint:
  extends: .default-job-settings
@@ -41,6 +50,8 @@ lint:
    NODE_ENV: "development"
  script:
    - yarn lint:ts
+ dependencies:
+   - install
 
 test:
   extends: .default-job-settings
@@ -49,6 +60,8 @@ test:
     API: ""
   script:
     - yarn test
+  dependencies:
+    - install
 
 build:
   extends: .default-job-settings
@@ -59,6 +72,8 @@ build:
     - echo $API
     - echo $NODE_ENV
     - yarn build
+  dependencies:
+    - install
   artifacts:
     paths:
       - k2-dev/base/dist
@@ -68,3 +83,5 @@ release:
   stage: release
   script:
     - yarn lerna:publish
+  dependencies:
+    - install

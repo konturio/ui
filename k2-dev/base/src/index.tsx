@@ -35,9 +35,10 @@ const BasicRouting = (): JSX.Element => (
             { to: '/', label: 'Module', exact: true },
             { to: '/geocoder', label: 'Geocoder' },
             { to: '/kit', label: 'UI Kit' },
+            { to: '/icons', label: 'Icons' },
             { to: '/mapbox-map', label: 'Mapbox-map' },
             { to: '/deck-gl', label: 'Deck-Gl' },
-            { to: '/icons', label: 'Icons' },
+            { to: '/draw-tools', label: 'Draw-tools' },
             /* !not-delete! cli:link */
             /* eslint-enable no-multi-spaces */
           ]}

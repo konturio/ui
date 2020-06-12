@@ -18,6 +18,11 @@ const mapStyle = {
   zoom: 11,
 };
 
+const data: GeoJSON.FeatureCollection = {
+  type: 'FeatureCollection',
+  features: [],
+};
+
 export default function DrawToolsRoute(): JSX.Element {
   const deckRef = useRef();
   const mapBoxRef = useRef();
@@ -29,7 +34,7 @@ export default function DrawToolsRoute(): JSX.Element {
   }, []);
 
   return (
-    <DrawTools>
+    <DrawTools geoJSON={data}>
       <DeckGl ref={deckRef}>
         <MapboxMap
           style={mapboxConfig.style}

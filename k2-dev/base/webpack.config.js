@@ -3,7 +3,8 @@ const HtmlWebPackPlugin = require('html-webpack-plugin');
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const Autoprefixer = require('autoprefixer');
-const CopyWebpackPlugin = require("copy-webpack-plugin");
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const CleanStatsSpamFromPlugin = require('./clean-stats-spam-plugin');
 
 module.exports = {
   entry: {
@@ -24,12 +25,12 @@ module.exports = {
   devServer: {
     port: 8080,
     inline: true,
-    stats: "errors-only",
+    stats: 'errors-only',
     historyApiFallback: true,
     contentBase: path.resolve(__dirname, '/dist'),
   },
   plugins: [
-    new CopyWebpackPlugin([{ from: "src/locales", to: 'locales', ignore: ['*.js']}]),
+    new CopyWebpackPlugin([{ from: 'src/locales', to: 'locales', ignore: ['*.js'] }]),
     new webpack.DefinePlugin({
       'process.env.API': JSON.stringify(process.env.API),
     }),
@@ -41,6 +42,7 @@ module.exports = {
       filename: '[name].css?[chunkhash]',
       chunkFilename: '[id].css?[chunkhash]',
     }),
+    new CleanStatsSpamFromPlugin('mini-css-extract-plugin'),
   ],
   module: {
     rules: [

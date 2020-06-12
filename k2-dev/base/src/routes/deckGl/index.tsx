@@ -17,25 +17,29 @@ const mapStyle = {
   center: [-74, 40.76],
   zoom: 11,
 };
-const MALE_COLOR = [0, 128, 255];
-const FEMALE_COLOR = [255, 0, 128];
+const MALE_COLOR: [number, number, number] = [0, 128, 255];
+const FEMALE_COLOR: [number, number, number] = [255, 0, 128];
 
 export default function DeckGlRoute(): JSX.Element {
   const deckRef = useRef();
   const mapBoxRef = useRef();
   useEffect(() => {
-    console.log('deckRef', deckRef.current);
-    console.log('mapBoxRef', mapBoxRef.current);
+    // console.log('deckRef', deckRef.current);
+    // console.log('mapBoxRef', mapBoxRef.current);
   }, []);
 
   const layers = [
     new ScatterplotLayer({
       id: 'scatter-plot',
-      data: 'https://raw.githubusercontent.com/visgl/deck.gl-data/master/examples/scatterplot/manhattan.json',
+      data: ('https://raw.githubusercontent.com/visgl/deck.gl-data/master/examples/scatterplot/manhattan.json' as unknown) as [
+        number,
+        number,
+        number,
+      ][],
       radiusScale: 10,
       radiusMinPixels: 0.5,
-      getPosition: d => [d[0], d[1], 0],
-      getColor: d => (d[2] === 1 ? MALE_COLOR : FEMALE_COLOR)
+      getPosition: (d) => [d[0], d[1]],
+      getFillColor: (d) => (d[2] === 1 ? MALE_COLOR : FEMALE_COLOR),
     }),
   ];
 

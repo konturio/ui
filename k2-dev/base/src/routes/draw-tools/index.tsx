@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import DeckGl from '@k2-packages/deck-gl';
 import DrawTools from '@k2-packages/map-draw-tools';
 import MapboxMap from '@k2-packages/mapbox-map';
+import { MeasureAreaMode } from '@nebula.gl/edit-modes';
 import style from './style.styl';
 
 const mapboxConfig: {
@@ -20,7 +21,29 @@ const mapStyle = {
 
 const data: GeoJSON.FeatureCollection = {
   type: 'FeatureCollection',
-  features: [],
+  features: [
+    {
+      type: 'Feature',
+      properties: {},
+      geometry: {
+        type: 'Polygon',
+        coordinates: [
+          [
+            [-73.97592544555664, 40.78840505276722],
+            [-73.97111892700195, 40.77423686505074],
+            [-73.95712852478027, 40.774171866400636],
+            [-73.94648551940917, 40.78216622323578],
+            [-73.9515495300293, 40.79230402360135],
+            [-73.95472526550293, 40.782491176741395],
+            [-73.95961761474608, 40.793343710490795],
+            [-73.96785736083983, 40.78678041401646],
+            [-73.96940231323242, 40.793408690380836],
+            [-73.97592544555664, 40.78840505276722],
+          ],
+        ],
+      },
+    },
+  ],
 };
 
 export default function DrawToolsRoute(): JSX.Element {
@@ -34,7 +57,7 @@ export default function DrawToolsRoute(): JSX.Element {
   }, []);
 
   return (
-    <DrawTools geoJSON={data}>
+    <DrawTools geoJSON={data} mode={MeasureAreaMode}>
       <DeckGl ref={deckRef}>
         <MapboxMap
           style={mapboxConfig.style}

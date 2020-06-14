@@ -5,7 +5,7 @@
   "types": "src/index.tsx",
   "publishConfig": {
     "access": "public",
-    "registry": "https://nexus.kontur.io/repository/npm-snapshots-a"
+    "registry": "https://nexus.kontur.io/repository/npm-snapshots-a/"
   },
   "repository": {
     "type": "git",

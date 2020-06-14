@@ -82,7 +82,6 @@ release:
   extends: .default-job-settings
   stage: release
   script:
-    # - yarn config set registry 'https://nexus.kontur.io/repository/npm-snapshots-a/'
     - npm run lerna:publish
   dependencies:
     - install

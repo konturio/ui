@@ -57,8 +57,8 @@ export default function DrawToolsRoute(): JSX.Element {
   }, []);
 
   return (
-    <DrawTools geoJSON={data} mode={MeasureAreaMode}>
-      <DeckGl ref={deckRef}>
+    <DrawTools geoJSON={data} mode={MeasureAreaMode} ref={drawToolsRef}>
+      <DeckGl ref={deckRef} controller={false}>
         <MapboxMap
           style={mapboxConfig.style}
           mapStyle={mapStyle}

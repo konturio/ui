@@ -24,27 +24,28 @@ export default function DeckGlRoute(): JSX.Element {
   const deckRef = useRef();
   const mapBoxRef = useRef();
   useEffect(() => {
-    // console.log('deckRef', deckRef.current);
-    // console.log('mapBoxRef', mapBoxRef.current);
+    console.log('deckRef', deckRef.current);
+    console.log('mapBoxRef', mapBoxRef.current);
   }, []);
 
   const layers = [
-    new ScatterplotLayer({
+    {
+      type: ScatterplotLayer,
       id: 'scatter-plot',
       data: ('https://raw.githubusercontent.com/visgl/deck.gl-data/master/examples/scatterplot/manhattan.json' as unknown) as [
         number,
         number,
         number,
       ][],
-      radiusScale: 10,
+      radiusScale: 40,
       radiusMinPixels: 0.5,
       getPosition: (d) => [d[0], d[1]],
       getFillColor: (d) => (d[2] === 1 ? MALE_COLOR : FEMALE_COLOR),
-    }),
+    },
   ];
 
   return (
-    <DeckGl ref={deckRef} layers={layers}>
+    <DeckGl layers={layers}>
       <MapboxMap
         style={mapboxConfig.style}
         mapStyle={mapStyle}

@@ -23,6 +23,7 @@ module.exports = {
     // e.g. "@typescript-eslint/explicit-function-return-type": "off",
     "react/display-name": "off",
     "@typescript-eslint/ban-ts-ignore": "warn",
-    "prettier/prettier": "warn"
+    "prettier/prettier": "warn",
+    "@typescript-eslint/explicit-function-return-type": "off"
   }
 };

@@ -83,6 +83,6 @@ release:
   extends: .default-job-settings
   stage: release
   script:
-    - yarn lerna:publish
+    - npm run lerna:publish
   dependencies:
     - install

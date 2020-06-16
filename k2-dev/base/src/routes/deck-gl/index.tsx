@@ -29,23 +29,22 @@ export default function DeckGlRoute(): JSX.Element {
   }, []);
 
   const layers = [
-    {
-      type: ScatterplotLayer,
+    new ScatterplotLayer({
       id: 'scatter-plot',
       data: ('https://raw.githubusercontent.com/visgl/deck.gl-data/master/examples/scatterplot/manhattan.json' as unknown) as [
         number,
         number,
         number,
       ][],
-      radiusScale: 40,
+      radiusScale: 10,
       radiusMinPixels: 0.5,
-      getPosition: (d) => [d[0], d[1]],
+      getPosition: (d) => [d[0], d[1], 30],
       getFillColor: (d) => (d[2] === 1 ? MALE_COLOR : FEMALE_COLOR),
-    },
+    }),
   ];
 
   return (
-    <DeckGl layers={layers}>
+    <DeckGl ref={deckRef} layers={layers}>
       <MapboxMap
         style={mapboxConfig.style}
         mapStyle={mapStyle}

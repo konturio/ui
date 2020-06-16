@@ -200,6 +200,24 @@ Each product build on top of k2 platform:
 - Define localization files location [Example](https://gitlab.com/kontur-private/kcloud/kcfirebrigade-fe/-/tree/master/src/locales)
 - Add language selector [Example](https://gitlab.com/kontur-private/kcloud/kcfirebrigade-fe/-/blob/master/src/components/HomePage/index.tsx#L205)
 
+To extract translation keys:
+
+Declare the plugin like any other plugin in your .babelrc and you're good to go:
+```
+{
+  "plugins": [
+    "i18next-extract",
+    ...
+  ]
+}
+```
+
+Once the plugin is setup, you can build your app normally or run Babel through Babel CLI:
+
+`yarn run babel -f .babelrc 'src/**/*.{js,jsx,ts,tsx}'`
+
+Extracted translations land in the extractedTranslations/ directory by default.
+
 ### TODO:
  - Commit message validation at local development (Husky)?
  - CI add git hook for commit lint.

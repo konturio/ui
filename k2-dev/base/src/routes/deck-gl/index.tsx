@@ -36,9 +36,8 @@ export default function DeckGlRoute(): JSX.Element {
         number,
         number,
       ][],
-      radiusScale: 10,
       radiusMinPixels: 0.5,
-      getPosition: (d) => [d[0], d[1], 30],
+      getPosition: (d) => [d[0], d[1]],
       getFillColor: (d) => (d[2] === 1 ? MALE_COLOR : FEMALE_COLOR),
     }),
   ];
@@ -46,6 +45,7 @@ export default function DeckGlRoute(): JSX.Element {
   return (
     <DeckGl ref={deckRef} layers={layers}>
       <MapboxMap
+        options={{ center: [-74, 40.76] }}
         style={mapboxConfig.style}
         mapStyle={mapStyle}
         accessToken={mapboxConfig.accessToken}

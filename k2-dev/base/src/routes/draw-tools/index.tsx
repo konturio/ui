@@ -58,8 +58,9 @@ export default function DrawToolsRoute(): JSX.Element {
 
   return (
     <DrawTools geoJSON={data} mode={MeasureAreaMode} ref={drawToolsRef}>
-      <DeckGl ref={deckRef} controller={false}>
+      <DeckGl ref={deckRef}>
         <MapboxMap
+          options={{ center: [-74, 40.76], zoom: 11 }}
           style={mapboxConfig.style}
           mapStyle={mapStyle}
           accessToken={mapboxConfig.accessToken}

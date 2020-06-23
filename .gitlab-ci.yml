@@ -9,7 +9,6 @@ stages:
 
 variables:
   npm_config_cache: "$CI_PROJECT_DIR/.npm"
-#  API: "kcfirebrigade"
 #  CI_DEBUG_TRACE: "true"
 
 .default-job-settings:
@@ -25,14 +24,12 @@ install:
     - yarn install
   cache:
     paths:
-      - .npm/
       - node_modules/
   artifacts:
     name: "artifacts"
     untracked: true
     expire_in: 60 mins
     paths:
-      - .npm/
       - node_modules/
 
 bootstrap:

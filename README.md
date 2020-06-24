@@ -22,9 +22,19 @@ Respectively k2-dev and k2-packages folders.
 ## Setup
 
 ### Nexus repository access
+Generate nexus access token 
+```
+npm config set registry https://nexus.kontur.io/repository/npm-a/
+npm config set always-auth true
+npm login
+yarn config set registry https://nexus.kontur.io/repository/npm-a/
+```
+Copy token from `~/.npmrc`
+```
+sed -n 's/.*_authToken=//p' ~/.npmrc
+```
 
 Create .npmrc in a project directory.
-
 ```
 //nexus.kontur.io/repository/npm-a/:_authToken=your_token_here
 //nexus.kontur.io/repository/npm-snapshots-a/:_authToken=your_token_here

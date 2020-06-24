@@ -2,6 +2,8 @@ FROM node:13 as k2-workspace
 
 WORKDIR /app
 
+COPY .npmrc ./
+
 COPY lerna.json ./
 
 COPY tsconfig.json ./

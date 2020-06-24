@@ -932,17 +932,17 @@
 
 "@danmarshall/deckgl-typings@^3.4.8":
   version "3.5.0"
-  resolved "https://registry.yarnpkg.com/@danmarshall/deckgl-typings/-/deckgl-typings-3.5.0.tgz#cdab4a414ec192ff237e276c78fdd74a9fce9f7c"
+  resolved "https://nexus.kontur.io/repository/npm-a/@danmarshall/deckgl-typings/-/deckgl-typings-3.5.0.tgz#cdab4a414ec192ff237e276c78fdd74a9fce9f7c"
   integrity sha512-YDwHoWxAUQdgSkxdqSp+CFUlzrnat9rEeRKucA8zE78iwUVkmOVCRjOrtVf1CjQuBRWhQbs/7/2V3N9wFc9rtw==
   dependencies:
     "@types/hammerjs" "^2.0.36"
     "@types/react" "*"
     indefinitely-typed "^1.1.0"
 
-"@deck.gl/core@^8.1.9":
-  version "8.1.9"
-  resolved "https://registry.yarnpkg.com/@deck.gl/core/-/core-8.1.9.tgz#46b9ef02c89ffa0c78914c9dcf59e6a0a4de9823"
-  integrity sha512-pytTtM05yrwDjU6Y9wiVDfWuZbAaPYvWtJR+7AF7//S5FqS4pc2yumzxVuvuROPnBNmb+OnVojOzkz5hRlk4yg==
+"@deck.gl/core@^8.1.12":
+  version "8.1.12"
+  resolved "https://nexus.kontur.io/repository/npm-a/@deck.gl/core/-/core-8.1.12.tgz#d30ef0a85b303a836593fa8c8b47622b24123ae5"
+  integrity sha512-ioA3QMkj2ezvX+dtPF5jFksLjw1c5E/5EzzNPwPdwj/IafoqWUMv0ODuoTaCIv7DxVx/edsOYb3gdRHjNhqB9A==
   dependencies:
     "@loaders.gl/core" "^2.1.6"
     "@loaders.gl/images" "^2.1.6"
@@ -952,6 +952,16 @@
     math.gl "^3.1.2"
     mjolnir.js "^2.3.0"
     probe.gl "^3.2.1"
+
+"@deck.gl/layers@^8.1.12":
+  version "8.1.12"
+  resolved "https://nexus.kontur.io/repository/npm-a/@deck.gl/layers/-/layers-8.1.12.tgz#793c18673efbd443440424e6e004f1fe926f7568"
+  integrity sha512-P4lLPNScMsEPE9JbeJaO80Qwtmp9kaUg4X8uEJ/itTs4b9QQYnPNIqY4ezzWYm1KRKMQhf/e2McxtSFl+zMv+Q==
+  dependencies:
+    "@loaders.gl/core" "^2.1.6"
+    "@loaders.gl/images" "^2.1.6"
+    "@mapbox/tiny-sdf" "^1.1.0"
+    earcut "^2.0.6"
 
 "@deck.gl/layers@^8.1.9":
   version "8.1.9"
@@ -963,15 +973,15 @@
     "@mapbox/tiny-sdf" "^1.1.0"
     earcut "^2.0.6"
 
-"@deck.gl/mapbox@^8.1.9":
-  version "8.1.9"
-  resolved "https://registry.yarnpkg.com/@deck.gl/mapbox/-/mapbox-8.1.9.tgz#6f7e35e2c3d16c1a91e84ddda8ce8e001a2b1961"
-  integrity sha512-qJMNtUK3aVVeXNbpAkn3posQXkJSxjn9yvV4QB58mvYqVWGksWBMr1byqNoBfpEoR4BvWFuk2jcxAmqqOIgSjQ==
+"@deck.gl/mapbox@^8.1.12":
+  version "8.1.12"
+  resolved "https://nexus.kontur.io/repository/npm-a/@deck.gl/mapbox/-/mapbox-8.1.12.tgz#78f794c3f02b94768a8dbd558297104650be0ce3"
+  integrity sha512-yL1Vp2GaintPU/DE8ftgx8CfaPYDumz+WUoCYveU8MjQ7F9elssS42tNXTID4S1JZ3vf51aU49q7e+e3FPyhaA==
 
-"@deck.gl/mesh-layers@^8.1.9":
-  version "8.1.9"
-  resolved "https://registry.yarnpkg.com/@deck.gl/mesh-layers/-/mesh-layers-8.1.9.tgz#ea33c4d743ca498517564102cb28e3c18c1431b2"
-  integrity sha512-Myxx244Bn0AyW6PQY50LtoW7A+kcydlhApVqFTjcUtmKetuoAhX4CmUk7z2JDQ3T2oj+aZlhJSh0A/CclzTKdw==
+"@deck.gl/mesh-layers@^8.1.12":
+  version "8.1.12"
+  resolved "https://nexus.kontur.io/repository/npm-a/@deck.gl/mesh-layers/-/mesh-layers-8.1.12.tgz#2e07b1dbc0d075f5220d9e4126410105603e7788"
+  integrity sha512-IOGghHff2zT3gCYivQE1Q5yyOaqiskKYb9zp+xNkV0GniDdFOJXMPVfqYDU4UxWQCqj5hjZ0Fo9aQ/R1JVxwuQ==
   dependencies:
     "@luma.gl/experimental" "^8.1.2"
     "@luma.gl/shadertools" "^8.1.2"
@@ -1918,6 +1928,14 @@
     npmlog "^4.1.2"
     write-file-atomic "^2.3.0"
 
+"@loaders.gl/core@2.2.5":
+  version "2.2.5"
+  resolved "https://nexus.kontur.io/repository/npm-a/@loaders.gl/core/-/core-2.2.5.tgz#414df7b85ac6387e857e41474dd834fefc802678"
+  integrity sha512-mcSbxnKCz2JGOsLFCADWUOc4tQ8gED7keiIm5nzcEWdiz/ft1+B58PlTUMefiUWebad+MoyBG76uASpnX5MXVQ==
+  dependencies:
+    "@babel/runtime" "^7.3.1"
+    "@loaders.gl/loader-utils" "2.2.5"
+
 "@loaders.gl/core@^2.1.6":
   version "2.1.6"
   resolved "https://registry.yarnpkg.com/@loaders.gl/core/-/core-2.1.6.tgz#9c3e0cf5a1aebb672c50876ab75fd35033b8672c"
@@ -1926,7 +1944,33 @@
     "@babel/runtime" "^7.3.1"
     "@loaders.gl/loader-utils" "2.1.6"
 
-"@loaders.gl/images@^2.1.1", "@loaders.gl/images@^2.1.6":
+"@loaders.gl/draco@2.2.5":
+  version "2.2.5"
+  resolved "https://nexus.kontur.io/repository/npm-a/@loaders.gl/draco/-/draco-2.2.5.tgz#50b85cb79b48c650d11e65c1e3ec8fb9133ea27c"
+  integrity sha512-gka3NGY+XG0XBv22bgkpbpIqru/WLnoKcVB6bRitje8/sLDflijuVfB+nzJxYM/4q5lY2817aa1PDXlXfg/yjg==
+  dependencies:
+    "@babel/runtime" "^7.3.1"
+    "@loaders.gl/loader-utils" "2.2.5"
+    draco3d "^1.3.4"
+
+"@loaders.gl/gltf@^2.2.5":
+  version "2.2.5"
+  resolved "https://nexus.kontur.io/repository/npm-a/@loaders.gl/gltf/-/gltf-2.2.5.tgz#78b37dcc9356ab900e95098256d4c2382430a814"
+  integrity sha512-fH/bWaHta9IpiiL+aZ0a1OxjHPwEFxtC06NIzNON4+IRjNtDMZXnYAr8YQNGVODjj7wnug3ht6wKmHSWWIDuIA==
+  dependencies:
+    "@loaders.gl/core" "2.2.5"
+    "@loaders.gl/draco" "2.2.5"
+    "@loaders.gl/images" "2.2.5"
+    "@loaders.gl/loader-utils" "2.2.5"
+
+"@loaders.gl/images@2.2.5", "@loaders.gl/images@^2.1.1":
+  version "2.2.5"
+  resolved "https://nexus.kontur.io/repository/npm-a/@loaders.gl/images/-/images-2.2.5.tgz#b1baf562f1c1bd6760568388415d6caf286bb84d"
+  integrity sha512-nCZCOH+lQwP86Z6H6T/olXEE1RpQBHaclI7A2QCMBUt2rybkw0nwuvDijISFBFn3r7dYMSQRNZeQk1f2ggQIJg==
+  dependencies:
+    "@loaders.gl/loader-utils" "2.2.5"
+
+"@loaders.gl/images@^2.1.6":
   version "2.1.6"
   resolved "https://registry.yarnpkg.com/@loaders.gl/images/-/images-2.1.6.tgz#af729ff7e1a6ea43cc693946abce109a0ec473fa"
   integrity sha512-KE0fEJA3Luiqktgb2bfj/+de3QjWmP8L+hh2Pu03doxIgvV8mhhvduy5rBMMtoR0M3HBSPRI0DKKF5mR0Hb46Q==
@@ -1941,14 +1985,22 @@
     "@babel/runtime" "^7.3.1"
     "@probe.gl/stats" "^3.2.1"
 
-"@luma.gl/constants@8.1.3":
+"@loaders.gl/loader-utils@2.2.5":
+  version "2.2.5"
+  resolved "https://nexus.kontur.io/repository/npm-a/@loaders.gl/loader-utils/-/loader-utils-2.2.5.tgz#8c19b10c2bd75a2bf2a913be62a701d52a37acfa"
+  integrity sha512-GWXHSjcymdPEU8tYM2smEIMwaUTLar5eMANm0QJFu5k5piNQuv9c0ZvM27X0xkDGAf5bb10qAEqXaF4wcNrCLQ==
+  dependencies:
+    "@babel/runtime" "^7.3.1"
+    "@probe.gl/stats" "^3.3.0"
+
+"@luma.gl/constants@8.1.3", "@luma.gl/constants@^8.1.3":
   version "8.1.3"
-  resolved "https://registry.yarnpkg.com/@luma.gl/constants/-/constants-8.1.3.tgz#70f06f30d11b2e346e96104dc8431a23e63dc0f7"
+  resolved "https://nexus.kontur.io/repository/npm-a/@luma.gl/constants/-/constants-8.1.3.tgz#70f06f30d11b2e346e96104dc8431a23e63dc0f7"
   integrity sha512-W8VzhLxbj/CGk6aw8bwvGbAqSFLWCREeZpufg37UXmCRcMErjhhNlcRzCB2FAyHZv02wgniaEvltqT5pbk0vyA==
 
-"@luma.gl/core@^8.1.2":
+"@luma.gl/core@^8.1.2", "@luma.gl/core@^8.1.3":
   version "8.1.3"
-  resolved "https://registry.yarnpkg.com/@luma.gl/core/-/core-8.1.3.tgz#71fcd223b279741b13629fb37049096418d164ce"
+  resolved "https://nexus.kontur.io/repository/npm-a/@luma.gl/core/-/core-8.1.3.tgz#71fcd223b279741b13629fb37049096418d164ce"
   integrity sha512-/kp55gDx+uYG90d2aYkOioXOGkHiChiAhRp10HSTf15eYUoOkYkRWECMk2Pn1Hk3luHnCcisZoteTimITcSBFw==
   dependencies:
     "@babel/runtime" "^7.0.0"
@@ -1957,9 +2009,9 @@
     "@luma.gl/shadertools" "8.1.3"
     "@luma.gl/webgl" "8.1.3"
 
-"@luma.gl/engine@8.1.3":
+"@luma.gl/engine@8.1.3", "@luma.gl/engine@^8.1.3":
   version "8.1.3"
-  resolved "https://registry.yarnpkg.com/@luma.gl/engine/-/engine-8.1.3.tgz#e9764aec27ab3497d972ae3b87b0f058da9ea591"
+  resolved "https://nexus.kontur.io/repository/npm-a/@luma.gl/engine/-/engine-8.1.3.tgz#e9764aec27ab3497d972ae3b87b0f058da9ea591"
   integrity sha512-QuEujjlpQJPIAycmbMjxRUDgCJn8OhBQSVSFHB1LYddIesHEgoMsHL+ISX7joYa1PfD65GahieY4tqYOr7U3rw==
   dependencies:
     "@babel/runtime" "^7.0.0"
@@ -1972,7 +2024,7 @@
 
 "@luma.gl/experimental@^8.1.2":
   version "8.1.3"
-  resolved "https://registry.yarnpkg.com/@luma.gl/experimental/-/experimental-8.1.3.tgz#65a91a2507b640748a2915a3447c0d6d3f7f8a3a"
+  resolved "https://nexus.kontur.io/repository/npm-a/@luma.gl/experimental/-/experimental-8.1.3.tgz#65a91a2507b640748a2915a3447c0d6d3f7f8a3a"
   integrity sha512-xN5cuwX0tSu68UdOizAITR0b//K2NxQEKxblbSAcyLMP/EcL+c8SvxIqvfFYaT0bvU7JniFgj5QAk9/0p6vnaQ==
   dependencies:
     "@loaders.gl/images" "^2.1.1"
@@ -1980,9 +2032,9 @@
     earcut "^2.0.6"
     math.gl "^3.1.3"
 
-"@luma.gl/gltools@8.1.3":
+"@luma.gl/gltools@8.1.3", "@luma.gl/gltools@^8.1.3":
   version "8.1.3"
-  resolved "https://registry.yarnpkg.com/@luma.gl/gltools/-/gltools-8.1.3.tgz#27dc9732aae951f3b98ea841d8bd14c103188c8c"
+  resolved "https://nexus.kontur.io/repository/npm-a/@luma.gl/gltools/-/gltools-8.1.3.tgz#27dc9732aae951f3b98ea841d8bd14c103188c8c"
   integrity sha512-ySq5c6GB4fYyJBHrsFoV8U5Nvamb16l+HqPdwyyKGxqZinHY4Q/PwETBWN/hs9g1rFNg3znSupIlRN5ut0o29Q==
   dependencies:
     "@babel/runtime" "^7.0.0"
@@ -1991,15 +2043,15 @@
 
 "@luma.gl/shadertools@8.1.3", "@luma.gl/shadertools@^8.1.2":
   version "8.1.3"
-  resolved "https://registry.yarnpkg.com/@luma.gl/shadertools/-/shadertools-8.1.3.tgz#4e9725354360b2d9473950030266b67cd3a349fa"
+  resolved "https://nexus.kontur.io/repository/npm-a/@luma.gl/shadertools/-/shadertools-8.1.3.tgz#4e9725354360b2d9473950030266b67cd3a349fa"
   integrity sha512-D0xLWbyvBGVztJD/724MCm8x1t4T9cOs0PfS8BkjDMB82zoQkF9AN3Tpx3QggPNE3LhtpbvWaFaxiuXHTPNiMw==
   dependencies:
     "@babel/runtime" "^7.0.0"
     math.gl "^3.1.3"
 
-"@luma.gl/webgl@8.1.3":
+"@luma.gl/webgl@8.1.3", "@luma.gl/webgl@^8.1.3":
   version "8.1.3"
-  resolved "https://registry.yarnpkg.com/@luma.gl/webgl/-/webgl-8.1.3.tgz#44575acb692b68ff2c7174ad47d72a1860ac5b2f"
+  resolved "https://nexus.kontur.io/repository/npm-a/@luma.gl/webgl/-/webgl-8.1.3.tgz#44575acb692b68ff2c7174ad47d72a1860ac5b2f"
   integrity sha512-gilC7vM5CuvI8fco6PO9F2q6FuLkxwq43114p1AnD/PD9VPLd/qj4YrpRXxB/BKF4OLglznx9ALQULorw/yagw==
   dependencies:
     "@babel/runtime" "^7.0.0"
@@ -2057,18 +2109,18 @@
   resolved "https://nexus.kontur.io/repository/npm-a/@mapbox/whoots-js/-/whoots-js-3.1.0.tgz#497c67a1cef50d1a2459ba60f315e448d2ad87fe"
   integrity sha512-Es6WcD0nO5l+2BOQS4uLfNPYQaNDfbot3X1XUoloz+x0mPDS3eeORZJl06HXjwBG1fOGwCRnzK88LMdxKRrd6Q==
 
-"@math.gl/core@3.1.5":
-  version "3.1.5"
-  resolved "https://registry.yarnpkg.com/@math.gl/core/-/core-3.1.5.tgz#218af29e26469ebdd3eef265a05a46bac3caf219"
-  integrity sha512-1htWjiJOf2203bObMrOlNcp+4m8eQZNh78t8j/vXApA9xC/aHN9aHxbf95kRQn6htfuF0YmQuJTvRoIZbqI3ww==
+"@math.gl/core@3.2.1":
+  version "3.2.1"
+  resolved "https://nexus.kontur.io/repository/npm-a/@math.gl/core/-/core-3.2.1.tgz#bb80a64d2692180d100cc5a8aedf233cca088d34"
+  integrity sha512-jGGEbPieTAUubVOeDRrdj8PUrtQ7I1ASX1sHKUuevsh3s2vqrnC16z7+aocfVFhs3bOLJtKWlSrdTwOjqSONDg==
   dependencies:
     "@babel/runtime" "^7.0.0"
     gl-matrix "^3.0.0"
 
 "@math.gl/web-mercator@^3.1.3":
-  version "3.1.5"
-  resolved "https://registry.yarnpkg.com/@math.gl/web-mercator/-/web-mercator-3.1.5.tgz#1746642a3a121774e929c20ce8eebbdeeeafa52f"
-  integrity sha512-F8d2yDsnBWxIbuFffA5atTZZETapvH8J+H6wwfrplDf9kTWyQhlCcCZfy+3TkPXkNVky1ibcCaC6Py1LKlsamw==
+  version "3.2.1"
+  resolved "https://nexus.kontur.io/repository/npm-a/@math.gl/web-mercator/-/web-mercator-3.2.1.tgz#f90f1cc29795b0a36dabcc3ecc17b0ca15e97e5d"
+  integrity sha512-D7h5jMTtKOqnto3GtqgKn9Pkblz62G5hZzsk8YIcais8d42MnBTXJbiRf0Fz5wliVYeHIkPpFQWscltKaAomhg==
   dependencies:
     "@babel/runtime" "^7.0.0"
     gl-matrix "^3.0.0"
@@ -2081,10 +2133,10 @@
     call-me-maybe "^1.0.1"
     glob-to-regexp "^0.3.0"
 
-"@nebula.gl/edit-modes@0.18.1", "@nebula.gl/edit-modes@^0.18.1":
-  version "0.18.1"
-  resolved "https://registry.yarnpkg.com/@nebula.gl/edit-modes/-/edit-modes-0.18.1.tgz#197c625a805435314c366383cf47fb4709874bba"
-  integrity sha512-eyFVD42m0oRc4u8jdlCqWpF6WID8+HatQqOq4FemvaHmx4ei58i977hA25lMO8iR/b1LPI5I6LHoiv3yMLhmrA==
+"@nebula.gl/edit-modes@0.18.5", "@nebula.gl/edit-modes@^0.18.5":
+  version "0.18.5"
+  resolved "https://nexus.kontur.io/repository/npm-a/@nebula.gl/edit-modes/-/edit-modes-0.18.5.tgz#cf47701c80218d35d242576cfa441c4dcfec69e1"
+  integrity sha512-b5PZY0pGhV008hkIHSoUBKPei5zc/TX3X2A/jeYdOK5ZWXQsQUMZ2FyEm9BYSrz554cIoBV6CLvdeIqFnufAqg==
   dependencies:
     "@turf/bbox" ">=4.0.0"
     "@turf/bbox-polygon" ">=4.0.0"
@@ -2112,13 +2164,13 @@
     lodash.throttle "^4.1.1"
     viewport-mercator-project ">=6.0.0"
 
-"@nebula.gl/layers@^0.18.1":
-  version "0.18.1"
-  resolved "https://registry.yarnpkg.com/@nebula.gl/layers/-/layers-0.18.1.tgz#b45a365417fd5648e0f88661c3656460cfc16406"
-  integrity sha512-9sU+oZoY1jjTc4KiV+xiPTS7sPMTrlVvsE+fOb75YESwzdYkYRWevSsz+gCnONmLGhQPr+0RfoUnnozn8gPDAg==
+"@nebula.gl/layers@^0.18.5":
+  version "0.18.5"
+  resolved "https://nexus.kontur.io/repository/npm-a/@nebula.gl/layers/-/layers-0.18.5.tgz#8f62d5d33853b15036d8cf2405604cba8cffb076"
+  integrity sha512-CeEuvuAlYQ90VeYmuhYGsBerAIaLzEsXlVjXAbQJ3yZuPdy+jB044hpX8eePP29MdL5dfeA8/X2uGakTUw01ew==
   dependencies:
     "@danmarshall/deckgl-typings" "^3.4.8"
-    "@nebula.gl/edit-modes" "0.18.1"
+    "@nebula.gl/edit-modes" "0.18.5"
     "@turf/bbox" ">=4.0.0"
     "@turf/bbox-polygon" ">=4.0.0"
     "@turf/bearing" ">=4.0.0"
@@ -2274,7 +2326,14 @@
   dependencies:
     "@types/node" ">= 8"
 
-"@probe.gl/stats@3.2.1", "@probe.gl/stats@^3.2.1":
+"@probe.gl/stats@3.3.0", "@probe.gl/stats@^3.3.0":
+  version "3.3.0"
+  resolved "https://nexus.kontur.io/repository/npm-a/@probe.gl/stats/-/stats-3.3.0.tgz#66f684ead7cee1f2aad5ee5e9d297e84e08c5536"
+  integrity sha512-CV4c3EgallqZTO88u34/u9L5asL0nCVP1BEkb4qcXlh8Qz2Vmygbyjz1ViQsct6rSi2lJ52lo6W0PnlpZJJvcA==
+  dependencies:
+    "@babel/runtime" "^7.0.0"
+
+"@probe.gl/stats@^3.2.1":
   version "3.2.1"
   resolved "https://registry.yarnpkg.com/@probe.gl/stats/-/stats-3.2.1.tgz#4e95c75513229ebb01384045e89524a466c022eb"
   integrity sha512-tXe5krgbodxtVdUVWG4oIicMoCHNGp7QYkaHSDrUeTfJVqYuZz99T6r7qmn0bCo4wQlzn936jJ+QiAltHxatig==
@@ -2342,7 +2401,7 @@
 
 "@turf/area@6.x":
   version "6.0.1"
-  resolved "https://registry.yarnpkg.com/@turf/area/-/area-6.0.1.tgz#50ed63c70ef2bdb72952384f1594319d94f3b051"
+  resolved "https://nexus.kontur.io/repository/npm-a/@turf/area/-/area-6.0.1.tgz#50ed63c70ef2bdb72952384f1594319d94f3b051"
   integrity sha512-Zv+3N1ep9P5JvR0YOYagLANyapGWQBh8atdeR3bKpWcigVXFsEKNUw03U/5xnh+cKzm7yozHD6MFJkqQv55y0g==
   dependencies:
     "@turf/helpers" "6.x"
@@ -2350,14 +2409,14 @@
 
 "@turf/bbox-polygon@>=4.0.0":
   version "6.0.1"
-  resolved "https://registry.yarnpkg.com/@turf/bbox-polygon/-/bbox-polygon-6.0.1.tgz#ae0fbb14558831fb34538aae089a23d3336c6379"
+  resolved "https://nexus.kontur.io/repository/npm-a/@turf/bbox-polygon/-/bbox-polygon-6.0.1.tgz#ae0fbb14558831fb34538aae089a23d3336c6379"
   integrity sha512-f6BK6GOzUNjmJeOYHklk/5LNcQMQbo51gvAM10dTM5IqzKP01KM5bgV88uOKfSZB0HRQVpaRV1tgXk2bg5cPRg==
   dependencies:
     "@turf/helpers" "6.x"
 
 "@turf/bbox@*", "@turf/bbox@6.x", "@turf/bbox@>=4.0.0":
   version "6.0.1"
-  resolved "https://registry.yarnpkg.com/@turf/bbox/-/bbox-6.0.1.tgz#b966075771475940ee1c16be2a12cf389e6e923a"
+  resolved "https://nexus.kontur.io/repository/npm-a/@turf/bbox/-/bbox-6.0.1.tgz#b966075771475940ee1c16be2a12cf389e6e923a"
   integrity sha512-EGgaRLettBG25Iyx7VyUINsPpVj1x3nFQFiGS3ER8KCI1MximzNLsam3eXRabqQDjyAKyAE1bJ4EZEpGvspQxw==
   dependencies:
     "@turf/helpers" "6.x"
@@ -2365,7 +2424,7 @@
 
 "@turf/bbox@^5.1.5":
   version "5.1.5"
-  resolved "https://registry.yarnpkg.com/@turf/bbox/-/bbox-5.1.5.tgz#3051df514ad4c50f4a4f9b8a2d15fd8b6840eda3"
+  resolved "https://nexus.kontur.io/repository/npm-a/@turf/bbox/-/bbox-5.1.5.tgz#3051df514ad4c50f4a4f9b8a2d15fd8b6840eda3"
   integrity sha1-MFHfUUrUxQ9KT5uKLRX9i2hA7aM=
   dependencies:
     "@turf/helpers" "^5.1.5"
@@ -2373,7 +2432,7 @@
 
 "@turf/bearing@6.x", "@turf/bearing@>=4.0.0":
   version "6.0.1"
-  resolved "https://registry.yarnpkg.com/@turf/bearing/-/bearing-6.0.1.tgz#8da5d17092e571f170cde7bfb2e5b0d74923c92d"
+  resolved "https://nexus.kontur.io/repository/npm-a/@turf/bearing/-/bearing-6.0.1.tgz#8da5d17092e571f170cde7bfb2e5b0d74923c92d"
   integrity sha512-mXY1NozqV9EFfBTbUItujwfqfQF0G/Xe2fzvnZle90ekPEUfhi4Dgf5JswJTd96J9LiT8kcd6Jonp5khnx0wIg==
   dependencies:
     "@turf/helpers" "6.x"
@@ -2381,7 +2440,7 @@
 
 "@turf/boolean-point-in-polygon@>=4.0.0":
   version "6.0.1"
-  resolved "https://registry.yarnpkg.com/@turf/boolean-point-in-polygon/-/boolean-point-in-polygon-6.0.1.tgz#5836677afd77d2ee391af0056a0c29b660edfa32"
+  resolved "https://nexus.kontur.io/repository/npm-a/@turf/boolean-point-in-polygon/-/boolean-point-in-polygon-6.0.1.tgz#5836677afd77d2ee391af0056a0c29b660edfa32"
   integrity sha512-FKLOZ124vkJhjzNSDcqpwp2NvfnsbYoUOt5iAE7uskt4svix5hcjIEgX9sELFTJpbLGsD1mUbKdfns8tZxcMNg==
   dependencies:
     "@turf/helpers" "6.x"
@@ -2389,7 +2448,7 @@
 
 "@turf/buffer@>=4.0.0":
   version "5.1.5"
-  resolved "https://registry.yarnpkg.com/@turf/buffer/-/buffer-5.1.5.tgz#841c9627cfb974b122ac4e1a956f0466bc0231c4"
+  resolved "https://nexus.kontur.io/repository/npm-a/@turf/buffer/-/buffer-5.1.5.tgz#841c9627cfb974b122ac4e1a956f0466bc0231c4"
   integrity sha1-hByWJ8+5dLEirE4alW8EZrwCMcQ=
   dependencies:
     "@turf/bbox" "^5.1.5"
@@ -2402,7 +2461,7 @@
 
 "@turf/center@>=4.0.0":
   version "6.0.1"
-  resolved "https://registry.yarnpkg.com/@turf/center/-/center-6.0.1.tgz#40a17d0a170df5bba09ad93e133b904d8eb14601"
+  resolved "https://nexus.kontur.io/repository/npm-a/@turf/center/-/center-6.0.1.tgz#40a17d0a170df5bba09ad93e133b904d8eb14601"
   integrity sha512-bh/SLBwRC2QYcbVOxMFBtiARuMzMzfh4YuVtguYAjyBEIA4HXnnEZT+yZlzfcG3oikG7XgV8vg9eegcmwQe+MQ==
   dependencies:
     "@turf/bbox" "6.x"
@@ -2410,7 +2469,7 @@
 
 "@turf/center@^5.1.5":
   version "5.1.5"
-  resolved "https://registry.yarnpkg.com/@turf/center/-/center-5.1.5.tgz#44ab2cd954f63c0d37757f7158a99c3ef5114b80"
+  resolved "https://nexus.kontur.io/repository/npm-a/@turf/center/-/center-5.1.5.tgz#44ab2cd954f63c0d37757f7158a99c3ef5114b80"
   integrity sha1-RKss2VT2PA03dX9xWKmcPvURS4A=
   dependencies:
     "@turf/bbox" "^5.1.5"
@@ -2418,7 +2477,7 @@
 
 "@turf/centroid@>=4.0.0":
   version "6.0.2"
-  resolved "https://registry.yarnpkg.com/@turf/centroid/-/centroid-6.0.2.tgz#c4eb16b4bc60b692f74e1809cf9a7c4a4f5ba1cc"
+  resolved "https://nexus.kontur.io/repository/npm-a/@turf/centroid/-/centroid-6.0.2.tgz#c4eb16b4bc60b692f74e1809cf9a7c4a4f5ba1cc"
   integrity sha512-auyDauOtC4eddH7GC3CHFTDu2PKhpSeKCRhwhHhXtJqn2dWCJQNIoCeJRmfXRIbzCWhWvgvQafvvhq8HNvmvWw==
   dependencies:
     "@turf/helpers" "6.x"
@@ -2426,7 +2485,7 @@
 
 "@turf/centroid@^5.1.5":
   version "5.1.5"
-  resolved "https://registry.yarnpkg.com/@turf/centroid/-/centroid-5.1.5.tgz#778ada74216335021ad8fd0e7a65a8349d53c769"
+  resolved "https://nexus.kontur.io/repository/npm-a/@turf/centroid/-/centroid-5.1.5.tgz#778ada74216335021ad8fd0e7a65a8349d53c769"
   integrity sha1-d4radCFjNQIa2P0OemWoNJ1Tx2k=
   dependencies:
     "@turf/helpers" "^5.1.5"
@@ -2434,7 +2493,7 @@
 
 "@turf/circle@>=4.0.0":
   version "6.0.1"
-  resolved "https://registry.yarnpkg.com/@turf/circle/-/circle-6.0.1.tgz#0ab72083373ae3c76b700c17a504ab1b5c0910b9"
+  resolved "https://nexus.kontur.io/repository/npm-a/@turf/circle/-/circle-6.0.1.tgz#0ab72083373ae3c76b700c17a504ab1b5c0910b9"
   integrity sha512-pF9XsYtCvY9ZyNqJ3hFYem9VaiGdVNQb0SFq/zzDMwH3iWZPPJQHnnDB/3e8RD1VDtBBov9p5uO2k7otsfezjw==
   dependencies:
     "@turf/destination" "6.x"
@@ -2442,38 +2501,27 @@
 
 "@turf/clone@6.x":
   version "6.0.2"
-  resolved "https://registry.yarnpkg.com/@turf/clone/-/clone-6.0.2.tgz#7563cebbb3e2e19f361599bb244467e0dcc205c9"
+  resolved "https://nexus.kontur.io/repository/npm-a/@turf/clone/-/clone-6.0.2.tgz#7563cebbb3e2e19f361599bb244467e0dcc205c9"
   integrity sha512-UVpYPnW3wRj3bPncR6Z2PRbowBk+nEdVWgGewPxrKKLfvswtVtG9n/OIyvbU3E3ZOadBVxTH2uAMEMOz4800FA==
   dependencies:
     "@turf/helpers" "6.x"
 
 "@turf/clone@^5.1.5":
   version "5.1.5"
-  resolved "https://registry.yarnpkg.com/@turf/clone/-/clone-5.1.5.tgz#253e8d35477181976e33adfab50a0f02a7f0e367"
+  resolved "https://nexus.kontur.io/repository/npm-a/@turf/clone/-/clone-5.1.5.tgz#253e8d35477181976e33adfab50a0f02a7f0e367"
   integrity sha1-JT6NNUdxgZduM636tQoPAqfw42c=
   dependencies:
     "@turf/helpers" "^5.1.5"
 
 "@turf/destination@6.x", "@turf/destination@>=4.0.0":
   version "6.0.1"
-  resolved "https://registry.yarnpkg.com/@turf/destination/-/destination-6.0.1.tgz#5275887fa96ec463f44864a2c17f0b712361794a"
+  resolved "https://nexus.kontur.io/repository/npm-a/@turf/destination/-/destination-6.0.1.tgz#5275887fa96ec463f44864a2c17f0b712361794a"
   integrity sha512-MroK4nRdp7as174miCAugp8Uvorhe6rZ7MJiC9Hb4+hZR7gNFJyVKmkdDDXIoCYs6MJQsx0buI+gsCpKwgww0Q==
   dependencies:
     "@turf/helpers" "6.x"
     "@turf/invariant" "6.x"
 
-"@turf/difference@>=4.0.0":
-  version "6.0.1"
-  resolved "https://nexus.kontur.io/repository/npm-a/@turf/difference/-/difference-6.0.1.tgz#a5ee3433eddb7d707cac227adf0d43ab0d651682"
-  integrity sha512-lkhJjNfPeLARQm232A851vVhrUvX3gdvTft5QlqkUlr7AzLpiT8PW14yEkU9xABxRh6PGv7T1UUVAeRgC7JxuA==
-  dependencies:
-    "@turf/area" "6.x"
-    "@turf/helpers" "6.x"
-    "@turf/invariant" "6.x"
-    "@turf/meta" "6.x"
-    martinez-polygon-clipping "*"
-
-"@turf/difference@^6.0.1":
+"@turf/difference@>=4.0.0", "@turf/difference@^6.0.2":
   version "6.0.2"
   resolved "https://nexus.kontur.io/repository/npm-a/@turf/difference/-/difference-6.0.2.tgz#dd20c0e2301ba6c22019e38a36eea3975205a77f"
   integrity sha512-WtXkvFgOyHqsG3xtYG/m5Su+gkvyCUTbdW0XOuc3Ha2u9UeeBSGwEzTc2y9THDLDhHqR+DlTl1MMEBihXcy3fg==
@@ -2486,7 +2534,7 @@
 
 "@turf/distance@6.x", "@turf/distance@>=4.0.0":
   version "6.0.1"
-  resolved "https://registry.yarnpkg.com/@turf/distance/-/distance-6.0.1.tgz#0761f28784286e7865a427c4e7e3593569c2dea8"
+  resolved "https://nexus.kontur.io/repository/npm-a/@turf/distance/-/distance-6.0.1.tgz#0761f28784286e7865a427c4e7e3593569c2dea8"
   integrity sha512-q7t7rWIWfkg7MP1Vt4uLjSEhe5rPfCO2JjpKmk7JC+QZKEQkuvHEqy3ejW1iC7Kw5ZcZNR3qdMGGz+6HnVwqvg==
   dependencies:
     "@turf/helpers" "6.x"
@@ -2494,7 +2542,7 @@
 
 "@turf/ellipse@>=4.0.0":
   version "5.1.5"
-  resolved "https://registry.yarnpkg.com/@turf/ellipse/-/ellipse-5.1.5.tgz#d57cab853985920cde60228a78d80458025c54be"
+  resolved "https://nexus.kontur.io/repository/npm-a/@turf/ellipse/-/ellipse-5.1.5.tgz#d57cab853985920cde60228a78d80458025c54be"
   integrity sha1-1XyrhTmFkgzeYCKKeNgEWAJcVL4=
   dependencies:
     "@turf/helpers" "^5.1.5"
@@ -2504,17 +2552,17 @@
 
 "@turf/helpers@6.x", "@turf/helpers@>=4.0.0":
   version "6.1.4"
-  resolved "https://registry.yarnpkg.com/@turf/helpers/-/helpers-6.1.4.tgz#d6fd7ebe6782dd9c87dca5559bda5c48ae4c3836"
+  resolved "https://nexus.kontur.io/repository/npm-a/@turf/helpers/-/helpers-6.1.4.tgz#d6fd7ebe6782dd9c87dca5559bda5c48ae4c3836"
   integrity sha512-vJvrdOZy1ngC7r3MDA7zIGSoIgyrkWcGnNIEaqn/APmw+bVLF2gAW7HIsdTxd12s5wQMqEpqIQrmrbRRZ0xC7g==
 
 "@turf/helpers@^5.1.5":
   version "5.1.5"
-  resolved "https://registry.yarnpkg.com/@turf/helpers/-/helpers-5.1.5.tgz#153405227ab933d004a5bb9641a9ed999fcbe0cf"
+  resolved "https://nexus.kontur.io/repository/npm-a/@turf/helpers/-/helpers-5.1.5.tgz#153405227ab933d004a5bb9641a9ed999fcbe0cf"
   integrity sha1-FTQFInq5M9AEpbuWQantmZ/L4M8=
 
 "@turf/intersect@>=4.0.0":
   version "6.1.3"
-  resolved "https://registry.yarnpkg.com/@turf/intersect/-/intersect-6.1.3.tgz#c6574a2f00a38df6f81fc08d8103ad5295b7b6bc"
+  resolved "https://nexus.kontur.io/repository/npm-a/@turf/intersect/-/intersect-6.1.3.tgz#c6574a2f00a38df6f81fc08d8103ad5295b7b6bc"
   integrity sha512-SeAJG/zPRRTeyK2OifkPoyLq60q8tv8prpPIH3R8ZhyF4MdLOnMv5MURaQ6kQd+3UTDrL+pYm6rqbPvln1zqIw==
   dependencies:
     "@turf/helpers" "6.x"
@@ -2523,21 +2571,21 @@
 
 "@turf/invariant@6.x":
   version "6.1.2"
-  resolved "https://registry.yarnpkg.com/@turf/invariant/-/invariant-6.1.2.tgz#6013ed6219f9ac2edada9b31e1dfa5918eb0a2f7"
+  resolved "https://nexus.kontur.io/repository/npm-a/@turf/invariant/-/invariant-6.1.2.tgz#6013ed6219f9ac2edada9b31e1dfa5918eb0a2f7"
   integrity sha512-WU08Ph8j0J2jVGlQCKChXoCtI50BB3yEH21V++V0T4cR1T27HKCxkehV2sYMwTierfMBgjwSwDIsxnR4/2mWXg==
   dependencies:
     "@turf/helpers" "6.x"
 
 "@turf/invariant@^5.1.5":
   version "5.2.0"
-  resolved "https://registry.yarnpkg.com/@turf/invariant/-/invariant-5.2.0.tgz#f0150ff7290b38577b73d088b7932c1ee0aa90a7"
+  resolved "https://nexus.kontur.io/repository/npm-a/@turf/invariant/-/invariant-5.2.0.tgz#f0150ff7290b38577b73d088b7932c1ee0aa90a7"
   integrity sha1-8BUP9ykLOFd7c9CIt5MsHuCqkKc=
   dependencies:
     "@turf/helpers" "^5.1.5"
 
 "@turf/line-intersect@6.x", "@turf/line-intersect@>=4.0.0":
   version "6.0.2"
-  resolved "https://registry.yarnpkg.com/@turf/line-intersect/-/line-intersect-6.0.2.tgz#b45b7a4e7e08c39a0e4e91099580ed377ef7335f"
+  resolved "https://nexus.kontur.io/repository/npm-a/@turf/line-intersect/-/line-intersect-6.0.2.tgz#b45b7a4e7e08c39a0e4e91099580ed377ef7335f"
   integrity sha512-pfL/lBu7ukBPdTjvSCmcNUzZ83V4R95htwqs5NqU8zeS4R+5KTwacbrOYKztjpmHBwUmPEIIpSbqkUoD0Fp7kg==
   dependencies:
     "@turf/helpers" "6.x"
@@ -2548,7 +2596,7 @@
 
 "@turf/line-segment@6.x":
   version "6.0.2"
-  resolved "https://registry.yarnpkg.com/@turf/line-segment/-/line-segment-6.0.2.tgz#e280bcde70d28b694028ec1623dc406c928e59b6"
+  resolved "https://nexus.kontur.io/repository/npm-a/@turf/line-segment/-/line-segment-6.0.2.tgz#e280bcde70d28b694028ec1623dc406c928e59b6"
   integrity sha512-8AkzDHoNw3X68y115josal+lvdAi4b2P1K0YNTKGyLRBaUhPXVSuMBpMd53FRF1hYEb9UJgMbugF9ZE7m5L6zg==
   dependencies:
     "@turf/helpers" "6.x"
@@ -2557,21 +2605,21 @@
 
 "@turf/meta@6.x":
   version "6.0.2"
-  resolved "https://registry.yarnpkg.com/@turf/meta/-/meta-6.0.2.tgz#eb92951126d24a613ac1b7b99d733fcc20fd30cf"
+  resolved "https://nexus.kontur.io/repository/npm-a/@turf/meta/-/meta-6.0.2.tgz#eb92951126d24a613ac1b7b99d733fcc20fd30cf"
   integrity sha512-VA7HJkx7qF1l3+GNGkDVn2oXy4+QoLP6LktXAaZKjuT1JI0YESat7quUkbCMy4zP9lAUuvS4YMslLyTtr919FA==
   dependencies:
     "@turf/helpers" "6.x"
 
 "@turf/meta@^5.1.5":
   version "5.2.0"
-  resolved "https://registry.yarnpkg.com/@turf/meta/-/meta-5.2.0.tgz#3b1ad485ee0c3b0b1775132a32c384d53e4ba53d"
+  resolved "https://nexus.kontur.io/repository/npm-a/@turf/meta/-/meta-5.2.0.tgz#3b1ad485ee0c3b0b1775132a32c384d53e4ba53d"
   integrity sha1-OxrUhe4MOwsXdRMqMsOE1T5LpT0=
   dependencies:
     "@turf/helpers" "^5.1.5"
 
 "@turf/nearest-point-on-line@>=4.0.0":
   version "6.0.2"
-  resolved "https://registry.yarnpkg.com/@turf/nearest-point-on-line/-/nearest-point-on-line-6.0.2.tgz#4b2c1177595d9a1743af76905a9013ced03bc0dc"
+  resolved "https://nexus.kontur.io/repository/npm-a/@turf/nearest-point-on-line/-/nearest-point-on-line-6.0.2.tgz#4b2c1177595d9a1743af76905a9013ced03bc0dc"
   integrity sha512-re9tSEwYyG1EMo4ObXXAKYVhkMVANPIIJQ1V/J1lKcNfHVc1pYmd3D5jkTNBh+oriI9VL4PVML3eqYE+Zcg0mg==
   dependencies:
     "@turf/bearing" "6.x"
@@ -2584,7 +2632,7 @@
 
 "@turf/point-to-line-distance@>=4.0.0":
   version "6.0.0"
-  resolved "https://registry.yarnpkg.com/@turf/point-to-line-distance/-/point-to-line-distance-6.0.0.tgz#e2f59177273a5f2a9e7fa8d2c054bae7da815ccf"
+  resolved "https://nexus.kontur.io/repository/npm-a/@turf/point-to-line-distance/-/point-to-line-distance-6.0.0.tgz#e2f59177273a5f2a9e7fa8d2c054bae7da815ccf"
   integrity sha512-2UuZFtn8MRfrqBHSqkrH/jm5q/VedyL7a4YC50Nd5FqXs5TgmAB7ms2igSbCkyaOtRypGhMl9fun3Hg5PIVRMQ==
   dependencies:
     "@turf/bearing" "6.x"
@@ -2598,7 +2646,7 @@
 
 "@turf/polygon-to-line@>=4.0.0":
   version "6.0.3"
-  resolved "https://registry.yarnpkg.com/@turf/polygon-to-line/-/polygon-to-line-6.0.3.tgz#a7c5416f61651d5d25ff51ee006522725cb1adf1"
+  resolved "https://nexus.kontur.io/repository/npm-a/@turf/polygon-to-line/-/polygon-to-line-6.0.3.tgz#a7c5416f61651d5d25ff51ee006522725cb1adf1"
   integrity sha512-cJUy7VYLAhgnTBOtYFjNzh5bSlAS/qM8gUHXRGrIxI22RUJk4FXs/X2MEJ4Ki2flCiSeOjRIUEawEslNe7w7RA==
   dependencies:
     "@turf/helpers" "6.x"
@@ -2606,7 +2654,7 @@
 
 "@turf/projection@6.x":
   version "6.0.1"
-  resolved "https://registry.yarnpkg.com/@turf/projection/-/projection-6.0.1.tgz#bde70ae8441b9cefddf26d71c7db74bc3d9792b1"
+  resolved "https://nexus.kontur.io/repository/npm-a/@turf/projection/-/projection-6.0.1.tgz#bde70ae8441b9cefddf26d71c7db74bc3d9792b1"
   integrity sha512-Y3RvGT6I53MjYKLG69e9sMk45wJXcLbrEO1t6P3WQQQGqA2gYhhMJyV41vE2Z2llrJpvs2dDx/tIeQzGd0HHMQ==
   dependencies:
     "@turf/clone" "6.x"
@@ -2615,7 +2663,7 @@
 
 "@turf/projection@^5.1.5":
   version "5.1.5"
-  resolved "https://registry.yarnpkg.com/@turf/projection/-/projection-5.1.5.tgz#24517eeeb2f36816ba9f712e7ae6d6a368edf757"
+  resolved "https://nexus.kontur.io/repository/npm-a/@turf/projection/-/projection-5.1.5.tgz#24517eeeb2f36816ba9f712e7ae6d6a368edf757"
   integrity sha1-JFF+7rLzaBa6n3EueubWo2jt91c=
   dependencies:
     "@turf/clone" "^5.1.5"
@@ -2624,7 +2672,7 @@
 
 "@turf/rhumb-bearing@6.x":
   version "6.0.1"
-  resolved "https://registry.yarnpkg.com/@turf/rhumb-bearing/-/rhumb-bearing-6.0.1.tgz#182c4c21fe951e097fb468ae128dc22ef6078f3f"
+  resolved "https://nexus.kontur.io/repository/npm-a/@turf/rhumb-bearing/-/rhumb-bearing-6.0.1.tgz#182c4c21fe951e097fb468ae128dc22ef6078f3f"
   integrity sha512-MVBra8OVfjM4+/N0B3o6cBIYg9p/uRKzA9uk05RfrzasEbUL1vdD23LkTooVL74Yw4UxL8BQD9hS5Re2COJFDA==
   dependencies:
     "@turf/helpers" "6.x"
@@ -2632,7 +2680,7 @@
 
 "@turf/rhumb-bearing@^5.1.5":
   version "5.1.5"
-  resolved "https://registry.yarnpkg.com/@turf/rhumb-bearing/-/rhumb-bearing-5.1.5.tgz#acf6a502427eb8c49e18cda6ae0effab0c5ddcd2"
+  resolved "https://nexus.kontur.io/repository/npm-a/@turf/rhumb-bearing/-/rhumb-bearing-5.1.5.tgz#acf6a502427eb8c49e18cda6ae0effab0c5ddcd2"
   integrity sha1-rPalAkJ+uMSeGM2mrg7/qwxd3NI=
   dependencies:
     "@turf/helpers" "^5.1.5"
@@ -2640,7 +2688,7 @@
 
 "@turf/rhumb-destination@^5.1.5":
   version "5.1.5"
-  resolved "https://registry.yarnpkg.com/@turf/rhumb-destination/-/rhumb-destination-5.1.5.tgz#b1b2aeb921547f2ac0c1a994b6a130f92463c742"
+  resolved "https://nexus.kontur.io/repository/npm-a/@turf/rhumb-destination/-/rhumb-destination-5.1.5.tgz#b1b2aeb921547f2ac0c1a994b6a130f92463c742"
   integrity sha1-sbKuuSFUfyrAwamUtqEw+SRjx0I=
   dependencies:
     "@turf/helpers" "^5.1.5"
@@ -2648,7 +2696,7 @@
 
 "@turf/rhumb-distance@6.x":
   version "6.0.1"
-  resolved "https://registry.yarnpkg.com/@turf/rhumb-distance/-/rhumb-distance-6.0.1.tgz#ae1c5c823b4b04f75cd7fc240f7f93647db8bdd4"
+  resolved "https://nexus.kontur.io/repository/npm-a/@turf/rhumb-distance/-/rhumb-distance-6.0.1.tgz#ae1c5c823b4b04f75cd7fc240f7f93647db8bdd4"
   integrity sha512-3G45DQtQByzzfHFPcCyJdUZFwsd45zfZ7sAb1ddF7mhEj4G70+T2G3GKjInymqDNrbyh2gbG6wQiZSToC8Uf9g==
   dependencies:
     "@turf/helpers" "6.x"
@@ -2656,7 +2704,7 @@
 
 "@turf/rhumb-distance@^5.1.5":
   version "5.1.5"
-  resolved "https://registry.yarnpkg.com/@turf/rhumb-distance/-/rhumb-distance-5.1.5.tgz#1806857625f4225384dad413e69f39538ff5f765"
+  resolved "https://nexus.kontur.io/repository/npm-a/@turf/rhumb-distance/-/rhumb-distance-5.1.5.tgz#1806857625f4225384dad413e69f39538ff5f765"
   integrity sha1-GAaFdiX0IlOE2tQT5p85U4/192U=
   dependencies:
     "@turf/helpers" "^5.1.5"
@@ -2664,7 +2712,7 @@
 
 "@turf/transform-rotate@>=4.0.0", "@turf/transform-rotate@^5.1.5":
   version "5.1.5"
-  resolved "https://registry.yarnpkg.com/@turf/transform-rotate/-/transform-rotate-5.1.5.tgz#d096edd9e300fe315069d54d8e458c409221edfb"
+  resolved "https://nexus.kontur.io/repository/npm-a/@turf/transform-rotate/-/transform-rotate-5.1.5.tgz#d096edd9e300fe315069d54d8e458c409221edfb"
   integrity sha1-0Jbt2eMA/jFQadVNjkWMQJIh7fs=
   dependencies:
     "@turf/centroid" "^5.1.5"
@@ -2678,7 +2726,7 @@
 
 "@turf/transform-scale@>=4.0.0":
   version "5.1.5"
-  resolved "https://registry.yarnpkg.com/@turf/transform-scale/-/transform-scale-5.1.5.tgz#70fd3ae01856cf7bae9f15ad561cdfe8f89001b9"
+  resolved "https://nexus.kontur.io/repository/npm-a/@turf/transform-scale/-/transform-scale-5.1.5.tgz#70fd3ae01856cf7bae9f15ad561cdfe8f89001b9"
   integrity sha1-cP064BhWz3uunxWtVhzf6PiQAbk=
   dependencies:
     "@turf/bbox" "^5.1.5"
@@ -2694,7 +2742,7 @@
 
 "@turf/transform-translate@>=4.0.0":
   version "5.1.5"
-  resolved "https://registry.yarnpkg.com/@turf/transform-translate/-/transform-translate-5.1.5.tgz#530a257fb1dc7268dadcab34e67901eb2a3dec63"
+  resolved "https://nexus.kontur.io/repository/npm-a/@turf/transform-translate/-/transform-translate-5.1.5.tgz#530a257fb1dc7268dadcab34e67901eb2a3dec63"
   integrity sha1-Uwolf7Hccmja3Ks05nkB6yo97GM=
   dependencies:
     "@turf/clone" "^5.1.5"
@@ -2705,7 +2753,7 @@
 
 "@turf/union@>=4.0.0":
   version "6.0.3"
-  resolved "https://registry.yarnpkg.com/@turf/union/-/union-6.0.3.tgz#463b62d71c406f40a6978f560bfb92e88fe7db56"
+  resolved "https://nexus.kontur.io/repository/npm-a/@turf/union/-/union-6.0.3.tgz#463b62d71c406f40a6978f560bfb92e88fe7db56"
   integrity sha512-SJPhEvsR96k4vFqymxPPC43jcqFydTafGjHWnYzlupxqUDzIYD8X5d9Ed8mONl2T9oM4ErbNuuZ9j/eHvoWtKw==
   dependencies:
     "@turf/helpers" "6.x"
@@ -2812,7 +2860,7 @@
 
 "@types/hammerjs@^2.0.36":
   version "2.0.36"
-  resolved "https://registry.yarnpkg.com/@types/hammerjs/-/hammerjs-2.0.36.tgz#17ce0a235e9ffbcdcdf5095646b374c2bf615a4c"
+  resolved "https://nexus.kontur.io/repository/npm-a/@types/hammerjs/-/hammerjs-2.0.36.tgz#17ce0a235e9ffbcdcdf5095646b374c2bf615a4c"
   integrity sha512-7TUK/k2/QGpEAv/BCwSHlYu3NXZhQ9ZwBYpzr9tjlPIL2C5BeGhH3DmVavRx3ZNyELX5TLC91JTz/cen6AAtIQ==
 
 "@types/handlebars@^4.1.0":
@@ -4915,7 +4963,7 @@ csstype@^2.2.0:
 
 cubic-hermite-spline@^1.0.1:
   version "1.0.1"
-  resolved "https://registry.yarnpkg.com/cubic-hermite-spline/-/cubic-hermite-spline-1.0.1.tgz#48fb0a4153aa6a1ce3aa1e7e8c545afe8c624bac"
+  resolved "https://nexus.kontur.io/repository/npm-a/cubic-hermite-spline/-/cubic-hermite-spline-1.0.1.tgz#48fb0a4153aa6a1ce3aa1e7e8c545afe8c624bac"
   integrity sha1-SPsKQVOqahzjqh5+jFRa/oxiS6w=
 
 currently-unhandled@^0.4.1:
@@ -4932,12 +4980,12 @@ cyclist@^1.0.1:
 
 d3-array@1:
   version "1.2.4"
-  resolved "https://registry.yarnpkg.com/d3-array/-/d3-array-1.2.4.tgz#635ce4d5eea759f6f605863dbcfc30edc737f71f"
+  resolved "https://nexus.kontur.io/repository/npm-a/d3-array/-/d3-array-1.2.4.tgz#635ce4d5eea759f6f605863dbcfc30edc737f71f"
   integrity sha512-KHW6M86R+FUPYGb3R5XiYjXPq7VzwxZ22buHhAEVG5ztoEcZZMLov530mmccaqA1GghZArjQV46fuc8kUqhhHw==
 
 d3-geo@1.7.1:
   version "1.7.1"
-  resolved "https://registry.yarnpkg.com/d3-geo/-/d3-geo-1.7.1.tgz#44bbc7a218b1fd859f3d8fd7c443ca836569ce99"
+  resolved "https://nexus.kontur.io/repository/npm-a/d3-geo/-/d3-geo-1.7.1.tgz#44bbc7a218b1fd859f3d8fd7c443ca836569ce99"
   integrity sha512-O4AempWAr+P5qbk2bC2FuN/sDW4z+dN2wDf9QV3bxQt4M5HfOEeXLgJ/UKQW0+o1Dj8BE+L5kiDbdWUMjsmQpw==
   dependencies:
     d3-array "1"
@@ -5272,7 +5320,7 @@ dom-serializer@~0.1.1:
 
 dom-walk@^0.1.0:
   version "0.1.2"
-  resolved "https://registry.yarnpkg.com/dom-walk/-/dom-walk-0.1.2.tgz#0c548bef048f4d1f2a97249002236060daa3fd84"
+  resolved "https://nexus.kontur.io/repository/npm-a/dom-walk/-/dom-walk-0.1.2.tgz#0c548bef048f4d1f2a97249002236060daa3fd84"
   integrity sha512-6QvTW9mrGeIegrFXdtQi9pk7O/nSK6lSdXW2eqUspN5LWD7UTji2Fqw5V2YLjBpHEoU9Xl/eUWNpDeZvoyOv2w==
 
 domain-browser@^1.1.1:
@@ -5340,6 +5388,11 @@ dot-prop@^4.2.0:
   integrity sha512-tUMXrxlExSW6U2EXiiKGSBVdYgtV8qlHL+C10TsW4PURY/ic+eaysnSkwB4kA/mBlCyy/IKDJ+Lc3wbWeaXtuQ==
   dependencies:
     is-obj "^1.0.0"
+
+draco3d@^1.3.4:
+  version "1.3.6"
+  resolved "https://nexus.kontur.io/repository/npm-a/draco3d/-/draco3d-1.3.6.tgz#e4d9e7d846637775328c903721c932b953dce331"
+  integrity sha512-zZoH5JNcdWDrUb2ks2mbzGDUUPvDaDf1ysTJS2St+3/F/8XcKAX4VKgzPjTP7MfHegHQ7Udv8ovS+R3AgXlH7g==
 
 duplexer@^0.1.1:
   version "0.1.1"
@@ -6285,7 +6338,7 @@ fs-extra@8.1.0, fs-extra@^8.1.0:
 
 fs-extra@^7.0.0:
   version "7.0.1"
-  resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-7.0.1.tgz#4f189c44aa123b895f722804f55ea23eadc348e9"
+  resolved "https://nexus.kontur.io/repository/npm-a/fs-extra/-/fs-extra-7.0.1.tgz#4f189c44aa123b895f722804f55ea23eadc348e9"
   integrity sha512-YJDaCJZEnBmcbw13fvdAM9AwNOJwOzrE4pqMqBq5nFiEqXUqHwlK4B+3pUw6JNvfSPtX05xFHtYy/1ni01eGCw==
   dependencies:
     graceful-fs "^4.1.2"
@@ -6387,7 +6440,7 @@ gensync@^1.0.0-beta.1:
 
 geojson-rbush@3.x:
   version "3.1.2"
-  resolved "https://registry.yarnpkg.com/geojson-rbush/-/geojson-rbush-3.1.2.tgz#577d6ec70ba986d4e60b741f1df5147faeb82c97"
+  resolved "https://nexus.kontur.io/repository/npm-a/geojson-rbush/-/geojson-rbush-3.1.2.tgz#577d6ec70ba986d4e60b741f1df5147faeb82c97"
   integrity sha512-grkfdg3HIeTjwTfiJe5FT8+fGU3fABCc+vRJDBwdQz9kkLF0Sbif2gs2JUzjewwgmnvLGy9fInySDeADoNuk7w==
   dependencies:
     "@turf/bbox" "*"
@@ -6397,7 +6450,7 @@ geojson-rbush@3.x:
 
 geojson-types@^2.0.1:
   version "2.0.1"
-  resolved "https://registry.yarnpkg.com/geojson-types/-/geojson-types-2.0.1.tgz#91040649b7ad39b2904643bd9ad51e5e86d524e3"
+  resolved "https://nexus.kontur.io/repository/npm-a/geojson-types/-/geojson-types-2.0.1.tgz#91040649b7ad39b2904643bd9ad51e5e86d524e3"
   integrity sha1-kQQGSbetObKQRkO9mtUeXobVJOM=
 
 geojson-vt@^3.2.1:
@@ -6407,7 +6460,7 @@ geojson-vt@^3.2.1:
 
 geojson@0.5.0:
   version "0.5.0"
-  resolved "https://registry.yarnpkg.com/geojson/-/geojson-0.5.0.tgz#3cd6c96399be65b56ee55596116fe9191ce701c0"
+  resolved "https://nexus.kontur.io/repository/npm-a/geojson/-/geojson-0.5.0.tgz#3cd6c96399be65b56ee55596116fe9191ce701c0"
   integrity sha1-PNbJY5m+ZbVu5VWWEW/pGRznAcA=
 
 get-caller-file@^2.0.1:
@@ -6601,7 +6654,7 @@ global-prefix@^3.0.0:
 
 global@>=4.3.0:
   version "4.4.0"
-  resolved "https://registry.yarnpkg.com/global/-/global-4.4.0.tgz#3e7b105179006a323ed71aafca3e9c57a5cc6406"
+  resolved "https://nexus.kontur.io/repository/npm-a/global/-/global-4.4.0.tgz#3e7b105179006a323ed71aafca3e9c57a5cc6406"
   integrity sha512-wv/LAoHdRE3BeTGz53FAamhGlPLhlssK45usmGFThIi4XqnBmjKQ16u+RNbP7WvigRZDxUsM0J3gcQ5yicaL0w==
   dependencies:
     min-document "^2.19.0"
@@ -6699,7 +6752,7 @@ growly@^1.3.0:
 
 hammerjs@^2.0.8:
   version "2.0.8"
-  resolved "https://registry.yarnpkg.com/hammerjs/-/hammerjs-2.0.8.tgz#04ef77862cff2bb79d30f7692095930222bf60f1"
+  resolved "https://nexus.kontur.io/repository/npm-a/hammerjs/-/hammerjs-2.0.8.tgz#04ef77862cff2bb79d30f7692095930222bf60f1"
   integrity sha1-BO93hiz/K7edMPdpIJWTAiK/YPE=
 
 handle-thing@^2.0.0:
@@ -7219,7 +7272,7 @@ imurmurhash@^0.1.4:
 
 indefinitely-typed@^1.1.0:
   version "1.1.0"
-  resolved "https://registry.yarnpkg.com/indefinitely-typed/-/indefinitely-typed-1.1.0.tgz#d0acd3645445e89ae1c70129be21609a0aa5a114"
+  resolved "https://nexus.kontur.io/repository/npm-a/indefinitely-typed/-/indefinitely-typed-1.1.0.tgz#d0acd3645445e89ae1c70129be21609a0aa5a114"
   integrity sha512-giaI0hCj+wWZIZZLsmWHI+LrM4Hwc+rEZ/VrgCafKePcnE42fLnQTFt4xspqLin8fCjI5WnQr2fep/0EFqjaxw==
   dependencies:
     fs-extra "^7.0.0"
@@ -8661,7 +8714,7 @@ lodash.templatesettings@^4.0.0:
 
 lodash.throttle@^4.1.1:
   version "4.1.1"
-  resolved "https://registry.yarnpkg.com/lodash.throttle/-/lodash.throttle-4.1.1.tgz#c23e91b710242ac70c37f1e1cda9274cc39bf2f4"
+  resolved "https://nexus.kontur.io/repository/npm-a/lodash.throttle/-/lodash.throttle-4.1.1.tgz#c23e91b710242ac70c37f1e1cda9274cc39bf2f4"
   integrity sha1-wj6RtxAkKscMN/HhzaknTMOb8vQ=
 
 lodash.uniq@^4.5.0:
@@ -8853,29 +8906,20 @@ mapbox-gl@^1.8.1:
     tinyqueue "^2.0.3"
     vt-pbf "^3.1.1"
 
-martinez-polygon-clipping@*:
-  version "0.7.0"
-  resolved "https://nexus.kontur.io/repository/npm-a/martinez-polygon-clipping/-/martinez-polygon-clipping-0.7.0.tgz#5ae979d4ba32c6425c8cdd422f14d54276350ab7"
-  integrity sha512-EBxKjlUqrVjzT1HRwJARaSwj66JZqEUl+JnqnrzHZLU4hd4XrCQWqShZx40264NR/pm5wIHRlNEaIrev44wvKA==
-  dependencies:
-    robust-predicates "^2.0.4"
-    splaytree "^0.1.4"
-    tinyqueue "^1.2.0"
-
 martinez-polygon-clipping@^0.4.3:
   version "0.4.3"
-  resolved "https://registry.yarnpkg.com/martinez-polygon-clipping/-/martinez-polygon-clipping-0.4.3.tgz#a3971ddf1da147104b5d0fbbf68f728bb62885c1"
+  resolved "https://nexus.kontur.io/repository/npm-a/martinez-polygon-clipping/-/martinez-polygon-clipping-0.4.3.tgz#a3971ddf1da147104b5d0fbbf68f728bb62885c1"
   integrity sha512-3ZNS0ksKhWTLsmCUkNf+/UimndZ5U2cVOS0I+IjiwF+M23E77TmeOZSmbRJbfCoQUog/vcQ42s3DXrhgOhgPqw==
   dependencies:
     splaytree "^0.1.4"
     tinyqueue "^1.2.0"
 
 math.gl@^3.1.2, math.gl@^3.1.3:
-  version "3.1.5"
-  resolved "https://registry.yarnpkg.com/math.gl/-/math.gl-3.1.5.tgz#fd8572f5843499a4383d9c3e6151a4008c403f76"
-  integrity sha512-vRDoifQTcEn2uBGJvxNxCkiphUMD40Ti/kJuGRjEWD1OiHpX9L+66ovEU3KpQ3lCwaLaIxPQcPWEOMiAn7NqIg==
+  version "3.2.1"
+  resolved "https://nexus.kontur.io/repository/npm-a/math.gl/-/math.gl-3.2.1.tgz#b330fc32a8bbc15d26993a3b148d12aa53c49da6"
+  integrity sha512-oved17Wf89bzoV2lVF7GC9wfy4TttvU+8vb9MoMRhMy4ZqoQjx3t4nndqKzVLOEhyCiJowkmWoj9GfnfOiXShg==
   dependencies:
-    "@math.gl/core" "3.1.5"
+    "@math.gl/core" "3.2.1"
 
 md5.js@^1.3.4:
   version "1.3.5"
@@ -9060,7 +9104,7 @@ mimic-fn@^2.0.0, mimic-fn@^2.1.0:
 
 min-document@^2.19.0:
   version "2.19.0"
-  resolved "https://registry.yarnpkg.com/min-document/-/min-document-2.19.0.tgz#7bd282e3f5842ed295bb748cdd9f1ffa2c824685"
+  resolved "https://nexus.kontur.io/repository/npm-a/min-document/-/min-document-2.19.0.tgz#7bd282e3f5842ed295bb748cdd9f1ffa2c824685"
   integrity sha1-e9KC4/WELtKVu3SM3Z8f+iyCRoU=
   dependencies:
     dom-walk "^0.1.0"
@@ -9167,7 +9211,7 @@ mixin-deep@^1.2.0:
 
 mjolnir.js@^2.3.0:
   version "2.4.1"
-  resolved "https://registry.yarnpkg.com/mjolnir.js/-/mjolnir.js-2.4.1.tgz#63cc66b7d1a52490904103cc1becc597be60c6cf"
+  resolved "https://nexus.kontur.io/repository/npm-a/mjolnir.js/-/mjolnir.js-2.4.1.tgz#63cc66b7d1a52490904103cc1becc597be60c6cf"
   integrity sha512-bpqKc70aNlijeQCapJ8529EmjVj8VSfYdzh1WsbhWp0XEQSm9hAB6X350OyRVDpH5oTdAyX/NeYFqtwyuO4ZKA==
   dependencies:
     "@babel/runtime" "^7.0.0"
@@ -10471,12 +10515,12 @@ private@^0.1.8, private@~0.1.5:
   integrity sha512-VvivMrbvd2nKkiG38qjULzlc+4Vx4wm/whI9pQD35YrARNnhxeiRktSOhSukRLFNlzg6Br/cJPet5J/u19r/mg==
 
 probe.gl@^3.2.1:
-  version "3.2.1"
-  resolved "https://registry.yarnpkg.com/probe.gl/-/probe.gl-3.2.1.tgz#c92db3e89df6c45a9fe0377890c6b0ded35d2974"
-  integrity sha512-ax0flZWVcrw3FF9MMt84mqfIckjkB7ItGer9rr8zlUbkIyzt66ypeJVLQlC28dJ/RBZtriflt2sVAhjENFohQA==
+  version "3.3.0"
+  resolved "https://nexus.kontur.io/repository/npm-a/probe.gl/-/probe.gl-3.3.0.tgz#a64e2f007d36a6262b12f3b1e99ca5dc3762b3c3"
+  integrity sha512-59E6AEw4N8sU4PKfAl7S2UBYJCOa064WpEFcXfeFOB/36FJtplYY+261DqLjLAvOqRRHiKVEQUBo63PQ3jKeWA==
   dependencies:
     "@babel/runtime" "^7.0.0"
-    "@probe.gl/stats" "3.2.1"
+    "@probe.gl/stats" "3.3.0"
 
 process-nextick-args@~2.0.0:
   version "2.0.1"
@@ -10686,7 +10730,7 @@ quick-lru@^4.0.1:
 
 quickselect@^1.0.1:
   version "1.1.1"
-  resolved "https://registry.yarnpkg.com/quickselect/-/quickselect-1.1.1.tgz#852e412ce418f237ad5b660d70cffac647ae94c2"
+  resolved "https://nexus.kontur.io/repository/npm-a/quickselect/-/quickselect-1.1.1.tgz#852e412ce418f237ad5b660d70cffac647ae94c2"
   integrity sha512-qN0Gqdw4c4KGPsBOQafj6yj/PA6c/L63f6CaZ/DCF/xF4Esu3jVmKLUDYxghFx8Kb/O7y9tI7x2RjTSXwdK1iQ==
 
 quickselect@^2.0.0:
@@ -10746,7 +10790,7 @@ raw-body@2.4.0:
 
 rbush@^2.0.0:
   version "2.0.2"
-  resolved "https://registry.yarnpkg.com/rbush/-/rbush-2.0.2.tgz#bb6005c2731b7ba1d5a9a035772927d16a614605"
+  resolved "https://nexus.kontur.io/repository/npm-a/rbush/-/rbush-2.0.2.tgz#bb6005c2731b7ba1d5a9a035772927d16a614605"
   integrity sha512-XBOuALcTm+O/H8G90b6pzu6nX6v2zCKiFG4BJho8a+bY6AER6t8uQUZdi5bomQc0AprCWhEGa7ncAbbRap0bRA==
   dependencies:
     quickselect "^1.0.1"
@@ -11381,11 +11425,6 @@ ripemd160@^2.0.0, ripemd160@^2.0.1:
     hash-base "^3.0.0"
     inherits "^2.0.1"
 
-robust-predicates@^2.0.4:
-  version "2.0.4"
-  resolved "https://nexus.kontur.io/repository/npm-a/robust-predicates/-/robust-predicates-2.0.4.tgz#0a2367a93abd99676d075981707f29cfb402248b"
-  integrity sha512-l4NwboJM74Ilm4VKfbAtFeGq7aEjWL+5kVFcmgFA2MrdnQWx9iE/tUGvxY5HyMI7o/WpSIUFLbC5fbeaHgSCYg==
-
 rst-selector-parser@^2.2.3:
   version "2.2.3"
   resolved "https://nexus.kontur.io/repository/npm-a/rst-selector-parser/-/rst-selector-parser-2.2.3.tgz#81b230ea2fcc6066c89e3472de794285d9b03d91"
@@ -11915,7 +11954,7 @@ spdy@^4.0.2:
 
 splaytree@^0.1.4:
   version "0.1.4"
-  resolved "https://registry.yarnpkg.com/splaytree/-/splaytree-0.1.4.tgz#fc35475248edcc29d4938c9b67e43c6b7e55a659"
+  resolved "https://nexus.kontur.io/repository/npm-a/splaytree/-/splaytree-0.1.4.tgz#fc35475248edcc29d4938c9b67e43c6b7e55a659"
   integrity sha512-D50hKrjZgBzqD3FT2Ek53f2dcDLAQT8SSGrzj3vidNH5ISRgceeGVJ2dQIthKOuayqFXfFjXheHNo4bbt9LhRQ==
 
 split-string@^3.0.1, split-string@^3.0.2:
@@ -12491,7 +12530,7 @@ tiny-warning@^1.0.0, tiny-warning@^1.0.3:
 
 tinyqueue@^1.2.0:
   version "1.2.3"
-  resolved "https://registry.yarnpkg.com/tinyqueue/-/tinyqueue-1.2.3.tgz#b6a61de23060584da29f82362e45df1ec7353f3d"
+  resolved "https://nexus.kontur.io/repository/npm-a/tinyqueue/-/tinyqueue-1.2.3.tgz#b6a61de23060584da29f82362e45df1ec7353f3d"
   integrity sha512-Qz9RgWuO9l8lT+Y9xvbzhPT2efIUIFd69N7eF7tJ9lnQl0iLj1M7peK7IoUGZL9DJHw9XftqLreccfxcQgYLxA==
 
 tinyqueue@^2.0.3:
@@ -12657,7 +12696,7 @@ tunnel-agent@^0.6.0:
 
 turf-jsts@*:
   version "1.2.3"
-  resolved "https://registry.yarnpkg.com/turf-jsts/-/turf-jsts-1.2.3.tgz#59757f542afbff9a577bbf411f183b8f48d38aa4"
+  resolved "https://nexus.kontur.io/repository/npm-a/turf-jsts/-/turf-jsts-1.2.3.tgz#59757f542afbff9a577bbf411f183b8f48d38aa4"
   integrity sha512-Ja03QIJlPuHt4IQ2FfGex4F4JAr8m3jpaHbFbQrgwr7s7L6U8ocrHiF3J1+wf9jzhGKxvDeaCAnGDot8OjGFyA==
 
 tweetnacl@^0.14.3, tweetnacl@~0.14.0:
@@ -13026,7 +13065,7 @@ verror@1.10.0:
 
 viewport-mercator-project@>=6.0.0:
   version "7.0.1"
-  resolved "https://registry.yarnpkg.com/viewport-mercator-project/-/viewport-mercator-project-7.0.1.tgz#9d7248072f2cbb122f93b63d2b346a5763b8d79a"
+  resolved "https://nexus.kontur.io/repository/npm-a/viewport-mercator-project/-/viewport-mercator-project-7.0.1.tgz#9d7248072f2cbb122f93b63d2b346a5763b8d79a"
   integrity sha512-WKTuTL7o6WKdPQ+gmZhlXL7UpSdCdPUjxkDTBd/3AayBdAFSQGHxsqdbmPBvmoGwvo9KWo/30HTkNo/Z7ORJpw==
   dependencies:
     "@math.gl/web-mercator" "^3.1.3"

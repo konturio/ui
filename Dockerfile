@@ -9,4 +9,7 @@ COPY tsconfig.settings.json ./
 
 COPY babel.config.js ./
 
-RUN yarn add lerna typescript jest npm-run-all
+RUN npm install lerna -g
+RUN npm install typescript -g
+RUN npm install jest -g
+RUN npm install npm-run-all -g

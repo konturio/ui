@@ -2,6 +2,8 @@ FROM node:13 as k2-workspace
 
 WORKDIR /app
 
+COPY .npmrc ./
+
 COPY lerna.json ./
 
 COPY tsconfig.json ./
@@ -9,7 +11,7 @@ COPY tsconfig.settings.json ./
 
 COPY babel.config.js ./
 
-RUN npm install -g lerna
-RUN npm install -g typescript
-RUN npm install -g jest
-RUN npm install -g npm-run-all
+RUN npm install lerna -g
+RUN npm install typescript -g
+RUN npm install jest -g
+RUN npm install npm-run-all -g

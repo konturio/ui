@@ -3,6 +3,9 @@
 .idea
 .vscode/settings.json
 
+# misk
+.DS_store
+
 # Directory-based project format:
 # if you remove the above rule, at least ignore the following:
 
@@ -51,6 +54,7 @@ node_modules/
 
 # Optional npm cache directory
 .npm
+.npmrc
 
 # Optional eslint cache
 .eslintcache

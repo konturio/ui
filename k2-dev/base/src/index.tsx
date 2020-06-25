@@ -20,7 +20,8 @@ import '@k2-packages/ui-kit/src/reset.css';
 import Kit from './routes/kit';
 import MapBoxMap from './routes/mapbox-map';
 import Icons from './routes/icons';
-import DeckGl from './routes/deckGl';
+import DeckGl from './routes/deck-gl';
+import MapDrawTools from './routes/draw-tools';
 
 const LoadingState = <div style={{ background: 'aqua', width: '100px', height: '100px' }}>Loading...</div>;
 
@@ -34,9 +35,10 @@ const BasicRouting = (): JSX.Element => (
             { to: '/', label: 'Module', exact: true },
             { to: '/geocoder', label: 'Geocoder' },
             { to: '/kit', label: 'UI Kit' },
+            { to: '/icons', label: 'Icons' },
             { to: '/mapbox-map', label: 'Mapbox-map' },
             { to: '/deck-gl', label: 'Deck-Gl' },
-            { to: '/icons', label: 'Icons' },
+            { to: '/draw-tools', label: 'Draw-tools' },
             /* !not-delete! cli:link */
             /* eslint-enable no-multi-spaces */
           ]}
@@ -59,6 +61,9 @@ const BasicRouting = (): JSX.Element => (
           </Route>
           <Route path="/deck-gl">
             <DeckGl />
+          </Route>
+          <Route path="/draw-tools">
+            <MapDrawTools />
           </Route>
           {/* !not-delete! cli:route */}
         </Switch>

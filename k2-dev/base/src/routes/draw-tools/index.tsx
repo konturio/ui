@@ -2,7 +2,6 @@ import React, { useRef, useEffect } from 'react';
 import DeckGl from '@k2-packages/deck-gl';
 import DrawTools from '@k2-packages/map-draw-tools';
 import MapboxMap from '@k2-packages/mapbox-map';
-import { MeasureAreaMode } from '@nebula.gl/edit-modes';
 import style from './style.styl';
 
 const mapboxConfig: {
@@ -57,7 +56,7 @@ export default function DrawToolsRoute(): JSX.Element {
   }, []);
 
   return (
-    <DrawTools geoJSON={data} mode={MeasureAreaMode} ref={drawToolsRef}>
+    <DrawTools geoJSON={data} mode={'MeasureAreaMode'} ref={drawToolsRef}>
       <DeckGl ref={deckRef}>
         <MapboxMap
           options={{ center: [-74, 40.76], zoom: 11 }}

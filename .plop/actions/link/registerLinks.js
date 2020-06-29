@@ -6,9 +6,10 @@ const exec = util.promisify(require('child_process').exec);
  */
 async function registerLinks(notRegisteredPackages) {
   return await notRegisteredPackages.map(async (pkg)=> {
-    const { stdout, stderr } = await exec(`cd ./${pkg.replace('@k2', 'k2')} && yarn link`);
+    const { stdout, stderr } = await exec(`cd ./node_modules/${pkg.replace('@k2', 'k2')} && yarn link`);
     console.log('package', stdout)
     if (stderr) {
+      console.log(stderr)
       throw Error(stderr);
     }
   });

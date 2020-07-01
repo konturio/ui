@@ -1,6 +1,6 @@
 {
   "name": "@k2-dev/base",
-  "version": "1.6.1",
+  "version": "1.6.2",
   "main": "src/index.tsx",
   "types": "tsclib",
   "private": true,
@@ -14,7 +14,7 @@
     "@k2-packages/deck-gl": "^1.1.1",
     "@k2-packages/default-theme": "^1.4.2",
     "@k2-packages/geocoder": "^1.10.11",
-    "@k2-packages/map-draw-tools": "^1.2.0",
+    "@k2-packages/map-draw-tools": "^1.2.1",
     "@k2-packages/mapbox-map": "^1.13.2",
     "@k2-packages/module": "^1.4.5",
     "@k2-packages/ui-kit": "^1.12.2"

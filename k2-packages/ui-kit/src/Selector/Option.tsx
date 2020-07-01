@@ -11,7 +11,7 @@ export interface OptionElement extends Option {
 }
 
 export type Option = {
-  label: string;
+  label: string | JSX.Element;
   value: string;
   disabled?: boolean;
   small?: boolean;
@@ -36,7 +36,7 @@ export default function Option({
         {label}
         {/* eslint-disable-next-line prettier/prettier */}
         <input
-          name={label}
+          name={value}
           value={value}
           type="checkbox"
           checked={selected}

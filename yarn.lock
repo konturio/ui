@@ -8913,6 +8913,15 @@ mapbox-gl@^1.8.1:
     tinyqueue "^2.0.3"
     vt-pbf "^3.1.1"
 
+martinez-polygon-clipping@*:
+  version "0.7.0"
+  resolved "https://nexus.kontur.io/repository/npm-a/martinez-polygon-clipping/-/martinez-polygon-clipping-0.7.0.tgz#5ae979d4ba32c6425c8cdd422f14d54276350ab7"
+  integrity sha512-EBxKjlUqrVjzT1HRwJARaSwj66JZqEUl+JnqnrzHZLU4hd4XrCQWqShZx40264NR/pm5wIHRlNEaIrev44wvKA==
+  dependencies:
+    robust-predicates "^2.0.4"
+    splaytree "^0.1.4"
+    tinyqueue "^1.2.0"
+
 martinez-polygon-clipping@^0.4.3:
   version "0.4.3"
   resolved "https://nexus.kontur.io/repository/npm-a/martinez-polygon-clipping/-/martinez-polygon-clipping-0.4.3.tgz#a3971ddf1da147104b5d0fbbf68f728bb62885c1"
@@ -11409,6 +11418,11 @@ ripemd160@^2.0.0, ripemd160@^2.0.1:
   dependencies:
     hash-base "^3.0.0"
     inherits "^2.0.1"
+
+robust-predicates@^2.0.4:
+  version "2.0.4"
+  resolved "https://nexus.kontur.io/repository/npm-a/robust-predicates/-/robust-predicates-2.0.4.tgz#0a2367a93abd99676d075981707f29cfb402248b"
+  integrity sha512-l4NwboJM74Ilm4VKfbAtFeGq7aEjWL+5kVFcmgFA2MrdnQWx9iE/tUGvxY5HyMI7o/WpSIUFLbC5fbeaHgSCYg==
 
 rst-selector-parser@^2.2.3:
   version "2.2.3"

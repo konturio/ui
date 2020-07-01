@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import UI from '@k2-packages/ui-kit';
+import { SearchIcon } from '@k2-packages/default-icons';
+import { icons } from '@k2-packages/map-draw-tools';
+
 import style from './style.styl';
 
 const options = [
@@ -61,6 +64,20 @@ export default function Kit(): JSX.Element {
           small={true}
           onChange={(value): void => setSelected(value)}
           options={options}
+        />
+      </div>
+      <div className={style.box}>
+        <UI.Selector
+          selected={selected}
+          orientation="horizontal"
+          small={true}
+          onChange={(value): void => setSelected(value)}
+          options={[
+            { label: <span style={{ color: 'red' }}>Foo</span>, value: 'foo-value' },
+            { label: <SearchIcon />, value: 'bar-value' },
+            { label: <icons.Draw90DegreePolygonMode />, value: 'zed-value' },
+            { label: 'disabled', value: 'disabled', disabled: true },
+          ]}
         />
       </div>
       <div className={style.box}>

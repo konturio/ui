@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.7.0](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-dev/base@1.5.1...@k2-dev/base@1.7.0) (2020-07-02)
+
+
+### Bug Fixes
+
+* deckgl render ([78510b2](https://gitlab.com/kontur-private/k2/k2-front-end/commit/78510b274686d73ca0a13c05cc06a3524c97758c))
+
+
+### Features
+
+* add icons and interface ([c63bd5d](https://gitlab.com/kontur-private/k2/k2-front-end/commit/c63bd5dc3f4a49925145669de4e9b299489ad3be))
+
+
+
+
+
 ## [1.6.2](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-dev/base@1.6.1...@k2-dev/base@1.6.2) (2020-07-01)
 
 **Note:** Version bump only for package @k2-dev/base

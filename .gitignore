@@ -3,7 +3,7 @@
 .idea
 .vscode/settings.json
 
-# misk
+# misc
 .DS_store
 
 # Directory-based project format:

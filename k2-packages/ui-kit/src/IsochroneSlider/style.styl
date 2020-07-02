@@ -1,0 +1,27 @@
+@import "~@k2-packages/default-theme"
+
+.wrapper
+  padding 10px 20px 10px 20px
+
+.ruler
+  display: flex
+  justify-content: space-between
+  padding-bottom: 16px
+  pointer-events: none
+  user-select: none
+.rule
+  opacity: 0.5
+  position: relative
+  font-size: 7.5px
+  pointer-events: none
+  user-select: none
+  &:after
+    content: attr(data-step)
+    font-size: 10px
+    position: absolute
+    bottom: -14px
+    left: 0
+    transform: translateX(-25%)
+    text-align: center
+    pointer-events: none
+    user-select: none

@@ -10,7 +10,7 @@
 Settled to use `independent mode` to projects to increment package versions independently.
 Lerna allows target versions of local dependent packages to be written as a `git remote url`, this allows packages to be distributed via git repositories
 
-Version track starts from v1.0.0 at `dev` branch.
+Version track starts from v1.0.0 at `master` branch.
 
 Current approach rely on two workspaces:
 
@@ -202,7 +202,7 @@ and request have at least one :like: (not yours). If CI/CD pipeline without erro
 
 If you need release modules in NPM nexus repo, you need some extra steps:
 
-5. Clone fresh `dev` branch with merged request
+5. Clone fresh `master` branch with merged request
 6. `lerna version --no-push`
 7. Commit changes
 ```

@@ -6,6 +6,7 @@ import LanguageSelect from './LanguageSelect';
 import Selector from './Selector';
 import Slider from './Slider';
 import TimeSlider from './TimeSlider';
+import IsochroneSlider from './IsochroneSlider';
 
 export default {
   Input,
@@ -16,4 +17,5 @@ export default {
   Selector,
   Slider,
   TimeSlider,
+  IsochroneSlider
 };

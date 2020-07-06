@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import DeckGl from '@k2-packages/deck-gl';
 import DrawTools from '@k2-packages/map-draw-tools';
 import MapboxMap from '@k2-packages/mapbox-map';
@@ -18,7 +18,7 @@ const mapStyle = {
   zoom: 11,
 };
 
-const data: GeoJSON.FeatureCollection = {
+const initData: GeoJSON.FeatureCollection = {
   type: 'FeatureCollection',
   features: [
     {
@@ -55,8 +55,14 @@ export default function DrawToolsRoute(): JSX.Element {
     console.log('drawToolsRef', drawToolsRef.current);
   }, []);
 
+  const [data, setData] = useState(initData);
   return (
-    <DrawTools geoJSON={data} mode={'MeasureAreaMode'} ref={drawToolsRef}>
+    <DrawTools
+      geoJSON={data}
+      mode={'Draw90DegreePolygonMode'}
+      onEdit={(e) => setData(e.updatedData)}
+      ref={drawToolsRef}
+    >
       <DeckGl ref={deckRef}>
         <MapboxMap
           options={{ center: [-74, 40.76], zoom: 11 }}

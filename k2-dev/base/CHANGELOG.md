@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.8.0](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-dev/base@1.6.2...@k2-dev/base@1.8.0) (2020-07-06)
+
+
+### Features
+
+* add download and upload mode ([19961eb](https://gitlab.com/kontur-private/k2/k2-front-end/commit/19961eb7520407a45fefa54755bf81c8c6be6ea4))
+
+
+
+
+
 # [1.7.0](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-dev/base@1.5.1...@k2-dev/base@1.7.0) (2020-07-02)
 
 

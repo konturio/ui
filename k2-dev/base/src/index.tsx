@@ -22,6 +22,7 @@ import MapBoxMap from './routes/mapbox-map';
 import Icons from './routes/icons';
 import DeckGl from './routes/deck-gl';
 import MapDrawTools from './routes/draw-tools';
+import Boundaries from './routes/boundaries';
 
 const LoadingState = <div style={{ background: 'aqua', width: '100px', height: '100px' }}>Loading...</div>;
 
@@ -39,6 +40,7 @@ const BasicRouting = (): JSX.Element => (
             { to: '/mapbox-map', label: 'Mapbox-map' },
             { to: '/deck-gl', label: 'Deck-Gl' },
             { to: '/draw-tools', label: 'Draw-tools' },
+            { to: '/boundaries', label: 'Boundaries' },
             /* !not-delete! cli:link */
             /* eslint-enable no-multi-spaces */
           ]}
@@ -64,6 +66,9 @@ const BasicRouting = (): JSX.Element => (
           </Route>
           <Route path="/draw-tools">
             <MapDrawTools />
+          </Route>
+          <Route path="/boundaries">
+            <Boundaries />
           </Route>
           {/* !not-delete! cli:route */}
         </Switch>

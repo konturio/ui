@@ -27,7 +27,13 @@
     },
     {
       "path": "geocoder"
-    }
+    },
+    {
+      "path": "boundaries"
+    },
+    {
+      "path": "plugin"
+    },
   ],
   "compilerOptions": {
     "composite": true

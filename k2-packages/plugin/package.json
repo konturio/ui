@@ -1,0 +1,17 @@
+{
+  "name": "@k2-packages/plugin",
+  "version": "1.0.0",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "publishConfig": {
+    "access": "restricted"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.com:kontur-private/k2/k2-front-end.git"
+  },
+  "scripts": {},
+  "peerDependencies": {
+    "redux-saga": "^1.1.3"
+  }
+}

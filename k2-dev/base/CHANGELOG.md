@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.9.0](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-dev/base@1.8.4...@k2-dev/base@1.9.0) (2020-07-14)
+
+
+### Features
+
+* add demo ([bc8e58e](https://gitlab.com/kontur-private/k2/k2-front-end/commit/bc8e58e2d377759d619df232d279e31bb0d5f1e0))
+
+
+
+
+
 ## [1.8.4](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-dev/base@1.8.3...@k2-dev/base@1.8.4) (2020-07-07)
 
 **Note:** Version bump only for package @k2-dev/base

@@ -16,7 +16,7 @@ function createChecker(selected: Selector['selected']): (value: Option) => boole
 export interface Selector {
   options: Option[];
   onChange: (value: Option['value'], e: React.ChangeEvent<HTMLInputElement> | MouseEvent) => void;
-  onHover: (value: Option['value'], e: React.MouseEvent<HTMLInputElement>) => void;
+  onHover?: (value: Option['value'], e: React.MouseEvent<HTMLInputElement>) => void;
   selected?: Option['value'] | Option['value'][];
   className?: string;
   orientation?: 'vertical' | 'horizontal';

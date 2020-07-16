@@ -17,5 +17,5 @@ export default {
   Selector,
   Slider,
   TimeSlider,
-  IsochroneSlider
+  IsochroneSlider,
 };

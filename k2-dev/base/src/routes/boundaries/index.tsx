@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { DynamicModuleLoader } from 'redux-dynamic-modules-react';
 import { connect, ConnectedProps } from 'react-redux';
 import getModule from './redux/module';
@@ -15,29 +15,42 @@ const mapboxConfig: {
   style: 'mapbox://styles/nshkutov/ck6ca2wfb397m1imrknjlqd2l',
 };
 
-function Map({ foo, onClick }: PropsFromRedux): JSX.Element {
+function Map({ onClick, markers, sources, layers }: PropsFromRedux): JSX.Element {
+  const mapBoxRef = useRef();
+  const [mapStyle, setMapStyle] = useState({ version: 8 });
+
+  /* Sources and layers effect */
+  useEffect(() => {
+    setMapStyle((current) => ({
+      ...current,
+      sources: sources || {},
+      layers: layers || [],
+    }));
+  }, [sources, layers]);
+
   return (
     <MapboxMap
+      ref={mapBoxRef}
       style={mapboxConfig.style}
+      mapStyle={mapStyle}
       accessToken={mapboxConfig.accessToken}
       className={style.Map}
       onClick={onClick}
+      markers={markers}
       onLoad={console.log}
-      bounds={[
-        [27.24, 53.81],
-        [27.83, 54.01],
-      ]}
-      boundsOptions={{
-        padding: 50,
-      }}
     />
   );
 }
 
 const connector = connect(
-  (state) => ({ foo: selectAppState(state).foo }),
+  (state) => {
+    const { markers, layers, sources } = selectAppState(state);
+
+    return { markers, layers, sources };
+  },
   (dispatch) => ({
-    onClick: ({ lngLat }) => {
+    onClick: (e) => {
+      const { lngLat } = e;
       dispatch(setPosition([lngLat.lng, lngLat.lat]));
     },
   }),

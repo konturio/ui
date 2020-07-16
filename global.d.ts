@@ -1,4 +1,4 @@
-import('jest-fetch-mock')
+import('jest-fetch-mock');
 
 declare module '*.styl' {
   const styles: { [className: string]: string };

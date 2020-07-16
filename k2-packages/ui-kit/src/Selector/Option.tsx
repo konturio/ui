@@ -3,11 +3,10 @@ import React from 'react';
 import clsx from 'clsx';
 import style from './option.styl';
 
-type changeEvent = React.ChangeEvent<HTMLInputElement>;
-
 export interface OptionElement extends Option {
   selected: boolean;
-  onChange?: (event: changeEvent) => void;
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  onMouseOver?: (value: string | number, event: React.MouseEvent<HTMLLabelElement>) => void;
 }
 
 export type Option = {
@@ -23,7 +22,8 @@ export default function Option({
   value,
   label,
   disabled = false,
-  small
+  small,
+  onMouseOver
 }: OptionElement): JSX.Element {
   return (
     <div key={value} className={clsx(
@@ -32,7 +32,7 @@ export default function Option({
       disabled && style.disabled,
       small && style.small
     )}>
-      <label key={value} className={style.option}>
+      <label key={value} className={style.option} onMouseOver={e => onMouseOver && onMouseOver(value, e)}>
         {label}
         {/* eslint-disable-next-line prettier/prettier */}
         <input

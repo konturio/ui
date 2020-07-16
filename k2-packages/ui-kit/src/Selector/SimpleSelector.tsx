@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-import React from 'react';
+import React, { useRef, useLayoutEffect } from 'react';
 import clsx from 'clsx';
 import style from './simpleSelector.styl';
 import Option, { Option as TOption } from './Option';
@@ -8,12 +8,14 @@ type changeEvent = React.ChangeEvent<HTMLInputElement>;
 
 interface BaseSelector {
   options: TOption[];
-  onChange: (e: changeEvent) => void;
+  onChange: (e: changeEvent | MouseEvent) => void;
   className?: string;
   placeholder?: string;
   multi?: boolean;
   checkSelected: (value: TOption) => boolean;
-  small?: boolean
+  small?: boolean;
+  stopPropagation?: boolean;
+  onHover
 }
 
 interface VerticalSelector extends BaseSelector {
@@ -34,10 +36,27 @@ export default function SimpleSelector({
   checkSelected,
   onChange,
   orientation = 'vertical',
-  small = false
+  small = false,
+  stopPropagation = false,
+  onHover
 }: SimpleSelector): JSX.Element {
+  const ref = useRef<HTMLDivElement>(null);
+
+  useLayoutEffect(() => {
+    if (stopPropagation) {
+      const handler = (e) => {
+        e.stopPropagation();
+        e.target.value // Prevent double event emit (second for label)
+          && onChange(e); 
+      };
+      ref.current?.addEventListener('click', handler)
+      return () => ref.current?.removeEventListener('click', handler)
+    }
+    return undefined
+  }, [ref, stopPropagation]);
+
   return (
-    <div className={clsx(style.selector, className, style[orientation])}>
+    <div className={clsx(style.selector, className, style[orientation])} ref={ref}>
       {options.map((opt) => (
         <Option
           key={opt.value}
@@ -47,6 +66,7 @@ export default function SimpleSelector({
           disabled={opt.disabled}
           small={small}
           selected={checkSelected(opt)}
+          onMouseOver={onHover}
         />
       ))}
     </div>

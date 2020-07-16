@@ -6,7 +6,6 @@ import SelectedItems from './SelectedItems';
 import SimpleSelector from './SimpleSelector';
 import style from './style.styl';
 
-type changeEvent = React.ChangeEvent<HTMLInputElement>;
 
 function createChecker(selected: Selector['selected']): (value: Option) => boolean {
   if (selected === undefined) return () => false;
@@ -16,7 +15,8 @@ function createChecker(selected: Selector['selected']): (value: Option) => boole
 
 export interface Selector {
   options: Option[];
-  onChange: (value: Option['value'], e: changeEvent) => void;
+  onChange: (value: Option['value'], e: React.ChangeEvent<HTMLInputElement> | MouseEvent) => void;
+  onHover: (value: Option['value'], e: React.MouseEvent<HTMLInputElement>) => void;
   selected?: Option['value'] | Option['value'][];
   className?: string;
   orientation?: 'vertical' | 'horizontal';
@@ -24,20 +24,32 @@ export interface Selector {
   placeholder?: string;
   collapse?: boolean;
   small?: boolean;
+  stopPropagation?: boolean;
 }
 
 export default function Selector({
   options,
   selected,
   onChange,
+  onHover,
   className,
   orientation = 'vertical',
   collapse = false,
   placeholder = 'Click for select',
   multi = false,
-  small = false
+  small = false,
+  stopPropagation = false,
 }: Selector): JSX.Element {
-  const onChangeHandler = useCallback((event: changeEvent) => onChange(event.target.value, event), [onChange]);
+  const onChangeHandler = useCallback(
+    // @ts-ignore
+    (event: changeEvent | MouseEvent) => event.target && onChange(event.target.value, event), [onChange]
+  );
+
+  const onHoverHandler = useCallback(
+    // @ts-ignore
+    (value, event: React.MouseEvent<HTMLLabelElement>) => event.target && onHover(value, event), [onChange]
+  );
+
   const checkSelected = createChecker(selected);
   return collapse
     ? <SelectedItems
@@ -56,6 +68,8 @@ export default function Selector({
           small={small}
           checkSelected={checkSelected}
           className={style.nestedSelector}
+          stopPropagation={stopPropagation}
+          onHover={onHoverHandler}
         />
       </SelectedItems> 
     : <SimpleSelector
@@ -66,5 +80,7 @@ export default function Selector({
         multi={multi}
         small={small}
         checkSelected={checkSelected}
+        stopPropagation={stopPropagation}
+        onHover={onHoverHandler}
       />
 }

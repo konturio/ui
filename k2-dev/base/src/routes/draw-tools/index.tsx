@@ -38,45 +38,65 @@ const initData: GeoJSON.FeatureCollection = {
     },
   ],
 };
+const MODES = {
+  MeasureAreaMode: true,
+  MeasureDistanceMode: true,
+  DrawPolygonMode: true,
+  DownloadMode: true,
+  UploadMode: true,
+};
+
+const MAP_STYLE = {
+  version: 8,
+  center: [-74, 40.76],
+  zoom: 11,
+  layers: undefined,
+};
+const update = (obj, location, val) => {
+  obj[location] = val;
+  return obj;
+};
 
 export default function DrawToolsRoute(): JSX.Element {
-  const deckRef = useRef();
   const mapBoxRef = useRef();
-  const drawToolsRef = useRef();
   useEffect(() => {
-    console.log('deckRef', deckRef.current);
     console.log('mapBoxRef', mapBoxRef.current);
-    console.log('drawToolsRef', drawToolsRef.current);
   }, []);
 
   const [data, setData] = useState(initData);
+  const [mode, setMode] = useState<any>('DrawPolygonMode');
+
   return (
-    <DrawTools geoJSON={data} mode={'Draw90DegreePolygonMode'} onEdit={(e) => setData(e.updatedData)}>
-      {({ editableLayer }) => (
-        <DeckGl layers={editableLayer && [editableLayer]}>
-          {({ layers }) => (
-            <MapboxMap
-              options={{ center: [-74, 40.76], zoom: 11 }}
-              style={mapboxConfig.style}
-              mapStyle={{
-                version: 0,
-                center: [-74, 40.76],
-                zoom: 11,
-                layers: layers,
-              }}
-              accessToken={mapboxConfig.accessToken}
-              className={style.Map}
-              onClick={() => {
-                /* Do nothing */
-              }}
-              onLoad={() => {
-                /* Do nothing */
-              }}
-              ref={mapBoxRef}
-            />
-          )}
-        </DeckGl>
-      )}
-    </DrawTools>
+    <div style={{ height: '100%' }}>
+      <div className={style.btns}>
+        {Object.keys(MODES).map((mode) => (
+          <button key={mode} onClick={() => setMode(mode)}>
+            {mode}
+          </button>
+        ))}
+      </div>
+      <DrawTools geoJSON={data} mode={mode} onEdit={(e) => setData(e.updatedData)}>
+        {({ editableLayer }) => (
+          <DeckGl layers={editableLayer && [editableLayer]}>
+            {({ layers }) => (
+              <MapboxMap
+                options={{ center: [-74, 40.76], zoom: 11 }}
+                style={mapboxConfig.style}
+                mapStyle={update(MAP_STYLE, 'layers', layers)}
+                accessToken={mapboxConfig.accessToken}
+                className={style.Map}
+                onClick={() => {
+                  /* Do nothing */
+                }}
+                onLoad={() => {
+                  /* Do nothing */
+                }}
+                ref={mapBoxRef}
+              />
+            )}
+          </DeckGl>
+        )}
+      </DrawTools>
+    </div>
   );
 }

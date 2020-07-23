@@ -12,11 +12,6 @@ const mapboxConfig: {
   style: 'mapbox://styles/nshkutov/ck6ca2wfb397m1imrknjlqd2l',
 };
 
-const mapStyle = {
-  version: 0,
-  center: [-74, 40.76],
-  zoom: 11,
-};
 const MALE_COLOR: [number, number, number] = [0, 128, 255];
 const FEMALE_COLOR: [number, number, number] = [255, 0, 128];
 
@@ -29,35 +24,43 @@ export default function DeckGlRoute(): JSX.Element {
   }, []);
 
   const layers = [
-    new ScatterplotLayer({
+    {
+      type: ScatterplotLayer,
       id: 'scatter-plot',
       data: ('https://raw.githubusercontent.com/visgl/deck.gl-data/master/examples/scatterplot/manhattan.json' as unknown) as [
         number,
         number,
         number,
       ][],
-      radiusMinPixels: 0.5,
+      radiusMinPixels: 1,
       getPosition: (d) => [d[0], d[1]],
       getFillColor: (d) => (d[2] === 1 ? MALE_COLOR : FEMALE_COLOR),
-    }),
+    },
   ];
 
   return (
-    <DeckGl ref={deckRef} layers={layers}>
-      <MapboxMap
-        options={{ center: [-74, 40.76] }}
-        style={mapboxConfig.style}
-        mapStyle={mapStyle}
-        accessToken={mapboxConfig.accessToken}
-        className={style.Map}
-        onClick={() => {
-          /* Do nothing */
-        }}
-        onLoad={() => {
-          /* Do nothing */
-        }}
-        ref={mapBoxRef}
-      />
+    <DeckGl layers={layers}>
+      {({ layers }) => (
+        <MapboxMap
+          options={{ center: [-74, 40.76] }}
+          style={mapboxConfig.style}
+          mapStyle={{
+            version: 0,
+            center: [-74, 40.76],
+            zoom: 11,
+            layers: layers ? layers : [],
+          }}
+          accessToken={mapboxConfig.accessToken}
+          className={style.Map}
+          onClick={() => {
+            /* Do nothing */
+          }}
+          onLoad={() => {
+            /* Do nothing */
+          }}
+          ref={mapBoxRef}
+        />
+      )}
     </DeckGl>
   );
 }

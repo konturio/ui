@@ -12,12 +12,6 @@ const mapboxConfig: {
   style: 'mapbox://styles/nshkutov/ck6ca2wfb397m1imrknjlqd2l',
 };
 
-const mapStyle = {
-  version: 0,
-  center: [-74, 40.76],
-  zoom: 11,
-};
-
 const initData: GeoJSON.FeatureCollection = {
   type: 'FeatureCollection',
   features: [
@@ -57,28 +51,32 @@ export default function DrawToolsRoute(): JSX.Element {
 
   const [data, setData] = useState(initData);
   return (
-    <DrawTools
-      geoJSON={data}
-      mode={'Draw90DegreePolygonMode'}
-      onEdit={(e) => setData(e.updatedData)}
-      ref={drawToolsRef}
-    >
-      <DeckGl ref={deckRef}>
-        <MapboxMap
-          options={{ center: [-74, 40.76], zoom: 11 }}
-          style={mapboxConfig.style}
-          mapStyle={mapStyle}
-          accessToken={mapboxConfig.accessToken}
-          className={style.Map}
-          onClick={() => {
-            /* Do nothing */
-          }}
-          onLoad={() => {
-            /* Do nothing */
-          }}
-          ref={mapBoxRef}
-        />
-      </DeckGl>
+    <DrawTools geoJSON={data} mode={'Draw90DegreePolygonMode'} onEdit={(e) => setData(e.updatedData)}>
+      {({ editableLayer }) => (
+        <DeckGl layers={editableLayer && [editableLayer]}>
+          {({ layers }) => (
+            <MapboxMap
+              options={{ center: [-74, 40.76], zoom: 11 }}
+              style={mapboxConfig.style}
+              mapStyle={{
+                version: 0,
+                center: [-74, 40.76],
+                zoom: 11,
+                layers: layers,
+              }}
+              accessToken={mapboxConfig.accessToken}
+              className={style.Map}
+              onClick={() => {
+                /* Do nothing */
+              }}
+              onLoad={() => {
+                /* Do nothing */
+              }}
+              ref={mapBoxRef}
+            />
+          )}
+        </DeckGl>
+      )}
     </DrawTools>
   );
 }

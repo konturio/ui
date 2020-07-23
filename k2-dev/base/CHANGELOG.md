@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.2](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-dev/base@2.0.1...@k2-dev/base@2.0.2) (2020-07-23)
+
+
+### Bug Fixes
+
+* dynamicly update deck gl layers ([400a3ec](https://gitlab.com/kontur-private/k2/k2-front-end/commit/400a3ec881f6af75e0bd2c7e935155c69ea222cb))
+
+
+
+
+
 ## [2.0.1](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-dev/base@2.0.0...@k2-dev/base@2.0.1) (2020-07-23)
 
 **Note:** Version bump only for package @k2-dev/base

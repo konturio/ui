@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-dev/base@1.9.1...@k2-dev/base@2.0.0) (2020-07-23)
+
+
+### Features
+
+* deck gl correclty render opacty ([a2ea340](https://gitlab.com/kontur-private/k2/k2-front-end/commit/a2ea34097a10b4280a0370c44989d35f7fb0594c))
+
+
+### BREAKING CHANGES
+
+* now deck gl and draw tools use render props
+
+
+
+
+
 ## [1.9.1](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-dev/base@1.9.0...@k2-dev/base@1.9.1) (2020-07-16)
 
 **Note:** Version bump only for package @k2-dev/base

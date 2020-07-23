@@ -42,12 +42,12 @@ export default function Selector({
 }: Selector): JSX.Element {
   const onChangeHandler = useCallback(
     // @ts-ignore
-    (event: changeEvent | MouseEvent) => event.target && onChange(event.target.value, event), [onChange]
+    (event: React.ChangeEvent | MouseEvent) => event.target && onChange(event.target.value, event), [onChange]
   );
 
   const onHoverHandler = useCallback(
     // @ts-ignore
-    (value, event: React.MouseEvent<HTMLLabelElement>) => event.target && onHover(value, event), [onChange]
+    (value, event: React.MouseEvent<HTMLLabelElement>) => onHover && event.target && onHover(value, event), [onChange]
   );
 
   const checkSelected = createChecker(selected);

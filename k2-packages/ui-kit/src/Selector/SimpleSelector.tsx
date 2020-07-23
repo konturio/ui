@@ -62,6 +62,7 @@ export default function SimpleSelector({
           key={opt.value}
           label={opt.label}
           value={opt.value}
+          hint={opt.hint}
           onChange={opt.disabled ? () => { /* Do nothing */} : onChange }
           disabled={opt.disabled}
           small={small}

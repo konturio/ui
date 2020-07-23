@@ -14,6 +14,7 @@ export type Option = {
   value: string;
   disabled?: boolean;
   small?: boolean;
+  hint?: string
 };
 
 export default function Option({
@@ -23,7 +24,8 @@ export default function Option({
   label,
   disabled = false,
   small,
-  onMouseOver
+  onMouseOver,
+  hint,
 }: OptionElement): JSX.Element {
   return (
     <div key={value} className={clsx(
@@ -32,7 +34,7 @@ export default function Option({
       disabled && style.disabled,
       small && style.small
     )}>
-      <label key={value} className={style.option} onMouseOver={e => onMouseOver && onMouseOver(value, e)}>
+      <label key={value} className={style.option} onMouseOver={e => onMouseOver && onMouseOver(value, e)} title={hint}>
         {label}
         {/* eslint-disable-next-line prettier/prettier */}
         <input

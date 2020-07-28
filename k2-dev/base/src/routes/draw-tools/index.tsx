@@ -75,7 +75,19 @@ export default function DrawToolsRoute(): JSX.Element {
           </button>
         ))}
       </div>
-      <DrawTools geoJSON={data} mode={mode} onEdit={(e) => setData(e.updatedData)}>
+      <DrawTools
+        geoJSON={data}
+        mode={mode}
+        onEdit={(e) => setData(e.updatedData)}
+        modeConfig={{
+          MeasureDistanceMode: {
+            turfOptions: { units: 'kilometers' },
+            formatTooltip: (distance: number) => {
+              return distance > 1 ? `${distance.toPrecision(3)} km.` : `${(distance * 1000).toPrecision(3)} m.`;
+            },
+          },
+        }}
+      >
         {({ editableLayer }) => (
           <DeckGl layers={editableLayer && [editableLayer]}>
             {({ layers }) => (

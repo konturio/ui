@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.1.0](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-dev/base@2.0.5...@k2-dev/base@2.1.0) (2020-07-28)
+
+
+### Features
+
+* add mode config optons ([a2a4473](https://gitlab.com/kontur-private/k2/k2-front-end/commit/a2a4473130af1130ca22fad8e495c193507adca5))
+
+
+
+
+
 ## [2.0.5](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-dev/base@2.0.4...@k2-dev/base@2.0.5) (2020-07-24)
 
 **Note:** Version bump only for package @k2-dev/base

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.2.0](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-dev/base@2.1.0...@k2-dev/base@2.2.0) (2020-07-30)
+
+
+### Features
+
+* fix doble features isuue between mode switches ([4324c62](https://gitlab.com/kontur-private/k2/k2-front-end/commit/4324c62af25813dc6f3f0c8dcfb00bd5b8e05ab5))
+
+
+
+
+
 # [2.1.0](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-dev/base@2.0.5...@k2-dev/base@2.1.0) (2020-07-28)
 
 

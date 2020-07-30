@@ -65,7 +65,6 @@ export default function DrawToolsRoute(): JSX.Element {
 
   const [data, setData] = useState(initData);
   const [mode, setMode] = useState<any>('DrawPolygonMode');
-
   return (
     <div style={{ height: '100%' }}>
       <div className={style.btns}>

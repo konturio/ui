@@ -1272,6 +1272,20 @@
     "@types/yargs" "^15.0.0"
     chalk "^3.0.0"
 
+"@k2-packages/map-draw-tools@2.2.0":
+  version "2.2.0"
+  resolved "https://nexus.kontur.io/repository/npm-a/@k2-packages/map-draw-tools/-/map-draw-tools-2.2.0.tgz#f2a25df11324944136e78a9a23eccf5248284deb"
+  integrity sha512-KIyPwYPSge8uH60v5IARg4rc8mdkvCSx34fYhN/ZTpv0WUQU7Esua4+kHN9gKoIa6iyCkf5eTRWQz7utiEJhqQ==
+  dependencies:
+    "@deck.gl/layers" "^8.2.0"
+    "@deck.gl/mesh-layers" "^8.1.12"
+    "@nebula.gl/edit-modes" "^0.18.5"
+    "@nebula.gl/layers" "^0.18.5"
+    "@turf/difference" "6.0.1"
+    "@types/file-saver" "^2.0.1"
+    core-js "^3.6.5"
+    file-saver "^2.0.2"
+
 "@lerna/add@3.21.0":
   version "3.21.0"
   resolved "https://nexus.kontur.io/repository/npm-a/@lerna/add/-/add-3.21.0.tgz#27007bde71cc7b0a2969ab3c2f0ae41578b4577b"

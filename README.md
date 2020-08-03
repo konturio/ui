@@ -159,6 +159,9 @@ For every feature you must create new branch in format
 ```
 {fibery-task-id}-{tas-title}
 ```
+
+Currently correct branch name generated in fibery
+
 ### Commit naming
 
 To build automation on top of lerna and packages version management we have to follow `Conventional commits` specification.
@@ -207,12 +210,16 @@ If you need release modules in NPM nexus repo, you need some extra steps:
 7. Commit changes
 ```
 git add .
-git commit  -m 'build: modules version bump'
+git commit -m 'build: modules version bump'
 git push origin --tags
 ```
 8. Wait until pipeline task 'release' was success
 9. Rebuild the app where you want to use the new modules
 
+or just
+```
+yarn release
+```
 
 ### Localization
 Localization done with a complete solution of i18next.
@@ -239,6 +246,22 @@ Once the plugin is setup, you can build your app normally or run Babel through B
 `yarn run babel -f .babelrc 'src/**/*.{js,jsx,ts,tsx}'`
 
 Extracted translations land in the extractedTranslations/ directory by default.
+
+### What is module?
+All modules form three large groups:
+
+1) **Map modules**. This functionality is added to the map engine (mapbox currently). They are strongly linked wit mapbox, and cannot be used without the `mapbox-map` module
+
+2) **UI Modules**. This modules concentrated in `ui-kit`,
+if they are not there, then they should be brought there. 
+(In the future, you will probably need to modify the build so that you can only import parts from the ui-kit as it done in Lodash)
+In no case should you create modules in a ui-kit that are not universal and duplicate the logic of existing modules (IsochroneSlider, LanguageSelect, TimeSlider must be deleted)
+
+3) **Logic modules** 
+This most abstract part should not depend on the view (i.e. it should not contain any layout or styles)
+Ideally you need to find a way to not get attached even to react and redux
+
+4) **Utils, resources, configurations**
 
 ### TODO:
  - Commit message validation at local development (Husky)?

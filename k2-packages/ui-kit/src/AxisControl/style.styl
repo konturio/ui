@@ -1,0 +1,52 @@
+@import "~@k2-packages/default-theme";
+
+.rootGrid
+  display: inline-grid;
+  grid-template-columns: auto unit*25;
+  grid-template-rows: unit*25 auto ;
+
+.legendSlot
+  margin-bottom: auto;
+  margin-left: auto;
+
+.valueCell
+  text-align: center;
+  position relative;
+  vertical-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+
+.valueFill
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: red
+
+.axisTable
+  border-spacing: 0;
+  border-collapse: collapse;
+  border: none;
+
+.row
+  .axisRecord
+    writing-mode: vertical-rl;
+    display inline-block;
+    width: 54px;
+    display: flex;
+    align-items: center;
+    
+.column
+  .axisRecord
+    height: 54px;
+
+.axisRecord
+  padding: unit;
+
+.cellWrapper
+  vertical-align: top;
+  text-align: center;
+

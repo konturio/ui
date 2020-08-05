@@ -8,6 +8,7 @@ import Slider from './Slider';
 import TimeSlider from './TimeSlider';
 import IsochroneSlider from './IsochroneSlider';
 import Legend from './Legend';
+import AxisControl from './AxisControl';
 
 export default {
   Input,
@@ -20,4 +21,5 @@ export default {
   TimeSlider,
   IsochroneSlider,
   Legend,
+  AxisControl,
 };

@@ -29,9 +29,11 @@ export default function Legend({ rowSize, cells, angle = 0 }: Legend) {
 
   return (
     <table className={s.table} style={tableRotationStyle}>
-      {matrix.map((rowCells: Cell[], i) => (
-        <Row key={i} cells={rowCells} style={labelRotationStyle} />
-      ))}
+      <tbody>
+        {matrix.map((rowCells: Cell[], i) => (
+          <Row key={i} cells={rowCells} style={labelRotationStyle} />
+        ))}
+      </tbody>
     </table>
   );
 }

@@ -99,13 +99,29 @@ export default function Kit(): JSX.Element {
         />
       </div>
       <div className={style.box}>
-        <UI.Legend
-          rowSize={3}
-          angle={20}
-          cells={new Array(9).fill(0).map((c, i) => ({
-            color: `hsl(${(360 / 9) * i}, 50%, 50%)`,
-            label: String(i),
-          }))}
+        <UI.AxisControl
+          angle={0}
+          table={{
+            x: ['Total screened', 'Has preexisting issue', 'Confirmed cases', 'Population density', 'Negative cases'],
+            y: ['Area', 'Negative cases', 'Population density', 'Confirmed cases', 'Has preexisting issue'],
+            matrix: [
+              [0.31, 0.53, 0.25, 0.11, 0.04],
+              [null, 0.67, 0.39, 0.16, -0.01],
+              [null, null, 0.07, 0.21, 0.25],
+              [null, null, null, 0.02, 0.03],
+              [null, null, null, null, 0.43],
+            ],
+          }}
+          legend={(angle) => (
+            <UI.Legend
+              rowSize={3}
+              angle={angle}
+              cells={new Array(9).fill(0).map((c, i) => ({
+                color: `hsl(${(360 / 9) * i}, 50%, 50%)`,
+                label: String(i),
+              }))}
+            />
+          )}
         />
       </div>
     </form>

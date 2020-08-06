@@ -34,6 +34,9 @@
     {
       "path": "plugin"
     },
+    {
+      "path": "bivariate-tools"
+    },
   ],
   "compilerOptions": {
     "composite": true

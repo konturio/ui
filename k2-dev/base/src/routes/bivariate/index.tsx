@@ -1,43 +1,33 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import UI from '@k2-packages/ui-kit';
-import {
-  ratesToMatrix,
-  normalizeBy,
-  pickAvailableDenominators,
-  CorrelationRate,
-  Stat,
-  parseStat,
-} from '@k2-packages/bivariate-tools';
+import { Stat, Table, DenominatorSelector, parseStat } from '@k2-packages/bivariate-tools';
+import fStats from './f_new.json';
 
-const createHash = (x, y) => `${x}|${y}`;
+type Option = { label: string; value: string };
+const PLACEHOLDER = { label: 'No options', value: 'not-selected' };
+const createOptions = (strings: string[]) => strings.map((d) => ({ label: d, value: d }));
+const someUndefined = (...args) => args.some((n) => n === undefined);
 
 export default function Bivariate(): JSX.Element {
-  const [stats, setStats] = useState<Stat>();
-
-
-  /* Normalize all invariants by pairs of axis denominators */
-  const [correlationsByQuotient, setCorrelations] = useState<ReturnType<typeof normalizeBy>>();
-  useEffect(() => {
-    if (stats === undefined) return;
-    const correlations = normalizeBy<CorrelationRate>(stats.correlationRates, (axis) =>
-      createHash(axis.x.quotient[1], axis.y.quotient[1]),
-    );
-    setCorrelations(correlations);
-  }, [stats]);
-
-  /* Pick all available denominators and create options for selector */
-  type Option = { label: string; value: string };
-  const [availableDenominators, setAvailableDenominators] = useState<{ x: Option[]; y: Option[] }>({
-    x: [{ label: 'No options', value: 'not-selected' }],
-    y: [{ label: 'No options', value: 'not-selected' }],
+  const [stats, setStats] = useState<Stat>({
+    correlationRates: fStats.map((d) => d.correlationrate),
   });
+
+  /* Set available denominators */
+  const [availableDenominators, setAvailableDenominators] = useState<{ x: Option[]; y: Option[] }>({
+    x: [PLACEHOLDER],
+    y: [PLACEHOLDER],
+  });
+
+  const [denominatorsSelector, setDenominatorsSelector] = useState<DenominatorSelector>();
   useEffect(() => {
     if (stats === undefined) return;
-    const [xDenominators, yDenominators] = pickAvailableDenominators(stats.correlationRates);
+    const { xDenominators, yDenominators, selectDenominators } = parseStat(stats);
     setAvailableDenominators({
-      x: xDenominators.map((d) => ({ label: d, value: d })),
-      y: yDenominators.map((d) => ({ label: d, value: d })),
+      x: createOptions(xDenominators),
+      y: createOptions(yDenominators),
     });
+    setDenominatorsSelector(() => selectDenominators);
   }, [stats]);
 
   /* Selected denominator */
@@ -51,43 +41,58 @@ export default function Bivariate(): JSX.Element {
     setYDenominator(availableDenominators.y[0].value);
   }, [availableDenominators]);
 
-  /* Current data slice */
-  const [dataSlice, setDataSlice] = useState<any>();
+  /* Generate Table */
+  const [table, setTable] = useState<Table>();
   useEffect(() => {
-    if (correlationsByQuotient === undefined) return;
-    const hash = createHash(xDenominator, yDenominator);
-    const slice = correlationsByQuotient[hash];
-    setDataSlice(slice);
-  }, [correlationsByQuotient, xDenominator, yDenominator]);
+    if (someUndefined(xDenominator, yDenominator, denominatorsSelector)) return;
+    // @ts-ignore - sorry my TS kung-fu not enough for type this...
+    const table = denominatorsSelector(xDenominator, yDenominator);
+    setTable(table);
+  }, [xDenominator, yDenominator]);
 
-  /* Generated matrix for selected options */
-  const [matrix, setMatrix] = useState<ReturnType<typeof ratesToMatrix> | null>(null);
-  useEffect(() => {
-    if (dataSlice === undefined) return;
-    const matrix = ratesToMatrix(dataSlice);
-    setMatrix(matrix);
-  }, [dataSlice]);
+  const hoverHandle = useCallback(
+    (e, { x, y }) => {
+      setTable((table) => {
+        if (table) {
+          const newTable = { ...table };
+          newTable.x.forEach((n, i) => {
+            n.highlight = i === x;
+          });
+
+          newTable.y.forEach((n, i) => {
+            n.highlight = i === y;
+          });
+          return newTable;
+        }
+        return table;
+      });
+    },
+    [setTable],
+  );
 
   return (
     <div>
-      <UI.Selector
-        selected={xDenominator}
-        small={true}
-        collapse={true}
-        onChange={(value): void => setXDenominator(value)}
-        options={availableDenominators.x}
-      />
-      <UI.Selector
-        selected={yDenominator}
-        small={true}
-        collapse={true}
-        onChange={(value): void => setYDenominator(value)}
-        options={availableDenominators.y}
-      />
-      {matrix !== null && (
+      <div style={{ height: '40px', zIndex: 40, position: 'relative' }}>
+        <UI.Selector
+          selected={xDenominator}
+          small={true}
+          collapse={true}
+          onChange={(value): void => setXDenominator(value)}
+          options={availableDenominators.x}
+        />
+        <UI.Selector
+          selected={yDenominator}
+          small={true}
+          collapse={true}
+          onChange={(value): void => setYDenominator(value)}
+          options={availableDenominators.y}
+        />
+      </div>
+      {table !== undefined && (
         <UI.AxisControl
           angle={0}
-          table={matrix}
+          table={table}
+          onHover={hoverHandle}
           legend={(angle) => (
             <UI.Legend
               rowSize={3}

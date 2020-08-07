@@ -17,6 +17,9 @@
   align-items: center;
   justify-content: center;
   font-size: 12px;
+  cursor: pointer;
+  &:hover
+    box-shadow: 0px 0px 0px 2px #000 inset
 
 .valueFill
   position: absolute;
@@ -25,6 +28,7 @@
   right: 0;
   left: 0;
   background-color: red
+  z-index: -1;
 
 .axisTable
   border-spacing: 0;
@@ -50,3 +54,5 @@
   vertical-align: top;
   text-align: center;
 
+.highlight
+  background-color: blue

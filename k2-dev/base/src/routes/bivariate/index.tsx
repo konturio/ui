@@ -9,9 +9,19 @@ const createOptions = (strings: string[]) => strings.map((d) => ({ label: d, val
 const someUndefined = (...args) => args.some((n) => n === undefined);
 
 export default function Bivariate(): JSX.Element {
-  const [stats, setStats] = useState<Stat>({
-    correlationRates: fStats.map((d) => d.correlationrate),
-  });
+  const [stats, setStats] = useState<Stat>();
+
+  useEffect(() => {
+    fetch('/geocint/corr_json.json')
+      .then((response) => response.json())
+      .then((json) => {
+        const stats = {
+          correlationRates: json,
+        };
+        setStats(stats);
+      })
+      .catch((e) => console.error(e));
+  }, []);
 
   /* Set available denominators */
   const [availableDenominators, setAvailableDenominators] = useState<{ x: Option[]; y: Option[] }>({
@@ -50,7 +60,7 @@ export default function Bivariate(): JSX.Element {
     setTable(table);
   }, [xDenominator, yDenominator]);
 
-  const hoverHandle = useCallback(
+  const hoverHandler = useCallback(
     (e, { x, y }) => {
       setTable((table) => {
         if (table) {
@@ -69,6 +79,30 @@ export default function Bivariate(): JSX.Element {
     },
     [setTable],
   );
+
+  const clickHandler = useCallback(
+    (e, { x, y }) => {
+      setTable((table) => {
+        if (table) {
+          const newTable = { ...table };
+          newTable.selectedCell = { x, y };
+          newTable.x.forEach((n, i) => {
+            n.selected = i === x;
+          });
+
+          newTable.y.forEach((n, i) => {
+            n.selected = i === y;
+          });
+          return newTable;
+        }
+        return table;
+      });
+    },
+    [setTable],
+  );
+
+  const [selectedAxises, setSelectedAxis] = useState();
+  useEffect(() => {}, [table?.x, table?.y, xDenominator, yDenominator]);
 
   return (
     <div>
@@ -92,7 +126,8 @@ export default function Bivariate(): JSX.Element {
         <UI.AxisControl
           angle={0}
           table={table}
-          onHover={hoverHandle}
+          onHover={hoverHandler}
+          onClick={clickHandler}
           legend={(angle) => (
             <UI.Legend
               rowSize={3}

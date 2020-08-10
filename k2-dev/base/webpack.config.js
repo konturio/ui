@@ -28,6 +28,13 @@ module.exports = {
     stats: 'errors-only',
     historyApiFallback: true,
     contentBase: path.resolve(__dirname, '/dist'),
+    proxy: {
+      '/geocint': {
+        target: 'http://geocint.kontur.io',
+        // pathRewrite: {'^/api' : ''},
+        logLevel: 'debug',
+      },
+    },
   },
   plugins: [
     new CopyWebpackPlugin([{ from: 'src/locales', to: 'locales', ignore: ['*.js'] }]),

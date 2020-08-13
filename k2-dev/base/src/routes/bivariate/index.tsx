@@ -1,11 +1,10 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import UI from '@k2-packages/ui-kit';
-import { Stat, Table, DenominatorSelector, parseStat } from '@k2-packages/bivariate-tools';
+import { Stat, Table, DenominatorSelector, NumeratorSelector, parseStat } from '@k2-packages/bivariate-tools';
 
 type Option = { label: string; value: string };
 const PLACEHOLDER = { label: 'No options', value: 'not-selected' };
 const createOptions = (strings: string[]) => strings.map((d) => ({ label: d, value: d }));
-const someUndefined = (...args) => args.some((n) => n === undefined);
 
 export default function Bivariate(): JSX.Element {
   const [stats, setStats] = useState<Stat>();
@@ -19,12 +18,6 @@ export default function Bivariate(): JSX.Element {
       .catch((e) => console.error(e));
   }, []);
 
-  /**
-   * Index axis by quotient
-   * [numerator|denominator]: Axis
-   */
-  const [bivariateIndexes, setBivariateIndexes] = useState<ReturnType<typeof parseStat>['bivariateHashMap']>();
-
   /* Set available denominators */
   const [availableDenominators, setAvailableDenominators] = useState<{ x: Option[]; y: Option[] }>({
     x: [PLACEHOLDER],
@@ -32,10 +25,10 @@ export default function Bivariate(): JSX.Element {
   });
 
   const [denominatorsSelector, setDenominatorsSelector] = useState<DenominatorSelector>();
+
   useEffect(() => {
     if (stats === undefined) return;
-    const { xDenominators, yDenominators, selectDenominators, bivariateHashMap } = parseStat(stats);
-    setBivariateIndexes(bivariateHashMap);
+    const { xDenominators, yDenominators, selectDenominators } = parseStat(stats);
 
     setAvailableDenominators({
       x: createOptions(xDenominators),
@@ -57,12 +50,17 @@ export default function Bivariate(): JSX.Element {
   }, [availableDenominators]);
 
   /* Generate Table */
+  const [numeratorsSelector, setNumeratorsSelector] = useState<NumeratorSelector>();
   const [table, setTable] = useState<Table>();
   useEffect(() => {
-    if (someUndefined(xDenominator, yDenominator, denominatorsSelector)) return;
-    // @ts-ignore - sorry my TS kung-fu not enough for type this...
-    const table = denominatorsSelector(xDenominator, yDenominator);
-    setTable(table);
+    if (denominatorsSelector !== undefined && xDenominator !== undefined && yDenominator !== undefined) {
+      const result = denominatorsSelector(xDenominator, yDenominator);
+      if (result !== null) {
+        const { matrix, selectNumerators } = result;
+        setTable(matrix);
+        setNumeratorsSelector(() => selectNumerators);
+      }
+    }
   }, [xDenominator, yDenominator]);
 
   const hoverHandler = useCallback(
@@ -110,19 +108,13 @@ export default function Bivariate(): JSX.Element {
   useEffect(() => {
     const selectedX = table?.x.find((x) => x.selected);
     const selectedY = table?.y.find((y) => y.selected);
-    if (
-      selectedX !== undefined &&
-      selectedY !== undefined &&
-      bivariateIndexes !== undefined &&
-      xDenominator !== undefined &&
-      yDenominator !== undefined
-    ) {
-      setSelectedAxis({
-        x: bivariateIndexes.get(selectedX.id, xDenominator),
-        y: bivariateIndexes.get(selectedY.id, yDenominator),
-      });
+    if (selectedX !== undefined && selectedY !== undefined && numeratorsSelector !== undefined) {
+      const selection = numeratorsSelector(selectedX.id, selectedY.id);
+      if (selection) {
+        setSelectedAxis(selection);
+      }
     }
-  }, [table, xDenominator, yDenominator]);
+  }, [table]);
 
   return (
     <div>

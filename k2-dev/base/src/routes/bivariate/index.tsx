@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import UI from '@k2-packages/ui-kit';
 import { Stat, Table, DenominatorSelector, NumeratorSelector, parseStat } from '@k2-packages/bivariate-tools';
+import { updateTableOnClick, updateTableOnHover } from './handlers';
 
 type Option = { label: string; value: string };
 const PLACEHOLDER = { label: 'No options', value: 'not-selected' };
@@ -65,41 +66,14 @@ export default function Bivariate(): JSX.Element {
 
   const hoverHandler = useCallback(
     (e, { x, y }) => {
-      setTable((table) => {
-        if (table) {
-          const newTable = { ...table };
-          newTable.x.forEach((n, i) => {
-            n.highlight = i === x;
-          });
-
-          newTable.y.forEach((n, i) => {
-            n.highlight = i === y;
-          });
-          return newTable;
-        }
-        return table;
-      });
+      setTable((table) => updateTableOnHover(table, { x, y }));
     },
     [setTable],
   );
 
   const clickHandler = useCallback(
     (e, { x, y }) => {
-      setTable((table) => {
-        if (table) {
-          const newTable = { ...table };
-          newTable.selectedCell = { x, y };
-          newTable.x.forEach((n, i) => {
-            n.selected = i === x;
-          });
-
-          newTable.y.forEach((n, i) => {
-            n.selected = i === y;
-          });
-          return newTable;
-        }
-        return table;
-      });
+      setTable((table) => updateTableOnClick(table, { x, y }));
     },
     [setTable],
   );

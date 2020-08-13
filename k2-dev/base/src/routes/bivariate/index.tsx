@@ -1,8 +1,28 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import UI from '@k2-packages/ui-kit';
-import { Stat, Table, DenominatorSelector, NumeratorSelector, parseStat } from '@k2-packages/bivariate-tools';
+import style from './style.styl';
+import {
+  Stat,
+  Table,
+  DenominatorSelector,
+  NumeratorSelector,
+  parseStat,
+  generateBivariateStyleForAxis,
+  extractColors,
+  Theme,
+} from '@k2-packages/bivariate-tools';
 import { updateTableOnClick, updateTableOnHover } from './handlers';
+import MapboxMap from '@k2-packages/mapbox-map';
 
+const mapboxConfig: {
+  accessToken: string;
+  style: string;
+} = {
+  accessToken: 'pk.eyJ1IjoibnNoa3V0b3YiLCJhIjoiY2s2Y2ExODFvMGpoaDNrb3ZueXYyMDBmZiJ9.d2VPRqEfvCd4fvH7edB6tg',
+  style: 'mapbox://styles/nshkutov/ck6ca2wfb397m1imrknjlqd2l',
+};
+
+const TILES_URL = 'http://localhost:8080/tiles/stats/';
 type Option = { label: string; value: string };
 const PLACEHOLDER = { label: 'No options', value: 'not-selected' };
 const createOptions = (strings: string[]) => strings.map((d) => ({ label: d, value: d }));
@@ -25,6 +45,8 @@ export default function Bivariate(): JSX.Element {
     y: [PLACEHOLDER],
   });
 
+  const [availableColorThemes, setAvailableColorThemes] = useState<Theme[]>([]);
+
   const [denominatorsSelector, setDenominatorsSelector] = useState<DenominatorSelector>();
 
   useEffect(() => {
@@ -36,6 +58,8 @@ export default function Bivariate(): JSX.Element {
       y: createOptions(yDenominators),
     });
 
+    const colorThemes = extractColors(stats);
+    setAvailableColorThemes(colorThemes);
     setDenominatorsSelector(() => selectDenominators);
   }, [stats]);
 
@@ -66,7 +90,7 @@ export default function Bivariate(): JSX.Element {
 
   const hoverHandler = useCallback(
     (e, { x, y }) => {
-      setTable((table) => updateTableOnHover(table, { x, y }));
+      // setTable((table) => updateTableOnHover(table, { x, y }));
     },
     [setTable],
   );
@@ -90,42 +114,82 @@ export default function Bivariate(): JSX.Element {
     }
   }, [table]);
 
+  const [mapStyle, setMapStyle] = useState({
+    version: 8,
+    layers: [] as any[],
+  });
+  useEffect(() => {
+    if (selectedAxises === undefined || availableColorThemes.length === 0) {
+      return;
+    }
+
+    const bivariateStyle = generateBivariateStyleForAxis({
+      id: `${selectedAxises.x.quotient.join('&')}|${selectedAxises.y.quotient.join('&')}`,
+      x: selectedAxises.x,
+      y: selectedAxises.y,
+      colors: availableColorThemes[0],
+      sourceLayer: 'stats',
+      source: {
+        type: 'vector',
+        tiles: [`${TILES_URL}{z}/{x}/{y}.mvt`],
+        maxzoom: stats?.meta.max_zoom,
+        minzoom: 0,
+      },
+    });
+
+    setMapStyle({
+      version: 8,
+      layers: [bivariateStyle],
+    });
+    console.log(selectedAxises)
+  }, [selectedAxises, stats?.meta]);
+
   return (
-    <div>
-      <div style={{ height: '40px', zIndex: 40, position: 'relative' }}>
-        <UI.Selector
-          selected={xDenominator}
-          small={true}
-          collapse={true}
-          onChange={(value): void => setXDenominator(value)}
-          options={availableDenominators.x}
-        />
-        <UI.Selector
-          selected={yDenominator}
-          small={true}
-          collapse={true}
-          onChange={(value): void => setYDenominator(value)}
-          options={availableDenominators.y}
-        />
+    <div className={style.root}>
+      <MapboxMap
+        style={mapboxConfig.style}
+        mapStyle={mapStyle}
+        accessToken={mapboxConfig.accessToken}
+        className={style.Map}
+        onClick={console.log}
+        onLoad={console.log}
+      />
+      <div>
+        <div style={{ height: '40px', zIndex: 40, position: 'relative' }}>
+          <UI.Selector
+            selected={xDenominator}
+            small={true}
+            collapse={true}
+            onChange={(value): void => setXDenominator(value)}
+            options={availableDenominators.x}
+          />
+          <UI.Selector
+            selected={yDenominator}
+            small={true}
+            collapse={true}
+            onChange={(value): void => setYDenominator(value)}
+            options={availableDenominators.y}
+          />
+        </div>
+        {table !== undefined && (
+          <UI.AxisControl
+            angle={0}
+            table={table}
+            onHover={hoverHandler}
+            onClick={clickHandler}
+            legend={(angle) => (
+              <UI.Legend
+                rowSize={3}
+                angle={angle}
+                cells={new Array(9).fill(0).map((c, i) => ({
+                  color: `hsl(${(360 / 9) * i}, 50%, 50%)`,
+                  label: String(i),
+                }))}
+              />
+            )}
+          />
+        )}
       </div>
-      {table !== undefined && (
-        <UI.AxisControl
-          angle={0}
-          table={table}
-          onHover={hoverHandler}
-          onClick={clickHandler}
-          legend={(angle) => (
-            <UI.Legend
-              rowSize={3}
-              angle={angle}
-              cells={new Array(9).fill(0).map((c, i) => ({
-                color: `hsl(${(360 / 9) * i}, 50%, 50%)`,
-                label: String(i),
-              }))}
-            />
-          )}
-        />
-      )}
     </div>
   );
 }

@@ -34,6 +34,10 @@ module.exports = {
         // pathRewrite: {'^/api' : ''},
         logLevel: 'debug',
       },
+      '/tiles': {
+        target: 'http://geocint.kontur.io',
+        // pathRewrite: {'^/api' : ''},
+      },
     },
   },
   plugins: [

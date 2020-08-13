@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import UI from '@k2-packages/ui-kit';
 import { Stat, Table, DenominatorSelector, parseStat } from '@k2-packages/bivariate-tools';
-import fStats from './f_new.json';
 
 type Option = { label: string; value: string };
 const PLACEHOLDER = { label: 'No options', value: 'not-selected' };
@@ -12,16 +11,19 @@ export default function Bivariate(): JSX.Element {
   const [stats, setStats] = useState<Stat>();
 
   useEffect(() => {
-    fetch('/geocint/corr_json.json')
+    fetch('/geocint/stat.json')
       .then((response) => response.json())
       .then((json) => {
-        const stats = {
-          correlationRates: json,
-        };
-        setStats(stats);
+        setStats(json);
       })
       .catch((e) => console.error(e));
   }, []);
+
+  /**
+   * Index axis by quotient
+   * [numerator|denominator]: Axis
+   */
+  const [bivariateIndexes, setBivariateIndexes] = useState<ReturnType<typeof parseStat>['bivariateHashMap']>();
 
   /* Set available denominators */
   const [availableDenominators, setAvailableDenominators] = useState<{ x: Option[]; y: Option[] }>({
@@ -32,11 +34,14 @@ export default function Bivariate(): JSX.Element {
   const [denominatorsSelector, setDenominatorsSelector] = useState<DenominatorSelector>();
   useEffect(() => {
     if (stats === undefined) return;
-    const { xDenominators, yDenominators, selectDenominators } = parseStat(stats);
+    const { xDenominators, yDenominators, selectDenominators, bivariateHashMap } = parseStat(stats);
+    setBivariateIndexes(bivariateHashMap);
+
     setAvailableDenominators({
       x: createOptions(xDenominators),
       y: createOptions(yDenominators),
     });
+
     setDenominatorsSelector(() => selectDenominators);
   }, [stats]);
 
@@ -101,8 +106,23 @@ export default function Bivariate(): JSX.Element {
     [setTable],
   );
 
-  const [selectedAxises, setSelectedAxis] = useState();
-  useEffect(() => {}, [table?.x, table?.y, xDenominator, yDenominator]);
+  const [selectedAxises, setSelectedAxis] = useState<{ x: Stat['axis'][0]; y: Stat['axis'][0] }>();
+  useEffect(() => {
+    const selectedX = table?.x.find((x) => x.selected);
+    const selectedY = table?.y.find((y) => y.selected);
+    if (
+      selectedX !== undefined &&
+      selectedY !== undefined &&
+      bivariateIndexes !== undefined &&
+      xDenominator !== undefined &&
+      yDenominator !== undefined
+    ) {
+      setSelectedAxis({
+        x: bivariateIndexes.get(selectedX.id, xDenominator),
+        y: bivariateIndexes.get(selectedY.id, yDenominator),
+      });
+    }
+  }, [table, xDenominator, yDenominator]);
 
   return (
     <div>

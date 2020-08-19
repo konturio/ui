@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.3.0](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-dev/base@2.2.0...@k2-dev/base@2.3.0) (2020-08-19)
+
+
+### Bug Fixes
+
+* bugs, added event handlers ([9a38c7e](https://gitlab.com/kontur-private/k2/k2-front-end/commit/9a38c7e976781af91dbc141f5b353af6042a204b))
+
+
+### Features
+
+* add proxy ([c70a1c2](https://gitlab.com/kontur-private/k2/k2-front-end/commit/c70a1c2c61f7be6167f7207bcd3a69b6f51ddcb8))
+* format code ([2793af0](https://gitlab.com/kontur-private/k2/k2-front-end/commit/2793af0550c3ba8e2822be64d1edc21bae6abad6))
+* lazy calculations ([b4c104b](https://gitlab.com/kontur-private/k2/k2-front-end/commit/b4c104b022c16c37afb85c6bd9c7348b27904bae))
+* ui controller ([d7c5b63](https://gitlab.com/kontur-private/k2/k2-front-end/commit/d7c5b631b06ecab2e7e08dc646f77752194282ba))
+
+
+
+
+
 # [2.2.0](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-dev/base@2.1.0...@k2-dev/base@2.2.0) (2020-07-30)
 
 

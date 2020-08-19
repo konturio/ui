@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.13.0](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@1.12.7...@k2-packages/ui-kit@1.13.0) (2020-08-19)
+
+
+### Bug Fixes
+
+* bugs, added event handlers ([9a38c7e](https://gitlab.com/kontur-private/k2/k2-front-end/commit/9a38c7e976781af91dbc141f5b353af6042a204b))
+
+
+### Features
+
+* add highlights ([190d9f3](https://gitlab.com/kontur-private/k2/k2-front-end/commit/190d9f36f04fb1b0f7600b3ef5c5b769b5324ea9))
+* ui controller ([d7c5b63](https://gitlab.com/kontur-private/k2/k2-front-end/commit/d7c5b631b06ecab2e7e08dc646f77752194282ba))
+
+
+
+
+
 ## [1.12.7](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@1.12.6...@k2-packages/ui-kit@1.12.7) (2020-07-23)
 
 **Note:** Version bump only for package @k2-packages/ui-kit

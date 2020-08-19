@@ -11,7 +11,7 @@ import {
   extractColors,
   Theme,
 } from '@k2-packages/bivariate-tools';
-import { updateTableOnClick, updateTableOnHover } from './handlers';
+import { updateTableOnClick } from './handlers';
 import MapboxMap from '@k2-packages/mapbox-map';
 
 const mapboxConfig: {

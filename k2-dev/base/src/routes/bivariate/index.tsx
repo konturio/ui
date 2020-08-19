@@ -31,7 +31,7 @@ export default function Bivariate(): JSX.Element {
   const [stats, setStats] = useState<Stat>();
 
   useEffect(() => {
-    fetch('/geocint/stat.json')
+    fetch('/tiles/stats/stat.json')
       .then((response) => response.json())
       .then((json) => {
         setStats(json);

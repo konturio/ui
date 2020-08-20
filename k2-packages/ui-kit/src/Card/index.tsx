@@ -1,6 +1,6 @@
 import React from 'react';
-import clsx from 'clsx';
-import style from './style.styl';
+import cn from 'clsx';
+import s from './style.css';
 
 interface Card {
   title?: string | React.ReactChild | React.ReactChild[];
@@ -10,8 +10,8 @@ interface Card {
 
 export default function Card({ title, className, children }: Card) {
   return (
-    <div className={clsx(style.card, className)}>
-      {title && <h3 className={style.title}>{title} </h3>}
+    <div className={cn(s.card, className)}>
+      {title && <h3 className={s.title}>{title} </h3>}
       {children}
     </div>
   );

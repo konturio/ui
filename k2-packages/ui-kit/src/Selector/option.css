@@ -1,0 +1,47 @@
+.line {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+}
+
+.line:hover {
+  background-color: rgba(var(--secondary-color), 0.2);
+}
+
+.line.selected {
+  background-color: var(--secondary-color);
+  color: var(--secondary-text-color);
+}
+
+.option {
+  cursor: pointer;
+  text-align: center;
+  padding: var(--unit) calc(var(--unit) * 2);
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.option input {
+  visibility: hidden;
+  position: absolute;
+}
+
+.option:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.disabled {
+  opacity: 0.2;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.disabled .option {
+  cursor: default;
+}
+
+.small .option {
+  padding: calc(var(--unit) / 2) var(--unit);
+}

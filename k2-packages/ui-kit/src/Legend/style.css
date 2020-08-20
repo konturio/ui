@@ -1,0 +1,15 @@
+.cell {
+  width: calc(var(--unit) * 5);
+  height: calc(var(--unit) * 5);
+  overflow: hidden;
+  padding: 0;
+  border: var(--input-border);
+  vertical-align: middle;
+  text-align: center;
+  font-size: 18px;
+}
+
+.table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}

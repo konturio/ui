@@ -1,6 +1,6 @@
 import React from 'react';
-import clsx from 'clsx';
-import style from './style.styl';
+import cn from 'clsx';
+import s from './style.css';
 import HighlightSpan from './HighlightSpan';
 import SelectableElement from './SelectableElement';
 import { useKeyPress } from './useKeyPress';
@@ -51,7 +51,7 @@ export default function DropDown({
 }: DropDownProps): JSX.Element {
   useKeyPress(onKeyPress, isFocused);
   return (
-    <div className={clsx(className, { [style.focus]: isFocused })}>
+    <div className={cn(className, { [s.focus]: isFocused })}>
       {options.map(({ value, label, disabled }, i) => (
         <SelectableElement
           key={value}
@@ -63,7 +63,7 @@ export default function DropDown({
           focusAsSelect={focusAsSelect}
           isSelected={value === selected}
           badgeClass={badgeClass}
-          badge={i < 9 ? <span className={style.bind}>{i + 1}</span> : undefined}
+          badge={i < 9 ? <span className={s.bind}>{i + 1}</span> : undefined}
         >
           {highlightText && typeof label === 'string' ? (
             <HighlightSpan highlight={highlightText}>{label}</HighlightSpan>

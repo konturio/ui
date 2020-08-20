@@ -1,7 +1,7 @@
 /* eslint-disable prettier/prettier */
 import React, { useRef, useLayoutEffect } from 'react';
-import clsx from 'clsx';
-import style from './simpleSelector.styl';
+import cn from 'clsx';
+import s from './simpleSelector.css';
 import Option, { Option as TOption } from './Option';
 
 type changeEvent = React.ChangeEvent<HTMLInputElement>;
@@ -56,7 +56,7 @@ export default function SimpleSelector({
   }, [ref, stopPropagation]);
 
   return (
-    <div className={clsx(style.selector, className, style[orientation])} ref={ref}>
+    <div className={cn(s.selector, className, s[orientation])} ref={ref}>
       {options.map((opt) => (
         <Option
           key={opt.value}

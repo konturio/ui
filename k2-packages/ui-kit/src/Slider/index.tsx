@@ -1,6 +1,6 @@
 import React from 'react';
 import cn from 'clsx';
-import style from './style.styl';
+import s from './style.css';
 import ColorsLegend from './ColorsLegend';
 import { startCaptureMovement } from './startCaptureMovement';
 import { sliderPositionToValue } from './sliderPositionToValue';
@@ -12,7 +12,7 @@ interface Stick {
 }
 
 function Stick({ className, ...rest }: Stick): JSX.Element {
-  return <div className={cn(style.stick, className)} {...rest}></div>;
+  return <div className={cn(s.stick, className)} {...rest}></div>;
 }
 
 const covertToPercent = (proc: number): string => `${proc}%`;
@@ -46,19 +46,19 @@ export default function Slider({
   const sliderPosition = steps ? valueToSliderPosition(value, steps) : value;
   return (
     <div
-      className={cn(className, style.slider)}
+      className={cn(className, s.slider)}
       onMouseDown={(e): void => {
         // @ts-ignore - of course target have id, it's HTMLDivElement!
         const isClickOnStick = e.target.id !== STICK_ID;
         startCaptureMovement(isClickOnStick, e, onChangeHandler);
       }}
     >
-      <div id="bar" className={style.bar} style={{ backgroundColor: outOfRangeColor }}>
+      <div id="bar" className={s.bar} style={{ backgroundColor: outOfRangeColor }}>
         <div style={{ flex: sliderPosition / 100 }}>
           <ColorsLegend colors={colors} />
         </div>
       </div>
-      <Stick id={STICK_ID} className={style.stickDock} style={{ marginLeft: covertToPercent(sliderPosition) }} />
+      <Stick id={STICK_ID} className={s.stickDock} style={{ marginLeft: covertToPercent(sliderPosition) }} />
     </div>
   );
 }

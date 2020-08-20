@@ -1,6 +1,6 @@
 import React from 'react';
-import style from './style.styl';
-import clsx from 'clsx';
+import s from './style.css';
+import cn from 'clsx';
 
 export interface LanguageSelect {
   languages: Array<string>;
@@ -10,7 +10,7 @@ export interface LanguageSelect {
 
 export default function LanguageSelect({ languages, onClick, className }: LanguageSelect) {
   return (
-    <div className={clsx(style.languageSelect, className)}>
+    <div className={cn(s.languageSelect, className)}>
       {languages.map((lng, i) => (
         <button key={i} onClick={(event) => onClick(event, lng)}>
           {lng}

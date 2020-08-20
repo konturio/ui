@@ -1,5 +1,5 @@
 import React from 'react';
-import s from './style.styl';
+import s from './style.css';
 import cn from 'clsx';
 
 interface Axis {
@@ -23,7 +23,7 @@ function Axis({ records, row = false }: Axis) {
           </tr>
         ) : (
           records.map((rec) => (
-            <tr key={rec.label} className={[s.axis, s.column].join(' ')}>
+            <tr key={rec.label} className={[s.column].join(' ')}>
               <td className={cn(s.axisRecord, rec.highlight && s.highlight, rec.selected && s.selected)}>
                 {rec.label}
               </td>

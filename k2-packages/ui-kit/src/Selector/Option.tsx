@@ -1,7 +1,7 @@
 /* eslint-disable prettier/prettier */
 import React from 'react';
-import clsx from 'clsx';
-import style from './option.styl';
+import cn from 'clsx';
+import s from './option.css';
 
 export interface OptionElement extends Option {
   selected: boolean;
@@ -28,13 +28,13 @@ export default function Option({
   hint,
 }: OptionElement): JSX.Element {
   return (
-    <div key={value} className={clsx(
-      style.line,
-      selected && style.selected,
-      disabled && style.disabled,
-      small && style.small
+    <div key={value} className={cn(
+      s.line,
+      selected && s.selected,
+      disabled && s.disabled,
+      small && s.small
     )}>
-      <label key={value} className={style.option} onMouseOver={e => onMouseOver && onMouseOver(value, e)} title={hint}>
+      <label key={value} className={s.option} onMouseOver={e => onMouseOver && onMouseOver(value, e)} title={hint}>
         {label}
         {/* eslint-disable-next-line prettier/prettier */}
         <input

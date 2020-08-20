@@ -1,5 +1,5 @@
 import React from 'react';
-import style from './style.styl';
+import s from './style.css';
 
 const NEED_ESCAPE = ['[', '\\', '^', '$', '.', '|', '?', '*', '+', '(', ')'];
 function escapeSpecialCharacters(dangerString = ''): string {
@@ -29,7 +29,7 @@ export default function HighlightSpan({ highlight, children }: HighlightSpan) {
         // eslint-disable-next-line react/no-array-index-key
         <span key={t + i}>
           {t}
-          {i === between.length - 1 ? undefined : <span className={style.highlight}>{highlight}</span>}
+          {i === between.length - 1 ? undefined : <span className={s.highlight}>{highlight}</span>}
         </span>
       ))}
     </>

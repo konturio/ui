@@ -1,5 +1,5 @@
 import React, { ChangeEvent } from 'react';
-import style from './style.styl';
+import s from './style.css';
 
 interface Checkbox {
   id?: string;
@@ -27,14 +27,14 @@ export default function Checkbox({
   onChange,
 }: Checkbox): React.ReactElement {
   return (
-    <label htmlFor={id} className={style.label}>
+    <label htmlFor={id} className={s.label}>
       <input
         id={id}
         name={name}
         type="checkbox"
         value={value}
         readOnly={readOnly}
-        className={`${style.checkbox} ${className}`}
+        className={`${s.checkbox} ${className}`}
         disabled={disabled}
         checked={checked}
         required={required}

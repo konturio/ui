@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useCallback } from 'react';
-import clsx from 'clsx';
+import cn from 'clsx';
 import { scrollIntoView } from './scrollIntoView';
-import style from './style.styl';
+import s from './style.css';
 
 interface SelectableElement {
   children: string | React.ReactChild | React.ReactChild[];
@@ -80,8 +80,8 @@ export default function SelectableElement({
 
   return (
     <div
-      className={clsx(style.selectable, {
-        [style.selected]: isSelected,
+      className={cn(s.selectable, {
+        [s.selected]: isSelected,
       })}
     >
       <input
@@ -93,12 +93,12 @@ export default function SelectableElement({
         checked={isSelected}
         onChange={focusAsSelect ? doNothing : onChange}
         onClick={fixSafariBug}
-        className={style.radio}
+        className={s.radio}
         onFocus={focusHandler}
         disabled={disabled}
       />
-      <label htmlFor={id} className={style.option}>
-        {badge && <span className={clsx(style.badge, badgeClass)}>{badge}</span>}
+      <label htmlFor={id} className={s.option}>
+        {badge && <span className={cn(s.badge, badgeClass)}>{badge}</span>}
         <div> {children} </div>
       </label>
     </div>

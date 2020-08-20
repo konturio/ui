@@ -1,6 +1,6 @@
 import React, { useState, forwardRef, useEffect, useCallback, useRef, useImperativeHandle } from 'react';
-import clsx from 'clsx';
-import style from './style.styl';
+import cn from 'clsx';
+import s from './style.css';
 
 export interface InputProps extends React.HTMLProps<HTMLInputElement> {
   onType?: (text: string) => void;
@@ -80,10 +80,10 @@ function Input(
   );
 
   const dynamicClasses = {
-    [style.successes]: successes,
-    [style.error]: error,
-    [style.focus]: focus,
-    [style.disabled]: disabled,
+    [s.successes]: successes,
+    [s.error]: error,
+    [s.focus]: focus,
+    [s.disabled]: disabled,
   };
 
   const inputRef = useRef<HTMLInputElement>(null);
@@ -94,8 +94,8 @@ function Input(
   }));
 
   return (
-    <div className={clsx(style.root, dynamicClasses)}>
-      <div className={clsx(style.inputBox, className)}>
+    <div className={cn(s.root, dynamicClasses)}>
+      <div className={cn(s.inputBox, className)}>
         <input
           {...props}
           ref={inputRef}
@@ -104,9 +104,9 @@ function Input(
           onBlur={nativeBlurEventHandler}
           disabled={disabled}
         />
-        <div className={style.icons}>{children}</div>
+        <div className={s.icons}>{children}</div>
       </div>
-      {message && <div className={style.message}>{message}</div>}
+      {message && <div className={s.message}>{message}</div>}
     </div>
   );
 }

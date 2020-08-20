@@ -1,5 +1,5 @@
 import React from 'react';
-import style from './style.styl';
+import s from './style.css';
 import Card from '../Card';
 import Slider from './Slider';
 
@@ -24,16 +24,16 @@ export default function IsochroneSlider({
 }: IsochroneSlider): JSX.Element {
   return (
     <Card>
-      <div className={style.wrapper}>
+      <div className={s.wrapper}>
         <Slider
           // @ts-ignore
           steps={colorsLegend}
           value={sliderValue}
           onChange={onSliderChange}
         />
-        <div className={style.ruler}>
+        <div className={s.ruler}>
           {rulerNumbers.map(step => (
-            <div key={step} className={style.rule} data-step={step}>
+            <div key={step} className={s.rule} data-step={step}>
               |
             </div>
           ))}

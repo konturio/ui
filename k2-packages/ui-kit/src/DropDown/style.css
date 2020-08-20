@@ -1,0 +1,60 @@
+.selectable {
+  position: relative;
+}
+
+.option {
+  display: flex;
+  padding-right: 2em;
+  position: relative;
+}
+
+.option:hover {
+  background-color: rgba(var(--primary-color), 0.2);
+}
+
+.selected {
+  background-color: var(--secondary-color);
+  color: var(--secondary-text-color);
+}
+
+.highlight {
+  background-color: rgba(251, 255, 0, 0.4);
+}
+
+.radio {
+  position: absolute;
+  opacity: 0;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.radio:focus~.option:after {
+  height: 100%;
+  width: 4px;
+  background-color: var(--primary-color);
+  content: '';
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+}
+
+.badge {
+  right: unit;
+  position: absolute;
+}
+
+.bind {
+  border-radius: 4px;
+  height: 1em;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background-color: #e6e6e6;
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.25), inset 0px 0px 1px rgba(255, 255, 255, 0.25);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8em;
+  padding: 0.8em 0.5em 0.7em;
+  color: #6f6f6f;
+}

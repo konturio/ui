@@ -1,15 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cn from 'clsx';
-import style from './style.styl';
+import s from './style.css';
 
 function Step({ color, weight }) {
-  return <div className={style.step} style={{ flex: weight, backgroundColor: color }} title={weight} ></div>;
+  return <div className={s.step} style={{ flex: weight, backgroundColor: color }} title={weight} ></div>;
 }
 
 export default function ColorsLegend({ className, steps }) {
   return (
-    <div className={cn(className, style.steps)}>
+    <div className={cn(className, s.steps)}>
       { steps.map(([weight, color]) => <Step key={color} color={color} weight={weight} />) }
     </div>
   );

@@ -1,0 +1,9 @@
+.nestedSelector {
+  width: 100%;
+}
+
+.shade {
+  box-shadow: var(--shadow-2);
+  border-radius: var(--border-radius);
+  border: var(--input-border);
+}

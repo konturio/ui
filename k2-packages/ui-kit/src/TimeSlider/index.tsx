@@ -1,5 +1,5 @@
 import React from 'react';
-import style from './style.styl';
+import s from './style.css';
 import Slider from '../Slider';
 
 type Color = string;
@@ -30,9 +30,9 @@ export default function TimeSlider({
         outOfRangeColor={outOfRangeColor}
         steps={rulerNumbers.map((val) => ({ label: val, value: val }))}
       />
-      <div className={style.ruler}>
+      <div className={s.ruler}>
         {rulerNumbers.map((step) => (
-          <div key={step} className={style.rule} data-step={step}>
+          <div key={step} className={s.rule} data-step={step}>
             |
           </div>
         ))}

@@ -1,0 +1,19 @@
+.selector {
+  display: inline-flex;
+  position: relative;
+  overflow: hidden;
+}
+
+.selector.vertical {
+  background-color: #fff;
+  flex-flow: column nowrap;
+  padding-top: var(--unit);
+  padding-bottom: var(--unit);
+}
+
+.selector.horizontal {
+  background-color: #fff;
+  flex-flow: row nowrap;
+  padding-right: var(--unit);
+  padding-left: var(--unit);
+}

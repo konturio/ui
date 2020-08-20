@@ -1,7 +1,7 @@
 import React from 'react';
 import Input from './index';
 import { shallow, mount } from 'enzyme';
-import style from './style.styl';
+import s from './style.css';
 
 describe('<Input> component', () => {
   it('Call onChange callback', () => {
@@ -41,7 +41,7 @@ describe('<Input> component', () => {
     const onFocus = jest.fn();
     const wrapper = shallow(<Input isFocused={false} onFocus={onFocus} ref={{ current: null }} />);
     wrapper.setProps({ isFocused: true });
-    expect(wrapper.hasClass(style.focus)).toBe(true);
+    expect(wrapper.hasClass(s.focus)).toBe(true);
     setTimeout(() => expect(onFocus).toBeCalled(), 250);
   });
 
@@ -49,7 +49,7 @@ describe('<Input> component', () => {
     const onBlur = jest.fn();
     const wrapper = shallow(<Input isFocused={true} onBlur={onBlur} ref={{ current: null }} />);
     wrapper.setProps({ isFocused: false });
-    expect(wrapper.hasClass(style.focus)).toBe(false);
+    expect(wrapper.hasClass(s.focus)).toBe(false);
     setTimeout(() => expect(onBlur).toBeCalled(), 250);
   });
 
@@ -92,6 +92,6 @@ describe('<Input> component', () => {
 
   it('Show message', () => {
     const wrapper = shallow(<Input message="Hello world" ref={{ current: null }} />);
-    expect(wrapper.find(`.${style.message}`).text()).toBe('Hello world');
+    expect(wrapper.find(`.${s.message}`).text()).toBe('Hello world');
   });
 });

@@ -1,0 +1,54 @@
+.wrapper {
+  display: inline-flex;
+  flex-flow: column nowrap;
+  box-shadow: var(--shadow-2);
+  border-radius: var(--border-radius);
+  border: var(--input-border);
+}
+
+.selectedBox {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  cursor: pointer;
+}
+
+.selectedBox:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.selectedBox:hover .btn {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.selectedBox.open {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.btn {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin: 0 var(--unit);
+}
+
+.open .btn {
+  transform: rotate(180deg);
+}
+
+.open .selectedBox {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.disabled {
+  opacity: 0.5;
+}
+
+.selected {
+  padding: var(--unit) calc(var(--unit) * 2);
+}
+
+.small .selected {
+  padding: calc(var(--unit) / 2) var(--unit);
+}

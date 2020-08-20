@@ -1,7 +1,7 @@
 import React from 'react';
 import SelectableElement from './SelectableElement';
 import { shallow } from 'enzyme';
-import style from './style.styl';
+import s from './style.css';
 
 describe('<SelectableElement> component', () => {
   it('Should call `onChange` on changes', () => {
@@ -29,7 +29,7 @@ describe('<SelectableElement> component', () => {
       </SelectableElement>,
     );
 
-    expect(wrapper.hasClass(style.selected)).toBe(true);
+    expect(wrapper.hasClass(s.selected)).toBe(true);
   });
 
   it('Should render Badge', () => {

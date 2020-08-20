@@ -1,5 +1,5 @@
 import React from 'react';
-import s from './style.styl';
+import s from './style.css';
 import { Cell } from './types';
 import { createMatrix } from './matrix';
 import { getRotationStyle } from './styleGen';

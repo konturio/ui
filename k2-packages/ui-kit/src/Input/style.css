@@ -1,0 +1,74 @@
+.root input {
+  flex: 1;
+  padding: 0;
+  font-size: 1rem;
+  min-width: 0;
+}
+
+.icons {
+  color: var(--neutral-text-color);
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.message {
+  font-size: calc(var(--unit) * 1.5);
+  padding: calc(var(--unit) * 0.5) var(--unit);
+  color: var(--text-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-2);
+}
+
+.inputBox {
+  display: flex;
+  flex-flow: row nowrap;
+  border: 1px solid var(--neutral-text-color);
+  border-radius: var(--border-radius);
+  padding: var(--unit);
+  color: var(--neutral-text-color);
+  position: relative;
+}
+
+.inputBox:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: var(--border-radius);
+  pointer-events: none;
+}
+
+.focus .inputBox:before {
+  box-shadow: var(--outline-active);
+}
+
+.disabled .inputBox {
+  background-color: var(--gray-1);
+}
+
+.disabled input {
+  cursor: default;
+}
+
+.successes .inputBox {
+  border-color: var(--success-color);
+}
+
+.successes.focus .inputBox:before {
+  box-shadow: var(--outline-success);
+}
+
+.error .inputBox {
+  border-color: var(--error-color);
+}
+
+.error.focus .inputBox:before {
+  box-shadow: var(--outline-error);
+}
+
+.error .message {
+  color: var(--error-color);
+}

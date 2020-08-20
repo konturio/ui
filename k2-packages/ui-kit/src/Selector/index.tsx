@@ -4,7 +4,7 @@ import clsx from 'clsx';
 import { Option } from './Option';
 import SelectedItems from './SelectedItems';
 import SimpleSelector from './SimpleSelector';
-import style from './style.styl';
+import s from './style.css';
 
 
 function createChecker(selected: Selector['selected']): (value: Option) => boolean {
@@ -67,7 +67,7 @@ export default function Selector({
           multi={false}
           small={small}
           checkSelected={checkSelected}
-          className={style.nestedSelector}
+          className={s.nestedSelector}
           stopPropagation={stopPropagation}
           onHover={onHoverHandler}
         />
@@ -76,7 +76,7 @@ export default function Selector({
         options={options}
         onChange={onChangeHandler}
         orientation={orientation}
-        className={clsx(className, style.shade)}
+        className={clsx(className, s.shade)}
         multi={multi}
         small={small}
         checkSelected={checkSelected}

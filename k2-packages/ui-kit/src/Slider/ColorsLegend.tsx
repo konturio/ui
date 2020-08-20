@@ -1,9 +1,9 @@
 import React from 'react';
 import cn from 'clsx';
-import style from './style.styl';
+import s from './style.css';
 
 function StepComponent({ color }: { color: string }): JSX.Element {
-  return <div className={style.step} style={{ backgroundColor: color }}></div>;
+  return <div className={s.step} style={{ backgroundColor: color }}></div>;
 }
 
 type Color = string;
@@ -14,7 +14,7 @@ interface ColorsLegend {
 
 export default function ColorsLegend({ className, colors }: ColorsLegend): JSX.Element {
   return (
-    <div className={cn(className, style.steps)}>
+    <div className={cn(className, s.steps)}>
       {colors.map((color) => (
         <StepComponent key={color} color={color} />
       ))}

@@ -1,7 +1,7 @@
 /* eslint-disable prettier/prettier */
 import React, { useState, useCallback } from 'react';
-import clsx from 'clsx';
-import style from './selectedItems.styl';
+import cn from 'clsx';
+import s from './selectedItems.css';
 import { Option } from './Option';
 
 export interface SelectedItems {
@@ -22,7 +22,7 @@ const getFallbackOption = (placeholder): Option => ({
 
 function SelectedOption({ label, value, disabled }: Option): JSX.Element {
   return (
-    <div className={clsx(style.selected, disabled && style.disabled)}>
+    <div className={cn(s.selected, disabled && s.disabled)}>
       {label}
     </div>
   )
@@ -49,14 +49,14 @@ export default function SelectedItems({
   }, [setCollapsedState]);
 
   return (
-    <div className={clsx(style.wrapper, small && style.small, !collapsedState && style.open, className )}>
-      <div className={style.selectedBox} onClick={() => setCollapsedState(curr => !curr)}>
+    <div className={cn(s.wrapper, small && s.small, !collapsedState && s.open, className )}>
+      <div className={s.selectedBox} onClick={() => setCollapsedState(curr => !curr)}>
         {selectedOptions.map((sOpt) => (
           <div key={sOpt.value}>
             {selectedOptions.map(sOpt => <SelectedOption key={sOpt.value} {...sOpt} />)}
           </div>
         ))}
-        <span className={style.btn}>
+        <span className={s.btn}>
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M15 8L10 13L5 8" stroke="black" strokeLinecap="round" strokeLinejoin="round" />
           </svg>

@@ -1,8 +1,13 @@
 import('jest-fetch-mock');
 
 declare module '*.styl' {
-  const styles: { [className: string]: string };
-  export default styles;
+  const s: { [className: string]: string };
+  export default s;
+}
+
+declare module '*.css' {
+  const s: { [className: string]: string };
+  export default s;
 }
 
 interface Window {

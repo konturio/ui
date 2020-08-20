@@ -1,0 +1,68 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto&display=swap);
+
+:root {
+  /* Breakpoints */
+  --main-bg-color: brown;
+  --xs: 0px;
+  --sm: 600px;
+  --md: 960px;
+  --lg: 1280px;
+  --xl: 1920px;
+
+  /* Palette */
+  --black: #000;
+  --white: #fff;
+
+  --primary-color: #514a9d;
+  --primary-text-color: #fff;
+
+  --secondary-color: #F57B51;
+  --secondary-text-color: #fff;
+
+  --neutral-color: #999999;
+  --neutral-text-color: #d5d5d5;
+
+  --error-color: #FF5F5F;
+  --error-text-color: #fff;
+
+  --warning-color: #FFB800;
+  --warning-text-color: #fff;
+
+  --info-color: #85C4FF;
+  --info-text-color: #fff;
+
+  --success-color: #0AC86D;
+  --success-text-color: #fff;
+
+  --default-color: var(--neutral-text-color);
+
+  --gray-1: hsla(0, 0%, 95%, 1);
+  --gray-2:  hsla(0, 0%, 90%, 1);
+  --gray-3:  hsla(0, 0%, 50%, 1);
+  --gray-30:  hsla(0, 0%, 70%, 1);
+
+  /* Shadows */
+  --shadow-0: none;
+  --shadow-1: 0px 2px 5px -2px rgba(0, 0, 0, 0.25), 0px 4px 7px 0 rgba(0, 0, 0, 0.08), 0px 6px 14px 0 rgba(0, 0, 0, 0.08);;
+  --shadow-2: 0px 2px 1px 0 rgba(0, 0, 0, 0.1);
+  --outline-shadow: 0px 0px 0px 3px rgba(var(--neutral-color), 0.3)
+
+  /* Typography */
+  --font: 16px 'Roboto', sans-serif;
+
+  /* Spacing */
+  --unit: 8px;
+
+  --border-radius: 8px;
+
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out: cubic-bezier(0.0, 0, 0.2, 1);
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+
+  /* zIndex */
+  --modal: 1000;
+  --tooltip: 1100;
+
+  /* Inputs */
+  --input-border: 1px solid var(--default-color);
+}

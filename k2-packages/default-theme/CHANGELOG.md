@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/default-theme@1.4.2...@k2-packages/default-theme@2.0.0) (2020-08-20)
+
+
+### Features
+
+* **kit:** from stylus to css ([b523a17](https://gitlab.com/kontur-private/k2/k2-front-end/commit/b523a17d6f8d87e966b316ca892eaa8ee04e1566))
+* **style:** add support of css variables ([d7d8b81](https://gitlab.com/kontur-private/k2/k2-front-end/commit/d7d8b81375ce084767f1ef2b89e1b910d81422aa))
+
+
+### BREAKING CHANGES
+
+* **kit:** it's now not work with stylus
+
+
+
+
+
 ## [1.4.2](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/default-theme@1.4.1...@k2-packages/default-theme@1.4.2) (2020-05-27)
 
 **Note:** Version bump only for package @k2-packages/default-theme

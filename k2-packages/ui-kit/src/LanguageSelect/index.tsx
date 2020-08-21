@@ -1,5 +1,5 @@
 import React from 'react';
-import s from './style.css';
+import s from './style.module.css';
 import cn from 'clsx';
 
 export interface LanguageSelect {

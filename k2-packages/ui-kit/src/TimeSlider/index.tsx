@@ -1,5 +1,5 @@
 import React from 'react';
-import s from './style.css';
+import s from './style.module.css';
 import Slider from '../Slider';
 
 type Color = string;

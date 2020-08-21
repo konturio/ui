@@ -4,7 +4,7 @@ import clsx from 'clsx';
 import { Option } from './Option';
 import SelectedItems from './SelectedItems';
 import SimpleSelector from './SimpleSelector';
-import s from './style.css';
+import s from './style.module.css';
 
 
 function createChecker(selected: Selector['selected']): (value: Option) => boolean {

@@ -1,7 +1,7 @@
 /* eslint-disable prettier/prettier */
 import React, { useRef, useLayoutEffect } from 'react';
 import cn from 'clsx';
-import s from './simpleSelector.css';
+import s from './simpleSelector.module.css';
 import Option, { Option as TOption } from './Option';
 
 type changeEvent = React.ChangeEvent<HTMLInputElement>;

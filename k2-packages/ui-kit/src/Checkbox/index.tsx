@@ -1,5 +1,5 @@
 import React, { ChangeEvent } from 'react';
-import s from './style.css';
+import s from './style.module.css';
 
 interface Checkbox {
   id?: string;

@@ -1,7 +1,7 @@
 /* eslint-disable prettier/prettier */
 import React from 'react';
 import cn from 'clsx';
-import s from './option.css';
+import s from './option.module.css';
 
 export interface OptionElement extends Option {
   selected: boolean;

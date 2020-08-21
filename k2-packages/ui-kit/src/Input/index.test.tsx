@@ -1,7 +1,7 @@
 import React from 'react';
 import Input from './index';
 import { shallow, mount } from 'enzyme';
-import s from './style.css';
+import s from './style.module.css';
 
 describe('<Input> component', () => {
   it('Call onChange callback', () => {

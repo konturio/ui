@@ -1,6 +1,6 @@
 import React, { useState, forwardRef, useEffect, useCallback, useRef, useImperativeHandle } from 'react';
 import cn from 'clsx';
-import s from './style.css';
+import s from './style.module.css';
 
 export interface InputProps extends React.HTMLProps<HTMLInputElement> {
   onType?: (text: string) => void;

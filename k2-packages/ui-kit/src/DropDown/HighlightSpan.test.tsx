@@ -1,7 +1,7 @@
 import React from 'react';
 import HighlightSpan from './HighlightSpan';
 import { shallow } from 'enzyme';
-import s from './style.css';
+import s from './style.module.css';
 
 describe('<HighlightSpan> component', () => {
   it('Should highlight text', () => {

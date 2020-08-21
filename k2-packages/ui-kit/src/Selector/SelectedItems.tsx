@@ -1,7 +1,7 @@
 /* eslint-disable prettier/prettier */
 import React, { useState, useCallback } from 'react';
 import cn from 'clsx';
-import s from './selectedItems.css';
+import s from './selectedItems.module.css';
 import { Option } from './Option';
 
 export interface SelectedItems {

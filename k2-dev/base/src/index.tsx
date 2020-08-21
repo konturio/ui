@@ -13,6 +13,7 @@ import NavigationMenu from './NavigationMenu';
 import store from './store';
 
 // Styles
+import '@k2-packages/default-theme/variables.css';
 import './base.styl';
 import '@k2-packages/ui-kit/src/reset.css';
 

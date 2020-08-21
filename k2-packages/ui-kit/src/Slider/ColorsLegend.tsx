@@ -1,6 +1,6 @@
 import React from 'react';
 import cn from 'clsx';
-import s from './style.css';
+import s from './style.module.css';
 
 function StepComponent({ color }: { color: string }): JSX.Element {
   return <div className={s.step} style={{ backgroundColor: color }}></div>;

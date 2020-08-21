@@ -1,6 +1,6 @@
 import React from 'react';
 import cn from 'clsx';
-import s from './style.css';
+import s from './style.module.css';
 import HighlightSpan from './HighlightSpan';
 import SelectableElement from './SelectableElement';
 import { useKeyPress } from './useKeyPress';

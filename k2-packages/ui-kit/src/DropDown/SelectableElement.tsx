@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useCallback } from 'react';
 import cn from 'clsx';
 import { scrollIntoView } from './scrollIntoView';
-import s from './style.css';
+import s from './style.module.css';
 
 interface SelectableElement {
   children: string | React.ReactChild | React.ReactChild[];

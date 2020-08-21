@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cn from 'clsx';
-import s from './style.css';
+import s from './style.module.css';
 
 function Step({ color, weight }) {
   return <div className={s.step} style={{ flex: weight, backgroundColor: color }} title={weight} ></div>;

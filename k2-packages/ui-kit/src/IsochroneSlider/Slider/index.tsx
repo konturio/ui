@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cn from 'clsx';
 import s from './style.module.css';
-import ColorsLegend from './ColorsLegend';
+import { ColorsLegend } from './ColorsLegend';
 import { startCaptureMovement } from './StartCaptureMovement';
 
 function Stick({ className, ...rest }) {
@@ -14,7 +14,7 @@ const getLastColor = (color) => color[0] && color[0][1];
 
 const STICK_ID = 'stick';
 
-export default function Slider({ className, steps, value, onChange }) {
+export function Slider({ className, steps, value, onChange }) {
   const allColorsExceptLast = steps.slice(0, -1);
   const lastColor = getLastColor(steps.slice(-1));
 

@@ -1,8 +1,8 @@
 import React from 'react';
 import cn from 'clsx';
 import s from './style.module.css';
-import HighlightSpan from './HighlightSpan';
-import SelectableElement from './SelectableElement';
+import { HighlightSpan } from './HighlightSpan';
+import { SelectableElement } from './SelectableElement';
 import { useKeyPress } from './useKeyPress';
 
 /**
@@ -37,7 +37,7 @@ interface DropDownProps {
   focusAsSelect?: boolean;
 }
 
-export default function DropDown({
+export function DropDown({
   options,
   selected,
   onChange,

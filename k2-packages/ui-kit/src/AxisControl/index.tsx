@@ -72,7 +72,7 @@ const getGridPosition = (col: number, row: number) => ({
   gridRow: `${row + 1} / ${row + 2}`,
 });
 
-export default function AxisControl({ legend, angle = 0, table, onHover, onClick }: AxisControl) {
+export function AxisControl({ legend, angle = 0, table, onHover, onClick }: AxisControl) {
   return (
     <div className={s.rootGrid}>
       <Axis row records={table.x} />

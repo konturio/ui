@@ -2,8 +2,8 @@
 import React, { useCallback } from 'react';
 import clsx from 'clsx';
 import { Option } from './Option';
-import SelectedItems from './SelectedItems';
-import SimpleSelector from './SimpleSelector';
+import { SelectedItems } from './SelectedItems';
+import { SimpleSelector } from './SimpleSelector';
 import s from './style.module.css';
 
 
@@ -27,7 +27,7 @@ export interface Selector {
   stopPropagation?: boolean;
 }
 
-export default function Selector({
+export function Selector({
   options,
   selected,
   onChange,

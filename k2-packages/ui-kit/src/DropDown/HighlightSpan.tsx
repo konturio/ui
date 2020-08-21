@@ -20,7 +20,7 @@ interface HighlightSpan {
   children: string;
 }
 
-export default function HighlightSpan({ highlight, children }: HighlightSpan) {
+export function HighlightSpan({ highlight, children }: HighlightSpan) {
   const escaped = escapeSpecialCharacters(highlight);
   const between = children.split(new RegExp(escaped, 'gi'));
   return (

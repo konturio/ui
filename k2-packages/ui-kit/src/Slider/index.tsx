@@ -1,7 +1,7 @@
 import React from 'react';
 import cn from 'clsx';
 import s from './style.module.css';
-import ColorsLegend from './ColorsLegend';
+import { ColorsLegend } from './ColorsLegend';
 import { startCaptureMovement } from './startCaptureMovement';
 import { sliderPositionToValue } from './sliderPositionToValue';
 import { valueToSliderPosition } from './valueToSliderPosition';
@@ -34,14 +34,7 @@ interface Slider {
 const addMiddleware = (cb, calculation) => (data) => cb(calculation(data));
 
 const STICK_ID = 'stick';
-export default function Slider({
-  className,
-  colors,
-  outOfRangeColor = 'black',
-  steps,
-  value,
-  onChange,
-}: Slider): JSX.Element {
+export function Slider({ className, colors, outOfRangeColor = 'black', steps, value, onChange }: Slider): JSX.Element {
   const onChangeHandler = steps ? addMiddleware(onChange, sliderPositionToValue(steps)) : onChange;
   const sliderPosition = steps ? valueToSliderPosition(value, steps) : value;
   return (

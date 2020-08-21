@@ -22,7 +22,7 @@ function Row({ cells, style }: { cells: Cell[]; style: {} }) {
   );
 }
 
-export default function Legend({ rowSize, cells, angle = 0 }: Legend) {
+export function Legend({ rowSize, cells, angle = 0 }: Legend) {
   const matrix = createMatrix(cells, rowSize);
   const tableRotationStyle = getRotationStyle(angle);
   const labelRotationStyle = getRotationStyle(angle * -1);

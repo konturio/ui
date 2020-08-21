@@ -8,7 +8,7 @@ interface Card {
   className?: string;
 }
 
-export default function Card({ title, className, children }: Card) {
+export function Card({ title, className, children }: Card) {
   return (
     <div className={cn(s.card, className)}>
       {title && <h3 className={s.title}>{title} </h3>}

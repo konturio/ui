@@ -1,6 +1,6 @@
 import { render, shallow } from 'enzyme';
 import React from 'react';
-import Checkbox from './index';
+import { Checkbox } from './index';
 
 describe('<Checkbox /> component', () => {
   it('Should render without errors', () => {

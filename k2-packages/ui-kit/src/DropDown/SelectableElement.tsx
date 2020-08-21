@@ -24,7 +24,7 @@ const doNothing = (): void => {
 // Safari suck https://bugs.webkit.org/show_bug.cgi?id=13724
 const fixSafariBug = (e): void => e.target.focus();
 
-export default function SelectableElement({
+export function SelectableElement({
   children,
   value,
   id,

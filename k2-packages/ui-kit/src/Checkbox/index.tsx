@@ -14,7 +14,7 @@ interface Checkbox {
   onChange?: (e: ChangeEvent<HTMLInputElement>) => {};
 }
 
-export default function Checkbox({
+export function Checkbox({
   id,
   name,
   value,

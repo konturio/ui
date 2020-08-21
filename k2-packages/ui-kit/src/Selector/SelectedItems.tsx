@@ -28,7 +28,7 @@ function SelectedOption({ label, value, disabled }: Option): JSX.Element {
   )
 }
 
-export default function SelectedItems({
+export function SelectedItems({
   options,
   selected,
   placeholder,

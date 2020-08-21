@@ -1,7 +1,7 @@
 import React from 'react';
 import s from './style.module.css';
-import Card from '../Card';
-import Slider from './Slider';
+import { Card } from '../Card';
+import { Slider } from './Slider';
 
 type Color = string;
 
@@ -13,7 +13,7 @@ export interface IsochroneSlider {
   onSliderChange: (value: number) => void;
 }
 
-export default function IsochroneSlider({
+export function IsochroneSlider({
   rulerNumbers = [],
   sliderValue = 0,
   colorsLegend = [],

@@ -1,6 +1,6 @@
 import React from 'react';
 import s from './style.module.css';
-import Slider from '../Slider';
+import { Slider } from '../Slider';
 
 type Color = string;
 
@@ -12,7 +12,7 @@ export interface TimeSlider {
   onSliderChange: (value: number) => void;
 }
 
-export default function TimeSlider({
+export function TimeSlider({
   rulerNumbers = [],
   sliderValue = 0,
   colorsLegend = [],

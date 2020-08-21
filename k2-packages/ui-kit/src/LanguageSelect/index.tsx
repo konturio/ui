@@ -8,7 +8,7 @@ export interface LanguageSelect {
   className?: string;
 }
 
-export default function LanguageSelect({ languages, onClick, className }: LanguageSelect) {
+export function LanguageSelect({ languages, onClick, className }: LanguageSelect) {
   return (
     <div className={cn(s.languageSelect, className)}>
       {languages.map((lng, i) => (

@@ -1,5 +1,5 @@
 import React from 'react';
-import LanguageSelect from './index';
+import { LanguageSelect } from './index';
 import { render, shallow } from 'enzyme';
 
 describe('<LanguageSelect> component', () => {

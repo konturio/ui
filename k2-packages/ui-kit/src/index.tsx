@@ -1,25 +1,11 @@
-import Input from './Input';
-import Card from './Card';
-import DropDown from './DropDown';
-import Checkbox from './Checkbox';
-import LanguageSelect from './LanguageSelect';
-import Selector from './Selector';
-import Slider from './Slider';
-import TimeSlider from './TimeSlider';
-import IsochroneSlider from './IsochroneSlider';
-import Legend from './Legend';
-import AxisControl from './AxisControl';
-
-export default {
-  Input,
-  Card,
-  DropDown,
-  Checkbox,
-  LanguageSelect,
-  Selector,
-  Slider,
-  TimeSlider,
-  IsochroneSlider,
-  Legend,
-  AxisControl,
-};
+export { Input } from './Input';
+export { Card } from './Card';
+export { DropDown } from './DropDown';
+export { Checkbox } from './Checkbox';
+export { LanguageSelect } from './LanguageSelect';
+export { Selector } from './Selector';
+export { Slider } from './Slider';
+export { TimeSlider } from './TimeSlider';
+export { IsochroneSlider } from './IsochroneSlider';
+export { Legend } from './Legend';
+export { AxisControl } from './AxisControl';

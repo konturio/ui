@@ -1,5 +1,5 @@
 import React from 'react';
-import Input from './index';
+import { Input } from './index';
 import { shallow, mount } from 'enzyme';
 import s from './style.module.css';
 

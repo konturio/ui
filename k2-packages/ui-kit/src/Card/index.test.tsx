@@ -1,5 +1,5 @@
 import React from 'react';
-import Card from './index';
+import { Card } from './index';
 import { shallow } from 'enzyme';
 
 describe('<Card> component ', () => {

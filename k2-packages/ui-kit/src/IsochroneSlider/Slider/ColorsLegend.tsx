@@ -7,7 +7,7 @@ function Step({ color, weight }) {
   return <div className={s.step} style={{ flex: weight, backgroundColor: color }} title={weight} ></div>;
 }
 
-export default function ColorsLegend({ className, steps }) {
+export function ColorsLegend({ className, steps }) {
   return (
     <div className={cn(className, s.steps)}>
       { steps.map(([weight, color]) => <Step key={color} color={color} weight={weight} />) }

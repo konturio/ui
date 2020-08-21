@@ -17,7 +17,7 @@ export type Option = {
   hint?: string
 };
 
-export default function Option({
+export function Option({
   selected,
   onChange = (): void => { /* nothing */ },
   value,

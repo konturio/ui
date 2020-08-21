@@ -12,7 +12,7 @@ interface ColorsLegend {
   colors: Color[];
 }
 
-export default function ColorsLegend({ className, colors }: ColorsLegend): JSX.Element {
+export function ColorsLegend({ className, colors }: ColorsLegend): JSX.Element {
   return (
     <div className={cn(className, s.steps)}>
       {colors.map((color) => (

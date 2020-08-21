@@ -2,17 +2,17 @@
 import React, { useRef, useLayoutEffect } from 'react';
 import cn from 'clsx';
 import s from './simpleSelector.module.css';
-import Option, { Option as TOption } from './Option';
+import { Option } from './Option';
 
 type changeEvent = React.ChangeEvent<HTMLInputElement>;
 
 interface BaseSelector {
-  options: TOption[];
+  options: Option[];
   onChange: (e: changeEvent | MouseEvent) => void;
   className?: string;
   placeholder?: string;
   multi?: boolean;
-  checkSelected: (value: TOption) => boolean;
+  checkSelected: (value: Option) => boolean;
   small?: boolean;
   stopPropagation?: boolean;
   onHover
@@ -30,7 +30,7 @@ interface HorizontalSelector extends BaseSelector {
 
 export type SimpleSelector = HorizontalSelector | VerticalSelector;
 
-export default function SimpleSelector({
+export function SimpleSelector({
   options,
   className,
   checkSelected,

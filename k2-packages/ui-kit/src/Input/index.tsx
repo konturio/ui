@@ -26,7 +26,7 @@ function isFunc<T>(maybeFn: any): maybeFn is (T) => void {
   return typeof maybeFn === 'function';
 }
 
-function Input(
+function InputComponent(
   {
     className,
     error,
@@ -111,4 +111,4 @@ function Input(
   );
 }
 
-export default forwardRef(Input);
+export const Input = forwardRef(InputComponent);

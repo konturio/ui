@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import UI from '@k2-packages/ui-kit';
+import * as UI from '@k2-packages/ui-kit';
 import { SearchIcon } from '@k2-packages/default-icons';
 import { icons } from '@k2-packages/map-draw-tools';
 

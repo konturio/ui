@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import UI from '@k2-packages/ui-kit';
+import { Selector, Legend, AxisControl } from '@k2-packages/ui-kit';
 import style from './style.styl';
 import {
   Stat,
@@ -156,14 +156,14 @@ export default function Bivariate(): JSX.Element {
       />
       <div>
         <div style={{ height: '40px', zIndex: 40, position: 'relative' }}>
-          <UI.Selector
+          <Selector
             selected={xDenominator}
             small={true}
             collapse={true}
             onChange={(value): void => setXDenominator(value)}
             options={availableDenominators.x}
           />
-          <UI.Selector
+          <Selector
             selected={yDenominator}
             small={true}
             collapse={true}
@@ -172,13 +172,13 @@ export default function Bivariate(): JSX.Element {
           />
         </div>
         {table !== undefined && (
-          <UI.AxisControl
+          <AxisControl
             angle={0}
             table={table}
             onHover={hoverHandler}
             onClick={clickHandler}
             legend={(angle) => (
-              <UI.Legend
+              <Legend
                 rowSize={3}
                 angle={angle}
                 cells={new Array(9).fill(0).map((c, i) => ({

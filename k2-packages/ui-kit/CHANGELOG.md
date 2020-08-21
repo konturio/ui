@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.1.0](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@2.0.0...@k2-packages/ui-kit@2.1.0) (2020-08-21)
+
+
+### Features
+
+* upgrade kit ([836b686](https://gitlab.com/kontur-private/k2/k2-front-end/commit/836b686d4ba22b05e894e6b761fffd6921bb3f37))
+
+
+
+
+
 # [2.0.0](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@1.13.0...@k2-packages/ui-kit@2.0.0) (2020-08-20)
 
 

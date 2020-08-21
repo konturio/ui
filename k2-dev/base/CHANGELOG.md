@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.4.0](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-dev/base@2.3.4...@k2-dev/base@2.4.0) (2020-08-21)
+
+
+### Features
+
+* upgrade kit ([836b686](https://gitlab.com/kontur-private/k2/k2-front-end/commit/836b686d4ba22b05e894e6b761fffd6921bb3f37))
+
+
+
+
+
 ## [2.3.4](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-dev/base@2.3.3...@k2-dev/base@2.3.4) (2020-08-20)
 
 **Note:** Version bump only for package @k2-dev/base

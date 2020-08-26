@@ -38,8 +38,8 @@ function Axis({ records, row = false }: Axis) {
 function getGridStyle(x, y) {
   return {
     display: 'grid',
-    gridTemplateColumns: `repeat(${x}, auto)`,
-    gridTemplateRows: `repeat(${y}, auto)`,
+    gridTemplateColumns: `repeat(${x}, 65px)`,
+    gridTemplateRows: `repeat(${y}, 65px)`,
   };
 }
 

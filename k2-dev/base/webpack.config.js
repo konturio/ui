@@ -122,7 +122,7 @@ module.exports = {
       {
         test: /\.css$/,
         use: [MiniCssExtractPlugin.loader, 'css-loader'],
-        exclude: /\.module\.css$/
+        exclude: /\.module\.css$/,
       },
     ],
   },

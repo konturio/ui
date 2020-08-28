@@ -42,13 +42,13 @@
 
 .row .axisRecord {
   writing-mode: vertical-rl;
-  width: 54px;
+  width: 65px;
   display: flex;
   align-items: center;
 }
 
 .column .axisRecord {
-  height: 54px;
+  height: 65px;
 }
 
 .axisRecord {
@@ -58,6 +58,8 @@
 .cellWrapper {
   vertical-align: top;
   text-align: center;
+  margin: 0;
+  padding: 0;
 }
 
 .selected {

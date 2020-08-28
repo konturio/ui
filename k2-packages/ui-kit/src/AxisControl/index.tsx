@@ -1,6 +1,7 @@
 import React from 'react';
 import s from './style.module.css';
 import cn from 'clsx';
+import { attachPositionToCb, setOffset } from './matrixFn';
 
 const getGridStyle = (x, y, cellSize = 'auto') => ({
   display: 'inline-grid',
@@ -8,14 +9,10 @@ const getGridStyle = (x, y, cellSize = 'auto') => ({
   gridTemplateRows: `repeat(${y}, ${cellSize === 'auto' ? 'auto' : cellSize + 'px'})`,
 });
 
-const getGridPosition = (col: number, row: number) => ({
+const getCellPositionStyle = (col: number, row: number) => ({
   gridColumn: `${col + 1} / ${col + 2}`,
   gridRow: `${row + 1} / ${row + 2}`,
 });
-
-const attachPositionToCb = (position: { x: number; y: number }) => (cb?: Function) => (
-  e: React.MouseEvent<HTMLDivElement, MouseEvent>,
-) => cb && cb(e, position);
 
 type TableHeading = {
   label: string;
@@ -40,7 +37,6 @@ export interface AxisControl {
 export function AxisControl({ legend, angle = 0, table, onHover, onClick }: AxisControl) {
   return (
     <div>
-      {/* <Axis row records={table.x} /> */}
       <div className={s.valuesGrid} style={getGridStyle(table.x.length + 1, table.y.length + 1)}>
         {table.x.map((headerCell) => (
           <div
@@ -65,17 +61,17 @@ export function AxisControl({ legend, angle = 0, table, onHover, onClick }: Axis
             {headerCell.label}
           </div>
         ))}
-        {table.matrix.map((row, rI) =>
+        {table.matrix.map((row, rowIndex) =>
           row.map((val, colIndex) => {
-            const rowIndex = rI + 1;
-            const call = attachPositionToCb({ x: colIndex, y: rowIndex - 1 });
-            const isFromSelectedRow = table.selectedCell && table.selectedCell.x === colIndex;
-            const isFromSelectedCol = table.selectedCell && table.selectedCell.y === rowIndex;
+            const call = attachPositionToCb({ x: colIndex, y: rowIndex });
+            const getCellPosition = setOffset(0, 1);
+            const isFromSelectedRow = table.selectedCell && table.selectedCell.x === getCellPosition.col(colIndex);
+            const isFromSelectedCol = table.selectedCell && table.selectedCell.y === getCellPosition.row(rowIndex);
 
             return (
               <div
                 className={cn(s.valueCell, isFromSelectedRow && s.selectedRow, isFromSelectedCol && s.selectedCol)}
-                style={getGridPosition(colIndex, rowIndex)}
+                style={getCellPositionStyle(getCellPosition.col(colIndex), getCellPosition.row(rowIndex))}
                 key={val ?? colIndex}
                 onMouseOver={call(onHover)}
                 onClick={call(onClick)}
@@ -87,7 +83,6 @@ export function AxisControl({ legend, angle = 0, table, onHover, onClick }: Axis
           }),
         )}
       </div>
-      {/* <Axis records={table.y} /> */}
     </div>
   );
 }

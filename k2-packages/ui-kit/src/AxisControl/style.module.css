@@ -36,21 +36,8 @@
   z-index: -1;
 }
 
-.axisTable {
-  border-spacing: 0;
-  border-collapse: collapse;
-  border: none;
-}
-
 .axisRecord {
   padding: var(--unit);
-}
-
-.cellWrapper {
-  vertical-align: top;
-  text-align: center;
-  margin: 0;
-  padding: 0;
 }
 
 .selected {

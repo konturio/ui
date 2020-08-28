@@ -2,39 +2,6 @@ import React from 'react';
 import s from './style.module.css';
 import cn from 'clsx';
 
-interface Axis {
-  records: TableHeading[];
-  row?: boolean;
-}
-
-function Axis({ records, row = false }: Axis) {
-  return (
-    <table className={s.axisTable}>
-      <tbody>
-        {row ? (
-          <tr className={s.row}>
-            {records.map((rec) => (
-              <td key={rec.label} className={s.cellWrapper}>
-                <div className={cn(s.axisRecord, rec.highlight && s.highlight, rec.selected && s.selected)}>
-                  {rec.label}
-                </div>
-              </td>
-            ))}
-          </tr>
-        ) : (
-          records.map((rec) => (
-            <tr key={rec.label} className={[s.column].join(' ')}>
-              <td className={cn(s.axisRecord, rec.highlight && s.highlight, rec.selected && s.selected)}>
-                {rec.label}
-              </td>
-            </tr>
-          ))
-        )}
-      </tbody>
-    </table>
-  );
-}
-
 const getGridStyle = (x, y, cellSize = 'auto') => ({
   display: 'inline-grid',
   gridTemplateColumns: `repeat(${x}, ${cellSize === 'auto' ? 'auto' : cellSize + 'px'})`,

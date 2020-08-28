@@ -1,0 +1,13 @@
+.axisRecord {
+  padding: var(--unit);
+}
+
+.selected {
+  background-color: #008000;
+  color: #fff;
+}
+
+.highlight {
+  background-color: #00f;
+  color: #fff;
+}

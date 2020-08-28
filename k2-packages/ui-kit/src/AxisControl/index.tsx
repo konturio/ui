@@ -35,13 +35,20 @@ function Axis({ records, row = false }: Axis) {
   );
 }
 
-function getGridStyle(x, y) {
-  return {
-    display: 'grid',
-    gridTemplateColumns: `repeat(${x}, 65px)`,
-    gridTemplateRows: `repeat(${y}, 65px)`,
-  };
-}
+const getGridStyle = (x, y, cellSize = 'auto') => ({
+  display: 'inline-grid',
+  gridTemplateColumns: `repeat(${x}, ${cellSize === 'auto' ? 'auto' : cellSize + 'px'})`,
+  gridTemplateRows: `repeat(${y}, ${cellSize === 'auto' ? 'auto' : cellSize + 'px'})`,
+});
+
+const getGridPosition = (col: number, row: number) => ({
+  gridColumn: `${col + 1} / ${col + 2}`,
+  gridRow: `${row + 1} / ${row + 2}`,
+});
+
+const attachPositionToCb = (position: { x: number; y: number }) => (cb?: Function) => (
+  e: React.MouseEvent<HTMLDivElement, MouseEvent>,
+) => cb && cb(e, position);
 
 type TableHeading = {
   label: string;
@@ -63,24 +70,38 @@ export interface AxisControl {
   };
 }
 
-const attachPosition = (position: { x: number; y: number }) => (cb?: Function) => (
-  e: React.MouseEvent<HTMLDivElement, MouseEvent>,
-) => cb && cb(e, position);
-
-const getGridPosition = (col: number, row: number) => ({
-  gridColumn: `${col + 1} / ${col + 2}`,
-  gridRow: `${row + 1} / ${row + 2}`,
-});
-
 export function AxisControl({ legend, angle = 0, table, onHover, onClick }: AxisControl) {
   return (
-    <div className={s.rootGrid}>
-      <Axis row records={table.x} />
-      <div className={s.legendSlot}>{legend(angle)}</div>
-      <div className={s.valuesGrid} style={getGridStyle(table.x.length, table.y.length)}>
-        {table.matrix.map((row, rowIndex) =>
+    <div>
+      {/* <Axis row records={table.x} /> */}
+      <div className={s.valuesGrid} style={getGridStyle(table.x.length + 1, table.y.length + 1)}>
+        {table.x.map((headerCell) => (
+          <div
+            key={headerCell.label}
+            className={cn(
+              s.axisRecord,
+              s.column,
+              s.verticalText,
+              headerCell.highlight && s.highlight,
+              headerCell.selected && s.selected,
+            )}
+          >
+            {headerCell.label}
+          </div>
+        ))}
+        <div className={s.legendSlot}>{legend(angle)}</div>
+        {table.y.map((headerCell) => (
+          <div
+            key={headerCell.label}
+            className={cn(s.axisRecord, s.row, headerCell.highlight && s.highlight, headerCell.selected && s.selected)}
+          >
+            {headerCell.label}
+          </div>
+        ))}
+        {table.matrix.map((row, rI) =>
           row.map((val, colIndex) => {
-            const call = attachPosition({ x: colIndex, y: rowIndex });
+            const rowIndex = rI + 1;
+            const call = attachPositionToCb({ x: colIndex, y: rowIndex - 1 });
             const isFromSelectedRow = table.selectedCell && table.selectedCell.x === colIndex;
             const isFromSelectedCol = table.selectedCell && table.selectedCell.y === rowIndex;
 
@@ -99,7 +120,7 @@ export function AxisControl({ legend, angle = 0, table, onHover, onClick }: Axis
           }),
         )}
       </div>
-      <Axis records={table.y} />
+      {/* <Axis records={table.y} /> */}
     </div>
   );
 }

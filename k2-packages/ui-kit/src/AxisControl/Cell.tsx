@@ -35,7 +35,9 @@ export function Cell({
       onMouseOver={onHover}
       onClick={onClick}
     >
-      <div className={s.valueFill} style={{ opacity: value === null ? 0 : Math.abs(value) }}></div>
+      <div className={s.valueFill} style={{ transform: `scale(${value === null ? 0 : Math.abs(value)})`  }}></div>
+      {/* <div className={s.valueFill} style={{ opacity: value === null ? 0 : Math.abs(value) }}></div> */}
+
       {children}
     </div>
   );

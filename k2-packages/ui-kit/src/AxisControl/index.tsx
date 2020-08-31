@@ -53,7 +53,7 @@ export function AxisControl({ legend, angle = 0, table, onHover, onClick }: Axis
                 positionY={getCellPosition.row(rowIndex)}
                 value={val}
               >
-                {val?.toFixed(3)}
+                <span style={{ transform: `rotate(${-angle}deg)` }}>{val?.toFixed(3)}</span>
               </Cell>
             );
           }),

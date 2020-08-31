@@ -9,3 +9,4 @@ export { TimeSlider } from './TimeSlider';
 export { IsochroneSlider } from './IsochroneSlider';
 export { Legend } from './Legend';
 export { AxisControl } from './AxisControl';
+export { Rotator } from './Rotator';

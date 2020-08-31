@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { Selector, Legend, AxisControl } from '@k2-packages/ui-kit';
+import { Selector, Legend, AxisControl, Rotator } from '@k2-packages/ui-kit';
 import style from './style.styl';
 import {
   Stat,
@@ -141,7 +141,7 @@ export default function Bivariate(): JSX.Element {
       version: 8,
       layers: [bivariateStyle],
     });
-    console.log(selectedAxises)
+    console.log(selectedAxises);
   }, [selectedAxises, stats?.meta]);
 
   return (
@@ -172,22 +172,26 @@ export default function Bivariate(): JSX.Element {
           />
         </div>
         {table !== undefined && (
-          <AxisControl
-            angle={0}
-            table={table}
-            onHover={hoverHandler}
-            onClick={clickHandler}
-            legend={(angle) => (
-              <Legend
-                rowSize={3}
+          <Rotator angle={-45}>
+            {({ angle, }) => (
+              <AxisControl
                 angle={angle}
-                cells={new Array(9).fill(0).map((c, i) => ({
-                  color: `hsl(${(360 / 9) * i}, 50%, 50%)`,
-                  label: String(i),
-                }))}
+                table={table}
+                onHover={hoverHandler}
+                onClick={clickHandler}
+                legend={(angle) => (
+                  <Legend
+                    rowSize={3}
+                    angle={angle}
+                    cells={new Array(9).fill(0).map((c, i) => ({
+                      color: `hsl(${(360 / 9) * i}, 50%, 50%)`,
+                      label: String(i),
+                    }))}
+                  />
+                )}
               />
             )}
-          />
+          </Rotator>
         )}
       </div>
     </div>

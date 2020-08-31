@@ -24,11 +24,10 @@ function Row({ cells, style }: { cells: Cell[]; style: {} }) {
 
 export function Legend({ rowSize, cells, angle = 0 }: Legend) {
   const matrix = createMatrix(cells, rowSize);
-  const tableRotationStyle = getRotationStyle(angle);
   const labelRotationStyle = getRotationStyle(angle * -1);
 
   return (
-    <table className={s.table} style={tableRotationStyle}>
+    <table className={s.table}>
       <tbody>
         {matrix.map((rowCells: Cell[], i) => (
           <Row key={i} cells={rowCells} style={labelRotationStyle} />

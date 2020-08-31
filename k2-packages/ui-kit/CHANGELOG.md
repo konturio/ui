@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.3.0](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@2.2.3...@k2-packages/ui-kit@2.3.0) (2020-08-31)
+
+
+### Features
+
+* add rotation ([0ebded6](https://gitlab.com/kontur-private/k2/k2-front-end/commit/0ebded64370609b2839eded01cc4375c2dd0e524))
+
+
+
+
+
 ## [2.2.3](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@2.2.2...@k2-packages/ui-kit@2.2.3) (2020-08-28)
 
 **Note:** Version bump only for package @k2-packages/ui-kit

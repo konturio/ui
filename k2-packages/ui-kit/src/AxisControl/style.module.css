@@ -10,8 +10,14 @@
 }
 
 
-.selectedRow .valueFill, .selectedCol .valueFill {
-  background-color: #00f;
+.selectedCol {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.selectedRow {
+  border-right: 1px solid black;
+  border-left: 1px solid black;
 }
 
 .verticalText {

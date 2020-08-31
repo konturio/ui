@@ -40,10 +40,9 @@ export function AxisControl({ legend, angle = 0, table, onHover, onClick }: Axis
         {table.matrix.map((row, rowIndex) =>
           row.map((val, colIndex) => {
             const call = attachPositionToCb({ x: colIndex, y: rowIndex });
+            const isFromSelectedRow = checkIsFromSelectedRow(colIndex);
+            const isFromSelectedCol = checkIsFromSelectedCol(rowIndex);
             const getCellPosition = setOffset(0, 1);
-            const isFromSelectedRow = checkIsFromSelectedRow(getCellPosition.col(colIndex));
-            const isFromSelectedCol = checkIsFromSelectedCol(getCellPosition.row(rowIndex));
-
             return (
               <Cell
                 selected={isFromSelectedRow && isFromSelectedCol}

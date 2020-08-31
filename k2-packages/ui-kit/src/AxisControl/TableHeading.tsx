@@ -11,11 +11,19 @@ export type TableHeading = {
 export interface TableHeadingProps {
   className?: string;
   entries: TableHeading[];
+  vertical?: boolean;
 }
 
-export function TableHeading({ className, entries }: TableHeadingProps) {
+export function TableHeading({ className, entries, vertical = false }: TableHeadingProps) {
   const getClasses = (cell: TableHeading) =>
-    cn(s.axisRecord, cell.highlight && s.highlight, cell.selected && s.selected, className);
+    cn(
+      s.axisRecord,
+      cell.highlight && s.highlight,
+      cell.selected && s.selected,
+      vertical ? s.column : s.row,
+      vertical && s.verticalText,
+      className,
+    );
 
   return (
     <>

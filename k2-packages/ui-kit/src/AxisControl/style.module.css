@@ -9,7 +9,6 @@
   grid-row-start: 1 ;
 }
 
-
 .selectedCol {
   border-top: 1px solid black;
   border-bottom: 1px solid black;
@@ -18,21 +17,4 @@
 .selectedRow {
   border-right: 1px solid black;
   border-left: 1px solid black;
-}
-
-.verticalText {
-  writing-mode: vertical-rl;
-}
-
-.row {
-  height: var(--cell-side);
-  grid-column-start: -1;
-  display: flex;
-  align-items: center;
-}
-
-.column {
-  width: var(--cell-side);
-  display: flex;
-  align-items: center;
 }

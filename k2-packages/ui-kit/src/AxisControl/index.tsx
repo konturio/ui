@@ -33,9 +33,9 @@ export function AxisControl({ legend, angle = 0, table, onHover, onClick }: Axis
   return (
     <div>
       <div className={s.valuesGrid} style={getGridStyle(table.x.length + 1, table.y.length + 1)}>
-        <TableHeading entries={table.x} className={cn(s.column, s.verticalText)} />
+        <TableHeading entries={table.x} vertical />
         <div className={s.legendSlot}>{legend(angle)}</div>
-        <TableHeading entries={table.y} className={cn(s.row)} />
+        <TableHeading entries={table.y} />
 
         {table.matrix.map((row, rowIndex) =>
           row.map((val, colIndex) => {

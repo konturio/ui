@@ -2,12 +2,37 @@
   padding: var(--unit);
 }
 
-.selected {
-  background-color: #008000;
-  color: #fff;
+.row.selected {
+  font-weight: bold;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+}
+
+.column.selected {
+  font-weight: bold;
+  border-right: 1px solid black;
+  border-left: 1px solid black;
+  border-top:  1px solid black;
 }
 
 .highlight {
-  background-color: #00f;
-  color: #fff;
+  color: red;
+}
+
+.verticalText {
+  writing-mode: vertical-rl;
+}
+
+.row {
+  height: var(--cell-side);
+  grid-column-start: -1;
+  display: flex;
+  align-items: center;
+}
+
+.column {
+  width: var(--cell-side);
+  display: flex;
+  align-items: center;
 }

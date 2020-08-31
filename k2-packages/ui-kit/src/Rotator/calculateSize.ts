@@ -1,5 +1,3 @@
-import { ElementRef } from 'react';
-
 /* Find container size after transform rotation */
 export function calculateSize(
   el: HTMLElement | null,

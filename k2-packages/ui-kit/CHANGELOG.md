@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.4.0](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@2.3.1...@k2-packages/ui-kit@2.4.0) (2020-09-01)
+
+
+### Features
+
+* add placeholders cells ([4f46923](https://gitlab.com/kontur-private/k2/k2-front-end/commit/4f46923698dfe73b5e8ec673148b2dacf5781df1))
+
+
+
+
+
 ## [2.3.1](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@2.3.0...@k2-packages/ui-kit@2.3.1) (2020-08-31)
 
 

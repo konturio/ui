@@ -46,7 +46,7 @@ export function AxisControl({ legend, angle = 0, table, onHover, onClick }: Axis
             if (val === null) {
               return (
                 <Cell
-                  className={cn(isFromSelectedRow && s.selectedRow, isFromSelectedCol && s.selectedCol)}
+                  className={cn(s.borders, isFromSelectedRow && s.selectedRow, isFromSelectedCol && s.selectedCol)}
                   key={val ?? `${colIndex}|${rowIndex}`}
                   positionX={getCellPosition.col(colIndex)}
                   positionY={getCellPosition.row(rowIndex)}

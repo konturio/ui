@@ -3,14 +3,16 @@
 }
 
 .row.selected {
-  font-weight: bold;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
   border-top: 1px solid black;
   border-bottom: 1px solid black;
   border-right: 1px solid black;
 }
 
 .column.selected {
-  font-weight: bold;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
   border-right: 1px solid black;
   border-left: 1px solid black;
   border-top:  1px solid black;

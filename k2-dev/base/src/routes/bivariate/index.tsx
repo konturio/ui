@@ -171,7 +171,7 @@ export default function Bivariate(): JSX.Element {
           />
         </div>
         {table !== undefined && (
-          <Rotator angle={-45}>
+          <Rotator angle={-45} watch={[xDenominator, yDenominator]}>
             {({ angle }) => (
               <AxisControl
                 angle={angle}

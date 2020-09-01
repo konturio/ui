@@ -5,9 +5,11 @@ import s from './rotator.module.css';
 interface RotatorProps {
   angle: number;
   children: ({ angle, reCalcSpace }) => React.ReactChild;
+  /* Rotator will be watch for changes in this prop and recalculate bbox after changes */
+  watch: any[];
 }
 
-export function Rotator({ angle, children }: RotatorProps) {
+export function Rotator({ angle, children, watch }: RotatorProps) {
   const childContainerRef = useRef<HTMLDivElement>(null);
   const [wrapperSize, setWrapperSize] = useState({ width: 'unset', height: 'unset' });
 
@@ -17,7 +19,7 @@ export function Rotator({ angle, children }: RotatorProps) {
 
   useEffect(() => {
     reCalcSpace();
-  }, []);
+  }, watch);
 
   return (
     <div id="wrapper" className={s.wrapper} style={{ width: wrapperSize.width, height: wrapperSize.height }}>

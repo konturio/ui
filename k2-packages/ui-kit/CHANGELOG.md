@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.5.0](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@2.4.0...@k2-packages/ui-kit@2.5.0) (2020-09-01)
+
+
+### Bug Fixes
+
+* bounce after cells selected ([9097461](https://gitlab.com/kontur-private/k2/k2-front-end/commit/9097461994c39a004e9658283cc6c619a749d0c6))
+
+
+### Features
+
+* add recalc after change ability ([ec34b2e](https://gitlab.com/kontur-private/k2/k2-front-end/commit/ec34b2e07159059ce1d120726c9c1c83c857d02c))
+
+
+
+
+
 # [2.4.0](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@2.3.1...@k2-packages/ui-kit@2.4.0) (2020-09-01)
 
 

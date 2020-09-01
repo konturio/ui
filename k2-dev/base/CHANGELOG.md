@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.6.0](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-dev/base@2.5.2...@k2-dev/base@2.6.0) (2020-09-01)
+
+
+### Features
+
+* add recalc after change ability ([ec34b2e](https://gitlab.com/kontur-private/k2/k2-front-end/commit/ec34b2e07159059ce1d120726c9c1c83c857d02c))
+
+
+
+
+
 ## [2.5.2](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-dev/base@2.5.1...@k2-dev/base@2.5.2) (2020-09-01)
 
 **Note:** Version bump only for package @k2-dev/base

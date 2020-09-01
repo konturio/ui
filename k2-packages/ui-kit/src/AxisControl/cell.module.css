@@ -25,3 +25,12 @@
   z-index: -1;
   border-radius: 50%;
 }
+
+.disabled {
+  /* background-color: hsla(0, 0%, 0%, 0.03); */
+}
+
+.disabled:hover {
+  box-shadow: none;
+}
+

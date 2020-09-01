@@ -16,6 +16,7 @@ export interface CellProps {
   onClick?: (e) => void;
   value: number | null;
   selected?: boolean;
+  disabled?: boolean;
 }
 
 export function Cell({
@@ -26,16 +27,17 @@ export function Cell({
   children,
   onHover,
   onClick,
+  disabled = false,
   selected = false,
 }: CellProps) {
   return (
     <div
-      className={cn(s.valueCell, className)}
+      className={cn(s.valueCell, className, disabled && s.disabled)}
       style={getCellPositionStyle(positionX, positionY)}
       onMouseOver={onHover}
       onClick={onClick}
     >
-      <div className={s.valueFill} style={{ transform: `scale(${value === null ? 0 : Math.abs(value)})`  }}></div>
+      <div className={s.valueFill} style={{ transform: `scale(${value === null ? 0 : Math.abs(value)})` }}></div>
       {/* <div className={s.valueFill} style={{ opacity: value === null ? 0 : Math.abs(value) }}></div> */}
 
       {children}

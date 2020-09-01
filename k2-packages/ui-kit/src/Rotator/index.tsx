@@ -18,7 +18,7 @@ export function Rotator({ angle, children }: RotatorProps) {
   useEffect(() => {
     reCalcSpace();
   }, []);
-  console.log(wrapperSize)
+
   return (
     <div id="wrapper" className={s.wrapper} style={{ width: wrapperSize.width, height: wrapperSize.height }}>
       <div id="container" ref={childContainerRef} style={{ transform: `rotate(${angle}deg)` }}>

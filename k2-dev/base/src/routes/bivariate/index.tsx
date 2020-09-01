@@ -141,7 +141,6 @@ export default function Bivariate(): JSX.Element {
       version: 8,
       layers: [bivariateStyle],
     });
-    console.log(selectedAxises);
   }, [selectedAxises, stats?.meta]);
 
   return (
@@ -173,7 +172,7 @@ export default function Bivariate(): JSX.Element {
         </div>
         {table !== undefined && (
           <Rotator angle={-45}>
-            {({ angle, }) => (
+            {({ angle }) => (
               <AxisControl
                 angle={angle}
                 table={table}

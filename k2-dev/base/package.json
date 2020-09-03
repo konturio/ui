@@ -1,6 +1,6 @@
 {
   "name": "@k2-dev/base",
-  "version": "2.7.1",
+  "version": "2.7.2",
   "main": "src/index.tsx",
   "types": "tsclib",
   "private": true,
@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@deck.gl/layers": "^8.1.9",
-    "@k2-packages/bivariate-tools": "^1.4.0",
+    "@k2-packages/bivariate-tools": "^1.4.1",
     "@k2-packages/boundaries": "^1.0.17",
     "@k2-packages/client": "^1.9.5",
     "@k2-packages/deck-gl": "^2.1.0",

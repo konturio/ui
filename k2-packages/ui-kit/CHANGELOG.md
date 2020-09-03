@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.6.0](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@2.5.0...@k2-packages/ui-kit@2.6.0) (2020-09-03)
+
+
+### Bug Fixes
+
+* **kit:** integration issues with legend component ([ce9e404](https://gitlab.com/kontur-private/k2/k2-front-end/commit/ce9e404a269f433621c5a44b7ab39f1327980f84))
+
+
+### Features
+
+* **kit:** legend component ([3bfc5cc](https://gitlab.com/kontur-private/k2/k2-front-end/commit/3bfc5ccf5d75b1cd7b796d937ff62707428145fd))
+* **ui-kit:** optional watch prop for Rtoation component ([4fa3f09](https://gitlab.com/kontur-private/k2/k2-front-end/commit/4fa3f09a5ffe8c52ee92416de208e7e4e515c1f3))
+
+
+
+
+
 # [2.5.0](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@2.4.0...@k2-packages/ui-kit@2.5.0) (2020-09-01)
 
 

@@ -25,6 +25,7 @@ import DeckGl from './routes/deck-gl';
 import MapDrawTools from './routes/draw-tools';
 import Boundaries from './routes/boundaries';
 import Bivariate from './routes/bivariate';
+import { BivariateLegend } from './routes/bivariate-legend';
 
 const LoadingState = <div style={{ background: 'aqua', width: '100px', height: '100px' }}>Loading...</div>;
 
@@ -44,6 +45,8 @@ const BasicRouting = (): JSX.Element => (
             { to: '/draw-tools', label: 'Draw-tools' },
             { to: '/boundaries', label: 'Boundaries' },
             { to: '/bivariate', label: 'Bivariate' },
+            { to: '/bivariate-legend', label: 'Bivariate legend' },
+
             /* !not-delete! cli:link */
             /* eslint-enable no-multi-spaces */
           ]}
@@ -75,6 +78,9 @@ const BasicRouting = (): JSX.Element => (
           </Route>
           <Route path="/bivariate">
             <Bivariate />
+          </Route>
+          <Route path="/bivariate-legend">
+            <BivariateLegend />
           </Route>
           {/* !not-delete! cli:route */}
         </Switch>

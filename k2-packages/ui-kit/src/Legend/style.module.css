@@ -1,15 +1,85 @@
-.cell {
-  width: calc(var(--unit) * 5);
-  height: calc(var(--unit) * 5);
-  overflow: hidden;
-  padding: 0;
-  border: var(--input-border);
-  vertical-align: middle;
-  text-align: center;
-  font-size: 18px;
+.grid {
+  display: inline-grid;
+  grid-auto-flow: dense;
 }
 
-.table {
-  border-spacing: 0;
-  border-collapse: collapse;
+.cell {
+  padding: var(--unit);
+  font-size: .7em;
+  width: 65px;
+  height: 65px;
+}
+
+.colorCell {
+  opacity: .7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2em;
+}
+
+.yStepsCell { 
+  position: relative;
+  text-align: right;
+}
+
+.yStepsCell:before {
+  border-bottom: 1px solid gray;
+  content: '';
+  width: 24px;
+  height: 1px;
+  position: absolute;
+  bottom: -1px;
+  right: 0;
+}
+
+.xStepsCell {
+  display: flex;
+  position: relative;
+}
+
+.xStepsCell:before {
+  border-left: 1px solid gray;
+  content: '';
+  height: 24px;
+  width: 1px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.arrowX, .arrowY {
+  background-color: black;
+
+}
+
+.arrowY {
+  width: 1px;
+  height: 100%;
+  grid-area:  1 / 2 / -1 / 2;
+  position: relative;
+}
+
+.arrowY:after {
+  content: '>';
+  display: inline-block;
+  position: absolute;
+  line-height: 0px;
+  right: -3.5px;
+  transform: rotate(-90deg);
+}
+
+.arrowX {
+  height: 1px;
+  grid-area:  -2 / 1 / -2 / -1;
+  position: relative;
+}
+
+.arrowX:after {
+  content: '>';
+  display: inline-block;
+  position: absolute;
+  right: -3px;
+  line-height: 0px;
+  top: 0px;
 }

@@ -27,6 +27,7 @@ type Option = { label: string; value: string };
 const PLACEHOLDER = { label: 'No options', value: 'not-selected' };
 const createOptions = (strings: string[]) => strings.map((d) => ({ label: d, value: d }));
 
+
 export default function Bivariate(): JSX.Element {
   const [stats, setStats] = useState<Stat>();
 
@@ -171,7 +172,7 @@ export default function Bivariate(): JSX.Element {
           />
         </div>
         {table !== undefined && (
-          <Rotator angle={-45}>
+          <Rotator angle={-45} watch={[xDenominator, yDenominator]}>
             {({ angle }) => (
               <AxisControl
                 angle={angle}

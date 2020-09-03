@@ -1,0 +1,54 @@
+{
+  "x": {
+    "label": "",
+    "steps": [
+      {
+        "label": "",
+        "value": 0
+      },
+      {
+        "label": "",
+        "value": 83.82118246274882
+      },
+      {
+        "label": "",
+        "value": 323.6715697555565
+      },
+      {
+        "label": "",
+        "value": 387710
+      }
+    ],
+    "quality": 0.9999999999999998,
+    "quotient": [
+      "highway_length",
+      "count"
+    ]
+  },
+  "y": {
+    "label": "",
+    "steps": [
+      {
+        "label": "",
+        "value": 0
+      },
+      {
+        "label": "",
+        "value": 0.0000014058423517057328
+      },
+      {
+        "label": "",
+        "value": 0.000014823716049991924
+      },
+      {
+        "label": "",
+        "value": 248912701
+      }
+    ],
+    "quality": 0.8825878773144424,
+    "quotient": [
+      "area_km2",
+      "gdp"
+    ]
+  }
+}

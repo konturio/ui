@@ -6,8 +6,8 @@
 .cell {
   padding: var(--unit);
   font-size: .7em;
-  width: 65px;
-  height: 65px;
+  width: 45px;
+  height: 45px;
 }
 
 .colorCell {
@@ -21,6 +21,9 @@
 .yStepsCell { 
   position: relative;
   text-align: right;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
 }
 
 .yStepsCell:before {

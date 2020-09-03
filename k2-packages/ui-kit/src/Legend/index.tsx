@@ -2,7 +2,6 @@ import React from 'react';
 import cn from 'clsx';
 import s from './style.module.css';
 import { Cell } from './types';
-import { createMatrix } from './matrix';
 import { getRotationStyle } from './styleGen';
 import { fillTemplate } from './gridTemplate';
 
@@ -14,8 +13,8 @@ type Axis = {
 };
 
 export interface Legend {
-  rowSize: number;
   cells: Cell[];
+  size: number;
   angle?: number;
   axis: {
     x: Axis;
@@ -41,8 +40,7 @@ const getCellPositionStyle = (col: number, row: number) => ({
   gridRow: `${row + 1} / ${row + 2}`,
 });
 
-export function Legend({ rowSize, cells, angle = 0, axis }: Legend) {
-  const matrix = createMatrix(cells, rowSize);
+export function Legend({ cells, size, angle = 0, axis }: Legend) {
   const labelRotationStyle = getRotationStyle(angle * -1);
 
   const gridCells = fillTemplate(TEMPLATE, {
@@ -54,23 +52,19 @@ export function Legend({ rowSize, cells, angle = 0, axis }: Legend) {
       label: step.label || step.value.toFixed(1),
       className: s.yStepsCell,
     })),
-    c: matrix
-      .map((row: Cell[]) =>
-        row.map((cell) => ({
-          label: cell.label,
-          className: cn(s.cell, s.colorCell),
-          style: Object.assign({ backgroundColor: cell.color }, labelRotationStyle),
-        })),
-      )
-      .flat(),
+    c: cells.map((cell) => ({
+      label: <span style={labelRotationStyle}>{cell.label}</span>,
+      className: cn(s.cell, s.colorCell),
+      style: { backgroundColor: cell.color },
+    })),
   });
 
   return (
     <div
       className={s.grid}
       style={{
-        gridTemplateColumns: `repeat(${matrix[0].length + 2}, 1fr)`,
-        gridTemplateRows: `repeat(${matrix.length + 2}, 1fr)`,
+        gridTemplateColumns: `repeat(${size + 2}, 1fr)`,
+        gridTemplateRows: `repeat(${size + 2}, 1fr)`,
       }}
     >
       <div className={s.arrowX}></div>
@@ -82,7 +76,7 @@ export function Legend({ rowSize, cells, angle = 0, axis }: Legend) {
           style={Object.assign(getCellPositionStyle(cell._position.x, cell._position.y), cell.style)}
           className={cn(cell.className, s.cell)}
         >
-          <span>{cell.label}</span>
+          { cell.label }
         </div>
       ))}
     </div>

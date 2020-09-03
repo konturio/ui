@@ -88,16 +88,6 @@ export default function Kit(): JSX.Element {
           onSliderChange={(value): void => setSliderValue(value)}
         />
       </div>
-      <div className={style.box}>
-        <UI.Legend
-          rowSize={3}
-          angle={20}
-          cells={new Array(9).fill(0).map((c, i) => ({
-            color: `hsl(${(360 / 9) * i}, 50%, 50%)`,
-            label: String(i),
-          }))}
-        />
-      </div>
     </form>
   );
 }

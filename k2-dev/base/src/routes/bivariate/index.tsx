@@ -13,6 +13,7 @@ import {
 } from '@k2-packages/bivariate-tools';
 import { updateTableOnClick } from './handlers';
 import MapboxMap from '@k2-packages/mapbox-map';
+import selectedAxis from './axis.json';
 
 const mapboxConfig: {
   accessToken: string;
@@ -181,8 +182,9 @@ export default function Bivariate(): JSX.Element {
                 onClick={clickHandler}
                 legend={(angle) => (
                   <Legend
-                    rowSize={3}
+                    size={3}
                     angle={angle}
+                    axis={selectedAxis}
                     cells={new Array(9).fill(0).map((c, i) => ({
                       color: `hsl(${(360 / 9) * i}, 50%, 50%)`,
                       label: String(i),

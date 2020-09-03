@@ -5,7 +5,7 @@ import s from './style.module.css';
 import selectedAxis from './axis.json';
 
 export function BivariateLegend() {
-  const [legend, setLegend] = useState([
+  const [legend] = useState([
     {
       label: 'C1',
       color: 'rgb(90,200,127)',
@@ -46,7 +46,7 @@ export function BivariateLegend() {
 
   return (
     <div className={cn(s.center, s.fullHeight)}>
-      <Legend rowSize={3} angle={0} cells={legend} axis={selectedAxis} />
+      <Legend size={3} angle={0} cells={legend} axis={selectedAxis} />
     </div>
   );
 }

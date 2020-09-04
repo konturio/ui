@@ -7,7 +7,7 @@ import { fillTemplate } from './gridTemplate';
 
 type Axis = {
   label: string;
-  steps: { label: string; value: number }[];
+  steps: { label?: string; value: number }[];
   quality: number;
   quotient: string[];
 };

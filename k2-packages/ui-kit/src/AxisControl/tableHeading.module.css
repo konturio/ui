@@ -31,6 +31,7 @@
   grid-column-start: -1;
   display: flex;
   align-items: center;
+  border: 1px solid transparent;
 }
 
 .column {
@@ -38,4 +39,5 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  border: 1px solid transparent;
 }

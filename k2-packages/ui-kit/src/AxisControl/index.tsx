@@ -5,10 +5,11 @@ import { attachPositionToCb, setOffset } from './matrixFn';
 import { Cell } from './Cell';
 import { TableHeading } from './TableHeading';
 
-const getGridStyle = (x, y, cellSize = 'auto') => ({
+const getGridStyle = (x, y, cellSize = 0) => ({
   display: 'inline-grid',
-  gridTemplateColumns: `repeat(${x}, ${cellSize === 'auto' ? 'auto' : cellSize + 'px'})`,
-  gridTemplateRows: `repeat(${y}, ${cellSize === 'auto' ? 'auto' : cellSize + 'px'})`,
+  '--cell-size': cellSize === 0 ? 'initial' : `${cellSize}px`,
+  gridTemplateRows: `repeat(${y}, ${cellSize === 0 ? 'auto' : cellSize + 'px'})`,
+  gridTemplateColumns: `repeat(${x}, ${cellSize === 0 ? 'auto' : cellSize + 'px'})`,
 });
 
 type MatrixEvents = (e, { x, y }: { x: number; y: number }) => void;
@@ -17,6 +18,7 @@ export interface AxisControl {
   angle?: number;
   onHover?: MatrixEvents;
   onClick?: MatrixEvents;
+  cellSize?: number;
   table: {
     x: TableHeading[];
     y: TableHeading[];
@@ -26,12 +28,13 @@ export interface AxisControl {
 }
 const isSelected = (selected?: number) => (current: number) => selected === current;
 
-export function AxisControl({ legend, angle = 0, table, onHover, onClick }: AxisControl) {
+export function AxisControl({ legend, angle = 0, table, onHover, onClick, cellSize = 0 }: AxisControl) {
   const checkIsFromSelectedRow = isSelected(table.selectedCell?.x);
   const checkIsFromSelectedCol = isSelected(table.selectedCell?.y);
   return (
     <div>
-      <div className={s.valuesGrid} style={getGridStyle(table.x.length + 1, table.y.length + 1)}>
+      <style>--cell-side: 65px;</style>
+      <div className={s.valuesGrid} style={getGridStyle(table.x.length + 1, table.y.length + 1, cellSize)}>
         <TableHeading entries={table.x} vertical />
         <div className={s.legendSlot}>{legend(angle)}</div>
         <TableHeading entries={table.y} />

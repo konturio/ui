@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.7.0](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@2.6.1...@k2-packages/ui-kit@2.7.0) (2020-09-07)
+
+
+### Features
+
+* **kit:** add prop for costumize cell size ([0d90234](https://gitlab.com/kontur-private/k2/k2-front-end/commit/0d9023451a58914bd4976d34a61d9ef277557659))
+
+
+
+
+
 ## [2.6.1](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@2.6.0...@k2-packages/ui-kit@2.6.1) (2020-09-04)
 
 **Note:** Version bump only for package @k2-packages/ui-kit

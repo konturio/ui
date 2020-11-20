@@ -5,7 +5,7 @@ import s from './rotator.module.css';
 interface RotatorProps {
   angle: number;
   time?: number;
-  timingFunction: string;
+  timingFunction?: string;
   children: ({ angle, reCalcSpace }) => React.ReactChild;
   /* Rotator will be watch for changes in this prop and recalculate bbox after changes */
   watch?: any[];

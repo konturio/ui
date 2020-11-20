@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.8.1](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@2.8.0...@k2-packages/ui-kit@2.8.1) (2020-11-20)
+
+
+### Bug Fixes
+
+* timing function must be optional ([05e8b5f](https://gitlab.com/kontur-private/k2/k2-front-end/commit/05e8b5f18b117f4d93f3b967be45787863f02bf3))
+
+
+
+
+
 # [2.8.0](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@2.7.1...@k2-packages/ui-kit@2.8.0) (2020-11-20)
 
 

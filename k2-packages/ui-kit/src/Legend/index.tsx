@@ -63,8 +63,8 @@ export function Legend({ cells, size, angle = 0, axis }: Legend) {
     <div
       className={s.grid}
       style={{
-        gridTemplateColumns: `repeat(${size + 2}, 1fr)`,
-        gridTemplateRows: `repeat(${size + 2}, 1fr)`,
+        gridTemplateColumns: `repeat(${size + 2}, auto)`,
+        gridTemplateRows: `repeat(${size + 2}, auto)`,
       }}
     >
       <div className={s.arrowX}></div>

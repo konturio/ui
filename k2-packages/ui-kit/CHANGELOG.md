@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.8.0](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@2.7.1...@k2-packages/ui-kit@2.8.0) (2020-11-20)
+
+
+### Bug Fixes
+
+* legend legend values overlaps ([9abab5c](https://gitlab.com/kontur-private/k2/k2-front-end/commit/9abab5c0192e633b4eff9968aef88deedcf28286))
+
+
+### Features
+
+* animation for rotator ([d46c7e1](https://gitlab.com/kontur-private/k2/k2-front-end/commit/d46c7e1831ecbfafe87ea94670e01cf7f741022e))
+
+
+
+
+
 ## [2.7.1](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@2.7.0...@k2-packages/ui-kit@2.7.1) (2020-09-07)
 
 **Note:** Version bump only for package @k2-packages/ui-kit

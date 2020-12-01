@@ -40,7 +40,7 @@ interface LegendProps {
   }
 }
 
-export const Legend: React.FC<LegendProps> =  props => {
+export const Legend: React.FC<LegendProps> = (props: LegendProps) => {
   const { cells, size, angle = 0, axis } = props;
   const labelRotationStyle = getRotationStyle(angle * -1);
 

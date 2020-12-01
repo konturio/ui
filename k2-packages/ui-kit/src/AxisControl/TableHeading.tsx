@@ -16,7 +16,7 @@ interface TableHeadingProps {
   vertical?: boolean;
 }
 
-export const TableHeading: React.FC<TableHeadingProps> = (props) => {
+export const TableHeading: React.FC<TableHeadingProps> = (props: TableHeadingProps) => {
   const { className, entries, vertical = false } = props;
 
   return (

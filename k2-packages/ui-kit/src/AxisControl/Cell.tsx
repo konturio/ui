@@ -4,7 +4,7 @@ import clsx from 'clsx';
 
 const getCellPositionStyle = (col: number, row: number) => ({
   gridColumn: `${col + 1} / ${col + 2}`,
-  gridRow: `${row + 1} / ${row + 2}`,
+  gridRow: `${row + 1} / ${row + 2}`
 });
 
 interface CellProps {
@@ -21,8 +21,7 @@ interface CellProps {
 }
 
 export const Cell: React.FC<CellProps> = (props: CellProps) => {
-  const { positionX, positionY, value, className, children, onHover, onMouseOut, onClick,
-    disabled = false, selected = false } = props;
+  const { positionX, positionY, value, className, children, onHover, onMouseOut, onClick, disabled = false } = props;
 
   return (
     <div

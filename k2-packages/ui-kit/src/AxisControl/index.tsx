@@ -33,7 +33,7 @@ interface AxisControlProps {
   };
 }
 
-export const AxisControl: React.FC<AxisControlProps> = props => {
+export const AxisControl: React.FC<AxisControlProps> = (props: AxisControlProps) => {
   const { legend, angle = 0, table, onHover, onClick, onMouseOut, cellSize = 0 } = props;
 
   const checkIsFromSelectedCol = isSelected(table.selectedCell?.x);

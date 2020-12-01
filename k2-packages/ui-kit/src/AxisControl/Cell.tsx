@@ -20,7 +20,7 @@ interface CellProps {
   disabled?: boolean;
 }
 
-export const Cell: React.FC<CellProps> = props => {
+export const Cell: React.FC<CellProps> = (props: CellProps) => {
   const { positionX, positionY, value, className, children, onHover, onMouseOut, onClick,
     disabled = false, selected = false } = props;
 

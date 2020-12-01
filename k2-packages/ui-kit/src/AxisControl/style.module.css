@@ -1,3 +1,7 @@
+:root {
+  --selection-border-style: 1px solid #a29e9e;
+}
+
 .legendSlot {
   margin-bottom: auto;
   margin-left: auto;
@@ -5,12 +9,16 @@
   grid-row-start: 1 ;
 }
 
+.hoveredCell {
+  background: #f9f9f9;
+}
+
 .selectedCol {
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
+  border-right: var(--selection-border-style);
+  border-left: var(--selection-border-style);
 }
 
 .selectedRow {
-  border-right: 1px solid black;
-  border-left: 1px solid black;
+  border-top: var(--selection-border-style);
+  border-bottom: var(--selection-border-style);
 }

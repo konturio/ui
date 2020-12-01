@@ -1,9 +1,12 @@
 import React from 'react';
-import s from './style.module.css';
-import cn from 'clsx';
+import styles from './style.module.css';
+import clsx from 'clsx';
 import { attachPositionToCb, setOffset } from './matrixFn';
 import { Cell } from './Cell';
 import { TableHeading } from './TableHeading';
+
+// types
+type MatrixEvents = (e, { x, y }: { x: number; y: number }) => void;
 
 const getGridStyle = (x, y, cellSize = 0) => ({
   display: 'inline-grid',
@@ -12,61 +15,72 @@ const getGridStyle = (x, y, cellSize = 0) => ({
   gridTemplateColumns: `repeat(${x}, ${cellSize === 0 ? 'auto' : cellSize + 'px'})`,
 });
 
-type MatrixEvents = (e, { x, y }: { x: number; y: number }) => void;
-export interface AxisControl {
-  legend: (angle: number) => JSX.Element | null;
+const isSelected = (selected?: number) => (current: number) => selected === current;
+
+interface AxisControlProps {
+  legend: (angle: number) => React.ReactElement | null;
   angle?: number;
   onHover?: MatrixEvents;
   onClick?: MatrixEvents;
+  onMouseOut?: (e) => void;
   cellSize?: number;
   table: {
     x: TableHeading[];
     y: TableHeading[];
     matrix: (number | null)[][];
     selectedCell?: { x: number; y: number };
+    hoveredCell?: { x: number; y: number };
   };
 }
-const isSelected = (selected?: number) => (current: number) => selected === current;
 
-export function AxisControl({ legend, angle = 0, table, onHover, onClick, cellSize = 0 }: AxisControl) {
-  const checkIsFromSelectedRow = isSelected(table.selectedCell?.x);
-  const checkIsFromSelectedCol = isSelected(table.selectedCell?.y);
+export const AxisControl: React.FC<AxisControlProps> = props => {
+  const { legend, angle = 0, table, onHover, onClick, onMouseOut, cellSize = 0 } = props;
+
+  const checkIsFromSelectedCol = isSelected(table.selectedCell?.x);
+  const checkIsFromSelectedRow = isSelected(table.selectedCell?.y);
+  const checkIsFromHoveredCol = isSelected(table.hoveredCell?.x);
+  const checkIsFromHoveredRow = isSelected(table.hoveredCell?.y);
+
   return (
     <div>
       <style>--cell-side: 65px;</style>
-      <div className={s.valuesGrid} style={getGridStyle(table.x.length + 1, table.y.length + 1, cellSize)}>
+      <div style={getGridStyle(table.x.length + 1, table.y.length + 1, cellSize)}>
         <TableHeading entries={table.x} vertical />
-        <div className={s.legendSlot}>{legend(angle)}</div>
+        <div className={styles.legendSlot}>{legend(angle)}</div>
         <TableHeading entries={table.y} />
 
         {table.matrix.map((row, rowIndex) =>
           row.map((val, colIndex) => {
-            const isFromSelectedRow = checkIsFromSelectedRow(colIndex);
-            const isFromSelectedCol = checkIsFromSelectedCol(rowIndex);
+            const isFromSelectedRow = checkIsFromSelectedRow(rowIndex);
+            const isFromSelectedCol = checkIsFromSelectedCol(colIndex);
+            const isHovered = checkIsFromHoveredRow(rowIndex) || checkIsFromHoveredCol(colIndex);
             const call = attachPositionToCb({ x: colIndex, y: rowIndex });
             const getCellPosition = setOffset(0, 1);
+            const cellClasses = {
+              [styles.hoveredCell]: isHovered,
+              [styles.selectedCol]: checkIsFromSelectedCol(colIndex),
+              [styles.selectedRow]: checkIsFromSelectedRow(rowIndex)
+            };
 
-            if (val === null) {
-              return (
-                <Cell
-                  className={cn(s.borders, isFromSelectedRow && s.selectedRow, isFromSelectedCol && s.selectedCol)}
-                  key={val ?? `${colIndex}|${rowIndex}`}
-                  positionX={getCellPosition.col(colIndex)}
-                  positionY={getCellPosition.row(rowIndex)}
-                  value={val}
-                  disabled
-                >
-                  <span></span>
-                </Cell>
-              );
-            }
-
-            return (
+            return (val === null) ? (
+              <Cell
+                className={clsx(cellClasses)}
+                key={val ?? `${colIndex}|${rowIndex}`}
+                positionX={getCellPosition.col(colIndex)}
+                positionY={getCellPosition.row(rowIndex)}
+                value={val}
+                disabled
+              >
+                <span></span>
+              </Cell>
+            ) : (
               <Cell
                 selected={isFromSelectedRow && isFromSelectedCol}
-                className={cn(isFromSelectedRow && s.selectedRow, isFromSelectedCol && s.selectedCol)}
+                className={clsx(cellClasses)}
                 key={val ?? `${colIndex}|${rowIndex}`}
                 onClick={call(onClick)}
+                onHover={call(onHover)}
+                onMouseOut={onMouseOut}
                 positionX={getCellPosition.col(colIndex)}
                 positionY={getCellPosition.row(rowIndex)}
                 value={val}
@@ -74,9 +88,9 @@ export function AxisControl({ legend, angle = 0, table, onHover, onClick, cellSi
                 <span style={{ transform: `rotate(${-angle}deg)` }}>{val?.toFixed(3)}</span>
               </Cell>
             );
-          }),
+          })
         )}
       </div>
     </div>
   );
-}
+};

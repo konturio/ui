@@ -22,11 +22,12 @@
   right: 0;
   left: 0;
   background-color: #5bdff4;
-  z-index: -1;
+  /*z-index: -1;*/
   border-radius: 50%;
 }
 
 .disabled {
+  cursor: default;
   /* background-color: hsla(0, 0%, 0%, 0.03); */
 }
 

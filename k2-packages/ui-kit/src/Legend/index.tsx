@@ -12,16 +12,6 @@ type Axis = {
   quotient: string[];
 };
 
-export interface Legend {
-  cells: Cell[];
-  size: number;
-  angle?: number;
-  axis: {
-    x: Axis;
-    y: Axis;
-  };
-}
-
 // eslint-disable-next-line prettier/prettier
 const TEMPLATE = [
   'y . . . .',
@@ -40,7 +30,18 @@ const getCellPositionStyle = (col: number, row: number) => ({
   gridRow: `${row + 1} / ${row + 2}`,
 });
 
-export function Legend({ cells, size, angle = 0, axis }: Legend) {
+interface LegendProps {
+  cells: Cell[];
+  size: number;
+  angle?: number;
+  axis: {
+    x: Axis;
+    y: Axis;
+  }
+}
+
+export const Legend: React.FC<LegendProps> =  props => {
+  const { cells, size, angle = 0, axis } = props;
   const labelRotationStyle = getRotationStyle(angle * -1);
 
   const gridCells = fillTemplate(TEMPLATE, {

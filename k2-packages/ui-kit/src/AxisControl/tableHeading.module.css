@@ -1,3 +1,7 @@
+:root {
+  --selection-border-style: 1px solid #a29e9e;
+}
+
 .axisRecord {
   padding: var(--unit);
 }
@@ -5,21 +9,25 @@
 .row.selected {
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: black;
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
-  border-right: 1px solid black;
+  border-top: var(--selection-border-style);
+  border-bottom: var(--selection-border-style);
+  border-right: var(--selection-border-style);
 }
 
 .column.selected {
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: black;
-  border-right: 1px solid black;
-  border-left: 1px solid black;
-  border-top:  1px solid black;
+  border-right: var(--selection-border-style);
+  border-left: var(--selection-border-style);
+  border-top:  var(--selection-border-style);
 }
 
 .highlight {
   color: red;
+}
+
+.hovered {
+  background-color: #f9f9f9;
 }
 
 .verticalText {

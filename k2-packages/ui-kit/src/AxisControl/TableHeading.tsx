@@ -22,7 +22,9 @@ export const TableHeading: React.FC<TableHeadingProps> = (props: TableHeadingPro
   return (
     <>
       {entries.map((headerCell) => (
-        <div key={headerCell.label} className={clsx({
+        <div
+          key={headerCell.label}
+          className={clsx({
             [className || '']: className,
             [s.axisRecord]: true,
             [s.highlight]: headerCell.highlight,
@@ -31,8 +33,8 @@ export const TableHeading: React.FC<TableHeadingProps> = (props: TableHeadingPro
             [s.column]: vertical,
             [s.row]: !vertical,
             [s.verticalText]: vertical,
-          },
-        )}>
+          })}
+        >
           {headerCell.label}
         </div>
       ))}

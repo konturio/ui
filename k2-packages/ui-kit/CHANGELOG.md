@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.9.1](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@2.9.0...@k2-packages/ui-kit@2.9.1) (2020-12-03)
+
+### Bug Fixes
+
+- **bivariate-tools:** Remove (0,0) values from display ([c193609](https://gitlab.com/kontur-private/k2/k2-front-end/commit/c19360953d9b3f4305abf62867745b469b71d40e)), closes [#3796](https://gitlab.com/kontur-private/k2/k2-front-end/issues/3796)
+
 # [2.9.0](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@2.8.1...@k2-packages/ui-kit@2.9.0) (2020-12-02)
 
 ### Bug Fixes

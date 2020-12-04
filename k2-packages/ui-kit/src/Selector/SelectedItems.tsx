@@ -2,30 +2,26 @@
 import React, { useState, useCallback } from 'react';
 import cn from 'clsx';
 import s from './selectedItems.module.css';
-import { Option } from './Option';
+import { OptionType } from './Option';
 
 export interface SelectedItems {
-  options: Option[];
+  options: OptionType[];
   placeholder?: string;
-  selected?: Option['value'] | Option['value'][];
+  selected?: OptionType['value'] | OptionType['value'][];
   className?: string;
   children: JSX.Element;
-  checkSelected: (value: Option) => boolean;
+  checkSelected: (value: OptionType) => boolean;
   small: boolean;
 }
 
-const getFallbackOption = (placeholder): Option => ({
+const getFallbackOption = (placeholder): OptionType => ({
   label: placeholder,
   value: '',
   disabled: true,
 });
 
-function SelectedOption({ label, value, disabled }: Option): JSX.Element {
-  return (
-    <div className={cn(s.selected, disabled && s.disabled)}>
-      {label}
-    </div>
-  )
+function SelectedOption({ label, value, disabled }: OptionType): JSX.Element {
+  return <div className={cn(s.selected, disabled && s.disabled)}>{label}</div>;
 }
 
 export function SelectedItems({
@@ -35,7 +31,7 @@ export function SelectedItems({
   className,
   children,
   checkSelected,
-  small = false
+  small = false,
 }: SelectedItems): JSX.Element {
   const fallbackOption = getFallbackOption(placeholder);
   const selectedOptions = selected ? options.filter(checkSelected) || [fallbackOption] : [fallbackOption];
@@ -45,15 +41,17 @@ export function SelectedItems({
       This timeout need here for push action to end of call stack
       Without this dropdown closing before callback on option call.
     */
-    setTimeout(() => setCollapsedState(true), 0)
+    setTimeout(() => setCollapsedState(true), 0);
   }, [setCollapsedState]);
 
   return (
-    <div className={cn(s.wrapper, small && s.small, !collapsedState && s.open, className )}>
-      <div className={s.selectedBox} onClick={() => setCollapsedState(curr => !curr)}>
+    <div className={cn(s.wrapper, small && s.small, !collapsedState && s.open, className)}>
+      <div className={s.selectedBox} onClick={() => setCollapsedState((curr) => !curr)}>
         {selectedOptions.map((sOpt) => (
           <div key={sOpt.value}>
-            {selectedOptions.map(sOpt => <SelectedOption key={sOpt.value} {...sOpt} />)}
+            {selectedOptions.map((sOpt) => (
+              <SelectedOption key={sOpt.value} {...sOpt} />
+            ))}
           </div>
         ))}
         <span className={s.btn}>
@@ -62,9 +60,7 @@ export function SelectedItems({
           </svg>
         </span>
       </div>
-      {!collapsedState ? <div onClick={collapse}>
-        {children}
-      </div> : null}
+      {!collapsedState ? <div onClick={collapse}>{children}</div> : null}
     </div>
   );
 }

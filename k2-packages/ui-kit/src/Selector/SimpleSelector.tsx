@@ -2,20 +2,20 @@
 import React, { useRef, useLayoutEffect } from 'react';
 import cn from 'clsx';
 import s from './simpleSelector.module.css';
-import { Option } from './Option';
+import { OptionType, Option } from './Option';
 
 type changeEvent = React.ChangeEvent<HTMLInputElement>;
 
 interface BaseSelector {
-  options: Option[];
-  onChange: (e: changeEvent | MouseEvent) => void;
+  options: OptionType[];
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   className?: string;
   placeholder?: string;
   multi?: boolean;
-  checkSelected: (value: Option) => boolean;
+  checkSelected: (value: OptionType) => boolean;
   small?: boolean;
   stopPropagation?: boolean;
-  onHover
+  onHover;
 }
 
 interface VerticalSelector extends BaseSelector {
@@ -30,7 +30,7 @@ interface HorizontalSelector extends BaseSelector {
 
 export type SimpleSelector = HorizontalSelector | VerticalSelector;
 
-export function SimpleSelector({
+export const SimpleSelector = ({
   options,
   className,
   checkSelected,
@@ -38,21 +38,20 @@ export function SimpleSelector({
   orientation = 'vertical',
   small = false,
   stopPropagation = false,
-  onHover
-}: SimpleSelector): JSX.Element {
+  onHover,
+}: SimpleSelector) => {
   const ref = useRef<HTMLDivElement>(null);
 
   useLayoutEffect(() => {
     if (stopPropagation) {
       const handler = (e) => {
         e.stopPropagation();
-        e.target.value // Prevent double event emit (second for label)
-          && onChange(e); 
+        e.target.value && onChange(e); // Prevent double event emit (second for label)
       };
-      ref.current?.addEventListener('click', handler)
-      return () => ref.current?.removeEventListener('click', handler)
+      ref.current?.addEventListener('click', handler);
+      return () => ref.current?.removeEventListener('click', handler);
     }
-    return undefined
+    return undefined;
   }, [ref, stopPropagation]);
 
   return (
@@ -63,7 +62,13 @@ export function SimpleSelector({
           label={opt.label}
           value={opt.value}
           hint={opt.hint}
-          onChange={opt.disabled ? () => { /* Do nothing */} : onChange }
+          onChange={
+            opt.disabled
+              ? () => {
+                  /* Do nothing */
+                }
+              : onChange
+          }
           disabled={opt.disabled}
           small={small}
           selected={checkSelected(opt)}
@@ -72,4 +77,4 @@ export function SimpleSelector({
       ))}
     </div>
   );
-}
+};

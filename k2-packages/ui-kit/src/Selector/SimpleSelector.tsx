@@ -4,8 +4,6 @@ import cn from 'clsx';
 import s from './simpleSelector.module.css';
 import { OptionType, Option } from './Option';
 
-type changeEvent = React.ChangeEvent<HTMLInputElement>;
-
 interface BaseSelector {
   options: OptionType[];
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;

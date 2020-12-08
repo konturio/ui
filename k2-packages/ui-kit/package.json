@@ -1,6 +1,6 @@
 {
   "name": "@k2-packages/ui-kit",
-  "version": "2.8.1",
+  "version": "2.9.2",
   "main": "src/index.tsx",
   "types": "src/index.tsx",
   "publishConfig": {
@@ -16,5 +16,6 @@
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-router-dom": "^5.1.2"
-  }
+  },
+  "gitHead": "5cabeed56f0b4e1bfe363f35b478c8ffbd9d2fa1"
 }

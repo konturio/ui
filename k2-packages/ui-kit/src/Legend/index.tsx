@@ -13,13 +13,7 @@ type Axis = {
 };
 
 // eslint-disable-next-line prettier/prettier
-const TEMPLATE = [
-  'y . . . .',
-  'y c c c .',
-  'y c c c .',
-  'y c c c .',
-  '. x x x x'
-];
+const TEMPLATE = ['y . . . .', 'y c c c .', 'y c c c .', 'y c c c .', '. x x x x'];
 
 function safeReverse(arr) {
   return [...arr].reverse();
@@ -37,11 +31,10 @@ interface LegendProps {
   axis: {
     x: Axis;
     y: Axis;
-  }
+  };
 }
 
-export const Legend: React.FC<LegendProps> = (props: LegendProps) => {
-  const { cells, size, angle = 0, axis } = props;
+export const Legend = ({ cells, size, angle = 0, axis }: LegendProps) => {
   const labelRotationStyle = getRotationStyle(angle * -1);
 
   const gridCells = fillTemplate(TEMPLATE, {
@@ -77,9 +70,9 @@ export const Legend: React.FC<LegendProps> = (props: LegendProps) => {
           style={Object.assign(getCellPositionStyle(cell._position.x, cell._position.y), cell.style)}
           className={cn(cell.className, s.cell)}
         >
-          { cell.label }
+          {cell.label}
         </div>
       ))}
     </div>
   );
-}
+};

@@ -19,7 +19,7 @@
   -webkit-text-stroke-color: black;
   border-right: var(--selection-border-style);
   border-left: var(--selection-border-style);
-  border-top:  var(--selection-border-style);
+  border-top: var(--selection-border-style);
 }
 
 .highlight {
@@ -37,15 +37,18 @@
 .row {
   height: var(--cell-side);
   grid-column-start: -1;
-  display: flex;
   align-items: center;
   border: 1px solid transparent;
 }
 
 .column {
   width: var(--cell-side);
-  display: flex;
   align-items: center;
   justify-content: flex-end;
   border: 1px solid transparent;
+}
+
+.qualityLabel {
+  font-size: 0.7em;
+  color: #777;
 }

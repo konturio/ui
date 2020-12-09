@@ -33,9 +33,15 @@ interface AxisControlProps {
   };
 }
 
-export const AxisControl: React.FC<AxisControlProps> = (props: AxisControlProps) => {
-  const { legend, angle = 0, table, onHover, onClick, onMouseOut, cellSize = 0 } = props;
-
+export const AxisControl = ({
+  legend,
+  angle = 0,
+  table,
+  onHover,
+  onClick,
+  onMouseOut,
+  cellSize = 0,
+}: AxisControlProps) => {
   const checkIsFromSelectedCol = isSelected(table.selectedCell?.x);
   const checkIsFromSelectedRow = isSelected(table.selectedCell?.y);
   const checkIsFromHoveredCol = isSelected(table.hoveredCell?.x);
@@ -59,10 +65,10 @@ export const AxisControl: React.FC<AxisControlProps> = (props: AxisControlProps)
             const cellClasses = {
               [styles.hoveredCell]: isHovered,
               [styles.selectedCol]: checkIsFromSelectedCol(colIndex),
-              [styles.selectedRow]: checkIsFromSelectedRow(rowIndex)
+              [styles.selectedRow]: checkIsFromSelectedRow(rowIndex),
             };
 
-            return (val === null) ? (
+            return val === null ? (
               <Cell
                 className={clsx(cellClasses)}
                 key={val ?? `${colIndex}|${rowIndex}`}
@@ -88,7 +94,7 @@ export const AxisControl: React.FC<AxisControlProps> = (props: AxisControlProps)
                 <span style={{ transform: `rotate(${-angle}deg)` }}>{val?.toFixed(3)}</span>
               </Cell>
             );
-          })
+          }),
         )}
       </div>
     </div>

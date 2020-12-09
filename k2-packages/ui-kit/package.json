@@ -1,6 +1,6 @@
 {
   "name": "@k2-packages/ui-kit",
-  "version": "2.9.2",
+  "version": "2.9.3",
   "main": "src/index.tsx",
   "types": "src/index.tsx",
   "publishConfig": {

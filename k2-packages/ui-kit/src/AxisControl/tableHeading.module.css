@@ -4,6 +4,8 @@
 
 .axisRecord {
   padding: var(--unit);
+  display: flex;
+  flex-direction: column;
 }
 
 .row.selected {
@@ -37,14 +39,13 @@
 .row {
   height: var(--cell-side);
   grid-column-start: -1;
-  align-items: center;
+  align-items: flex-start;
   border: 1px solid transparent;
 }
 
 .column {
   width: var(--cell-side);
-  align-items: center;
-  justify-content: flex-end;
+  align-items: flex-end;
   border: 1px solid transparent;
 }
 

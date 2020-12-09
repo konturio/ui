@@ -8,7 +8,7 @@ export type TableHeading = {
   highlight?: boolean;
   selected?: boolean;
   hovered?: boolean;
-  quality: number;
+  quality?: number;
 };
 
 interface TableHeadingProps {

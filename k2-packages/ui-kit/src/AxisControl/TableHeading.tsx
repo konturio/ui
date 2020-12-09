@@ -1,5 +1,5 @@
 import React from 'react';
-import s from './tableHeading.module.css';
+import styles from './tableHeading.module.css';
 import clsx from 'clsx';
 
 export type TableHeading = {
@@ -8,6 +8,7 @@ export type TableHeading = {
   highlight?: boolean;
   selected?: boolean;
   hovered?: boolean;
+  quality: number;
 };
 
 interface TableHeadingProps {
@@ -16,28 +17,25 @@ interface TableHeadingProps {
   vertical?: boolean;
 }
 
-export const TableHeading: React.FC<TableHeadingProps> = (props: TableHeadingProps) => {
-  const { className, entries, vertical = false } = props;
-
-  return (
-    <>
-      {entries.map((headerCell) => (
-        <div
-          key={headerCell.label}
-          className={clsx({
-            [className || '']: className,
-            [s.axisRecord]: true,
-            [s.highlight]: headerCell.highlight,
-            [s.hovered]: headerCell.hovered,
-            [s.selected]: headerCell.selected,
-            [s.column]: vertical,
-            [s.row]: !vertical,
-            [s.verticalText]: vertical,
-          })}
-        >
-          {headerCell.label}
-        </div>
-      ))}
-    </>
-  );
-};
+export const TableHeading = ({ className, entries, vertical = false }: TableHeadingProps) => (
+  <>
+    {entries.map((headerCell) => (
+      <div
+        key={headerCell.label}
+        className={clsx({
+          [className || '']: className,
+          [styles.axisRecord]: true,
+          [styles.highlight]: headerCell.highlight,
+          [styles.hovered]: headerCell.hovered,
+          [styles.selected]: headerCell.selected,
+          [styles.column]: vertical,
+          [styles.row]: !vertical,
+          [styles.verticalText]: vertical,
+        })}
+      >
+        <div>{headerCell.label}</div>
+        <div className={styles.qualityLabel}>{headerCell.quality}</div>
+      </div>
+    ))}
+  </>
+);

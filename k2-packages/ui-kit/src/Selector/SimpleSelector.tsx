@@ -1,10 +1,10 @@
-/* eslint-disable prettier/prettier */
 import React, { useRef, useLayoutEffect } from 'react';
-import cn from 'clsx';
-import s from './simpleSelector.module.css';
+import clsx from 'clsx';
+import styles from './simpleSelector.module.css';
 import { OptionType, Option } from './Option';
 
-interface BaseSelector {
+interface SimpleSelectorProps {
+  orientation?: 'vertical' | 'horizontal';
   options: OptionType[];
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   className?: string;
@@ -16,18 +16,6 @@ interface BaseSelector {
   onHover;
 }
 
-interface VerticalSelector extends BaseSelector {
-  orientation?: 'vertical';
-  collapse?: boolean;
-}
-
-interface HorizontalSelector extends BaseSelector {
-  orientation?: 'horizontal';
-  collapse?: false;
-}
-
-export type SimpleSelector = HorizontalSelector | VerticalSelector;
-
 export const SimpleSelector = ({
   options,
   className,
@@ -37,7 +25,7 @@ export const SimpleSelector = ({
   small = false,
   stopPropagation = false,
   onHover,
-}: SimpleSelector) => {
+}: SimpleSelectorProps) => {
   const ref = useRef<HTMLDivElement>(null);
 
   useLayoutEffect(() => {
@@ -49,24 +37,17 @@ export const SimpleSelector = ({
       ref.current?.addEventListener('click', handler);
       return () => ref.current?.removeEventListener('click', handler);
     }
-    return undefined;
   }, [ref, stopPropagation]);
 
   return (
-    <div className={cn(s.selector, className, s[orientation])} ref={ref}>
+    <div className={clsx(styles.selector, className, styles[orientation])} ref={ref}>
       {options.map((opt) => (
         <Option
           key={opt.value}
           label={opt.label}
           value={opt.value}
           hint={opt.hint}
-          onChange={
-            opt.disabled
-              ? () => {
-                  /* Do nothing */
-                }
-              : onChange
-          }
+          onChange={opt.disabled ? undefined : onChange}
           disabled={opt.disabled}
           small={small}
           selected={checkSelected(opt)}

@@ -17,7 +17,7 @@ interface TableHeadingProps {
   vertical?: boolean;
 }
 
-export const TableHeading = ({ className, entries, vertical = false }: TableHeadingProps) => (
+export const TableHeading = React.memo(({ className, entries, vertical = false }: TableHeadingProps) => (
   <>
     {entries.map((headerCell) => (
       <div
@@ -33,9 +33,13 @@ export const TableHeading = ({ className, entries, vertical = false }: TableHead
           [styles.verticalText]: vertical,
         })}
       >
-        <div>{headerCell.label}</div>
-        <div className={styles.qualityLabel}>{headerCell.quality}</div>
+        <div>
+          {headerCell.label}
+          {headerCell.quality !== undefined && (
+            <span className={styles.qualityLabel}> ({Math.floor(headerCell.quality * 100)})</span>
+          )}
+        </div>
       </div>
     ))}
   </>
-);
+));

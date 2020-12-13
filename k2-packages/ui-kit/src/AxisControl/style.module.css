@@ -6,11 +6,14 @@
   margin-bottom: auto;
   margin-left: auto;
   grid-column-start: -1;
-  grid-row-start: 1 ;
+  grid-row-start: 1;
 }
 
 .hoveredCell {
   background: #f9f9f9;
+}
+
+.last {
 }
 
 .selectedCol {
@@ -18,7 +21,15 @@
   border-left: var(--selection-border-style);
 }
 
+.selectedCol.last {
+  border-bottom: var(--selection-border-style);
+}
+
 .selectedRow {
   border-top: var(--selection-border-style);
   border-bottom: var(--selection-border-style);
+}
+
+.selectedRow.last {
+  border-left: var(--selection-border-style);
 }

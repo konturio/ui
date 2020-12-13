@@ -28,8 +28,6 @@ interface AxisControlProps {
     x: TableHeading[];
     y: TableHeading[];
     matrix: (number | null)[][];
-    selectedCell?: { x: number; y: number };
-    hoveredCell?: { x: number; y: number };
   };
 }
 
@@ -42,10 +40,14 @@ export const AxisControl = ({
   onMouseOut,
   cellSize = 0,
 }: AxisControlProps) => {
-  const checkIsFromSelectedCol = isSelected(table.selectedCell?.x);
-  const checkIsFromSelectedRow = isSelected(table.selectedCell?.y);
-  const checkIsFromHoveredCol = isSelected(table.hoveredCell?.x);
-  const checkIsFromHoveredRow = isSelected(table.hoveredCell?.y);
+  const selectedCellX = table.x.findIndex((headingItem) => headingItem.selected);
+  const selectedCellY = table.y.findIndex((headingItem) => headingItem.selected);
+  const hoveredCellX = table.x.findIndex((headingItem) => headingItem.hovered);
+  const hoveredCellY = table.y.findIndex((headingItem) => headingItem.hovered);
+  const checkIsFromSelectedCol = isSelected(selectedCellX);
+  const checkIsFromSelectedRow = isSelected(selectedCellY);
+  const checkIsFromHoveredCol = isSelected(hoveredCellX);
+  const checkIsFromHoveredRow = isSelected(hoveredCellY);
 
   return (
     <div>
@@ -57,15 +59,17 @@ export const AxisControl = ({
 
         {table.matrix.map((row, rowIndex) =>
           row.map((val, colIndex) => {
-            const isFromSelectedRow = checkIsFromSelectedRow(rowIndex);
             const isFromSelectedCol = checkIsFromSelectedCol(colIndex);
+            const isFromSelectedRow = checkIsFromSelectedRow(rowIndex);
             const isHovered = checkIsFromHoveredRow(rowIndex) || checkIsFromHoveredCol(colIndex);
             const call = attachPositionToCb({ x: colIndex, y: rowIndex });
             const getCellPosition = setOffset(0, 1);
             const cellClasses = {
               [styles.hoveredCell]: isHovered,
-              [styles.selectedCol]: checkIsFromSelectedCol(colIndex),
-              [styles.selectedRow]: checkIsFromSelectedRow(rowIndex),
+              [styles.selectedCol]: isFromSelectedCol,
+              [styles.selectedRow]: isFromSelectedRow,
+              [styles.last]:
+                (isFromSelectedRow && colIndex === 0) || (isFromSelectedCol && rowIndex === table.matrix.length - 1),
             };
 
             return val === null ? (

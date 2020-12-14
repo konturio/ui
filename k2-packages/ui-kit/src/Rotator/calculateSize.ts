@@ -6,6 +6,7 @@ export function calculateSize(
 ): { width: string; height: string; findBBox?: boolean } {
   if (el === null) return { width: 'unset', height: 'unset' };
   const { width, height } = el.getBoundingClientRect();
+  console.log(el, width, height);
   if (findBBox) {
     const t = Math.abs((angle * Math.PI) / 180); // Convert to radians
     return {

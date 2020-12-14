@@ -3,10 +3,11 @@
 }
 
 .legendSlot {
-  margin-bottom: auto;
-  margin-left: auto;
   grid-column-start: -1;
   grid-row-start: 1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
 }
 
 .hoveredCell {

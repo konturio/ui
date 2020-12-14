@@ -37,6 +37,7 @@ export const SimpleSelector = ({
       ref.current?.addEventListener('click', handler);
       return () => ref.current?.removeEventListener('click', handler);
     }
+    return;
   }, [ref, stopPropagation]);
 
   return (

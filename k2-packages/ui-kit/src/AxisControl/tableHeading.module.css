@@ -6,6 +6,8 @@
   padding: var(--unit);
   display: flex;
   flex-direction: column;
+  font-size: 0.9em;
+  font-stretch: condensed;
 }
 
 .row.selected {
@@ -22,10 +24,6 @@
   border-right: var(--selection-border-style);
   border-left: var(--selection-border-style);
   border-top: var(--selection-border-style);
-}
-
-.highlight {
-  color: red;
 }
 
 .hovered {
@@ -50,6 +48,6 @@
 }
 
 .qualityLabel {
-  font-size: 0.7em;
+  font-size: 0.8em;
   color: #777;
 }

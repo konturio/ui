@@ -2,11 +2,6 @@ import React from 'react';
 import styles from './cell.module.css';
 import clsx from 'clsx';
 
-const getCellPositionStyle = (col: number, row: number) => ({
-  gridColumn: `${col + 1} / ${col + 2}`,
-  gridRow: `${row + 1} / ${row + 2}`
-});
-
 interface CellProps {
   positionX: number;
   positionY: number;
@@ -20,21 +15,32 @@ interface CellProps {
   disabled?: boolean;
 }
 
-export const Cell: React.FC<CellProps> = (props: CellProps) => {
-  const { positionX, positionY, value, className, children, onHover, onMouseOut, onClick, disabled = false } = props;
+const getCellPositionStyle = (col: number, row: number) => ({
+  gridColumn: `${col + 1} / ${col + 2}`,
+  gridRow: `${row + 1} / ${row + 2}`,
+});
 
-  return (
-    <div
-      className={clsx(styles.valueCell, className, disabled && styles.disabled)}
-      style={getCellPositionStyle(positionX, positionY)}
-      onMouseOver={onHover}
-      onMouseOut={onMouseOut}
-      onClick={onClick}
-    >
-      <div className={styles.valueFill} style={{ transform: `scale(${value === null ? 0 : Math.abs(value)})` }}></div>
-      {/* <div className={s.valueFill} style={{ opacity: value === null ? 0 : Math.abs(value) }}></div> */}
+export const Cell = ({
+  positionX,
+  positionY,
+  value,
+  className,
+  children,
+  onHover,
+  onMouseOut,
+  onClick,
+  disabled = false,
+}: CellProps) => (
+  <div
+    className={clsx(styles.valueCell, className, disabled && styles.disabled)}
+    style={getCellPositionStyle(positionX, positionY)}
+    onMouseOver={onHover}
+    onMouseOut={onMouseOut}
+    onClick={onClick}
+  >
+    <div className={styles.valueFill} style={{ transform: `scale(${value === null ? 0 : Math.abs(value)})` }}></div>
+    {/* <div className={s.valueFill} style={{ opacity: value === null ? 0 : Math.abs(value) }}></div> */}
 
-      {children}
-    </div>
-  );
-};
+    {children}
+  </div>
+);

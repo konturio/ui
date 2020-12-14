@@ -13,10 +13,9 @@ export const Rotator = ({ angle, time = 1, timingFunction = 'ease', children }: 
   const childContainerRef = useRef<HTMLDivElement>(null);
   const [wrapperSize, setWrapperSize] = useState({ width: 'unset', height: 'unset' });
 
-  // @ts-ignore
   const resizeObserver: any = useMemo(
     () =>
-      new ResizeObserver((entries: any[]) => {
+      new ResizeObserver((entries: readonly any[]) => {
         if (entries.length) {
           const entry = entries[0];
           const { width, height } = entry.contentRect;

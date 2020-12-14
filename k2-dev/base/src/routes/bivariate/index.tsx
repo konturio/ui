@@ -28,7 +28,6 @@ type Option = { label: string; value: string };
 const PLACEHOLDER = { label: 'No options', value: 'not-selected' };
 const createOptions = (strings: string[]) => strings.map((d) => ({ label: d, value: d }));
 
-
 export default function Bivariate(): JSX.Element {
   const [stats, setStats] = useState<Stat>();
 
@@ -53,7 +52,7 @@ export default function Bivariate(): JSX.Element {
 
   useEffect(() => {
     if (stats === undefined) return;
-    const { xDenominators, yDenominators, selectDenominators } = parseStat(stats);
+    const { xDenominators, yDenominators, onSelectDenominators } = parseStat(stats);
 
     setAvailableDenominators({
       x: createOptions(xDenominators),
@@ -62,7 +61,7 @@ export default function Bivariate(): JSX.Element {
 
     const colorThemes = extractColors(stats);
     setAvailableColorThemes(colorThemes);
-    setDenominatorsSelector(() => selectDenominators);
+    setDenominatorsSelector(() => onSelectDenominators);
   }, [stats]);
 
   /* Selected denominator */
@@ -89,13 +88,6 @@ export default function Bivariate(): JSX.Element {
       }
     }
   }, [xDenominator, yDenominator]);
-
-  const hoverHandler = useCallback(
-    (e, { x, y }) => {
-      // setTable((table) => updateTableOnHover(table, { x, y }));
-    },
-    [setTable],
-  );
 
   const clickHandler = useCallback(
     (e, { x, y }) => {
@@ -173,26 +165,23 @@ export default function Bivariate(): JSX.Element {
           />
         </div>
         {table !== undefined && (
-          <Rotator angle={-45} watch={[xDenominator, yDenominator]}>
-            {({ angle }) => (
-              <AxisControl
-                angle={angle}
-                table={table}
-                onHover={hoverHandler}
-                onClick={clickHandler}
-                legend={(angle) => (
-                  <Legend
-                    size={3}
-                    angle={angle}
-                    axis={selectedAxis}
-                    cells={new Array(9).fill(0).map((c, i) => ({
-                      color: `hsl(${(360 / 9) * i}, 50%, 50%)`,
-                      label: String(i),
-                    }))}
-                  />
-                )}
-              />
-            )}
+          <Rotator angle={-45}>
+            <AxisControl
+              angle={-45}
+              table={table}
+              onSelectCell={clickHandler}
+              legend={(angle) => (
+                <Legend
+                  size={3}
+                  angle={-45}
+                  axis={selectedAxis}
+                  cells={new Array(9).fill(0).map((c, i) => ({
+                    color: `hsl(${(360 / 9) * i}, 50%, 50%)`,
+                    label: String(i),
+                  }))}
+                />
+              )}
+            />
           </Rotator>
         )}
       </div>

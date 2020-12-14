@@ -1,12 +1,9 @@
-import React from 'react';
+import React, { useCallback, useState } from 'react';
 import styles from './style.module.css';
 import clsx from 'clsx';
 import { attachPositionToCb, setOffset } from './matrixFn';
 import { Cell } from './Cell';
-import { TableHeading } from './TableHeading';
-
-// types
-type MatrixEvents = (e, { x, y }: { x: number; y: number }) => void;
+import { TableHeading, TableHeadingType } from './TableHeading';
 
 const getGridStyle = (x, y, cellSize = 0) => ({
   display: 'inline-grid',
@@ -20,16 +17,13 @@ const isSelected = (selected?: number) => (current: number) => selected === curr
 interface AxisControlProps {
   legend: (angle: number) => React.ReactElement | null;
   angle?: number;
-  onHover?: MatrixEvents;
-  onClick?: MatrixEvents;
-  onMouseOut?: (e) => void;
+  onSelectCell?: (x: number, y: number) => void;
+  selectedCell?: { x: number; y: number };
   cellSize?: number;
   table: {
-    x: TableHeading[];
-    y: TableHeading[];
+    x: TableHeadingType[];
+    y: TableHeadingType[];
     matrix: (number | null)[][];
-    selectedCell?: { x: number; y: number };
-    hoveredCell?: { x: number; y: number };
   };
 }
 
@@ -37,35 +31,46 @@ export const AxisControl = ({
   legend,
   angle = 0,
   table,
-  onHover,
-  onClick,
-  onMouseOut,
+  onSelectCell,
+  selectedCell,
   cellSize = 0,
 }: AxisControlProps) => {
-  const checkIsFromSelectedCol = isSelected(table.selectedCell?.x);
-  const checkIsFromSelectedRow = isSelected(table.selectedCell?.y);
-  const checkIsFromHoveredCol = isSelected(table.hoveredCell?.x);
-  const checkIsFromHoveredRow = isSelected(table.hoveredCell?.y);
+  const [hoveredCell, setHoveredCell] = useState<{ x: number; y: number }>({ x: -1, y: -1 });
+
+  const onMouseOver = useCallback((e: React.MouseEvent<HTMLElement, MouseEvent>, postion: { x: number; y: number }) => {
+    setHoveredCell(postion);
+  }, []);
+
+  const onMouseOut = useCallback((e: React.MouseEvent<HTMLElement, MouseEvent>) => {
+    setHoveredCell({ x: -1, y: -1 });
+  }, []);
+
+  const checkIsFromSelectedCol = isSelected(selectedCell?.x);
+  const checkIsFromSelectedRow = isSelected(selectedCell?.y);
+  const checkIsFromHoveredCol = isSelected(hoveredCell.x);
+  const checkIsFromHoveredRow = isSelected(hoveredCell.y);
 
   return (
     <div>
       <style>--cell-side: 65px;</style>
       <div style={getGridStyle(table.x.length + 1, table.y.length + 1, cellSize)}>
-        <TableHeading entries={table.x} vertical />
+        <TableHeading selectedIndex={selectedCell?.x} hoveredIndex={hoveredCell.x} entries={table.x} vertical />
         <div className={styles.legendSlot}>{legend(angle)}</div>
-        <TableHeading entries={table.y} />
+        <TableHeading selectedIndex={selectedCell?.y} hoveredIndex={hoveredCell.y} entries={table.y} />
 
         {table.matrix.map((row, rowIndex) =>
           row.map((val, colIndex) => {
-            const isFromSelectedRow = checkIsFromSelectedRow(rowIndex);
             const isFromSelectedCol = checkIsFromSelectedCol(colIndex);
+            const isFromSelectedRow = checkIsFromSelectedRow(rowIndex);
             const isHovered = checkIsFromHoveredRow(rowIndex) || checkIsFromHoveredCol(colIndex);
             const call = attachPositionToCb({ x: colIndex, y: rowIndex });
             const getCellPosition = setOffset(0, 1);
             const cellClasses = {
               [styles.hoveredCell]: isHovered,
-              [styles.selectedCol]: checkIsFromSelectedCol(colIndex),
-              [styles.selectedRow]: checkIsFromSelectedRow(rowIndex),
+              [styles.selectedCol]: isFromSelectedCol,
+              [styles.selectedRow]: isFromSelectedRow,
+              [styles.last]:
+                (isFromSelectedRow && colIndex === 0) || (isFromSelectedCol && rowIndex === table.matrix.length - 1),
             };
 
             return val === null ? (
@@ -84,8 +89,8 @@ export const AxisControl = ({
                 selected={isFromSelectedRow && isFromSelectedCol}
                 className={clsx(cellClasses)}
                 key={val ?? `${colIndex}|${rowIndex}`}
-                onClick={call(onClick)}
-                onHover={call(onHover)}
+                onClick={call(onSelectCell)}
+                onHover={call(onMouseOver)}
                 onMouseOut={onMouseOut}
                 positionX={getCellPosition.col(colIndex)}
                 positionY={getCellPosition.row(rowIndex)}

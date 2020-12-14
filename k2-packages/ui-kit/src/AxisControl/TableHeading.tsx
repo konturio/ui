@@ -2,40 +2,44 @@ import React from 'react';
 import styles from './tableHeading.module.css';
 import clsx from 'clsx';
 
-export type TableHeading = {
+export type TableHeadingType = {
   label: string;
   id: string;
-  highlight?: boolean;
-  selected?: boolean;
-  hovered?: boolean;
   quality?: number;
 };
 
 interface TableHeadingProps {
   className?: string;
-  entries: TableHeading[];
+  selectedIndex?: number;
+  hoveredIndex?: number;
+  entries: TableHeadingType[];
   vertical?: boolean;
 }
 
-export const TableHeading = ({ className, entries, vertical = false }: TableHeadingProps) => (
-  <>
-    {entries.map((headerCell) => (
-      <div
-        key={headerCell.label}
-        className={clsx({
-          [className || '']: className,
-          [styles.axisRecord]: true,
-          [styles.highlight]: headerCell.highlight,
-          [styles.hovered]: headerCell.hovered,
-          [styles.selected]: headerCell.selected,
-          [styles.column]: vertical,
-          [styles.row]: !vertical,
-          [styles.verticalText]: vertical,
-        })}
-      >
-        <div>{headerCell.label}</div>
-        <div className={styles.qualityLabel}>{headerCell.quality}</div>
-      </div>
-    ))}
-  </>
+export const TableHeading = React.memo(
+  ({ className, entries, vertical = false, selectedIndex = -1, hoveredIndex = -1 }: TableHeadingProps) => (
+    <>
+      {entries.map((headerCell, index) => (
+        <div
+          key={headerCell.label}
+          className={clsx({
+            [className || '']: className,
+            [styles.axisRecord]: true,
+            [styles.hovered]: hoveredIndex === index,
+            [styles.selected]: selectedIndex === index,
+            [styles.column]: vertical,
+            [styles.row]: !vertical,
+            [styles.verticalText]: vertical,
+          })}
+        >
+          <div>
+            {headerCell.label}
+            {headerCell.quality !== undefined && (
+              <span className={styles.qualityLabel}> ({Math.floor(headerCell.quality * 100)})</span>
+            )}
+          </div>
+        </div>
+      ))}
+    </>
+  ),
 );

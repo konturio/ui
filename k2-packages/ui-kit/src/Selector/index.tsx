@@ -5,7 +5,7 @@ import { SelectedItems } from './SelectedItems';
 import { SimpleSelector } from './SimpleSelector';
 import styles from './style.module.css';
 
-function createChecker(selected: SelectorProps['selected']): (value: OptionType) => boolean {
+function createChecker(selected?: string | string[]): (value: OptionType) => boolean {
   if (selected === undefined) return () => false;
   const selectedValues = Array.isArray(selected) ? selected : [selected];
   return (option): boolean => selectedValues.includes(option.value);
@@ -13,9 +13,9 @@ function createChecker(selected: SelectorProps['selected']): (value: OptionType)
 
 interface SelectorProps {
   options: OptionType[];
-  onChange: (value: OptionType['value'], e: React.ChangeEvent<any> | MouseEvent) => void;
-  onHover?: (value: OptionType['value'], e: React.MouseEvent<any, MouseEvent>) => void;
-  selected?: OptionType['value'] | OptionType['value'][];
+  onChange: (value: string, e: React.ChangeEvent<any>) => void;
+  onHover?: (value: string, e: React.MouseEvent<any, MouseEvent>) => void;
+  selected?: string | string[];
   className?: string;
   orientation?: 'vertical' | 'horizontal';
   multi?: boolean;
@@ -33,7 +33,7 @@ export const Selector = ({
   className,
   orientation = 'vertical',
   collapse = false,
-  placeholder = 'Click for select',
+  placeholder = 'Click to select',
   multi = false,
   small = false,
   stopPropagation = false,
@@ -45,7 +45,7 @@ export const Selector = ({
 
   const onHoverHandler = useCallback(
     (value, event: React.MouseEvent<HTMLLabelElement>) => onHover && event.target && onHover(value, event),
-    [onChange],
+    [onHover],
   );
 
   const checkSelected = createChecker(selected);

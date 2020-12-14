@@ -28,7 +28,7 @@
     "declaration": true,
     "declarationMap": true,
     "allowSyntheticDefaultImports": true,
-    "isolatedModules": true
+    "isolatedModules": true,
   },
   "exclude": [
     "node_modules",

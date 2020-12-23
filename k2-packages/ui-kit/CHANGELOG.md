@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.9.5](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@2.9.4...@k2-packages/ui-kit@2.9.5) (2020-12-14)
+
+### Bug Fixes
+
+- **denominator-selector:** Add description on the bottom list of normalizations ([4157596](https://gitlab.com/kontur-private/k2/k2-front-end/commit/4157596c370fdf8d89628f5c66a557c1b190f8aa)), closes [#3785](https://gitlab.com/kontur-private/k2/k2-front-end/issues/3785)
+
 ## [2.9.4](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@2.9.3...@k2-packages/ui-kit@2.9.4) (2020-12-09)
 
 ### Bug Fixes

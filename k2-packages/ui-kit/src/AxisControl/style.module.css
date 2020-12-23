@@ -26,6 +26,10 @@
   border-bottom: var(--selection-border-style) !important;
 }
 
+.selectedCol.last {
+  border-bottom: var(--selection-border-style);
+}
+
 .selectedRow {
   border-top: var(--selection-border-style) !important;
   border-bottom: var(--selection-border-style) !important;

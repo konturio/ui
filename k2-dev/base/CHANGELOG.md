@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.7.14](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-dev/base@2.7.13...@k2-dev/base@2.7.14) (2020-12-14)
+
+### Bug Fixes
+
+- **denominator-selector:** Add description on the bottom list of normalizations ([4157596](https://gitlab.com/kontur-private/k2/k2-front-end/commit/4157596c370fdf8d89628f5c66a557c1b190f8aa)), closes [#3785](https://gitlab.com/kontur-private/k2/k2-front-end/issues/3785)
+
 ## [2.7.13](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-dev/base@2.7.12...@k2-dev/base@2.7.13) (2020-12-09)
 
 **Note:** Version bump only for package @k2-dev/base

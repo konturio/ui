@@ -18,19 +18,19 @@
 }
 
 .selectedCol {
-  border-right: var(--selection-border-style);
-  border-left: var(--selection-border-style);
+  border-right: var(--selection-border-style) !important;
+  border-left: var(--selection-border-style) !important;
 }
 
 .selectedCol.last {
-  border-bottom: var(--selection-border-style);
+  border-bottom: var(--selection-border-style) !important;
 }
 
 .selectedRow {
-  border-top: var(--selection-border-style);
-  border-bottom: var(--selection-border-style);
+  border-top: var(--selection-border-style) !important;
+  border-bottom: var(--selection-border-style) !important;
 }
 
 .selectedRow.last {
-  border-left: var(--selection-border-style);
+  border-left: var(--selection-border-style) !important;
 }

@@ -5,10 +5,12 @@
 .axisRecord {
   padding: var(--unit);
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   font-size: 0.9em;
   font-stretch: condensed;
   white-space: nowrap;
+  gap: 4px;
+  align-items: center;
 }
 
 .row.selected {
@@ -38,17 +40,12 @@
 .row {
   height: var(--cell-side);
   grid-column-start: -1;
-  align-items: flex-start;
+  justify-content: flex-start;
   border: 1px solid transparent;
 }
 
 .column {
   width: var(--cell-side);
-  align-items: flex-end;
+  justify-content: flex-end;
   border: 1px solid transparent;
-}
-
-.qualityLabel {
-  font-size: 0.8em;
-  color: #777;
 }

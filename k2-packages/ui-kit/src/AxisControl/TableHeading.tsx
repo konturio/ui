@@ -2,17 +2,11 @@ import React from 'react';
 import styles from './tableHeading.module.css';
 import clsx from 'clsx';
 
-export type TableHeadingType = {
-  label: string;
-  id: string;
-  quality?: number;
-};
-
 interface TableHeadingProps {
   className?: string;
   selectedIndex?: number;
   hoveredIndex?: number;
-  entries: TableHeadingType[];
+  entries: (string | React.ReactElement)[];
   vertical?: boolean;
 }
 
@@ -21,7 +15,7 @@ export const TableHeading = React.memo(
     <>
       {entries.map((headerCell, index) => (
         <div
-          key={headerCell.label}
+          key={index}
           className={clsx({
             [className || '']: className,
             [styles.axisRecord]: true,
@@ -32,12 +26,7 @@ export const TableHeading = React.memo(
             [styles.verticalText]: vertical,
           })}
         >
-          <div>
-            {headerCell.label}
-            {headerCell.quality !== undefined && (
-              <span className={styles.qualityLabel}> ({Math.floor(headerCell.quality * 100)})</span>
-            )}
-          </div>
+          {headerCell}
         </div>
       ))}
     </>

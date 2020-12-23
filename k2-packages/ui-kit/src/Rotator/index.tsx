@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState, useCallback, useMemo } from 'react';
+import React, { useRef, useEffect } from 'react';
 import styles from './rotator.module.css';
 
 interface RotatorProps {
@@ -10,34 +10,26 @@ interface RotatorProps {
 
 export const Rotator = ({ angle, time = 1, timingFunction = 'ease', children }: RotatorProps) => {
   const childContainerRef = useRef<HTMLDivElement>(null);
-  // const [wrapperSize, setWrapperSize] = useState<{ width: number; height: number }>({ width: undefined, height: undefined });
-
-  console.log('Rotator ', angle);
-
-  const setSize = () => {
-    console.log('set size', angle);
-    if (childContainerRef && childContainerRef.current) {
-      const bounds = childContainerRef.current.getBoundingClientRect();
-      if (angle % 90 !== 0 && bounds.width > 600) {
-        console.log('set size 100');
-        childContainerRef.current.style.left = `100px`;
-      } else {
-        console.log('set size 0');
-        childContainerRef.current.style.left = '0';
-      }
-      //childContainerRef.current.style.left = `${ 300 - bounds.width}px`;
-    }
-  };
-
-  const resizeObserver: any = new ResizeObserver((entries: readonly any[]) => {
-    setSize();
-    resizeObserver.unobserve(childContainerRef.current);
-  });
 
   useEffect(() => {
     if (childContainerRef.current) {
+      const setSize = () => {
+        if (childContainerRef && childContainerRef.current) {
+          const bounds = childContainerRef.current.getBoundingClientRect();
+
+          const offset = (bounds.width - 600) / 2;
+          if (offset > 0) {
+            childContainerRef.current.style.left = `${offset}px`;
+          } else {
+            childContainerRef.current.style.left = '0';
+          }
+        }
+      };
+
+      const resizeObserver: any = new ResizeObserver(setSize);
+
       resizeObserver.observe(childContainerRef.current);
-      childContainerRef.current.addEventListener('transitionend', setSize);
+      childContainerRef.current?.addEventListener('transitionend', setSize);
 
       return () => {
         resizeObserver.unobserve(childContainerRef.current);
@@ -45,7 +37,7 @@ export const Rotator = ({ angle, time = 1, timingFunction = 'ease', children }: 
       };
     }
     return;
-  }, [childContainerRef]);
+  }, [childContainerRef, angle]);
 
   return (
     <div className={styles.wrapper}>

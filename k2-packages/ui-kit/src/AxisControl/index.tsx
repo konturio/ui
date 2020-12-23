@@ -3,7 +3,7 @@ import styles from './style.module.css';
 import clsx from 'clsx';
 import { attachPositionToCb, setOffset } from './matrixFn';
 import { Cell } from './Cell';
-import { TableHeading, TableHeadingType } from './TableHeading';
+import { TableHeading } from './TableHeading';
 
 const getGridStyle = (x, y, cellSize = 0) => ({
   display: 'inline-grid',
@@ -20,17 +20,17 @@ interface AxisControlProps {
   onSelectCell?: (x: number, y: number) => void;
   selectedCell?: { x: number; y: number };
   cellSize?: number;
-  table: {
-    x: TableHeadingType[];
-    y: TableHeadingType[];
-    matrix: (number | null)[][];
-  };
+  matrix: (number | null)[][];
+  xHeadings: (string | React.ReactElement)[];
+  yHeadings: (string | React.ReactElement)[];
 }
 
 export const AxisControl = ({
   legend,
   angle = 0,
-  table,
+  matrix,
+  xHeadings,
+  yHeadings,
   onSelectCell,
   selectedCell,
   cellSize = 0,
@@ -53,12 +53,12 @@ export const AxisControl = ({
   return (
     <div>
       <style>--cell-side: 65px;</style>
-      <div style={getGridStyle(table.x.length + 1, table.y.length + 1, cellSize)}>
-        <TableHeading selectedIndex={selectedCell?.x} hoveredIndex={hoveredCell.x} entries={table.x} vertical />
+      <div style={getGridStyle(xHeadings.length + 1, yHeadings.length + 1, cellSize)}>
+        <TableHeading selectedIndex={selectedCell?.x} hoveredIndex={hoveredCell.x} entries={xHeadings} vertical />
         <div className={styles.legendSlot}>{legend(angle)}</div>
-        <TableHeading selectedIndex={selectedCell?.y} hoveredIndex={hoveredCell.y} entries={table.y} />
+        <TableHeading selectedIndex={selectedCell?.y} hoveredIndex={hoveredCell.y} entries={yHeadings} />
 
-        {table.matrix.map((row, rowIndex) =>
+        {matrix.map((row, rowIndex) =>
           row.map((val, colIndex) => {
             const isFromSelectedCol = checkIsFromSelectedCol(colIndex);
             const isFromSelectedRow = checkIsFromSelectedRow(rowIndex);
@@ -70,7 +70,7 @@ export const AxisControl = ({
               [styles.selectedCol]: isFromSelectedCol,
               [styles.selectedRow]: isFromSelectedRow,
               [styles.last]:
-                (isFromSelectedRow && colIndex === 0) || (isFromSelectedCol && rowIndex === table.matrix.length - 1),
+                (isFromSelectedRow && colIndex === 0) || (isFromSelectedCol && rowIndex === matrix.length - 1),
             };
 
             return val === null ? (

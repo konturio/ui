@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.10.0](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@2.9.5...@k2-packages/ui-kit@2.10.0) (2020-12-23)
+
+### Bug Fixes
+
+- fix build process ([2cacc97](https://gitlab.com/kontur-private/k2/k2-front-end/commit/2cacc971761e7d6e954502f9d3fa1ffbde507f78))
+- Fix tests after code refactoring ([8163ba4](https://gitlab.com/kontur-private/k2/k2-front-end/commit/8163ba448078f88ca395d9782194994a50b6ad8e))
+- Table Header styles fix ([280a31a](https://gitlab.com/kontur-private/k2/k2-front-end/commit/280a31a35f921f870970a850af5668dcf513f2fc))
+- **bivariate-layer-manager:** Remove (0,0) values from display ([fefa1eb](https://gitlab.com/kontur-private/k2/k2-front-end/commit/fefa1ebc96376e2c1485fe8b214d59ba6b1f185d)), closes [#3796](https://gitlab.com/kontur-private/k2/k2-front-end/issues/3796)
+- **denominator-selector:** Add description on the bottom list of normalizations ([7bd9e06](https://gitlab.com/kontur-private/k2/k2-front-end/commit/7bd9e06ac001e40c55aa3901c975d4ccd890a295)), closes [#3785](https://gitlab.com/kontur-private/k2/k2-front-end/issues/3785)
+
+### Features
+
+- **bivariate-selector:** Add ability to show axis quality in denominator ([97bc929](https://gitlab.com/kontur-private/k2/k2-front-end/commit/97bc9290425e8168abd27d409774ebaf59b72286))
+- **bivariate-tools:** Show "quality" param for axises ([4524957](https://gitlab.com/kontur-private/k2/k2-front-end/commit/4524957a66c25062c1a7a91d206da394a2611315)), closes [#4279](https://gitlab.com/kontur-private/k2/k2-front-end/issues/4279)
+- **bivariate-viewver:** Change the labels on the axes to be fully spelled English words ([c6b572a](https://gitlab.com/kontur-private/k2/k2-front-end/commit/c6b572a8fd7e6c71ce625bfc45e2b41bc7d1b06e)), closes [#3784](https://gitlab.com/kontur-private/k2/k2-front-end/issues/3784)
+
 ## [2.9.5](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@2.9.4...@k2-packages/ui-kit@2.9.5) (2020-12-14)
 
 ### Bug Fixes

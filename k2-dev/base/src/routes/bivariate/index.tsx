@@ -82,8 +82,8 @@ export default function Bivariate(): JSX.Element {
     if (denominatorsSelector !== undefined && xDenominator !== undefined && yDenominator !== undefined) {
       const result = denominatorsSelector(xDenominator, yDenominator);
       if (result !== null) {
-        const { matrix, selectNumerators } = result;
-        setTable(matrix);
+        const { table, selectNumerators } = result;
+        setTable(table);
         setNumeratorsSelector(() => selectNumerators);
       }
     }
@@ -98,8 +98,11 @@ export default function Bivariate(): JSX.Element {
 
   const [selectedAxises, setSelectedAxis] = useState<{ x: Stat['axis'][0]; y: Stat['axis'][0] }>();
   useEffect(() => {
-    const selectedX = table?.x.find((x) => x.selected);
-    const selectedY = table?.y.find((y) => y.selected);
+    // TODO: fix test app to work with new table heading signature
+    const selectedX: any = undefined;
+    const selectedY: any = undefined;
+    //const selectedX = table?.x.find((x) => x.selected);
+    //const selectedY = table?.y.find((y) => y.selected);
     if (selectedX !== undefined && selectedY !== undefined && numeratorsSelector !== undefined) {
       const selection = numeratorsSelector(selectedX.id, selectedY.id);
       if (selection) {
@@ -168,7 +171,9 @@ export default function Bivariate(): JSX.Element {
           <Rotator angle={-45}>
             <AxisControl
               angle={-45}
-              table={table}
+              matrix={table.matrix}
+              xHeadings={[]}
+              yHeadings={[]}
               onSelectCell={clickHandler}
               legend={(angle) => (
                 <Legend

@@ -1,22 +1,28 @@
+.legendTitle {
+  font-size: 0.9em;
+  margin-bottom: 12px;
+}
+
 .grid {
   display: inline-grid;
   grid-auto-flow: dense;
 }
 
 .cell {
-  padding: var(--unit);
-  font-size: .7em;
+  padding: 6px;
+  font-size: 0.7em;
 }
 
 .colorCell {
-  opacity: .7;
+  opacity: 0.7;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.2em;
+  font-size: 0.9em;
+  padding: 10px;
 }
 
-.yStepsCell { 
+.yStepsCell {
   position: relative;
   text-align: right;
   display: flex;
@@ -26,9 +32,9 @@
 }
 
 .yStepsCell:before {
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid #aaa;
   content: '';
-  width: 24px;
+  width: 16px;
   height: 1px;
   position: absolute;
   bottom: -1px;
@@ -42,47 +48,67 @@
 }
 
 .xStepsCell:before {
-  border-left: 1px solid gray;
+  border-left: 1px solid #aaa;
   content: '';
-  height: 24px;
+  height: 16px;
   width: 1px;
   position: absolute;
   top: 0;
   left: 0;
 }
 
-.arrowX, .arrowY {
-  background-color: black;
-
+.arrowX,
+.arrowY {
+  background-color: #aaa;
 }
 
 .arrowY {
   width: 1px;
   height: 100%;
-  grid-area:  1 / 2 / -1 / 2;
+  grid-area: 1 / 2 / -2 / 2;
   position: relative;
-}
-
-.arrowY:after {
-  content: '>';
-  display: inline-block;
-  position: absolute;
-  line-height: 0px;
-  right: -3.5px;
-  transform: rotate(-90deg);
 }
 
 .arrowX {
   height: 1px;
-  grid-area:  -2 / 1 / -2 / -1;
+  grid-area: -2 / 2 / -2 / -1;
   position: relative;
 }
 
-.arrowX:after {
-  content: '>';
-  display: inline-block;
-  position: absolute;
-  right: -3px;
-  line-height: 0px;
-  top: 0px;
+.axisLabelX,
+.axisLabelY {
+  font-size: 0.8em;
+  color: #999;
+}
+
+.axisLabelX {
+  grid-area: -1 / 2 / -1 / -1;
+}
+
+.axisLabelY {
+  grid-area: 1 / 1 / -1 / 1;
+  writing-mode: tb-rl;
+  transform: rotate(180deg);
+  position: relative;
+  left: -8px;
+}
+
+.arrowHeadX,
+.arrowHeadY {
+  color: #999;
+  position: relative;
+}
+
+.arrowHeadX {
+  top: -7px;
+  right: calc(-100% + 4px);
+}
+
+.arrowHeadY {
+  top: -9px;
+  left: -5px;
+}
+
+.arrowHeadY_angle0 {
+  left: -6px !important;
 }

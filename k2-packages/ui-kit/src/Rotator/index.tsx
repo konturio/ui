@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState, useCallback, useMemo } from 'react';
+import React, { useRef, useEffect } from 'react';
 import styles from './rotator.module.css';
 
 interface RotatorProps {
@@ -9,46 +9,41 @@ interface RotatorProps {
 }
 
 export const Rotator = ({ angle, time = 1, timingFunction = 'ease', children }: RotatorProps) => {
-  console.log('Rotator');
   const childContainerRef = useRef<HTMLDivElement>(null);
-  const [wrapperSize, setWrapperSize] = useState({ width: 'unset', height: 'unset' });
-
-  const resizeObserver: any = useMemo(
-    () =>
-      new ResizeObserver((entries: readonly any[]) => {
-        if (entries.length) {
-          const entry = entries[0];
-          const { width, height } = entry.contentRect;
-          if (width !== 0 && height !== 0) {
-            setWrapperSize(entry.target.getBoundingClientRect());
-          }
-        }
-      }),
-    [],
-  );
-
-  const onTransitionEnd = useCallback(() => {
-    setWrapperSize((childContainerRef.current as any).getBoundingClientRect());
-  }, []);
 
   useEffect(() => {
     if (childContainerRef.current) {
+      const setSize = () => {
+        if (childContainerRef && childContainerRef.current) {
+          const bounds = childContainerRef.current.getBoundingClientRect();
+
+          const offset = (bounds.width - 600) / 2;
+          if (offset > 0) {
+            childContainerRef.current.style.left = `${offset}px`;
+          } else {
+            childContainerRef.current.style.left = '0';
+          }
+        }
+      };
+
+      const resizeObserver: any = new ResizeObserver(setSize);
+
       resizeObserver.observe(childContainerRef.current);
-      childContainerRef.current.addEventListener('transitionend', onTransitionEnd);
+      childContainerRef.current?.addEventListener('transitionend', setSize);
 
       return () => {
         resizeObserver.unobserve(childContainerRef.current);
-        childContainerRef.current?.removeEventListener('transitionend', onTransitionEnd);
+        childContainerRef.current?.removeEventListener('transitionend', setSize);
       };
     }
     return;
-  }, [childContainerRef]);
+  }, [childContainerRef, angle]);
 
   return (
-    <div id="wrapper" className={styles.wrapper} style={{ width: wrapperSize.width, height: wrapperSize.height }}>
+    <div className={styles.wrapper}>
       <div
-        id="container"
         ref={childContainerRef}
+        className={styles.container}
         style={{ transform: `rotate(${angle}deg)`, transition: `transform ${time}s ${timingFunction}` }}
       >
         {children}

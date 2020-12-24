@@ -175,7 +175,7 @@ export default function Bivariate(): JSX.Element {
               xHeadings={[]}
               yHeadings={[]}
               onSelectCell={clickHandler}
-              legend={(angle) => (
+              legend={
                 <Legend
                   size={3}
                   angle={-45}
@@ -185,7 +185,7 @@ export default function Bivariate(): JSX.Element {
                     label: String(i),
                   }))}
                 />
-              )}
+              }
             />
           </Rotator>
         )}

@@ -15,7 +15,7 @@ const getGridStyle = (x, y, cellSize = 0) => ({
 const isSelected = (selected?: number) => (current: number) => selected === current;
 
 interface AxisControlProps {
-  legend: (angle: number) => React.ReactElement | null;
+  legend: React.ReactElement | null;
   angle?: number;
   onSelectCell?: (x: number, y: number) => void;
   selectedCell?: { x: number; y: number };
@@ -55,7 +55,7 @@ export const AxisControl = ({
       <style>--cell-side: 65px;</style>
       <div style={getGridStyle(xHeadings.length + 1, yHeadings.length + 1, cellSize)}>
         <TableHeading selectedIndex={selectedCell?.x} hoveredIndex={hoveredCell.x} entries={xHeadings} vertical />
-        <div className={styles.legendSlot}>{legend(angle)}</div>
+        <div className={styles.legendSlot}>{legend}</div>
         <TableHeading selectedIndex={selectedCell?.y} hoveredIndex={hoveredCell.y} entries={yHeadings} />
 
         {matrix.map((row, rowIndex) =>

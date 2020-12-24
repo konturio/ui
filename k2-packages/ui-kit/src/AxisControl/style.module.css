@@ -38,3 +38,7 @@
 .selectedRow.last {
   border-left: var(--selection-border-style) !important;
 }
+
+.selectedCol.selectedRow {
+  background: #ddd !important;
+}

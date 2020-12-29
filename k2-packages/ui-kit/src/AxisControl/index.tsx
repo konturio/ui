@@ -17,8 +17,8 @@ const isSelected = (selected?: number) => (current: number) => selected === curr
 interface AxisControlProps {
   legend: React.ReactElement | null;
   angle?: number;
-  onSelectCell?: (x: number, y: number) => void;
-  selectedCell?: { x: number; y: number };
+  onSelectCell?: (x: number | undefined, y: number | undefined) => void;
+  selectedCell?: { x: number | undefined; y: number | undefined };
   cellSize?: number;
   matrix: (number | null)[][];
   xHeadings: (string | React.ReactElement)[];

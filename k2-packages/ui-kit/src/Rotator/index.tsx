@@ -16,8 +16,6 @@ export const Rotator = ({ angle, time = 1, timingFunction = 'ease', children }: 
     if (childRef.current && containerRef.current) {
       const setSize = () => {
         if (childRef.current && containerRef.current) {
-          const bounds = childRef.current.getBoundingClientRect();
-
           const angleRad = (Math.PI * angle) / 180;
           const calculatedWidth =
             Math.abs(childRef.current.offsetWidth * Math.cos(angleRad)) +

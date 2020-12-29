@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.10.2](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@2.10.1...@k2-packages/ui-kit@2.10.2) (2020-12-29)
+
+### Bug Fixes
+
+- Fix build process ([61b61b1](https://gitlab.com/kontur-private/k2/k2-front-end/commit/61b61b132fd950fd5530ddee0223c9ddb230c31a))
+- **ui-kit/Rotator:** there is a scroll on maximised view and axis labels are not fully displayed ([0eef2ef](https://gitlab.com/kontur-private/k2/k2-front-end/commit/0eef2ef37717c03a65e21cdaed8728588d25bcdb)), closes [#4587](https://gitlab.com/kontur-private/k2/k2-front-end/issues/4587)
+
 ## [2.10.1](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@2.10.0...@k2-packages/ui-kit@2.10.1) (2020-12-24)
 
 **Note:** Version bump only for package @k2-packages/ui-kit

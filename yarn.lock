@@ -2510,6 +2510,38 @@
     lodash.throttle "^4.1.1"
     viewport-mercator-project ">=6.0.0"
 
+"@nebula.gl/edit-modes@0.21.1", "@nebula.gl/edit-modes@^0.21.1":
+  version "0.21.1"
+  resolved "https://nexus.kontur.io/repository/npm-a/@nebula.gl/edit-modes/-/edit-modes-0.21.1.tgz#9f72b10329a7e699655b66aee362555a0ad79316"
+  integrity sha512-S/A2I7mgONuE7auGmJ08ibU/xV9fUIPB2XKNCV05RCtlnFQBRu1lXLH2rgQKb+67TvinnozYZh+ZK7ME4FlyZA==
+  dependencies:
+    "@turf/bbox" ">=4.0.0"
+    "@turf/bbox-polygon" ">=4.0.0"
+    "@turf/bearing" ">=4.0.0"
+    "@turf/boolean-point-in-polygon" ">=4.0.0"
+    "@turf/buffer" ">=4.0.0"
+    "@turf/center" ">=4.0.0"
+    "@turf/centroid" ">=4.0.0"
+    "@turf/circle" ">=4.0.0"
+    "@turf/destination" ">=4.0.0"
+    "@turf/difference" ">=4.0.0"
+    "@turf/distance" ">=4.0.0"
+    "@turf/ellipse" ">=4.0.0"
+    "@turf/helpers" ">=4.0.0"
+    "@turf/intersect" ">=4.0.0"
+    "@turf/line-intersect" ">=4.0.0"
+    "@turf/nearest-point-on-line" ">=4.0.0"
+    "@turf/point-to-line-distance" ">=4.0.0"
+    "@turf/polygon-to-line" ">=4.0.0"
+    "@turf/rewind" ">=4.0.0"
+    "@turf/transform-rotate" ">=4.0.0"
+    "@turf/transform-scale" ">=4.0.0"
+    "@turf/transform-translate" ">=4.0.0"
+    "@turf/union" ">=4.0.0"
+    geojson "0.5.0"
+    lodash.throttle "^4.1.1"
+    viewport-mercator-project ">=6.0.0"
+
 "@nebula.gl/layers@^0.18.5":
   version "0.18.5"
   resolved "https://nexus.kontur.io/repository/npm-a/@nebula.gl/layers/-/layers-0.18.5.tgz#8f62d5d33853b15036d8cf2405604cba8cffb076"
@@ -2542,6 +2574,41 @@
     cubic-hermite-spline "^1.0.1"
     geojson-types "^2.0.1"
     global ">=4.3.0"
+    viewport-mercator-project ">=6.0.0"
+
+"@nebula.gl/layers@^0.21.1":
+  version "0.21.1"
+  resolved "https://nexus.kontur.io/repository/npm-a/@nebula.gl/layers/-/layers-0.21.1.tgz#8431e75f6d61bb7bab9769716f583a0842561155"
+  integrity sha512-y/wiaY8w4sA1M65jd2tjUf3bh1y9SMcK8Wer3wMD4YaKjlFLp2SSPE+X0zQK+9oWnB/gYo1mLxE/lN5a1Z89Tw==
+  dependencies:
+    "@danmarshall/deckgl-typings" "^3.4.8"
+    "@nebula.gl/edit-modes" "0.21.1"
+    "@turf/bbox" ">=4.0.0"
+    "@turf/bbox-polygon" ">=4.0.0"
+    "@turf/bearing" ">=4.0.0"
+    "@turf/boolean-point-in-polygon" ">=4.0.0"
+    "@turf/buffer" ">=4.0.0"
+    "@turf/center" ">=4.0.0"
+    "@turf/centroid" ">=4.0.0"
+    "@turf/circle" ">=4.0.0"
+    "@turf/destination" ">=4.0.0"
+    "@turf/difference" ">=4.0.0"
+    "@turf/distance" ">=4.0.0"
+    "@turf/ellipse" ">=4.0.0"
+    "@turf/helpers" ">=4.0.0"
+    "@turf/intersect" ">=4.0.0"
+    "@turf/line-intersect" ">=4.0.0"
+    "@turf/nearest-point-on-line" ">=4.0.0"
+    "@turf/point-to-line-distance" ">=4.0.0"
+    "@turf/polygon-to-line" ">=4.0.0"
+    "@turf/transform-rotate" ">=4.0.0"
+    "@turf/transform-scale" ">=4.0.0"
+    "@turf/transform-translate" ">=4.0.0"
+    "@turf/union" ">=4.0.0"
+    cubic-hermite-spline "^1.0.1"
+    geojson-types "^2.0.1"
+    global ">=4.3.0"
+    h3-js "^3.6.4"
     viewport-mercator-project ">=6.0.0"
 
 "@nicolo-ribaudo/chokidar-2@2.1.8-no-fsevents":
@@ -2816,6 +2883,14 @@
     "@turf/helpers" "6.x"
     "@turf/invariant" "6.x"
 
+"@turf/boolean-clockwise@^5.1.5":
+  version "5.1.5"
+  resolved "https://nexus.kontur.io/repository/npm-a/@turf/boolean-clockwise/-/boolean-clockwise-5.1.5.tgz#3302b7dac62c5e291a0789e29af7283387fa9deb"
+  integrity sha1-MwK32sYsXikaB4nimvcoM4f6nes=
+  dependencies:
+    "@turf/helpers" "^5.1.5"
+    "@turf/invariant" "^5.1.5"
+
 "@turf/boolean-point-in-polygon@>=4.0.0":
   version "6.0.1"
   resolved "https://nexus.kontur.io/repository/npm-a/@turf/boolean-point-in-polygon/-/boolean-point-in-polygon-6.0.1.tgz#5836677afd77d2ee391af0056a0c29b660edfa32"
@@ -3046,6 +3121,17 @@
   dependencies:
     "@turf/clone" "^5.1.5"
     "@turf/helpers" "^5.1.5"
+    "@turf/meta" "^5.1.5"
+
+"@turf/rewind@>=4.0.0":
+  version "5.1.5"
+  resolved "https://nexus.kontur.io/repository/npm-a/@turf/rewind/-/rewind-5.1.5.tgz#9ea3db4a68b73c1fd1dd11f57631b143cfefa1c9"
+  integrity sha1-nqPbSmi3PB/R3RH1djGxQ8/vock=
+  dependencies:
+    "@turf/boolean-clockwise" "^5.1.5"
+    "@turf/clone" "^5.1.5"
+    "@turf/helpers" "^5.1.5"
+    "@turf/invariant" "^5.1.5"
     "@turf/meta" "^5.1.5"
 
 "@turf/rhumb-bearing@6.x":
@@ -7404,6 +7490,11 @@ growly@^1.3.0:
   version "1.3.0"
   resolved "https://nexus.kontur.io/repository/npm-a/growly/-/growly-1.3.0.tgz#f10748cbe76af964b7c96c93c6bcc28af120c081"
   integrity sha1-8QdIy+dq+WS3yWyTxrzCivEgwIE=
+
+h3-js@^3.6.4:
+  version "3.7.0"
+  resolved "https://nexus.kontur.io/repository/npm-a/h3-js/-/h3-js-3.7.0.tgz#f0ff5563ae04ce448cbe6b8573d9796a6c97f5ad"
+  integrity sha512-EcH/qGU4khZsAEG39Uu8MvaCing0JFcuoe3K4Xmg5MofDIu1cNJl7z2AQS8ggvXGxboiLJqsGirhEqFKdd2gAA==
 
 hammerjs@^2.0.8:
   version "2.0.8"

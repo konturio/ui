@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.7.19](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-dev/base@2.7.18...@k2-dev/base@2.7.19) (2021-01-06)
+
+**Note:** Version bump only for package @k2-dev/base
+
 ## [2.7.18](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-dev/base@2.7.17...@k2-dev/base@2.7.18) (2020-12-30)
 
 **Note:** Version bump only for package @k2-dev/base

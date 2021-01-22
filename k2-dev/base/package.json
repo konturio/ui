@@ -1,6 +1,6 @@
 {
   "name": "@k2-dev/base",
-  "version": "2.7.23",
+  "version": "2.7.24",
   "main": "src/index.tsx",
   "types": "tsclib",
   "private": true,
@@ -16,7 +16,7 @@
     "@k2-packages/deck-gl": "^2.1.1",
     "@k2-packages/default-theme": "^2.1.1",
     "@k2-packages/geocoder": "^1.10.44",
-    "@k2-packages/map-draw-tools": "^2.5.1",
+    "@k2-packages/map-draw-tools": "^2.5.2",
     "@k2-packages/mapbox-map": "^2.0.2",
     "@k2-packages/module": "^1.4.8",
     "@k2-packages/plugin": "^1.0.2",

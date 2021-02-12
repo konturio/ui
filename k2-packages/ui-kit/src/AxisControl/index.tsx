@@ -14,6 +14,13 @@ const getGridStyle = (x, y, cellSize = 0) => ({
 
 const isSelected = (selected?: number) => (current: number) => selected === current;
 
+const getCellPositionStyle = (col: number, row: number) => {
+  return {
+    gridColumn: `${col + 3} / ${col + 4}`,
+    gridRow: `${row + 3} / ${row + 4}`,
+  };
+};
+
 interface AxisControlProps {
   legend: React.ReactElement | null;
   angle?: number;
@@ -27,7 +34,6 @@ interface AxisControlProps {
 
 export const AxisControl = ({
   legend,
-  angle = 0,
   matrix,
   xHeadings,
   yHeadings,
@@ -51,12 +57,36 @@ export const AxisControl = ({
   const checkIsFromHoveredRow = isSelected(hoveredCell.y);
 
   return (
-    <div>
-      <style>--cell-side: 65px;</style>
+    <div className={styles.rotatedMatrix}>
       <div style={getGridStyle(xHeadings.length + 1, yHeadings.length + 1, cellSize)}>
         <TableHeading selectedIndex={selectedCell?.x} hoveredIndex={hoveredCell.x} entries={xHeadings} vertical />
-        <div className={styles.legendSlot}>{legend}</div>
         <TableHeading selectedIndex={selectedCell?.y} hoveredIndex={hoveredCell.y} entries={yHeadings} />
+
+        {matrix.map((row, rowIndex) => {
+          return (
+            <div key={rowIndex} className={styles.horConnector} style={getCellPositionStyle(-1, rowIndex)}>
+              <div
+                className={clsx({
+                  [styles.hovered]: checkIsFromHoveredRow(rowIndex),
+                  [styles.selected]: checkIsFromSelectedRow(rowIndex),
+                })}
+              ></div>
+            </div>
+          );
+        })}
+
+        {matrix[0].map((col, colIndex) => {
+          return (
+            <div key={colIndex} className={styles.vertConnector} style={getCellPositionStyle(colIndex, -1)}>
+              <div
+                className={clsx({
+                  [styles.hovered]: checkIsFromHoveredCol(colIndex),
+                  [styles.selected]: checkIsFromSelectedCol(colIndex),
+                })}
+              ></div>
+            </div>
+          );
+        })}
 
         {matrix.map((row, rowIndex) =>
           row.map((val, colIndex) => {
@@ -64,21 +94,21 @@ export const AxisControl = ({
             const isFromSelectedRow = checkIsFromSelectedRow(rowIndex);
             const isHovered = checkIsFromHoveredRow(rowIndex) || checkIsFromHoveredCol(colIndex);
             const call = attachPositionToCb({ x: colIndex, y: rowIndex });
-            const getCellPosition = setOffset(0, 1);
             const cellClasses = {
               [styles.hoveredCell]: isHovered,
               [styles.selectedCol]: isFromSelectedCol,
               [styles.selectedRow]: isFromSelectedRow,
               [styles.last]:
-                (isFromSelectedRow && colIndex === 0) || (isFromSelectedCol && rowIndex === matrix.length - 1),
+                (isFromSelectedRow && colIndex === row.length - 1) ||
+                (isFromSelectedCol && rowIndex === matrix.length - 1),
+              [styles.first]: (isFromSelectedRow && colIndex === 0) || (isFromSelectedCol && rowIndex === 0),
             };
 
             return val === null ? (
               <Cell
                 className={clsx(cellClasses)}
                 key={val ?? `${colIndex}|${rowIndex}`}
-                positionX={getCellPosition.col(colIndex)}
-                positionY={getCellPosition.row(rowIndex)}
+                style={getCellPositionStyle(colIndex, rowIndex)}
                 value={val}
                 disabled
               >
@@ -92,11 +122,10 @@ export const AxisControl = ({
                 onClick={call(onSelectCell)}
                 onHover={call(onMouseOver)}
                 onMouseOut={onMouseOut}
-                positionX={getCellPosition.col(colIndex)}
-                positionY={getCellPosition.row(rowIndex)}
+                style={getCellPositionStyle(colIndex, rowIndex)}
                 value={val}
               >
-                <span style={{ transform: `rotate(${-angle}deg)` }}>{val?.toFixed(3)}</span>
+                <span className={styles.rotatedCell}>{val?.toFixed(3)}</span>
               </Cell>
             );
           }),

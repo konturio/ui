@@ -1,16 +1,73 @@
 :root {
+  --header-border-style: 1px solid #e0e0e0;
   --selection-border-style: 1px solid #a29e9e;
+  --hover-bg-color: #f5f5f5;
 }
 
 .axisRecord {
   padding: var(--unit);
   display: flex;
   flex-direction: row;
-  font-size: 0.9em;
+  font-size: 0.85em;
   font-stretch: condensed;
   white-space: nowrap;
   gap: 4px;
   align-items: center;
+  position: relative;
+}
+
+.axisRecord.column {
+  border-right: var(--header-border-style);
+  border-left: var(--header-border-style);
+  border-top: var(--header-border-style);
+}
+
+.axisRecord.column:before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  width: 24px;
+  height: 23px;
+  border-right: var(--header-border-style);
+  z-index: 1;
+}
+
+.axisRecord.column:after {
+  content: '';
+  position: absolute;
+  bottom: -11.35px;
+  border-top: var(--header-border-style);
+  height: 0;
+  width: 32px;
+  transform: rotate(45deg);
+  z-index: 1;
+}
+
+.axisRecord.row {
+  border-top: var(--header-border-style);
+  border-bottom: var(--header-border-style);
+  border-left: var(--header-border-style);
+}
+
+.axisRecord.row:before {
+  content: '';
+  position: absolute;
+  left: 100%;
+  width: 21px;
+  height: 24px;
+  border-bottom: var(--header-border-style);
+  z-index: 1;
+}
+
+.axisRecord.row:after {
+  content: '';
+  position: absolute;
+  right: -27px;
+  border-top: var(--header-border-style);
+  height: 0;
+  width: 32px;
+  transform: rotate(45deg);
+  z-index: 1;
 }
 
 .row.selected {
@@ -18,7 +75,15 @@
   -webkit-text-stroke-color: black;
   border-top: var(--selection-border-style);
   border-bottom: var(--selection-border-style);
-  border-right: var(--selection-border-style);
+  border-left: var(--selection-border-style);
+}
+
+.axisRecord.row.selected:before {
+  border-bottom: var(--selection-border-style);
+}
+
+.axisRecord.row.selected:after {
+  border-top: var(--selection-border-style);
 }
 
 .column.selected {
@@ -29,8 +94,40 @@
   border-top: var(--selection-border-style);
 }
 
+.axisRecord.column.selected:before {
+  border-right: var(--selection-border-style);
+}
+
+.axisRecord.column.selected:after {
+  border-top: var(--selection-border-style);
+}
+
+.corner {
+  position: absolute;
+}
+
+.axisRecord.column.hovered > .corner {
+  top: 100%;
+  width: 24px;
+  height: 21px;
+  border-bottom: 10px solid transparent;
+  border-left: 12px solid transparent;
+  border-top: 10px solid var(--hover-bg-color);
+  border-right: 12px solid var(--hover-bg-color);
+}
+
+.axisRecord.row.hovered > .corner {
+  left: 100%;
+  width: 21px;
+  height: 24px;
+  border-top: 12px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 12px solid var(--hover-bg-color);
+  border-left: 10px solid var(--hover-bg-color);
+}
+
 .hovered {
-  background-color: #f9f9f9;
+  background-color: var(--hover-bg-color);
 }
 
 .verticalText {
@@ -39,13 +136,14 @@
 
 .row {
   height: var(--cell-side);
-  grid-column-start: -1;
-  justify-content: flex-start;
-  border: 1px solid transparent;
+  justify-content: flex-end;
+  height: 24px;
+  transform: rotate(45deg) translate(-49px, -96px);
 }
 
 .column {
   width: var(--cell-side);
   justify-content: flex-end;
-  border: 1px solid transparent;
+  width: 24px;
+  transform: rotate(-45deg) translate(-96px, -49px);
 }

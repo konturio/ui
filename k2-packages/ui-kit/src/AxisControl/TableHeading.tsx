@@ -2,6 +2,21 @@ import React from 'react';
 import styles from './tableHeading.module.css';
 import clsx from 'clsx';
 
+const getHeadingPositionStyle = (isColum: boolean, index: number) => {
+  const styles: any = {
+    gridColumn: isColum ? `${index + 3} / ${index + 4}` : '1',
+    gridRow: isColum ? '1' : `${index + 3} / ${index + 4}`,
+  };
+
+  // if (isColum) {
+  //   styles.height = `${100 + index * 40}px`;
+  // } else {
+  //   styles.width = `${100 + index * 40}px`;
+  // }
+
+  return styles;
+};
+
 interface TableHeadingProps {
   className?: string;
   selectedIndex?: number;
@@ -16,6 +31,7 @@ export const TableHeading = React.memo(
       {entries.map((headerCell, index) => (
         <div
           key={index}
+          style={getHeadingPositionStyle(vertical, index)}
           className={clsx({
             [className || '']: className,
             [styles.axisRecord]: true,
@@ -26,6 +42,7 @@ export const TableHeading = React.memo(
             [styles.verticalText]: vertical,
           })}
         >
+          <div className={styles.corner}></div>
           {headerCell}
         </div>
       ))}

@@ -7,8 +7,6 @@
   justify-content: center;
   font-size: 12px;
   cursor: pointer;
-  width: var(--cell-side);
-  height: var(--cell-side);
   border: 1px dashed #eee;
 }
 

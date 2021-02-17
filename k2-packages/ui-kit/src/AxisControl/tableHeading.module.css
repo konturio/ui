@@ -1,36 +1,190 @@
 :root {
+  --header-border-style: 1px solid #e0e0e0;
   --selection-border-style: 1px solid #a29e9e;
+  --hover-bg-color: #f5f5f5;
+  --show--denominators-bg-color: #e2e2e2;
 }
 
 .axisRecord {
-  padding: var(--unit);
-  display: flex;
-  flex-direction: row;
-  font-size: 0.9em;
-  font-stretch: condensed;
-  white-space: nowrap;
-  gap: 4px;
-  align-items: center;
+  position: relative;
+  cursor: default;
 }
 
-.row.selected {
+.axisRecord .container {
+  display: flex;
+  flex-direction: row;
+  font-size: 0.85em;
+  font-stretch: condensed;
+  white-space: nowrap;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.axisRecord .container :global(.qualityLabel) {
+  font-size: 0.8em;
+  color: #777;
+}
+
+.axisRecord.column .container :global(.qualityLabel) {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+  border-bottom: var(--header-border-style);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.axisRecord.row .container :global(.qualityLabel) {
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-right: 5px;
+  border-right: var(--header-border-style);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.axisRecord.column .container {
+  border-right: var(--header-border-style);
+  border-left: var(--header-border-style);
+  width: 23.4px;
+}
+
+.axisRecord.column .container:before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: -1.5px;
+  width: 24px;
+  height: 23px;
+  border-right: var(--header-border-style);
+  z-index: 1;
+}
+
+.axisRecord.column .container:after {
+  content: '';
+  position: absolute;
+  bottom: -11.35px;
+  left: -5px;
+  border-top: var(--header-border-style);
+  height: 0;
+  width: 32px;
+  transform: rotate(45deg);
+  z-index: 1;
+}
+
+.axisRecord.row .container {
+  border-top: var(--header-border-style);
+  border-bottom: var(--header-border-style);
+  height: 23.4px;
+}
+
+.axisRecord.row .container:before {
+  content: '';
+  position: absolute;
+  left: 100%;
+  width: 21px;
+  height: 24px;
+  border-bottom: var(--header-border-style);
+  z-index: 1;
+}
+
+.axisRecord.row .container:after {
+  content: '';
+  position: absolute;
+  right: -27px;
+  border-top: var(--header-border-style);
+  height: 0;
+  width: 32px;
+  transform: rotate(45deg);
+  z-index: 1;
+}
+
+.row.selected .container {
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: black;
   border-top: var(--selection-border-style);
   border-bottom: var(--selection-border-style);
-  border-right: var(--selection-border-style);
 }
 
-.column.selected {
+.axisRecord.row.selected .container:before {
+  border-bottom: var(--selection-border-style);
+}
+
+.axisRecord.row.selected .container:after {
+  border-top: var(--selection-border-style);
+}
+
+.column.selected .container {
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: black;
   border-right: var(--selection-border-style);
   border-left: var(--selection-border-style);
+}
+
+.axisRecord.column.selected .container:before {
+  border-right: var(--selection-border-style);
+}
+
+.axisRecord.column.selected .container:after {
   border-top: var(--selection-border-style);
 }
 
-.hovered {
-  background-color: #f9f9f9;
+.corner {
+  position: absolute;
+}
+
+.axisRecord.column.hovered .container > .corner {
+  top: 100%;
+  width: 24px;
+  height: 21px;
+  border-bottom: 10px solid transparent;
+  border-left: 12px solid transparent;
+  border-top: 10px solid var(--hover-bg-color);
+  border-right: 12px solid var(--hover-bg-color);
+}
+
+.axisRecord.row.hovered .container > .corner {
+  left: 100%;
+  width: 21px;
+  height: 24px;
+  border-top: 12px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 12px solid var(--hover-bg-color);
+  border-left: 10px solid var(--hover-bg-color);
+}
+
+.axisRecord.hovered .container {
+  background-color: var(--hover-bg-color);
+}
+
+.axisRecord.column.denominatorsShown .container > .corner {
+  top: 100%;
+  width: 24px;
+  height: 21px;
+  border-bottom: 10px solid transparent;
+  border-left: 12px solid transparent;
+  border-top: 10px solid var(--show--denominators-bg-color);
+  border-right: 12px solid var(--show--denominators-bg-color);
+}
+
+.axisRecord.row.denominatorsShown .container > .corner {
+  left: 100%;
+  width: 21px;
+  height: 24px;
+  border-top: 12px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 12px solid var(--show--denominators-bg-color);
+  border-left: 10px solid var(--show--denominators-bg-color);
+}
+
+.axisRecord.denominatorsShown .container {
+  background-color: var(--show--denominators-bg-color);
 }
 
 .verticalText {
@@ -38,14 +192,94 @@
 }
 
 .row {
-  height: var(--cell-side);
-  grid-column-start: -1;
-  justify-content: flex-start;
-  border: 1px solid transparent;
+  transform: rotate(45deg) translate(-13px, -8px);
 }
 
 .column {
-  width: var(--cell-side);
-  justify-content: flex-end;
-  border: 1px solid transparent;
+  transform: rotate(-45deg) translate(-9px, -13px);
+}
+
+.denominators {
+  position: relative;
+}
+
+.denominatorSelector {
+  font-size: 18px;
+  background: #333;
+  color: #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 23px;
+  width: 24px;
+  cursor: pointer;
+}
+
+.denominatorSelector:hover {
+  background: #666;
+}
+
+.column .denominatorSelector {
+  transform: rotate(90deg);
+  flex-direction: row;
+}
+
+.row .denominatorSelector {
+  flex-direction: column;
+}
+
+.denominatorsContainer {
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s linear 0.33s, opacity 0.33s linear;
+  background: #f5f5f5;
+  line-height: 25px;
+  -webkit-text-stroke-width: 0;
+  z-index: 2;
+}
+
+.denominatorsContainer.show {
+  visibility: visible;
+  opacity: 1;
+  transition-delay: 0s;
+}
+
+.column .denominatorsContainer {
+  top: -0.5px;
+  right: 22px;
+  border-top: 24px solid #bbb;
+  box-shadow: -3px 3px 4px rgb(31 51 73 / 15%);
+}
+
+.row .denominatorsContainer {
+  left: -0.5px;
+  top: 22px;
+  border-left: 24px solid #bbb;
+  box-shadow: 3px 3px 4px rgb(31 51 73 / 15%);
+}
+
+.denominatorsContainer > div {
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+}
+
+.denominatorsContainer > div:hover {
+  background: #777;
+  color: #eee;
+}
+
+.denominatorsContainer > div:hover :global(.qualityLabel) {
+  color: #eee;
+}
+
+.row .denominatorsContainer > div {
+  padding-right: 10px;
+  border-bottom: 1px dotted #999;
+}
+
+.column .denominatorsContainer > div {
+  padding-bottom: 10px;
+  border-right: 1px dotted #999;
 }

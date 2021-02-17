@@ -3,8 +3,6 @@ import styles from './cell.module.css';
 import clsx from 'clsx';
 
 interface CellProps {
-  positionX: number;
-  positionY: number;
   className?: string;
   children?: React.ReactChild;
   onHover?: (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
@@ -13,16 +11,10 @@ interface CellProps {
   value: number | null;
   selected?: boolean;
   disabled?: boolean;
+  style?: Record<string, any>;
 }
 
-const getCellPositionStyle = (col: number, row: number) => ({
-  gridColumn: `${col + 1} / ${col + 2}`,
-  gridRow: `${row + 1} / ${row + 2}`,
-});
-
 export const Cell = ({
-  positionX,
-  positionY,
   value,
   className,
   children,
@@ -30,10 +22,11 @@ export const Cell = ({
   onMouseOut,
   onClick,
   disabled = false,
+  style,
 }: CellProps) => (
   <div
     className={clsx(styles.valueCell, className, disabled && styles.disabled)}
-    style={getCellPositionStyle(positionX, positionY)}
+    style={style}
     onMouseOver={onHover}
     onMouseOut={onMouseOut}
     onClick={onClick}

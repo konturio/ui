@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.11.0](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@2.10.2...@k2-packages/ui-kit@2.11.0) (2021-02-17)
+
+### Bug Fixes
+
+- **bivariate-v04:** Fix linter ([5ec24ee](https://gitlab.com/kontur-private/k2/k2-front-end/commit/5ec24ee051ae1791dc84583d34dd83c97cf202da))
+
+### Features
+
+- **bivariate-layout:** Change bivariate layout to v0.4 ([088c71b](https://gitlab.com/kontur-private/k2/k2-front-end/commit/088c71b8f2729f9ebe9567ccf377ffc4a0533050))
+- **bivariate-v04:** Process visual and data changes ([0f72abb](https://gitlab.com/kontur-private/k2/k2-front-end/commit/0f72abbc7212a6284f21eb51013dd70335846da3))
+
 ## [2.10.2](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@2.10.1...@k2-packages/ui-kit@2.10.2) (2020-12-29)
 
 ### Bug Fixes

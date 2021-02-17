@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from 'react';
 import styles from './style.module.css';
 import clsx from 'clsx';
-import { attachPositionToCb, setOffset } from './matrixFn';
+import { attachPositionToCb } from './matrixFn';
 import { Cell } from './Cell';
 import TableHeading from './TableHeading';
 

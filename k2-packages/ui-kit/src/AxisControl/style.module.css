@@ -17,6 +17,8 @@
 
 .rotatedMatrix {
   transform: rotate(-45deg);
+  margin-left: 400px;
+  margin-top: 100px;
 }
 
 .rotatedCell {
@@ -54,14 +56,14 @@
 }
 
 .horConnector {
-  width: 20px;
+  width: 18px;
   height: 36px;
   padding: 2px 4px;
 }
 
 .vertConnector {
   width: 36px;
-  height: 20px;
+  height: 18px;
   padding: 4px 2px;
 }
 

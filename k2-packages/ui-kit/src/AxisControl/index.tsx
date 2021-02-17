@@ -3,7 +3,7 @@ import styles from './style.module.css';
 import clsx from 'clsx';
 import { attachPositionToCb, setOffset } from './matrixFn';
 import { Cell } from './Cell';
-import { TableHeading } from './TableHeading';
+import TableHeading from './TableHeading';
 
 const getGridStyle = (x, y, cellSize = 0) => ({
   display: 'inline-grid',
@@ -59,8 +59,8 @@ export const AxisControl = ({
   return (
     <div className={styles.rotatedMatrix}>
       <div style={getGridStyle(xHeadings.length + 1, yHeadings.length + 1, cellSize)}>
-        <TableHeading selectedIndex={selectedCell?.x} hoveredIndex={hoveredCell.x} entries={xHeadings} vertical />
         <TableHeading selectedIndex={selectedCell?.y} hoveredIndex={hoveredCell.y} entries={yHeadings} />
+        <TableHeading selectedIndex={selectedCell?.x} hoveredIndex={hoveredCell.x} entries={xHeadings} vertical />
 
         {matrix.map((row, rowIndex) => {
           return (

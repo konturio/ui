@@ -2,6 +2,7 @@
   --header-border-style: 1px solid #e0e0e0;
   --selection-border-style: 1px solid #a29e9e;
   --hover-bg-color: #f5f5f5;
+  --show--denominators-bg-color: #e2e2e2;
 }
 
 .axisRecord {
@@ -158,8 +159,32 @@
   border-left: 10px solid var(--hover-bg-color);
 }
 
-.hovered .container {
+.axisRecord.hovered .container {
   background-color: var(--hover-bg-color);
+}
+
+.axisRecord.column.denominatorsShown .container > .corner {
+  top: 100%;
+  width: 24px;
+  height: 21px;
+  border-bottom: 10px solid transparent;
+  border-left: 12px solid transparent;
+  border-top: 10px solid var(--show--denominators-bg-color);
+  border-right: 12px solid var(--show--denominators-bg-color);
+}
+
+.axisRecord.row.denominatorsShown .container > .corner {
+  left: 100%;
+  width: 21px;
+  height: 24px;
+  border-top: 12px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 12px solid var(--show--denominators-bg-color);
+  border-left: 10px solid var(--show--denominators-bg-color);
+}
+
+.axisRecord.denominatorsShown .container {
+  background-color: var(--show--denominators-bg-color);
 }
 
 .verticalText {

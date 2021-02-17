@@ -11,7 +11,7 @@ interface CellProps {
   value: number | null;
   selected?: boolean;
   disabled?: boolean;
-  style?: Object;
+  style?: Record<string, any>;
 }
 
 export const Cell = ({

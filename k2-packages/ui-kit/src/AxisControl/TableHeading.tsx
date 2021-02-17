@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import styles from './tableHeading.module.css';
 import clsx from 'clsx';
 
@@ -53,41 +53,34 @@ const calculateHeadingsStyle = (vertical: boolean, index: number) => {
 };
 
 interface DenominatorsSelectorProps {
-  id: string;
+  isOpen: boolean;
+  switchDenominatorsVisibility: () => void;
 }
 
-const DenominatorsSelector = React.memo(({ id }: DenominatorsSelectorProps) => {
-  const [selectedHeading, setSelectedHeading] = useGlobalState();
-
-  const switchDenominatorsVisibility = () => {
-    setSelectedHeading({ headingId: id });
-  };
-
-  return (
-    <div className={styles.denominators}>
-      <div className={styles.denominatorSelector} onClick={switchDenominatorsVisibility}>
-        <i className="fas fa-caret-down"></i>
+const DenominatorsSelector = React.memo(({ isOpen, switchDenominatorsVisibility }: DenominatorsSelectorProps) => (
+  <div className={styles.denominators}>
+    <div className={styles.denominatorSelector} onClick={switchDenominatorsVisibility}>
+      <i className="fas fa-caret-down"></i>
+    </div>
+    <div className={clsx({ [styles.denominatorsContainer]: true, [styles.show]: isOpen })}>
+      <div>
+        <div className="qualityLabel">97</div>Gross Domestic Product
       </div>
-      <div className={clsx({ [styles.denominatorsContainer]: true, [styles.show]: selectedHeading.headingId === id })}>
-        <div>
-          <div className="qualityLabel">97</div>Gross Domestic Product
-        </div>
-        <div>
-          <div className="qualityLabel">98</div>Total Buildings Estimate
-        </div>
-        <div>
-          <div className="qualityLabel">81</div>Population
-        </div>
-        <div>
-          <div className="qualityLabel">74</div>Area
-        </div>
-        <div>
-          <div className="qualityLabel">93</div>1
-        </div>
+      <div>
+        <div className="qualityLabel">98</div>Total Buildings Estimate
+      </div>
+      <div>
+        <div className="qualityLabel">81</div>Population
+      </div>
+      <div>
+        <div className="qualityLabel">74</div>Area
+      </div>
+      <div>
+        <div className="qualityLabel">93</div>1
       </div>
     </div>
-  );
-});
+  </div>
+));
 
 interface HeadingEntryProps {
   index: number;
@@ -100,26 +93,42 @@ interface HeadingEntryProps {
 }
 
 const HeadingEntry = React.memo(
-  ({ index, vertical, className, hoveredIndex, selectedIndex, headerCell, id }: HeadingEntryProps) => (
-    <div
-      style={getHeadingPositionStyle(vertical, index)}
-      className={clsx({
-        [className || '']: className,
-        [styles.axisRecord]: true,
-        [styles.hovered]: hoveredIndex === index,
-        [styles.selected]: selectedIndex === index,
-        [styles.column]: vertical,
-        [styles.row]: !vertical,
-        [styles.verticalText]: vertical,
-      })}
-    >
-      <div style={calculateHeadingsStyle(vertical, index)} className={styles.container}>
-        <div className={styles.corner}></div>
-        <DenominatorsSelector id={id} />
-        {headerCell}
+  ({ index, vertical, className, hoveredIndex, selectedIndex, headerCell, id }: HeadingEntryProps) => {
+    const [headingState, setHeadingState] = useGlobalState();
+
+    const switchDenominatorsVisibility = useCallback(() => {
+      if (headingState.headingId === id) {
+        setHeadingState({ headingId: '' });
+      } else {
+        setHeadingState({ headingId: id });
+      }
+    }, [headingState, id, setHeadingState]);
+
+    return (
+      <div
+        style={getHeadingPositionStyle(vertical, index)}
+        className={clsx({
+          [className || '']: className,
+          [styles.axisRecord]: true,
+          [styles.hovered]: hoveredIndex === index,
+          [styles.selected]: selectedIndex === index,
+          [styles.column]: vertical,
+          [styles.row]: !vertical,
+          [styles.verticalText]: vertical,
+          [styles.denominatorsShown]: headingState.headingId === id,
+        })}
+      >
+        <div style={calculateHeadingsStyle(vertical, index)} className={styles.container}>
+          <div className={styles.corner}></div>
+          <DenominatorsSelector
+            isOpen={headingState.headingId === id}
+            switchDenominatorsVisibility={switchDenominatorsVisibility}
+          />
+          {headerCell}
+        </div>
       </div>
-    </div>
-  ),
+    );
+  },
 );
 
 const TableHeading = ({

@@ -28,8 +28,8 @@ interface AxisControlProps {
   selectedCell?: { x: number | undefined; y: number | undefined };
   cellSize?: number;
   matrix: (number | null)[][];
-  xHeadings: (string | React.ReactElement)[];
-  yHeadings: (string | React.ReactElement)[];
+  xHeadings: { label: string; selectedDenominator: string; quality?: number }[];
+  yHeadings: { label: string; selectedDenominator: string; quality?: number }[];
 }
 
 export const AxisControl = ({
@@ -59,9 +59,6 @@ export const AxisControl = ({
   return (
     <div className={styles.rotatedMatrix}>
       <div style={getGridStyle(xHeadings.length + 1, yHeadings.length + 1, cellSize)}>
-        <TableHeading selectedIndex={selectedCell?.y} hoveredIndex={hoveredCell.y} entries={yHeadings} />
-        <TableHeading selectedIndex={selectedCell?.x} hoveredIndex={hoveredCell.x} entries={xHeadings} vertical />
-
         {matrix.map((row, rowIndex) => {
           return (
             <div key={rowIndex} className={styles.horConnector} style={getCellPositionStyle(-1, rowIndex)}>
@@ -130,6 +127,9 @@ export const AxisControl = ({
             );
           }),
         )}
+
+        <TableHeading selectedIndex={selectedCell?.y} hoveredIndex={hoveredCell.y} entries={yHeadings} />
+        <TableHeading selectedIndex={selectedCell?.x} hoveredIndex={hoveredCell.x} entries={xHeadings} vertical />
       </div>
     </div>
   );

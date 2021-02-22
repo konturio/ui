@@ -44,43 +44,53 @@ interface TableHeadingProps {
   className?: string;
   selectedIndex?: number;
   hoveredIndex?: number;
-  entries: (string | React.ReactElement)[];
+  entries: { label: string; selectedDenominator: string; quality?: number }[];
   vertical?: boolean;
 }
 
 const calculateHeadingsStyle = (vertical: boolean, index: number) => {
-  return vertical ? { height: `${240 + index * 25.5}px` } : { width: `${240 + index * 25.5}px` };
+  return vertical ? { height: `${220 + index * 25.5}px` } : { width: `${220 + index * 25.5}px` };
 };
 
 interface DenominatorsSelectorProps {
   isOpen: boolean;
   switchDenominatorsVisibility: () => void;
+  label: string;
 }
 
-const DenominatorsSelector = React.memo(({ isOpen, switchDenominatorsVisibility }: DenominatorsSelectorProps) => (
-  <div className={styles.denominators}>
-    <div className={styles.denominatorSelector} onClick={switchDenominatorsVisibility}>
-      <i className="fas fa-caret-down"></i>
-    </div>
-    <div className={clsx({ [styles.denominatorsContainer]: true, [styles.show]: isOpen })}>
-      <div>
-        <div className="qualityLabel">97</div>Gross Domestic Product
+const DenominatorsSelector = React.memo(
+  ({ isOpen, switchDenominatorsVisibility, label }: DenominatorsSelectorProps) => {
+    return (
+      <div className={styles.denominators}>
+        <div className={styles.denominatorSelector} onClick={switchDenominatorsVisibility}>
+          <i className="fas fa-caret-down"></i>
+        </div>
+        <div className={clsx({ [styles.denominatorsContainer]: true, [styles.show]: isOpen })}>
+          <div>
+            <div className="qualityLabel">97</div>
+            {label} / Gross Domestic Product
+          </div>
+          <div>
+            <div className="qualityLabel">98</div>
+            {label} / Total Buildings Estimate
+          </div>
+          <div>
+            <div className="qualityLabel">81</div>
+            {label} / Population
+          </div>
+          <div>
+            <div className="qualityLabel">74</div>
+            {label} / Area
+          </div>
+          <div>
+            <div className="qualityLabel">93</div>
+            {label} / 1
+          </div>
+        </div>
       </div>
-      <div>
-        <div className="qualityLabel">98</div>Total Buildings Estimate
-      </div>
-      <div>
-        <div className="qualityLabel">81</div>Population
-      </div>
-      <div>
-        <div className="qualityLabel">74</div>Area
-      </div>
-      <div>
-        <div className="qualityLabel">93</div>1
-      </div>
-    </div>
-  </div>
-));
+    );
+  },
+);
 
 interface HeadingEntryProps {
   index: number;
@@ -88,7 +98,7 @@ interface HeadingEntryProps {
   className?: string;
   hoveredIndex: number;
   selectedIndex: number;
-  headerCell: string | React.ReactElement;
+  headerCell: { label: string; selectedDenominator: string; quality?: number };
   id: string;
 }
 
@@ -121,10 +131,12 @@ const HeadingEntry = React.memo(
         <div style={calculateHeadingsStyle(vertical, index)} className={styles.container}>
           <div className={styles.corner}></div>
           <DenominatorsSelector
+            label={headerCell.label}
             isOpen={headingState.headingId === id}
             switchDenominatorsVisibility={switchDenominatorsVisibility}
           />
-          {headerCell}
+          {headerCell.quality ? <div className="qualityLabel">{headerCell.quality}</div> : null}
+          {headerCell.label}
         </div>
       </div>
     );

@@ -3016,6 +3016,14 @@
     "@turf/helpers" "6.x"
     "@turf/invariant" "6.x"
 
+"@turf/distance@^4.7.3":
+  version "4.7.3"
+  resolved "https://nexus.kontur.io/repository/npm-a/@turf/distance/-/distance-4.7.3.tgz#b5ab48a09a642706d65c39b919433d5d2cc571b1"
+  integrity sha1-tatIoJpkJwbWXDm5GUM9XSzFcbE=
+  dependencies:
+    "@turf/helpers" "^4.7.3"
+    "@turf/invariant" "^4.7.3"
+
 "@turf/ellipse@>=4.0.0":
   version "5.1.5"
   resolved "https://nexus.kontur.io/repository/npm-a/@turf/ellipse/-/ellipse-5.1.5.tgz#d57cab853985920cde60228a78d80458025c54be"
@@ -3030,6 +3038,11 @@
   version "6.1.4"
   resolved "https://nexus.kontur.io/repository/npm-a/@turf/helpers/-/helpers-6.1.4.tgz#d6fd7ebe6782dd9c87dca5559bda5c48ae4c3836"
   integrity sha512-vJvrdOZy1ngC7r3MDA7zIGSoIgyrkWcGnNIEaqn/APmw+bVLF2gAW7HIsdTxd12s5wQMqEpqIQrmrbRRZ0xC7g==
+
+"@turf/helpers@^4.7.3":
+  version "4.7.3"
+  resolved "https://nexus.kontur.io/repository/npm-a/@turf/helpers/-/helpers-4.7.3.tgz#bc312ac43cab3c532a483151c4c382c5649429e9"
+  integrity sha1-vDEqxDyrPFMqSDFRxMOCxWSUKek=
 
 "@turf/helpers@^5.1.5":
   version "5.1.5"
@@ -3052,12 +3065,26 @@
   dependencies:
     "@turf/helpers" "6.x"
 
+"@turf/invariant@^4.7.3":
+  version "4.7.3"
+  resolved "https://nexus.kontur.io/repository/npm-a/@turf/invariant/-/invariant-4.7.3.tgz#538f367d23c113fc849d70c9a524b8563874601d"
+  integrity sha1-U482fSPBE/yEnXDJpSS4Vjh0YB0=
+
 "@turf/invariant@^5.1.5":
   version "5.2.0"
   resolved "https://nexus.kontur.io/repository/npm-a/@turf/invariant/-/invariant-5.2.0.tgz#f0150ff7290b38577b73d088b7932c1ee0aa90a7"
   integrity sha1-8BUP9ykLOFd7c9CIt5MsHuCqkKc=
   dependencies:
     "@turf/helpers" "^5.1.5"
+
+"@turf/line-distance@^4.7.3":
+  version "4.7.3"
+  resolved "https://nexus.kontur.io/repository/npm-a/@turf/line-distance/-/line-distance-4.7.3.tgz#00a33000e088ee5e3a8d92b7b96bb332af373006"
+  integrity sha1-AKMwAOCI7l46jZK3uWuzMq83MAY=
+  dependencies:
+    "@turf/distance" "^4.7.3"
+    "@turf/helpers" "^4.7.3"
+    "@turf/meta" "^4.7.3"
 
 "@turf/line-intersect@6.x", "@turf/line-intersect@>=4.0.0":
   version "6.0.2"
@@ -3085,6 +3112,11 @@
   integrity sha512-VA7HJkx7qF1l3+GNGkDVn2oXy4+QoLP6LktXAaZKjuT1JI0YESat7quUkbCMy4zP9lAUuvS4YMslLyTtr919FA==
   dependencies:
     "@turf/helpers" "6.x"
+
+"@turf/meta@^4.7.3":
+  version "4.7.4"
+  resolved "https://nexus.kontur.io/repository/npm-a/@turf/meta/-/meta-4.7.4.tgz#6de2f1e9890b8f64b669e4b47c09b20893063977"
+  integrity sha1-beLx6YkLj2S2aeS0fAmyCJMGOXc=
 
 "@turf/meta@^5.1.5":
   version "5.2.0"

@@ -12,7 +12,7 @@ const getGridStyle = (x, y, cellSize = 0) => ({
   gridTemplateColumns: `repeat(${x}, ${cellSize === 0 ? 'auto' : cellSize + 'px'})`,
 });
 
-const isSelected = (selected?: number) => (current: number) => selected === current;
+const isSelected = (selected?: number | null) => (current: number) => selected === current;
 
 const getCellPositionStyle = (col: number, row: number) => {
   return {
@@ -24,12 +24,26 @@ const getCellPositionStyle = (col: number, row: number) => {
 interface AxisControlProps {
   legend: React.ReactElement | null;
   angle?: number;
-  onSelectCell?: (x: number | undefined, y: number | undefined) => void;
-  selectedCell?: { x: number | undefined; y: number | undefined };
+  onSelectCell?: (
+    e: React.MouseEvent<HTMLElement, MouseEvent> | null,
+    postion: { x: number | null; y: number | null },
+  ) => void;
+  selectedCell?: { x: number | null; y: number | null };
   cellSize?: number;
   matrix: (number | null)[][];
-  xHeadings: { label: string; selectedDenominator: string; quality?: number }[];
-  yHeadings: { label: string; selectedDenominator: string; quality?: number }[];
+  xHeadings: {
+    label: string;
+    selectedDenominator: { id: string; label?: string };
+    quality?: number;
+    denominators: { id: string; label?: string; quality?: number }[];
+  }[];
+  yHeadings: {
+    label: string;
+    selectedDenominator: { id: string; label?: string };
+    quality?: number;
+    denominators: { id: string; label?: string; quality?: number }[];
+  }[];
+  onSelectDenominator: (horisontal: boolean, index: number, denId: string) => void;
 }
 
 export const AxisControl = ({
@@ -40,8 +54,9 @@ export const AxisControl = ({
   onSelectCell,
   selectedCell,
   cellSize = 0,
+  onSelectDenominator,
 }: AxisControlProps) => {
-  const [hoveredCell, setHoveredCell] = useState<{ x: number; y: number }>({ x: -1, y: -1 });
+  const [hoveredCell, setHoveredCell] = useState<{ x: number | null; y: number | null }>({ x: -1, y: -1 });
 
   const onMouseOver = useCallback((e: React.MouseEvent<HTMLElement, MouseEvent>, postion: { x: number; y: number }) => {
     setHoveredCell(postion);
@@ -55,6 +70,48 @@ export const AxisControl = ({
   const checkIsFromSelectedRow = isSelected(selectedCell?.y);
   const checkIsFromHoveredCol = isSelected(hoveredCell.x);
   const checkIsFromHoveredRow = isSelected(hoveredCell.y);
+
+  const onCellHoverX = useCallback(
+    (cellIndex: number | null) => {
+      setHoveredCell({ ...hoveredCell, x: cellIndex });
+    },
+    [setHoveredCell],
+  );
+
+  const onCellHoverY = useCallback(
+    (cellIndex: number | null) => {
+      setHoveredCell({ ...hoveredCell, y: cellIndex });
+    },
+    [setHoveredCell],
+  );
+
+  const onCellSelectX = useCallback(
+    (cellIndex: number | null) => {
+      onSelectCell && onSelectCell(null, { ...selectedCell, x: cellIndex } as any);
+    },
+    [onSelectCell, selectedCell],
+  );
+
+  const onCellSelectY = useCallback(
+    (cellIndex: number | null) => {
+      onSelectCell && onSelectCell(null, { ...selectedCell, y: cellIndex } as any);
+    },
+    [onSelectCell, selectedCell],
+  );
+
+  const selectDenominatorX = useCallback(
+    (index: number, denId: string) => {
+      onSelectDenominator(false, index, denId);
+    },
+    [onSelectDenominator],
+  );
+
+  const selectDenominatorY = useCallback(
+    (index: number, denId: string) => {
+      onSelectDenominator(true, index, denId);
+    },
+    [onSelectDenominator],
+  );
 
   return (
     <div className={styles.rotatedMatrix}>
@@ -128,8 +185,23 @@ export const AxisControl = ({
           }),
         )}
 
-        <TableHeading selectedIndex={selectedCell?.y} hoveredIndex={hoveredCell.y} entries={yHeadings} />
-        <TableHeading selectedIndex={selectedCell?.x} hoveredIndex={hoveredCell.x} entries={xHeadings} vertical />
+        <TableHeading
+          selectedIndex={selectedCell?.y}
+          hoveredIndex={hoveredCell.y}
+          entries={yHeadings}
+          onCellHover={onCellHoverY}
+          onCellClick={onCellSelectY}
+          onSelectDenominator={selectDenominatorY}
+        />
+        <TableHeading
+          selectedIndex={selectedCell?.x}
+          hoveredIndex={hoveredCell.x}
+          entries={xHeadings}
+          vertical
+          onCellHover={onCellHoverX}
+          onCellClick={onCellSelectX}
+          onSelectDenominator={selectDenominatorX}
+        />
       </div>
     </div>
   );

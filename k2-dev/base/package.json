@@ -1,6 +1,6 @@
 {
   "name": "@k2-dev/base",
-  "version": "2.7.27",
+  "version": "2.7.28",
   "main": "src/index.tsx",
   "types": "tsclib",
   "private": true,
@@ -11,16 +11,16 @@
   "dependencies": {
     "@deck.gl/layers": "^8.3.12",
     "@k2-packages/bivariate-tools": "^1.8.0",
-    "@k2-packages/boundaries": "^1.0.34",
+    "@k2-packages/boundaries": "^1.0.35",
     "@k2-packages/client": "^1.9.5",
     "@k2-packages/deck-gl": "^2.1.1",
     "@k2-packages/default-theme": "^2.1.1",
-    "@k2-packages/geocoder": "^1.10.46",
+    "@k2-packages/geocoder": "^1.10.47",
     "@k2-packages/map-draw-tools": "^2.7.0",
     "@k2-packages/mapbox-map": "^2.0.2",
     "@k2-packages/module": "^1.4.8",
     "@k2-packages/plugin": "^1.0.2",
-    "@k2-packages/ui-kit": "^2.12.0"
+    "@k2-packages/ui-kit": "^2.13.0"
   },
   "peerDependencies": {
     "@types/react-redux": "^7.1.7",

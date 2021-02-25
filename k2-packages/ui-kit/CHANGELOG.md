@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.13.0](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@2.12.0...@k2-packages/ui-kit@2.13.0) (2021-02-25)
+
+### Features
+
+- **bivariate-legend-v04:** Add axis hover effect ([d5c63c7](https://gitlab.com/kontur-private/k2/k2-front-end/commit/d5c63c7fec954c493744bc331ce4567441390dbf))
+- **denominators-selectors:** Change selectors behaviour ([9917a06](https://gitlab.com/kontur-private/k2/k2-front-end/commit/9917a062b73585074920f3d9ca142a80951c5bdc))
+
 # [2.12.0](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@2.11.0...@k2-packages/ui-kit@2.12.0) (2021-02-22)
 
 ### Features

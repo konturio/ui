@@ -218,6 +218,11 @@
   cursor: pointer;
 }
 
+.denominatorSelector.disabled {
+  background: #bbb;
+  pointer-events: none;
+}
+
 .denominatorSelector:hover {
   background: #666;
 }

@@ -139,7 +139,8 @@
   position: absolute;
 }
 
-.axisRecord.column.hovered .container > .corner {
+.axisRecord.column.hovered .container > .corner,
+.axisRecord.column:hover .container > .corner {
   top: 100%;
   width: 24px;
   height: 21px;
@@ -149,7 +150,8 @@
   border-right: 12px solid var(--hover-bg-color);
 }
 
-.axisRecord.row.hovered .container > .corner {
+.axisRecord.row.hovered .container > .corner,
+.axisRecord.row:hover .container > .corner {
   left: 100%;
   width: 21px;
   height: 24px;
@@ -159,7 +161,8 @@
   border-left: 10px solid var(--hover-bg-color);
 }
 
-.axisRecord.hovered .container {
+.axisRecord.hovered .container,
+.axisRecord:hover .container {
   background-color: var(--hover-bg-color);
 }
 

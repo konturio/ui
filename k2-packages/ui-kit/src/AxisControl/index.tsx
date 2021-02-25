@@ -24,12 +24,25 @@ const getCellPositionStyle = (col: number, row: number) => {
 interface AxisControlProps {
   legend: React.ReactElement | null;
   angle?: number;
-  onSelectCell?: (x: number | undefined, y: number | undefined) => void;
+  onSelectCell?: (
+    e: React.MouseEvent<HTMLElement, MouseEvent> | null,
+    postion: { x: number | undefined; y: number | undefined },
+  ) => void;
   selectedCell?: { x: number | undefined; y: number | undefined };
   cellSize?: number;
   matrix: (number | null)[][];
-  xHeadings: { label: string; selectedDenominator: string; quality?: number }[];
-  yHeadings: { label: string; selectedDenominator: string; quality?: number }[];
+  xHeadings: {
+    label: string;
+    selectedDenominator: string;
+    quality?: number;
+    denominators: { id: string; label?: string }[];
+  }[];
+  yHeadings: {
+    label: string;
+    selectedDenominator: string;
+    quality?: number;
+    denominators: { id: string; label?: string }[];
+  }[];
 }
 
 export const AxisControl = ({
@@ -55,6 +68,34 @@ export const AxisControl = ({
   const checkIsFromSelectedRow = isSelected(selectedCell?.y);
   const checkIsFromHoveredCol = isSelected(hoveredCell.x);
   const checkIsFromHoveredRow = isSelected(hoveredCell.y);
+
+  const onCellHoverX = useCallback(
+    (cellIndex: number | null) => {
+      setHoveredCell({ ...hoveredCell, x: cellIndex });
+    },
+    [setHoveredCell],
+  );
+
+  const onCellHoverY = useCallback(
+    (cellIndex: number | null) => {
+      setHoveredCell({ ...hoveredCell, y: cellIndex });
+    },
+    [setHoveredCell],
+  );
+
+  const onCellSelectX = useCallback(
+    (cellIndex: number | null) => {
+      onSelectCell(null, { ...selectedCell, x: cellIndex });
+    },
+    [onSelectCell, selectedCell],
+  );
+
+  const onCellSelectY = useCallback(
+    (cellIndex: number | null) => {
+      onSelectCell(null, { ...selectedCell, y: cellIndex });
+    },
+    [onSelectCell, selectedCell],
+  );
 
   return (
     <div className={styles.rotatedMatrix}>
@@ -128,8 +169,21 @@ export const AxisControl = ({
           }),
         )}
 
-        <TableHeading selectedIndex={selectedCell?.y} hoveredIndex={hoveredCell.y} entries={yHeadings} />
-        <TableHeading selectedIndex={selectedCell?.x} hoveredIndex={hoveredCell.x} entries={xHeadings} vertical />
+        <TableHeading
+          selectedIndex={selectedCell?.y}
+          hoveredIndex={hoveredCell.y}
+          entries={yHeadings}
+          onCellHover={onCellHoverY}
+          onCellClick={onCellSelectY}
+        />
+        <TableHeading
+          selectedIndex={selectedCell?.x}
+          hoveredIndex={hoveredCell.x}
+          entries={xHeadings}
+          vertical
+          onCellHover={onCellHoverX}
+          onCellClick={onCellSelectX}
+        />
       </div>
     </div>
   );

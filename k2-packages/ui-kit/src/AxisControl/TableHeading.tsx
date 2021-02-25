@@ -46,46 +46,48 @@ interface TableHeadingProps {
   hoveredIndex?: number;
   entries: { label: string; selectedDenominator: string; quality?: number }[];
   vertical?: boolean;
+  onCellHover: (cellIndex: number | null) => void;
+  onCellClick: (cellIndex: number) => void;
 }
 
 const calculateHeadingsStyle = (vertical: boolean, index: number) => {
   return vertical ? { height: `${220 + index * 25.5}px` } : { width: `${220 + index * 25.5}px` };
 };
 
+interface DenominatorItemProps {
+  id: string;
+  numinatorLabel: string;
+  denominatorLabel: string;
+  quality?: number | null;
+}
+
+const DenominatorItem = ({ id, numinatorLabel, denominatorLabel, quality }: DenominatorItemProps) => {
+  return (
+    <div>
+      {quality !== null && quality !== undefined ? <div className="qualityLabel">{quality}</div> : null}
+      {numinatorLabel} / {denominatorLabel}
+    </div>
+  );
+};
+
 interface DenominatorsSelectorProps {
   isOpen: boolean;
   switchDenominatorsVisibility: () => void;
   label: string;
+  denominators: { id: string; label?: string }[];
 }
 
 const DenominatorsSelector = React.memo(
-  ({ isOpen, switchDenominatorsVisibility, label }: DenominatorsSelectorProps) => {
+  ({ isOpen, switchDenominatorsVisibility, label, denominators }: DenominatorsSelectorProps) => {
     return (
       <div className={styles.denominators}>
         <div className={styles.denominatorSelector} onClick={switchDenominatorsVisibility}>
           <i className="fas fa-caret-down"></i>
         </div>
         <div className={clsx({ [styles.denominatorsContainer]: true, [styles.show]: isOpen })}>
-          <div>
-            <div className="qualityLabel">97</div>
-            {label} / Gross Domestic Product
-          </div>
-          <div>
-            <div className="qualityLabel">98</div>
-            {label} / Total Buildings Estimate
-          </div>
-          <div>
-            <div className="qualityLabel">81</div>
-            {label} / Population
-          </div>
-          <div>
-            <div className="qualityLabel">74</div>
-            {label} / Area
-          </div>
-          <div>
-            <div className="qualityLabel">93</div>
-            {label} / 1
-          </div>
+          {denominators.map(({ id: denId, label: denLabel }) => (
+            <DenominatorItem key={denId} quality={97} id={denId} numinatorLabel={label} denominatorLabel={denLabel} />
+          ))}
         </div>
       </div>
     );
@@ -98,12 +100,29 @@ interface HeadingEntryProps {
   className?: string;
   hoveredIndex: number;
   selectedIndex: number;
-  headerCell: { label: string; selectedDenominator: string; quality?: number };
+  headerCell: {
+    label: string;
+    selectedDenominator: string;
+    quality?: number;
+    denominators: { id: string; label?: string }[];
+  };
   id: string;
+  onCellHover: (cellIndex: number | null) => void;
+  onCellClick: (cellIndex: number) => void;
 }
 
 const HeadingEntry = React.memo(
-  ({ index, vertical, className, hoveredIndex, selectedIndex, headerCell, id }: HeadingEntryProps) => {
+  ({
+    index,
+    vertical,
+    className,
+    hoveredIndex,
+    selectedIndex,
+    headerCell,
+    id,
+    onCellHover,
+    onCellClick,
+  }: HeadingEntryProps) => {
     const [headingState, setHeadingState] = useGlobalState();
 
     const switchDenominatorsVisibility = useCallback(() => {
@@ -114,8 +133,23 @@ const HeadingEntry = React.memo(
       }
     }, [headingState, id, setHeadingState]);
 
+    const onMouseOver = useCallback(() => {
+      onCellHover(index);
+    }, [onCellHover, index]);
+
+    const onMouseOut = useCallback(() => {
+      onCellHover(null);
+    }, [onCellHover]);
+
+    const onClick = useCallback(() => {
+      onCellClick(index);
+    }, [onCellClick, index]);
+
     return (
       <div
+        onMouseEnter={onMouseOver}
+        onMouseOut={onMouseOut}
+        onClick={onClick}
         style={getHeadingPositionStyle(vertical, index)}
         className={clsx({
           [className || '']: className,
@@ -131,6 +165,7 @@ const HeadingEntry = React.memo(
         <div style={calculateHeadingsStyle(vertical, index)} className={styles.container}>
           <div className={styles.corner}></div>
           <DenominatorsSelector
+            denominators={headerCell.denominators}
             label={headerCell.label}
             isOpen={headingState.headingId === id}
             switchDenominatorsVisibility={switchDenominatorsVisibility}
@@ -149,6 +184,8 @@ const TableHeading = ({
   vertical = false,
   selectedIndex = -1,
   hoveredIndex = -1,
+  onCellHover,
+  onCellClick,
 }: TableHeadingProps) => {
   const elementsArray: React.ReactElement[] = [];
   if (vertical) {
@@ -164,6 +201,8 @@ const TableHeading = ({
           selectedIndex={selectedIndex}
           hoveredIndex={hoveredIndex}
           headerCell={entries[i]}
+          onCellHover={onCellHover}
+          onCellClick={onCellClick}
         />,
       );
     }
@@ -180,6 +219,8 @@ const TableHeading = ({
           selectedIndex={selectedIndex}
           hoveredIndex={hoveredIndex}
           headerCell={entries[i]}
+          onCellHover={onCellHover}
+          onCellClick={onCellClick}
         />,
       );
     }

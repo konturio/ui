@@ -145,6 +145,7 @@ const BuildingsIcon = () => (
   </svg>
 );
 
+/* eslint-disable @typescript-eslint/camelcase */
 const iconMapper = {
   gdp: <GDPIcon />,
   population: <PopulationIcon />,

@@ -175,6 +175,9 @@ export default function Bivariate(): JSX.Element {
               xHeadings={[]}
               yHeadings={[]}
               onSelectCell={clickHandler}
+              onSelectDenominator={(horisontal: boolean, index: number, denId: string) => {
+                console.log('on select denominator');
+              }}
               legend={
                 <Legend
                   size={3}

@@ -1,6 +1,6 @@
 {
   "name": "@k2-dev/base",
-  "version": "2.7.29",
+  "version": "2.7.30",
   "main": "src/index.tsx",
   "types": "tsclib",
   "private": true,

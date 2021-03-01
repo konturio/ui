@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { Selector, Legend, AxisControl, Rotator } from '@k2-packages/ui-kit';
+import { Selector, AxisControl, Rotator } from '@k2-packages/ui-kit';
 import style from './style.styl';
 import {
   Stat,
@@ -13,7 +13,6 @@ import {
 } from '@k2-packages/bivariate-tools';
 import { updateTableOnClick } from './handlers';
 import MapboxMap from '@k2-packages/mapbox-map';
-import selectedAxis from './axis.json';
 
 const mapboxConfig: {
   accessToken: string;
@@ -178,17 +177,6 @@ export default function Bivariate(): JSX.Element {
               onSelectDenominator={(horisontal: boolean, index: number, denId: string) => {
                 console.log('on select denominator');
               }}
-              legend={
-                <Legend
-                  size={3}
-                  angle={-45}
-                  axis={selectedAxis}
-                  cells={new Array(9).fill(0).map((c, i) => ({
-                    color: `hsl(${(360 / 9) * i}, 50%, 50%)`,
-                    label: String(i),
-                  }))}
-                />
-              }
             />
           </Rotator>
         )}

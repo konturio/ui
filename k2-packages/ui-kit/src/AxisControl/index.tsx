@@ -22,7 +22,6 @@ const getCellPositionStyle = (col: number, row: number) => {
 };
 
 interface AxisControlProps {
-  legend: React.ReactElement | null;
   angle?: number;
   onSelectCell?: (
     e: React.MouseEvent<HTMLElement, MouseEvent> | null,
@@ -47,7 +46,6 @@ interface AxisControlProps {
 }
 
 export const AxisControl = ({
-  legend,
   matrix,
   xHeadings,
   yHeadings,
@@ -118,7 +116,11 @@ export const AxisControl = ({
       <div style={getGridStyle(xHeadings.length + 1, yHeadings.length + 1, cellSize)}>
         {matrix.map((row, rowIndex) => {
           return (
-            <div key={rowIndex} className={styles.horConnector} style={getCellPositionStyle(-1, rowIndex)}>
+            <div
+              key={`${rowIndex}_row_connector`}
+              className={styles.horConnector}
+              style={getCellPositionStyle(-1, rowIndex)}
+            >
               <div
                 className={clsx({
                   [styles.hovered]: checkIsFromHoveredRow(rowIndex),
@@ -131,7 +133,11 @@ export const AxisControl = ({
 
         {matrix[0].map((col, colIndex) => {
           return (
-            <div key={colIndex} className={styles.vertConnector} style={getCellPositionStyle(colIndex, -1)}>
+            <div
+              key={`${colIndex}_col_connector`}
+              className={styles.vertConnector}
+              style={getCellPositionStyle(colIndex, -1)}
+            >
               <div
                 className={clsx({
                   [styles.hovered]: checkIsFromHoveredCol(colIndex),
@@ -161,7 +167,7 @@ export const AxisControl = ({
             return val === null ? (
               <Cell
                 className={clsx(cellClasses)}
-                key={val ?? `${colIndex}|${rowIndex}`}
+                key={`${colIndex}|${rowIndex}`}
                 style={getCellPositionStyle(colIndex, rowIndex)}
                 value={val}
                 disabled
@@ -172,7 +178,7 @@ export const AxisControl = ({
               <Cell
                 selected={isFromSelectedRow && isFromSelectedCol}
                 className={clsx(cellClasses)}
-                key={val ?? `${colIndex}|${rowIndex}`}
+                key={`${colIndex}|${rowIndex}`}
                 onClick={call(onSelectCell)}
                 onHover={call(onMouseOver)}
                 onMouseOut={onMouseOut}

@@ -13,7 +13,6 @@ import {
 } from '@k2-packages/bivariate-tools';
 import { updateTableOnClick } from './handlers';
 import MapboxMap from '@k2-packages/mapbox-map';
-import selectedAxis from './axis.json';
 
 const mapboxConfig: {
   accessToken: string;

@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.13.2](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@2.13.1...@k2-packages/ui-kit@2.13.2) (2021-03-01)
+
+### Bug Fixes
+
+- **axis-control:** Remove legend from AxisControl ([70fa625](https://gitlab.com/kontur-private/k2/k2-front-end/commit/70fa62567d44355867acb5bcac6ac6adac6622d0))
+
 ## [2.13.1](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@2.13.0...@k2-packages/ui-kit@2.13.1) (2021-02-25)
 
 **Note:** Version bump only for package @k2-packages/ui-kit

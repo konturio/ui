@@ -25,31 +25,32 @@
 .axisRecord .container :global(.qualityLabel) {
   font-size: 0.8em;
   color: #777;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .axisRecord.column .container :global(.qualityLabel) {
-  padding-top: 5px;
   padding-bottom: 5px;
-  margin-bottom: 5px;
-  border-bottom: var(--header-border-style);
+  padding-top: 2px;
+  margin-top: 5px;
+  border-top: var(--header-border-style);
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  height: 28px;
 }
 
 .axisRecord.row .container :global(.qualityLabel) {
-  padding-left: 5px;
+  padding-left: 2px;
   padding-right: 5px;
-  margin-right: 5px;
-  border-right: var(--header-border-style);
+  margin-left: 5px;
+  border-left: var(--header-border-style);
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  width: 28px;
 }
 
 .axisRecord.column .container {
+  border-top: var(--header-border-style);
   border-right: var(--header-border-style);
   border-left: var(--header-border-style);
   width: 23.4px;
@@ -80,6 +81,7 @@
 
 .axisRecord.row .container {
   border-top: var(--header-border-style);
+  border-left: var(--header-border-style);
   border-bottom: var(--header-border-style);
   height: 23.4px;
 }
@@ -108,6 +110,7 @@
 .row.selected .container {
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: black;
+  border-left: var(--selection-border-style);
   border-top: var(--selection-border-style);
   border-bottom: var(--selection-border-style);
 }
@@ -123,6 +126,7 @@
 .column.selected .container {
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: black;
+  border-top: var(--selection-border-style);
   border-right: var(--selection-border-style);
   border-left: var(--selection-border-style);
 }
@@ -206,6 +210,14 @@
   position: relative;
 }
 
+.row .denominators {
+  margin-right: 5px;
+}
+
+.column .denominators {
+  margin-bottom: 5px;
+}
+
 .denominatorSelector {
   font-size: 18px;
   background: #333;
@@ -254,17 +266,25 @@
 }
 
 .column .denominatorsContainer {
-  top: -0.5px;
+  top: -62px;
   right: 22px;
-  border-top: 24px solid #bbb;
   box-shadow: -3px 3px 4px rgb(31 51 73 / 15%);
 }
 
+.column .denominatorsContainer :global(.denominatorLabel) {
+  border-top: 24px solid #e5e5e5;
+  padding-top: 5px;
+}
+
 .row .denominatorsContainer {
-  left: -0.5px;
+  left: -62px;
   top: 22px;
-  border-left: 24px solid #bbb;
   box-shadow: 3px 3px 4px rgb(31 51 73 / 15%);
+}
+
+.row .denominatorsContainer :global(.denominatorLabel) {
+  border-left: 24px solid #e5e5e5;
+  padding-left: 5px;
 }
 
 .denominatorsContainer > div {
@@ -280,6 +300,19 @@
 
 .denominatorsContainer > div:hover :global(.qualityLabel) {
   color: #eee;
+}
+
+.denominatorsContainer > div:hover > span {
+  color: #eee;
+  fill: #eee;
+}
+
+.column .denominatorsContainer > div:hover :global(.denominatorLabel) {
+  border-top: 24px solid #555;
+}
+
+.row .denominatorsContainer > div:hover :global(.denominatorLabel) {
+  border-left: 24px solid #555;
 }
 
 .row .denominatorsContainer > div {

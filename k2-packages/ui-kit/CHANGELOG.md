@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.13.3](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@2.13.2...@k2-packages/ui-kit@2.13.3) (2021-03-01)
+
+### Bug Fixes
+
+- **bivariate-tool:** Update bivariate layout ([dccca54](https://gitlab.com/kontur-private/k2/k2-front-end/commit/dccca5401d68643ae51090daa783abdcefd211e6))
+
 ## [2.13.2](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@2.13.1...@k2-packages/ui-kit@2.13.2) (2021-03-01)
 
 ### Bug Fixes

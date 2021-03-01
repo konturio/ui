@@ -42,7 +42,7 @@ const getHeadingPositionStyle = (isColum: boolean, index: number) => {
 };
 
 const calculateHeadingsStyle = (vertical: boolean, index: number) => {
-  return vertical ? { height: `${220 + index * 25.5}px` } : { width: `${220 + index * 25.5}px` };
+  return vertical ? { height: `${235 + index * 25.5}px` } : { width: `${235 + index * 25.5}px` };
 };
 
 interface DenominatorItemProps {
@@ -69,8 +69,9 @@ const DenominatorItem = ({
   );
   return (
     <div onClick={onClick}>
-      {quality !== null && quality !== undefined ? <div className="qualityLabel">{quality}</div> : null}
-      {numinatorLabel} / {denominatorLabel}
+      <DenominatorIcon iconId={id} />
+      <div className="qualityLabel">{quality !== null && quality !== undefined ? quality : '&nbsp;'}</div>
+      <div className="denominatorLabel">{denominatorLabel}</div>
     </div>
   );
 };
@@ -218,6 +219,8 @@ const HeadingEntry = React.memo(
       >
         <div style={calculateHeadingsStyle(vertical, index)} className={styles.container}>
           <div className={styles.corner}></div>
+          <DenominatorIcon iconId={headerCell.selectedDenominator.id} />
+          <div className="qualityLabel">{headerCell.quality ? headerCell.quality : '&nbsp;'}</div>
           <DenominatorsSelector
             onSelectDenominator={onSelectDenominatorWrapper}
             selectedDenominator={headerCell.selectedDenominator}
@@ -226,8 +229,7 @@ const HeadingEntry = React.memo(
             isOpen={headingState.headingId === id}
             switchDenominatorsVisibility={switchDenominatorsVisibility}
           />
-          {headerCell.quality ? <div className="qualityLabel">{headerCell.quality}</div> : null}
-          {headerCell.label} / <DenominatorIcon iconId={headerCell.selectedDenominator.id} />
+          {headerCell.label}
         </div>
       </div>
     );

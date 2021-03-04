@@ -45,6 +45,31 @@ interface AxisControlProps {
   onSelectDenominator: (horisontal: boolean, index: number, denId: string) => void;
 }
 
+// auto-size calculation params
+const LETTER_WIDTH_LOWER_CASE = 8;
+const LETTER_WIDTH_UPPER_CASE = 12;
+const HEIGHT_SHIFT = 25.5;
+
+const isUpperCase = (letter: string) => {
+  return letter.toUpperCase() === letter;
+};
+
+const calculateStringWidth = (str: string): number => {
+  let strWidth = 0;
+  for (let i = 0; i < str.length; i++) {
+    const letter = str[i];
+    strWidth += isUpperCase(letter) ? LETTER_WIDTH_UPPER_CASE : LETTER_WIDTH_LOWER_CASE;
+  }
+
+  return strWidth;
+};
+
+const calculateHeadingsStyle = (baseDimension: number, vertical: boolean, index: number) => {
+  return vertical
+    ? { height: `${baseDimension + index * HEIGHT_SHIFT}px` }
+    : { width: `${baseDimension + index * HEIGHT_SHIFT}px` };
+};
+
 export const AxisControl = ({
   matrix,
   xHeadings,
@@ -110,6 +135,27 @@ export const AxisControl = ({
     },
     [onSelectDenominator],
   );
+
+  // calcucate base width of header item
+  let baseDimension = 0;
+  if (xHeadings && xHeadings.length && yHeadings && yHeadings.length) {
+    let xLength = calculateStringWidth(xHeadings[0].label);
+    for (let i = 1; i < xHeadings.length; i++) {
+      const iStrWidth = calculateStringWidth(xHeadings[i].label);
+      if (iStrWidth > xLength + i * HEIGHT_SHIFT) {
+        xLength = iStrWidth - i * HEIGHT_SHIFT;
+      }
+    }
+    let yLength = calculateStringWidth(yHeadings[0].label);
+    for (let i = 1; i < yHeadings.length; i++) {
+      const iStrWidth = calculateStringWidth(yHeadings[i].label);
+      if (iStrWidth > yLength + i * HEIGHT_SHIFT) {
+        yLength = iStrWidth - i * HEIGHT_SHIFT;
+      }
+    }
+
+    baseDimension = xLength > yLength ? xLength : yLength;
+  }
 
   return (
     <div className={styles.rotatedMatrix}>
@@ -198,6 +244,8 @@ export const AxisControl = ({
           onCellHover={onCellHoverY}
           onCellClick={onCellSelectY}
           onSelectDenominator={selectDenominatorY}
+          baseDimension={baseDimension}
+          calculateHeadingsStyle={calculateHeadingsStyle}
         />
         <TableHeading
           selectedIndex={selectedCell?.x}
@@ -207,6 +255,8 @@ export const AxisControl = ({
           onCellHover={onCellHoverX}
           onCellClick={onCellSelectX}
           onSelectDenominator={selectDenominatorX}
+          baseDimension={baseDimension}
+          calculateHeadingsStyle={calculateHeadingsStyle}
         />
       </div>
     </div>

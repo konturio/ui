@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { CSSProperties, useCallback, useEffect, useState } from 'react';
 import styles from './tableHeading.module.css';
 import clsx from 'clsx';
 import DenominatorIcon from './components/DenominatorIcon/DenominatorIcon';
@@ -39,10 +39,6 @@ const getHeadingPositionStyle = (isColum: boolean, index: number) => {
   };
 
   return styles;
-};
-
-const calculateHeadingsStyle = (vertical: boolean, index: number) => {
-  return vertical ? { height: `${235 + index * 25.5}px` } : { width: `${235 + index * 25.5}px` };
 };
 
 interface DenominatorItemProps {
@@ -137,6 +133,8 @@ interface HeadingEntryProps {
   onCellHover: (cellIndex: number | null) => void;
   onCellClick: (cellIndex: number) => void;
   onSelectDenominator: (index: number, denId: string) => void;
+  baseDimension: number;
+  calculateHeadingsStyle: (baseDimension: number, vertical: boolean, index: number) => CSSProperties;
 }
 
 const HeadingEntry = React.memo(
@@ -151,6 +149,8 @@ const HeadingEntry = React.memo(
     onCellHover,
     onCellClick,
     onSelectDenominator,
+    baseDimension,
+    calculateHeadingsStyle,
   }: HeadingEntryProps) => {
     const [headingState, setHeadingState] = useGlobalState();
 
@@ -217,7 +217,7 @@ const HeadingEntry = React.memo(
           vertical: vertical,
         })}
       >
-        <div style={calculateHeadingsStyle(vertical, index)} className={styles.container}>
+        <div style={calculateHeadingsStyle(baseDimension, vertical, index)} className={styles.container}>
           <div className={styles.corner}></div>
           <DenominatorIcon iconId={headerCell.selectedDenominator.id} />
           <div className="qualityLabel">{headerCell.quality ? headerCell.quality : '&nbsp;'}</div>
@@ -250,6 +250,8 @@ interface TableHeadingProps {
   onCellHover: (cellIndex: number | null) => void;
   onCellClick: (cellIndex: number) => void;
   onSelectDenominator: (index: number, denId: string) => void;
+  baseDimension: number;
+  calculateHeadingsStyle: (baseDimension: number, vertical: boolean, index: number) => CSSProperties;
 }
 
 const TableHeading = ({
@@ -261,6 +263,8 @@ const TableHeading = ({
   onCellHover,
   onCellClick,
   onSelectDenominator,
+  baseDimension,
+  calculateHeadingsStyle,
 }: TableHeadingProps) => {
   const elementsArray: React.ReactElement[] = [];
   if (vertical) {
@@ -279,6 +283,8 @@ const TableHeading = ({
           onCellHover={onCellHover}
           onCellClick={onCellClick}
           onSelectDenominator={onSelectDenominator}
+          baseDimension={baseDimension}
+          calculateHeadingsStyle={calculateHeadingsStyle}
         />,
       );
     }
@@ -298,6 +304,8 @@ const TableHeading = ({
           onCellHover={onCellHover}
           onCellClick={onCellClick}
           onSelectDenominator={onSelectDenominator}
+          baseDimension={baseDimension}
+          calculateHeadingsStyle={calculateHeadingsStyle}
         />,
       );
     }

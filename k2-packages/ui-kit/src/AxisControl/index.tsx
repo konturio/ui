@@ -48,10 +48,6 @@ interface AxisControlProps {
 // auto-size calculation params
 const WIDTH_SHIFT = 25.5;
 
-const isUpperCase = (letter: string) => {
-  return letter.toUpperCase() === letter;
-};
-
 // text width measure hack
 const canvas = document.createElement('canvas');
 const context: any = canvas.getContext('2d') || {};

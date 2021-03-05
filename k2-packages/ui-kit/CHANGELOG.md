@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.14.0](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@2.13.3...@k2-packages/ui-kit@2.14.0) (2021-03-05)
+
+### Features
+
+- **bivariate-panel:** Add auto-size feaature to bivariate panel ([2d21695](https://gitlab.com/kontur-private/k2/k2-front-end/commit/2d21695e84de5fa90ebf55e5404f05794f26665b))
+- **bivariate-tools:** Add autoresize for bivariate matrix ([0b4ec27](https://gitlab.com/kontur-private/k2/k2-front-end/commit/0b4ec273eb3f8ac67149cd0eb0bf0377db6398e4))
+
 ## [2.13.3](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@2.13.2...@k2-packages/ui-kit@2.13.3) (2021-03-01)
 
 ### Bug Fixes

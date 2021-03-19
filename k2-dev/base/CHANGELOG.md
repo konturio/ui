@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.8.0](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-dev/base@2.7.35...@k2-dev/base@2.8.0) (2021-03-19)
+
+### Features
+
+- **bivariate-tool:** Add client-boundries selector for bivariate tool ([a4544f2](https://gitlab.com/kontur-private/k2/k2-front-end/commit/a4544f283174f94da873630c7c96f68e45aafdd3)), closes [#5171](https://gitlab.com/kontur-private/k2/k2-front-end/issues/5171)
+
 ## [2.7.35](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-dev/base@2.7.34...@k2-dev/base@2.7.35) (2021-03-05)
 
 **Note:** Version bump only for package @k2-dev/base

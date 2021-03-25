@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.8.1](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-dev/base@2.8.0...@k2-dev/base@2.8.1) (2021-03-25)
+
+### Bug Fixes
+
+- **measure-distance-tool:** Fix turf js geodesic line antimeridian ([45fe034](https://gitlab.com/kontur-private/k2/k2-front-end/commit/45fe034f2387f7254f0758071466fb3683dd1065)), closes [#5103](https://gitlab.com/kontur-private/k2/k2-front-end/issues/5103)
+
 # [2.8.0](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-dev/base@2.7.35...@k2-dev/base@2.8.0) (2021-03-19)
 
 ### Features

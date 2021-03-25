@@ -1181,6 +1181,13 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
+"@babel/runtime@^7.12.0":
+  version "7.13.10"
+  resolved "https://nexus.kontur.io/repository/npm-a/@babel/runtime/-/runtime-7.13.10.tgz#47d42a57b6095f4468da440388fdbad8bebf0d7d"
+  integrity sha512-4QPkjJq6Ns3V/RgpEahRk+AGfL0eO6RHHtTWoNNr5mO49G6B5+X6d6THgWEAvTrznU5xYpbAlVKRYcsCgh/Akw==
+  dependencies:
+    regenerator-runtime "^0.13.4"
+
 "@babel/template@^7.10.1", "@babel/template@^7.10.3", "@babel/template@^7.3.3":
   version "7.10.3"
   resolved "https://nexus.kontur.io/repository/npm-a/@babel/template/-/template-7.10.3.tgz#4d13bc8e30bf95b0ce9d175d30306f42a2c9a7b8"
@@ -1293,58 +1300,60 @@
     "@types/react" "*"
     indefinitely-typed "^1.1.0"
 
-"@deck.gl/core@^8.3.12":
-  version "8.3.12"
-  resolved "https://nexus.kontur.io/repository/npm-a/@deck.gl/core/-/core-8.3.12.tgz#d66967867a202c7834f025d9805855390a2ad14c"
-  integrity sha512-qA66WrIhwIdO67V2z87GeayaSffob18aJULl7Bl7GaH9g7ocaeX5Vv3uvSAb6kJPiIdkA97bqymikllMYiLx3A==
+"@deck.gl/core@^8.3.13":
+  version "8.4.11"
+  resolved "https://nexus.kontur.io/repository/npm-a/@deck.gl/core/-/core-8.4.11.tgz#abbea95edcc97bce24d3625e7aa2242c9c1d0e37"
+  integrity sha512-H3qlb5O1OCaDbsw8y2bvFzwn8L+oj2z8CD407wOEmi4XGQ8wmkVViLocfqnOYixz7/mvJ7gWd/wqIoWrTjIYUg==
   dependencies:
-    "@loaders.gl/core" "^2.3.0"
-    "@loaders.gl/images" "^2.3.0"
-    "@luma.gl/core" "^8.3.1"
-    "@math.gl/web-mercator" "^3.3.0"
+    "@loaders.gl/core" "^2.3.13"
+    "@loaders.gl/images" "^2.3.13"
+    "@luma.gl/core" "^8.4.1"
+    "@math.gl/web-mercator" "^3.4.2"
     gl-matrix "^3.0.0"
-    math.gl "^3.3.0"
-    mjolnir.js "^2.3.0"
+    math.gl "^3.4.2"
+    mjolnir.js "^2.5.0"
     probe.gl "^3.2.1"
 
-"@deck.gl/geo-layers@^8.3.12":
-  version "8.3.12"
-  resolved "https://nexus.kontur.io/repository/npm-a/@deck.gl/geo-layers/-/geo-layers-8.3.12.tgz#82fae7cb568b41952ce80899a230b7f2e9c42334"
-  integrity sha512-kLDX05JL3PfyOXqxS7NtNfYA4W1Vs9OCSQ7+/nXqXGxX0aEGxT6slBOt3sNvLdoUfvbnblazxWxMDPzvPKcauQ==
+"@deck.gl/geo-layers@^8.3.13":
+  version "8.4.11"
+  resolved "https://nexus.kontur.io/repository/npm-a/@deck.gl/geo-layers/-/geo-layers-8.4.11.tgz#acc2a3cc72155d5dfd99b416e09cca36a34e9c11"
+  integrity sha512-/FoANsW2Em77bakWpjnX28+FFGHraNx7v+2Fao4UI2etO9WfOapkol+oX3GRIJtBt1ijwJqzmyDii8mmOcj8eg==
   dependencies:
-    "@loaders.gl/3d-tiles" "^2.3.0"
-    "@loaders.gl/loader-utils" "^2.3.0"
-    "@loaders.gl/mvt" "^2.3.0"
-    "@loaders.gl/terrain" "^2.3.0"
-    "@loaders.gl/tiles" "^2.3.0"
-    "@math.gl/culling" "^3.3.0"
-    "@math.gl/web-mercator" "^3.3.0"
+    "@loaders.gl/3d-tiles" "^2.3.13"
+    "@loaders.gl/gis" "^2.3.13"
+    "@loaders.gl/loader-utils" "^2.3.13"
+    "@loaders.gl/mvt" "^2.3.13"
+    "@loaders.gl/terrain" "^2.3.13"
+    "@loaders.gl/tiles" "^2.3.13"
+    "@math.gl/culling" "^3.4.2"
+    "@math.gl/web-mercator" "^3.4.2"
     h3-js "^3.6.0"
     long "^3.2.0"
-    math.gl "^3.3.0"
+    math.gl "^3.4.2"
 
-"@deck.gl/layers@^8.3.12":
-  version "8.3.12"
-  resolved "https://nexus.kontur.io/repository/npm-a/@deck.gl/layers/-/layers-8.3.12.tgz#e2366b1beb2dd78e7be0d7f44c310b22d9d05706"
-  integrity sha512-pknU/3ctoQA5dDlRW9BBUXDiREHE5PWxdc0EEfpe/BPDnsd5G6uEE72+0y5AolLBYEtfULdZ3E9o3SUYL2VljQ==
+"@deck.gl/layers@^8.3.13":
+  version "8.4.11"
+  resolved "https://nexus.kontur.io/repository/npm-a/@deck.gl/layers/-/layers-8.4.11.tgz#4e066a540aa4e062349f97133ba9577c1fd970c4"
+  integrity sha512-j5GgIFR9SIdJFkWxwjD+s2xG6peS351ckV+WJhQQaqrXJeBEls7sqoEIyrsvc1JuOoI4kh3XbgsUfhs6dsg4lQ==
   dependencies:
-    "@loaders.gl/images" "^2.3.0"
+    "@loaders.gl/images" "^2.3.13"
     "@mapbox/tiny-sdf" "^1.1.0"
-    "@math.gl/polygon" "^3.3.0"
+    "@math.gl/polygon" "^3.4.2"
     earcut "^2.0.6"
 
-"@deck.gl/mapbox@^8.3.12":
-  version "8.3.12"
-  resolved "https://nexus.kontur.io/repository/npm-a/@deck.gl/mapbox/-/mapbox-8.3.12.tgz#b30902acc62c9fbe2f7b39347e70080cf652321a"
-  integrity sha512-4AmnY8OeTazn8ewJCkcMjzAQq/ONh/78p23y1ZmsRkbFMiMQKGnfOZrIFd3kWW8bJEv1ctPpkYteJd5iFCsooA==
+"@deck.gl/mapbox@^8.3.13":
+  version "8.4.11"
+  resolved "https://nexus.kontur.io/repository/npm-a/@deck.gl/mapbox/-/mapbox-8.4.11.tgz#e0179dd849914f3486c83c494d407c629701047e"
+  integrity sha512-MrFUpfBF099YjsBjj0UycTyhxieYeRHYFJNiZd3cDrp4JSJyCpnG4JdpZznCPWcQkbBwcyzvZamABWcZpgR6NQ==
 
-"@deck.gl/mesh-layers@^8.3.12":
-  version "8.3.12"
-  resolved "https://nexus.kontur.io/repository/npm-a/@deck.gl/mesh-layers/-/mesh-layers-8.3.12.tgz#400610f630cb58ec04aca0c0d947d09058b375f2"
-  integrity sha512-hFodVmFmFec3coCqK51B7Tu5DlTo6G5RnzRm9jkGh/NkJD4S5iyBCUg9HZlkNeT4zpbPTKhoKozFJOVDNsbLjA==
+"@deck.gl/mesh-layers@^8.3.13":
+  version "8.4.11"
+  resolved "https://nexus.kontur.io/repository/npm-a/@deck.gl/mesh-layers/-/mesh-layers-8.4.11.tgz#e91f0dd60e29f85e12a6a89e798c97fef59d268a"
+  integrity sha512-qSOXh0Cc1JcTaKq5UQoKP4U+gA6e/YCJPSApkSvJr6Tex+9DsJ3mKghPRzNPh6FXKaTAXM2+OKKZaitdBSZ6Lw==
   dependencies:
-    "@luma.gl/experimental" "^8.3.1"
-    "@luma.gl/shadertools" "^8.3.1"
+    "@loaders.gl/gltf" "^2.3.13"
+    "@luma.gl/experimental" "^8.4.1"
+    "@luma.gl/shadertools" "^8.4.1"
 
 "@evocateur/libnpmaccess@^3.1.2":
   version "3.1.2"
@@ -2289,20 +2298,28 @@
     npmlog "^4.1.2"
     write-file-atomic "^2.3.0"
 
-"@loaders.gl/3d-tiles@^2.3.0":
-  version "2.3.7"
-  resolved "https://nexus.kontur.io/repository/npm-a/@loaders.gl/3d-tiles/-/3d-tiles-2.3.7.tgz#9ad4283bd3cd07119a5f82110455b1095fe2032d"
-  integrity sha512-Dw+bjkO4BUEcJUXB7iAlh2RzaDWjDFTvqiUW+WPT+2WSUjD8EAVZ1WIo/cQFK5DgulLRO09dYlRTPlo6WuNpfQ==
+"@loaders.gl/3d-tiles@^2.3.13":
+  version "2.3.13"
+  resolved "https://nexus.kontur.io/repository/npm-a/@loaders.gl/3d-tiles/-/3d-tiles-2.3.13.tgz#7b304423d42e76ecc4e7ee4339174a29f2c364ae"
+  integrity sha512-WccDTlv/AJo5GJFEa6MIjk1H0294hTs8zhmEDq5mmdQ4B7la+4aWKmIfJmgCcIv8vWUkzQIuRIHTgxi0ShmUTw==
   dependencies:
-    "@loaders.gl/core" "2.3.7"
-    "@loaders.gl/draco" "2.3.7"
-    "@loaders.gl/gltf" "2.3.7"
-    "@loaders.gl/loader-utils" "2.3.7"
-    "@loaders.gl/math" "2.3.7"
-    "@loaders.gl/tiles" "2.3.7"
+    "@loaders.gl/core" "2.3.13"
+    "@loaders.gl/draco" "2.3.13"
+    "@loaders.gl/gltf" "2.3.13"
+    "@loaders.gl/loader-utils" "2.3.13"
+    "@loaders.gl/math" "2.3.13"
+    "@loaders.gl/tiles" "2.3.13"
     "@math.gl/core" "^3.3.0"
     "@math.gl/geospatial" "^3.3.0"
     "@probe.gl/stats" "^3.3.0"
+
+"@loaders.gl/core@2.3.13", "@loaders.gl/core@^2.3.13":
+  version "2.3.13"
+  resolved "https://nexus.kontur.io/repository/npm-a/@loaders.gl/core/-/core-2.3.13.tgz#093fe965cfab0a72c902a63d461282ae1ed55dc2"
+  integrity sha512-Hjm8eJjS/OUnaHrOSgXtE+qDg5V4Do0jIpp2u0Dv3CMxPrtd2TpwkDfAyZWmmbZew9rzqPoAVMINejS/ItWUeg==
+  dependencies:
+    "@babel/runtime" "^7.3.1"
+    "@loaders.gl/loader-utils" "2.3.13"
 
 "@loaders.gl/core@2.3.7", "@loaders.gl/core@^2.3.0":
   version "2.3.7"
@@ -2311,6 +2328,15 @@
   dependencies:
     "@babel/runtime" "^7.3.1"
     "@loaders.gl/loader-utils" "2.3.7"
+
+"@loaders.gl/draco@2.3.13":
+  version "2.3.13"
+  resolved "https://nexus.kontur.io/repository/npm-a/@loaders.gl/draco/-/draco-2.3.13.tgz#fcc08c0a3b438e3d7ed099dbafc1f83205b5f41b"
+  integrity sha512-rePkoM/xpvNyjO2vvBRQ39Aa3tCpBFCWf/jheka4bFXnLJzy8X7ZGNXojZEsrdT0lAiHM+QrCeAWvtyDEujURA==
+  dependencies:
+    "@babel/runtime" "^7.3.1"
+    "@loaders.gl/loader-utils" "2.3.13"
+    draco3d "^1.3.6"
 
 "@loaders.gl/draco@2.3.7":
   version "2.3.7"
@@ -2321,16 +2347,26 @@
     "@loaders.gl/loader-utils" "2.3.7"
     draco3d "^1.3.6"
 
-"@loaders.gl/gis@2.3.7":
-  version "2.3.7"
-  resolved "https://nexus.kontur.io/repository/npm-a/@loaders.gl/gis/-/gis-2.3.7.tgz#4767e4517c4f5913c9b1eb6a7b64f2df146b5e3a"
-  integrity sha512-zQAWKedBBJECK2+TokMfu7rV//Kv9nGNCYwulu+221bP1XmJz9SgdsWMj3RuSALVPet/ia/RV3Mdg4p324SKUA==
+"@loaders.gl/gis@2.3.13", "@loaders.gl/gis@^2.3.13":
+  version "2.3.13"
+  resolved "https://nexus.kontur.io/repository/npm-a/@loaders.gl/gis/-/gis-2.3.13.tgz#b80cda7e8f709efd0a5a9badf7daf9c68b6b0409"
+  integrity sha512-i+hot7QeW53GhRwnvF5H65lsZYv4/ESbFuGtNy5TKivPaTIqn1oIFtLOku9Ntw5xTfky9qNNlbMPcsDMoniavQ==
   dependencies:
-    "@loaders.gl/loader-utils" "2.3.7"
+    "@loaders.gl/loader-utils" "2.3.13"
     "@mapbox/vector-tile" "^1.3.1"
     pbf "^3.2.1"
 
-"@loaders.gl/gltf@2.3.7", "@loaders.gl/gltf@^2.3.0":
+"@loaders.gl/gltf@2.3.13", "@loaders.gl/gltf@^2.3.13":
+  version "2.3.13"
+  resolved "https://nexus.kontur.io/repository/npm-a/@loaders.gl/gltf/-/gltf-2.3.13.tgz#4207ee05232b089a9cafa0254cae6812f7ac351b"
+  integrity sha512-V/GUMe1Gm8cEfKnp899l0Nu6rKycEbLidO9WYhlwbB5avcwrxltWRqoWvQKFKNCqJyH5neJbl8vDmaaeeELD3w==
+  dependencies:
+    "@loaders.gl/core" "2.3.13"
+    "@loaders.gl/draco" "2.3.13"
+    "@loaders.gl/images" "2.3.13"
+    "@loaders.gl/loader-utils" "2.3.13"
+
+"@loaders.gl/gltf@^2.3.0":
   version "2.3.7"
   resolved "https://nexus.kontur.io/repository/npm-a/@loaders.gl/gltf/-/gltf-2.3.7.tgz#29fc7dcf513698478fbbaa01fcc7fefc6bca3698"
   integrity sha512-M/4Fwht+/GWKG8YM74YFo7e+6MJdmHKGbl7kqerjSKHBOGAU16VUTTIgtPNzTyFFNwmJz/umZ5gfvz7fTC/+2g==
@@ -2340,6 +2376,13 @@
     "@loaders.gl/images" "2.3.7"
     "@loaders.gl/loader-utils" "2.3.7"
 
+"@loaders.gl/images@2.3.13", "@loaders.gl/images@^2.3.13":
+  version "2.3.13"
+  resolved "https://nexus.kontur.io/repository/npm-a/@loaders.gl/images/-/images-2.3.13.tgz#3b827cf1e8d31c8f1adf85136c7fd53c08dbb0a8"
+  integrity sha512-BBgLf17udhRnYwvsObAOM7jEeLBaeU3di1NyLhpTMa7WbG3jAnDlmy1BRue8wYfgVpWnmk18YubZtX6vCRrJnA==
+  dependencies:
+    "@loaders.gl/loader-utils" "2.3.13"
+
 "@loaders.gl/images@2.3.7", "@loaders.gl/images@^2.3.0":
   version "2.3.7"
   resolved "https://nexus.kontur.io/repository/npm-a/@loaders.gl/images/-/images-2.3.7.tgz#8f694a9f43e1b2400d3da48b99809e01bfebd59f"
@@ -2347,7 +2390,15 @@
   dependencies:
     "@loaders.gl/loader-utils" "2.3.7"
 
-"@loaders.gl/loader-utils@2.3.7", "@loaders.gl/loader-utils@^2.3.0":
+"@loaders.gl/loader-utils@2.3.13", "@loaders.gl/loader-utils@^2.3.13":
+  version "2.3.13"
+  resolved "https://nexus.kontur.io/repository/npm-a/@loaders.gl/loader-utils/-/loader-utils-2.3.13.tgz#5cf6403b1c19b2fe5abacbd89e6252b8ca50db96"
+  integrity sha512-vXzH5CWG8pWjUEb7hUr6CM4ERj4NVRpA60OxvVv/OaZZ7hNN63+9/tSUA5IXD9QArWPWrFBnKnvE+5gg4WNqTg==
+  dependencies:
+    "@babel/runtime" "^7.3.1"
+    "@probe.gl/stats" "^3.3.0"
+
+"@loaders.gl/loader-utils@2.3.7":
   version "2.3.7"
   resolved "https://nexus.kontur.io/repository/npm-a/@loaders.gl/loader-utils/-/loader-utils-2.3.7.tgz#800d5f31a32a85d7400f3c2e8774484186fa0796"
   integrity sha512-PYjlt7UmUNqAb/F/52Om/hJt6yEZdIH6ucH+145kEKBTqVR45z5K1/3DrNjQg0Ofo9yUMbVGdtACT4mVlbBrzg==
@@ -2355,112 +2406,113 @@
     "@babel/runtime" "^7.3.1"
     "@probe.gl/stats" "^3.3.0"
 
-"@loaders.gl/math@2.3.7":
-  version "2.3.7"
-  resolved "https://nexus.kontur.io/repository/npm-a/@loaders.gl/math/-/math-2.3.7.tgz#5ed9060eddb5c307b43f052330acc7e62ed42aa9"
-  integrity sha512-R1DoMgiDqzkGJb9QYA9vr9N2WksWC5TOGbIWeo8YZ6xhOrkoGEdAflEXPQkKIxoG8UBOdLmchRYbsLOblx8Rog==
+"@loaders.gl/math@2.3.13":
+  version "2.3.13"
+  resolved "https://nexus.kontur.io/repository/npm-a/@loaders.gl/math/-/math-2.3.13.tgz#500173a7b2202ca09ee07e68f617ec45e8f3bfd9"
+  integrity sha512-ewlpk+5NR+DWSDx7OIptcd+KaPRmwgOlSg/54p+pjw1oO0rqs7y8tv7s+KfYJX66rN7i9MiBaJ0JwfC0lrB09A==
   dependencies:
-    "@loaders.gl/images" "2.3.7"
-    "@loaders.gl/loader-utils" "2.3.7"
+    "@loaders.gl/images" "2.3.13"
+    "@loaders.gl/loader-utils" "2.3.13"
     "@math.gl/core" "^3.3.0"
 
-"@loaders.gl/mvt@^2.3.0":
-  version "2.3.7"
-  resolved "https://nexus.kontur.io/repository/npm-a/@loaders.gl/mvt/-/mvt-2.3.7.tgz#044e4988bf4a01314fe30c8f761932680e79d8d7"
-  integrity sha512-LiaRODNHHhx9OeVRHzFp7rayQJx3y6MhLwuGUhj1VJA8wzlC5c/s/SuHTHL331zUj6QiBMtHXOYXYYn/hx1ShA==
+"@loaders.gl/mvt@^2.3.13":
+  version "2.3.13"
+  resolved "https://nexus.kontur.io/repository/npm-a/@loaders.gl/mvt/-/mvt-2.3.13.tgz#87cf43f017446f5c996f13c874b6d6b601498c72"
+  integrity sha512-Zi1Gc6XzxTY05tVbxMITvy6zUiBhMpMWvhPkaCcOfktblDMnhQTkIb9fVnhv7ioe4hId4rvuXDIUXhtrBTJEKQ==
   dependencies:
-    "@loaders.gl/gis" "2.3.7"
-    "@loaders.gl/loader-utils" "2.3.7"
+    "@loaders.gl/gis" "2.3.13"
+    "@loaders.gl/loader-utils" "2.3.13"
     "@mapbox/point-geometry" "~0.1.0"
     "@mapbox/vector-tile" "^1.3.1"
     pbf "^3.2.1"
 
-"@loaders.gl/terrain@^2.3.0":
-  version "2.3.7"
-  resolved "https://nexus.kontur.io/repository/npm-a/@loaders.gl/terrain/-/terrain-2.3.7.tgz#c54757cab9febd0e770ef7aa59efef0dd1f906cf"
-  integrity sha512-CNHVeJjMeADPXhyImXIZ0Wmn07ZvqIB+CfPQI419fvZj7gQQ8G/Nmv8B85rU4vYO5xaFtosBhaiHQMqBO34klQ==
+"@loaders.gl/terrain@^2.3.13":
+  version "2.3.13"
+  resolved "https://nexus.kontur.io/repository/npm-a/@loaders.gl/terrain/-/terrain-2.3.13.tgz#84f9d332f05fbd453caed3a9c9b8c9d6caaf2c4a"
+  integrity sha512-sZi/CMcNxKbcv7F8pk0PLX5P0o11Sy8DzOk4MB0mRe4XM1ITeiaXf8L6JZkOC3HBdBOzNlId6N3f32fK9OHPnw==
   dependencies:
     "@babel/runtime" "^7.3.1"
-    "@loaders.gl/loader-utils" "2.3.7"
+    "@loaders.gl/loader-utils" "2.3.13"
     "@mapbox/martini" "^0.2.0"
 
-"@loaders.gl/tiles@2.3.7", "@loaders.gl/tiles@^2.3.0":
-  version "2.3.7"
-  resolved "https://nexus.kontur.io/repository/npm-a/@loaders.gl/tiles/-/tiles-2.3.7.tgz#a87e920d1389cf2e18b82014605b6c11c28565ed"
-  integrity sha512-k+lXRIa2FerwE4cJmYFqKqtSNQtlr0Q/p7qOoyAGdhYk5sWy33ZYrpbvVn+aVZOCTaBNLnm7sivq0sMZpjB9ig==
+"@loaders.gl/tiles@2.3.13", "@loaders.gl/tiles@^2.3.13":
+  version "2.3.13"
+  resolved "https://nexus.kontur.io/repository/npm-a/@loaders.gl/tiles/-/tiles-2.3.13.tgz#470f5f46d35699ad7063445d1ba142e3ce4dabf0"
+  integrity sha512-3ZSlMgcPTo5lCnvKw/is5dvTayzvX+wi6n1u4lEe4gt8Ml9KYp/e45hOqp6qXR6SckO2+ohBXOzQP2e8ZhRxXQ==
   dependencies:
-    "@loaders.gl/core" "2.3.7"
-    "@loaders.gl/loader-utils" "2.3.7"
-    "@loaders.gl/math" "2.3.7"
+    "@loaders.gl/core" "2.3.13"
+    "@loaders.gl/loader-utils" "2.3.13"
+    "@loaders.gl/math" "2.3.13"
     "@math.gl/core" "^3.3.0"
     "@math.gl/culling" "^3.3.0"
     "@math.gl/geospatial" "^3.3.0"
     "@math.gl/web-mercator" "^3.3.0"
     "@probe.gl/stats" "^3.3.0"
 
-"@luma.gl/constants@8.3.2":
-  version "8.3.2"
-  resolved "https://nexus.kontur.io/repository/npm-a/@luma.gl/constants/-/constants-8.3.2.tgz#71310972f2909f4cc83a3da7ee8cba61a1bbbad6"
-  integrity sha512-KSNNXv5eE9bkMH2AcZpLysqNEU0SDDZ8JthjHtkdVyOSr4yMeAaRXyWeSuLJITiemXkm4Um8jX6Ub12OW9JPug==
+"@luma.gl/constants@8.4.4":
+  version "8.4.4"
+  resolved "https://nexus.kontur.io/repository/npm-a/@luma.gl/constants/-/constants-8.4.4.tgz#a4dd5edba10081142e1407ecba93076695f33d07"
+  integrity sha512-4e58QW6UKXkxiIvWSLoAnTc4cT8nvb0PhLzu1h8KiCuaDT5Vq8csOymcNOy/jhpfcIhHlmT1KwowF5m/DcOlKg==
 
-"@luma.gl/core@^8.3.1":
-  version "8.3.2"
-  resolved "https://nexus.kontur.io/repository/npm-a/@luma.gl/core/-/core-8.3.2.tgz#35af0de84b077cbd27e08ecbf233ffa3313a5585"
-  integrity sha512-VNFAI0o54+e5biugtz19p2Mapv2xFTZ3qqtWE4xwqst4K/HqvWhoBcWsS5NYlzD6ipsUWTlaidA4ROkbFJINMw==
+"@luma.gl/core@^8.4.1":
+  version "8.4.4"
+  resolved "https://nexus.kontur.io/repository/npm-a/@luma.gl/core/-/core-8.4.4.tgz#70897ab37e61e86fc84cbbfcfea3cf006a5aa500"
+  integrity sha512-rK69iWEr8BmFbrmknkBg6IhFgcByaAm/z9qKnsRsEeomZXF5F7to/m7/RdvrsmpYVDkmWNDkqg1tiOGh55iaLQ==
   dependencies:
     "@babel/runtime" "^7.0.0"
-    "@luma.gl/constants" "8.3.2"
-    "@luma.gl/engine" "8.3.2"
-    "@luma.gl/shadertools" "8.3.2"
-    "@luma.gl/webgl" "8.3.2"
+    "@luma.gl/constants" "8.4.4"
+    "@luma.gl/engine" "8.4.4"
+    "@luma.gl/gltools" "8.4.4"
+    "@luma.gl/shadertools" "8.4.4"
+    "@luma.gl/webgl" "8.4.4"
 
-"@luma.gl/engine@8.3.2":
-  version "8.3.2"
-  resolved "https://nexus.kontur.io/repository/npm-a/@luma.gl/engine/-/engine-8.3.2.tgz#c7925714e586ddb3cd92f95f74d38874e63d0a87"
-  integrity sha512-9msfc/7HemWrCyIbBH9FA3LgOeaPhuit9e+YcEw3UCAo+6AY/+V1EAawne1Lvd4lXgNQb3L8L5yAP60Qr8rGxA==
+"@luma.gl/engine@8.4.4":
+  version "8.4.4"
+  resolved "https://nexus.kontur.io/repository/npm-a/@luma.gl/engine/-/engine-8.4.4.tgz#2f070cc5f113368a6e7b626ddc55d48d1c4966ef"
+  integrity sha512-QOXCaL++cESH0+ebK77MbGDOAmJhsV2iO0Dyf4qhoDBk+8fjvB5ZnzIpv41ccTyOmPJAvmyP+kqFZRfxZKPjGw==
   dependencies:
     "@babel/runtime" "^7.0.0"
-    "@luma.gl/constants" "8.3.2"
-    "@luma.gl/gltools" "8.3.2"
-    "@luma.gl/shadertools" "8.3.2"
-    "@luma.gl/webgl" "8.3.2"
-    math.gl "^3.3.0"
+    "@luma.gl/constants" "8.4.4"
+    "@luma.gl/gltools" "8.4.4"
+    "@luma.gl/shadertools" "8.4.4"
+    "@luma.gl/webgl" "8.4.4"
+    "@math.gl/core" "^3.4.2"
     probe.gl "^3.2.1"
 
-"@luma.gl/experimental@^8.3.1":
-  version "8.3.2"
-  resolved "https://nexus.kontur.io/repository/npm-a/@luma.gl/experimental/-/experimental-8.3.2.tgz#2001ed3d9a37906fbe7dcda83a1bea3a824f172b"
-  integrity sha512-X0Qv7KUNT311ec6/TQzv4LXvcLpsF62+CurjBQ/vXmpHAhWU7Ufx2Vhab43rrkHvoUXnSmQL62I8HBDtaTL/fw==
+"@luma.gl/experimental@^8.4.1":
+  version "8.4.4"
+  resolved "https://nexus.kontur.io/repository/npm-a/@luma.gl/experimental/-/experimental-8.4.4.tgz#1a10fd6b2974c21508b6f87d233606f3948c8c22"
+  integrity sha512-W446snQaY/H0XC8MnbgWPeRy9CBiRZWZQhZC7HzBx9FfNX313KO2vxlW5zzPT+uIbiNxHUd03WH0iXbK4jOooQ==
   dependencies:
-    "@luma.gl/constants" "8.3.2"
+    "@luma.gl/constants" "8.4.4"
+    "@math.gl/core" "^3.4.1"
     earcut "^2.0.6"
-    math.gl "^3.3.0"
 
-"@luma.gl/gltools@8.3.2":
-  version "8.3.2"
-  resolved "https://nexus.kontur.io/repository/npm-a/@luma.gl/gltools/-/gltools-8.3.2.tgz#186c38006025a1467094b8167a8c5b123b4875f1"
-  integrity sha512-JGsVdFkr9o74nn1D8vf9huW1hcZiGNAhOtA2jAv9GG4oHPIKLRN8p95QroYMFYl/DcfAxXNR+Mq7hPiTtDiw9w==
+"@luma.gl/gltools@8.4.4":
+  version "8.4.4"
+  resolved "https://nexus.kontur.io/repository/npm-a/@luma.gl/gltools/-/gltools-8.4.4.tgz#08af76b5fc9bc13b294a61852ba62eb6839b5251"
+  integrity sha512-OD7jcDcfAeZSxmRF9Lq15RqKDghqKeVfWOGhiTkhUdF3N4dPnW3LS/+LkGEKse6AtbHlSijo8wf6WzceXNXsLQ==
   dependencies:
     "@babel/runtime" "^7.0.0"
-    "@luma.gl/constants" "8.3.2"
+    "@luma.gl/constants" "8.4.4"
     probe.gl "^3.2.1"
 
-"@luma.gl/shadertools@8.3.2", "@luma.gl/shadertools@^8.3.1":
-  version "8.3.2"
-  resolved "https://nexus.kontur.io/repository/npm-a/@luma.gl/shadertools/-/shadertools-8.3.2.tgz#199661058de44b5554b1efcd133147293c123591"
-  integrity sha512-XEAPtEyfcrL9qNdv/xUxxFRmxYwx+LEJMyJ0rUGEZL17a1JMUsyW1B+5EnoNPQEMY4mL1vpa83qHPHX5gYw1FA==
+"@luma.gl/shadertools@8.4.4", "@luma.gl/shadertools@^8.4.1":
+  version "8.4.4"
+  resolved "https://nexus.kontur.io/repository/npm-a/@luma.gl/shadertools/-/shadertools-8.4.4.tgz#0dac202e3c7096c596100089d7050e6023543f2f"
+  integrity sha512-6UGmhGlGlMWuCG6jG3ohKdBX6wXPTYr/QPYPAKwUxiVO4fFsWW3yzuZFmVJtQ6w3qFm3iMugdeulyZwvy1hZZg==
   dependencies:
     "@babel/runtime" "^7.0.0"
-    math.gl "^3.3.0"
+    "@math.gl/core" "^3.4.2"
 
-"@luma.gl/webgl@8.3.2":
-  version "8.3.2"
-  resolved "https://nexus.kontur.io/repository/npm-a/@luma.gl/webgl/-/webgl-8.3.2.tgz#9a112272edaa2624d60f226516fc79b095a23159"
-  integrity sha512-mO3/DCCs/VlQbjFbqGE6FlGX/qU6pdMtS26JBCAV30dR40LO41uWWEz9HniDv92QPDPb+ZNCa5/yYbtLpZnADw==
+"@luma.gl/webgl@8.4.4":
+  version "8.4.4"
+  resolved "https://nexus.kontur.io/repository/npm-a/@luma.gl/webgl/-/webgl-8.4.4.tgz#1d0d7cffd11cfd57215e21e4157c8d89e60d6f53"
+  integrity sha512-Y1LCVdE+aNox3i7lMFdDk/Fehgma5RwHZn7ajpIXLalnuuQ9bsCdXCFoRPnx2rbhzmw77jIqGpmuV/+sPNOpNw==
   dependencies:
     "@babel/runtime" "^7.0.0"
-    "@luma.gl/constants" "8.3.2"
-    "@luma.gl/gltools" "8.3.2"
+    "@luma.gl/constants" "8.4.4"
+    "@luma.gl/gltools" "8.4.4"
     probe.gl "^3.2.1"
 
 "@mapbox/geojson-rewind@^0.5.0":
@@ -2526,6 +2578,14 @@
     "@babel/runtime" "^7.0.0"
     gl-matrix "^3.0.0"
 
+"@math.gl/core@3.4.2", "@math.gl/core@^3.4.1", "@math.gl/core@^3.4.2":
+  version "3.4.2"
+  resolved "https://nexus.kontur.io/repository/npm-a/@math.gl/core/-/core-3.4.2.tgz#1b5468f04de8e3bdae5b7717b459759daa7b0a80"
+  integrity sha512-65vhtokCDq0N16DLwWZhPTNAGuVtTjyyi5tx950yNN3ei5BRxz2JHe6JTSnjjKO/2w9KuQYOOqokc7ARog0vKg==
+  dependencies:
+    "@babel/runtime" "^7.12.0"
+    gl-matrix "^3.0.0"
+
 "@math.gl/culling@^3.3.0":
   version "3.3.2"
   resolved "https://nexus.kontur.io/repository/npm-a/@math.gl/culling/-/culling-3.3.2.tgz#3ae4e7cf6726b400652c862ea300c04015be28d9"
@@ -2533,6 +2593,15 @@
   dependencies:
     "@babel/runtime" "^7.0.0"
     "@math.gl/core" "3.3.2"
+    gl-matrix "^3.0.0"
+
+"@math.gl/culling@^3.4.2":
+  version "3.4.2"
+  resolved "https://nexus.kontur.io/repository/npm-a/@math.gl/culling/-/culling-3.4.2.tgz#a3d9a80e3c69c3613591a732515875dbdcf54e6a"
+  integrity sha512-rjDfJp58jvTzMjX954/EMdcaVrX8UkkkXWXc1PU2+XFyAtaBYHDk7jiaFQQbBx8sqk9PKd62j3UTwtSreWyoyQ==
+  dependencies:
+    "@babel/runtime" "^7.12.0"
+    "@math.gl/core" "3.4.2"
     gl-matrix "^3.0.0"
 
 "@math.gl/geospatial@^3.3.0":
@@ -2544,12 +2613,12 @@
     "@math.gl/core" "3.3.2"
     gl-matrix "^3.0.0"
 
-"@math.gl/polygon@^3.3.0":
-  version "3.3.2"
-  resolved "https://nexus.kontur.io/repository/npm-a/@math.gl/polygon/-/polygon-3.3.2.tgz#edec0f28a7112be191a7654057c4ee18c5a4fb28"
-  integrity sha512-pxiXv9FRwrwvpwvlLOtL2OhAGoac6u+1BPsd3W9YolNRN1CaxflaSZbEGU2CSaanb2GtUH15XWeDYi9hTjIgow==
+"@math.gl/polygon@^3.4.2":
+  version "3.4.2"
+  resolved "https://nexus.kontur.io/repository/npm-a/@math.gl/polygon/-/polygon-3.4.2.tgz#36c327257959c8edcc258c4ddeaecf04b125cb90"
+  integrity sha512-ANbZmcrzavzEe0bHbdEYyiudPdGGV/quB3FxUJa3L1QCcZbnrqvnuwqX+8U8ltIDhbACG1x0Uxefwo8p77aMNw==
   dependencies:
-    "@math.gl/core" "3.3.2"
+    "@math.gl/core" "3.4.2"
 
 "@math.gl/web-mercator@^3.1.3", "@math.gl/web-mercator@^3.3.0":
   version "3.3.2"
@@ -2557,6 +2626,14 @@
   integrity sha512-84NNnwP97Xwm1ynZzat1BuEU2uLyIw0gzG5uvGMrAzezny2P38+E2cUK8t9eptKa8gjk2MaC7hhcO0saFCZTHw==
   dependencies:
     "@babel/runtime" "^7.0.0"
+    gl-matrix "^3.0.0"
+
+"@math.gl/web-mercator@^3.4.2":
+  version "3.4.2"
+  resolved "https://nexus.kontur.io/repository/npm-a/@math.gl/web-mercator/-/web-mercator-3.4.2.tgz#72c7c7e698bcf8d1d1d60c0ec4c5a4698c9b960e"
+  integrity sha512-Az/WI8vxbqnrTEcYgqDQ3CgCRoFA2a4XT9mkjVrT7iIlfrUF5lrIXcmpljjKvoFNBldKrng7hFSeHHM2ghgSrg==
+  dependencies:
+    "@babel/runtime" "^7.12.0"
     gl-matrix "^3.0.0"
 
 "@mrmlnc/readdir-enhanced@^2.2.1":
@@ -9874,12 +9951,12 @@ martinez-polygon-clipping@^0.4.3:
     splaytree "^0.1.4"
     tinyqueue "^1.2.0"
 
-math.gl@^3.3.0:
-  version "3.3.2"
-  resolved "https://nexus.kontur.io/repository/npm-a/math.gl/-/math.gl-3.3.2.tgz#3fefd42e37337f3788985ffcd4c52ccd5c65fc07"
-  integrity sha512-33CWhbeiQxl+lzpnKdKijH9mPdZRQUP9TlBILNh6xhnJdMD9D+Kle6Xhfb8dMllE1UUQcPZlQ8/Sd1qSVtNsKQ==
+math.gl@^3.4.2:
+  version "3.4.2"
+  resolved "https://nexus.kontur.io/repository/npm-a/math.gl/-/math.gl-3.4.2.tgz#1d39b6b9f735b57134c26f079607611dbf4e8c89"
+  integrity sha512-0I77HBiC+q/XRRw807dCwUeMTUotzNQUQZEk0kPd39iRmU67dLId0+OtCGFYjIzyM+gNaj1JWueiOYV/gdl+dQ==
   dependencies:
-    "@math.gl/core" "3.3.2"
+    "@math.gl/core" "3.4.2"
 
 mathml-tag-names@^2.1.3:
   version "2.1.3"
@@ -10223,10 +10300,10 @@ mixin-deep@^1.2.0:
     for-in "^1.0.2"
     is-extendable "^1.0.1"
 
-mjolnir.js@^2.3.0:
-  version "2.4.1"
-  resolved "https://nexus.kontur.io/repository/npm-a/mjolnir.js/-/mjolnir.js-2.4.1.tgz#63cc66b7d1a52490904103cc1becc597be60c6cf"
-  integrity sha512-bpqKc70aNlijeQCapJ8529EmjVj8VSfYdzh1WsbhWp0XEQSm9hAB6X350OyRVDpH5oTdAyX/NeYFqtwyuO4ZKA==
+mjolnir.js@^2.5.0:
+  version "2.5.0"
+  resolved "https://nexus.kontur.io/repository/npm-a/mjolnir.js/-/mjolnir.js-2.5.0.tgz#5918b74625d9682002da82e01d6ffb0b16b02b0e"
+  integrity sha512-YkVoyKs7qm9xvAgRgjx3Md/7eYqmq7VXOgTKQNnmuzcBJzMebjdIWa7FdTd0RZBrw3UL6V6TTktsxJwBMLXUNA==
   dependencies:
     "@babel/runtime" "^7.0.0"
     hammerjs "^2.0.8"

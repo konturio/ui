@@ -46,7 +46,7 @@ export function BivariateLegend() {
 
   return (
     <div className={cn(s.center, s.fullHeight)}>
-      <Legend size={3} angle={0} cells={legend} axis={selectedAxis} />
+      <Legend size={3} cells={legend} axis={selectedAxis} />
     </div>
   );
 }

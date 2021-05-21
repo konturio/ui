@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.8.6](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-dev/base@2.8.4...@k2-dev/base@2.8.6) (2021-05-21)
+
+### Bug Fixes
+
+- **k2-dev-app:** Update Legend props ([170e74a](https://gitlab.com/kontur-private/k2/k2-front-end/commit/170e74a2ee4f12e8c044f168aa2630857254df3a))
+
 ## [2.8.5](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-dev/base@2.8.4...@k2-dev/base@2.8.5) (2021-05-06)
 
 **Note:** Version bump only for package @k2-dev/base

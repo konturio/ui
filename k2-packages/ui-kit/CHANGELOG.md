@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.14.2](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@2.14.0...@k2-packages/ui-kit@2.14.2) (2021-05-21)
+
+### Bug Fixes
+
+- **bivariate-style:** Remove hardcoded opacity in layer and legend rendering ([b1027d3](https://gitlab.com/kontur-private/k2/k2-front-end/commit/b1027d32fa81e735ee1f74c4d810a97c3a93931b))
+- **file-manager:** Add ability to handle emty selection and cancel btn click ([d9d1088](https://gitlab.com/kontur-private/k2/k2-front-end/commit/d9d108853d14c516c809d795c96c4d9b180805fc))
+
 ## [2.14.1](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@2.14.0...@k2-packages/ui-kit@2.14.1) (2021-05-06)
 
 ### Bug Fixes

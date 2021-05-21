@@ -2,7 +2,6 @@ import React from 'react';
 import clsx from 'clsx';
 import styles from './style.module.css';
 import { Cell } from './types';
-import { getRotationStyle } from './styleGen';
 import { fillTemplate } from './gridTemplate';
 
 type Axis = {
@@ -27,7 +26,6 @@ const getCellPositionStyle = (col: number, row: number) => ({
 interface LegendProps {
   cells: Cell[];
   size: number;
-  angle?: number;
   title?: string;
   showAxisLabels?: boolean;
   axis: {
@@ -55,9 +53,7 @@ const ArrowHead = ({ className, type }: ArrowHeadProps) => (
   </div>
 );
 
-export const Legend = ({ cells, size, angle = 0, axis, title, showAxisLabels = false }: LegendProps) => {
-  const labelRotationStyle = getRotationStyle(angle * -1);
-
+export const Legend = ({ cells, size, axis, title, showAxisLabels = false }: LegendProps) => {
   const gridCells = fillTemplate(TEMPLATE, {
     x: axis.x.steps.map((step) => ({
       label: step.label || step.value.toFixed(1),
@@ -68,7 +64,7 @@ export const Legend = ({ cells, size, angle = 0, axis, title, showAxisLabels = f
       className: styles.yStepsCell,
     })),
     c: cells.map((cell) => ({
-      label: <span style={labelRotationStyle}>{cell.label}</span>,
+      label: <span>{cell.label}</span>,
       className: clsx(styles.cell, styles.colorCell),
       style: { backgroundColor: cell.color },
     })),
@@ -93,7 +89,7 @@ export const Legend = ({ cells, size, angle = 0, axis, title, showAxisLabels = f
         <div className={styles.arrowY}>
           <ArrowHead
             type="vertical"
-            className={clsx({ [styles.arrowHeadY]: true, [styles.arrowHeadY_angle0]: angle === 0 && !showAxisLabels })}
+            className={clsx({ [styles.arrowHeadY]: true, [styles.arrowHeadY_angle0]: !showAxisLabels })}
           />
         </div>
 

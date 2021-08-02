@@ -6,5 +6,7 @@ export function setOffset(offsetX = 0, offsetY = 0) {
 }
 
 export function attachPositionToCb(position: { x: number; y: number }) {
-  return (cb?: Function) => (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => cb && cb(e, position);
+  return (cb?: (e: React.MouseEvent<HTMLDivElement, MouseEvent>, position: { x: number; y: number }) => unknown) =>
+    (e: React.MouseEvent<HTMLDivElement, MouseEvent>) =>
+      cb && cb(e, position);
 }

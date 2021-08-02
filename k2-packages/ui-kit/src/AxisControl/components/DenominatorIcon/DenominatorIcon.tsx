@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './DenominatorIcon.module.css';
+import styles from './style.module.css';
 
 interface DenominatorIconProps {
   iconId: string;
@@ -145,7 +145,6 @@ const BuildingsIcon = () => (
   </svg>
 );
 
-/* eslint-disable @typescript-eslint/camelcase */
 const iconMapper = {
   gdp: <GDPIcon />,
   population: <PopulationIcon />,

@@ -3,7 +3,7 @@ export interface AppState {
   position: [number, number] | null;
   boundaries: GeoJSON.FeatureCollection[] | null;
   markers: marker[];
-  sources: {};
+  sources: Record<string, unknown>;
 }
 
 export type marker = { coordinates: [number, number]; el: JSX.Element; id: string };

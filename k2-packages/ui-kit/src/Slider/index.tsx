@@ -41,8 +41,7 @@ export function Slider({ className, colors, outOfRangeColor = 'black', steps, va
     <div
       className={cn(className, s.slider)}
       onMouseDown={(e): void => {
-        // @ts-ignore - of course target have id, it's HTMLDivElement!
-        const isClickOnStick = e.target.id !== STICK_ID;
+        const isClickOnStick = (e.target as HTMLElement).id !== STICK_ID;
         startCaptureMovement(isClickOnStick, e, onChangeHandler);
       }}
     >

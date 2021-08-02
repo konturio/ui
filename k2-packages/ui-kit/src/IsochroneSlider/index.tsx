@@ -8,7 +8,7 @@ type Color = string;
 export interface IsochroneSlider {
   rulerNumbers: number[];
   sliderValue: number;
-  colorsLegend: Color[];
+  colorsLegend: Color[][];
   outOfRangeColor?: string;
   onSliderChange: (value: number) => void;
 }
@@ -19,20 +19,15 @@ export function IsochroneSlider({
   colorsLegend = [],
   outOfRangeColor,
   onSliderChange = (): void => {
-   /* do nothing */
+    /* do nothing */
   },
 }: IsochroneSlider): JSX.Element {
   return (
     <Card>
       <div className={s.wrapper}>
-        <Slider
-          // @ts-ignore
-          steps={colorsLegend}
-          value={sliderValue}
-          onChange={onSliderChange}
-        />
+        <Slider steps={colorsLegend} value={sliderValue} onChange={onSliderChange} />
         <div className={s.ruler}>
-          {rulerNumbers.map(step => (
+          {rulerNumbers.map((step) => (
             <div key={step} className={s.rule} data-step={step}>
               |
             </div>

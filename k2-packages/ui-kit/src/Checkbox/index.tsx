@@ -11,7 +11,7 @@ interface Checkbox {
   checked?: boolean;
   disabled?: boolean;
   required?: boolean;
-  onChange?: (e: ChangeEvent<HTMLInputElement>) => {};
+  onChange?: (e: ChangeEvent<HTMLInputElement>) => Record<string, unknown>;
 }
 
 export function Checkbox({

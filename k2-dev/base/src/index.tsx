@@ -51,9 +51,6 @@ const BasicRouting = (): JSX.Element => (
           ]}
         />
         <Switch>
-          <Route exact path="/">
-            <Module />
-          </Route>
           <Route path="/geocoder">
             <Geocoder notFoundMessage={'Че ты там за ересь вбил'} />
           </Route>

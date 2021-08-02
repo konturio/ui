@@ -1,7 +1,7 @@
 import { createStore, IModuleStore } from 'redux-dynamic-modules';
 import { getSagaExtension } from 'redux-dynamic-modules-saga';
 
-const store: IModuleStore<{}> = createStore({
+const store: IModuleStore<Record<string, unknown>> = createStore({
   initialState: {
     /** initial state */
   },

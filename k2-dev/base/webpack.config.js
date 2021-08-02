@@ -4,13 +4,13 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const Autoprefixer = require('autoprefixer');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const CleanStatsSpamFromPlugin = require('./clean-stats-spam-plugin');
+const NodePolyfillPlugin = require('node-polyfill-webpack-plugin');
 
 module.exports = {
   entry: {
     main: './src/index.tsx',
   },
-  mode: process.env.NODE_ENV,
+  mode: process.env.NODE_ENV || 'production',
   output: {
     filename: '[name].js',
     chunkFilename: '[name].js',
@@ -41,7 +41,8 @@ module.exports = {
     },
   },
   plugins: [
-    new CopyWebpackPlugin([{ from: 'src/locales', to: 'locales', ignore: ['*.js'] }]),
+    new NodePolyfillPlugin(),
+    new CopyWebpackPlugin({ patterns: [{ from: 'src/locales', to: 'locales' }] }),
     new webpack.DefinePlugin({
       'process.env.API': JSON.stringify(process.env.API),
     }),
@@ -53,7 +54,6 @@ module.exports = {
       filename: '[name].css?[chunkhash]',
       chunkFilename: '[id].css?[chunkhash]',
     }),
-    new CleanStatsSpamFromPlugin('mini-css-extract-plugin'),
   ],
   module: {
     rules: [
@@ -92,7 +92,9 @@ module.exports = {
           {
             loader: 'postcss-loader',
             options: {
-              plugins: [Autoprefixer],
+              postcssOptions: {
+                plugins: [Autoprefixer],
+              },
             },
           },
           'stylus-loader',
@@ -114,7 +116,9 @@ module.exports = {
           {
             loader: 'postcss-loader',
             options: {
-              plugins: [Autoprefixer],
+              postcssOptions: {
+                plugins: [Autoprefixer],
+              },
             },
           },
         ],
@@ -128,7 +132,7 @@ module.exports = {
   },
   optimization: {
     splitChunks: {
-      name: true,
+      name: 'chunk',
       chunks: 'all',
     },
     minimize: false,

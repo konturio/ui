@@ -18,8 +18,6 @@
     "@k2-packages/geocoder": "^1.10.54",
     "@k2-packages/map-draw-tools": "^2.10.8",
     "@k2-packages/mapbox-map": "^2.0.4",
-    "@k2-packages/module": "^1.4.8",
-    "@k2-packages/plugin": "^1.0.2",
     "@k2-packages/ui-kit": "^2.14.2"
   },
   "peerDependencies": {

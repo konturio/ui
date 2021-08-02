@@ -20,9 +20,6 @@
       "path": "mapbox-map"
     },
     {
-      "path": "module"
-    },
-    {
       "path": "ui-kit"
     },
     {
@@ -32,11 +29,8 @@
       "path": "boundaries"
     },
     {
-      "path": "plugin"
-    },
-    {
       "path": "bivariate-tools"
-    },
+    }
   ],
   "compilerOptions": {
     "composite": true

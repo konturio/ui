@@ -26,12 +26,8 @@
     "fix:dependencies": "npx syncpack fix-mismatches --peer",
     "lint:ts": "eslint '*/**/*.{ts,tsx}' --quiet",
     "lint:fix": "eslint '*/**/*.{ts,tsx}' --quiet --fix",
-    "lint-staged": "lint-staged"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
+    "lint-staged": "npx --no-install lint-staged",
+    "prepare": "husky install"
   },
   "lint-staged": {
     "*/**/*.{ts, tsx}": [
@@ -81,7 +77,7 @@
     "eslint-plugin-react": "^7.19.0",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.0.6",
-    "husky": "^4.3.0",
+    "husky": "^7.0.0",
     "i18next-conv": "^10.0.2",
     "identity-obj-proxy": "^3.0.0",
     "inquirer-checkbox-plus-prompt": "^1.0.1",

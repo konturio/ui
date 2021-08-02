@@ -5,7 +5,6 @@ import { Provider } from 'react-redux';
 import './i18n';
 
 // Modules:
-import Module from '@k2-packages/module';
 import Geocoder from '@k2-packages/geocoder';
 import NavigationMenu from './NavigationMenu';
 /* !not-delete! cli:import */

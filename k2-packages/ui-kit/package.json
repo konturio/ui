@@ -3,6 +3,7 @@
   "version": "2.14.2",
   "main": "src/index.tsx",
   "types": "src/index.tsx",
+  "sideEffects": false,
   "publishConfig": {
     "access": "restricted"
   },

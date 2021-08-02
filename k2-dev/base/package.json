@@ -21,13 +21,13 @@
     "@k2-packages/ui-kit": "^2.14.3"
   },
   "peerDependencies": {
-    "@types/react-redux": "^7.1.7",
-    "react": "^16.13.0",
-    "react-dom": "^16.13.0",
+    "@types/react-redux": "^7.1.18",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "react-loadable": "^5.5.0",
-    "react-redux": "^7.2.0",
-    "react-router-dom": "^5.1.2",
-    "redux-dynamic-modules": "^5.2.0",
-    "redux-dynamic-modules-saga": "^5.2.0"
+    "react-redux": "^7.2.4",
+    "react-router-dom": "^5.2.0",
+    "redux-dynamic-modules": "^5.2.3",
+    "redux-dynamic-modules-saga": "^5.2.3"
   }
 }

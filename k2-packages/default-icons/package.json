@@ -12,6 +12,6 @@
   },
   "scripts": {},
   "peerDependencies": {
-    "react": "^16.13.0"
+    "react": "^17.0.2"
   }
 }

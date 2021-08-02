@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.14.3](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@2.14.2...@k2-packages/ui-kit@2.14.3) (2021-08-02)
+
+### Bug Fixes
+
+- enable tree shaking for kit ([e94b136](https://gitlab.com/kontur-private/k2/k2-front-end/commit/e94b1360ccbc07eea438bd818e21352c4a001b1b))
+
 ## [2.14.2](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@2.14.0...@k2-packages/ui-kit@2.14.2) (2021-05-21)
 
 ### Bug Fixes

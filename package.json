@@ -7,9 +7,9 @@
   "private": true,
   "scripts": {
     "clean": "lerna clean --yes",
-    "bootstrap": "yarn fix:dependencies && lerna bootstrap && lerna link",
+    "bootstrap": "npm run fix:dependencies && lerna bootstrap && lerna link",
     "dev": "run-p start test:watch",
-    "start": "yarn bootstrap && lerna run dev --stream",
+    "start": "npm run bootstrap && lerna run dev --stream",
     "test:watch": "jest --watchAll",
     "test:coverage": "jest --coverage",
     "test": "jest",

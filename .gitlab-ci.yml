@@ -3,7 +3,6 @@ stages:
   - bootstrap
   - lint
   - test
-#  - coverage
   - build
   - release
 
@@ -15,13 +14,12 @@ variables:
   tags:
     - npm
     - docker
-    - yarn
 
 install:
   extends: .default-job-settings
   stage: install
   script:
-    - yarn install
+    - npm ci
   cache:
     paths:
       - node_modules/
@@ -36,7 +34,7 @@ bootstrap:
   extends: .default-job-settings
   stage: bootstrap
   script:
-    - yarn bootstrap
+    - npm run bootstrap
   dependencies:
     - install
 
@@ -46,7 +44,7 @@ lint:
  variables:
    NODE_ENV: "development"
  script:
-   - yarn lint:ts
+   - npm run lint
  dependencies:
    - install
 
@@ -54,7 +52,7 @@ test:
   extends: .default-job-settings
   stage: test
   script:
-    - yarn test
+    - npm run test
   dependencies:
     - install
 
@@ -65,7 +63,7 @@ build:
     NODE_ENV: "production"
   script:
     - echo $NODE_ENV
-    - yarn build
+    - npm run build
   dependencies:
     - install
   artifacts:

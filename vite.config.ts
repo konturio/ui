@@ -19,7 +19,6 @@ const config: UserConfigFn = async () => {
 
     server: {
       port: (PORT && parseInt(PORT)) || 3000,
-      open: BROWSER || true,
     },
 
     root: './cosmos',

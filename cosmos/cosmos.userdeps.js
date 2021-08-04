@@ -6,6 +6,7 @@
 import './../k2-packages/default-theme/variables.css';
 
 import fixture0 from './../k2-packages/ui-kit/src/Card/Card.fixture.tsx';
+import fixture1 from './../k2-packages/ui-kit/src/Input/Input.fixture.tsx';
 
 
 
@@ -14,7 +15,8 @@ export const rendererConfig = {
 };
 
 export const fixtures = {
-  'k2-packages/ui-kit/src/Card/Card.fixture.tsx': fixture0
+  'k2-packages/ui-kit/src/Card/Card.fixture.tsx': fixture0,
+  'k2-packages/ui-kit/src/Input/Input.fixture.tsx': fixture1
 };
 
 export const decorators = {

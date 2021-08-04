@@ -22,8 +22,6 @@
 .inputBox {
   display: flex;
   flex-flow: row nowrap;
-  border: 1px solid var(--neutral-text-color);
-  border-radius: var(--border-radius);
   padding: var(--unit);
   color: var(--neutral-text-color);
   position: relative;

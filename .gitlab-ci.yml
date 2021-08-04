@@ -3,7 +3,7 @@ stages:
   - bootstrap
   - lint
   - test
-  - build
+  # - build
   - release
 
 variables:
@@ -56,19 +56,19 @@ test:
   dependencies:
     - install
 
-build:
-  extends: .default-job-settings
-  stage: build
-  variables:
-    NODE_ENV: "production"
-  script:
-    - echo $NODE_ENV
-    - npm run build
-  dependencies:
-    - install
-  artifacts:
-    paths:
-      - k2-dev/base/dist
+# build:
+#   extends: .default-job-settings
+#   stage: build
+#   variables:
+#     NODE_ENV: "production"
+#   script:
+#     - echo $NODE_ENV
+#     - npm run build
+#   dependencies:
+#     - install
+#   artifacts:
+#     paths:
+#       - k2-dev/base/dist
 
 release:
   extends: .default-job-settings

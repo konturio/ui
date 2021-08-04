@@ -1,11 +1,10 @@
 {
   "useWorkspaces": true,
   "packages": [
-    "k2-dev/*",
     "k2-packages/*"
   ],
   "version": "independent",
-  "npmClient": "yarn",
+  "npmClient": "npm",
   "command": {
     "version": {
       "allowBranch": "master"
@@ -15,7 +14,7 @@
       "registry": "https://nexus.kontur.io/repository/npm-snapshots-a/"
     },
     "bootstrap": {
-      "npmClientArgs": ["--no-package-lock"]
+      "npmClientArgs": ["--no-package-lock", "--legacy-peer-deps"]
     }
   }
 }

@@ -14,10 +14,9 @@ Version track starts from v1.0.0 at `master` branch.
 
 Current approach rely on two workspaces:
 
- - `@k2-dev`, customs apps to consume shared packages;
  - `@k2-packages`, versioned application modules;
 
-Respectively k2-dev and k2-packages folders.
+Respectively k2-packages folders.
 
 ## Setup
 
@@ -27,7 +26,6 @@ Generate nexus access token
 npm config set registry https://nexus.kontur.io/repository/npm-a/
 npm config set always-auth true
 npm login
-yarn config set registry https://nexus.kontur.io/repository/npm-a/
 ```
 Copy token from `~/.npmrc`
 ```
@@ -43,115 +41,17 @@ always-auth=true
 
 ```
 
-### Development with Docker
-
-Build and start dev environment
-```sh
-$ docker-compose up
-```
-
-
-Stop dev environment
-```sh
-$ docker-compose down
-```
-
-Your application available at http://localhost:9000
-
-Connect to docker container
-```sh
-$ docker exec -it <container_name> bash
-```
-
 ### Package management
 To add dependency to all packages.
 ```sh
 $ lerna add @k2-packages/module3
 ```
-or
-```
-$ docker exec -t <container_name> bash lerna add @k2-packages/module3
-```
+
 
 To add module3 as dependency to module2.
 ```sh
 $ lerna add @k2-packages/module3 --scope=@k2-packages/module2
 ```
-or
-```
-$ docker exec -t <container_name> bash lerna add @k2-packages/module3 --scope=@k2-packages/module2
-```
-
-To link packages use:
-```sh
-$ docker exec -t <container_name> bash lerna link
-```
-
-### Plop
-
-You can use plop scripts wizards as:
-
-```
-yarn plop:<script-name>
-```
-
-Currently available new scripts:
-
-- ref - update references in tsconfig.json. Highly recommended run this task after other plop tasks
- ```
- yarn plop:ref
-
- > Sure?
- Y
-
- Done!
- ```
-
- - new - generate new modules boilerplate
- ```
- yarn plop:new
-
- > module name
- ExampleModule
-
- > add as dependency to another module? (Y/N)
- N
-
- Done!
- ```
- - add - add dependency to module
-  Examples:
-  ```bash
-  # add `lodash` to my-module
-  yarn plop:add
-
-  > Type module name:
-  lodash
-
-  > Select module:
-  my-module
-
-  Done!
-
-  # or you can use short version without dialogue
-  yarn plop:add lodash my-module
-  ```
- - route - adding route for module in base app
- Examples:
- ```bash
- yarn plop:route
-
- > route name:
- foo
-
- > select module:
- myModule
-
- Done!
-
- # short version
- yarn plop:route foo myModule
- ```
 
 ### Git branch naming
 
@@ -218,7 +118,7 @@ git push origin --tags
 
 or just
 ```
-yarn release
+npm run release
 ```
 
 ### Localization
@@ -246,24 +146,3 @@ Once the plugin is setup, you can build your app normally or run Babel through B
 `yarn run babel -f .babelrc 'src/**/*.{js,jsx,ts,tsx}'`
 
 Extracted translations land in the extractedTranslations/ directory by default.
-
-### What is module?
-All modules form three large groups:
-
-1) **Map modules**. This functionality is added to the map engine (mapbox currently). They are strongly linked wit mapbox, and cannot be used without the `mapbox-map` module
-
-2) **UI Modules**. This modules concentrated in `ui-kit`,
-if they are not there, then they should be brought there. 
-(In the future, you will probably need to modify the build so that you can only import parts from the ui-kit as it done in Lodash)
-In no case should you create modules in a ui-kit that are not universal and duplicate the logic of existing modules (IsochroneSlider, LanguageSelect, TimeSlider must be deleted)
-
-3) **Logic modules** 
-This most abstract part should not depend on the view (i.e. it should not contain any layout or styles)
-Ideally you need to find a way to not get attached even to react and redux
-
-4) **Utils, resources, configurations**
-
-### TODO:
- - Commit message validation at local development (Husky)?
- - CI add git hook for commit lint.
- - `lerna version` should be fully automated at gitlab ci.

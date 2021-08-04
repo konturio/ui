@@ -3,23 +3,16 @@ import cn from 'clsx';
 import s from './style.module.css';
 
 export interface InputProps extends React.HTMLProps<HTMLInputElement> {
-  onType?: (text: string) => void;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   className?: string;
-  successes?: boolean;
-  loading?: boolean;
   error?: boolean;
   message?: string;
   isFocused?: boolean;
 }
 
-/* Cancel default behavior and extend it */
-function createOnType(onType: InputProps['onType']) {
-  return ({ target }) => onType && onType((target as HTMLInputElement).value);
-}
 
 function preventDefault(e: { preventDefault?: () => void }): void {
-  /* istanbul ignore if */
-  if (e.preventDefault) e.preventDefault();
+  e.preventDefault && e.preventDefault();
 }
 
 function isFunc<T>(maybeFn: any): maybeFn is (T) => void {
@@ -30,21 +23,17 @@ function InputComponent(
   {
     className,
     error,
-    successes,
-    loading,
     children,
     message,
     onChange,
     onFocus,
     onBlur,
-    onType,
     disabled,
     isFocused,
     ...props
   }: InputProps,
   ref,
 ): JSX.Element {
-  const onTypeHandler = createOnType(onType);
   const [focus, setFocus] = useState(isFocused);
 
   useEffect(() => {
@@ -80,7 +69,6 @@ function InputComponent(
   );
 
   const dynamicClasses = {
-    [s.successes]: successes,
     [s.error]: error,
     [s.focus]: focus,
     [s.disabled]: disabled,
@@ -96,15 +84,15 @@ function InputComponent(
   return (
     <div className={cn(s.root, dynamicClasses)}>
       <div className={cn(s.inputBox, className)}>
+        { children && <div className={s.icons}>{children}</div> }
         <input
           {...props}
           ref={inputRef}
-          onChange={(e) => (onChange && onChange(e), onTypeHandler(e))}
+          onChange={onChange}
           onFocus={nativeFocusEventHandler}
           onBlur={nativeBlurEventHandler}
           disabled={disabled}
         />
-        <div className={s.icons}>{children}</div>
       </div>
       {message && <div className={s.message}>{message}</div>}
     </div>

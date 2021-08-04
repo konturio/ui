@@ -4,9 +4,6 @@
   "references": [
     {
       "path": "k2-packages"
-    },
-    {
-      "path": "k2-dev"
     }
   ]
 }

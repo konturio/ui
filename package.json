@@ -25,8 +25,7 @@
     "postrelease": "git push && git push origin --tags",
     "fix:dependencies": "npx syncpack fix-mismatches --peer",
     "lint:ts": "eslint '*/**/*.{ts,tsx}' --quiet",
-    "lint-staged": "npx --no-install lint-staged",
-    "prepare": "husky install"
+    "lint-staged": "npx --no-install lint-staged"
   },
   "lint-staged": {
     "*/**/*.{ts, tsx}": [
@@ -74,7 +73,6 @@
     "eslint-plugin-react": "^7.24.0",
     "html-loader": "^2.1.2",
     "html-webpack-plugin": "^5.3.2",
-    "husky": "^7.0.1",
     "i18next-conv": "^10.2.0",
     "identity-obj-proxy": "^3.0.0",
     "inquirer-checkbox-plus-prompt": "^1.0.1",

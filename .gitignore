@@ -47,3 +47,4 @@ tsconfig.tsbuildinfo
 #error logs
 yarn-error.log
 npm_error.log
+cosmos/cosmos.userdeps.js

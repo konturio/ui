@@ -11,8 +11,6 @@ type Axis = {
   quotient: string[];
 };
 
-// eslint-disable-next-line prettier/prettier
-const TEMPLATE = ['y . . . .', 'y c c c .', 'y c c c .', 'y c c c .', '. x x x x'];
 
 function safeReverse(arr) {
   return [...arr].reverse();
@@ -54,6 +52,13 @@ const ArrowHead = ({ className, type }: ArrowHeadProps) => (
 );
 
 export const Legend = ({ cells, size, axis, title, showAxisLabels = false }: LegendProps) => {
+  // eslint-disable-next-line prettier/prettier
+  const TEMPLATE = [
+    `y ${new Array(size + 1).fill('.').join(' ')}`,
+    ...new Array(size).fill(`y ${new Array(size).fill('c').join(' ')} .`),
+    `. ${new Array(size + 1).fill('x').join(' ')}`
+  ];
+
   const gridCells = fillTemplate(TEMPLATE, {
     x: axis.x.steps.map((step) => ({
       label: step.label || step.value.toFixed(1),

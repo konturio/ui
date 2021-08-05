@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import clsx from 'clsx';
 import styles from './style.module.css';
 import { Cell } from './types';
@@ -52,12 +52,11 @@ const ArrowHead = ({ className, type }: ArrowHeadProps) => (
 );
 
 export const Legend = ({ cells, size, axis, title, showAxisLabels = false }: LegendProps) => {
-  // eslint-disable-next-line prettier/prettier
-  const TEMPLATE = [
+  const TEMPLATE = useMemo(() => [
     `y ${new Array(size + 1).fill('.').join(' ')}`,
     ...new Array(size).fill(`y ${new Array(size).fill('c').join(' ')} .`),
     `. ${new Array(size + 1).fill('x').join(' ')}`
-  ];
+  ], [size]);
 
   const gridCells = fillTemplate(TEMPLATE, {
     x: axis.x.steps.map((step) => ({

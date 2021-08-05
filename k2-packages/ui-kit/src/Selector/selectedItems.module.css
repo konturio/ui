@@ -1,9 +1,6 @@
 .wrapper {
   display: inline-flex;
   flex-flow: column nowrap;
-  box-shadow: var(--shadow-2);
-  border-radius: var(--border-radius);
-  border: var(--input-border);
 }
 
 .selectedBox {
@@ -11,6 +8,9 @@
   flex-flow: row nowrap;
   align-items: center;
   cursor: pointer;
+  justify-content: space-between;
+  border-radius: var(--border-radius);
+
 }
 
 .selectedBox:hover {

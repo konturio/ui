@@ -53,6 +53,7 @@ export const SimpleSelector = ({
           small={small}
           selected={checkSelected(opt)}
           onMouseOver={onHover}
+          className={orientation === 'horizontal' ? styles.center : ''}
         />
       ))}
     </div>

@@ -3,6 +3,8 @@
   display: inline-flex;
   position: relative;
   overflow: hidden;
+  border-radius: 4px;
+  border: var(--faint-line);
 }
 
 .selector.vertical {
@@ -15,4 +17,9 @@
   flex-flow: row nowrap;
   padding-right: var(--unit);
   padding-left: var(--unit);
+}
+
+.center {
+  justify-content: center;
+  align-items: center;
 }

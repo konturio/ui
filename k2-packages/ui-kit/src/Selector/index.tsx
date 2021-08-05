@@ -65,7 +65,7 @@ export const Selector = ({
         multi={false}
         small={small}
         checkSelected={checkSelected}
-        className={styles.nestedSelector}
+        className={clsx(styles.nestedSelector, styles.shade)}
         stopPropagation={stopPropagation}
         onHover={onHoverHandler}
       />
@@ -84,3 +84,6 @@ export const Selector = ({
     />
   );
 };
+
+
+export type { OptionType } from './Option';

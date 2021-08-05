@@ -1,3 +1,11 @@
+.root {
+  margin: 0;
+  margin-top: var(--unit);
+  padding: 0;
+  border-radius: 0 0 var(--border-radius) var(--border-radius);
+  overflow: auto
+}
+
 .selectable {
   position: relative;
 }
@@ -41,8 +49,10 @@
 }
 
 .badge {
-  right: unit;
+  right: var(--unit);
   position: absolute;
+
+  top: var(--double-unit);
 }
 
 .bind {

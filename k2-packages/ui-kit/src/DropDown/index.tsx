@@ -51,7 +51,7 @@ export function DropDown({
 }: DropDownProps): JSX.Element {
   useKeyPress(onKeyPress, isFocused);
   return (
-    <div className={cn(className, { [s.focus]: isFocused })}>
+    <div className={cn(s.root, className, { [s.focus]: isFocused })}>
       {options.map(({ value, label, disabled }, i) => (
         <SelectableElement
           key={value}

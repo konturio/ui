@@ -4,19 +4,17 @@
   align-items: center;
   justify-content: center;
   background-color: #fff;
-}
-
-.line:hover {
-  background-color: rgba(var(--secondary-color), 0.2);
-}
-
-.line.selected {
-  background-color: var(--secondary-color);
-  color: var(--secondary-text-color);
-}
-
-.line.selected .option > span {
-  color: var(--secondary-text-color) !important;
+  flex: 1;
+  &:hover:not(.disabled):not(.selected) {
+    box-shadow: inset 0px 0px 0px 100px var(--accent-weak);
+  }
+  &.selected {
+    background-color: var(--accent-strong);
+    color: var(--base-weak);
+    .option > span {
+      color: var(--secondary-text-color) !important;
+    }
+  }
 }
 
 .option {
@@ -27,15 +25,10 @@
   align-items: center;
   flex: 1;
   font-size: 0.95em;
-}
-
-.option input {
-  visibility: hidden;
-  position: absolute;
-}
-
-.option:hover {
-  background-color: rgba(0, 0, 0, 0.05);
+  input {
+    visibility: hidden;
+    position: absolute;
+  }
 }
 
 .disabled {

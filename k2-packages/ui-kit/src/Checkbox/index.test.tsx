@@ -1,10 +1,9 @@
 import { render, shallow } from 'enzyme';
-import React from 'react';
 import { Checkbox } from './index';
 
 describe('<Checkbox /> component', () => {
   it('Should render without errors', () => {
-    render(<Checkbox />);
+    render(<Checkbox id="test"/>);
   });
 
   it('Should render with props', () => {

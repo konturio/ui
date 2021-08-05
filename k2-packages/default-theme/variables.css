@@ -11,12 +11,14 @@
 
   /* Palette */
   --base-strong: #0A1622;
+  --base-weak: white;
   --accent-strong: #26ABFF;
+  --accent-weak: #E9F7FF;
+  --accent-fancy: linear-gradient(90deg, #26ABFF 0%, #00CCFF 100%);
   --critic-strong: #EC0000;
   --faint-strong: #B3B5BA;
   --faint-text: #9DA2A7;
   --faint-line: #848B90;
-
 
   /* Typography */
   --font: 14px 'IBM Plex Sans', sans-serif;
@@ -36,4 +38,7 @@
   /* zIndex */
   --modal: 1000;
   --tooltip: 1100;
+
+  /* Shadows */
+  --elevation-xl: 0px 1px 2px rgba(0, 0, 0, 0.3), 0px 16px 24px rgba(0, 0, 0, 0.06), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04);
 }

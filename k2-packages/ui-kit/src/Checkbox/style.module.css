@@ -20,7 +20,7 @@
   margin: 0;
   cursor: pointer;
   margin-right: var(--unit);
-  outline: 1px solid var(--base-strong);
+  box-shadow: 0px 0px 0px 1px var(--base-strong);
   &:checked {
     background-color: var(--base-strong);
     & ~ .icon {
@@ -29,11 +29,11 @@
   }
 
   &:focus {
-    outline: 2px solid var(--accent-strong);
+    box-shadow: 0px 0px 0px 2px var(--accent-strong);
   }
 
   &:disabled {
-    outline: 1px solid var(--faint-line);
+    box-shadow: 0px 0px 0px 1px var(--faint-line);
     cursor: not-allowed;
     & ~ .label {
       color: var(--faint-line)

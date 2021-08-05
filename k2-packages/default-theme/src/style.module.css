@@ -20,7 +20,7 @@
   width: 80px;
   height: 22px;
   box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.12);
-  background-color: var(--current-color);
+  background: var(--current-color);
   border-radius: 4px;
   margin: 4px;
   cursor: pointer;
@@ -36,7 +36,9 @@
       z-index: 300;
       position: absolute;
       border-radius: 4px;
-      left: calc(100% + 10px);
+      top: calc(100% + 10px);
+      transform: translateX(-50%);
+      left: 50%;
       white-space: nowrap;
     }
   }

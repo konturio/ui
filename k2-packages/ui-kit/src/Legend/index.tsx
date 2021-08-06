@@ -1,5 +1,5 @@
-import React, { useMemo } from 'react';
-import clsx from 'clsx';
+import { useMemo } from 'react';
+import cn from 'clsx';
 import styles from './style.module.css';
 import { Cell } from './types';
 import { fillTemplate } from './gridTemplate';
@@ -69,7 +69,7 @@ export const Legend = ({ cells, size, axis, title, showAxisLabels = false }: Leg
     })),
     c: cells.map((cell) => ({
       label: <span>{cell.label}</span>,
-      className: clsx(styles.cell, styles.colorCell),
+      className: cn(styles.cell, styles.colorCell),
       style: { backgroundColor: cell.color },
     })),
   });
@@ -93,7 +93,7 @@ export const Legend = ({ cells, size, axis, title, showAxisLabels = false }: Leg
         <div className={styles.arrowY}>
           <ArrowHead
             type="vertical"
-            className={clsx({ [styles.arrowHeadY]: true, [styles.arrowHeadY_angle0]: !showAxisLabels })}
+            className={cn({ [styles.arrowHeadY]: true, [styles.arrowHeadY_angle0]: !showAxisLabels })}
           />
         </div>
 
@@ -101,7 +101,7 @@ export const Legend = ({ cells, size, axis, title, showAxisLabels = false }: Leg
           <div
             key={`${cell._position.x}|${cell._position.y}`}
             style={Object.assign(getCellPositionStyle(cell._position.x, cell._position.y), cell.style)}
-            className={clsx(cell.className, styles.cell)}
+            className={cn(cell.className, styles.cell)}
           >
             {cell.label}
           </div>

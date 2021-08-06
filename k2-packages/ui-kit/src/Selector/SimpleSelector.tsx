@@ -1,5 +1,5 @@
 import React, { useRef, useLayoutEffect } from 'react';
-import clsx from 'clsx';
+import cn from 'clsx';
 import styles from './simpleSelector.module.css';
 import { OptionType, Option } from './Option';
 
@@ -41,7 +41,7 @@ export const SimpleSelector = ({
   }, [ref, stopPropagation]);
 
   return (
-    <div className={clsx(styles.selector, className, styles[orientation])} ref={ref}>
+    <div className={cn(styles.selector, className, styles[orientation])} ref={ref}>
       {options.map((opt) => (
         <Option
           key={opt.value}

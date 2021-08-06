@@ -21,6 +21,7 @@
     "lint-staged": "npx --no-install lint-staged",
     "cosmos": "cosmos",
     "cosmos:renderer": "vite serve --port=8080",
+    "cosmos:renderer:export": "vite build",
     "cosmos:export": "cosmos-export"
   },
   "lint-staged": {

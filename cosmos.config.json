@@ -3,6 +3,6 @@
   "watchDirs": ["k2-packages"],
   "staticPath": "public",
   "userDepsFilePath": "cosmos/cosmos.userdeps.js",
-  "experimentalRendererUrl": "http://localhost:8080/_renderer.html",
+  "experimentalRendererUrl": "http://localhost:8080/index.html",
   "globalImports": ["k2-packages/default-theme/variables.css", "k2-packages/default-theme/defaults.css"]
 }

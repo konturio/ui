@@ -2,3 +2,10 @@ html, body {
   margin: 0;
   font: var(--font)
 }
+
+button {
+  border: none;
+  background-color: transparent;
+  margin: 0;
+  padding: 0;
+}

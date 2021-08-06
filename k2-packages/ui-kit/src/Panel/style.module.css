@@ -1,0 +1,21 @@
+.header {
+  padding: var(--double-unit);
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--faint-weak);
+  align-items: flex-start;
+}
+
+.close {
+  margin-left: 1em;
+  color: var(--faint-strong);
+  cursor: pointer;
+  border-radius: var(--border-radius);
+  svg {
+    display: block; 
+  }
+  &:hover {
+    box-shadow: inset 0 0 0 100px var(--faint-weak);
+  }
+}

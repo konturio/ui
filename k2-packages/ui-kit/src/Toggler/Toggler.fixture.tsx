@@ -1,11 +1,9 @@
 import { useCallback, useState } from 'react';
 import { Toggler } from '.';
 
-const wrapperStyle = { display: 'flex', flexFlow: 'column', gap: '24px', padding: '16px', maxWidth: '400px' };
-
 export default {
   Checkbox: (
-    <div style={wrapperStyle}>
+    <div style={{ display: 'flex', flexFlow: 'column nowrap'}}>
       <Toggler id="unchecked" label="Unchecked" on={false} readOnly />
       <Toggler id="focused" label="Focused" autoFocus on={false}  readOnly />
       <Toggler id="disabled" label="Disabled" disabled readOnly />
@@ -25,11 +23,11 @@ export default {
     }, []);
 
     return (
-      <div style={wrapperStyle}>
+      <div style={{ display: 'flex', flexFlow: 'column nowrap'}}>
         <Toggler id="foo" label="Foo" on={state['foo']} onChange={onChange} />
         <Toggler id="bar" label="Bar" on={state['bar']} onChange={onChange} />
         <Toggler id="baz" label="Baz" on={state['baz']} onChange={onChange} />
-        <code style={{ whiteSpace: 'pre' }}>{JSON.stringify(state, null, 2)}</code>
+        <code style={{ whiteSpace: 'pre', marginTop: '1em' }}>{JSON.stringify(state, null, 2)}</code>
       </div>
     );
   },

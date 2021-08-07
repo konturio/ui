@@ -1,7 +1,7 @@
 import { Legend } from '.';
 
 export default (
-  <div style={{ margin: '1em', display: 'flex', gap: '6em' }}>
+  <>
     <Legend
       showAxisLabels={true}
       size={4}
@@ -184,5 +184,5 @@ export default (
       }}
       title={'Title'}
     />
-  </div>
+  </>
 );

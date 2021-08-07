@@ -2,7 +2,7 @@ import { useValue } from 'react-cosmos/fixture';
 import { TimeSlider } from '.';
 
 export default {
-  TimeSlider: <div style={{ padding: 'var(--double-unit)' }}><TimeSlider
+  TimeSlider: <div style={{ minWidth: '60%' }}><TimeSlider
     rulerNumbers={[5, 10, 15, 20, 25, 30]}
     sliderValue={20}
     onSliderChange={(val) => {}}
@@ -12,7 +12,7 @@ export default {
     const [state, setState] = useValue('value', { defaultValue: 15 } as { defaultValue: number });
     const [steps, setSteps] = useValue('steps', { defaultValue: 6 } as { defaultValue: number });
     return (
-      <div style={{ padding: 'var(--double-unit)' }}>
+      <div style={{ minWidth: '60%' }}>
         <div style={{ whiteSpace: 'pre', padding: '1em' }}>
           <div>
             Value: {state}

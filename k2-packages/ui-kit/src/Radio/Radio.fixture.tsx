@@ -1,11 +1,10 @@
 import { useCallback, useState } from 'react';
 import { Radio } from '.';
 
-const wrapperStyle = { display: 'flex', flexFlow: 'column', gap: '24px', padding: '16px', maxWidth: '400px' };
 
 export default {
   Checkbox: (
-    <div style={wrapperStyle}>
+    <div style={{ display: 'flex', flexFlow: 'column nowrap'}}>
       <Radio id="unchecked" label="Unchecked" checked={false} readOnly />
       <Radio id="focused" label="Focused" autoFocus checked={false}  readOnly />
       <Radio id="disabled" label="Disabled" disabled readOnly />
@@ -21,11 +20,11 @@ export default {
     }, []);
 
     return (
-      <div style={wrapperStyle}>
+      <div style={{ display: 'flex', flexFlow: 'column nowrap' }}>
         <Radio id="one" label="Foo" value="foo" checked={state === 'foo'} onChange={onChange} />
         <Radio id="two" label="Bar" value="bar" checked={state === 'bar'} onChange={onChange} />
         <Radio id="three" label="Baz" value="baz" checked={state === 'baz'} onChange={onChange} />
-        <code style={{ whiteSpace: 'pre' }}>{JSON.stringify(state, null, 2)}</code>
+        <code style={{ whiteSpace: 'pre', marginTop: '1em' }}>{JSON.stringify(state, null, 2)}</code>
       </div>
     );
   },

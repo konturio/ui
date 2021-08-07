@@ -11,11 +11,10 @@ const Icon = () => (
   </svg>
 );
 
-const wrapperStyle = { display: 'flex', flexFlow: 'column', gap: '24px', padding: '16px', maxWidth: '400px' };
 
 export default {
   'Base input': (
-    <div style={wrapperStyle}>
+    <div style={{ display: 'flex', flexFlow: 'column nowrap', gap: '1em' }}>
       <Input />
       <Input placeholder="Placeholder" />
       <Input value="Value" onChange={(e) => {}} />
@@ -29,7 +28,7 @@ export default {
     </div>
   ),
   'With icon': (
-    <div style={wrapperStyle}>
+    <div style={{ display: 'flex', flexFlow: 'column nowrap', gap: '1em' }}>
       <Input>
         <Icon />
       </Input>

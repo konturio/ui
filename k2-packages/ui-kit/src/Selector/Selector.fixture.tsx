@@ -1,6 +1,5 @@
 import { Selector, OptionType } from '.';
 
-const wrapperStyle = { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(40px, 1fr))', margin: '3em'};
 
 const options: OptionType[] = [
   {
@@ -26,7 +25,7 @@ const options: OptionType[] = [
   },
 ];
 export default (
-  <div style={wrapperStyle}>
+  <div style={{ display: 'flex', flexFlow: 'row wrap', gap: '3em' }}>
     <div>
       <h2>Default</h2>
       <Selector onChange={console.log} options={options} selected={'foo'} />

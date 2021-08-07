@@ -1,7 +1,7 @@
 import { Panel } from '.';
 
 export default (
-  <div style={{ margin: '1em', display: 'flex', gap: '1em', flexDirection: 'row' }}>
+  <div style={{ display: 'flex', gap: '1em', flexDirection: 'row' }}>
     <Panel header={<div style={{ fontSize: '1.2em', whiteSpace: 'pre' }}>Custom title</div>} onClose={console.log}>
       <div style={{ height: '400px', display: 'flex', margin: 'auto' }}>
         <div style={{ margin: 'auto', padding: '1em' }}>Content</div>

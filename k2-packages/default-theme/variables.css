@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500&display=swap');
 
 :root {
   /* Breakpoints */
@@ -11,6 +11,7 @@
 
   /* Palette */
   --base-strong: #0A1622;
+  --base-strong-up: #26303A;
   --base-weak: white;
   --accent-strong: #26ABFF;
   --accent-weak: #E9F7FF;
@@ -18,6 +19,7 @@
   --critic-strong: #EC0000;
   --faint-strong: #B3B5BA;
   --faint-text: #9DA2A7;
+  --faint-text-up: #CED0D3;
   --faint-line: #848B90;
   --faint-weak: #EEEEEE;
 

@@ -10,6 +10,24 @@ const style = css`
     justify-content: center;
     min-height: 100%;
     box-sizing: border-box;
+    background-color: #fff;
+    --transp-clr: #f5f5f5;
+    background-image: linear-gradient(
+        45deg,
+        var(--transp-clr) 25%,
+        transparent 25%,
+        transparent 75%,
+        var(--transp-clr) 75%
+      ),
+      linear-gradient(
+        45deg,
+        var(--transp-clr) 25%,
+        transparent 25%,
+        transparent 75%,
+        var(--transp-clr) 75%
+      );
+    background-size: 24px 24px;
+    background-position: 0 0, 12px 12px;
   }
 `;
 

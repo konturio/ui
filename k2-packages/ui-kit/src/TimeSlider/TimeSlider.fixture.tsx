@@ -10,7 +10,7 @@ export default {
   /></div>,
   Interactive: () => {
     const [state, setState] = useValue('value', { defaultValue: 15 } as { defaultValue: number });
-    const [steps, setSteps] = useValue('steps', { defaultValue: 6 } as { defaultValue: number });
+    const [steps] = useValue('steps', { defaultValue: 6 } as { defaultValue: number });
     return (
       <div style={{ minWidth: '60%' }}>
         <div style={{ whiteSpace: 'pre', padding: '1em' }}>

@@ -5,7 +5,7 @@ export default {
   Checkbox: (
     <div style={{ display: 'flex', flexFlow: 'column nowrap' }}>
       <Checkbox id="unchecked" label="Unchecked" checked={false} readOnly />
-      <Checkbox id="focused" label="Focused" autoFocus checked={false}  readOnly />
+      <Checkbox id="focused" label="Focused" autoFocus checked={false} readOnly />
       <Checkbox id="disabled" label="Disabled" disabled readOnly />
       <Checkbox id="checked" label="Checked" checked readOnly />
       <Checkbox id="checked-disabled" label="Checked disabled" checked disabled readOnly />

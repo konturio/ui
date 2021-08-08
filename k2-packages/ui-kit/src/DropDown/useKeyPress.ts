@@ -1,9 +1,10 @@
 import { useCallback, useEffect } from 'react';
 
 export function useKeyPress(action?: (e) => void, enable = true): void {
-  const onKeyPressHandler = useCallback((e) => (typeof action === 'function' ? action(e.keyCode) : undefined), [
-    action,
-  ]);
+  const onKeyPressHandler = useCallback(
+    (e) => (typeof action === 'function' ? action(e.keyCode) : undefined),
+    [action],
+  );
 
   useEffect(() => {
     if (enable && typeof onKeyPressHandler === 'function') {

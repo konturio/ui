@@ -3,7 +3,7 @@ import { Toggler } from './index';
 
 describe('<Toggler /> component', () => {
   it('Should render without errors', () => {
-    render(<Toggler id="test"/>);
+    render(<Toggler id="test" />);
   });
 
   it('Should render with props', () => {

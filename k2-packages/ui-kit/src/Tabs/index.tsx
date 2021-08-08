@@ -23,10 +23,7 @@ export function Tabs({
     }));
   }, [children]);
 
-  const currentTab = useMemo(
-    () => tabs.find((tab) => tab.id === currentTabId),
-    [tabs, currentTabId],
-  );
+  const currentTab = useMemo(() => tabs.find((tab) => tab.id === currentTabId), [tabs, currentTabId]);
 
   return (
     <div className={s.tabsContainer}>

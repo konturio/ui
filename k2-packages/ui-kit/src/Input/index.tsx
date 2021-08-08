@@ -10,7 +10,6 @@ export interface InputProps extends React.HTMLProps<HTMLInputElement> {
   isFocused?: boolean;
 }
 
-
 function preventDefault(e: { preventDefault?: () => void }): void {
   e.preventDefault && e.preventDefault();
 }
@@ -20,18 +19,7 @@ function isFunc<T>(maybeFn: any): maybeFn is (T) => void {
 }
 
 function InputComponent(
-  {
-    className,
-    error,
-    children,
-    message,
-    onChange,
-    onFocus,
-    onBlur,
-    disabled,
-    isFocused,
-    ...props
-  }: InputProps,
+  { className, error, children, message, onChange, onFocus, onBlur, disabled, isFocused, ...props }: InputProps,
   ref,
 ): JSX.Element {
   const [focus, setFocus] = useState(isFocused);
@@ -84,7 +72,7 @@ function InputComponent(
   return (
     <div className={cn(s.root, dynamicClasses)}>
       <div className={cn(s.inputBox, className)}>
-        { children && <div className={s.icons}>{children}</div> }
+        {children && <div className={s.icons}>{children}</div>}
         <input
           {...props}
           ref={inputRef}

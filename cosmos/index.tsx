@@ -1,5 +1,5 @@
-import { mountDomRenderer } from "react-cosmos/dom";
-import { decorators, fixtures, rendererConfig } from "./cosmos.userdeps";
+import { mountDomRenderer } from 'react-cosmos/dom';
+import { decorators, fixtures, rendererConfig } from './cosmos.userdeps';
 
 mountDomRenderer({ rendererConfig, decorators, fixtures });
 

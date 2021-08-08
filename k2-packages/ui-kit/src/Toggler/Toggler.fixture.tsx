@@ -3,9 +3,9 @@ import { Toggler } from '.';
 
 export default {
   Checkbox: (
-    <div style={{ display: 'flex', flexFlow: 'column nowrap'}}>
+    <div style={{ display: 'flex', flexFlow: 'column nowrap' }}>
       <Toggler id="unchecked" label="Unchecked" on={false} readOnly />
-      <Toggler id="focused" label="Focused" autoFocus on={false}  readOnly />
+      <Toggler id="focused" label="Focused" autoFocus on={false} readOnly />
       <Toggler id="disabled" label="Disabled" disabled readOnly />
       <Toggler id="enabled" label="Switched On" on readOnly />
       <Toggler id="enabled-disabled" label="Switched On disabled" on disabled readOnly />
@@ -23,7 +23,7 @@ export default {
     }, []);
 
     return (
-      <div style={{ display: 'flex', flexFlow: 'column nowrap'}}>
+      <div style={{ display: 'flex', flexFlow: 'column nowrap' }}>
         <Toggler id="foo" label="Foo" on={state['foo']} onChange={onChange} />
         <Toggler id="bar" label="Bar" on={state['bar']} onChange={onChange} />
         <Toggler id="baz" label="Baz" on={state['baz']} onChange={onChange} />

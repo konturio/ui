@@ -19,19 +19,12 @@ export function Toggler({
   on = false,
   ...native
 }: Toggler &
-  React.DetailedHTMLProps<
-    React.InputHTMLAttributes<HTMLInputElement>,
-    HTMLInputElement
-  >): React.ReactElement {
+  React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>): React.ReactElement {
   return (
-    <label
-      className={cn(s.root, { [s.checked]: on, [s.disabled]: native.disabled }, className)}
-    >
+    <label className={cn(s.root, { [s.checked]: on, [s.disabled]: native.disabled }, className)}>
       <input id={id} className={s.hidden} type="checkbox" {...native} checked={on} />
       <div className={s.toggle}></div>
-      <div className={s.label}>
-        {label}
-      </div>
+      <div className={s.label}>{label}</div>
     </label>
   );
 }

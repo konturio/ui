@@ -11,7 +11,6 @@ type Axis = {
   quotient: string[];
 };
 
-
 function safeReverse(arr) {
   return [...arr].reverse();
 }
@@ -52,11 +51,14 @@ const ArrowHead = ({ className, type }: ArrowHeadProps) => (
 );
 
 export const Legend = ({ cells, size, axis, title, showAxisLabels = false }: LegendProps) => {
-  const TEMPLATE = useMemo(() => [
-    `y ${new Array(size + 1).fill('.').join(' ')}`,
-    ...new Array(size).fill(`y ${new Array(size).fill('c').join(' ')} .`),
-    `. ${new Array(size + 1).fill('x').join(' ')}`
-  ], [size]);
+  const TEMPLATE = useMemo(
+    () => [
+      `y ${new Array(size + 1).fill('.').join(' ')}`,
+      ...new Array(size).fill(`y ${new Array(size).fill('c').join(' ')} .`),
+      `. ${new Array(size + 1).fill('x').join(' ')}`,
+    ],
+    [size],
+  );
 
   const gridCells = fillTemplate(TEMPLATE, {
     x: axis.x.steps.map((step) => ({

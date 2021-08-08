@@ -132,13 +132,13 @@ export default (
       title={'Title'}
     />
 
-<Legend
+    <Legend
       showAxisLabels={true}
       size={2}
       cells={[
         { label: 'A1', color: 'gray' },
         { label: 'B1', color: 'silver' },
-      
+
         { label: 'A2', color: 'silver' },
         { label: 'B2', color: 'gray' },
 

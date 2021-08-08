@@ -1,6 +1,5 @@
 import { Selector, OptionType } from '.';
 
-
 const options: OptionType[] = [
   {
     label: 'Foo',
@@ -44,7 +43,7 @@ export default (
     </div>
     <div>
       <h2>Horizontal</h2>
-      <Selector onChange={console.log} options={options} selected={'bar'} orientation='horizontal' />
+      <Selector onChange={console.log} options={options} selected={'bar'} orientation="horizontal" />
     </div>
   </div>
 );

@@ -15,7 +15,7 @@ function createTreads() {
 export function fillTemplate(template: string[], data) {
   const order: {
     [key: string]: any;
-    _position: { x: number, y: number };
+    _position: { x: number; y: number };
   }[] = [];
 
   const treads = createTreads();

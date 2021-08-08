@@ -26,7 +26,7 @@ export const Option = ({
   small,
   onMouseOver,
   hint,
-  className
+  className,
 }: OptionElement) => {
   return (
     <div
@@ -35,7 +35,7 @@ export const Option = ({
         [styles.line]: true,
         [styles.selected]: selected,
         [styles.disabled]: disabled,
-        [styles.small]: small, 
+        [styles.small]: small,
       })}
     >
       <label

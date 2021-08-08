@@ -9,7 +9,7 @@ export function startCaptureMovement(
 ): void {
   const parent = currentTarget.offsetParent as HTMLDivElement;
   const parentOffset = parent && parent.offsetLeft;
-  const offset = currentTarget.offsetLeft ;
+  const offset = currentTarget.offsetLeft;
 
   const getSliderValue = sliderValueCalculator(currentTarget.clientWidth, offset + parentOffset);
 

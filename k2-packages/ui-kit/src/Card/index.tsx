@@ -7,9 +7,5 @@ interface Card {
 }
 
 export function Card({ className, children, inline = false }: React.PropsWithChildren<Card>) {
-  return (
-    <div className={cn(s.card, inline ? s.inline : s.block, className)}>
-      {children}
-    </div>
-  );
+  return <div className={cn(s.card, inline ? s.inline : s.block, className)}>{children}</div>;
 }

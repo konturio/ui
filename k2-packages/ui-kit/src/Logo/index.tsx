@@ -17,7 +17,7 @@ export function Logo({
   const compactWidth = Math.round(height * 1.041237113);
   const width = Math.round(height * 3.340206186);
   return (
-    <a href="https://www.kontur.io/" target="_blank" title="kontur.io">
+    <a href="https://www.kontur.io/" target="_blank" title="kontur.io" rel="noreferrer">
       {compact ? (
         <svg
           width={compactWidth}
@@ -25,7 +25,7 @@ export function Logo({
           viewBox="0 0 101 97"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          style={{display: 'block'}}
+          style={{ display: 'block' }}
         >
           <rect
             x="15"
@@ -59,16 +59,9 @@ export function Logo({
             fill={colors[palette]}
           />
           <defs>
-            <linearGradient
-              id="paint0_linear"
-              x1="6"
-              y1="6.5"
-              x2="94.5"
-              y2="89.5"
-              gradientUnits="userSpaceOnUse"
-            >
-              <stop stop-color="#00D2FF" />
-              <stop offset="1" stop-color="#2CB3FF" />
+            <linearGradient id="paint0_linear" x1="6" y1="6.5" x2="94.5" y2="89.5" gradientUnits="userSpaceOnUse">
+              <stop stopColor="#00D2FF" />
+              <stop offset="1" stopColor="#2CB3FF" />
             </linearGradient>
           </defs>
         </svg>
@@ -79,9 +72,9 @@ export function Logo({
           viewBox="0 0 325 97"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          style={{display: 'block'}}
+          style={{ display: 'block' }}
         >
-          <g clip-path="url(#clip0)">
+          <g clipPath="url(#clip0)">
             <path
               d="M317.13 32.3281V89.809H39.645V97H324.344V32.3281H317.13Z"
               fill="white"
@@ -97,14 +90,8 @@ export function Logo({
               fill="white"
               fillOpacity={palette === 'contrast' ? 0.48 : 0}
             />
-            <path
-              d="M309.931 32.3281V82.6181H39.645V89.809H317.13V32.3281H309.931Z"
-              fill={colors[palette]}
-            />
-            <path
-              d="M14.4121 64.6563V14.3663H284.699V7.19095H7.21387V64.6563H14.4121Z"
-              fill={colors[palette]}
-            />
+            <path d="M309.931 32.3281V82.6181H39.645V89.809H317.13V32.3281H309.931Z" fill={colors[palette]} />
+            <path d="M14.4121 64.6563V14.3663H284.699V7.19095H7.21387V64.6563H14.4121Z" fill={colors[palette]} />
             <path
               d="M147.651 59.1464L138.438 33.3087C138.186 32.6018 137.72 31.9902 137.105 31.5581C136.49 31.126 135.755 30.8948 135.003 30.8962H129.116C128.637 30.8941 128.162 30.9864 127.719 31.1678C127.276 31.3491 126.873 31.6159 126.534 31.9529C126.194 32.2898 125.925 32.6903 125.741 33.1313C125.557 33.5724 125.462 34.0452 125.462 34.5228V63.2243C125.462 63.7156 125.658 64.1867 126.007 64.5341C126.355 64.8814 126.828 65.0766 127.321 65.0766H130.194C130.439 65.0786 130.682 65.0322 130.909 64.9401C131.137 64.8479 131.343 64.7118 131.518 64.5396C131.692 64.3674 131.83 64.1625 131.924 63.9368C132.019 63.711 132.067 63.4689 132.067 63.2243V48.6868V36.9509C132.068 36.8306 132.112 36.7145 132.19 36.6229C132.268 36.5312 132.376 36.4699 132.495 36.4495C132.614 36.4291 132.737 36.451 132.841 36.5114C132.945 36.5717 133.025 36.6667 133.067 36.7797L142.295 62.6484C142.549 63.3582 143.017 63.9724 143.635 64.4071C144.252 64.8417 144.99 65.0755 145.746 65.0766H151.601C152.571 65.0724 153.501 64.6853 154.186 63.9997C154.87 63.3142 155.255 62.3862 155.255 61.4188V48.6868V32.7795C155.255 32.2883 155.059 31.8172 154.711 31.4698C154.362 31.1225 153.889 30.9273 153.397 30.9273H150.524C150.031 30.9273 149.558 31.1225 149.21 31.4698C148.861 31.8172 148.666 32.2883 148.666 32.7795V59.0063C148.669 59.1329 148.626 59.2565 148.544 59.3533C148.462 59.4501 148.347 59.5132 148.221 59.5306C148.095 59.548 147.967 59.5183 147.862 59.4474C147.757 59.3765 147.681 59.2693 147.651 59.1464V59.1464Z"
               fill={colors[palette]}
@@ -134,16 +121,9 @@ export function Logo({
             <clipPath id="clip0">
               <rect width="324.344" height="97" fill="white" />
             </clipPath>
-            <linearGradient
-              id="paint0_linear"
-              x1="6"
-              y1="6.5"
-              x2="94.5"
-              y2="89.5"
-              gradientUnits="userSpaceOnUse"
-            >
-              <stop stop-color="#00D2FF" />
-              <stop offset="1" stop-color="#2CB3FF" />
+            <linearGradient id="paint0_linear" x1="6" y1="6.5" x2="94.5" y2="89.5" gradientUnits="userSpaceOnUse">
+              <stop stopColor="#00D2FF" />
+              <stop offset="1" stopColor="#2CB3FF" />
             </linearGradient>
           </defs>
         </svg>

@@ -85,5 +85,4 @@ export const Selector = ({
   );
 };
 
-
 export type { OptionType } from './Option';

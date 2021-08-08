@@ -8,7 +8,7 @@ function Color({ variableName, small }: { variableName: string; small?: boolean 
   return (
     <div
       data-name={variableName}
-      onClick={() =>  navigator.clipboard.writeText(variableName)}
+      onClick={() => navigator.clipboard.writeText(variableName)}
       className={`${s.color} ${small ? s.small : ''}`}
       style={{ '--current-color': variableName } as React.CSSProperties}
     ></div>
@@ -40,23 +40,25 @@ function ColorFamily({ name }) {
   );
 }
 
-export default <div className={s.root}>
-  <h1> Click on color for copy variable name </h1>
-  <div className={s.pallette}>
-    <span> Family </span>
-    <span> Strong </span>
-    <span> Weak </span>
-    <span> Back </span>
-    <span> Text </span>
-    <span> Line </span>
-    <span> Icon </span>
-    <span> Fancy </span>
-    <ColorFamily name="Base" />
-    <ColorFamily name="Faint" />
-    <ColorFamily name="Accent" />
-    <ColorFamily name="Compl" />
-    <ColorFamily name="Critic" />
-    <ColorFamily name="Warning" />
-    <ColorFamily name="Success" />
+export default (
+  <div className={s.root}>
+    <h1> Click on color for copy variable name </h1>
+    <div className={s.pallette}>
+      <span> Family </span>
+      <span> Strong </span>
+      <span> Weak </span>
+      <span> Back </span>
+      <span> Text </span>
+      <span> Line </span>
+      <span> Icon </span>
+      <span> Fancy </span>
+      <ColorFamily name="Base" />
+      <ColorFamily name="Faint" />
+      <ColorFamily name="Accent" />
+      <ColorFamily name="Compl" />
+      <ColorFamily name="Critic" />
+      <ColorFamily name="Warning" />
+      <ColorFamily name="Success" />
+    </div>
   </div>
-</div>;
+);

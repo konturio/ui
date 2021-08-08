@@ -3,7 +3,7 @@ import { Checkbox } from './index';
 
 describe('<Checkbox /> component', () => {
   it('Should render without errors', () => {
-    render(<Checkbox id="test"/>);
+    render(<Checkbox id="test" />);
   });
 
   it('Should render with props', () => {

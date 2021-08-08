@@ -1,3 +1,3 @@
-import { AppHeader } from ".";
+import { AppHeader } from '.';
 
-export default <AppHeader title="Example" />
+export default <AppHeader title="Example" />;

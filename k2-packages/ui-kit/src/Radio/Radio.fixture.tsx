@@ -11,6 +11,7 @@ export default {
       <Radio id="checked-disabled" label="Checked disabled" checked disabled readOnly />
     </div>
   ),
+  // eslint-disable-next-line react/display-name
   Interactive: () => {
     const [state, setState] = useState('foo');
 

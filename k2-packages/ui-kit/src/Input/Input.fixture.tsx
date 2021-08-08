@@ -16,14 +16,14 @@ export default {
     <div style={{ display: 'flex', flexFlow: 'column nowrap', gap: '1em' }}>
       <Input />
       <Input placeholder="Placeholder" />
-      <Input value="Value" onChange={(e) => {}} />
-      <Input value="Value" message="With message" onChange={(e) => {}} />
-      <Input value="Error" error onChange={(e) => {}} />
-      <Input value="Error" message="With error message" error onChange={(e) => {}} />
-      <Input value="Focus" isFocused onChange={(e) => {}} />
-      <Input value="Focus with error" isFocused error onChange={(e) => {}} />
+      <Input value="Value" onChange={console.log} />
+      <Input value="Value" message="With message" onChange={console.log} />
+      <Input value="Error" error onChange={console.log} />
+      <Input value="Error" message="With error message" error onChange={console.log} />
+      <Input value="Focus" isFocused onChange={console.log} />
+      <Input value="Focus with error" isFocused error onChange={console.log} />
       <Input placeholder="Disabled with placeholder" disabled />
-      <Input value="Disabled with value" disabled onChange={(e) => {}} />
+      <Input value="Disabled with value" disabled onChange={console.log} />
     </div>
   ),
   'With icon': (
@@ -34,28 +34,28 @@ export default {
       <Input placeholder="Placeholder">
         <Icon />
       </Input>
-      <Input value="Value" onChange={(e) => {}}>
+      <Input value="Value" onChange={console.log}>
         <Icon />
       </Input>
-      <Input value="Value" message="With message" onChange={(e) => {}}>
+      <Input value="Value" message="With message" onChange={console.log}>
         <Icon />
       </Input>
-      <Input value="Error" error onChange={(e) => {}}>
+      <Input value="Error" error onChange={console.log}>
         <Icon />
       </Input>
-      <Input value="Error" message="With error message" error onChange={(e) => {}}>
+      <Input value="Error" message="With error message" error onChange={console.log}>
         <Icon />
       </Input>
-      <Input value="Focus" isFocused onChange={(e) => {}}>
+      <Input value="Focus" isFocused onChange={console.log}>
         <Icon />
       </Input>
-      <Input value="Focus with error" isFocused error onChange={(e) => {}}>
+      <Input value="Focus with error" isFocused error onChange={console.log}>
         <Icon />
       </Input>
       <Input placeholder="Disabled with placeholder" disabled>
         <Icon />
       </Input>
-      <Input value="Disabled with value" disabled onChange={(e) => {}}>
+      <Input value="Disabled with value" disabled onChange={console.log}>
         <Icon />
       </Input>
     </div>

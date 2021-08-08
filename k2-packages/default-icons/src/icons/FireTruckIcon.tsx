@@ -11,4 +11,6 @@ const FireTruckIcon = React.memo((props: React.SVGProps<SVGSVGElement>) => (
   </svg>
 ));
 
+FireTruckIcon.displayName = 'FireTruckIcon';
+
 export default FireTruckIcon;

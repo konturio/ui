@@ -117,6 +117,8 @@ const DenominatorsSelector = memo(
   },
 );
 
+DenominatorsSelector.displayName = 'DenominatorsSelector';
+
 interface HeadingEntryProps {
   index: number;
   vertical: boolean;
@@ -235,6 +237,8 @@ const HeadingEntry = memo(
     );
   },
 );
+
+HeadingEntry.displayName = 'HeadingEntry';
 
 interface TableHeadingProps {
   className?: string;

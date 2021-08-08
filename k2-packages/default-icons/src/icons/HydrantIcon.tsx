@@ -13,4 +13,6 @@ const HydrantIcon = React.memo((props: React.SVGProps<SVGSVGElement>) => (
   </svg>
 ));
 
+HydrantIcon.displayName = 'HydrantIcon';
+
 export default HydrantIcon;

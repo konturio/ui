@@ -7,11 +7,12 @@ export default {
       <TimeSlider
         rulerNumbers={[5, 10, 15, 20, 25, 30]}
         sliderValue={20}
-        onSliderChange={(val) => {}}
+        onSliderChange={console.log}
         colorsLegend={['#5433FF', '#3683ff', '#20BDFF', '#5fdce6', '#A5FECB']}
       />
     </div>
   ),
+  // eslint-disable-next-line react/display-name
   Interactive: () => {
     const [state, setState] = useValue('value', { defaultValue: 15 } as { defaultValue: number });
     const [steps] = useValue('steps', { defaultValue: 6 } as { defaultValue: number });

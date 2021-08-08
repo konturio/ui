@@ -18,6 +18,7 @@
     "release:push": "git push && git push origin --tags",
     "fix:dependencies": "npx syncpack fix-mismatches --peer",
     "lint": "eslint '*/**/*.{ts,tsx}' --quiet",
+    "lint:fix": "eslint '*/**/*.{ts,tsx}' --quiet --fix",
     "lint-staged": "npx --no-install lint-staged",
     "cosmos": "cosmos",
     "cosmos:renderer": "vite serve --port=8080",

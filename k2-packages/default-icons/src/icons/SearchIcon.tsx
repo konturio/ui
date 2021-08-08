@@ -7,4 +7,6 @@ const SearchIcon = React.memo((props: React.SVGProps<SVGSVGElement>) => (
   </svg>
 ));
 
+SearchIcon.displayName = 'SearchIcon';
+
 export default SearchIcon;

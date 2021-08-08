@@ -25,9 +25,11 @@ const style = css`
   }
 `;
 
-export default ({ children }) => (
-  <>
-    <style dangerouslySetInnerHTML={{ __html: style }}></style>
-    <div className="cosmos-ui-kit-decorator">{children}</div>
-  </>
-);
+export default function ComsosDecorator({ children }) {
+  return (
+    <>
+      <style dangerouslySetInnerHTML={{ __html: style }}></style>
+      <div className="cosmos-ui-kit-decorator">{children}</div>
+    </>
+  );
+}

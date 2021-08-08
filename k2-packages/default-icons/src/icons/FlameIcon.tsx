@@ -11,4 +11,6 @@ const FlameIcon = React.memo((props: React.SVGProps<SVGSVGElement>) => (
   </svg>
 ));
 
+FlameIcon.displayName = 'FlameIcon';
+
 export default FlameIcon;

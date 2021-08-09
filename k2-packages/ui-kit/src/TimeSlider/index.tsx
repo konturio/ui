@@ -1,4 +1,3 @@
-import React from 'react';
 import s from './style.module.css';
 import { Slider } from '../Slider';
 

@@ -1,32 +1,15 @@
 .card {
-  display: flex;
   flex-flow: column nowrap;
   border-radius: var(--border-radius);
-  color: var(--default-text-color);
-  background-color: #fff;
+  background-color: var(--base-weak);
   position: relative;
-  box-shadow: var(--shadow-1);
+  box-shadow: var(--elevation-1);
 }
 
-.card:focus:before {
-  box-shadow: var(--outline-active);
+.inline {
+  display: inline-flex;
 }
 
-.card:before {
-  content: '';
-  display: block;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  border-radius: var(--border-radius);
-  pointer-events: none;
-}
-
-.title {
-  text-transform: uppercase;
-  margin: calc(var(--unit) * 2);
-  font-weight: bold;
-  font-size: 0.9rem;
+.block {
+  display: flex;
 }

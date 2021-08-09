@@ -1,0 +1,13 @@
+.summary {
+  cursor: pointer;
+  & > * {
+    display: inline;
+  }
+  &:focus {
+    box-shadow: 0px 0px 0px 2px var(--accent-strong);
+  }
+}
+
+.content {
+  margin-top: 0;
+}

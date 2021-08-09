@@ -1,6 +1,6 @@
-import React, { CSSProperties, useCallback, useEffect, useState } from 'react';
+import { CSSProperties, useCallback, useEffect, useState, memo } from 'react';
 import styles from './tableHeading.module.css';
-import clsx from 'clsx';
+import cn from 'clsx';
 import DenominatorIcon from './components/DenominatorIcon/DenominatorIcon';
 
 const createGlobalState = (initialState) => {
@@ -81,7 +81,7 @@ interface DenominatorsSelectorProps {
   onSelectDenominator: (denId: string) => void;
 }
 
-const DenominatorsSelector = React.memo(
+const DenominatorsSelector = memo(
   ({
     isOpen,
     switchDenominatorsVisibility,
@@ -93,12 +93,12 @@ const DenominatorsSelector = React.memo(
     return (
       <div className={styles.denominators}>
         <div
-          className={clsx({ [styles.denominatorSelector]: true, [styles.disabled]: denominators.length <= 1 })}
+          className={cn({ [styles.denominatorSelector]: true, [styles.disabled]: denominators.length <= 1 })}
           onClick={switchDenominatorsVisibility}
         >
           <i className="fas fa-caret-down"></i>
         </div>
-        <div className={clsx({ [styles.denominatorsContainer]: true, [styles.show]: isOpen })}>
+        <div className={cn({ [styles.denominatorsContainer]: true, [styles.show]: isOpen })}>
           {denominators.map(({ id: denId, label: denLabel, quality }) =>
             denId !== selectedDenominator?.id ? (
               <DenominatorItem
@@ -116,6 +116,8 @@ const DenominatorsSelector = React.memo(
     );
   },
 );
+
+DenominatorsSelector.displayName = 'DenominatorsSelector';
 
 interface HeadingEntryProps {
   index: number;
@@ -137,7 +139,7 @@ interface HeadingEntryProps {
   calculateHeadingsStyle: (baseDimension: number, vertical: boolean, index: number) => CSSProperties;
 }
 
-const HeadingEntry = React.memo(
+const HeadingEntry = memo(
   ({
     index,
     vertical,
@@ -204,7 +206,7 @@ const HeadingEntry = React.memo(
         onMouseOut={onMouseOut}
         onClick={onClick}
         style={getHeadingPositionStyle(vertical, index)}
-        className={clsx({
+        className={cn({
           [className || '']: className,
           [styles.axisRecord]: true,
           [styles.hovered]: hoveredIndex === index,
@@ -235,6 +237,8 @@ const HeadingEntry = React.memo(
     );
   },
 );
+
+HeadingEntry.displayName = 'HeadingEntry';
 
 interface TableHeadingProps {
   className?: string;
@@ -314,4 +318,4 @@ const TableHeading = ({
   return <>{elementsArray.map((el) => el)}</>;
 };
 
-export default React.memo(TableHeading);
+export default memo(TableHeading);

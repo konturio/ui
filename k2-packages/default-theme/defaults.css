@@ -1,0 +1,17 @@
+html, body {
+  margin: 0;
+  font: var(--font);
+  height: 100%;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+button:not(:disabled) {
+  cursor: pointer;
+}

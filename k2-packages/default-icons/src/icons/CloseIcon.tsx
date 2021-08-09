@@ -6,4 +6,6 @@ const CloseIcon = React.memo((props: React.SVGProps<SVGSVGElement>) => (
   </svg>
 ));
 
+CloseIcon.displayName = 'CloseIcon';
+
 export default CloseIcon;

@@ -11,4 +11,6 @@ const MarkerIcon = React.memo((props: React.SVGProps<SVGSVGElement>) => (
   </svg>
 ));
 
+MarkerIcon.displayName = 'MarkerIcon';
+
 export default MarkerIcon;

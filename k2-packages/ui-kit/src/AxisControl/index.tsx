@@ -1,6 +1,6 @@
-import React, { forwardRef, useCallback, useState } from 'react';
+import { forwardRef, useCallback, useState } from 'react';
 import styles from './style.module.css';
-import clsx from 'clsx';
+import cn from 'clsx';
 import { attachPositionToCb } from './matrixFn';
 import { Cell } from './Cell';
 import TableHeading from './TableHeading';
@@ -163,7 +163,7 @@ export const AxisControl = forwardRef<HTMLDivElement | null, any>(
                 style={getCellPositionStyle(-1, rowIndex)}
               >
                 <div
-                  className={clsx({
+                  className={cn({
                     [styles.hovered]: checkIsFromHoveredRow(rowIndex),
                     [styles.selected]: checkIsFromSelectedRow(rowIndex),
                   })}
@@ -180,7 +180,7 @@ export const AxisControl = forwardRef<HTMLDivElement | null, any>(
                 style={getCellPositionStyle(colIndex, -1)}
               >
                 <div
-                  className={clsx({
+                  className={cn({
                     [styles.hovered]: checkIsFromHoveredCol(colIndex),
                     [styles.selected]: checkIsFromSelectedCol(colIndex),
                   })}
@@ -207,7 +207,7 @@ export const AxisControl = forwardRef<HTMLDivElement | null, any>(
 
               return val === null ? (
                 <Cell
-                  className={clsx(cellClasses)}
+                  className={cn(cellClasses)}
                   key={`${colIndex}|${rowIndex}`}
                   style={getCellPositionStyle(colIndex, rowIndex)}
                   value={val}
@@ -218,7 +218,7 @@ export const AxisControl = forwardRef<HTMLDivElement | null, any>(
               ) : (
                 <Cell
                   selected={isFromSelectedRow && isFromSelectedCol}
-                  className={clsx(cellClasses)}
+                  className={cn(cellClasses)}
                   key={`${colIndex}|${rowIndex}`}
                   onClick={call(onSelectCell)}
                   onHover={call(onMouseOver)}

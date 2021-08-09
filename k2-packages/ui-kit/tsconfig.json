@@ -5,7 +5,7 @@
     "outDir": "tsclib",
     "module": "esnext",
     "moduleResolution": "node",
-    "jsx": "react",
+    "jsx": "react-jsx",
     "allowSyntheticDefaultImports": true
   },
   "include": ["./../../global.d.ts", "./src/**/*.ts", "./src/**/*.tsx"],

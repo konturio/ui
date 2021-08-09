@@ -3,72 +3,76 @@
   padding: 0;
   font-size: 1rem;
   min-width: 0;
-}
-
-.icons {
-  color: var(--neutral-text-color);
-  display: flex;
-  flex-flow: row nowrap;
-}
-
-.message {
-  font-size: calc(var(--unit) * 1.5);
-  padding: calc(var(--unit) * 0.5) var(--unit);
-  color: var(--text-color);
-  border-radius: var(--border-radius);
-  box-shadow: var(--shadow-2);
+  border: none;
+  background-color: transparent;
+  padding: var(--unit);
+  &:focus {
+    outline: none;
+  }
+  &:disabled {
+     background-color: transparent;
+  }
 }
 
 .inputBox {
   display: flex;
   flex-flow: row nowrap;
-  border: 1px solid var(--neutral-text-color);
   border-radius: var(--border-radius);
-  padding: var(--unit);
+  box-shadow: 0px 0px 0px 1px var(--faint-line);
+  border: none;
   color: var(--neutral-text-color);
   position: relative;
+  background-color: white;
+
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: var(--border-radius);
+    pointer-events: none;
+  }
 }
 
-.inputBox:before {
-  content: '';
-  display: block;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+.message {
+  font: var(--font-xs);
+  padding: var(--unit) 0;
   border-radius: var(--border-radius);
-  pointer-events: none;
 }
 
-.focus .inputBox:before {
-  box-shadow: var(--outline-active);
+.icons {
+  color: var(--faint-line);
+  display: flex;
+  flex-flow: row nowrap;
+  padding: var(--unit);
+  padding-right: 0; 
+  align-content: center;
+  align-items: center;
 }
 
-.disabled .inputBox {
-  background-color: var(--gray-1);
+.focus {
+  .inputBox {
+    box-shadow: 0px 0px 0px 2px var(--accent-strong);
+  }
 }
 
-.disabled input {
-  cursor: default;
+.error {
+  .inputBox {
+    box-shadow: 0px 0px 0px 2px var(--critic-strong);
+  }
+  .message {
+    color: var(--critic-strong);
+  }
 }
 
-.successes .inputBox {
-  border-color: var(--success-color);
-}
-
-.successes.focus .inputBox:before {
-  box-shadow: var(--outline-success);
-}
-
-.error .inputBox {
-  border-color: var(--error-color);
-}
-
-.error.focus .inputBox:before {
-  box-shadow: var(--outline-error);
-}
-
-.error .message {
-  color: var(--error-color);
+.disabled {
+  input {
+    cursor: default;
+  }
+  .inputBox {
+    background-color: var(--faint-strong);
+  }
 }

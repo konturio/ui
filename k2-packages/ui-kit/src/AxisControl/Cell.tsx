@@ -1,6 +1,5 @@
-import React from 'react';
 import styles from './cell.module.css';
-import clsx from 'clsx';
+import cn from 'clsx';
 
 interface CellProps {
   className?: string;
@@ -25,7 +24,7 @@ export const Cell = ({
   style,
 }: CellProps) => (
   <div
-    className={clsx(styles.valueCell, className, disabled && styles.disabled)}
+    className={cn(styles.valueCell, className, disabled && styles.disabled)}
     style={style}
     onMouseOver={onHover}
     onMouseOut={onMouseOut}

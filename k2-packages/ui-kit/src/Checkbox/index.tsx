@@ -2,45 +2,30 @@ import React, { ChangeEvent } from 'react';
 import s from './style.module.css';
 
 interface Checkbox {
-  id?: string;
+  id: string;
   name?: string;
-  value?: string;
-  readOnly?: boolean;
   label?: React.ReactChild | React.ReactChild[];
   className?: string;
-  checked?: boolean;
-  disabled?: boolean;
-  required?: boolean;
-  onChange?: (e: ChangeEvent<HTMLInputElement>) => Record<string, unknown>;
+  onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
 }
 
 export function Checkbox({
-  id,
   name,
-  value,
-  readOnly,
   label,
   className = '',
-  disabled,
-  checked,
-  required,
-  onChange,
-}: Checkbox): React.ReactElement {
+  id,
+  ...native
+}: Checkbox &
+  React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>): React.ReactElement {
   return (
-    <label htmlFor={id} className={s.label}>
-      <input
-        id={id}
-        name={name}
-        type="checkbox"
-        value={value}
-        readOnly={readOnly}
-        className={`${s.checkbox} ${className}`}
-        disabled={disabled}
-        checked={checked}
-        required={required}
-        onChange={onChange}
-      />
-      {label}
+    <label htmlFor={id} className={s.root}>
+      <input id={id} name={name} type="checkbox" className={`${s.checkbox} ${className}`} {...native} />
+      <div className={s.icon}>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 9L6.5 12.5L14 5" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      </div>
+      <span className={s.label}>{label}</span>
     </label>
   );
 }

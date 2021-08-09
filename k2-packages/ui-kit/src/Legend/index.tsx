@@ -1,5 +1,5 @@
-import React from 'react';
-import clsx from 'clsx';
+import { useMemo } from 'react';
+import cn from 'clsx';
 import styles from './style.module.css';
 import { Cell } from './types';
 import { fillTemplate } from './gridTemplate';
@@ -10,9 +10,6 @@ type Axis = {
   quality: number;
   quotient: string[];
 };
-
-// eslint-disable-next-line prettier/prettier
-const TEMPLATE = ['y . . . .', 'y c c c .', 'y c c c .', 'y c c c .', '. x x x x'];
 
 function safeReverse(arr) {
   return [...arr].reverse();
@@ -54,6 +51,15 @@ const ArrowHead = ({ className, type }: ArrowHeadProps) => (
 );
 
 export const Legend = ({ cells, size, axis, title, showAxisLabels = false }: LegendProps) => {
+  const TEMPLATE = useMemo(
+    () => [
+      `y ${new Array(size + 1).fill('.').join(' ')}`,
+      ...new Array(size).fill(`y ${new Array(size).fill('c').join(' ')} .`),
+      `. ${new Array(size + 1).fill('x').join(' ')}`,
+    ],
+    [size],
+  );
+
   const gridCells = fillTemplate(TEMPLATE, {
     x: axis.x.steps.map((step) => ({
       label: step.label || step.value.toFixed(1),
@@ -65,7 +71,7 @@ export const Legend = ({ cells, size, axis, title, showAxisLabels = false }: Leg
     })),
     c: cells.map((cell) => ({
       label: <span>{cell.label}</span>,
-      className: clsx(styles.cell, styles.colorCell),
+      className: cn(styles.cell, styles.colorCell),
       style: { backgroundColor: cell.color },
     })),
   });
@@ -89,7 +95,7 @@ export const Legend = ({ cells, size, axis, title, showAxisLabels = false }: Leg
         <div className={styles.arrowY}>
           <ArrowHead
             type="vertical"
-            className={clsx({ [styles.arrowHeadY]: true, [styles.arrowHeadY_angle0]: !showAxisLabels })}
+            className={cn({ [styles.arrowHeadY]: true, [styles.arrowHeadY_angle0]: !showAxisLabels })}
           />
         </div>
 
@@ -97,7 +103,7 @@ export const Legend = ({ cells, size, axis, title, showAxisLabels = false }: Leg
           <div
             key={`${cell._position.x}|${cell._position.y}`}
             style={Object.assign(getCellPositionStyle(cell._position.x, cell._position.y), cell.style)}
-            className={clsx(cell.className, styles.cell)}
+            className={cn(cell.className, styles.cell)}
           >
             {cell.label}
           </div>

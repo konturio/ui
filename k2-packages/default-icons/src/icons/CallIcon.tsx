@@ -9,4 +9,6 @@ const CallIcon = React.memo((props: React.SVGProps<SVGSVGElement>) => (
   </svg>
 ));
 
+CallIcon.displayName = 'CallIcon';
+
 export default CallIcon;

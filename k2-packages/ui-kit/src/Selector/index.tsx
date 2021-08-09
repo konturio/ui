@@ -1,5 +1,5 @@
 import React, { useCallback } from 'react';
-import clsx from 'clsx';
+import cn from 'clsx';
 import { OptionType } from './Option';
 import { SelectedItems } from './SelectedItems';
 import { SimpleSelector } from './SimpleSelector';
@@ -65,7 +65,7 @@ export const Selector = ({
         multi={false}
         small={small}
         checkSelected={checkSelected}
-        className={styles.nestedSelector}
+        className={cn(styles.nestedSelector, styles.shade)}
         stopPropagation={stopPropagation}
         onHover={onHoverHandler}
       />
@@ -75,7 +75,7 @@ export const Selector = ({
       options={options}
       onChange={onChangeHandler}
       orientation={orientation}
-      className={clsx(className, styles.shade)}
+      className={cn(className, styles.shade)}
       multi={multi}
       small={small}
       checkSelected={checkSelected}
@@ -84,3 +84,5 @@ export const Selector = ({
     />
   );
 };
+
+export type { OptionType } from './Option';

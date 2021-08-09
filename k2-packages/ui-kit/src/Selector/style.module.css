@@ -3,5 +3,5 @@
 }
 
 .shade {
-  border: var(--input-border);
+  box-shadow: var(--elevation-1);
 }

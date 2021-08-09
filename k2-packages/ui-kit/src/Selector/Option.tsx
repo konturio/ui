@@ -14,6 +14,7 @@ export type OptionType = {
   disabled?: boolean;
   small?: boolean;
   hint?: string;
+  className?: string;
 };
 
 export const Option = ({
@@ -25,6 +26,7 @@ export const Option = ({
   small,
   onMouseOver,
   hint,
+  className,
 }: OptionElement) => {
   return (
     <div
@@ -38,7 +40,7 @@ export const Option = ({
     >
       <label
         key={value}
-        className={styles.option}
+        className={clsx(styles.option, className)}
         onMouseOver={(e) => onMouseOver && onMouseOver(value, e)}
         title={hint}
       >

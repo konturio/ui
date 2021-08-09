@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/default-icons@1.0.11...@k2-packages/default-icons@1.1.0) (2021-08-09)
+
+
+### Bug Fixes
+
+* manual fixes of linting ([2a62d46](https://gitlab.com/kontur-private/k2/k2-front-end/commit/2a62d46d7fa8bea26c8f7185f43f9fa444b6ff84))
+
+
+### Features
+
+* update deps to latest versions ([6ff940e](https://gitlab.com/kontur-private/k2/k2-front-end/commit/6ff940e12884bca89684a27397e467abf24404c3))
+
+
+
+
+
 ## [1.0.11](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/default-icons@1.0.9...@k2-packages/default-icons@1.0.11) (2020-07-06)
 
 **Note:** Version bump only for package @k2-packages/default-icons

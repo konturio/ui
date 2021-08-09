@@ -3,6 +3,39 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.15.0](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@2.14.3...@k2-packages/ui-kit@2.15.0) (2021-08-09)
+
+
+### Bug Fixes
+
+* autofix eslint rules ([4d2e7d0](https://gitlab.com/kontur-private/k2/k2-front-end/commit/4d2e7d09186fb5dc9c1236623de359737df2b70f))
+* color in input ([967336d](https://gitlab.com/kontur-private/k2/k2-front-end/commit/967336d1526eb3e1ec9e30042c275edfead7e528))
+* legend now support different sizes ([cdcd55b](https://gitlab.com/kontur-private/k2/k2-front-end/commit/cdcd55bca96bfad8ddbe4b1eef583f9df686138c))
+* manual fixes of linting ([2a62d46](https://gitlab.com/kontur-private/k2/k2-front-end/commit/2a62d46d7fa8bea26c8f7185f43f9fa444b6ff84))
+* radio in checkbox broken layout in chrome ([37f50f3](https://gitlab.com/kontur-private/k2/k2-front-end/commit/37f50f31ac894de6ef1bee9c547ffc4f11d20d8f))
+* test failing sinse react 17 not supported ([6691b64](https://gitlab.com/kontur-private/k2/k2-front-end/commit/6691b643d8ed34e622b836965809cb5c795b1cd9))
+
+
+### Features
+
+* add cosmos decorator ([6732d8f](https://gitlab.com/kontur-private/k2/k2-front-end/commit/6732d8fcca65a835e1547028473363495bfe481e))
+* add new checkboxes ([220de3c](https://gitlab.com/kontur-private/k2/k2-front-end/commit/220de3c0bb4b9265f2f24fca19e503ef465abfa9))
+* add sizes ([e79125e](https://gitlab.com/kontur-private/k2/k2-front-end/commit/e79125ebe86436e41b90935e462d48cf2df3f448))
+* app header ([f0da602](https://gitlab.com/kontur-private/k2/k2-front-end/commit/f0da6023b0e24a46666a3321227b675c7aa840fc))
+* Details ([bcb3f0b](https://gitlab.com/kontur-private/k2/k2-front-end/commit/bcb3f0b911b91801a8c64957cabd9314126b3b78))
+* fixature for slider ([c08f48e](https://gitlab.com/kontur-private/k2/k2-front-end/commit/c08f48ead1a66ed4c92eab35302e3da425694a9f))
+* improve perfomance of legend ([769307f](https://gitlab.com/kontur-private/k2/k2-front-end/commit/769307f2c52603ea67addae1edbbd21514a6b594))
+* map button ([5932357](https://gitlab.com/kontur-private/k2/k2-front-end/commit/593235721b1b810adf44738951469ebe9837e119))
+* Pannel and Card ([e34dfb8](https://gitlab.com/kontur-private/k2/k2-front-end/commit/e34dfb896500953507146aba3157514b752be4ef))
+* redesign selector ([4bf9aa0](https://gitlab.com/kontur-private/k2/k2-front-end/commit/4bf9aa01f6ffc881551c23c5f1ddd0d3d96b04df))
+* Tabs ([755778b](https://gitlab.com/kontur-private/k2/k2-front-end/commit/755778b629e4bf35e7c6be385661f764bd6c4ed3))
+* Toogler ([124aeb5](https://gitlab.com/kontur-private/k2/k2-front-end/commit/124aeb57143cb9d7868864184f7ed7a1e2827cac))
+* update deps to latest versions ([6ff940e](https://gitlab.com/kontur-private/k2/k2-front-end/commit/6ff940e12884bca89684a27397e467abf24404c3))
+
+
+
+
+
 ## [2.14.3](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@2.14.2...@k2-packages/ui-kit@2.14.3) (2021-08-02)
 
 ### Bug Fixes

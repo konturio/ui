@@ -1,6 +1,6 @@
 {
   "name": "@k2-packages/default-theme",
-  "version": "2.1.1",
+  "version": "2.2.0",
   "publishConfig": {
     "access": "restricted"
   },

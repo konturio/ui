@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.2.0](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/default-theme@2.1.1...@k2-packages/default-theme@2.2.0) (2021-08-09)
+
+
+### Bug Fixes
+
+* autofix eslint rules ([4d2e7d0](https://gitlab.com/kontur-private/k2/k2-front-end/commit/4d2e7d09186fb5dc9c1236623de359737df2b70f))
+* radio in checkbox broken layout in chrome ([37f50f3](https://gitlab.com/kontur-private/k2/k2-front-end/commit/37f50f31ac894de6ef1bee9c547ffc4f11d20d8f))
+
+
+### Features
+
+* app header ([f0da602](https://gitlab.com/kontur-private/k2/k2-front-end/commit/f0da6023b0e24a46666a3321227b675c7aa840fc))
+* map button ([5932357](https://gitlab.com/kontur-private/k2/k2-front-end/commit/593235721b1b810adf44738951469ebe9837e119))
+* Pannel and Card ([e34dfb8](https://gitlab.com/kontur-private/k2/k2-front-end/commit/e34dfb896500953507146aba3157514b752be4ef))
+* Tabs ([755778b](https://gitlab.com/kontur-private/k2/k2-front-end/commit/755778b629e4bf35e7c6be385661f764bd6c4ed3))
+* use Opti.fill color cheme, ([b8fa88c](https://gitlab.com/kontur-private/k2/k2-front-end/commit/b8fa88c54f1961b70c2deedb09ed9924793a5192))
+
+
+
+
+
 ## [2.1.1](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/default-theme@2.1.0...@k2-packages/default-theme@2.1.1) (2020-12-08)
 
 ### Bug Fixes

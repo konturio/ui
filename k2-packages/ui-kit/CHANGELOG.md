@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.15.2](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@2.15.1...@k2-packages/ui-kit@2.15.2) (2021-08-11)
+
+
+### Bug Fixes
+
+* main file name ([a404a34](https://gitlab.com/kontur-private/k2/k2-front-end/commit/a404a34031088a4386ccd94d348bd6d02e73d3a1))
+
+
+
+
+
 ## [2.15.1](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@2.15.0...@k2-packages/ui-kit@2.15.1) (2021-08-11)
 
 

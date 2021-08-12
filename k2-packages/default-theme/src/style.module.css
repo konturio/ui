@@ -2,36 +2,64 @@
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
+  color: hsla(0, 0%, 0%, 0.67);
+  padding: 1em;
 }
-.pallette {
-  display: grid;
-  grid-auto-flow: column;
-  grid-template-rows: repeat(8, 100px);
-  grid-template-columns: minmax(80px, 100px);
-  align-content: center;
-  justify-content: center;
-  justify-items: center;
+
+.cell {
+  padding: 8px;
+  margin: 24px 4px;
+  min-width: 120px;
+  text-align: center;
+  position: relative;
+  display: flex;
   align-items: center;
-  border-radius: 8px;
-  box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.05);
+}
+
+.colorValue,
+.emptyColorValue {
+  padding: 2px 4px;
+  border-radius: 3px;
+  font-size: .76em;
+}
+
+.colorValue {
+  background-color: rgba(0, 0, 0, 0.2);
+  color: white;
+}
+
+.emptyColorValue {
+  background-color: transparent;
+  color: transparent;
+}
+
+.statesLabels {
+  & > .cell {
+    text-align: left;
+    margin-left: 0;
+    padding-left: 0;
+  }
+}
+
+.palette {
+  display: flex;
+  flex-flow: row nowrap;
 }
 
 .color {
-  width: 80px;
-  height: 22px;
   box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.12);
+  background: white;
   background: var(--current-color);
   border-radius: 4px;
-  margin: 4px;
   cursor: pointer;
-  position: relative;
   &:hover {
     box-shadow: 0px 0px 0px 2px rgba(0, 0, 0, 0.15);
     &:before {
       content: attr(data-name);
+      text-transform: lowercase;
       display: inline-flex;
       color: white;
-      background-color: rgba(0, 0, 0, 0.60);
+      background-color: rgba(0, 0, 0, 0.6);
       padding: 4px;
       z-index: 300;
       position: absolute;
@@ -47,18 +75,6 @@
   }
 }
 
-.small {
-  width: 40px;
-  height: 10px;
-}
-
-.familyName {
-  display: grid;
-}
-
-.colorSet {
-  margin: 1em;
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
+h2 {
+  margin-top: 3em;
 }

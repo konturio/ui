@@ -1,13 +1,12 @@
 .appHeader {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  background-color: var(--base-strong);
-  color: var(--faint-text-up);
+  background-color: var(--invert-surface-regular);
+  color: var(--invert-text-regular);
   font-weight: 500;
   letter-spacing: 0.03em;
   text-transform: uppercase;
-  padding: 0 var(--unit);
+  padding: 2px var(--unit);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1), 0px 16px 24px rgba(0, 0, 0, 0.06),
     0px 2px 6px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04);
 }
@@ -16,24 +15,15 @@
   padding: var(--unit);
 }
 
-.chatBtn {
-  color: var(--faint-text-up);
-  display: inline-flex;
-  flex-flow: row nowrap;
-  align-items: center;
-  gap: var(--unit);
-  padding: var(--unit);
-  border-radius: var(--border-radius);
-  &:hover {
-    background-color: var(--base-strong-up);
-  }
-}
-
-.bntText {
-  padding-bottom: 2px; /* leading fix */
+.chatIcon {
+  margin-right: var(--unit)
 }
 
 .logo {
   padding: var(--unit) 0;
   display: inline-flex;
+}
+
+.children {
+  flex: 1;
 }

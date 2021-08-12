@@ -20,23 +20,25 @@
   margin: 0;
   cursor: pointer;
   margin-right: var(--unit);
-  box-shadow: 0px 0px 0px 1px var(--base-strong);
+  box-shadow: 0px 0px 0px 1px var(--primary-border-regular);
   &:checked {
-    background-color: var(--base-strong);
+    background-color: var(--primary-border-regular);
     & ~ .icon {
       visibility: visible;
     }
   }
 
   &:focus {
-    box-shadow: 0px 0px 0px 2px var(--accent-strong);
+    box-shadow: 0px 0px 0px 2px var(--primary-focus-outline-regular);
   }
 
   &:disabled {
-    box-shadow: 0px 0px 0px 1px var(--faint-line);
     cursor: not-allowed;
+    background-color: var(--primary-surface-disabled);
+    color: var(--primary-text-disabled);
+    box-shadow: 0px 0px 0px 1px var(--primary-border-disabled);
     & ~ .label {
-      color: var(--faint-line)
+      color: var(--primary-text-disabled)
     }
     &:checked {
       background-color: var(--faint-line);

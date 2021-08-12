@@ -6,13 +6,13 @@
   background-color: #fff;
   flex: 1;
   &:hover:not(.disabled):not(.selected) {
-    box-shadow: inset 0px 0px 0px 100px var(--accent-weak);
+    box-shadow: inset 0px 0px 0px 100px var(--primary-surface-hover);
   }
   &.selected {
-    background-color: var(--accent-strong);
-    color: var(--base-weak);
+    background-color: var(--primary-surface-active);
+    color: var(--primary-icon-active);
     .option > span {
-      color: var(--secondary-text-color) !important;
+      color: var(--primary-icon-active) !important;
     }
   }
 }

@@ -32,7 +32,7 @@
 }
 
 .yStepsCell:before {
-  border-bottom: 1px solid #aaa;
+  border-bottom: 1px solid var(--primary-faint-border-regular);
   content: '';
   width: 16px;
   height: 1px;

@@ -4,7 +4,6 @@
   position: relative;
   overflow: hidden;
   border-radius: 4px;
-  border: var(--faint-line);
 }
 
 .selector.vertical {

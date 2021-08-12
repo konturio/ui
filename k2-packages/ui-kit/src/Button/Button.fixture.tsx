@@ -1,0 +1,34 @@
+import { Button } from '.';
+
+export default {
+  regular: (
+    <div style={{ margin: '1em', gap: '1em', display: 'flex', flexFlow: 'row nowrap' }}>
+      <Button onClick={console.log}> Map button </Button>
+      <Button onClick={console.log} disabled>
+        {' '}
+        Disabled{' '}
+      </Button>
+    </div>
+  ),
+  'invert-outline': (
+    <div
+      style={{
+        margin: '1em',
+        gap: '1em',
+        display: 'flex',
+        flexFlow: 'row nowrap',
+        backgroundColor: 'var(--invert-surface-regular)',
+        padding: '2em',
+      }}
+    >
+      <Button onClick={console.log} type="invert-outline">
+        {' '}
+        Invert Outline{' '}
+      </Button>
+      <Button onClick={console.log} type="invert-outline" disabled>
+        {' '}
+        Invert Outline Disabled{' '}
+      </Button>
+    </div>
+  ),
+};

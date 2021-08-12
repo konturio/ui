@@ -3,19 +3,16 @@
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
-  border-bottom: 1px solid var(--faint-weak);
+  border-bottom: 1px solid var(--primary-faint-border-regular);
   align-items: flex-start;
 }
 
 .close {
   margin-left: 1em;
-  color: var(--faint-strong);
+  color: var(--primary-icon-regular);
   cursor: pointer;
   border-radius: var(--border-radius);
   svg {
     display: block; 
-  }
-  &:hover {
-    box-shadow: inset 0 0 0 100px var(--faint-weak);
   }
 }

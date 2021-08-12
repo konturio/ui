@@ -1,3 +1,7 @@
 import { AppHeader } from '.';
 
-export default <AppHeader title="Example" />;
+export default (
+  <div style={{ flex: '1' }}>
+    <AppHeader title="Example" onChatClick={console.log} installChat={console.log} />
+  </div>
+);

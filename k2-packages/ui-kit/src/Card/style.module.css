@@ -1,7 +1,7 @@
 .card {
   flex-flow: column nowrap;
   border-radius: var(--border-radius);
-  background-color: var(--base-weak);
+  background-color: var(--primary-surface-regular);
   position: relative;
   box-shadow: var(--elevation-1);
 }

@@ -1,29 +1,54 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500&display=swap'); */
 
 :root {
   /* Breakpoints */
-  --main-bg-color: brown;
   --xs: 0px;
   --sm: 600px;
   --md: 960px;
   --lg: 1280px;
   --xl: 1920px;
 
-  /* Palette */
-  --base-strong: #0A1622;
-  --base-strong-up: #26303A;
-  --base-weak: white;
-  --accent-strong: #26ABFF;
-  --accent-weak: #E9F7FF;
-  --accent-fancy: linear-gradient(90deg, #26ABFF 0%, #00CCFF 100%);
-  --critic-strong: #EC0000;
-  --faint-strong: #B3B5BA;
+  /* Old Palette */
   --faint-text: #9DA2A7;
-  --faint-text-up: #CED0D3;
   --faint-line: #848B90;
   --faint-line-up: #C4C4C4;
   --faint-weak: #EEEEEE;
 
+   /* New Palette */
+  --primary-surface-regular: #FFF;
+  --primary-icon-regular: #051626;
+  --primary-surface-disabled: #F0F1F2;
+  --primary-focus-outline-regular: #2CB3FF;
+  --primary-border-active: #0C9BED;
+  --primary-border-regular: #32404D;
+  --primary-text-regular: #051626;
+  --primary-placeholder-regular: #E3E5E7;
+  --primary-surface-active: #051626;
+  --primary-icon-active: #0C9BED;
+  --primary-text-active: #0C9BED;
+  --primary-icon-disabled: #AFB4BA;
+  --primary-text-disabled: #646F78;
+  --primary-border-disabled: #AFB4BA;
+  --primary-faint-border-regular: #E3E5E7;
+  --primary-outline-surface-regular: transparent;
+  --primary-surface-hover: #E5F6FF;
+  --invert-icon-regular: #0C9BED;
+  --invert-text-regular: #F0F1F2;
+  --invert-surface-regular: #051626;
+  --invert-outline-surface-regular: transparent;
+  --invert-outline-text-regular: #F0F1F2;
+  --invert-outline-surface-hover: rgba(0,0,0,0.4);
+  --invert-outline-text-hover: #FFFFFF;
+  --invert-outline-icon-regular: #F0F1F2;
+  --invert-outline-icon-hover: #FFFFFF;
+  --invert-outline-icon-active: #0C9BED;
+  --invert-outline-text-active: #0C9BED;
+  --invert-outline-focus-outline-regular: #2CB3FF;
+  --invert-outline-text-disabled: #AFB4BA;
+  --invert-outline-icon-disabled: #AFB4BA;
+  --danger-border-regular: #EC0000;
+  --danger-text-regular: #EC0000;
+  --danger-icon-regular: #EC0000;
   /* Typography */
   --font: 14px 'IBM Plex Sans', sans-serif;
   --font-xs: 12px 'IBM Plex Sans', sans-serif;
@@ -33,6 +58,7 @@
   --half-unit: 4px;
   --double-unit: 16px;
   --border-radius: 4px;
+  --half-border-radius: 2px;
 
   /* Animations */
   --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);

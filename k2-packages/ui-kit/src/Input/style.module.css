@@ -18,23 +18,11 @@
   display: flex;
   flex-flow: row nowrap;
   border-radius: var(--border-radius);
-  box-shadow: 0px 0px 0px 1px var(--faint-line);
+  box-shadow: 0px 0px 0px 1px var(--primary-border-regular);
   border: none;
-  color: var(--neutral-text-color);
+  color: var(--primary-text-regular);
   position: relative;
-  background-color: white;
-
-  &:before {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    border-radius: var(--border-radius);
-    pointer-events: none;
-  }
+  background-color: var(--primary-surface-regular);
 }
 
 .message {
@@ -44,7 +32,7 @@
 }
 
 .icons {
-  color: var(--faint-line);
+  color: var(--primary-icon-regular);
   display: flex;
   flex-flow: row nowrap;
   padding: var(--unit);
@@ -55,16 +43,16 @@
 
 .focus {
   .inputBox {
-    box-shadow: 0px 0px 0px 2px var(--accent-strong);
+    box-shadow: 0px 0px 0px 2px var(--primary-focus-outline-regular);
   }
 }
 
 .error {
   .inputBox {
-    box-shadow: 0px 0px 0px 2px var(--critic-strong);
+    box-shadow: 0px 0px 0px 2px var(--danger-border-regular);
   }
   .message {
-    color: var(--critic-strong);
+    color: var(--danger-text-regular);
   }
 }
 
@@ -73,6 +61,11 @@
     cursor: default;
   }
   .inputBox {
-    background-color: var(--faint-strong);
+    background-color: var(--primary-surface-disabled);
+    color: var(--primary-text-disabled);
+    box-shadow: 0px 0px 0px 1px var(--primary-border-disabled);
+  }
+  .icons {
+    color: var(--primary-icon-disabled)
   }
 }

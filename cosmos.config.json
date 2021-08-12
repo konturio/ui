@@ -1,8 +1,14 @@
 {
   "$schema": "./node_modules/react-cosmos/config.schema.json",
-  "watchDirs": ["k2-packages"],
+  "watchDirs": [
+    "k2-packages"
+  ],
   "staticPath": "public",
   "userDepsFilePath": "cosmos/cosmos.userdeps.js",
   "experimentalRendererUrl": "http://localhost:8080/index.html",
-  "globalImports": ["k2-packages/default-theme/variables.css", "k2-packages/default-theme/defaults.css"]
+  "globalImports": [
+    "k2-packages/default-theme/variables.css",
+    "k2-packages/default-theme/defaults.css",
+    "k2-packages/default-theme/typography.css"
+  ]
 }

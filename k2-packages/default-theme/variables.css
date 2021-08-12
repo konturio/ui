@@ -1,4 +1,4 @@
-/* @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500&display=swap');
 
 :root {
   /* Breakpoints */
@@ -8,47 +8,41 @@
   --lg: 1280px;
   --xl: 1920px;
 
-  /* Old Palette */
-  --faint-text: #9DA2A7;
-  --faint-line: #848B90;
-  --faint-line-up: #C4C4C4;
-  --faint-weak: #EEEEEE;
-
-   /* New Palette */
-  --primary-surface-regular: #FFF;
+  /* New Palette */
+  --primary-surface-regular: #fff;
   --primary-icon-regular: #051626;
-  --primary-surface-disabled: #F0F1F2;
-  --primary-focus-outline-regular: #2CB3FF;
-  --primary-border-active: #0C9BED;
-  --primary-border-regular: #32404D;
+  --primary-surface-disabled: #f0f1f2;
+  --primary-focus-outline-regular: #2cb3ff;
+  --primary-border-active: #0c9bed;
+  --primary-border-regular: #32404d;
   --primary-text-regular: #051626;
-  --primary-placeholder-regular: #E3E5E7;
+  --primary-placeholder-regular: #e3e5e7;
   --primary-surface-active: #051626;
-  --primary-icon-active: #0C9BED;
-  --primary-text-active: #0C9BED;
-  --primary-icon-disabled: #AFB4BA;
-  --primary-text-disabled: #646F78;
-  --primary-border-disabled: #AFB4BA;
-  --primary-faint-border-regular: #E3E5E7;
+  --primary-icon-active: #0c9bed;
+  --primary-text-active: #0c9bed;
+  --primary-icon-disabled: #afb4ba;
+  --primary-text-disabled: #646f78;
+  --primary-border-disabled: #afb4ba;
+  --primary-faint-border-regular: #e3e5e7;
   --primary-outline-surface-regular: transparent;
-  --primary-surface-hover: #E5F6FF;
-  --invert-icon-regular: #0C9BED;
-  --invert-text-regular: #F0F1F2;
+  --primary-surface-hover: #e5f6ff;
+  --invert-icon-regular: #0c9bed;
+  --invert-text-regular: #f0f1f2;
   --invert-surface-regular: #051626;
   --invert-outline-surface-regular: transparent;
-  --invert-outline-text-regular: #F0F1F2;
-  --invert-outline-surface-hover: rgba(0,0,0,0.4);
-  --invert-outline-text-hover: #FFFFFF;
-  --invert-outline-icon-regular: #F0F1F2;
-  --invert-outline-icon-hover: #FFFFFF;
-  --invert-outline-icon-active: #0C9BED;
-  --invert-outline-text-active: #0C9BED;
-  --invert-outline-focus-outline-regular: #2CB3FF;
-  --invert-outline-text-disabled: #AFB4BA;
-  --invert-outline-icon-disabled: #AFB4BA;
-  --danger-border-regular: #EC0000;
-  --danger-text-regular: #EC0000;
-  --danger-icon-regular: #EC0000;
+  --invert-outline-text-regular: #f0f1f2;
+  --invert-outline-surface-hover: rgba(0, 0, 0, 0.4);
+  --invert-outline-text-hover: #ffffff;
+  --invert-outline-icon-regular: #f0f1f2;
+  --invert-outline-icon-hover: #ffffff;
+  --invert-outline-icon-active: #0c9bed;
+  --invert-outline-text-active: #0c9bed;
+  --invert-outline-focus-outline-regular: #2cb3ff;
+  --invert-outline-text-disabled: #afb4ba;
+  --invert-outline-icon-disabled: #afb4ba;
+  --danger-border-regular: #ec0000;
+  --danger-text-regular: #ec0000;
+  --danger-icon-regular: #ec0000;
   /* Typography */
   --font: 14px 'IBM Plex Sans', sans-serif;
   --font-xs: 12px 'IBM Plex Sans', sans-serif;
@@ -62,7 +56,7 @@
 
   /* Animations */
   --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
-  --ease-out: cubic-bezier(0.0, 0, 0.2, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
   --ease-in: cubic-bezier(0.4, 0, 1, 1);
 
   /* zIndex */
@@ -70,6 +64,8 @@
   --tooltip: 1100;
 
   /* Shadows */
-  --elevation-1: 0px 1px 2px rgba(0, 0, 0, 0.3), 0px 16px 24px rgba(0, 0, 0, 0.06), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04);
-  --elevation-2: 0px 4px 4px rgba(0, 0, 0, 0.15), 0px 1px 2px rgba(0, 0, 0, 0.3), 0px 16px 24px rgba(0, 0, 0, 0.06), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04);
+  --elevation-1: 0px 1px 2px rgba(0, 0, 0, 0.3), 0px 16px 24px rgba(0, 0, 0, 0.06), 0px 2px 6px rgba(0, 0, 0, 0.04),
+    0px 0px 1px rgba(0, 0, 0, 0.04);
+  --elevation-2: 0px 4px 4px rgba(0, 0, 0, 0.15), 0px 1px 2px rgba(0, 0, 0, 0.3), 0px 16px 24px rgba(0, 0, 0, 0.06),
+    0px 2px 6px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04);
 }

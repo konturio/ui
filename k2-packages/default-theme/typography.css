@@ -20,11 +20,10 @@
 /* This is for short paragraphs with no more than four lines and is commonly used in components. */
 .k-font-short-m {
   font-family: IBM Plex Sans;
-  font-style: italic;
+  font-style: normal;
   font-weight: normal;
-  font-size: 12px;
-  line-height: 16px;
-  letter-spacing: 0.0032em;
+  font-size: 14px;
+  line-height: 18px;
 }
 
 /**
@@ -33,7 +32,7 @@
  * always left-align this type; never center it.
 **/
 .k-font-long-m {
-  font-family: IBM Plex Sans;
+  font-family: 'IBM Plex Sans';
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
@@ -43,16 +42,25 @@
 
 /* This is for short paragraphs with no more than four lines and is commonly used in components. */
 .k-font-short-l {
-  font-family: IBM Plex Sans;
+  font-family: 'IBM Plex Sans';
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
   line-height: 22px;
 }
 
+/* This is commonly used in both the expressive and the productive type theme layouts for long paragraphs with more than four lines. It is a good size for comfortable, long-form reading. Use this for longer body copy in components such as accordion or structured list. Always left-align this type; never center it. */
+.k-font-long-l {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+}
+
 /* This is for component and layout headings */
 .k-font-heading-m {
-  font-family: IBM Plex Sans;
+  font-family: 'IBM Plex Sans';
   font-style: normal;
   font-weight: 600;
   font-size: 14px;
@@ -62,10 +70,9 @@
 
 /* This is for component and layout headings */
 .k-font-heading-l {
-  font-family: IBM Plex Sans;
+  font-family: 'IBM Plex Sans';
   font-style: normal;
   font-weight: 600;
   font-size: 16px;
   line-height: 22px;
 }
-

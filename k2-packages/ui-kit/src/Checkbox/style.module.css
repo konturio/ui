@@ -41,7 +41,7 @@
       color: var(--primary-text-disabled)
     }
     &:checked {
-      background-color: var(--faint-line);
+      background-color: var(--primary-border-disabled);
     }
   }
 }

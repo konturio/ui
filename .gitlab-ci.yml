@@ -46,7 +46,7 @@ lint:
  script:
    - npm run lint
  dependencies:
-   - bootstrap
+   - install
 
 test:
   extends: .default-job-settings
@@ -54,7 +54,7 @@ test:
   script:
     - npm run test
   dependencies:
-    - bootstrap
+    - install
 
 # build:
 #   extends: .default-job-settings

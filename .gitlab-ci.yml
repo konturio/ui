@@ -3,7 +3,7 @@ stages:
   - bootstrap
   - lint
   - test
-  # - build
+ # - typecheck
   - release
 
 variables:
@@ -41,8 +41,6 @@ bootstrap:
 lint:
  extends: .default-job-settings
  stage: lint
- variables:
-   NODE_ENV: "development"
  script:
    - npm run lint
  dependencies:
@@ -56,19 +54,14 @@ test:
   dependencies:
     - install
 
-# build:
-#   extends: .default-job-settings
-#   stage: build
-#   variables:
-#     NODE_ENV: "production"
-#   script:
-#     - echo $NODE_ENV
-#     - npm run build
-#   dependencies:
-#     - install
-#   artifacts:
-#     paths:
-#       - k2-dev/base/dist
+typecheck:
+  extends: .default-job-settings
+  stage: typecheck
+  script:
+    - echo $NODE_ENV
+    - npm run typecheck
+  dependencies:
+    - install
 
 release:
   extends: .default-job-settings

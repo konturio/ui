@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.3.0](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/default-theme@2.2.0...@k2-packages/default-theme@2.3.0) (2021-08-13)
+
+
+### Features
+
+* add active state for button ([ef83d58](https://gitlab.com/kontur-private/k2/k2-front-end/commit/ef83d58102b4751f905802ab4dc71edda55babdc))
+* use new color system ([2cc3947](https://gitlab.com/kontur-private/k2/k2-front-end/commit/2cc39471022b664bbcf21d245893ecc7bf67e22d))
+
+
+
+
+
 # [2.2.0](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/default-theme@2.1.1...@k2-packages/default-theme@2.2.0) (2021-08-09)
 
 

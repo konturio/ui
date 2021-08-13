@@ -3,7 +3,7 @@ stages:
   - bootstrap
   - lint
   - test
- # - typecheck
+  # - typecheck
   - release
 
 variables:

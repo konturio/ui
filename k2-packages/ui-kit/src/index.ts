@@ -18,3 +18,5 @@ export { Panel } from './Panel';
 export { Radio } from './Radio';
 export { Tabs } from './Tabs';
 export { Toggler } from './Toggler';
+export { ActionsBar, ActionsBarBTN } from './ActionsBar';
+export { Text } from './Text';

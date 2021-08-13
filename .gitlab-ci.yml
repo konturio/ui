@@ -54,14 +54,14 @@ test:
   dependencies:
     - install
 
-typecheck:
-  extends: .default-job-settings
-  stage: typecheck
-  script:
-    - echo $NODE_ENV
-    - npm run typecheck
-  dependencies:
-    - install
+# typecheck:
+#   extends: .default-job-settings
+#   stage: typecheck
+#   script:
+#     - echo $NODE_ENV
+#     - npm run typecheck
+#   dependencies:
+#     - install
 
 release:
   extends: .default-job-settings

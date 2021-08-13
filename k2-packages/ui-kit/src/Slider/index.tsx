@@ -1,4 +1,3 @@
-import React from 'react';
 import cn from 'clsx';
 import s from './style.module.css';
 import { ColorsLegend } from './ColorsLegend';

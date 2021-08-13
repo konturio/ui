@@ -1,4 +1,3 @@
-import React from 'react';
 import { SelectableElement } from './SelectableElement';
 import { shallow } from 'enzyme';
 import s from './style.module.css';

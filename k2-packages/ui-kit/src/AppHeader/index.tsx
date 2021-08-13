@@ -40,7 +40,7 @@ export function AppHeader({
       </div>
       <div className={s.title}>{title}</div>
       <div className={s.children}>{children}</div>
-      <Button id={CHAT_BTN_ID} onClick={onChatClick} type="invert-outline">
+      <Button id={CHAT_BTN_ID} onClick={onChatClick} variant="invert-outline">
         <ChatIcon />
         Chat with us
       </Button>

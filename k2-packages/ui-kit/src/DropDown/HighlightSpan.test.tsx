@@ -1,4 +1,3 @@
-import React from 'react';
 import { HighlightSpan } from './HighlightSpan';
 import { shallow } from 'enzyme';
 import s from './style.module.css';

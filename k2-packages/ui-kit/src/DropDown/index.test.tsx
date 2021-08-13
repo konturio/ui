@@ -1,5 +1,3 @@
-import React from 'react';
-// import ReactDOM from 'react-dom';
 import { DropDown } from './index';
 import { SelectableElement } from './SelectableElement';
 import { HighlightSpan } from './HighlightSpan';

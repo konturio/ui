@@ -1,4 +1,3 @@
-import React from 'react';
 import { LanguageSelect } from './index';
 import { render, shallow } from 'enzyme';
 

@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-import React, { useState, useCallback } from 'react';
+import { useState, useCallback } from 'react';
 import cn from 'clsx';
 import s from './selectedItems.module.css';
 import { OptionType } from './Option';

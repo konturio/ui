@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import cn from 'clsx';
 import s from './style.module.css';

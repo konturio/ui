@@ -47,6 +47,7 @@ interface AxisControlProps {
 
 // auto-size calculation params
 const WIDTH_SHIFT = 25.5;
+const HEIGHT_SHIFT = 27.8;
 
 // text width measure hack
 const canvas = document.createElement('canvas');
@@ -60,7 +61,7 @@ const calculateStringWidth = (str: string): number => {
 
 const calculateHeadingsStyle = (baseDimension: number, vertical: boolean, index: number) => {
   return vertical
-    ? { height: `${baseDimension + index * WIDTH_SHIFT}px` }
+    ? { height: `${baseDimension + index * HEIGHT_SHIFT}px` }
     : { width: `${baseDimension + index * WIDTH_SHIFT}px` };
 };
 
@@ -135,7 +136,7 @@ export const AxisControl = forwardRef<HTMLDivElement | null, any>(
       let xLength = calculateStringWidth(xHeadings[0].label);
       for (let i = 1; i < xHeadings.length; i++) {
         const iStrWidth = calculateStringWidth(xHeadings[i].label);
-        const shift = i * WIDTH_SHIFT;
+        const shift = i * HEIGHT_SHIFT;
         if (iStrWidth > xLength + shift) {
           xLength = iStrWidth - shift;
         }

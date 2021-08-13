@@ -1,10 +1,5 @@
 import('jest-fetch-mock');
 
-declare module '*.styl' {
-  const s: { [className: string]: string };
-  export default s;
-}
-
 declare module '*.css' {
   const s: { [className: string]: string };
   export default s;

@@ -1,9 +1,35 @@
 {
   "extends": "./tsconfig.settings.json",
-  "files": [],
   "references": [
     {
-      "path": "k2-packages"
+      "path": "k2-packages/isochrone"
+    },
+    {
+      "path": "k2-packages/deck-gl"
+    },
+    {
+      "path": "k2-packages/client"
+    },
+    {
+      "path": "k2-packages/default-icons"
+    },
+    {
+      "path": "k2-packages/default-theme"
+    },
+    {
+      "path": "k2-packages/mapbox-map"
+    },
+    {
+      "path": "k2-packages/ui-kit"
+    },
+    {
+      "path": "k2-packages/geocoder"
+    },
+    {
+      "path": "k2-packages/boundaries"
+    },
+    {
+      "path": "k2-packages/bivariate-tools"
     }
   ]
 }

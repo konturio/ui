@@ -48,3 +48,4 @@ tsconfig.tsbuildinfo
 yarn-error.log
 npm_error.log
 cosmos/cosmos.userdeps.js
+cosmos/dist/

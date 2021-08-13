@@ -1,0 +1,38 @@
+{
+  "files": [],
+  "references": [
+    {
+      "path": "isochrone"
+    },
+    {
+      "path": "deck-gl"
+    },
+    {
+      "path": "client"
+    },
+    {
+      "path": "default-icons"
+    },
+    {
+      "path": "default-theme"
+    },
+    {
+      "path": "mapbox-map"
+    },
+    {
+      "path": "ui-kit"
+    },
+    {
+      "path": "geocoder"
+    },
+    {
+      "path": "boundaries"
+    },
+    {
+      "path": "bivariate-tools"
+    }
+  ],
+  "compilerOptions": {
+    "composite": true
+  }
+}

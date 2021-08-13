@@ -4,13 +4,28 @@ import cn from 'clsx';
 export interface MapButton {
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
   disabled?: boolean;
-  type?: 'primary' | 'invert-outline';
+  variant?: 'primary' | 'invert-outline';
   id?: string;
+  className?: string;
+  active?: boolean;
 }
 
-export function Button({ onClick, children, disabled, type = 'primary', id }: React.PropsWithChildren<MapButton>) {
+export function Button({
+  onClick,
+  children,
+  disabled,
+  className,
+  active,
+  variant = 'primary',
+  id,
+}: React.PropsWithChildren<MapButton>) {
   return (
-    <button className={cn(s.button, s[type])} onClick={onClick} disabled={disabled} id={id}>
+    <button
+      className={cn(s.button, s[variant], className, { [s.active]: active })}
+      onClick={onClick}
+      disabled={disabled}
+      id={id}
+    >
       {children}
     </button>
   );

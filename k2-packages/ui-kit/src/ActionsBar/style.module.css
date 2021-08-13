@@ -1,7 +1,10 @@
 .actionsBar {
-  background-color: black;
+  background-color: #32404D;
+  display: flex;
+  flex-flow: column nowrap;
+  height: 100%;
 }
 
-.actionsBarBTN {
-
+.actionsBTN {
+  margin: var(--unit);
 }

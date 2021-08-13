@@ -20,7 +20,8 @@
     background-color: var(--primary-surface-disabled);
     color: var(--primary-icon-disabled);
   }
-  &:active:not(:disabled) {
+  &:active:not(:disabled),
+  &.active {
     background-color: var(--primary-surface-active);
     color: var(--primary-text-active);
   }
@@ -43,7 +44,8 @@
     background-color: var(--invert-outline-surface-disabled);
     color: var(--invert-outline-icon-disabled);
   }
-  &:active:not(:disabled) {
+  &:active:not(:disabled),
+  &.active {
     background-color: var(--invert-outline-surface-active);
     color: var(--invert-outline-icon-active);
   }

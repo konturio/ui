@@ -1,4 +1,6 @@
 import React from 'react';
+import cn from 'clsx';
+import { Button } from '../Button';
 import s from './style.module.css';
 
 export function ActionsBar({ children }: React.PropsWithChildren<unknown>) {
@@ -7,11 +9,14 @@ export function ActionsBar({ children }: React.PropsWithChildren<unknown>) {
 
 export function ActionsBarBTN({
   children,
+  className,
   ...props
-}: React.PropsWithChildren<React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>>) {
+}: React.PropsWithChildren<
+  React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> & { active?: boolean }
+>) {
   return (
-    <button className={s.actionsBarBTN} {...props}>
+    <Button className={cn(s.actionsBTN, className)} {...props} variant="invert-outline">
       {children}
-    </button>
+    </Button>
   );
 }

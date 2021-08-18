@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.17.1](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@2.17.0...@k2-packages/ui-kit@2.17.1) (2021-08-18)
+
+
+### Bug Fixes
+
+* axis control ladder ([8bbdbf2](https://gitlab.com/kontur-private/k2/k2-front-end/commit/8bbdbf2d3c7f952df7c4b3a3c5a485fd18e6294b))
+
+
+
+
+
 # [2.17.0](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@2.16.0...@k2-packages/ui-kit@2.17.0) (2021-08-13)
 
 **Note:** Version bump only for package @k2-packages/ui-kit

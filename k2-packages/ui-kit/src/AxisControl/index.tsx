@@ -47,7 +47,7 @@ interface AxisControlProps {
 
 // auto-size calculation params
 const WIDTH_SHIFT = 25.5;
-const HEIGHT_SHIFT = 27.8;
+const HEIGHT_SHIFT = 25.5;
 
 // text width measure hack
 const canvas = document.createElement('canvas');

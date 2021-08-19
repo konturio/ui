@@ -18,7 +18,7 @@
     "release:push": "git push && git push origin --tags",
     "fix:dependencies": "npx syncpack fix-mismatches --peer",
     "lint": "lerna run lint && eslint '*/**/*.{ts,tsx}' --quiet",
-    "typecheck": "tsc --build",
+    "typecheck": "tsc --build --clean",
     "lint:fix": "eslint '*/**/*.{ts,tsx}' --quiet --fix",
     "lint-staged": "npx --no-install lint-staged",
     "cosmos": "cosmos",

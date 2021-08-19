@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.17.2](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@2.17.1...@k2-packages/ui-kit@2.17.2) (2021-08-19)
+
+
+### Bug Fixes
+
+* uikit / roll back change matrix labels width ([a53e2cd](https://gitlab.com/kontur-private/k2/k2-front-end/commit/a53e2cd6f3196733f3a4bdd2b52fac05f5517223))
+
+
+
+
+
 ## [2.17.1](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@2.17.0...@k2-packages/ui-kit@2.17.1) (2021-08-18)
 
 

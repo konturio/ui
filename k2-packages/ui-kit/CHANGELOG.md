@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.17.3](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@2.17.2...@k2-packages/ui-kit@2.17.3) (2021-08-31)
+
+**Note:** Version bump only for package @k2-packages/ui-kit
+
+
+
+
+
 ## [2.17.2](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@2.17.1...@k2-packages/ui-kit@2.17.2) (2021-08-19)
 
 

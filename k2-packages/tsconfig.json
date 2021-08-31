@@ -30,6 +30,9 @@
     },
     {
       "path": "bivariate-tools"
+    },
+    {
+      "path": "map"
     }
   ],
   "compilerOptions": {

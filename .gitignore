@@ -9,7 +9,7 @@
 *.cache
 
 # Builds
-tsclib
+tslib
 *.tsbuildinfo
 dist
 .plop/links/

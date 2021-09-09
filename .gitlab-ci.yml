@@ -3,8 +3,8 @@ stages:
   - bootstrap
   - lint
   - test
-  # - typecheck
-  - release
+  - build 
+  - publish
 
 variables:
   npm_config_cache: "$CI_PROJECT_DIR/.npm"
@@ -46,6 +46,15 @@ lint:
  dependencies:
    - install
 
+build:
+  extends: .default-job-settings
+  stage: typecheck
+  script:
+    - echo $NODE_ENV
+    - npm run build
+  dependencies:
+    - install
+
 test:
   extends: .default-job-settings
   stage: test
@@ -54,18 +63,9 @@ test:
   dependencies:
     - install
 
-# typecheck:
-#   extends: .default-job-settings
-#   stage: typecheck
-#   script:
-#     - echo $NODE_ENV
-#     - npm run typecheck
-#   dependencies:
-#     - install
-
-release:
+publish:
   extends: .default-job-settings
-  stage: release
+  stage: publish
   script:
     - npm run lerna:publish
   dependencies:

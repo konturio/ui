@@ -53,7 +53,7 @@ build:
     - echo $NODE_ENV
     - npm run build
   dependencies:
-    - install
+    - bootstrap
 
 test:
   extends: .default-job-settings

@@ -9,15 +9,9 @@
 *.cache
 
 # Builds
-k2-dev/**/tsclib
-k2-dev/**/*.tsbuildinfo
-k2-dev/**/dist
-k2-packages/**/tsclib
-k2-packages/**/*.tsbuildinfo
-k2-packages/**/dist
-templates/**/tsclib
-templates/**/*.tsbuildinfo
-templates/**/dist
+tsclib
+*.tsbuildinfo
+dist
 .plop/links/
 
 # Logs

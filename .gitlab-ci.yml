@@ -53,6 +53,7 @@ build:
     - echo $NODE_ENV
     - npm run build
   dependencies:
+    - install
     - bootstrap
 
 test:
@@ -62,6 +63,7 @@ test:
     - npm run test
   dependencies:
     - install
+    - bootstrap
 
 publish:
   extends: .default-job-settings
@@ -70,3 +72,5 @@ publish:
     - npm run lerna:publish
   dependencies:
     - install
+    - bootstrap
+    - build

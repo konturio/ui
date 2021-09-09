@@ -8,6 +8,6 @@
     "declarationMap": true,
     "outDir": "tslib"
   },
-  "include": ["./../../global.d.ts", "./**/*.ts", "./**/*.tsx"],
+  "include": ["./../../global.d.ts", "./src/**/*.ts", "./src/**/*.tsx"],
   "exclude": ["node_modules", "./**/*.test.ts","./**/*.test.tsx", "./**/*.fixture.ts", "./**/fixture/*.*"]
 }

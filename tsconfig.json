@@ -1,9 +1,40 @@
 {
-  "extends": "./tsconfig.settings.json",
   "files": [],
-  "references": [
-    {
-      "path": "k2-packages"
-    }
+  "references": [{ "path": "k2-packages" }],
+  "compilerOptions": {
+    "noErrorTruncation": true,
+    "noImplicitAny": false,
+    "suppressImplicitAnyIndexErrors": false,
+    "strictNullChecks": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": false,
+    "noImplicitThis": false,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "resolveJsonModule": true,
+    "target": "es6",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "jsx": "react-jsx",
+    "lib": ["dom", "ESNext"],
+    "strict": true,
+    "esModuleInterop": true,
+    "typeRoots": ["./node_modules/@types"],
+    "allowSyntheticDefaultImports": true,
+    "isolatedModules": true,
+  },
+  "exclude": [
+    "node_modules",
+    "k2-packages/*/node_modules",
+    "k2-packages/*/tsclib"
+  ],
+  "include": [
+    "./global.d.ts",
   ]
 }

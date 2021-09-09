@@ -26,8 +26,8 @@
     "cosmos:renderer": "vite --force serve --port=8080",
     "cosmos:renderer:export": "vite build",
     "cosmos:export": "cosmos-export",
-    "ts:build": "tsc --build",
-    "ts:clean": "tsc --build --clean"
+    "ts:build": "tsc --build --verbose",
+    "ts:clean": "find ./k2-packages -type d -name 'tslib' -exec rm -rf '{}' \\; && tsc --build --clean"
   },
   "lint-staged": {
     "*/**/*.{ts, tsx}": [

@@ -1,6 +1,7 @@
 {
   "extends": "../../tsconfig.settings.json",
   "compilerOptions": {
+    "composite": true,
     "rootDir": "src",
     "module": "esnext",
     "jsx": "react-jsx",

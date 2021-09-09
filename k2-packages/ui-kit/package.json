@@ -1,8 +1,8 @@
 {
   "name": "@k2-packages/ui-kit",
   "version": "2.17.3",
-  "main": "src/index.ts",
-  "types": "src/index.ts",
+  "main": "tslib/index.js",
+  "types": "tslib/index.d.ts",
   "sideEffects": false,
   "publishConfig": {
     "access": "restricted"

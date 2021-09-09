@@ -1,4 +1,3 @@
-import React from 'react';
 import cn from 'clsx';
 import { Button } from '../Button';
 import s from './style.module.css';

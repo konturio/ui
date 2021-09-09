@@ -1,6 +1,6 @@
-import React from 'react';
+import { memo } from 'react';
 
-const MarkerIcon = React.memo((props: React.SVGProps<SVGSVGElement>) => (
+const MarkerIcon = memo((props: React.SVGProps<SVGSVGElement>) => (
   <svg width="24" height="24" viewBox="0 0 24 24" {...props}>
     <path
       fillRule="evenodd"

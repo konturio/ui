@@ -43,3 +43,4 @@ yarn-error.log
 npm_error.log
 cosmos/cosmos.userdeps.js
 cosmos/dist/
+k2-packages/tsconfig.json

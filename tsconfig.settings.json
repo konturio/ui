@@ -25,11 +25,8 @@
     "esModuleInterop": true,
     "typeRoots": ["./node_modules/@types"],
     "composite": true,
-    "declaration": true,
-    "declarationMap": true,
     "allowSyntheticDefaultImports": true,
     "isolatedModules": true,
-    "noEmit": true
   },
   "exclude": [
     "node_modules",

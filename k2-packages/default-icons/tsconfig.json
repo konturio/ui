@@ -2,9 +2,12 @@
   "extends": "../../tsconfig.settings.json",
   "compilerOptions": {
     "rootDir": "src",
-    "outDir": "tsclib",
-    "module": "esnext"
+    "module": "esnext",
+    "jsx": "react-jsx",
+    "declaration": true,
+    "declarationMap": true,
+    "outDir": "tslib"
   },
-  "include": ["./../../global.d.ts", "./src/**/*.ts", "./src/**/*.tsx"],
-  "exclude": ["node_modules"]
+  "include": ["./../../global.d.ts", "./**/*.ts", "./**/*.tsx"],
+  "exclude": ["node_modules", "./**/*.test.ts","./**/*.test.tsx", "./**/*.fixture.ts", "./**/fixture/*.*"]
 }

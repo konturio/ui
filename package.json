@@ -25,7 +25,9 @@
     "cosmos": "cosmos",
     "cosmos:renderer": "vite --force serve --port=8080",
     "cosmos:renderer:export": "vite build",
-    "cosmos:export": "cosmos-export"
+    "cosmos:export": "cosmos-export",
+    "ts:build": "tsc --build",
+    "ts:clean": "tsc --build --clean"
   },
   "lint-staged": {
     "*/**/*.{ts, tsx}": [

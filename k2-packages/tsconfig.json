@@ -2,13 +2,13 @@
   "files": [],
   "references": [
     {
+      "path": "client"
+    },
+    {
       "path": "isochrone"
     },
     {
       "path": "deck-gl"
-    },
-    {
-      "path": "client"
     },
     {
       "path": "default-icons"
@@ -33,6 +33,9 @@
     },
     {
       "path": "map"
+    },
+    {
+      "path": "map-draw-tools"
     }
   ],
   "compilerOptions": {

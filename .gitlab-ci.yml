@@ -48,7 +48,7 @@ lint:
 
 build:
   extends: .default-job-settings
-  stage: typecheck
+  stage: build
   script:
     - echo $NODE_ENV
     - npm run build

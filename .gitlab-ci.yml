@@ -4,7 +4,6 @@ stages:
 
 variables:
   npm_config_cache: "$CI_PROJECT_DIR/.npm"
-  CI_DEBUG_TRACE: "true"
 
 .default-job-settings:
   tags:

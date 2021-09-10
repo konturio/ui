@@ -15,7 +15,8 @@
     "url": "git@gitlab.com:kontur-private/k2/k2-front-end.git"
   },
   "scripts": {
-    "lint": "node ./checkExports.mjs"
+    "lint": "node check-exports.mjs",
+    "build": "node copy-css.mjs"
   },
   "peerDependencies": {
     "clsx": "^1.1.1",

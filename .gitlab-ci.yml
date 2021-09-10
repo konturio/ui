@@ -1,9 +1,5 @@
 stages:
-  - install
-  - bootstrap
-  - lint
-  - test
-  - build 
+  - prepare
   - publish
 
 variables:
@@ -15,11 +11,17 @@ variables:
     - npm
     - docker
 
-install:
+prepare:
   extends: .default-job-settings
-  stage: install
+  stage: prepare
   script:
+    - n install 16
     - npm ci
+    - npm run bootstrap
+    - npm run lint
+    - npm run build
+    - npm run test
+
   cache:
     paths:
       - node_modules/
@@ -30,40 +32,6 @@ install:
     paths:
       - node_modules/
 
-bootstrap:
-  extends: .default-job-settings
-  stage: bootstrap
-  script:
-    - npm run bootstrap
-  dependencies:
-    - install
-
-lint:
- extends: .default-job-settings
- stage: lint
- script:
-   - npm run lint
- dependencies:
-   - install
-
-build:
-  extends: .default-job-settings
-  stage: build
-  script:
-    - npm ls @deck.gl/mapbox
-    - npm run build
-  dependencies:
-    - install
-    - bootstrap
-
-test:
-  extends: .default-job-settings
-  stage: test
-  script:
-    - npm run test
-  dependencies:
-    - install
-    - bootstrap
 
 publish:
   extends: .default-job-settings
@@ -71,6 +39,4 @@ publish:
   script:
     - npm run lerna:publish
   dependencies:
-    - install
-    - bootstrap
-    - build
+    - prepare

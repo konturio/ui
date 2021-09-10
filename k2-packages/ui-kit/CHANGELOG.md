@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-alpha.1](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@3.0.0-alpha.0...@k2-packages/ui-kit@3.0.0-alpha.1) (2021-09-10)
+
+
+### Features
+
+* add css copy ([3707591](https://gitlab.com/kontur-private/k2/k2-front-end/commit/3707591c1e14729803d3b93252acecee1d941740))
+
+
+
+
+
 # [3.0.0-alpha.0](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@2.17.4-alpha.0...@k2-packages/ui-kit@3.0.0-alpha.0) (2021-09-10)
 
 

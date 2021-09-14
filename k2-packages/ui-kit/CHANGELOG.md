@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-alpha.2](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@3.0.0-alpha.1...@k2-packages/ui-kit@3.0.0-alpha.2) (2021-09-14)
+
+
+### Bug Fixes
+
+* mark pakagens as es6 module, ([04ddf96](https://gitlab.com/kontur-private/k2/k2-front-end/commit/04ddf96cca47f098ce7f92fa561fd5063bcc1270))
+
+
+
+
+
 # [3.0.0-alpha.1](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@3.0.0-alpha.0...@k2-packages/ui-kit@3.0.0-alpha.1) (2021-09-10)
 
 

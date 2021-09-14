@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.3.2-alpha.1](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/default-theme@2.3.2-alpha.0...@k2-packages/default-theme@2.3.2-alpha.1) (2021-09-14)
+
+
+### Bug Fixes
+
+* mark pakagens as es6 module, ([04ddf96](https://gitlab.com/kontur-private/k2/k2-front-end/commit/04ddf96cca47f098ce7f92fa561fd5063bcc1270))
+
+
+
+
+
 ## [2.3.2-alpha.0](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/default-theme@2.3.1...@k2-packages/default-theme@2.3.2-alpha.0) (2021-09-10)
 
 **Note:** Version bump only for package @k2-packages/default-theme

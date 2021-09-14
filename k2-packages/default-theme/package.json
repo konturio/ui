@@ -1,13 +1,14 @@
 {
   "name": "@k2-packages/default-theme",
   "version": "2.3.2-alpha.0",
-  "publishConfig": {
-    "access": "restricted"
-  },
   "repository": {
     "type": "git",
     "url": "git@gitlab.com:kontur-private/k2/k2-front-end.git"
   },
+  "type": "module",
   "scripts": {},
+  "publishConfig": {
+    "access": "restricted"
+  },
   "gitHead": "997c9810c2404c1c8ba17fd17232a4c27bbcc25b"
 }

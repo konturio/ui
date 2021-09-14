@@ -1,20 +1,21 @@
 {
   "name": "@k2-packages/default-icons",
   "version": "2.0.0-alpha.0",
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.com:kontur-private/k2/k2-front-end.git"
+  },
+  "type": "module",
   "main": "tslib/index.js",
   "types": "tslib/index.d.ts",
   "files": [
     "tslib"
   ],
-  "publishConfig": {
-    "access": "restricted"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git@gitlab.com:kontur-private/k2/k2-front-end.git"
-  },
   "scripts": {},
   "peerDependencies": {
     "react": "^17.0.2"
+  },
+  "publishConfig": {
+    "access": "restricted"
   }
 }

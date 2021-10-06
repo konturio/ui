@@ -32,7 +32,7 @@
   "exclude": [
     "node_modules",
     "k2-packages/*/node_modules",
-    "k2-packages/*/tsclib"
+    "k2-packages/*/tslib"
   ],
   "include": [
     "./global.d.ts",

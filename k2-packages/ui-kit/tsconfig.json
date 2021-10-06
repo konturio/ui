@@ -2,14 +2,12 @@
   "extends": "../../tsconfig.json",
   "compilerOptions": {
     "composite": true,
-    "rootDir": "src",
-    "moduleResolution": "node",
-    "allowSyntheticDefaultImports": true,
+    "rootDir": "./src",
     "module": "esnext",
     "jsx": "react-jsx",
     "declaration": true,
     "declarationMap": true,
-    "outDir": "tslib"
+    "outDir": "./tslib"
   },
   "include": ["./../../global.d.ts", "./src/**/*.ts", "./src/**/*.tsx"],
   "exclude": ["node_modules", "./**/*.test.ts","./**/*.test.tsx", "./**/*.fixture.tsx", "./**/fixture/*.*"]

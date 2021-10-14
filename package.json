@@ -7,7 +7,7 @@
   "scripts": {
     "build": "run-s auto:ts:references auto:lerna:pre-build auto:ts:build auto:lerna:build",
     "dev": "run-p auto:cosmos:renderer auto:cosmos auto:open",
-    "bootstrap": "run-s auto:lerna:bootstrap lerna:link",
+    "bootstrap": "run-s auto:lerna:bootstrap auto:lerna:link",
     "cosmos:renderer:export": "vite build",
     "lerna:publish": "lerna publish from-package --yes",
     "lint:fix": "eslint '*/**/*.{ts,tsx}' --quiet --fix",

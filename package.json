@@ -29,6 +29,7 @@
     "auto:cosmos:export": "cosmos-export",
     "auto:cosmos:renderer": "vite --force serve --port=8080",
     "auto:lerna:pre-build": "lerna run pre-build",
+    "auto:lerna:pre-start": "lerna run pre-start",
     "auto:lerna:build": "lerna run build",
     "auto:ts:build": "tsc --build",
     "auto:ts:references": "node setup-references.mjs"

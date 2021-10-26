@@ -1,5 +1,6 @@
 import { useCallback, useState } from 'react';
 import { Radio } from '.';
+const css = (s: { raw: readonly string[] }) => s.raw[0];
 
 export default {
   Checkbox: (
@@ -28,4 +29,21 @@ export default {
       </div>
     );
   },
+  PlacementInRow: (
+    <div style={{ display: 'flex', flexFlow: 'column nowrap', width: '300px' }}>
+      <style>
+        {css`
+          .black-back {
+            background-color: rgba(0, 0, 0, 0.2);
+          }
+        `}
+      </style>
+      <div style={{ display: 'flex', flexFlow: 'row nowrap' }}>
+        <Radio id="blockPlacement" label="Block Placement" checked readOnly className="black-back" />
+      </div>
+      <div style={{ display: 'flex', flexFlow: 'row nowrap' }}>
+        <Radio id="inlinePlacement" label="Inline placement" checked readOnly block={false} className="black-back" />
+      </div>
+    </div>
+  ),
 };

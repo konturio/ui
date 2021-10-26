@@ -6,6 +6,10 @@
   position: relative;
   cursor: pointer;
   padding: var(--half-unit);
+  &.block {
+    display: flex;
+    flex: 1;
+  }
 }
 
 .checkbox {
@@ -38,7 +42,7 @@
     color: var(--primary-text-disabled);
     box-shadow: 0px 0px 0px 1px var(--primary-border-disabled);
     & ~ .label {
-      color: var(--primary-text-disabled)
+      color: var(--primary-text-disabled);
     }
     &:checked {
       background-color: var(--primary-border-disabled);

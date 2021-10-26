@@ -6,6 +6,10 @@
   position: relative;
   padding: var(--half-unit);
   cursor: pointer;
+  &.block {
+    display: flex;
+    flex: 1;
+  }
 }
 
 .radio {

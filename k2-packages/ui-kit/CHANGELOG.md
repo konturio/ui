@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-alpha.3](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@3.0.0-alpha.2...@k2-packages/ui-kit@3.0.0-alpha.3) (2021-10-26)
+
+
+### Features
+
+* block layout option for radio and checkbox ([b45005e](https://gitlab.com/kontur-private/k2/k2-front-end/commit/b45005ec10b477dc0d15c83eea702aa009bacd72))
+
+
+
+
+
 # [3.0.0-alpha.2](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@3.0.0-alpha.1...@k2-packages/ui-kit@3.0.0-alpha.2) (2021-09-14)
 
 

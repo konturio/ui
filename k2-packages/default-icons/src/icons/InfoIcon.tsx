@@ -1,7 +1,7 @@
 import { memo } from 'react';
 
 const InfoIcon = memo((props: React.SVGProps<SVGSVGElement>) => (
-  <svg fill="none" width="14" height="14" viewBox="0 0 14 14" {...props} >
+  <svg fill="none" width="14" height="14" viewBox="0 0 14 14" {...props}>
     <path
       opacity="0.3"
       stroke="#0A1622"
@@ -11,7 +11,8 @@ const InfoIcon = memo((props: React.SVGProps<SVGSVGElement>) => (
     />
     <path opacity="0.3" stroke="#0A1622" strokeLinecap="round" strokeLinejoin="round" d="M7 9.33333V7" />
     <path opacity="0.3" stroke="#0A1622" strokeLinecap="round" strokeLinejoin="round" d="M7 4.66669H7.00667" />
-  </svg>));
+  </svg>
+));
 
 InfoIcon.displayName = 'InfoIcon';
 

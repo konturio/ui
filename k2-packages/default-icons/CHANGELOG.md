@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.4](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/default-icons@2.0.0-alpha.3...@k2-packages/default-icons@2.0.0-alpha.4) (2021-11-01)
+
+
+### Features
+
+* **default-icons:** Add disaster ninja icons ([3d1edd1](https://gitlab.com/kontur-private/k2/k2-front-end/commit/3d1edd14ef5ac6020c172be5b88fd7f55211bcba))
+
+
+
+
+
 # [2.0.0-alpha.3](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/default-icons@2.0.0-alpha.2...@k2-packages/default-icons@2.0.0-alpha.3) (2021-10-27)
 
 **Note:** Version bump only for package @k2-packages/default-icons

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.5](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/default-icons@2.0.0-alpha.4...@k2-packages/default-icons@2.0.0-alpha.5) (2021-11-05)
+
+
+### Features
+
+* **default-icons:** Add draw-tools icon: ([3d0799c](https://gitlab.com/kontur-private/k2/k2-front-end/commit/3d0799cfac0b80b754b8fc3d7378eb074255ba84))
+
+
+
+
+
 # [2.0.0-alpha.4](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/default-icons@2.0.0-alpha.3...@k2-packages/default-icons@2.0.0-alpha.4) (2021-11-01)
 
 

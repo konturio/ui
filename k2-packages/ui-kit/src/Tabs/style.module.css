@@ -1,6 +1,6 @@
 .navigation {
   display: flex;
-  flex-flow: rorw wrap;
+  flex-flow: row wrap;
   font-weight: 500;
   letter-spacing: 0.02em;
   text-transform: uppercase;

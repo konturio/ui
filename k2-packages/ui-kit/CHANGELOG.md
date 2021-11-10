@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-alpha.5](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@3.0.0-alpha.4...@k2-packages/ui-kit@3.0.0-alpha.5) (2021-11-10)
+
+
+### Bug Fixes
+
+* **ui-kit-panel:** Panel lint fix ([0ab385b](https://gitlab.com/kontur-private/k2/k2-front-end/commit/0ab385b72c23095a62c32e6a57a4841b4833662d))
+
+
+### Features
+
+* **ui-components:** Add ability to provide additional styling for tabs and panel ([9f0ace7](https://gitlab.com/kontur-private/k2/k2-front-end/commit/9f0ace719b32f352d9cdb5047221340f01f232d8))
+
+
+
+
+
 # [3.0.0-alpha.4](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@3.0.0-alpha.3...@k2-packages/ui-kit@3.0.0-alpha.4) (2021-10-27)
 
 **Note:** Version bump only for package @k2-packages/ui-kit

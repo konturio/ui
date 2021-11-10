@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-alpha.6](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@3.0.0-alpha.5...@k2-packages/ui-kit@3.0.0-alpha.6) (2021-11-10)
+
+
+### Bug Fixes
+
+* **ui-kit-tabs:** Fix styling ([173d5ba](https://gitlab.com/kontur-private/k2/k2-front-end/commit/173d5babba76c05251a3d57787d9d614c1b5e90a))
+
+
+
+
+
 # [3.0.0-alpha.5](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@3.0.0-alpha.4...@k2-packages/ui-kit@3.0.0-alpha.5) (2021-11-10)
 
 

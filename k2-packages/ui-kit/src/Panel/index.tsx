@@ -23,7 +23,7 @@ export function Panel({ className, children, header, onClose, classes }: React.P
   return (
     <Card className={cn(s.card, className)}>
       {header && (
-        <div className={cn(s.header, classes?.header )}>
+        <div className={cn(s.header, classes?.header)}>
           <div>{header}</div>
           {onClose && (
             <button className={cn(s.close, classes?.closeBtn)} onClick={onClose}>

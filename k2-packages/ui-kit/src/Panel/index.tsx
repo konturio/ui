@@ -6,6 +6,10 @@ interface Panel {
   className?: string;
   header?: string | React.ReactChild | React.ReactChild[];
   onClose?: React.MouseEventHandler<HTMLButtonElement>;
+  classes?: {
+    header?: string;
+    closeBtn?: string;
+  };
 }
 
 const CrossIcon = () => (
@@ -15,14 +19,14 @@ const CrossIcon = () => (
   </svg>
 );
 
-export function Panel({ className, children, header, onClose }: React.PropsWithChildren<Panel>) {
+export function Panel({ className, children, header, onClose, classes }: React.PropsWithChildren<Panel>) {
   return (
     <Card className={cn(s.card, className)}>
       {header && (
-        <div className={s.header}>
+        <div className={cn(s.header, classes?.header )}>
           <div>{header}</div>
           {onClose && (
-            <button className={s.close} onClick={onClose}>
+            <button className={cn(s.close, classes?.closeBtn)} onClick={onClose}>
               <CrossIcon />
             </button>
           )}

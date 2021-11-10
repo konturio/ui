@@ -7,12 +7,12 @@
   border-bottom: 1px solid var(--primary-faint-border-regular);
 }
 
-
 .tabBtn {
   display: inline-flex;
   padding: var(--unit);
   cursor: pointer;
   color: var(--primary-text-regular);
+
   &.current {
     color: var(--primary-text-active);
     .name {
@@ -28,6 +28,7 @@
       }
     }
   }
+
   &:hover {
     color: var(--primary-text-active);
   }
@@ -36,6 +37,7 @@
 .input {
   position: absolute;
   opacity: 0;
+
   &:focus + .tabBtn {
     box-shadow: 0 0 0 2px var(--primary-focus-outline-regular);
   }

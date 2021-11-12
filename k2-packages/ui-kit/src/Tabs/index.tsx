@@ -3,13 +3,14 @@ import cn from 'clsx';
 import s from './style.module.css';
 
 export interface TabsProps {
-  children: JSX.Element[];
+  children: JSX.Element[] | JSX.Element;
   current: string;
   onTabChange: (tabId: string) => void;
   classes?: {
     tabBtn?: string;
     tabName?: string;
     tabBody?: string;
+    tabContainer?: string;
   };
 }
 
@@ -32,7 +33,7 @@ export function Tabs({ children, current: currentTabId, onTabChange: setCurrentT
     <div className={s.tabsContainer}>
       <div className={s.navigation}>
         {tabs.map((c) => (
-          <>
+          <div key={c.id} className={classes?.tabContainer}>
             <input
               type="radio"
               value={c.id}
@@ -44,7 +45,7 @@ export function Tabs({ children, current: currentTabId, onTabChange: setCurrentT
             <label htmlFor={c.id} className={cn(s.tabBtn, classes?.tabBtn, { [s.current]: c.id === currentTabId })}>
               <span className={cn(s.name, classes?.tabName)}>{c.name}</span>
             </label>
-          </>
+          </div>
         ))}
       </div>
       <div className={cn(s.body, classes?.tabBody)}>{currentTab ? currentTab.element : null}</div>

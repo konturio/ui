@@ -44,7 +44,7 @@ interface PanelIconProps {
   className?: string;
 }
 
-export function PanelIcon( { icon, clickHandler, className }: PanelIconProps ) {
+export function PanelIcon({ icon, clickHandler, className }: PanelIconProps) {
   return (
     <Card onClick={clickHandler} className={cn(s.panelIcon, className)}>
       {icon}

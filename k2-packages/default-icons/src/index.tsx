@@ -11,4 +11,17 @@ import BoundarySelectorIcon from './icons/BoundarySelectorIcon';
 import UploadFileIcon from './icons/UploadFileIcon';
 import AnalyticsPanelIcon from './icons/AnalyticsPanelIcon';
 
-export { SearchIcon, CallIcon, CloseIcon, FlameIcon, FireTruckIcon, HydrantIcon, MarkerIcon, DisastersListIcon, BoundarySelectorIcon, UploadFileIcon, DrawToolslcon, AnalyticsPanelIcon };
+export {
+  SearchIcon,
+  CallIcon,
+  CloseIcon,
+  FlameIcon,
+  FireTruckIcon,
+  HydrantIcon,
+  MarkerIcon,
+  DisastersListIcon,
+  BoundarySelectorIcon,
+  UploadFileIcon,
+  DrawToolslcon,
+  AnalyticsPanelIcon,
+};

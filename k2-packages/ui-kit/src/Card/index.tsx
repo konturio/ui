@@ -7,5 +7,9 @@ interface CardProps extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDiv
 }
 
 export function Card({ className, children, inline = false, ...props }: React.PropsWithChildren<CardProps>) {
-  return <div className={cn(s.card, inline ? s.inline : s.block, className)} {...props}>{children}</div>;
+  return (
+    <div className={cn(s.card, inline ? s.inline : s.block, className)} {...props}>
+      {children}
+    </div>
+  );
 }

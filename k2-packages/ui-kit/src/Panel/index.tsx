@@ -1,6 +1,7 @@
 import { Card } from '../Card';
 import cn from 'clsx';
 import s from './style.module.css';
+import { ReactChild } from 'react';
 
 interface Panel {
   className?: string;
@@ -33,6 +34,20 @@ export function Panel({ className, children, header, onClose, classes }: React.P
         </div>
       )}
       {children}
+    </Card>
+  );
+}
+
+interface PanelIconProps {
+  icon: ReactChild;
+  clickHandler?: () => void;
+  className?: string;
+}
+
+export function PanelIcon({ icon, clickHandler, className }: PanelIconProps) {
+  return (
+    <Card onClick={clickHandler} className={cn(s.panelIcon, className)}>
+      {icon}
     </Card>
   );
 }

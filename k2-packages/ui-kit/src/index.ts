@@ -14,7 +14,7 @@ export { AppHeader } from './AppHeader';
 export { Details } from './Details';
 export { Logo } from './Logo';
 export { Button } from './Button';
-export { Panel } from './Panel';
+export { Panel, PanelIcon } from './Panel';
 export { Radio } from './Radio';
 export { Tabs } from './Tabs';
 export { Toggler } from './Toggler';

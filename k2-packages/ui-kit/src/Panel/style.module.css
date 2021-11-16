@@ -16,3 +16,18 @@
     display: block; 
   }
 }
+
+.panelIcon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-color: #fff;
+
+  &:hover {
+     background-color: #f7f7f7;
+  }
+}
+

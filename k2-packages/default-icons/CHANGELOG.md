@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.6](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/default-icons@2.0.0-alpha.5...@k2-packages/default-icons@2.0.0-alpha.6) (2021-11-16)
+
+
+### Bug Fixes
+
+* **analytics-pane:** Fixes for anaylitics panel ([6ae2c80](https://gitlab.com/kontur-private/k2/k2-front-end/commit/6ae2c808c1d4f36b4ca8b8c0e2e0ef18249d93d2))
+* upload icons must look like plus ([ad0ea28](https://gitlab.com/kontur-private/k2/k2-front-end/commit/ad0ea2829dd3df5ed27d1bcdb3c8c1f5974f2766))
+
+
+
+
+
 # [2.0.0-alpha.5](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/default-icons@2.0.0-alpha.4...@k2-packages/default-icons@2.0.0-alpha.5) (2021-11-05)
 
 

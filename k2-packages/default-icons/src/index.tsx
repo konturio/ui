@@ -10,4 +10,3 @@ export * as DrawToolslcon from './icons/DrawToolslcon';
 export * as BoundarySelectorIcon from './icons/BoundarySelectorIcon';
 export * as UploadFileIcon from './icons/UploadFileIcon';
 export * as AnalyticsPanelIcon from './icons/AnalyticsPanelIcon';
-

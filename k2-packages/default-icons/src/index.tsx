@@ -1,12 +1,27 @@
-export * as SearchIcon from './icons/SearchIcon';
-export * as CallIcon from './icons/CallIcon';
-export * as CloseIcon from './icons/CloseIcon';
-export * as FlameIcon from './icons/FlameIcon';
-export * as FireTruckIcon from './icons/FireTruckIcon';
-export * as HydrantIcon from './icons/HydrantIcon';
-export * as MarkerIcon from './icons/MarkerIcon';
-export * as DisastersListIcon from './icons/DisastersListIcon';
-export * as DrawToolslcon from './icons/DrawToolslcon';
-export * as BoundarySelectorIcon from './icons/BoundarySelectorIcon';
-export * as UploadFileIcon from './icons/UploadFileIcon';
-export * as AnalyticsPanelIcon from './icons/AnalyticsPanelIcon';
+import SearchIcon from './icons/SearchIcon';
+import CallIcon from './icons/CallIcon';
+import CloseIcon from './icons/CloseIcon';
+import FlameIcon from './icons/FlameIcon';
+import FireTruckIcon from './icons/FireTruckIcon';
+import HydrantIcon from './icons/HydrantIcon';
+import MarkerIcon from './icons/MarkerIcon';
+import DisastersListIcon from './icons/DisastersListIcon';
+import DrawToolslcon from './icons/DrawToolslcon';
+import BoundarySelectorIcon from './icons/BoundarySelectorIcon';
+import UploadFileIcon from './icons/UploadFileIcon';
+import AnalyticsPanelIcon from './icons/AnalyticsPanelIcon';
+
+export {
+  SearchIcon,
+  CallIcon,
+  CloseIcon,
+  FlameIcon,
+  FireTruckIcon,
+  HydrantIcon,
+  MarkerIcon,
+  DisastersListIcon,
+  BoundarySelectorIcon,
+  UploadFileIcon,
+  DrawToolslcon,
+  AnalyticsPanelIcon,
+};

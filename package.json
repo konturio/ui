@@ -9,7 +9,7 @@
     "dev": "run-p auto:lerna:pre-start auto:cosmos:renderer auto:cosmos auto:open",
     "bootstrap": "run-s auto:lerna:bootstrap auto:lerna:link",
     "cosmos:renderer:export": "vite build",
-    "lerna:publish": "lerna publish from-package --yes",
+    "lerna:publish": "run-s build lerna publish from-package --yes",
     "lint:fix": "eslint '*/**/*.{ts,tsx}' --quiet --fix",
     "lint-staged": "npx --no-install lint-staged",
     "release": "run-s auto:lint auto:typecheck auto:lerna:version",

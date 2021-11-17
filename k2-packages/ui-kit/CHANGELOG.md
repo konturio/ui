@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-alpha.8](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@3.0.0-alpha.6...@k2-packages/ui-kit@3.0.0-alpha.8) (2021-11-17)
+
+
+### Bug Fixes
+
+* **analytics-pane:** Fixes for anaylitics panel ([6ae2c80](https://gitlab.com/kontur-private/k2/k2-front-end/commit/6ae2c808c1d4f36b4ca8b8c0e2e0ef18249d93d2))
+* shrinked controls ([d92baa5](https://gitlab.com/kontur-private/k2/k2-front-end/commit/d92baa5a2ddf7887b92801a6c73290f1ea4e083f))
+* Tabs ui komponent: ([48c165d](https://gitlab.com/kontur-private/k2/k2-front-end/commit/48c165d4e4a9cd5b4da5d2718612da85c1a44eaa))
+
+
+
+
+
 # [3.0.0-alpha.7](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@3.0.0-alpha.6...@k2-packages/ui-kit@3.0.0-alpha.7) (2021-11-16)
 
 

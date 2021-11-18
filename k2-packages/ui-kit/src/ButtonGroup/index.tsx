@@ -1,6 +1,6 @@
-import React, {Children, isValidElement, ReactElement, useMemo, useState} from 'react';
+import React, { Children, isValidElement, ReactElement, useMemo, useState } from 'react';
 import s from './style.module.css';
-import {ButtonProps} from '../Button';
+import { ButtonProps } from '../Button';
 import clsx from 'clsx';
 
 export interface ButtonGroupProps {
@@ -40,7 +40,12 @@ export function ButtonGroup({ current, children, onChange, classes }: ButtonGrou
       {buttons.map((button) => (
         <div
           key={button.id}
-          className={clsx(classes?.btnContainer, s.button, button.isActive && s.activeBtn, button.isActive && 'activeBtn')}
+          className={clsx(
+            classes?.btnContainer,
+            s.button,
+            button.isActive && s.activeBtn,
+            button.isActive && 'activeBtn',
+          )}
           onClick={() => {
             onBtnClick(button.id);
           }}

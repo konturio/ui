@@ -31,5 +31,5 @@ export {
   DrawPolygonIcon,
   TrashBinIcon,
   DrawLineIcon,
-  DrawPointIcon
+  DrawPointIcon,
 };

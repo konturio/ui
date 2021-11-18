@@ -6,10 +6,14 @@ import FireTruckIcon from './icons/FireTruckIcon';
 import HydrantIcon from './icons/HydrantIcon';
 import MarkerIcon from './icons/MarkerIcon';
 import DisastersListIcon from './icons/DisastersListIcon';
-import DrawToolslcon from './icons/DrawToolslcon';
+import DrawToolsIcon from './icons/DrawToolslcon';
 import BoundarySelectorIcon from './icons/BoundarySelectorIcon';
 import UploadFileIcon from './icons/UploadFileIcon';
 import AnalyticsPanelIcon from './icons/AnalyticsPanelIcon';
+import DrawPolygonIcon from './icons/DrawPolygonIcon';
+import TrashBinIcon from './icons/TrashBinIcon';
+import DrawLineIcon from './icons/DrawLineIcon';
+import DrawPointIcon from './icons/DrawPointIcon';
 
 export {
   SearchIcon,
@@ -22,6 +26,10 @@ export {
   DisastersListIcon,
   BoundarySelectorIcon,
   UploadFileIcon,
-  DrawToolslcon,
+  DrawToolsIcon,
   AnalyticsPanelIcon,
+  DrawPolygonIcon,
+  TrashBinIcon,
+  DrawLineIcon,
+  DrawPointIcon,
 };

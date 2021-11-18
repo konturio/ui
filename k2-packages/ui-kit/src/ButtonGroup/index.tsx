@@ -40,7 +40,7 @@ export function ButtonGroup({ current, children, onChange, classes }: ButtonGrou
       {buttons.map((button) => (
         <div
           key={button.id}
-          className={clsx(classes?.btnContainer, s.button, button.isActive && s.activeBtn)}
+          className={clsx(classes?.btnContainer, s.button, button.isActive && s.activeBtn, button.isActive && 'activeBtn')}
           onClick={() => {
             onBtnClick(button.id);
           }}

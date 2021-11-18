@@ -6,7 +6,7 @@ import FireTruckIcon from './icons/FireTruckIcon';
 import HydrantIcon from './icons/HydrantIcon';
 import MarkerIcon from './icons/MarkerIcon';
 import DisastersListIcon from './icons/DisastersListIcon';
-import DrawToolslcon from './icons/DrawToolslcon';
+import DrawToolsIcon from './icons/DrawToolslcon';
 import BoundarySelectorIcon from './icons/BoundarySelectorIcon';
 import UploadFileIcon from './icons/UploadFileIcon';
 import AnalyticsPanelIcon from './icons/AnalyticsPanelIcon';
@@ -26,7 +26,7 @@ export {
   DisastersListIcon,
   BoundarySelectorIcon,
   UploadFileIcon,
-  DrawToolslcon,
+  DrawToolsIcon,
   AnalyticsPanelIcon,
   DrawPolygonIcon,
   TrashBinIcon,

@@ -10,6 +10,10 @@ import DrawToolslcon from './icons/DrawToolslcon';
 import BoundarySelectorIcon from './icons/BoundarySelectorIcon';
 import UploadFileIcon from './icons/UploadFileIcon';
 import AnalyticsPanelIcon from './icons/AnalyticsPanelIcon';
+import DrawPolygonIcon from './icons/DrawPolygonIcon';
+import TrashBinIcon from './icons/TrashBinIcon';
+import DrawLineIcon from './icons/DrawLineIcon';
+import DrawPointIcon from './icons/DrawPointIcon';
 
 export {
   SearchIcon,
@@ -24,4 +28,8 @@ export {
   UploadFileIcon,
   DrawToolslcon,
   AnalyticsPanelIcon,
+  DrawPolygonIcon,
+  TrashBinIcon,
+  DrawLineIcon,
+  DrawPointIcon
 };

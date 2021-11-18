@@ -1,7 +1,7 @@
 import s from './style.module.css';
 import cn from 'clsx';
 
-export interface MapButton {
+export interface ButtonProps {
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
   disabled?: boolean;
   variant?: 'primary' | 'invert-outline';
@@ -18,7 +18,7 @@ export function Button({
   active,
   variant = 'primary',
   id,
-}: React.PropsWithChildren<MapButton>) {
+}: React.PropsWithChildren<ButtonProps>) {
   return (
     <button
       className={cn(s.button, s[variant], className, { [s.active]: active })}

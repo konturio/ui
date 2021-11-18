@@ -1,0 +1,28 @@
+.groupContainer {
+	display: flex;
+	box-shadow: var(--elevation-1);
+	border-radius: 4px;
+	overflow: hidden;
+}
+
+.button {
+	button {
+		border-radius: 0;
+		box-shadow: none;
+		&:hover:not(:disabled) {
+			box-shadow: none;
+			background-color: #e5e5e5;
+		}
+		&:focus {
+			box-shadow: none;
+		}
+	}
+
+	&.activeBtn {
+		button {
+			background-color: #c5c5c5;
+		}
+	}
+}
+
+

@@ -20,3 +20,4 @@ export { Tabs } from './Tabs';
 export { Toggler } from './Toggler';
 export { ActionsBar, ActionsBarBTN } from './ActionsBar';
 export { Text } from './Text';
+export { ButtonGroup } from './ButtonGroup';

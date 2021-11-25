@@ -12,7 +12,7 @@
     "publish": "run-s build auto:lerna:publish",
     "lint:fix": "eslint \"*/**/*.{ts,tsx}\" --quiet --fix",
     "lint-staged": "npx --no-install lint-staged",
-    "release": "run-s build auto:lint auto:typecheck auto:lerna:version",
+    "release": "run-s build lint:fix auto:lint auto:typecheck auto:lerna:version",
     "release:push": "git push && git push origin --tags",
     "version:no-push": "lerna version --no-push",
     "test": "jest",

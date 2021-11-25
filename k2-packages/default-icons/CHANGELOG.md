@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.9](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/default-icons@2.0.0-alpha.7...@k2-packages/default-icons@2.0.0-alpha.9) (2021-11-25)
+
+
+### Features
+
+* **ui-kit:** Add button group ([8bcc17b](https://gitlab.com/kontur-private/k2/k2-front-end/commit/8bcc17b9f07d70e4e6f0cdca3270f0c8b4bedeb1))
+* **ui:** Add new icons and button bar ([d400220](https://gitlab.com/kontur-private/k2/k2-front-end/commit/d4002206790b6f5a42e0d21aba1e972e25508bc1))
+
+
+
+
+
 # [2.0.0-alpha.8](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/default-icons@2.0.0-alpha.7...@k2-packages/default-icons@2.0.0-alpha.8) (2021-11-16)
 
 **Note:** Version bump only for package @k2-packages/default-icons

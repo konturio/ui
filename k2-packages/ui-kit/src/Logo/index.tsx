@@ -76,6 +76,7 @@ export function Logo({
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
           style={{ display: 'block' }}
+          id={id}
         >
           <g clipPath="url(#clip0)">
             <path

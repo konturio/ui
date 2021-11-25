@@ -36,6 +36,6 @@ publish:
   extends: .default-job-settings
   stage: publish
   script:
-    - npm run lerna:publish
+    - npm run auto:lerna:publish
   dependencies:
     - prepare

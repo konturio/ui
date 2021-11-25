@@ -5,7 +5,7 @@ const Content = ({ children }) => (
   <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '3rem' }}>{children}</div>
 );
 
-export default () => {
+export default function Fixture() {
   const [currentTabId, setCurrentTabId] = useValue('currentTab', { defaultValue: 'foo' as string });
   return (
     <Tabs current={currentTabId} onTabChange={setCurrentTabId}>
@@ -20,4 +20,4 @@ export default () => {
       </Tab>
     </Tabs>
   );
-};
+}

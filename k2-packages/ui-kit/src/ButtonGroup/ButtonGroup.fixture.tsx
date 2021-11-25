@@ -2,7 +2,7 @@ import { useValue } from 'react-cosmos/fixture';
 import { ButtonGroup } from './index';
 import { Button } from '../Button';
 
-export default () => {
+export default function Fixture() {
   const [currentButton, setCurrentButton] = useValue('currentButton', { defaultValue: 'button1' as string });
   return (
     <ButtonGroup current={currentButton} onChange={setCurrentButton}>
@@ -12,4 +12,4 @@ export default () => {
       <Button id="button4">Button 4</Button>
     </ButtonGroup>
   );
-};
+}

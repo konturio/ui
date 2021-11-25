@@ -23,7 +23,7 @@ export function AppHeader({
   onChatClick,
   installChat,
 }: React.PropsWithChildren<{
-  title: string;
+  title: string | JSX.Element;
   onChatClick?: React.MouseEventHandler<HTMLButtonElement>;
   installChat?: (id: string) => void;
 }>) {

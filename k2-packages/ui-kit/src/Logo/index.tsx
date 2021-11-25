@@ -9,10 +9,12 @@ export function Logo({
   compact = false,
   palette = 'colorful',
   height = 52,
+  id = 'kontur_logo_svg_id',
 }: {
   compact?: boolean;
   palette?: 'colorful' | 'dark' | 'light' | 'contrast';
   height?: number;
+  id?: string;
 }) {
   const compactWidth = Math.round(height * 1.041237113);
   const width = Math.round(height * 3.340206186);
@@ -26,6 +28,7 @@ export function Logo({
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
           style={{ display: 'block' }}
+          id={id}
         >
           <rect
             x="15"

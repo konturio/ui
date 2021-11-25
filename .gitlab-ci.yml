@@ -15,6 +15,7 @@ prepare:
   stage: prepare
   script:
     - n install 16
+    - npm i lerna -g
     - lerna bootstrap
     - npm run auto:lint
     - npm run build

@@ -22,8 +22,10 @@ export function AppHeader({
   children,
   onChatClick,
   installChat,
+  logo = <Logo height={24} />,
 }: React.PropsWithChildren<{
-  title: string;
+  title: string | JSX.Element;
+  logo?: JSX.Element;
   onChatClick?: React.MouseEventHandler<HTMLButtonElement>;
   installChat?: (id: string) => void;
 }>) {
@@ -35,9 +37,7 @@ export function AppHeader({
 
   return (
     <div className={s.appHeader}>
-      <div className={s.logo}>
-        <Logo height={24} />
-      </div>
+      <div className={s.logo}>{logo}</div>
       <div className={s.title}>{title}</div>
       <div className={s.children}>{children}</div>
       <Button id={CHAT_BTN_ID} onClick={onChatClick} variant="invert-outline">

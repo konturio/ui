@@ -3,7 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-# [3.0.0-alpha.10](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@3.0.0-alpha.9...@k2-packages/ui-kit@3.0.0-alpha.10) (2021-11-18)
+# [3.0.0-alpha.12](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@3.0.0-alpha.11...@k2-packages/ui-kit@3.0.0-alpha.12) (2021-11-26)
+
+**Note:** Version bump only for package @k2-packages/ui-kit
+
+
+
+
+
+# [3.0.0-alpha.11](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@3.0.0-alpha.9...@k2-packages/ui-kit@3.0.0-alpha.11) (2021-11-25)
+
+
+### Features
+
+* allow overwrite logotype ([f413ed1](https://gitlab.com/kontur-private/k2/k2-front-end/commit/f413ed1df8ec540ead45f35af64d4ab6780f998b))
+* **ui-kit:** Add button group ([8bcc17b](https://gitlab.com/kontur-private/k2/k2-front-end/commit/8bcc17b9f07d70e4e6f0cdca3270f0c8b4bedeb1))
+* **ui:** Add new icons and button bar ([d400220](https://gitlab.com/kontur-private/k2/k2-front-end/commit/d4002206790b6f5a42e0d21aba1e972e25508bc1))
+
+
+
+
+
+# [3.0.0-alpha.10](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@3.0.0-alpha.9...@k2-packages/ui-kit@3.0.0-alpha.10) (2021-11-25)
 
 
 ### Features

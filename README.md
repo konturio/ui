@@ -106,20 +106,12 @@ and request have at least one :like: (not yours). If CI/CD pipeline without erro
 If you need release modules in NPM nexus repo, you need some extra steps:
 
 5. Clone fresh `master` branch with merged request
-6. `lerna version --no-push`
-7. Commit changes
-```
-git add .
-git commit -m 'build: modules version bump'
-git push origin --tags
-```
-8. Wait until pipeline task 'release' was success
-9. Rebuild the app where you want to use the new modules
+6. `npm run release`
+7. Wait until pipeline task 'release' was success
+8. Rebuild the app where you want to use the new modules
 
-or just
-```
-npm run release
-```
+> is something wrong in CI as workaround you can run `npm run publish` manually
+
 
 ### Localization
 Localization done with a complete solution of i18next.

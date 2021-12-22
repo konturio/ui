@@ -65,7 +65,7 @@ const calculateHeadingsStyle = (baseDimension: number, vertical: boolean, index:
     : { width: `${baseDimension + index * WIDTH_SHIFT}px` };
 };
 
-export const AxisControl = forwardRef<HTMLDivElement | null, any>(
+const AxisControlComponent = forwardRef<HTMLDivElement | null, any>(
   (
     { matrix, xHeadings, yHeadings, onSelectCell, selectedCell, cellSize = 0, onSelectDenominator }: AxisControlProps,
     ref,
@@ -259,3 +259,6 @@ export const AxisControl = forwardRef<HTMLDivElement | null, any>(
     );
   },
 );
+AxisControlComponent.displayName = 'AxisControl';
+
+export const AxisControl = AxisControlComponent;

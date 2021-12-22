@@ -15,8 +15,8 @@ prepare:
   stage: prepare
   script:
     - n install 16
-    - npm ci
-    - npm run bootstrap
+    - npm i lerna -g
+    - lerna bootstrap
     - npm run auto:lint
     - npm run build
     - npm run test
@@ -36,6 +36,6 @@ publish:
   extends: .default-job-settings
   stage: publish
   script:
-    - npm run lerna:publish
+    - npm run auto:lerna:publish
   dependencies:
     - prepare

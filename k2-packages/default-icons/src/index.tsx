@@ -14,6 +14,10 @@ import DrawPolygonIcon from './icons/DrawPolygonIcon';
 import TrashBinIcon from './icons/TrashBinIcon';
 import DrawLineIcon from './icons/DrawLineIcon';
 import DrawPointIcon from './icons/DrawPointIcon';
+import InfoIcon from './icons/InfoIcon';
+import LegendPanelIcon from './icons/LegendPanelIcon';
+import BivariatePanelIcon from './icons/BivariatePanelIcon';
+import LayersPanelIcon from './icons/LayersPanelIcon';
 
 export {
   SearchIcon,
@@ -32,4 +36,8 @@ export {
   TrashBinIcon,
   DrawLineIcon,
   DrawPointIcon,
+  InfoIcon,
+  LegendPanelIcon,
+  BivariatePanelIcon,
+  LayersPanelIcon,
 };

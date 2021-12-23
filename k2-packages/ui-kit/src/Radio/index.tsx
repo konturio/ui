@@ -1,5 +1,5 @@
 import React, { ChangeEvent } from 'react';
-import cn from 'clsx';
+import { LineItem } from '../LineItem';
 import s from './style.module.css';
 
 interface Radio {
@@ -20,9 +20,8 @@ export function Radio({
   ...native
 }: Radio & React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>): React.ReactElement {
   return (
-    <label htmlFor={id} className={cn(s.root, { [s.block]: block }, className)}>
+    <LineItem id={id} label={label} className={className} block={block} cursor="pointer">
       <input id={id} name={name} type="radio" className={s.radio} {...native} />
-      <span className={s.label}>{label}</span>
-    </label>
+    </LineItem>
   );
 }

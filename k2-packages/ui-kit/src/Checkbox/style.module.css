@@ -1,17 +1,3 @@
-.root {
-  display: inline-flex;
-  align-items: center;
-  font-family: inherit;
-  font-size: inherit;
-  position: relative;
-  cursor: pointer;
-  padding: var(--half-unit);
-  &.block {
-    display: flex;
-    flex: 1;
-  }
-}
-
 .checkbox {
   appearance: none;
   display: inline-flex;
@@ -49,10 +35,6 @@
       background-color: var(--primary-border-disabled);
     }
   }
-}
-
-.label {
-  user-select: none;
 }
 
 .icon {

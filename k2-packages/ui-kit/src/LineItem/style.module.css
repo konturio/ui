@@ -1,0 +1,20 @@
+.root {
+  display: inline-flex;
+  align-items: center;
+  font-family: inherit;
+  font-size: inherit;
+  position: relative;
+  padding: var(--half-unit);
+  &.block {
+    display: flex;
+    flex: 1;
+  }
+
+  &.pointer {
+    cursor: pointer;
+  }
+}
+
+.label {
+  user-select: none;
+}

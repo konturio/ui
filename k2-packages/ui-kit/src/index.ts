@@ -2,6 +2,7 @@ export { Input } from './Input';
 export { Card } from './Card';
 export { DropDown } from './DropDown';
 export { Checkbox } from './Checkbox';
+export { LineItem } from './LineItem';
 export { LanguageSelect } from './LanguageSelect';
 export { Selector } from './Selector';
 export { Slider } from './Slider';

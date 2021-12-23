@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-alpha.15](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@3.0.0-alpha.12...@k2-packages/ui-kit@3.0.0-alpha.15) (2021-12-23)
+
+
+### Bug Fixes
+
+* add missing export ([df1d38f](https://gitlab.com/kontur-private/k2/k2-front-end/commit/df1d38f32f62d07b0cb2fb85e8c4830eb71ff95f))
+
+
+### Features
+
+* add line item ([508bf73](https://gitlab.com/kontur-private/k2/k2-front-end/commit/508bf73bf12c38ddefd7cc6b54bba1a5be446d68))
+
+
+
+
+
 # [3.0.0-alpha.14](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@3.0.0-alpha.13...@k2-packages/ui-kit@3.0.0-alpha.14) (2021-12-23)
 
 **Note:** Version bump only for package @k2-packages/ui-kit

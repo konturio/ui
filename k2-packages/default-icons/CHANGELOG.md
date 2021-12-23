@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.11](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/default-icons@2.0.0-alpha.9...@k2-packages/default-icons@2.0.0-alpha.11) (2021-12-23)
+
+**Note:** Version bump only for package @k2-packages/default-icons
+
+
+
+
+
 # [2.0.0-alpha.10](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/default-icons@2.0.0-alpha.9...@k2-packages/default-icons@2.0.0-alpha.10) (2021-12-22)
 
 **Note:** Version bump only for package @k2-packages/default-icons

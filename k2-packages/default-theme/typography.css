@@ -85,3 +85,12 @@ html, body {
   font-size: 16px;
   line-height: 22px;
 }
+
+/* This is for component and layout headings */
+.k-font-heading-xl {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 40px;
+}

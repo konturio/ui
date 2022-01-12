@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.4.0-alpha.1](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/default-theme@2.4.0-alpha.0...@k2-packages/default-theme@2.4.0-alpha.1) (2022-01-12)
+
+
+### Features
+
+* **new-components:** Add modal component ([3c996e3](https://gitlab.com/kontur-private/k2/k2-front-end/commit/3c996e318e8d02f140131e9038ed8cd4dd322426))
+
+
+
+
+
 # [2.4.0-alpha.0](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/default-theme@2.3.2-alpha.1...@k2-packages/default-theme@2.4.0-alpha.0) (2021-09-23)
 
 

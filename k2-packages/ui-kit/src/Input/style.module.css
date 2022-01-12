@@ -69,3 +69,15 @@
     color: var(--primary-icon-disabled)
   }
 }
+
+.topPlaceholder {
+  position: absolute;
+  top: -10px;
+  left: 8px;
+  background: #fff;
+  padding: 0 6px;
+}
+
+.errorMessage {
+  margin-top: 2px;
+}

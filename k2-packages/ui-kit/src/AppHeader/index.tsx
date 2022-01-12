@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { ReactNode, useEffect } from 'react';
 import { Logo } from '../Logo';
 import { Button } from '../Button';
 import s from './style.module.css';
@@ -23,11 +23,13 @@ export function AppHeader({
   onChatClick,
   installChat,
   logo = <Logo height={24} />,
+  afterChatContent,
 }: React.PropsWithChildren<{
   title: string | JSX.Element;
   logo?: JSX.Element;
   onChatClick?: React.MouseEventHandler<HTMLButtonElement>;
   installChat?: (id: string) => void;
+  afterChatContent?: ReactNode;
 }>) {
   useEffect(() => {
     if (installChat) {
@@ -44,6 +46,7 @@ export function AppHeader({
         <ChatIcon />
         Chat with us
       </Button>
+      {afterChatContent && <div className={s.afterChatContent}>{afterChatContent}</div>}
     </div>
   );
 }

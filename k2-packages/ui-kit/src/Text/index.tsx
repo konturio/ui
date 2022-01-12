@@ -1,6 +1,15 @@
 import { isValidElement, cloneElement } from 'react';
 
-type TextTypes = 'caption' | 'helper' | 'short-m' | 'long-m' | 'long-l' | 'short-l' | 'heading-m' | 'heading-l';
+type TextTypes =
+  | 'caption'
+  | 'helper'
+  | 'short-m'
+  | 'long-m'
+  | 'long-l'
+  | 'short-l'
+  | 'heading-m'
+  | 'heading-l'
+  | 'heading-xl';
 
 export function Text({ children, type }: React.PropsWithChildren<{ type: TextTypes }>) {
   return isValidElement(children) ? (

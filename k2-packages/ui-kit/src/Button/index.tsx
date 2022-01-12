@@ -1,5 +1,6 @@
 import s from './style.module.css';
 import cn from 'clsx';
+import { ReactChild } from 'react';
 
 export interface ButtonProps {
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
@@ -8,6 +9,8 @@ export interface ButtonProps {
   id?: string;
   className?: string;
   active?: boolean;
+  iconBefore?: ReactChild;
+  iconAfter?: ReactChild;
 }
 
 export function Button({
@@ -18,6 +21,8 @@ export function Button({
   active,
   variant = 'primary',
   id,
+  iconBefore,
+  iconAfter,
 }: React.PropsWithChildren<ButtonProps>) {
   return (
     <button
@@ -26,7 +31,9 @@ export function Button({
       disabled={disabled}
       id={id}
     >
+      {iconBefore}
       {children}
+      {iconAfter}
     </button>
   );
 }

@@ -11,6 +11,7 @@
 .cell {
   padding: 6px;
   font-size: 0.7em;
+  line-height: 130%;
 }
 
 .colorCell {

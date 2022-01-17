@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-alpha.18](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@3.0.0-alpha.15...@k2-packages/ui-kit@3.0.0-alpha.18) (2022-01-17)
+
+
+### Bug Fixes
+
+* **legend:** Stylefix for legend cells ([075a693](https://gitlab.com/kontur-private/k2/k2-front-end/commit/075a69318415f971053cfce76400cba075464555))
+
+
+### Features
+
+* **new-components:** Add modal component ([3c996e3](https://gitlab.com/kontur-private/k2/k2-front-end/commit/3c996e318e8d02f140131e9038ed8cd4dd322426))
+
+
+
+
+
 # [3.0.0-alpha.17](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@3.0.0-alpha.16...@k2-packages/ui-kit@3.0.0-alpha.17) (2022-01-12)
 
 

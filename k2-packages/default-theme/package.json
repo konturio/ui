@@ -1,6 +1,6 @@
 {
   "name": "@k2-packages/default-theme",
-  "version": "2.4.0-alpha.1",
+  "version": "2.4.0-alpha.2",
   "repository": {
     "type": "git",
     "url": "git@gitlab.com:kontur-private/k2/k2-front-end.git"

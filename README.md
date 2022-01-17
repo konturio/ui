@@ -40,6 +40,10 @@ registry=https://nexus.kontur.io/repository/npm-a/
 always-auth=true
 
 ```
+Check if you logged in
+```
+npm whoami --registry=https://nexus.kontur.io/repository/npm-a/
+```
 
 ### Package management
 To add dependency to all packages.

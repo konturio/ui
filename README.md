@@ -111,6 +111,7 @@ If you need release modules in NPM nexus repo, you need some extra steps:
 
 5. Clone fresh `master` branch with merged request
 6. `npm run release`
+6.1 for Windows OS: powershell terminal may not let you log in and push new versions. Try using git bash terminal
 7. Wait until pipeline task 'release' was success
 8. Rebuild the app where you want to use the new modules
 

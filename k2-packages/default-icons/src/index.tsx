@@ -18,6 +18,8 @@ import InfoIcon from './icons/InfoIcon';
 import LegendPanelIcon from './icons/LegendPanelIcon';
 import BivariatePanelIcon from './icons/BivariatePanelIcon';
 import LayersPanelIcon from './icons/LayersPanelIcon';
+import EyeBallIcon from './icons/EyeBallIcon';
+import EyeBallCrossedIcon from './icons/EyeBallCrossedIcon';
 
 export {
   SearchIcon,
@@ -40,4 +42,6 @@ export {
   LegendPanelIcon,
   BivariatePanelIcon,
   LayersPanelIcon,
+  EyeBallIcon,
+  EyeBallCrossedIcon,
 };

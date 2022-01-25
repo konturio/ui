@@ -20,7 +20,7 @@
 .emptyColorValue {
   padding: 2px 4px;
   border-radius: 3px;
-  font-size: .76em;
+  font-size: 0.76em;
 }
 
 .colorValue {
@@ -47,14 +47,16 @@
 }
 
 .color {
-  box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.12);
   background: white;
   background: var(--current-color);
   border-radius: 4px;
   cursor: pointer;
+
   &:hover {
-    box-shadow: 0px 0px 0px 2px rgba(0, 0, 0, 0.15);
-    &:before {
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.15);
+
+    &::before {
       content: attr(data-name);
       text-transform: lowercase;
       display: inline-flex;
@@ -70,8 +72,9 @@
       white-space: nowrap;
     }
   }
+
   &:active {
-    box-shadow: 0px 0px 0px 2px rgba(0, 255, 255, 0.3);
+    box-shadow: 0 0 0 2px rgba(0, 255, 255, 0.3);
   }
 }
 

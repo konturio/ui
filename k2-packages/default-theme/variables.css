@@ -2,7 +2,7 @@
 
 :root {
   /* Breakpoints */
-  --xs: 0px;
+  --xs: 0;
   --sm: 600px;
   --md: 960px;
   --lg: 1280px;
@@ -32,9 +32,9 @@
   --invert-outline-surface-regular: transparent;
   --invert-outline-text-regular: #f0f1f2;
   --invert-outline-surface-hover: rgba(0, 0, 0, 0.4);
-  --invert-outline-text-hover: #ffffff;
+  --invert-outline-text-hover: #fff;
   --invert-outline-icon-regular: #f0f1f2;
-  --invert-outline-icon-hover: #ffffff;
+  --invert-outline-icon-hover: #fff;
   --invert-outline-icon-active: #0c9bed;
   --invert-outline-text-active: #0c9bed;
   --invert-outline-focus-outline-regular: #2cb3ff;
@@ -44,9 +44,11 @@
   --danger-border-regular: #ec0000;
   --danger-text-regular: #ec0000;
   --danger-icon-regular: #ec0000;
+
   /* Typography */
-  --font: 14px 'IBM Plex Sans', sans-serif;
-  --font-xs: 12px 'IBM Plex Sans', sans-serif;
+  --font-family: 'IBM Plex Sans', sans-serif;
+  --font: 14px var(--font-family);
+  --font-xs: 12px var(--font-family);
 
   /* Spacing */
   --unit: 8px;
@@ -65,8 +67,15 @@
   --tooltip: 1100;
 
   /* Shadows */
-  --elevation-1: 0px 1px 2px rgba(0, 0, 0, 0.3), 0px 16px 24px rgba(0, 0, 0, 0.06), 0px 2px 6px rgba(0, 0, 0, 0.04),
-    0px 0px 1px rgba(0, 0, 0, 0.04);
-  --elevation-2: 0px 4px 4px rgba(0, 0, 0, 0.15), 0px 1px 2px rgba(0, 0, 0, 0.3), 0px 16px 24px rgba(0, 0, 0, 0.06),
-    0px 2px 6px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04);
+  --elevation-1:
+    0 1px 2px rgba(0, 0, 0, 0.3),
+    0 16px 24px rgba(0, 0, 0, 0.06),
+    0 2px 6px rgba(0, 0, 0, 0.04),
+    0 0 1px rgba(0, 0, 0, 0.04);
+  --elevation-2:
+    0 4px 4px rgba(0, 0, 0, 0.15),
+    0 1px 2px rgba(0, 0, 0, 0.3),
+    0 16px 24px rgba(0, 0, 0, 0.06),
+    0 2px 6px rgba(0, 0, 0, 0.04),
+    0 0 1px rgba(0, 0, 0, 0.04);
 }

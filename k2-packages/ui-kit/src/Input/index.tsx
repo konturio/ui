@@ -1,7 +1,8 @@
 import React, { forwardRef, useCallback, useEffect, useImperativeHandle, useRef, useState } from 'react';
 import cn from 'clsx';
-import s from './style.module.css';
 import clsx from 'clsx';
+import s from './style.module.css';
+import { EyeBallCrossedIcon, EyeBallIcon } from '@k2-packages/default-icons';
 
 export interface InputProps extends React.HTMLProps<HTMLInputElement> {
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
@@ -38,11 +39,13 @@ function InputComponent(
     isFocused,
     classes,
     showTopPlaceholder = false,
+    type,
     ...props
   }: InputProps,
   ref,
 ): JSX.Element {
   const [focus, setFocus] = useState(isFocused);
+  const [passwordVisible, setPasswordVisible] = useState<boolean>(false);
 
   useEffect(() => {
     setFocus(isFocused);
@@ -80,6 +83,7 @@ function InputComponent(
     [s.error]: !!error,
     [s.focus]: focus,
     [s.disabled]: disabled,
+    [s.password]: type === 'password',
   };
 
   const inputRef = useRef<HTMLInputElement>(null);
@@ -99,6 +103,10 @@ function InputComponent(
     [onChange],
   );
 
+  const onPasswordVisibleClick = () => {
+    setPasswordVisible(!passwordVisible);
+  };
+
   return (
     <div className={cn(s.root, dynamicClasses)}>
       <div className={cn(s.inputBox, className)}>
@@ -114,7 +122,13 @@ function InputComponent(
           onBlur={nativeBlurEventHandler}
           disabled={disabled}
           className={classes?.input}
+          type={type === 'password' && passwordVisible ? 'input' : type}
         />
+        {type === 'password' && (
+          <div onClick={onPasswordVisibleClick} className={s.passwordVisibility}>
+            {passwordVisible ? <EyeBallCrossedIcon /> : <EyeBallIcon />}
+          </div>
+        )}
       </div>
       {message && <div className={s.message}>{message}</div>}
       {error && typeof error === 'string' ? <div className={clsx(s.errorMessage, classes?.error)}>{error}</div> : null}

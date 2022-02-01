@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-alpha.19](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@3.0.0-alpha.18...@k2-packages/ui-kit@3.0.0-alpha.19) (2022-02-01)
+
+
+### Features
+
+* **ui-kit-input:** Add password mode to Input field ([ac8c0ef](https://gitlab.com/kontur-private/k2/k2-front-end/commit/ac8c0ef8bf6ab0a407bf76048240485a1fb689c4))
+
+
+
+
+
 # [3.0.0-alpha.18](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@3.0.0-alpha.15...@k2-packages/ui-kit@3.0.0-alpha.18) (2022-01-17)
 
 

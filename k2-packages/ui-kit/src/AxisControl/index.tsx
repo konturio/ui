@@ -130,7 +130,7 @@ const AxisControlComponent = forwardRef<HTMLDivElement | null, any>(
       [onSelectDenominator],
     );
 
-    // calcucate base width of header item
+    // calculate base width of header item
     let baseDimension = 0;
     if (xHeadings && xHeadings.length && yHeadings && yHeadings.length) {
       let xLength = calculateStringWidth(xHeadings[0].label);

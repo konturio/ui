@@ -144,11 +144,22 @@ const BuildingsIcon = () => (
   </svg>
 );
 
+const PopulatedAreaIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M13.5153 1L1.00005 13.5153" stroke="#051626" strokeWidth="2.21241" />
+    <path d="M4.22717 1.0983L1.09832 4.22717" stroke="#051626" strokeWidth="2.21241" />
+    <path d="M23.0002 19.8711L19.8714 22.9999" stroke="#051626" strokeWidth="2.21241" />
+    <path d="M22.9018 10.3863L10.3866 22.9016" stroke="#051626" strokeWidth="2.21241" />
+    <path d="M23 1.09831L1.0983 23" stroke="#051626" strokeWidth="2.21241" />
+  </svg>
+);
+
 const iconMapper = {
   gdp: <GDPIcon />,
   population: <PopulationIcon />,
   area_km2: <AreaIcon />,
   total_building_count: <BuildingsIcon />,
+  populated_area_km2: <PopulatedAreaIcon />,
   one: '1',
 };
 

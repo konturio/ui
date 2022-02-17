@@ -20,6 +20,7 @@ import BivariatePanelIcon from './icons/BivariatePanelIcon';
 import LayersPanelIcon from './icons/LayersPanelIcon';
 import EyeBallIcon from './icons/EyeBallIcon';
 import EyeBallCrossedIcon from './icons/EyeBallCrossedIcon';
+import AddLayerIcon from './icons/AddLayerIcon';
 
 export {
   SearchIcon,
@@ -44,4 +45,5 @@ export {
   LayersPanelIcon,
   EyeBallIcon,
   EyeBallCrossedIcon,
+  AddLayerIcon,
 };

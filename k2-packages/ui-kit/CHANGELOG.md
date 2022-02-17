@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-alpha.20](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@3.0.0-alpha.19...@k2-packages/ui-kit@3.0.0-alpha.20) (2022-02-17)
+
+
+### Bug Fixes
+
+* **dropdown:** Add dropdown fixture ([6f836b8](https://gitlab.com/kontur-private/k2/k2-front-end/commit/6f836b84f854f211846485d83e6bc21d408d5b88))
+
+
+
+
+
 # [3.0.0-alpha.19](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@3.0.0-alpha.18...@k2-packages/ui-kit@3.0.0-alpha.19) (2022-02-01)
 
 

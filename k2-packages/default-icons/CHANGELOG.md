@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.14](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/default-icons@2.0.0-alpha.13...@k2-packages/default-icons@2.0.0-alpha.14) (2022-02-17)
+
+
+### Features
+
+* **default-icons:** Add layer icon ([67cddf4](https://gitlab.com/kontur-private/k2/k2-front-end/commit/67cddf4bb710ad8996de98f6bb495955cdb944ea))
+
+
+
+
+
 # [2.0.0-alpha.13](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/default-icons@2.0.0-alpha.12...@k2-packages/default-icons@2.0.0-alpha.13) (2022-01-17)
 
 **Note:** Version bump only for package @k2-packages/default-icons

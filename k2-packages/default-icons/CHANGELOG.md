@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.15](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/default-icons@2.0.0-alpha.14...@k2-packages/default-icons@2.0.0-alpha.15) (2022-02-22)
+
+
+### Bug Fixes
+
+* **default-icons:** Refactor some default icons to use currentColor ([554de68](https://gitlab.com/kontur-private/k2/k2-front-end/commit/554de686b76503b5f4d76ca436af2a5938759e75))
+
+
+
+
+
 # [2.0.0-alpha.14](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/default-icons@2.0.0-alpha.13...@k2-packages/default-icons@2.0.0-alpha.14) (2022-02-17)
 
 

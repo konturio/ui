@@ -214,6 +214,11 @@ const HeadingEntry = memo(
       [onSelectDenominator, setHeadingState, index],
     );
 
+    const numberOfAdditionalQuotientsInGroup =
+      headerCell.quotients.length > 1 ? (
+        <div className={styles.quotientsCountLabel}>+{headerCell.quotients.length - 1} layers</div>
+      ) : null;
+
     return (
       <div
         onMouseEnter={onMouseOver}
@@ -246,6 +251,7 @@ const HeadingEntry = memo(
             switchDenominatorsVisibility={switchDenominatorsVisibility}
           />
           {headerCell.label}
+          {numberOfAdditionalQuotientsInGroup}
         </div>
       </div>
     );

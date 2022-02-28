@@ -41,73 +41,80 @@ const getHeadingPositionStyle = (isColum: boolean, index: number) => {
   return styles;
 };
 
-interface DenominatorItemProps {
-  id: string;
-  numinatorLabel?: string;
-  denominatorLabel?: string;
+interface QuotientItemProps {
+  numeratorId: string;
+  denominatorId: string;
+  numeratorLabel?: string;
   quality?: number | null;
-  onSelectDenominator: (denId: string) => void;
+  onSelectDenominator: (numId: string, denId: string) => void;
 }
 
-const DenominatorItem = ({
-  id,
-  numinatorLabel,
-  denominatorLabel,
+const QuotientItem = ({
+  numeratorId,
+  denominatorId,
+  numeratorLabel,
   quality,
   onSelectDenominator,
-}: DenominatorItemProps) => {
+}: QuotientItemProps) => {
   const onClick = useCallback(
     (ev) => {
       ev.stopPropagation();
-      onSelectDenominator(id);
+      onSelectDenominator(numeratorId, denominatorId);
     },
-    [onSelectDenominator],
+    [onSelectDenominator, numeratorId, denominatorId],
   );
   return (
     <div onClick={onClick}>
-      <DenominatorIcon iconId={id} />
+      <DenominatorIcon iconId={denominatorId} />
       <div className="qualityLabel">{quality !== null && quality !== undefined ? quality : '&nbsp;'}</div>
-      <div className="denominatorLabel">{denominatorLabel}</div>
+      <div className="quotientLabel">{numeratorLabel}</div>
     </div>
   );
 };
 
-interface DenominatorsSelectorProps {
+interface QuotientSelectorProps {
   isOpen: boolean;
   switchDenominatorsVisibility: (ev) => void;
   label: string;
-  denominators: { id: string; label?: string; quality?: number }[];
-  selectedDenominator?: { id: string; label?: string };
-  onSelectDenominator: (denId: string) => void;
+  quotients: {
+    id: [string, string];
+    label?: string;
+    quality?: number;
+  }[];
+  selectedQuotient: {
+    id: [string, string];
+    label?: string;
+  };
+  onSelectDenominator: (numId: string, denId: string) => void;
 }
 
-const DenominatorsSelector = memo(
+const QuotientSelector = memo(
   ({
     isOpen,
     switchDenominatorsVisibility,
     label,
-    denominators,
-    selectedDenominator,
+    quotients,
+    selectedQuotient,
     onSelectDenominator,
-  }: DenominatorsSelectorProps) => {
+  }: QuotientSelectorProps) => {
     return (
       <div className={styles.denominators}>
         <div
-          className={cn({ [styles.denominatorSelector]: true, [styles.disabled]: denominators.length <= 1 })}
+          className={cn({ [styles.denominatorSelector]: true, [styles.disabled]: quotients.length <= 1 })}
           onClick={switchDenominatorsVisibility}
         >
           <i className="fas fa-caret-down"></i>
         </div>
         <div className={cn({ [styles.denominatorsContainer]: true, [styles.show]: isOpen })}>
-          {denominators.map(({ id: denId, label: denLabel, quality }) =>
-            denId !== selectedDenominator?.id ? (
-              <DenominatorItem
-                key={denId}
+          {quotients.map(({ id, label: numeratorLabel, quality }) =>
+            JSON.stringify(id) !== JSON.stringify(selectedQuotient.id) ? (
+              <QuotientItem
+                key={JSON.stringify(id)}
                 onSelectDenominator={onSelectDenominator}
                 quality={quality}
-                id={denId}
-                numinatorLabel={label}
-                denominatorLabel={denLabel}
+                numeratorId={id[0]}
+                denominatorId={id[1]}
+                numeratorLabel={numeratorLabel}
               />
             ) : null,
           )}
@@ -117,7 +124,7 @@ const DenominatorsSelector = memo(
   },
 );
 
-DenominatorsSelector.displayName = 'DenominatorsSelector';
+QuotientSelector.displayName = 'QuotientSelector';
 
 interface HeadingEntryProps {
   index: number;
@@ -127,14 +134,21 @@ interface HeadingEntryProps {
   selectedIndex?: number | null;
   headerCell: {
     label: string;
-    selectedDenominator: { id: string; label?: string };
+    selectedQuotient: {
+      id: [string, string];
+      label?: string;
+    };
     quality?: number;
-    denominators: { id: string; label?: string; quality?: number }[];
+    quotients: {
+      id: [string, string];
+      label?: string;
+      quality?: number;
+    }[];
   };
   id: string;
   onCellHover: (cellIndex: number | null) => void;
   onCellClick: (cellIndex: number) => void;
-  onSelectDenominator: (index: number, denId: string) => void;
+  onSelectDenominator: (index: number, numId: string, denId: string) => void;
   baseDimension: number;
   calculateHeadingsStyle: (baseDimension: number, vertical: boolean, index: number) => CSSProperties;
 }
@@ -193,11 +207,11 @@ const HeadingEntry = memo(
     );
 
     const onSelectDenominatorWrapper = useCallback(
-      (denId: string) => {
+      (numId: string, denId: string) => {
         setHeadingState({ headingId: '' });
-        onSelectDenominator(index, denId);
+        onSelectDenominator(index, numId, denId);
       },
-      [onSelectDenominator, index],
+      [onSelectDenominator, setHeadingState, index],
     );
 
     return (
@@ -221,12 +235,12 @@ const HeadingEntry = memo(
       >
         <div style={calculateHeadingsStyle(baseDimension, vertical, index)} className={styles.container}>
           <div className={styles.corner}></div>
-          <DenominatorIcon iconId={headerCell.selectedDenominator.id} />
+          <DenominatorIcon iconId={headerCell.selectedQuotient.id[1]} />
           <div className="qualityLabel">{headerCell.quality ? headerCell.quality : '&nbsp;'}</div>
-          <DenominatorsSelector
+          <QuotientSelector
             onSelectDenominator={onSelectDenominatorWrapper}
-            selectedDenominator={headerCell.selectedDenominator}
-            denominators={headerCell.denominators}
+            selectedQuotient={headerCell.selectedQuotient}
+            quotients={headerCell.quotients}
             label={headerCell.label}
             isOpen={headingState.headingId === id}
             switchDenominatorsVisibility={switchDenominatorsVisibility}
@@ -246,14 +260,21 @@ interface TableHeadingProps {
   hoveredIndex?: number | null;
   entries: {
     label: string;
-    selectedDenominator: { id: string; label?: string };
+    selectedQuotient: {
+      id: [string, string];
+      label?: string;
+    };
     quality?: number;
-    denominators: { id: string; label?: string; quality?: number }[];
+    quotients: {
+      id: [string, string];
+      label?: string;
+      quality?: number;
+    }[];
   }[];
   vertical?: boolean;
   onCellHover: (cellIndex: number | null) => void;
   onCellClick: (cellIndex: number) => void;
-  onSelectDenominator: (index: number, denId: string) => void;
+  onSelectDenominator: (index: number, numId: string, denId: string) => void;
   baseDimension: number;
   calculateHeadingsStyle: (baseDimension: number, vertical: boolean, index: number) => CSSProperties;
 }

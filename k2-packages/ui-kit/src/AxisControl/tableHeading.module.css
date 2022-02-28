@@ -271,7 +271,7 @@
   box-shadow: -3px 3px 4px rgb(31 51 73 / 15%);
 }
 
-.column .denominatorsContainer :global(.denominatorLabel) {
+.column .denominatorsContainer :global(.quotientLabel) {
   border-top: 24px solid #e5e5e5;
   padding-top: 5px;
 }
@@ -282,7 +282,7 @@
   box-shadow: 3px 3px 4px rgb(31 51 73 / 15%);
 }
 
-.row .denominatorsContainer :global(.denominatorLabel) {
+.row .denominatorsContainer :global(.quotientLabel) {
   border-left: 24px solid #e5e5e5;
   padding-left: 5px;
 }
@@ -307,11 +307,11 @@
   fill: #eee;
 }
 
-.column .denominatorsContainer > div:hover :global(.denominatorLabel) {
+.column .denominatorsContainer > div:hover :global(.quotientLabel) {
   border-top: 24px solid #555;
 }
 
-.row .denominatorsContainer > div:hover :global(.denominatorLabel) {
+.row .denominatorsContainer > div:hover :global(.quotientLabel) {
   border-left: 24px solid #555;
 }
 

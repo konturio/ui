@@ -21,6 +21,7 @@ import LayersPanelIcon from './icons/LayersPanelIcon';
 import EyeBallIcon from './icons/EyeBallIcon';
 import EyeBallCrossedIcon from './icons/EyeBallCrossedIcon';
 import AddLayerIcon from './icons/AddLayerIcon';
+import SortIcon from './icons/SortIcon';
 
 export {
   SearchIcon,
@@ -46,4 +47,5 @@ export {
   EyeBallIcon,
   EyeBallCrossedIcon,
   AddLayerIcon,
+  SortIcon,
 };

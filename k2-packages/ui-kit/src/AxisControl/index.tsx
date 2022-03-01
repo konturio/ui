@@ -32,17 +32,31 @@ interface AxisControlProps {
   matrix: (number | null)[][];
   xHeadings: {
     label: string;
-    selectedDenominator: { id: string; label?: string };
+    selectedQuotient: {
+      id: [string, string];
+      label?: string;
+    };
     quality?: number;
-    denominators: { id: string; label?: string; quality?: number }[];
+    quotients: {
+      id: [string, string];
+      label?: string;
+      quality?: number;
+    }[];
   }[];
   yHeadings: {
     label: string;
-    selectedDenominator: { id: string; label?: string };
+    selectedQuotient: {
+      id: [string, string];
+      label?: string;
+    };
     quality?: number;
-    denominators: { id: string; label?: string; quality?: number }[];
+    quotients: {
+      id: [string, string];
+      label?: string;
+      quality?: number;
+    }[];
   }[];
-  onSelectDenominator: (horisontal: boolean, index: number, denId: string) => void;
+  onSelectDenominator: (horisontal: boolean, index: number, numId, denId: string) => void;
 }
 
 // auto-size calculation params
@@ -92,14 +106,14 @@ const AxisControlComponent = forwardRef<HTMLDivElement | null, any>(
       (cellIndex: number | null) => {
         setHoveredCell({ ...hoveredCell, x: cellIndex });
       },
-      [setHoveredCell],
+      [setHoveredCell, hoveredCell],
     );
 
     const onCellHoverY = useCallback(
       (cellIndex: number | null) => {
         setHoveredCell({ ...hoveredCell, y: cellIndex });
       },
-      [setHoveredCell],
+      [setHoveredCell, hoveredCell],
     );
 
     const onCellSelectX = useCallback(
@@ -117,15 +131,15 @@ const AxisControlComponent = forwardRef<HTMLDivElement | null, any>(
     );
 
     const selectDenominatorX = useCallback(
-      (index: number, denId: string) => {
-        onSelectDenominator(false, index, denId);
+      (index: number, numId: string, denId: string) => {
+        onSelectDenominator(false, index, numId, denId);
       },
       [onSelectDenominator],
     );
 
     const selectDenominatorY = useCallback(
-      (index: number, denId: string) => {
-        onSelectDenominator(true, index, denId);
+      (index: number, numId: string, denId: string) => {
+        onSelectDenominator(true, index, numId, denId);
       },
       [onSelectDenominator],
     );

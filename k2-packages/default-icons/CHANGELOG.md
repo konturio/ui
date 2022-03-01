@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.16](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/default-icons@2.0.0-alpha.15...@k2-packages/default-icons@2.0.0-alpha.16) (2022-03-01)
+
+
+### Features
+
+* **default-theme:** Default variables update ([9891714](https://gitlab.com/kontur-private/k2/k2-front-end/commit/98917143fe3588c7cbb32d335bb78103f9ab66c7))
+
+
+
+
+
 # [2.0.0-alpha.15](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/default-icons@2.0.0-alpha.14...@k2-packages/default-icons@2.0.0-alpha.15) (2022-02-22)
 
 

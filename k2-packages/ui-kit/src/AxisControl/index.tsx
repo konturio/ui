@@ -70,7 +70,7 @@ context.font = 'normal 13px Roboto';
 
 const calculateStringWidth = (str: string): number => {
   // coeff 0.85 here is because of transform: scale(0.85) applied to matrix
-  return (context.measureText(str).width + 60) / 0.85;
+  return (context.measureText(str).width + 80) / 0.85;
 };
 
 const calculateHeadingsStyle = (baseDimension: number, vertical: boolean, index: number) => {

@@ -324,3 +324,18 @@
   padding-bottom: 10px;
   border-right: 1px dotted #999;
 }
+
+.quotientsCountLabel {
+  background-color: var(--primary-placeholder-regular);
+  border-radius: 8px;
+}
+
+.column .quotientsCountLabel {
+  padding: 5px 0;
+  margin-top: 5px;
+}
+
+.row .quotientsCountLabel {
+  padding: 0 5px;
+  margin-left: 5px;
+}

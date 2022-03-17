@@ -22,6 +22,7 @@ import EyeBallIcon from './icons/EyeBallIcon';
 import EyeBallCrossedIcon from './icons/EyeBallCrossedIcon';
 import AddLayerIcon from './icons/AddLayerIcon';
 import SortIcon from './icons/SortIcon';
+import TripleDotIcon from './icons/TrippleDotIcon';
 
 export {
   SearchIcon,
@@ -48,4 +49,5 @@ export {
   EyeBallCrossedIcon,
   AddLayerIcon,
   SortIcon,
+  TripleDotIcon,
 };

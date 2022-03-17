@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.17](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/default-icons@2.0.0-alpha.16...@k2-packages/default-icons@2.0.0-alpha.17) (2022-03-17)
+
+
+### Features
+
+* **default-iconst:** Add tripple dot icon ([43fdaac](https://gitlab.com/kontur-private/k2/k2-front-end/commit/43fdaac51d9d209d67516528ad34c6d4dd5439db))
+
+
+
+
+
 # [2.0.0-alpha.16](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/default-icons@2.0.0-alpha.15...@k2-packages/default-icons@2.0.0-alpha.16) (2022-03-01)
 
 

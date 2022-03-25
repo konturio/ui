@@ -222,8 +222,12 @@ const AxisControlComponent = forwardRef<HTMLDivElement | null, any>(
 
               return val === null ? (
                 <Cell
+                  selected={isFromSelectedRow && isFromSelectedCol}
                   className={cn(cellClasses)}
                   key={`${colIndex}|${rowIndex}`}
+                  onClick={call(onSelectCell)}
+                  onHover={call(onMouseOver)}
+                  onMouseOut={onMouseOut}
                   style={getCellPositionStyle(colIndex, rowIndex)}
                   value={val}
                   disabled

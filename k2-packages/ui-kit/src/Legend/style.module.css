@@ -80,6 +80,7 @@
 .axisLabelY {
   font-size: 0.8em;
   color: #999;
+  line-height: 100%;
 }
 
 .axisLabelX {

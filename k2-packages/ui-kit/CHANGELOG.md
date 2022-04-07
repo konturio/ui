@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-alpha.26](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@3.0.0-alpha.25...@k2-packages/ui-kit@3.0.0-alpha.26) (2022-04-07)
+
+
+### Bug Fixes
+
+* **bivariate-legend:** Fix bivariate legend axes label style ([deb3ff1](https://gitlab.com/kontur-private/k2/k2-front-end/commit/deb3ff10f4cf1ecd62bfb55f7920b1999b2325c4))
+
+
+
+
+
 # [3.0.0-alpha.25](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@3.0.0-alpha.24...@k2-packages/ui-kit@3.0.0-alpha.25) (2022-03-25)
 
 

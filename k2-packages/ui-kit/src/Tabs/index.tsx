@@ -20,7 +20,7 @@ export function Tabs({ children, current: currentTabId, onTabChange: setCurrentT
     [setCurrentTabId],
   );
 
-  const tabs = useMemo(() => {
+  const tabs: any[] = useMemo(() => {
     return Children.toArray(children).map((tabChildren) => ({
       ...(isValidElement(tabChildren) ? tabChildren.props : {}),
       element: tabChildren,
@@ -28,10 +28,15 @@ export function Tabs({ children, current: currentTabId, onTabChange: setCurrentT
   }, [children]);
 
   const currentTab = useMemo(() => tabs.find((tab) => tab.id === currentTabId), [tabs, currentTabId]);
+  // case we have single tab and don't want to show navigation for it
+  const tabHasName: boolean = useMemo(() => {
+    if (tabs.length < 2 && tabs[0]?.name !== null) return true
+    return false
+  }, [tabs, currentTabId]);
 
   return (
     <div className={s.tabsContainer}>
-      <div className={s.navigation}>
+      {tabHasName && <div className={s.navigation}>
         {tabs.map((c) => (
           <div key={c.id} className={classes?.tabContainer}>
             <input
@@ -47,7 +52,7 @@ export function Tabs({ children, current: currentTabId, onTabChange: setCurrentT
             </label>
           </div>
         ))}
-      </div>
+      </div>}
       <div className={cn(s.body, classes?.tabBody)}>{currentTab ? currentTab.element : null}</div>
     </div>
   );
@@ -56,7 +61,7 @@ export function Tabs({ children, current: currentTabId, onTabChange: setCurrentT
 export interface TabProps {
   children: ReactNode;
   id: string;
-  name: string;
+  name: string | null;
 }
 
 export function Tab({ children, id, name }: TabProps) {

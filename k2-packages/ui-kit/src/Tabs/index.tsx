@@ -30,8 +30,10 @@ export function Tabs({ children, current: currentTabId, onTabChange: setCurrentT
   const currentTab = useMemo(() => tabs.find((tab) => tab.id === currentTabId), [tabs, currentTabId]);
   // case we have single tab and don't want to show navigation for it
   const tabHasName: boolean = useMemo(() => {
-    if (tabs.length < 2 && tabs[0]?.name !== null) return true
-    return false
+    if (tabs.length < 2 && tabs[0]?.name !== null) {
+      return true;
+    }
+    return false;
   }, [tabs, currentTabId]);
 
   return (

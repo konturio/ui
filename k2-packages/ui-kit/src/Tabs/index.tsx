@@ -20,7 +20,7 @@ export function Tabs({ children, current: currentTabId, onTabChange: setCurrentT
     [setCurrentTabId],
   );
 
-  const tabs = useMemo(() => {
+  const tabs: any[] = useMemo(() => {
     return Children.toArray(children).map((tabChildren) => ({
       ...(isValidElement(tabChildren) ? tabChildren.props : {}),
       element: tabChildren,
@@ -31,23 +31,25 @@ export function Tabs({ children, current: currentTabId, onTabChange: setCurrentT
 
   return (
     <div className={s.tabsContainer}>
-      <div className={s.navigation}>
-        {tabs.map((c) => (
-          <div key={c.id} className={classes?.tabContainer}>
-            <input
-              type="radio"
-              value={c.id}
-              onChange={tabSelectHandler}
-              checked={c.id === currentTabId}
-              className={s.input}
-              id={c.id}
-            />
-            <label htmlFor={c.id} className={cn(s.tabBtn, classes?.tabBtn, { [s.current]: c.id === currentTabId })}>
-              <span className={cn(s.name, classes?.tabName)}>{c.name}</span>
-            </label>
-          </div>
-        ))}
-      </div>
+      {tabs.length > 1 && (
+        <div className={s.navigation}>
+          {tabs.map((c) => (
+            <div key={c.id} className={classes?.tabContainer}>
+              <input
+                type="radio"
+                value={c.id}
+                onChange={tabSelectHandler}
+                checked={c.id === currentTabId}
+                className={s.input}
+                id={c.id}
+              />
+              <label htmlFor={c.id} className={cn(s.tabBtn, classes?.tabBtn, { [s.current]: c.id === currentTabId })}>
+                <span className={cn(s.name, classes?.tabName)}>{c.name}</span>
+              </label>
+            </div>
+          ))}
+        </div>
+      )}
       <div className={cn(s.body, classes?.tabBody)}>{currentTab ? currentTab.element : null}</div>
     </div>
   );

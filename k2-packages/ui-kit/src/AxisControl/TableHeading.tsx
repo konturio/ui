@@ -227,6 +227,7 @@ const HeadingEntry = memo(
         style={getHeadingPositionStyle(vertical, index)}
         className={cn({
           [className || '']: className,
+          [styles.headingEntry]: true,
           [styles.axisRecord]: true,
           [styles.hovered]: hoveredIndex === index,
           [styles.selected]: selectedIndex === index,

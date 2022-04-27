@@ -167,6 +167,8 @@ const AxisControlComponent = forwardRef<HTMLDivElement | null, any>(
       baseDimension = xLength > yLength ? xLength : yLength;
     }
 
+    console.log('render matrix');
+
     return (
       <div ref={ref} base-dimension={baseDimension} className={styles.rotatedMatrix}>
         <div style={getGridStyle(xHeadings.length + 1, yHeadings.length + 1, cellSize)}>

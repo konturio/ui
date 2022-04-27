@@ -4,17 +4,17 @@
   font-weight: 500;
   letter-spacing: 0.02em;
   text-transform: uppercase;
-  border-bottom: 1px solid var(--primary-faint-border-regular);
+  border-bottom: 1px solid var(--faint-weak);
 }
 
 .tabBtn {
   display: inline-flex;
   padding: var(--unit);
   cursor: pointer;
-  color: var(--primary-text-regular);
+  color: var(--back-faint-weak-up);
 
   &.current {
-    color: var(--primary-text-active);
+    color: var(--accent-strong);
     .name {
       position: relative;
       &:after {
@@ -22,7 +22,7 @@
         position: absolute;
         height: 1px;
         width: 100%;
-        background-color: var(--primary-border-active);
+        background-color: var(--accent-strong);
         bottom: calc(-1 * var(--unit) - 1px);
         left: 0;
       }
@@ -30,7 +30,7 @@
   }
 
   &:hover {
-    color: var(--primary-text-active);
+    color: var(--accent-strong);
   }
 }
 
@@ -39,6 +39,6 @@
   opacity: 0;
 
   &:focus + .tabBtn {
-    box-shadow: 0 0 0 2px var(--primary-focus-outline-regular);
+    box-shadow: 0 0 0 2px var(--accent-strong-down);
   }
 }

@@ -10,12 +10,12 @@
   margin: 0;
   cursor: pointer;
   margin-right: var(--unit);
-  box-shadow: 0px 0px 0px 1px var(--primary-border-regular);
+  box-shadow: 0px 0px 0px 1px var(--base-strong-down);
   flex-shrink: 0;
   &:checked {
     &:after {
       position: absolute;
-      background-color: var(--primary-border-regular);
+      background-color: var(--base-strong-down);
       width: 10px;
       height: 10px;
       border-radius: 50%;
@@ -24,18 +24,18 @@
   }
 
   &:focus {
-    box-shadow: 0px 0px 0px 2px var(--primary-focus-outline-regular);
+    box-shadow: 0px 0px 0px 2px var(--accent-strong-down);
   }
 
   &:disabled {
-    box-shadow: 0px 0px 0px 1px var(--primary-border-disabled);
+    box-shadow: 0px 0px 0px 1px var(--faint-strong-down);
     cursor: not-allowed;
     & ~ .label {
-      color: var(--primary-text-disabled);
+      color: var(--icon-base-strong);
     }
     &:checked {
       &:after {
-        background-color: var(--primary-border-disabled);
+        background-color: var(--faint-strong-down);
       }
     }
   }

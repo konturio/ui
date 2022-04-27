@@ -19,7 +19,7 @@ export default {
         gap: '1em',
         display: 'flex',
         flexFlow: 'row nowrap',
-        backgroundColor: 'var(--invert-surface-regular)',
+        backgroundColor: 'var(--back-faint-weak-up)',
         padding: '2em',
       }}
     >

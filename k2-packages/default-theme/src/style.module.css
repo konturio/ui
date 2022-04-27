@@ -4,16 +4,47 @@
   align-items: center;
   color: hsla(0, 0%, 0%, 0.67);
   padding: 1em;
+  min-width: 1316px;
 }
 
 .cell {
   padding: 8px;
-  margin: 24px 4px;
-  min-width: 120px;
+  margin: 6px 4px;
+  width: 60px;
   text-align: center;
   position: relative;
   display: flex;
   align-items: center;
+  justify-content: center;
+}
+
+.targetCaption {
+  display: flex;
+  align-items: center;
+  min-width: 50px;
+  justify-content: right;
+  font-weight: bold;
+  padding-right: 10px;
+}
+
+.categoryCaption {
+  text-align: center;
+  font-weight: bold;
+  padding: 5px;
+}
+
+.degree {
+  display: flex;
+
+  & > div {
+    padding: 8px;
+    margin: 0 4px;
+    width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+  }
 }
 
 .colorValue,
@@ -21,6 +52,10 @@
   padding: 2px 4px;
   border-radius: 3px;
   font-size: 0.76em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 60px;
 }
 
 .colorValue {
@@ -33,17 +68,26 @@
   color: transparent;
 }
 
-.statesLabels {
-  & > .cell {
-    text-align: left;
-    margin-left: 0;
-    padding-left: 0;
-  }
-}
-
 .palette {
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: column nowrap;
+}
+
+.rowPadding {
+  display: flex;
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+
+.row {
+  display: flex;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-right: 10px;
 }
 
 .color {

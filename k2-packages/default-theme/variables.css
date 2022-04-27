@@ -8,56 +8,99 @@
   --lg: 1280px;
   --xl: 1920px;
 
-  /* Theme color variables */
+  /* Theme Parent Colors */
+  --base-strong: #051626;
+  --base-strong-down: #2e3d4a;
+
+  --base-weak: #fff;
+  --base-weak-down: rgba(255, 255, 255, 0.5);
+  --base-weak-up: #f9fafa;
+
+  --faint-strong: #9ea5ab;
+  --faint-strong-up: #848c94;
+  --faint-strong-down: #b8bdc1;
+
+  --faint-weak: #eceeef;
+  --faint-weak-up: #d2d5d8;
+  --faint-weak-down: #f9fafa;
+
+  --accent-strong: #0c9bed;
+  --accent-strong-up: #088edb;
+  --accent-strong-down: #26abff;
+
+  --accent-weak: #f0f9fe;
+  --accent-weak-up: #9dd6f8;
+
+  --error-strong: #d93a3a;
+
+  --warning-strong: #ff8a2a;
+
+  --success-strong: #43b148;
+
+  /* Theme Context Colors */
+  --back-faint-weak: #2e3d4a;
+  --back-faint-weak-up: #051626;
+  --back-faint-weak-down: #3f4c59;
+
+  --text-faint-strong: #69737d;
+  --text-faint-strong-up: #55606b;
+
+  --icon-base-strong: #69737d;
+  --icon-base-strong-up: #55606b;
+  --icon-base-strong-down: #848c94;
+
+  --fancy-accent-strong: linear-gradient(90deg, #26abff 0%, #00ccff 100%);
+
+  /* DEPRECATED - Old Theme color variables */
+  /* TODO: remove this section after we migrate all old variables usages to new ones */
   --black: #000;
   --white: #fff;
-  --neutral-neutral-10: #fff;
-  --neutral-neutral-20: #f0f1f2;
-  --neutral-neutral-30: #e3e5e7;
-  --neutral-neutral-40: #d7dadc;
-  --neutral-neutral-50: #afb4ba;
+  --neutral-neutral-10: var(--base-weak);
+  --neutral-neutral-20: var(--faint-weak-down);
+  --neutral-neutral-30: var(--faint-weak);
+  --neutral-neutral-40: var(--faint-weak-up);
+  --neutral-neutral-50: var(--faint-strong-down);
   --neutral-neutral-60: #8c949b;
-  --neutral-neutral-70: #646f78;
+  --neutral-neutral-70: var(--icon-base-strong);
   --neutral-neutral-80: #505c67;
-  --neutral-neutral-90: #32404d;
-  --neutral-neutral-100: #051626;
+  --neutral-neutral-90: var(--base-strong-down);
+  --neutral-neutral-100: var(--back-faint-weak-up);
 
   /* New Palette */
   --primary-surface-regular: var(--neutral-neutral-10);
   --primary-icon-regular: var(--neutral-neutral-100);
   --primary-surface-disabled: var(--neutral-neutral-20);
-  --primary-focus-outline-regular: #2cb3ff;
-  --primary-border-active: #0c9bed;
+  --primary-focus-outline-regular: var(--accent-strong-down);
+  --primary-border-active: var(--accent-strong);
   --primary-border-regular: var(--neutral-neutral-90);
   --primary-text-regular: var(--neutral-neutral-100);
   --primary-placeholder-regular: var(--neutral-neutral-30);
   --primary-surface-active: var(--neutral-neutral-100);
-  --primary-icon-active: #0c9bed;
-  --primary-text-active: #0c9bed;
+  --primary-icon-active: var(--accent-strong);
+  --primary-text-active: var(--accent-strong);
   --primary-icon-disabled: var(--neutral-neutral-50);
   --primary-text-disabled: var(--neutral-neutral-70);
   --primary-border-disabled: var(--neutral-neutral-50);
   --primary-faint-border-regular: var(--neutral-neutral-30);
   --primary-outline-surface-regular: transparent;
-  --primary-surface-hover: #e5f6ff;
-  --invert-icon-regular: #0c9bed;
+  --primary-surface-hover: var(--accent-weak);
+  --invert-icon-regular: var(--accent-strong);
   --invert-text-regular: var(--neutral-neutral-20);
   --invert-surface-regular: var(--neutral-neutral-100);
   --invert-outline-surface-regular: transparent;
   --invert-outline-text-regular: var(--neutral-neutral-20);
-  --invert-outline-surface-hover: rgba(0, 0, 0, 0.4);
   --invert-outline-text-hover: var(--neutral-neutral-10);
   --invert-outline-icon-regular: var(--neutral-neutral-20);
   --invert-outline-icon-hover: var(--neutral-neutral-10);
-  --invert-outline-icon-active: #0c9bed;
-  --invert-outline-text-active: #0c9bed;
+  --invert-outline-icon-active: var(--accent-strong);
+  --invert-outline-text-active: var(--accent-strong);
   --invert-outline-focus-outline-regular: #2cb3ff;
   --invert-outline-text-disabled: var(--neutral-neutral-50);
   --invert-outline-icon-disabled: var(--neutral-neutral-50);
   --invert-outline-surface-active: var(--neutral-neutral-100);
-  --danger-border-regular: #ec0000;
-  --danger-text-regular: #ec0000;
-  --danger-icon-regular: #ec0000;
+  --danger-border-regular: var(--error-strong);
+  --danger-text-regular: var(--error-strong);
+  --danger-icon-regular: var(--error-strong);
 
   /* Typography */
   --font-family: 'IBM Plex Sans', sans-serif;

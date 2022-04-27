@@ -23,11 +23,11 @@
   display: flex;
   flex-flow: row nowrap;
   border-radius: var(--border-radius);
-  box-shadow: 0 0 0 1px var(--primary-border-regular);
+  box-shadow: 0 0 0 1px var(--base-strong-down);
   border: none;
-  color: var(--primary-text-regular);
+  color: var(--back-faint-weak-up);
   position: relative;
-  background-color: var(--primary-surface-regular);
+  background-color: var(--base-weak);
 }
 
 .message {
@@ -48,17 +48,17 @@
 
 .focus {
   & .inputBox {
-    box-shadow: 0 0 0 2px var(--primary-focus-outline-regular);
+    box-shadow: 0 0 0 2px var(--accent-strong-down);
   }
 }
 
 .error {
   & .inputBox {
-    box-shadow: 0 0 0 2px var(--danger-border-regular);
+    box-shadow: 0 0 0 2px var(--error-strong);
   }
 
   & .message {
-    color: var(--danger-text-regular);
+    color: var(--error-strong);
   }
 }
 
@@ -68,13 +68,13 @@
   }
 
   & .inputBox {
-    background-color: var(--primary-surface-disabled);
-    color: var(--primary-text-disabled);
-    box-shadow: 0 0 0 1px var(--primary-border-disabled);
+    background-color: var(--faint-weak-down);
+    color: var(--icon-base-strong);
+    box-shadow: 0 0 0 1px var(--faint-strong-down);
   }
 
   & .icons {
-    color: var(--primary-icon-disabled);
+    color: var(--faint-strong-down);
   }
 }
 

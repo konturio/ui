@@ -1,8 +1,8 @@
 .appHeader {
   display: flex;
   align-items: center;
-  background-color: var(--invert-surface-regular);
-  color: var(--invert-text-regular);
+  background-color: var(--back-faint-weak-up);
+  color: var(--faint-weak-down);
   font-weight: 500;
   letter-spacing: 0.03em;
   padding: 2px var(--unit);

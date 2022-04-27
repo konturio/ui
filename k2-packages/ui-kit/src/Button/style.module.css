@@ -9,47 +9,47 @@
 }
 
 .primary {
-  background-color: var(--primary-surface-regular);
-  color: var(--primary-text-regular);
+  background-color: var(--base-weak);
+  color: var(--back-faint-weak-up);
   box-shadow: var(--elevation-1);
   &:hover:not(:disabled) {
     box-shadow: var(--elevation-2);
   }
   &:disabled {
     cursor: default;
-    background-color: var(--primary-surface-disabled);
-    color: var(--primary-icon-disabled);
+    background-color: var(--faint-weak-down);
+    color: var(--faint-strong-down);
   }
   &:active:not(:disabled),
   &.active {
-    background-color: var(--primary-surface-active);
-    color: var(--primary-text-active);
+    background-color: var(--back-faint-weak-up);
+    color: var(--accent-strong);
   }
   &:focus {
-    box-shadow: var(--elevation-1), 0px 0px 0px 2px var(--primary-focus-outline-regular);
+    box-shadow: var(--elevation-1), 0px 0px 0px 2px var(--accent-strong-down);
   }
   &:hover:focus {
-    box-shadow: var(--elevation-2), 0px 0px 0px 2px var(--primary-focus-outline-regular);
+    box-shadow: var(--elevation-2), 0px 0px 0px 2px var(--accent-strong-down);
   }
 }
 
 .invert-outline {
-  background-color: var(--invert-outline-surface-regular);
-  color: var(--invert-outline-text-regular);
+  background-color: transparent;
+  color: var(--faint-weak-down);
   &:hover:not(:disabled) {
-    background-color: var(--invert-outline-surface-hover);
+    background-color: rgba(0, 0, 0, 0.4);
   }
   &:disabled {
     cursor: default;
-    background-color: var(--invert-outline-surface-disabled);
-    color: var(--invert-outline-icon-disabled);
+    /* background-color: var(--invert-outline-surface-disabled); as we don't have it anywhere */
+    color: var(--faint-strong-down);
   }
   &:active:not(:disabled),
   &.active {
-    background-color: var(--invert-outline-surface-active);
-    color: var(--invert-outline-icon-active);
+    background-color: var(--back-faint-weak-up);
+    color: var(--accent-strong);
   }
   &:focus {
-    box-shadow: 0px 0px 0px 2px var(--primary-focus-outline-regular);
+    box-shadow: 0px 0px 0px 2px var(--accent-strong-down);
   }
 }

@@ -7,27 +7,27 @@
   &.disabled {
     cursor: not-allowed;
     .label {
-      color: var(--primary-text-disabled)
+      color: var(--icon-base-strong)
     }
     .toggle {
-      background-color: var(--primary-surface-regular);
-      box-shadow: 0px 0px 0px 1px var(--primary-border-disabled);
+      background-color: var(--base-weak);
+      box-shadow: 0px 0px 0px 1px var(--faint-strong-down);
       &:after {
-        box-shadow: 0px 0px 0px 1px var(--primary-border-disabled);
+        box-shadow: 0px 0px 0px 1px var(--faint-strong-down);
       }
     }
     &.checked {
       .toggle {
-        background-color: var(--primary-border-disabled);
-        color: var(--primary-text-disabled);
+        background-color: var(--faint-strong-down);
+        color: var(--icon-base-strong);
       }
       .label {
-        color: var(--primary-text-disabled);
+        color: var(--icon-base-strong);
       }
     }
   }
   :focus ~ .toggle {
-    box-shadow: 0px 0px 0px 2px var(--primary-focus-outline-regular);
+    box-shadow: 0px 0px 0px 2px var(--accent-strong-down);
   }
 }
 
@@ -35,13 +35,13 @@
   height: var(--double-unit);
   width: calc(var(--double-unit) * 2);
   margin: 0 0.5em 0 0;
-  box-shadow: 0px 0px 0px 1px var(--primary-border-regular);
+  box-shadow: 0px 0px 0px 1px var(--base-strong-down);
   border-radius: 0.6em;
   cursor: pointer;
-  background-color: var(--primary-surface-disabled);
+  background-color: var(--faint-weak-down);
 
   &:after {
-    background-color: var(--primary-surface-regular);
+    background-color: var(--base-weak);
     content: '';
     display: block;
     width: calc(var(--double-unit) - 6px);
@@ -51,13 +51,13 @@
     right: 0;
     margin: 3px;
     transition: right ease 0.2s;
-    box-shadow: 0px 0px 0px 1px var(--primary-border-regular);
+    box-shadow: 0px 0px 0px 1px var(--base-strong-down);
   }
 }
 
 .checked {
   .toggle {
-    background-color: var(--primary-border-regular);
+    background-color: var(--base-strong-down);
     &:after {
       position: relative;
       right: calc(var(--double-unit) * -1);

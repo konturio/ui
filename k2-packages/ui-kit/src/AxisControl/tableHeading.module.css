@@ -326,7 +326,7 @@
 }
 
 .quotientsCountLabel {
-  background-color: var(--primary-placeholder-regular);
+  background-color: var(--faint-weak);
   border-radius: 8px;
 }
 

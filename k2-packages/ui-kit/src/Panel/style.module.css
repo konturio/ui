@@ -3,7 +3,7 @@
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
-  border-bottom: 1px solid var(--primary-faint-border-regular);
+  border-bottom: 1px solid var(--faint-weak);
   align-items: flex-start;
 }
 

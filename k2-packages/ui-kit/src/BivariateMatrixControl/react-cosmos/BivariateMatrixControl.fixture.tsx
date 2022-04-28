@@ -1,8 +1,8 @@
 import { mock } from './mocks/mock-20';
-import { AxisControl } from '../index';
-import { useMemo, useRef } from 'react';
+import {useCallback, useMemo, useRef} from 'react';
 import { Indicator } from '@k2-packages/bivariate-tools';
-import './style.css';
+import { BivariateMatrixControlComponent } from '../index';
+import styles from './BivariateMatrixControlFixture.module.css';
 
 type AxisGroup = {
   parent: string | null;
@@ -24,7 +24,7 @@ const mapHeaderCell = (group: AxisGroup, indicators: Indicator[]) => ({
   })),
 });
 
-export default function AxisControlFixture() {
+export default function BivariateMatrixControlFixture() {
   const ref = useRef(null);
 
   const headings = useMemo(() => {
@@ -40,17 +40,17 @@ export default function AxisControlFixture() {
     };
   }, [mock]);
 
-  const onSelectCellHandler = (e, { x, y }) => {
+  const onSelectCellHandler = useCallback((e, { x, y }) => {
     console.log('onSelectCellHandler', e, x, y);
-  };
+  }, []);
 
   const onSelectDenominator = (horizontal: boolean, index: number, numId: string, denId: string) => {
     console.log('onSelectDenominator', horizontal, index, numId, denId);
   };
 
   return (
-    <div className="axisMatrix">
-      <AxisControl
+    <div className={styles.axisMatrix}>
+      <BivariateMatrixControlComponent
         ref={ref}
         matrix={mock.matrix}
         xHeadings={headings?.x}

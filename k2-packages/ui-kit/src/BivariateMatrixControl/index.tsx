@@ -1,87 +1,36 @@
 import { forwardRef, useCallback, useState } from 'react';
 import styles from './style.module.css';
 import cn from 'clsx';
-import { attachPositionToCb } from './matrixFn';
-import { Cell } from './Cell';
-import TableHeading from './TableHeading';
-
-const getGridStyle = (x, y, cellSize = 0) => ({
-  display: 'inline-grid',
-  '--cell-size': cellSize === 0 ? 'initial' : `${cellSize}px`,
-  gridTemplateRows: `repeat(${y}, ${cellSize === 0 ? 'auto' : cellSize + 'px'})`,
-  gridTemplateColumns: `repeat(${x}, ${cellSize === 0 ? 'auto' : cellSize + 'px'})`,
-});
+import { calculateHeadingsStyle, calculateStringWidth, getCellPositionStyle, getGridStyle } from './utils/utils';
+import { BIVARIATE_MATRIX_HEIGHT_SHIFT, BIVARIATE_MATRIX_WIDTH_SHIFT } from './constants';
+import { BivariateMatrixHeading } from './components/BivariateMatrixHeading/BivariateMatrixHeading';
+import { BivariateMatrixHeadingType, BivariateMatrixPositionType } from './types';
+import { BivariateMatrixCell } from './components/BivariateMatrixCell/BivariateMatrixCell';
 
 const isSelected = (selected?: number | null) => (current: number) => selected === current;
 
-const getCellPositionStyle = (col: number, row: number) => {
-  return {
-    gridColumn: `${col + 3} / ${col + 4}`,
-    gridRow: `${row + 3} / ${row + 4}`,
-  };
-};
-
-interface AxisControlProps {
+interface BivariateMatrixControlProps {
   angle?: number;
-  onSelectCell?: (
-    e: React.MouseEvent<HTMLElement, MouseEvent> | null,
-    postion: { x: number | null; y: number | null },
-  ) => void;
-  selectedCell?: { x: number | null; y: number | null };
+  onSelectCell?: (e: React.MouseEvent<HTMLElement, MouseEvent> | null, position: BivariateMatrixPositionType) => void;
+  selectedCell?: BivariateMatrixPositionType;
   cellSize?: number;
   matrix: (number | null)[][];
-  xHeadings: {
-    label: string;
-    selectedQuotient: {
-      id: [string, string];
-      label?: string;
-    };
-    quality?: number;
-    quotients: {
-      id: [string, string];
-      label?: string;
-      quality?: number;
-    }[];
-  }[];
-  yHeadings: {
-    label: string;
-    selectedQuotient: {
-      id: [string, string];
-      label?: string;
-    };
-    quality?: number;
-    quotients: {
-      id: [string, string];
-      label?: string;
-      quality?: number;
-    }[];
-  }[];
-  onSelectDenominator: (horisontal: boolean, index: number, numId, denId: string) => void;
+  xHeadings: BivariateMatrixHeadingType[];
+  yHeadings: BivariateMatrixHeadingType[];
+  onSelectDenominator: (horizontal: boolean, index: number, numId, denId: string) => void;
 }
 
-// auto-size calculation params
-const WIDTH_SHIFT = 25.5;
-const HEIGHT_SHIFT = 27.5;
-
-// text width measure hack
-const canvas = document.createElement('canvas');
-const context: any = canvas.getContext('2d') || {};
-context.font = 'normal 13px Roboto';
-
-const calculateStringWidth = (str: string): number => {
-  // coeff 0.85 here is because of transform: scale(0.85) applied to matrix
-  return (context.measureText(str).width + 80) / 0.85;
-};
-
-const calculateHeadingsStyle = (baseDimension: number, vertical: boolean, index: number) => {
-  return vertical
-    ? { height: `${baseDimension + index * HEIGHT_SHIFT}px` }
-    : { width: `${baseDimension + index * WIDTH_SHIFT}px` };
-};
-
-const AxisControlComponent = forwardRef<HTMLDivElement | null, any>(
+export const BivariateMatrixControlComponent = forwardRef<HTMLDivElement | null, any>(
   (
-    { matrix, xHeadings, yHeadings, onSelectCell, selectedCell, cellSize = 0, onSelectDenominator }: AxisControlProps,
+    {
+      matrix,
+      xHeadings,
+      yHeadings,
+      onSelectCell,
+      selectedCell,
+      cellSize = 0,
+      onSelectDenominator,
+    }: BivariateMatrixControlProps,
     ref,
   ) => {
     const [hoveredCell, setHoveredCell] = useState<{ x: number | null; y: number | null }>({ x: -1, y: -1 });
@@ -150,7 +99,7 @@ const AxisControlComponent = forwardRef<HTMLDivElement | null, any>(
       let xLength = calculateStringWidth(xHeadings[0].label);
       for (let i = 1; i < xHeadings.length; i++) {
         const iStrWidth = calculateStringWidth(xHeadings[i].label);
-        const shift = i * HEIGHT_SHIFT;
+        const shift = i * BIVARIATE_MATRIX_HEIGHT_SHIFT;
         if (iStrWidth > xLength + shift) {
           xLength = iStrWidth - shift;
         }
@@ -158,7 +107,7 @@ const AxisControlComponent = forwardRef<HTMLDivElement | null, any>(
       let yLength = calculateStringWidth(yHeadings[0].label);
       for (let i = 1; i < yHeadings.length; i++) {
         const iStrWidth = calculateStringWidth(yHeadings[i].label);
-        const shift = i * WIDTH_SHIFT;
+        const shift = i * BIVARIATE_MATRIX_WIDTH_SHIFT;
         if (iStrWidth > yLength + shift) {
           yLength = iStrWidth - shift;
         }
@@ -211,7 +160,6 @@ const AxisControlComponent = forwardRef<HTMLDivElement | null, any>(
               const isFromSelectedCol = checkIsFromSelectedCol(colIndex);
               const isFromSelectedRow = checkIsFromSelectedRow(rowIndex);
               const isHovered = checkIsFromHoveredRow(rowIndex) || checkIsFromHoveredCol(colIndex);
-              const call = attachPositionToCb({ x: colIndex, y: rowIndex });
               const cellClasses = {
                 [styles.hoveredCell]: isHovered,
                 [styles.selectedCol]: isFromSelectedCol,
@@ -223,37 +171,41 @@ const AxisControlComponent = forwardRef<HTMLDivElement | null, any>(
               };
 
               return val === null ? (
-                <Cell
+                <BivariateMatrixCell
+                  x={colIndex}
+                  y={rowIndex}
                   selected={isFromSelectedRow && isFromSelectedCol}
                   className={cn(cellClasses)}
-                  key={`${colIndex}|${rowIndex}`}
-                  onClick={call(onSelectCell)}
-                  onHover={call(onMouseOver)}
+                  key={`matrix_cell_${colIndex}_${rowIndex}`}
+                  onClick={onSelectCell}
+                  onHover={onMouseOver}
                   onMouseOut={onMouseOut}
                   style={getCellPositionStyle(colIndex, rowIndex)}
                   value={val}
                   disabled
                 >
                   <span></span>
-                </Cell>
+                </BivariateMatrixCell>
               ) : (
-                <Cell
+                <BivariateMatrixCell
+                  x={colIndex}
+                  y={rowIndex}
                   selected={isFromSelectedRow && isFromSelectedCol}
                   className={cn(cellClasses)}
-                  key={`${colIndex}|${rowIndex}`}
-                  onClick={call(onSelectCell)}
-                  onHover={call(onMouseOver)}
+                  key={`matrix_cell_${colIndex}_${rowIndex}`}
+                  onClick={onSelectCell}
+                  onHover={onMouseOver}
                   onMouseOut={onMouseOut}
                   style={getCellPositionStyle(colIndex, rowIndex)}
                   value={val}
                 >
                   <span className={styles.rotatedCell}>{val?.toFixed(3)}</span>
-                </Cell>
+                </BivariateMatrixCell>
               );
             }),
           )}
 
-          <TableHeading
+          <BivariateMatrixHeading
             selectedIndex={selectedCell?.y}
             hoveredIndex={hoveredCell.y}
             entries={yHeadings}
@@ -263,7 +215,7 @@ const AxisControlComponent = forwardRef<HTMLDivElement | null, any>(
             baseDimension={baseDimension}
             calculateHeadingsStyle={calculateHeadingsStyle}
           />
-          <TableHeading
+          <BivariateMatrixHeading
             selectedIndex={selectedCell?.x}
             hoveredIndex={hoveredCell.x}
             entries={xHeadings}
@@ -279,6 +231,5 @@ const AxisControlComponent = forwardRef<HTMLDivElement | null, any>(
     );
   },
 );
-AxisControlComponent.displayName = 'AxisControl';
 
-export const AxisControl = AxisControlComponent;
+BivariateMatrixControlComponent.displayName = 'BivariateMatrixControl';

@@ -1,7 +1,7 @@
 import { CSSProperties, useCallback, useEffect, useState, memo } from 'react';
-import styles from './tableHeading.module.css';
 import cn from 'clsx';
-import DenominatorIcon from './components/DenominatorIcon/DenominatorIcon';
+import DenominatorIcon from '../DenominatorIcon/DenominatorIcon';
+import styles from './BivariateMatrixHeading.module.css';
 
 const createGlobalState = (initialState) => {
   let globalState = initialState;
@@ -286,64 +286,66 @@ interface TableHeadingProps {
   calculateHeadingsStyle: (baseDimension: number, vertical: boolean, index: number) => CSSProperties;
 }
 
-const TableHeading = ({
-  className,
-  entries,
-  vertical = false,
-  selectedIndex = -1,
-  hoveredIndex = -1,
-  onCellHover,
-  onCellClick,
-  onSelectDenominator,
-  baseDimension,
-  calculateHeadingsStyle,
-}: TableHeadingProps) => {
-  const elementsArray: React.ReactElement[] = [];
-  if (vertical) {
-    for (let i = 0; i < entries.length; i++) {
-      const id = `vert_${i}`;
-      elementsArray.push(
-        <HeadingEntry
-          key={id}
-          id={id}
-          index={i}
-          vertical={vertical}
-          className={className}
-          selectedIndex={selectedIndex}
-          hoveredIndex={hoveredIndex}
-          headerCell={entries[i]}
-          onCellHover={onCellHover}
-          onCellClick={onCellClick}
-          onSelectDenominator={onSelectDenominator}
-          baseDimension={baseDimension}
-          calculateHeadingsStyle={calculateHeadingsStyle}
-        />,
-      );
+export const BivariateMatrixHeading = memo(
+  ({
+    className,
+    entries,
+    vertical = false,
+    selectedIndex = -1,
+    hoveredIndex = -1,
+    onCellHover,
+    onCellClick,
+    onSelectDenominator,
+    baseDimension,
+    calculateHeadingsStyle,
+  }: TableHeadingProps) => {
+    const elementsArray: React.ReactElement[] = [];
+    if (vertical) {
+      for (let i = 0; i < entries.length; i++) {
+        const id = `vert_${i}`;
+        elementsArray.push(
+          <HeadingEntry
+            key={id}
+            id={id}
+            index={i}
+            vertical={vertical}
+            className={className}
+            selectedIndex={selectedIndex}
+            hoveredIndex={hoveredIndex}
+            headerCell={entries[i]}
+            onCellHover={onCellHover}
+            onCellClick={onCellClick}
+            onSelectDenominator={onSelectDenominator}
+            baseDimension={baseDimension}
+            calculateHeadingsStyle={calculateHeadingsStyle}
+          />,
+        );
+      }
+    } else {
+      for (let i = entries.length - 1; i >= 0; i--) {
+        const id = `hor_${i}`;
+        elementsArray.push(
+          <HeadingEntry
+            key={id}
+            id={id}
+            index={i}
+            vertical={vertical}
+            className={className}
+            selectedIndex={selectedIndex}
+            hoveredIndex={hoveredIndex}
+            headerCell={entries[i]}
+            onCellHover={onCellHover}
+            onCellClick={onCellClick}
+            onSelectDenominator={onSelectDenominator}
+            baseDimension={baseDimension}
+            calculateHeadingsStyle={calculateHeadingsStyle}
+          />,
+        );
+      }
     }
-  } else {
-    for (let i = entries.length - 1; i >= 0; i--) {
-      const id = `hor_${i}`;
-      elementsArray.push(
-        <HeadingEntry
-          key={id}
-          id={id}
-          index={i}
-          vertical={vertical}
-          className={className}
-          selectedIndex={selectedIndex}
-          hoveredIndex={hoveredIndex}
-          headerCell={entries[i]}
-          onCellHover={onCellHover}
-          onCellClick={onCellClick}
-          onSelectDenominator={onSelectDenominator}
-          baseDimension={baseDimension}
-          calculateHeadingsStyle={calculateHeadingsStyle}
-        />,
-      );
-    }
-  }
 
-  return <>{elementsArray.map((el) => el)}</>;
-};
+    return <>{elementsArray.map((el) => el)}</>;
+  },
+);
 
-export default memo(TableHeading);
+BivariateMatrixHeading.displayName = 'BivariateMatrixHeading';

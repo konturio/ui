@@ -1,10 +1,17 @@
-html, body {
+html,
+body {
   font-family: var(--font-family);
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
   line-height: 20px;
   letter-spacing: 0.0016em;
+  color: var(--base-strong);
+}
+
+input,
+select {
+  color: var(--base-strong);
 }
 
 .k-font-caption {

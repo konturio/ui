@@ -3,7 +3,7 @@
   flex-flow: row nowrap;
   align-items: center;
   justify-content: center;
-  background-color: #fff;
+  background-color: var(--base-weak);
   flex: 1;
   &:hover:not(.disabled):not(.selected) {
     box-shadow: inset 0px 0px 0px 100px var(--accent-weak);

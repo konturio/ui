@@ -39,7 +39,7 @@
 
 .icon {
   position: absolute;
-  color: white;
+  color: var(--base-weak);
   visibility: hidden;
   svg {
     display: block;

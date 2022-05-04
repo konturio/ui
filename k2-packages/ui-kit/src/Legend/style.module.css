@@ -20,7 +20,7 @@
   align-items: center;
   font-size: 0.9em;
   padding: 10px;
-  color: #555;
+  color: var(--base-strong);
 }
 
 .yStepsCell {
@@ -33,7 +33,7 @@
 }
 
 .yStepsCell:before {
-  border-bottom: 1px solid var(--faint-weak);
+  border-bottom: 1px solid var(--faint-strong);
   content: '';
   width: 16px;
   height: 1px;
@@ -49,7 +49,7 @@
 }
 
 .xStepsCell:before {
-  border-left: 1px solid #aaa;
+  border-left: 1px solid var(--faint-strong);
   content: '';
   height: 16px;
   width: 1px;
@@ -60,7 +60,7 @@
 
 .arrowX,
 .arrowY {
-  background-color: #aaa;
+  background-color: var(--faint-strong);
 }
 
 .arrowY {
@@ -79,7 +79,7 @@
 .axisLabelX,
 .axisLabelY {
   font-size: 0.8em;
-  color: #999;
+  color: var(--text-faint-strong);
   line-height: 100%;
 }
 
@@ -97,7 +97,7 @@
 
 .arrowHeadX,
 .arrowHeadY {
-  color: #999;
+  color: var(--faint-strong);
   position: relative;
 }
 

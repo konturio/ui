@@ -9,11 +9,11 @@
 
 .close {
   margin-left: 1em;
-  color: var(--primary-icon-regular);
+  color: var(--faint-strong);
   cursor: pointer;
   border-radius: var(--border-radius);
   svg {
-    display: block; 
+    display: block;
   }
 }
 
@@ -24,10 +24,9 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  background-color: #fff;
+  background-color: var(--base-weak);
 
   &:hover {
-     background-color: #f7f7f7;
+    background-color: var(--base-weak-up);
   }
 }
-

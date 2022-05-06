@@ -1,9 +1,13 @@
+variables:
+  SVC_NAME: ui_kit # <= no spaces or quotes here, please
+  npm_config_cache: $CI_PROJECT_DIR/.npm
+#  CI_DEBUG_TRACE: 'true'
+
 stages:
   - prepare
   - publish
-
-variables:
-  npm_config_cache: "$CI_PROJECT_DIR/.npm"
+  - build
+  - deploy
 
 .default-job-settings:
   tags:
@@ -17,7 +21,7 @@ prepare:
     - n install 16
     - npm i lerna -g
     - lerna bootstrap
-    - npm run auto:lint
+    - 'npm run auto:lint'
     - npm run build
     - npm run test
 
@@ -25,17 +29,79 @@ prepare:
     paths:
       - node_modules/
   artifacts:
-    name: "artifacts"
+    name: artifacts
     untracked: true
     expire_in: 60 mins
     paths:
       - node_modules/
 
-
 publish:
   extends: .default-job-settings
   stage: publish
   script:
-    - npm run auto:lerna:publish
+    - 'npm run auto:lerna:publish'
   dependencies:
     - prepare
+
+build:
+  extends: .default-job-settings
+  stage: build
+  script:
+    - 'npm run cosmos:build:export'
+    - 'tar --exclude-from external/deploy_excludes/exclusion_patterns.txt -C $CI_PROJECT_DIR/cosmos-export/ -cvf - . | xz -T0 -1 > ${CI_PROJECT_NAME}-$CI_COMMIT_REF_SLUG.tar.xz'
+  dependencies:
+    - prepare
+  artifacts:
+    when: always
+    name: '${CI_PROJECT_NAME}-$CI_COMMIT_REF_SLUG'
+    paths:
+      - '*.tar.xz'
+
+deploy-dev:
+  tags:
+    - kontur
+    - ansible
+  stage: deploy
+  script: >
+    ansible-playbook -vD -e "app_name=$SVC_NAME version=$CI_COMMIT_REF_SLUG-$CI_PIPELINE_IID
+    path_to_dist=$(find $CI_PROJECT_DIR -maxdepth 1 -name ${CI_PROJECT_NAME}-$CI_COMMIT_REF_SLUG.tar.xz -print -quit)"
+    --limit=dev_$SVC_NAME external/ansible/deploy.yml
+  environment:
+    name: DEV
+    url: 'https://test-apps02.konturlabs.com/ui-kit/'
+  when: manual
+  dependencies:
+    - build
+
+deploy-test:
+  tags:
+    - kontur
+    - ansible
+  stage: deploy
+  script: >
+    ansible-playbook -vD -e "app_name=$SVC_NAME version=$CI_COMMIT_REF_SLUG-$CI_PIPELINE_IID
+    path_to_dist=$(find $CI_PROJECT_DIR -maxdepth 1 -name ${CI_PROJECT_NAME}-$CI_COMMIT_REF_SLUG.tar.xz -print -quit)"
+    --limit=test_$SVC_NAME external/ansible/deploy.yml
+  environment:
+    name: TEST
+    url: 'https://test-apps.konturlabs.com/ui-kit/'
+  when: manual
+  dependencies:
+    - build
+
+deploy-prod:
+  tags:
+    - kontur
+    - ansible
+  stage: deploy
+  script: >
+    ansible-playbook -vD -e "app_name=$SVC_NAME version=$CI_COMMIT_REF_SLUG-$CI_PIPELINE_IID
+    path_to_dist=$(find $CI_PROJECT_DIR -maxdepth 1 -name ${CI_PROJECT_NAME}-$CI_COMMIT_REF_SLUG.tar.xz -print -quit)"
+    --limit=prod_$SVC_NAME external/ansible/deploy.yml
+  environment:
+    name: PROD
+    url: 'https://apps.kontur.io/ui-kit/'
+  only:
+    - master
+  dependencies:
+    - build

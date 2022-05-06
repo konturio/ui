@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.4.0-alpha.8](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/default-theme@2.4.0-alpha.7...@k2-packages/default-theme@2.4.0-alpha.8) (2022-05-06)
+
+**Note:** Version bump only for package @k2-packages/default-theme
+
+
+
+
+
 # [2.4.0-alpha.7](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/default-theme@2.4.0-alpha.6...@k2-packages/default-theme@2.4.0-alpha.7) (2022-05-04)
 
 **Note:** Version bump only for package @k2-packages/default-theme

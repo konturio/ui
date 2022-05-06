@@ -1,3 +1,5 @@
+import * as path from 'path';
+
 declare const process: {
   readonly env: {
     [name: string]: string;
@@ -30,6 +32,15 @@ const config: UserConfigFn = async () => {
       port: (PORT && parseInt(PORT)) || 3000,
     },
 
+    build: {
+      outDir: '../cosmos-export',
+      rollupOptions: {
+        input: {
+          renderer: path.resolve(__dirname, 'cosmos/renderer.html'), // for cosmos experimentalRendererUrl
+        },
+      },
+    },
+    base: '',
     root: './cosmos',
   };
 

@@ -8,6 +8,7 @@
     "build": "run-s auto:ts:references auto:lerna:pre-build auto:ts:build auto:lerna:build",
     "dev": "run-p auto:lerna:pre-start auto:cosmos:renderer auto:cosmos auto:open",
     "bootstrap": "run-s auto:lerna:bootstrap auto:lerna:link",
+    "cosmos:build:export": "run-s auto:cosmos:export cosmos:renderer:export",
     "cosmos:renderer:export": "vite build",
     "publish": "run-s build auto:lerna:publish",
     "lint:fix": "eslint \"*/**/*.{ts,tsx}\" --quiet --fix",
@@ -27,8 +28,8 @@
     "auto:open": "npx open-cli http://localhost:5000",
     "auto:lerna:bootstrap": "lerna bootstrap",
     "auto:lerna:link": "lerna link",
-    "auto:cosmos": "cosmos",
-    "auto:cosmos:export": "cosmos-export",
+    "auto:cosmos": "cosmos --config cosmos.config.json",
+    "auto:cosmos:export": "cosmos-export --config cosmos.config.export.json",
     "auto:cosmos:renderer": "vite --force serve --port=8080",
     "auto:lerna:pre-build": "lerna run pre-build",
     "auto:lerna:pre-start": "lerna run pre-start",
@@ -120,7 +121,7 @@
     "syncpack": "^5.8.14",
     "ts-jest": "^27.0.4",
     "typescript": "^4.3.5",
-    "vite": "^2.4.4",
+    "vite": "^2.9.5",
     "vite-plugin-checker": "^0.3.4"
   },
   "devDependencies": {

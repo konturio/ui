@@ -10,7 +10,8 @@ body {
 }
 
 input,
-select {
+select,
+button {
   color: var(--base-strong);
 }
 

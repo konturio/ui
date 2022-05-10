@@ -34,7 +34,7 @@ import fixture22 from './../k2-packages/ui-kit/src/Toggler/Toggler.fixture.tsx';
 import decorator0 from './../k2-packages/ui-kit/cosmos.decorator.tsx';
 
 export const rendererConfig = {
-  port: 5000,
+  "port": 5000
 };
 
 export const fixtures = {
@@ -60,9 +60,9 @@ export const fixtures = {
   'k2-packages/ui-kit/src/Tabs/Tabs.fixture.tsx': fixture19,
   'k2-packages/ui-kit/src/Text/Text.fixture.tsx': fixture20,
   'k2-packages/ui-kit/src/TimeSlider/TimeSlider.fixture.tsx': fixture21,
-  'k2-packages/ui-kit/src/Toggler/Toggler.fixture.tsx': fixture22,
+  'k2-packages/ui-kit/src/Toggler/Toggler.fixture.tsx': fixture22
 };
 
 export const decorators = {
-  'k2-packages/ui-kit/cosmos.decorator.tsx': decorator0,
+  'k2-packages/ui-kit/cosmos.decorator.tsx': decorator0
 };

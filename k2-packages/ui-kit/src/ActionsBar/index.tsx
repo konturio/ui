@@ -8,7 +8,7 @@ export function ActionsBar({ children }: React.PropsWithChildren<unknown>) {
 
 export function ActionsBarBTN({ children, className, ...props }: React.PropsWithChildren<ButtonProps>) {
   return (
-    <Button className={cn(s.actionsBTN, className)} {...props} variant="invert-outline">
+    <Button className={cn(s.actionsBTN, className)} {...props} dark variant="invert" size="small">
       {children}
     </Button>
   );

@@ -42,8 +42,15 @@ export function AppHeader({
       <div className={s.logo}>{logo}</div>
       <div className={s.title}>{title}</div>
       <div className={s.children}>{children}</div>
-      <Button id={CHAT_BTN_ID} onClick={onChatClick} variant="invert-outline">
-        <ChatIcon />
+      <Button
+        id={CHAT_BTN_ID}
+        onClick={onChatClick}
+        dark
+        variant="invert"
+        size="small"
+        transparent
+        iconBefore={<ChatIcon />}
+      >
         Chat with us
       </Button>
       {afterChatContent && <div className={s.afterChatContent}>{afterChatContent}</div>}

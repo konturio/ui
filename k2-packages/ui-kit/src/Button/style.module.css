@@ -5,15 +5,57 @@
   justify-content: center;
   padding: var(--unit);
   cursor: pointer;
-  border-radius: var(--half-border-radius);
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  font-size: 14px;
+  font-family: var(--font-family);
+  letter-spacing: 0.2px;
+  line-height: 16px;
+
+  --button-box-shadow: 0 0 0 2px var(--base-weak), 0 0 0 4px var(--accent-strong);
+
+  --button-invert-background: var(--base-weak);
+  --button-invert-color: var(--accent-strong);
+
+  --button-invert-hover-background: var(--accent-weak);
+
+  --button-invert-disabled-color: var(--faint-strong-down);
+  --button-invert-disabled-background: var(--faint-weak-down);
+
+  --button-invert-active-color: var(--accent-strong-up);
+  --button-invert-active-background: var(--accent-weak);
+}
+
+.buttonDark {
+  --button-box-shadow: 0 0 0 2px var(--accent-strong);
+
+  --button-invert-background: var(--base-strong-down);
+  --button-invert-color: var(--faint-weak-up);
+
+  --button-invert-hover-background: var(--base-strong);
+
+  --button-invert-disabled-color: var(--faint-strong-up);
+  --button-invert-disabled-background: var(--base-strong-down);
+
+  --button-invert-active-color: var(--accent-strong-up);
+  --button-invert-active-background: var(--base-strong);
+}
+
+.buttonTransparent {
+  --button-invert-background: transparent;
+
+  --button-invert-hover-background: rgba(0, 0, 0, 0.5);
+
+  --button-invert-disabled-background: rgba(0, 0, 0, 0.1);
+
+  --button-invert-active-background: rgba(0, 0, 0, 0.5);
 }
 
 .primary {
-  background-color: var(--base-weak);
-  color: var(--back-faint-weak-up);
-  box-shadow: var(--elevation-1);
+  background-color: var(--accent-strong);
+  color: var(--base-weak);
   &:hover:not(:disabled) {
-    box-shadow: var(--elevation-2);
+    background-color: var(--accent-strong-up);
   }
   &:disabled {
     cursor: default;
@@ -22,34 +64,71 @@
   }
   &:active:not(:disabled),
   &.active {
-    background-color: var(--back-faint-weak-up);
-    color: var(--accent-strong);
+    background-color: var(--back-accent-strong);
+    color: var(--base-weak);
   }
   &:focus {
-    box-shadow: var(--elevation-1), 0px 0px 0px 2px var(--accent-strong-down);
+    outline: none;
+    box-shadow: var(--button-box-shadow);
   }
-  &:hover:focus {
-    box-shadow: var(--elevation-2), 0px 0px 0px 2px var(--accent-strong-down);
+}
+
+/*previously .invert-outline*/
+.invert {
+  background-color: var(--button-invert-background);
+  color: var(--button-invert-color);
+  &:hover:not(:disabled) {
+    background-color: var(--button-invert-hover-background);
+  }
+  &:disabled {
+    cursor: default;
+    background-color: var(--button-invert-disabled-background);
+    color: var(--button-invert-disabled-color);
+  }
+  &:active:not(:disabled),
+  &.active {
+    background-color: var(--button-invert-active-background);
+    color: var(--button-invert-active-color);
+  }
+  &:focus {
+    outline: none;
+    box-shadow: var(--button-box-shadow);
   }
 }
 
 .invert-outline {
-  background-color: transparent;
-  color: var(--faint-weak-down);
+  background-color: var(--button-invert-background);
+  color: var(--button-invert-color);
+  border: 1px solid var(--accent-weak-up);
   &:hover:not(:disabled) {
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: var(--button-invert-hover-background);
   }
   &:disabled {
     cursor: default;
-    /* background-color: var(--invert-outline-surface-disabled); as we don't have it anywhere */
-    color: var(--faint-strong-down);
+    background-color: var(--button-invert-disabled-background);
+    color: var(--button-invert-disabled-color);
   }
   &:active:not(:disabled),
   &.active {
-    background-color: var(--back-faint-weak-up);
-    color: var(--accent-strong);
+    background-color: var(--button-invert-active-background);
+    color: var(--button-invert-active-color);
+    border-color: var(--accent-strong);
   }
   &:focus {
-    box-shadow: 0px 0px 0px 2px var(--accent-strong-down);
+    outline: none;
+    box-shadow: var(--button-box-shadow);
   }
+}
+
+.medium {
+  padding: 12px;
+}
+
+.small {
+  padding: var(--unit);
+}
+
+.buttonContent {
+  padding-right: 8px;
+  padding-left: 8px;
 }

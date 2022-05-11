@@ -27,7 +27,7 @@
 }
 
 .buttonDark {
-  --button-box-shadow: 0 0 0 2px var(--accent-strong);
+  --button-box-shadow: 0 0 0 2px var(--accent-strong-down);
 
   --button-invert-background: var(--base-strong-down);
   --button-invert-color: var(--faint-weak-up);
@@ -37,7 +37,7 @@
   --button-invert-disabled-color: var(--faint-strong-up);
   --button-invert-disabled-background: var(--base-strong-down);
 
-  --button-invert-active-color: var(--accent-strong-up);
+  --button-invert-active-color: var(--accent-strong-down);
   --button-invert-active-background: var(--base-strong);
 }
 
@@ -112,7 +112,7 @@
   &.active {
     background-color: var(--button-invert-active-background);
     color: var(--button-invert-active-color);
-    border-color: var(--accent-strong);
+    border-color: var(--button-invert-active-color);
   }
   &:focus {
     outline: none;

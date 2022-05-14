@@ -1,0 +1,13 @@
+diff --git a/node_modules/@figma-export/core/dist/lib/figma.js b/node_modules/@figma-export/core/dist/lib/figma.js
+index 0765772..d70edcb 100644
+--- a/node_modules/@figma-export/core/dist/lib/figma.js
++++ b/node_modules/@figma-export/core/dist/lib/figma.js
+@@ -87,7 +87,7 @@ const fileImages = (client, fileId, ids) => __awaiter(void 0, void 0, void 0, fu
+     const response = yield client.fileImages(fileId, {
+         ids,
+         format: 'svg',
+-        svg_include_id: true,
++        svg_include_id: false,
+     }).catch((error) => {
+         throw new Error(`while fetching fileImages: ${error.message}`);
+     });

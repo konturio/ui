@@ -1,0 +1,41 @@
+.bg {
+  background: lightgray;
+  height: 100%;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(10, 5%);
+  gap: 20px;
+  justify-content: center;
+  padding-top: 50px;
+}
+
+.gridCell {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  position: relative;
+  height: 50px;
+
+  &:hover {
+    &::before {
+      content: attr(data-name);
+      display: inline-flex;
+      color: white;
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 4px;
+      z-index: 300;
+      position: absolute;
+      border-radius: 4px;
+      top: calc(100% + 10px);
+      transform: translateX(-50%);
+      left: 50%;
+      white-space: nowrap;
+    }
+  }
+
+  &:active {
+    box-shadow: 0 0 0 2px rgba(0, 255, 255, 0.3);
+  }
+}

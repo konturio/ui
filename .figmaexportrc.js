@@ -48,9 +48,6 @@ module.exports = {
                 [getVariable('base-strong-down')]: 'currentColor',
                 [getVariable('faint-strong')]: 'currentColor',
               },
-              svgoConfig: {
-                plugins: [{ removeXMLNS: true }],
-              },
               // template is default, but we need to add displayName to every icon component
               // https://github.com/gregberge/svgr/blob/main/packages/babel-plugin-transform-svg-component/src/defaultTemplate.ts
               template: (variables, { tpl }) => {

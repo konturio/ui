@@ -51,3 +51,5 @@ export {
   SortIcon,
   TripleDotIcon,
 };
+
+export * from './figma-icons';

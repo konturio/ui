@@ -14,25 +14,30 @@ Version track starts from v1.0.0 at `master` branch.
 
 Current approach rely on two workspaces:
 
- - `@k2-packages`, versioned application modules;
+- `@k2-packages`, versioned application modules;
 
 Respectively k2-packages folders.
 
 ## Setup
 
 ### Nexus repository access
-Generate nexus access token 
+
+Generate nexus access token
+
 ```
 npm config set registry https://nexus.kontur.io/repository/npm-a/
 npm config set always-auth true
 npm login
 ```
+
 Copy token from `~/.npmrc`
+
 ```
 sed -n 's/.*_authToken=//p' ~/.npmrc
 ```
 
 Create .npmrc in a project directory.
+
 ```
 //nexus.kontur.io/repository/npm-a/:_authToken=your_token_here
 //nexus.kontur.io/repository/npm-snapshots-a/:_authToken=your_token_here
@@ -40,19 +45,23 @@ registry=https://nexus.kontur.io/repository/npm-a/
 always-auth=true
 
 ```
+
 Check if you logged in
+
 ```
 npm whoami --registry=https://nexus.kontur.io/repository/npm-a/
 ```
 
 ### Package management
+
 To add dependency to all packages.
+
 ```sh
 $ lerna add @k2-packages/module3
 ```
 
-
 To add module3 as dependency to module2.
+
 ```sh
 $ lerna add @k2-packages/module3 --scope=@k2-packages/module2
 ```
@@ -60,6 +69,7 @@ $ lerna add @k2-packages/module3 --scope=@k2-packages/module2
 ### Git branch naming
 
 For every feature you must create new branch in format
+
 ```
 {fibery-task-id}-{tas-title}
 ```
@@ -80,45 +90,48 @@ Commit message format:
 <footer>
 ```
 
-
 Must be one of the following:
-* **build**: Changes that affect the build system or external dependencies (example scopes: webpack, babel, npm)
-* **ci**: Changes to our CI configuration files and scripts (example scopes: .env, Docker, Ansible, configs)
-* **docs**: Documentation only changes
-* **feat**: A new feature
-* **fix**: A bug fix
-* **perf**: A code change that improves performance
-* **refactor**: A code change that neither fixes a bug nor adds a feature
-* **style**: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
-* **test**: Adding missing tests or correcting existing tests
 
-###  Version release
+- **build**: Changes that affect the build system or external dependencies (example scopes: webpack, babel, npm)
+- **ci**: Changes to our CI configuration files and scripts (example scopes: .env, Docker, Ansible, configs)
+- **docs**: Documentation only changes
+- **feat**: A new feature
+- **fix**: A bug fix
+- **perf**: A code change that improves performance
+- **refactor**: A code change that neither fixes a bug nor adds a feature
+- **style**: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
+- **test**: Adding missing tests or correcting existing tests
+
+### Version release
+
 After you have finished working with the branch:
+
 1. Push and publish it into the git:
-`git push --set-upstream origin <branch_name>`
+   `git push --set-upstream origin <branch_name>`
 
 2. Open Merge Request (MR) into dev
- - Select `Delete source branch`
- - Select `Squash commits`
- - Write changelog in description of MR (it will be added in change log of all modules that depend on your MR)
+
+- Select `Delete source branch`
+- Select `Squash commits`
+- Write changelog in description of MR (it will be added in change log of all modules that depend on your MR)
 
 3. Make sure that all CI stages were successful and choice reviewer
 
 4. Make sure that all issues identified in the review process closed,
-and request have at least one :like: (not yours). If CI/CD pipeline without errors - accept MR.
+   and request have at least one :like: (not yours). If CI/CD pipeline without errors - accept MR.
 
 If you need release modules in NPM nexus repo, you need some extra steps:
 
 5. Clone fresh `master` branch with merged request
 6. `npm run release`
-6.1 for Windows OS: powershell terminal may not let you log in and push new versions. Try using git bash terminal
+   6.1 for Windows OS: powershell terminal may not let you log in and push new versions. Try using git bash terminal
 7. Wait until pipeline task 'release' was success
 8. Rebuild the app where you want to use the new modules
 
 > is something wrong in CI as workaround you can run `npm run publish` manually
 
-
 ### Localization
+
 Localization done with a complete solution of i18next.
 Each product build on top of k2 platform:
 
@@ -129,6 +142,7 @@ Each product build on top of k2 platform:
 To extract translation keys:
 
 Declare the plugin like any other plugin in your .babelrc and you're good to go:
+
 ```
 {
   "plugins": [
@@ -143,3 +157,17 @@ Once the plugin is setup, you can build your app normally or run Babel through B
 `yarn run babel -f .babelrc 'src/**/*.{js,jsx,ts,tsx}'`
 
 Extracted translations land in the extractedTranslations/ directory by default.
+
+### Export icons from Figma
+
+Before export icons, you will need to generate a Personal Access Token in Figma.
+
+1. Go to the File Browser.
+2. Click your name at the top left and go to the Settings tab.
+3. Under Personal Access Tokens, click Create a new personal access token.
+4. Copy this token. This is your Figma API key.
+
+Copy the token. Now you can start export!
+
+`export FIGMA_TOKEN=<personalAccessToken>`
+`npm run figma:export`

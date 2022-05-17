@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-alpha.32](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@3.0.0-alpha.31...@k2-packages/ui-kit@3.0.0-alpha.32) (2022-05-17)
+
+**Note:** Version bump only for package @k2-packages/ui-kit
+
+
+
+
+
 # [3.0.0-alpha.31](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@3.0.0-alpha.30...@k2-packages/ui-kit@3.0.0-alpha.31) (2022-05-11)
 
 **Note:** Version bump only for package @k2-packages/ui-kit

@@ -47,6 +47,7 @@ module.exports = {
                 [getVariable('base-weak-up')]: 'currentColor',
                 [getVariable('base-strong-down')]: 'currentColor',
                 [getVariable('faint-strong')]: 'currentColor',
+                [getVariable('icon-base-strong')]: 'currentColor',
               },
               // template is default, but we need to add displayName to every icon component
               // https://github.com/gregberge/svgr/blob/main/packages/babel-plugin-transform-svg-component/src/defaultTemplate.ts

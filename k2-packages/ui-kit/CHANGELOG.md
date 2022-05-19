@@ -576,7 +576,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### Bug Fixes
 
-- **acxis-control:** Remove unused variable in Cell.tsx that breaks CI build ([4048c70](https://gitlab.com/kontur-private/k2/k2-front-end/commit/4048c704a86866674e411604ea7df583b8a303f1))
+- **acxis-control:** Remove unused variable in BivariateMatrixCell.tsx that breaks CI build ([4048c70](https://gitlab.com/kontur-private/k2/k2-front-end/commit/4048c704a86866674e411604ea7df583b8a303f1))
 - **axis-control:** Resolve issue with React.FC react/prop-types warning ([886012c](https://gitlab.com/kontur-private/k2/k2-front-end/commit/886012c41b80ae8e6b5b7e52d0b5befb907c3a60))
 
 ### Features

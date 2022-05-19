@@ -1,6 +1,6 @@
 import { forwardRef, useImperativeHandle, useRef } from 'react';
 import styles from './BivariateMatrixCellConnector.module.css';
-import cn from "clsx";
+import cn from 'clsx';
 
 interface BivariateMatrixCellConnectorProps {
   type: 'horizontal' | 'vertical';

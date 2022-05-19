@@ -20,7 +20,21 @@ interface CellProps {
 
 export const BivariateMatrixCell = forwardRef(
   (
-    { value, x, y, className, onMouseOver, onMouseOut, onClick, disabled = false, style, firstRow, firstCol, lastRow, lastCol }: CellProps,
+    {
+      value,
+      x,
+      y,
+      className,
+      onMouseOver,
+      onMouseOut,
+      onClick,
+      disabled = false,
+      style,
+      firstRow,
+      firstCol,
+      lastRow,
+      lastCol,
+    }: CellProps,
     ref,
   ) => {
     const containerRef = useRef<HTMLDivElement>(null);
@@ -29,11 +43,7 @@ export const BivariateMatrixCell = forwardRef(
     let isFromSelectedRow = false;
     let isFromSelectedCol = false;
 
-    const baseClassNames = cn(
-      styles.valueCell,
-      className,
-      disabled && styles.disabled,
-    );
+    const baseClassNames = cn(styles.valueCell, className, disabled && styles.disabled);
 
     function generateClassNames(): string {
       return `${baseClassNames} ${cn({

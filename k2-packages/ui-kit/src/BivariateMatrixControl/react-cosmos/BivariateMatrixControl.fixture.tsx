@@ -1,5 +1,5 @@
 import { mock } from './mocks/mock-20';
-import {useCallback, useMemo, useRef} from 'react';
+import { useCallback, useMemo, useRef, useState } from 'react';
 import { Indicator } from '@k2-packages/bivariate-tools';
 import { BivariateMatrixControlComponent } from '../index';
 import styles from './BivariateMatrixControlFixture.module.css';
@@ -40,13 +40,16 @@ export default function BivariateMatrixControlFixture() {
     };
   }, [mock]);
 
-  const onSelectCellHandler = useCallback((e, { x, y }) => {
-    console.log('onSelectCellHandler', e, x, y);
+  const [selectedCell, setSelectedCell] = useState<{ x: number; y: number } | null>(null);
+
+  const onSelectCellHandler = useCallback((x, y) => {
+    console.log('onSelectCellHandler', x, y);
+    setSelectedCell({ x, y });
   }, []);
 
-  const onSelectDenominator = (horizontal: boolean, index: number, numId: string, denId: string) => {
+  const onSelectDenominator = useCallback((horizontal: boolean, index: number, numId: string, denId: string) => {
     console.log('onSelectDenominator', horizontal, index, numId, denId);
-  };
+  }, []);
 
   return (
     <div className={styles.axisMatrix}>
@@ -56,7 +59,7 @@ export default function BivariateMatrixControlFixture() {
         xHeadings={headings?.x}
         yHeadings={headings?.y}
         onSelectCell={onSelectCellHandler}
-        selectedCell={null}
+        selectedCell={selectedCell}
         onSelectDenominator={onSelectDenominator}
       />
     </div>

@@ -1,4 +1,5 @@
 import { BIVARIATE_MATRIX_HEIGHT_SHIFT, BIVARIATE_MATRIX_WIDTH_SHIFT } from '../constants';
+import { useMemo } from 'react';
 
 export function setOffset(offsetX = 0, offsetY = 0) {
   return {
@@ -7,20 +8,60 @@ export function setOffset(offsetX = 0, offsetY = 0) {
   };
 }
 
-export function getGridStyle(x, y, cellSize = 0) {
-  return {
-    display: 'inline-grid',
-    '--cell-size': cellSize === 0 ? 'initial' : `${cellSize}px`,
-    gridTemplateRows: `repeat(${y}, ${cellSize === 0 ? 'auto' : cellSize + 'px'})`,
-    gridTemplateColumns: `repeat(${x}, ${cellSize === 0 ? 'auto' : cellSize + 'px'})`,
-  };
+export function useGridStyle(x, y, cellSize = 0) {
+  const memoizedGridStyle = useMemo(
+    () => ({
+      display: 'inline-grid',
+      '--cell-size': cellSize === 0 ? 'initial' : `${cellSize}px`,
+      gridTemplateRows: `repeat(${y}, ${cellSize === 0 ? 'auto' : cellSize + 'px'})`,
+      gridTemplateColumns: `repeat(${x}, ${cellSize === 0 ? 'auto' : cellSize + 'px'})`,
+    }),
+    [x, y, cellSize],
+  );
+
+  return memoizedGridStyle;
 }
 
-export function getCellPositionStyle(col: number, row: number) {
-  return {
-    gridColumn: `${col + 3} / ${col + 4}`,
-    gridRow: `${row + 3} / ${row + 4}`,
-  };
+export function generateCellStyles(maxCols: number, maxRows: number): { gridColumn: string; gridRow: string }[][] {
+  const cellStyles: { gridColumn: string; gridRow: string }[][] = [];
+  for (let i = 0; i < maxCols; i++) {
+    cellStyles[i] = [];
+    for (let j = 0; j < maxRows; j++) {
+      cellStyles[i][j] = {
+        gridColumn: `${i} / ${i + 1}`,
+        gridRow: `${j} / ${j + 1}`,
+      };
+    }
+  }
+  return cellStyles;
+}
+
+export function useBaseMatrixDimension(xHeadings, yHeadings) {
+  // calculate base width of header item
+  const memoizedBaseDimension = useMemo(() => {
+    if (!xHeadings || !xHeadings.length || !yHeadings || !yHeadings.length) return 0;
+
+    let xLength = calculateStringWidth(xHeadings[0].label);
+    for (let i = 1; i < xHeadings.length; i++) {
+      const iStrWidth = calculateStringWidth(xHeadings[i].label);
+      const shift = i * BIVARIATE_MATRIX_HEIGHT_SHIFT;
+      if (iStrWidth > xLength + shift) {
+        xLength = iStrWidth - shift;
+      }
+    }
+    let yLength = calculateStringWidth(yHeadings[0].label);
+    for (let i = 1; i < yHeadings.length; i++) {
+      const iStrWidth = calculateStringWidth(yHeadings[i].label);
+      const shift = i * BIVARIATE_MATRIX_WIDTH_SHIFT;
+      if (iStrWidth > yLength + shift) {
+        yLength = iStrWidth - shift;
+      }
+    }
+
+    return xLength > yLength ? xLength : yLength;
+  }, [xHeadings, yHeadings]);
+
+  return memoizedBaseDimension;
 }
 
 // text width measure hack

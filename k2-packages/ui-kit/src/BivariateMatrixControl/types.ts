@@ -4,8 +4,6 @@ export type BivariateMatrixQuotientType = {
   quality?: number;
 };
 
-export type BivariateMatrixPositionType = { x: number | null; y: number | null };
-
 export type BivariateMatrixHeadingType = {
   label: string;
   selectedQuotient: BivariateMatrixQuotientType;

@@ -1,64 +1,114 @@
 import cn from 'clsx';
 import styles from './BivariateMatrixCell.module.css';
-import { useCallback } from 'react';
-
-type BivariateCellMouseHandler = (
-  e: React.MouseEvent<HTMLDivElement, MouseEvent>,
-  position: { x: number; y: number },
-) => void;
+import { forwardRef, useImperativeHandle, useRef } from 'react';
 
 interface CellProps {
-  value: number | null;
+  value?: number;
   x: number;
   y: number;
+  onMouseOver: (x: number, y: number) => void;
+  onMouseOut: () => void;
+  onClick: (x: number, y: number) => void;
   className?: string;
-  children?: React.ReactChild;
-  onHover?: BivariateCellMouseHandler;
-  onClick?: BivariateCellMouseHandler;
-  onMouseOut?: (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
-  selected?: boolean;
   disabled?: boolean;
   style?: Record<string, any>;
+  firstRow?: boolean;
+  firstCol?: boolean;
+  lastRow?: boolean;
+  lastCol?: boolean;
 }
 
-export const BivariateMatrixCell = ({
-  value,
-  x,
-  y,
-  className,
-  children,
-  onHover,
-  onMouseOut,
-  onClick,
-  disabled = false,
-  style,
-}: CellProps) => {
-  const clickHandler = useCallback(
-    (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-      onClick && onClick(e, { x, y });
-    },
-    [onClick, x, y],
-  );
+export const BivariateMatrixCell = forwardRef(
+  (
+    { value, x, y, className, onMouseOver, onMouseOut, onClick, disabled = false, style, firstRow, firstCol, lastRow, lastCol }: CellProps,
+    ref,
+  ) => {
+    const containerRef = useRef<HTMLDivElement>(null);
 
-  const hoverHandler = useCallback(
-    (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-      onHover && onHover(e, { x, y });
-    },
-    [onHover, x, y],
-  );
+    let isHovered = false;
+    let isFromSelectedRow = false;
+    let isFromSelectedCol = false;
 
-  console.log('render cell');
+    const baseClassNames = cn(
+      styles.valueCell,
+      className,
+      disabled && styles.disabled,
+    );
 
-  return (
-    <div
-      className={cn(styles.valueCell, className, disabled && styles.disabled)}
-      style={style}
-      onMouseOver={hoverHandler}
-      onClick={clickHandler}
-      onMouseOut={onMouseOut}
-    >
-      <div className={styles.valueFill} style={{ transform: `scale(${value === null ? 0 : Math.abs(value)})` }}></div>
-      {children}
-    </div>
-  );
-};
+    function generateClassNames(): string {
+      return `${baseClassNames} ${cn({
+        [styles.hoveredCell]: isHovered,
+        [styles.selectedCol]: isFromSelectedCol,
+        [styles.selectedRow]: isFromSelectedRow,
+        [styles.first]: (firstRow && isFromSelectedCol) || (firstCol && isFromSelectedRow),
+        [styles.last]: (lastRow && isFromSelectedCol) || (lastCol && isFromSelectedRow),
+      })}`;
+    }
+
+    useImperativeHandle(ref, () => ({
+      setHovered: () => {
+        if (containerRef.current) {
+          isHovered = true;
+          containerRef.current.className = generateClassNames();
+        }
+      },
+      resetHovered: () => {
+        if (containerRef.current) {
+          isHovered = false;
+          containerRef.current.className = generateClassNames();
+        }
+      },
+      setSelectedCol: () => {
+        if (containerRef.current) {
+          isFromSelectedCol = true;
+          containerRef.current.className = generateClassNames();
+        }
+      },
+      resetSelectedCol: () => {
+        if (containerRef.current) {
+          isFromSelectedCol = false;
+          containerRef.current.className = generateClassNames();
+        }
+      },
+      setSelectedRow: () => {
+        if (containerRef.current) {
+          isFromSelectedRow = true;
+          containerRef.current.className = generateClassNames();
+        }
+      },
+      resetSelectedRow: () => {
+        if (containerRef.current) {
+          isFromSelectedRow = false;
+          containerRef.current.className = generateClassNames();
+        }
+      },
+    }));
+
+    return (
+      <div
+        ref={containerRef}
+        className={baseClassNames}
+        style={style}
+        onMouseOver={() => {
+          onMouseOver(x, y);
+        }}
+        onClick={() => {
+          onClick(x, y);
+        }}
+        onMouseOut={onMouseOut}
+      >
+        {value !== undefined ? (
+          <>
+            <div
+              className={styles.valueFill}
+              style={{ transform: `scale(${value === null ? 0 : Math.abs(value)})` }}
+            ></div>
+            <span className={styles.rotatedCell}>{value?.toFixed(3)}</span>
+          </>
+        ) : null}
+      </div>
+    );
+  },
+);
+
+BivariateMatrixCell.displayName = 'BivariateMatrixCell';

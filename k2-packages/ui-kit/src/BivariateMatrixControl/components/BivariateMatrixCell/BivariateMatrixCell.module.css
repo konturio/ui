@@ -1,3 +1,7 @@
+.hoveredCell {
+  background: var(--hover-bg-color);
+}
+
 .valueCell {
   text-align: center;
   position: relative;
@@ -8,6 +12,10 @@
   font-size: 12px;
   cursor: pointer;
   border: 1px dashed #eee;
+}
+
+.rotatedCell {
+  transform: rotate(45deg);
 }
 
 .valueCell:hover {
@@ -34,5 +42,35 @@
 }
 
 .borders {
-  border: 1px sold transparent;
+  border: 1px solid transparent;
+}
+
+.selectedCol {
+  border-right: var(--selection-border-style) !important;
+  border-left: var(--selection-border-style) !important;
+}
+
+.selectedCol.first {
+  border-top: var(--selection-border-style) !important;
+}
+
+.selectedCol.last {
+  border-bottom: var(--selection-border-style) !important;
+}
+
+.selectedRow {
+  border-top: var(--selection-border-style) !important;
+  border-bottom: var(--selection-border-style) !important;
+}
+
+.selectedRow.first {
+  border-left: var(--selection-border-style) !important;
+}
+
+.selectedRow.last {
+  border-right: var(--selection-border-style) !important;
+}
+
+.selectedCol.selectedRow {
+  background: #ddd !important;
 }

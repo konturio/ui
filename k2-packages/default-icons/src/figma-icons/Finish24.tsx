@@ -6,7 +6,7 @@ const Finish24 = (props: SVGProps<SVGSVGElement>) => (
       d="M6 12.3333L10.4545 17L20 7"
       stroke="currentColor"
       strokeWidth={1.3}
-      strokeLinecap="round"
+      strokeLinecap="square"
       strokeLinejoin="round"
     />
   </svg>

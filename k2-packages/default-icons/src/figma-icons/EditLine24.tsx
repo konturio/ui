@@ -13,7 +13,7 @@ const EditLine24 = (props: SVGProps<SVGSVGElement>) => (
       d="M4.49999 20.0586H21.8086"
       stroke="currentColor"
       strokeWidth={1.3}
-      strokeLinecap="round"
+      strokeLinecap="square"
       strokeLinejoin="round"
     />
   </svg>

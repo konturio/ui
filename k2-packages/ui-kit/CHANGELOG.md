@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-alpha.34](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@3.0.0-alpha.32...@k2-packages/ui-kit@3.0.0-alpha.34) (2022-05-20)
+
+
+### Bug Fixes
+
+* **bivariate-matrix:** add react-cosmos mock for AxisControl ([d791da7](https://gitlab.com/kontur-private/k2/k2-front-end/commit/d791da75c270a044c336e0fdea7a8ac3de82a163))
+* **bivariate-matrix:** reduce bivariate matrix renders count ([de2755c](https://gitlab.com/kontur-private/k2/k2-front-end/commit/de2755c061750256c5f15f1d19237662faa72a93))
+* **bivariate-matrix:** refactor bivariate matrix cell component ([0112d69](https://gitlab.com/kontur-private/k2/k2-front-end/commit/0112d692c190d5b1d48a101d749600344220cddd))
+
+
+
+
+
 # [3.0.0-alpha.33](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@3.0.0-alpha.32...@k2-packages/ui-kit@3.0.0-alpha.33) (2022-05-19)
 
 

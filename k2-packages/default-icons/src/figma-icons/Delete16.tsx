@@ -8,8 +8,8 @@ const Delete16 = (props: SVGProps<SVGSVGElement>) => (
       strokeLinecap="round"
       strokeLinejoin="round"
     />
-    <path d="M12 6L8 10" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" />
-    <path d="M8 6L12 10" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M12 6L8 10" stroke="currentColor" strokeLinecap="square" strokeLinejoin="round" />
+    <path d="M8 6L12 10" stroke="currentColor" strokeLinecap="square" strokeLinejoin="round" />
   </svg>
 );
 

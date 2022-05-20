@@ -14,28 +14,29 @@ import fixture3 from './../k2-packages/map-draw-tools/src/fixture/MapDrawTools.f
 import fixture4 from './../k2-packages/map/src/fixture/Map.fixture.tsx';
 import fixture5 from './../k2-packages/ui-kit/src/ActionsBar/ActionsBar.fixture.tsx';
 import fixture6 from './../k2-packages/ui-kit/src/AppHeader/AppHeader.fixture.tsx';
-import fixture7 from './../k2-packages/ui-kit/src/Button/Button.fixture.tsx';
-import fixture8 from './../k2-packages/ui-kit/src/ButtonGroup/ButtonGroup.fixture.tsx';
-import fixture9 from './../k2-packages/ui-kit/src/Card/Card.fixture.tsx';
-import fixture10 from './../k2-packages/ui-kit/src/Checkbox/Checkbox.fixture.tsx';
-import fixture11 from './../k2-packages/ui-kit/src/Details/Details.fixture.jsx';
-import fixture12 from './../k2-packages/ui-kit/src/DropDown/Dropdown.fixture.tsx';
-import fixture13 from './../k2-packages/ui-kit/src/Input/Input.fixture.tsx';
-import fixture14 from './../k2-packages/ui-kit/src/Legend/Legend.fixture.tsx';
-import fixture15 from './../k2-packages/ui-kit/src/LineItem/LineItem.fixture.tsx';
-import fixture16 from './../k2-packages/ui-kit/src/Logo/Logo.fixture.tsx';
-import fixture17 from './../k2-packages/ui-kit/src/Panel/Panel.fixture.tsx';
-import fixture18 from './../k2-packages/ui-kit/src/Radio/Radio.fixture.tsx';
-import fixture19 from './../k2-packages/ui-kit/src/Selector/Selector.fixture.tsx';
-import fixture20 from './../k2-packages/ui-kit/src/Tabs/Tabs.fixture.tsx';
-import fixture21 from './../k2-packages/ui-kit/src/Text/Text.fixture.tsx';
-import fixture22 from './../k2-packages/ui-kit/src/TimeSlider/TimeSlider.fixture.tsx';
-import fixture23 from './../k2-packages/ui-kit/src/Toggler/Toggler.fixture.tsx';
+import fixture7 from './../k2-packages/ui-kit/src/BivariateMatrixControl/react-cosmos/BivariateMatrixControl.fixture.tsx';
+import fixture8 from './../k2-packages/ui-kit/src/Button/Button.fixture.tsx';
+import fixture9 from './../k2-packages/ui-kit/src/ButtonGroup/ButtonGroup.fixture.tsx';
+import fixture10 from './../k2-packages/ui-kit/src/Card/Card.fixture.tsx';
+import fixture11 from './../k2-packages/ui-kit/src/Checkbox/Checkbox.fixture.tsx';
+import fixture12 from './../k2-packages/ui-kit/src/Details/Details.fixture.jsx';
+import fixture13 from './../k2-packages/ui-kit/src/DropDown/Dropdown.fixture.tsx';
+import fixture14 from './../k2-packages/ui-kit/src/Input/Input.fixture.tsx';
+import fixture15 from './../k2-packages/ui-kit/src/Legend/Legend.fixture.tsx';
+import fixture16 from './../k2-packages/ui-kit/src/LineItem/LineItem.fixture.tsx';
+import fixture17 from './../k2-packages/ui-kit/src/Logo/Logo.fixture.tsx';
+import fixture18 from './../k2-packages/ui-kit/src/Panel/Panel.fixture.tsx';
+import fixture19 from './../k2-packages/ui-kit/src/Radio/Radio.fixture.tsx';
+import fixture20 from './../k2-packages/ui-kit/src/Selector/Selector.fixture.tsx';
+import fixture21 from './../k2-packages/ui-kit/src/Tabs/Tabs.fixture.tsx';
+import fixture22 from './../k2-packages/ui-kit/src/Text/Text.fixture.tsx';
+import fixture23 from './../k2-packages/ui-kit/src/TimeSlider/TimeSlider.fixture.tsx';
+import fixture24 from './../k2-packages/ui-kit/src/Toggler/Toggler.fixture.tsx';
 
 import decorator0 from './../k2-packages/ui-kit/cosmos.decorator.tsx';
 
 export const rendererConfig = {
-  "port": 5000
+  port: 5000,
 };
 
 export const fixtures = {
@@ -46,25 +47,26 @@ export const fixtures = {
   'k2-packages/map/src/fixture/Map.fixture.tsx': fixture4,
   'k2-packages/ui-kit/src/ActionsBar/ActionsBar.fixture.tsx': fixture5,
   'k2-packages/ui-kit/src/AppHeader/AppHeader.fixture.tsx': fixture6,
-  'k2-packages/ui-kit/src/Button/Button.fixture.tsx': fixture7,
-  'k2-packages/ui-kit/src/ButtonGroup/ButtonGroup.fixture.tsx': fixture8,
-  'k2-packages/ui-kit/src/Card/Card.fixture.tsx': fixture9,
-  'k2-packages/ui-kit/src/Checkbox/Checkbox.fixture.tsx': fixture10,
-  'k2-packages/ui-kit/src/Details/Details.fixture.jsx': fixture11,
-  'k2-packages/ui-kit/src/DropDown/Dropdown.fixture.tsx': fixture12,
-  'k2-packages/ui-kit/src/Input/Input.fixture.tsx': fixture13,
-  'k2-packages/ui-kit/src/Legend/Legend.fixture.tsx': fixture14,
-  'k2-packages/ui-kit/src/LineItem/LineItem.fixture.tsx': fixture15,
-  'k2-packages/ui-kit/src/Logo/Logo.fixture.tsx': fixture16,
-  'k2-packages/ui-kit/src/Panel/Panel.fixture.tsx': fixture17,
-  'k2-packages/ui-kit/src/Radio/Radio.fixture.tsx': fixture18,
-  'k2-packages/ui-kit/src/Selector/Selector.fixture.tsx': fixture19,
-  'k2-packages/ui-kit/src/Tabs/Tabs.fixture.tsx': fixture20,
-  'k2-packages/ui-kit/src/Text/Text.fixture.tsx': fixture21,
-  'k2-packages/ui-kit/src/TimeSlider/TimeSlider.fixture.tsx': fixture22,
-  'k2-packages/ui-kit/src/Toggler/Toggler.fixture.tsx': fixture23
+  'k2-packages/ui-kit/src/BivariateMatrixControl/react-cosmos/BivariateMatrixControl.fixture.tsx': fixture7,
+  'k2-packages/ui-kit/src/Button/Button.fixture.tsx': fixture8,
+  'k2-packages/ui-kit/src/ButtonGroup/ButtonGroup.fixture.tsx': fixture9,
+  'k2-packages/ui-kit/src/Card/Card.fixture.tsx': fixture10,
+  'k2-packages/ui-kit/src/Checkbox/Checkbox.fixture.tsx': fixture11,
+  'k2-packages/ui-kit/src/Details/Details.fixture.jsx': fixture12,
+  'k2-packages/ui-kit/src/DropDown/Dropdown.fixture.tsx': fixture13,
+  'k2-packages/ui-kit/src/Input/Input.fixture.tsx': fixture14,
+  'k2-packages/ui-kit/src/Legend/Legend.fixture.tsx': fixture15,
+  'k2-packages/ui-kit/src/LineItem/LineItem.fixture.tsx': fixture16,
+  'k2-packages/ui-kit/src/Logo/Logo.fixture.tsx': fixture17,
+  'k2-packages/ui-kit/src/Panel/Panel.fixture.tsx': fixture18,
+  'k2-packages/ui-kit/src/Radio/Radio.fixture.tsx': fixture19,
+  'k2-packages/ui-kit/src/Selector/Selector.fixture.tsx': fixture20,
+  'k2-packages/ui-kit/src/Tabs/Tabs.fixture.tsx': fixture21,
+  'k2-packages/ui-kit/src/Text/Text.fixture.tsx': fixture22,
+  'k2-packages/ui-kit/src/TimeSlider/TimeSlider.fixture.tsx': fixture23,
+  'k2-packages/ui-kit/src/Toggler/Toggler.fixture.tsx': fixture24,
 };
 
 export const decorators = {
-  'k2-packages/ui-kit/cosmos.decorator.tsx': decorator0
+  'k2-packages/ui-kit/cosmos.decorator.tsx': decorator0,
 };

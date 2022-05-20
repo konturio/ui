@@ -10,7 +10,7 @@ const FinishFilled16 = (props: SVGProps<SVGSVGElement>) => (
       d="M4 8.22222L6.9697 11.3333L12.5 5.5"
       stroke="white"
       strokeWidth={1.3}
-      strokeLinecap="round"
+      strokeLinecap="square"
       strokeLinejoin="round"
     />
   </svg>

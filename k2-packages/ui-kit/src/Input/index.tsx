@@ -1,8 +1,7 @@
 import React, { forwardRef, useCallback, useEffect, useImperativeHandle, useRef, useState } from 'react';
 import cn from 'clsx';
-import clsx from 'clsx';
 import s from './style.module.css';
-import { EyeBallCrossedIcon, EyeBallIcon } from '@k2-packages/default-icons';
+import { Eye16, EyeOff16 } from '@k2-packages/default-icons';
 
 export interface InputProps extends React.HTMLProps<HTMLInputElement> {
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
@@ -11,9 +10,13 @@ export interface InputProps extends React.HTMLProps<HTMLInputElement> {
   message?: string;
   isFocused?: boolean;
   showTopPlaceholder?: boolean;
+  renderLabel?: JSX.Element;
   classes?: {
+    inputBox?: string;
     input?: string;
     topPlaceholder?: string;
+    placeholder?: string;
+    label?: string;
     error?: string;
   };
 }
@@ -32,6 +35,7 @@ function InputComponent(
     error,
     children,
     message,
+    renderLabel,
     onChange,
     onFocus,
     onBlur,
@@ -40,6 +44,8 @@ function InputComponent(
     classes,
     showTopPlaceholder = false,
     type,
+    placeholder,
+    value,
     ...props
   }: InputProps,
   ref,
@@ -83,6 +89,7 @@ function InputComponent(
     [s.error]: !!error,
     [s.focus]: focus,
     [s.disabled]: disabled,
+    [s.disabledTopPlaceholder]: disabled && showTopPlaceholder && value,
     [s.password]: type === 'password',
   };
 
@@ -93,11 +100,8 @@ function InputComponent(
     selectText: (): void => inputRef.current?.select(),
   }));
 
-  const [value, setValue] = useState<string>('');
-
   const onInputChange = useCallback(
     (ev: React.ChangeEvent<HTMLInputElement>) => {
-      setValue(ev.target.value);
       onChange && onChange(ev);
     },
     [onChange],
@@ -107,15 +111,31 @@ function InputComponent(
     setPasswordVisible(!passwordVisible);
   };
 
+  const getPlaceholder = () => {
+    if (!placeholder) return;
+
+    if (!showTopPlaceholder) {
+      if (value) return;
+      return <div className={cn(s.placeholder, classes?.placeholder)}>{placeholder}</div>;
+    }
+
+    return (
+      <div className={cn(s.placeholder, classes?.topPlaceholder, value && showTopPlaceholder && s.topPlaceholder)}>
+        {placeholder}
+      </div>
+    );
+  };
+
   return (
-    <div className={cn(s.root, dynamicClasses)}>
-      <div className={cn(s.inputBox, className)}>
-        {value.length && showTopPlaceholder && props.placeholder ? (
-          <div className={clsx(s.topPlaceholder, classes?.topPlaceholder)}>{props.placeholder}</div>
-        ) : null}
+    <div className={cn(s.root, className, dynamicClasses)}>
+      {renderLabel && <div className={cn(s.label, classes?.label)}>{renderLabel}</div>}
+      <div className={cn(s.inputBox, classes?.inputBox, children && s.inputBoxIcon)}>
+        {getPlaceholder()}
+
         {children && <div className={s.icons}>{children}</div>}
         <input
           {...props}
+          value={value}
           ref={inputRef}
           onChange={onInputChange}
           onFocus={nativeFocusEventHandler}
@@ -126,12 +146,12 @@ function InputComponent(
         />
         {type === 'password' && (
           <div onClick={onPasswordVisibleClick} className={s.passwordVisibility}>
-            {passwordVisible ? <EyeBallCrossedIcon /> : <EyeBallIcon />}
+            {passwordVisible ? <Eye16 /> : <EyeOff16 />}
           </div>
         )}
       </div>
       {message && <div className={s.message}>{message}</div>}
-      {error && typeof error === 'string' ? <div className={clsx(s.errorMessage, classes?.error)}>{error}</div> : null}
+      {error && typeof error === 'string' ? <div className={cn(s.errorMessage, classes?.error)}>{error}</div> : null}
     </div>
   );
 }

@@ -10,6 +10,13 @@ const rowStyle = {
   alignItems: 'center',
 };
 
+const columnStyle = {
+  margin: '1em',
+  gap: '1em',
+  display: 'flex',
+  flexDirection: 'column' as React.CSSProperties['flexDirection'],
+};
+
 export default {
   regular: (
     <div style={{ margin: '1em', gap: '1em', display: 'flex', flexFlow: 'row nowrap' }}>
@@ -48,6 +55,34 @@ export default {
       <Button onClick={console.log} size="medium" variant="invert" active>
         Pressed
       </Button>
+    </div>
+  ),
+  transparent: (
+    <div style={columnStyle}>
+      Invert
+      <div style={rowStyle}>
+        <Button transparent onClick={console.log} size="medium" variant="invert">
+          Enabled
+        </Button>
+        <Button transparent onClick={console.log} size="medium" variant="invert" disabled>
+          Disabled
+        </Button>
+        <Button transparent onClick={console.log} size="medium" variant="invert" active>
+          Pressed
+        </Button>
+      </div>
+      Invert Outline
+      <div style={rowStyle}>
+        <Button transparent onClick={console.log} size="medium" variant="invert-outline">
+          Enabled
+        </Button>
+        <Button transparent onClick={console.log} size="medium" variant="invert-outline" disabled>
+          Disabled
+        </Button>
+        <Button transparent onClick={console.log} size="medium" variant="invert-outline" active>
+          Pressed
+        </Button>
+      </div>
     </div>
   ),
   'all-types-light': (

@@ -1,16 +1,25 @@
-import { Input } from '.';
+import { Input as TrueInput } from '.';
 import { InfoOutline16, Search16 } from '@k2-packages/default-icons';
-import { ChangeEvent } from 'react';
+import { ChangeEvent, useEffect, useState } from 'react';
+
+const Input = ({ value, ...props }) => {
+  const [innerVal, setInnerVal] = useState(value || '');
+  useEffect(() => {
+    setInnerVal(value);
+  }, [value]);
+  return <TrueInput {...props} value={innerVal} onChange={(e) => setInnerVal(e.target.value)} />;
+};
 
 const getInputStates = (props: {
   error?: boolean | string;
   disabled?: boolean;
   children?: React.ReactNode;
+  isFocused?: boolean;
   onChange: (e: ChangeEvent<HTMLInputElement>) => void;
 }) => (
   <div style={{ display: 'flex', flexFlow: 'column nowrap', gap: '1em' }}>
     <>
-      Empty: <Input placeholder="" {...props} />
+      Empty: <Input value="" placeholder="" {...props} />
     </>
     <>
       Placeholder: <Input placeholder="Placeholder" value="" {...props} />
@@ -79,9 +88,9 @@ const getInputStates = (props: {
 );
 
 export default {
-  Base: getInputStates({ onChange: console.log }),
-  'Error - String': getInputStates({ onChange: console.log, error: 'This is test error message!' }),
-  'Error - Boolean': getInputStates({ onChange: console.log, error: true }),
-  Disabled: getInputStates({ onChange: console.log, disabled: true }),
-  'With icon': getInputStates({ onChange: console.log, children: <Search16 /> }),
+  Base: getInputStates({ onChange: console.log, isFocused: false }),
+  'Error - String': getInputStates({ onChange: console.log, isFocused: false, error: 'This is test error message!' }),
+  'Error - Boolean': getInputStates({ onChange: console.log, isFocused: false, error: true }),
+  Disabled: getInputStates({ onChange: console.log, isFocused: false, disabled: true }),
+  'With icon': getInputStates({ onChange: console.log, isFocused: false, children: <Search16 /> }),
 };

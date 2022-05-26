@@ -42,6 +42,10 @@
   background-color: var(--base-weak);
   padding: var(--unit);
   align-items: center;
+
+  &:hover {
+    box-shadow: 0 0 0 1px var(--faint-strong);
+  }
 }
 
 .message,
@@ -61,7 +65,7 @@
 }
 
 .placeholder {
-  color: var(--faint-strong);
+  color: var(--text-faint-strong);
   position: absolute;
   top: 10px;
   left: 12px;
@@ -104,35 +108,34 @@
 
 .focus {
   & .inputBox {
-    box-shadow: 0 0 0 2px var(--accent-strong-down);
+    box-shadow: 0 0 0 2px var(--accent-strong-down) !important;
   }
 
   & .topPlaceholder {
-    color: var(--accent-strong-down);
+    color: var(--accent-strong) !important;
   }
 }
 
 .error {
   & .inputBox {
-    box-shadow: 0 0 0 2px var(--error-strong);
+    box-shadow: 0 0 0 2px var(--error-strong) !important;
   }
 
   & .message,
   & .errorMessage,
   & .label,
   & .topPlaceholder {
-    color: var(--error-strong);
+    color: var(--error-strong) !important;
   }
 }
 
 .disabled {
   & .inputBox {
     background-color: var(--faint-weak);
-    box-shadow: 0 0 0 1px var(--faint-strong);
+    box-shadow: 0 0 0 1px var(--faint-weak-up) !important;
 
     & input {
       cursor: default;
-      color: var(--text-faint-strong);
     }
   }
 
@@ -145,12 +148,31 @@
   }
 }
 
-.disabledTopPlaceholder {
+.topPlaceholderWrapper {
   & .inputBox {
-    background-color: var(--base-weak);
+    box-shadow: 0 0 0 1px var(--faint-strong-down);
+
+    &:hover {
+      box-shadow: 0 0 0 1px var(--faint-strong);
+    }
   }
 
   & .placeholder {
-    color: var(--icon-base-strong);
+    color: var(--faint-strong);
+  }
+}
+
+.disabled.topPlaceholderValue {
+  & .inputBox {
+    box-shadow: 0 0 0 1px var(--faint-strong-down) !important;
+    background-color: var(--base-weak);
+
+    & input {
+      color: var(--text-faint-strong);
+    }
+  }
+
+  & .placeholder {
+    color: var(--icon-base-strong) !important;
   }
 }

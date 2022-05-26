@@ -89,7 +89,8 @@ function InputComponent(
     [s.error]: !!error,
     [s.focus]: focus,
     [s.disabled]: disabled,
-    [s.disabledTopPlaceholder]: disabled && showTopPlaceholder && value,
+    [s.topPlaceholderValue]: showTopPlaceholder && value,
+    [s.topPlaceholderWrapper]: showTopPlaceholder,
     [s.password]: type === 'password',
   };
 

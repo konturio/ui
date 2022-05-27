@@ -17,7 +17,7 @@ interface BivariateMatrixControlProps {
   matrix: (number | null)[][];
   xHeadings: BivariateMatrixHeadingType[];
   yHeadings: BivariateMatrixHeadingType[];
-  onSelectDenominator: (horizontal: boolean, index: number, numId, denId: string) => void;
+  onSelectQuotient: (horizontal: boolean, index: number, numId: string, denId: string) => void;
 }
 
 const BivariateMatrixControl = forwardRef<HTMLDivElement | null, any>(
@@ -29,10 +29,12 @@ const BivariateMatrixControl = forwardRef<HTMLDivElement | null, any>(
       onSelectCell,
       selectedCell,
       cellSize = 0,
-      onSelectDenominator,
+      onSelectQuotient,
     }: BivariateMatrixControlProps,
     ref: any,
   ) => {
+    console.log('render matrix');
+
     const cellRowReferences: any[] = [];
     const cellColumnReferences: any[] = [];
     let hoveredColIndex = -1;
@@ -63,7 +65,7 @@ const BivariateMatrixControl = forwardRef<HTMLDivElement | null, any>(
           const columns = cellColumnReferences[hoveredColIndex];
           if (columns) {
             columns.forEach((clmn) => {
-              clmn.setHovered();
+              clmn?.setHovered();
             });
           }
         }
@@ -75,7 +77,7 @@ const BivariateMatrixControl = forwardRef<HTMLDivElement | null, any>(
           const rows = cellRowReferences[hoveredRowIndex];
           if (rows) {
             rows.forEach((rw) => {
-              rw.setHovered();
+              rw?.setHovered();
             });
           }
         }
@@ -87,7 +89,7 @@ const BivariateMatrixControl = forwardRef<HTMLDivElement | null, any>(
         const columns = cellColumnReferences[hoveredColIndex];
         if (columns) {
           columns.forEach((clmn) => {
-            clmn.resetHovered();
+            clmn?.resetHovered();
           });
         }
         hoveredColIndex = -1;
@@ -97,7 +99,7 @@ const BivariateMatrixControl = forwardRef<HTMLDivElement | null, any>(
         const rows = cellRowReferences[hoveredRowIndex];
         if (rows) {
           rows.forEach((rw) => {
-            rw.resetHovered();
+            rw?.resetHovered();
           });
         }
         hoveredRowIndex = -1;
@@ -170,18 +172,18 @@ const BivariateMatrixControl = forwardRef<HTMLDivElement | null, any>(
       onSelect(selectedColIndex, cellIndex);
     };
 
-    const selectDenominatorX = useCallback(
+    const selectQuotientX = useCallback(
       (index: number, numId: string, denId: string) => {
-        onSelectDenominator(false, index, numId, denId);
+        onSelectQuotient(false, index, numId, denId);
       },
-      [onSelectDenominator],
+      [onSelectQuotient],
     );
 
-    const selectDenominatorY = useCallback(
+    const selectQuotientY = useCallback(
       (index: number, numId: string, denId: string) => {
-        onSelectDenominator(true, index, numId, denId);
+        onSelectQuotient(true, index, numId, denId);
       },
-      [onSelectDenominator],
+      [onSelectQuotient],
     );
 
     const baseDimension = useBaseMatrixDimension(xHeadings, yHeadings);
@@ -240,20 +242,20 @@ const BivariateMatrixControl = forwardRef<HTMLDivElement | null, any>(
             }),
           )}
 
-          {yHeadings.map((entry, index) => (
+          {yHeadings.reverse().map((entry, index) => (
             <BivariateMatrixHeadingEntry
-              key={`hor_${index}`}
-              id={`hor_${index}`}
-              index={index}
+              key={`hor_${yHeadings.length - 1 - index}`}
+              id={`hor_${yHeadings.length - 1 - index}`}
+              index={yHeadings.length - 1 - index}
               type="horizontal"
               selectedIndex={selectedCell?.y}
               headerCell={entry}
               onCellHover={onCellHoverY}
               onCellClick={onCellSelectY}
-              onSelectDenominator={selectDenominatorY}
+              onSelectQuotient={selectQuotientY}
               baseDimension={baseDimension}
               calculateHeadingsStyle={calculateHeadingsStyle}
-              ref={(rf) => setCellReference(rf, index, -1)}
+              ref={(rf) => setCellReference(rf, yHeadings.length - 1 - index, -1)}
             />
           ))}
           {xHeadings.map((entry, index) => (
@@ -266,7 +268,7 @@ const BivariateMatrixControl = forwardRef<HTMLDivElement | null, any>(
               headerCell={entry}
               onCellHover={onCellHoverX}
               onCellClick={onCellSelectX}
-              onSelectDenominator={selectDenominatorX}
+              onSelectQuotient={selectQuotientX}
               baseDimension={baseDimension}
               calculateHeadingsStyle={calculateHeadingsStyle}
               ref={(rf) => setCellReference(rf, -1, index)}
@@ -280,4 +282,7 @@ const BivariateMatrixControl = forwardRef<HTMLDivElement | null, any>(
 
 BivariateMatrixControl.displayName = 'BivariateMatrixControl';
 
-export const BivariateMatrixControlComponent = memo(BivariateMatrixControl, () => true);
+export const BivariateMatrixControlComponent = memo(
+  BivariateMatrixControl,
+  (oldProps, newProps) => oldProps.matrix === newProps.matrix,
+);

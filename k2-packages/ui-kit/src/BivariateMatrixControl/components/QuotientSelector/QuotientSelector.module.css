@@ -42,25 +42,18 @@
 
 .denominatorsContainer {
   position: absolute;
-  visibility: hidden;
-  opacity: 0;
-  transition: visibility 0s linear 0.33s, opacity 0.33s linear;
   background: #f5f5f5;
   line-height: 25px;
   -webkit-text-stroke-width: 0;
   z-index: 2;
 }
 
-.denominatorsContainer.show {
-  visibility: visible;
-  opacity: 1;
-  transition-delay: 0s;
-}
-
 .column .denominatorsContainer {
   top: -62px;
   right: 22px;
   box-shadow: -3px 3px 4px rgb(31 51 73 / 15%);
+  max-width: 250px;
+  overflow-x: scroll;
 }
 
 .column .denominatorsContainer :global(.quotientLabel) {
@@ -72,6 +65,8 @@
   left: -62px;
   top: 22px;
   box-shadow: 3px 3px 4px rgb(31 51 73 / 15%);
+  max-height: 250px;
+  overflow-y: scroll;
 }
 
 .row .denominatorsContainer :global(.quotientLabel) {

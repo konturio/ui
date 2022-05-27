@@ -16,6 +16,7 @@
 
 .rotatedCell {
   transform: rotate(45deg);
+  pointer-events: none;
 }
 
 .valueCell:hover {
@@ -29,20 +30,12 @@
   right: 0;
   left: 0;
   background-color: #5bdff4;
-  /*z-index: -1;*/
   border-radius: 50%;
+  pointer-events: none;
 }
 
 .disabled {
   background-color: #f9f9f9;
-}
-
-.disabled:hover {
-  box-shadow: none;
-}
-
-.borders {
-  border: 1px solid transparent;
 }
 
 .selectedCol {

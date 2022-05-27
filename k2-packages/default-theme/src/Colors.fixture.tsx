@@ -2,7 +2,7 @@ import s from './style.module.css';
 
 const COLOR_SCHEME_CONFIG = {
   target: ['', 'Back', 'Text', 'Border', 'Icon', 'Fancy'],
-  category: ['Base', 'Faint', 'Accent', 'Complimentary', 'Error', 'Warning', 'Success'],
+  category: ['Base', 'Faint', 'Accent', 'Complimentary', 'Error', 'Warning', 'Success', 'Brand'],
   degree: ['strong', 'weak'],
 };
 

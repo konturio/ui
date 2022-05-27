@@ -15,6 +15,15 @@ button {
   color: var(--base-strong);
 }
 
+input,
+select,
+button,
+a {
+  &:focus {
+    outline-color: var(--complimentary-strong);
+  }
+}
+
 .k-font-caption {
   font-family: var(--font-family);
   font-style: normal;

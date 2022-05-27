@@ -31,14 +31,20 @@
   --accent-weak: #f0f9fe;
   --accent-weak-up: #9dd6f8;
 
+  --complimentary-strong: #0c9bed;
+  --complimentary-strong-down: #26abff;
+
   --error-strong: #d93a3a;
 
   --warning-strong: #ff8a2a;
 
   --success-strong: #43b148;
 
+  --brand-strong: #051626;
+  --brand-strong-down: #2e3d4a;
+
   /* Theme Context Colors */
-  --back-accent-strong: #0978B7;
+  --back-accent-strong: #0978b7;
 
   --back-faint-weak: #2e3d4a;
   --back-faint-weak-up: #051626;
@@ -126,15 +132,8 @@
   --tooltip: 1100;
 
   /* Shadows */
-  --elevation-1:
-    0 1px 2px rgba(0, 0, 0, 0.3),
-    0 16px 24px rgba(0, 0, 0, 0.06),
-    0 2px 6px rgba(0, 0, 0, 0.04),
+  --elevation-1: 0 1px 2px rgba(0, 0, 0, 0.3), 0 16px 24px rgba(0, 0, 0, 0.06), 0 2px 6px rgba(0, 0, 0, 0.04),
     0 0 1px rgba(0, 0, 0, 0.04);
-  --elevation-2:
-    0 4px 4px rgba(0, 0, 0, 0.15),
-    0 1px 2px rgba(0, 0, 0, 0.3),
-    0 16px 24px rgba(0, 0, 0, 0.06),
-    0 2px 6px rgba(0, 0, 0, 0.04),
-    0 0 1px rgba(0, 0, 0, 0.04);
+  --elevation-2: 0 4px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.3), 0 16px 24px rgba(0, 0, 0, 0.06),
+    0 2px 6px rgba(0, 0, 0, 0.04), 0 0 1px rgba(0, 0, 0, 0.04);
 }

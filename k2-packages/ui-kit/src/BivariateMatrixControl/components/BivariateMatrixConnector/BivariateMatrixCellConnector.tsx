@@ -16,7 +16,7 @@ export const BivariateMatrixCellConnector = forwardRef(({ type, style }: Bivaria
 
   function generateClassNames(): string {
     return `${baseClassNames} ${cn({
-      [styles.hoveredCell]: isHovered,
+      [styles.hovered]: isHovered,
       [styles.selected]: isSelected,
     })}`;
   }

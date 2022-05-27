@@ -1,37 +1,8 @@
-import { CSSProperties, forwardRef, useCallback, useEffect, useImperativeHandle, useRef, useState } from 'react';
+import { CSSProperties, forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
 import cn from 'clsx';
 import DenominatorIcon from '../DenominatorIcon/DenominatorIcon';
 import { QuotientSelector } from '../QuotientSelector/QuotientSelector';
 import styles from './BivariateMatrixHeadingEntry.module.css';
-
-const createGlobalState = (initialState) => {
-  let globalState = initialState;
-  const listeners = new Set<() => void>();
-
-  const setGlobalState = (nextGlobalState) => {
-    globalState = nextGlobalState;
-    listeners.forEach((listener) => listener());
-  };
-
-  return () => {
-    const [state, setState] = useState(globalState);
-    useEffect(() => {
-      const listener = () => {
-        setState(globalState);
-      };
-      listeners.add(listener);
-      listener(); // in case it's already changed
-      return () => {
-        listeners.delete(listener);
-      }; // cleanup
-    }, []);
-    return [state, setGlobalState];
-  };
-};
-
-const useGlobalState = createGlobalState({
-  headingId: '',
-});
 
 const getHeadingPositionStyle = (isColum: boolean, index: number) => {
   const styles: any = {
@@ -63,7 +34,7 @@ interface BivariateMatrixHeadingEntry {
   id: string;
   onCellHover: (cellIndex: number | null) => void;
   onCellClick: (cellIndex: number) => void;
-  onSelectDenominator: (index: number, numId: string, denId: string) => void;
+  onSelectQuotient: (index: number, numId: string, denId: string) => void;
   baseDimension: number;
   calculateHeadingsStyle: (baseDimension: number, vertical: boolean, index: number) => CSSProperties;
 }
@@ -79,22 +50,12 @@ export const BivariateMatrixHeadingEntry = forwardRef(
       id,
       onCellHover,
       onCellClick,
-      onSelectDenominator,
+      onSelectQuotient,
       baseDimension,
       calculateHeadingsStyle,
     }: BivariateMatrixHeadingEntry,
     ref,
   ) => {
-    const [headingState, setHeadingState] = useGlobalState();
-
-    const switchDenominatorsVisibility = useCallback(() => {
-      if (headingState.headingId === id) {
-        setHeadingState({ headingId: '' });
-      } else {
-        setHeadingState({ headingId: id });
-      }
-    }, [headingState, id, setHeadingState]);
-
     const onMouseOver = () => {
       onCellHover(index);
     };
@@ -117,12 +78,11 @@ export const BivariateMatrixHeadingEntry = forwardRef(
       onCellClick(index);
     };
 
-    const onSelectDenominatorWrapper = useCallback(
+    const selectQuotient = useCallback(
       (numId: string, denId: string) => {
-        setHeadingState({ headingId: '' });
-        onSelectDenominator(index, numId, denId);
+        onSelectQuotient(index, numId, denId);
       },
-      [onSelectDenominator, setHeadingState, index],
+      [onSelectQuotient, index],
     );
 
     const numberOfAdditionalQuotientsInGroup =
@@ -144,14 +104,13 @@ export const BivariateMatrixHeadingEntry = forwardRef(
       [styles.column]: isVertical,
       [styles.row]: isHorizontal,
       [styles.verticalText]: isVertical,
-      [styles.denominatorsShown]: headingState.headingId === id,
       horizontal: isHorizontal,
       vertical: isVertical,
     });
 
     function generateClassNames(): string {
       return `${baseClassNames} ${cn({
-        [styles.hoveredCell]: isHovered,
+        [styles.hovered]: isHovered,
         [styles.selected]: isSelected,
       })}`;
     }
@@ -209,11 +168,10 @@ export const BivariateMatrixHeadingEntry = forwardRef(
           <DenominatorIcon iconId={headerCell.selectedQuotient.id[1]} />
           <div className="qualityLabel">{headerCell.quality ? headerCell.quality : '&nbsp;'}</div>
           <QuotientSelector
-            onSelectDenominator={onSelectDenominatorWrapper}
+            id={`quotient_${id}`}
+            onSelectQuotient={selectQuotient}
             selectedQuotient={headerCell.selectedQuotient}
             quotients={headerCell.quotients}
-            isOpen={headingState.headingId === id}
-            switchDenominatorsVisibility={switchDenominatorsVisibility}
             type={type}
           />
           {headerCell.label}

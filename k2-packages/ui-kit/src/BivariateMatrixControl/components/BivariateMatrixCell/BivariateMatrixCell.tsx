@@ -37,6 +37,7 @@ export const BivariateMatrixCell = forwardRef(
     }: CellProps,
     ref,
   ) => {
+    console.log('render cell');
     const containerRef = useRef<HTMLDivElement>(null);
 
     let isHovered = false;
@@ -107,12 +108,11 @@ export const BivariateMatrixCell = forwardRef(
         }}
         onMouseOut={onMouseOut}
       >
-        {value !== undefined ? (
+        {!disabled && value !== undefined ? (
           <>
-            <div
-              className={styles.valueFill}
-              style={{ transform: `scale(${value === null ? 0 : Math.abs(value)})` }}
-            ></div>
+            {Math.abs(value) >= 0.1 && (
+              <div className={styles.valueFill} style={{ transform: `scale(${Math.abs(value)})` }}></div>
+            )}
             <span className={styles.rotatedCell}>{value?.toFixed(3)}</span>
           </>
         ) : null}

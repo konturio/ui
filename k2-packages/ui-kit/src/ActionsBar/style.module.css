@@ -1,5 +1,5 @@
 .actionsBar {
-  background-color: var(--base-strong-down);
+  background-color: var(--brand-strong-down);
   display: flex;
   flex-flow: column nowrap;
   height: 100%;

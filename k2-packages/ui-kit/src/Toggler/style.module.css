@@ -7,7 +7,7 @@
   &.disabled {
     cursor: not-allowed;
     .label {
-      color: var(--icon-base-strong)
+      color: var(--icon-base-strong);
     }
     .toggle {
       background-color: var(--base-weak);
@@ -27,7 +27,7 @@
     }
   }
   :focus ~ .toggle {
-    box-shadow: 0px 0px 0px 2px var(--accent-strong-down);
+    box-shadow: 0px 0px 0px 2px var(--complimentary-strong-down);
   }
 }
 

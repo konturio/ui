@@ -99,7 +99,6 @@ export const BivariateMatrixHeadingEntry = forwardRef(
 
     const baseClassNames = cn({
       [className || '']: className,
-      [styles.headingEntry]: true,
       [styles.axisRecord]: true,
       [styles.column]: isVertical,
       [styles.row]: isHorizontal,

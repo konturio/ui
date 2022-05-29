@@ -33,8 +33,6 @@ const BivariateMatrixControl = forwardRef<HTMLDivElement | null, any>(
     }: BivariateMatrixControlProps,
     ref: any,
   ) => {
-    console.log('render matrix');
-
     const cellRowReferences: any[] = [];
     const cellColumnReferences: any[] = [];
     let hoveredColIndex = -1;
@@ -242,7 +240,7 @@ const BivariateMatrixControl = forwardRef<HTMLDivElement | null, any>(
             }),
           )}
 
-          {yHeadings.reverse().map((entry, index) => (
+          {[...yHeadings].reverse().map((entry, index) => (
             <BivariateMatrixHeadingEntry
               key={`hor_${yHeadings.length - 1 - index}`}
               id={`hor_${yHeadings.length - 1 - index}`}

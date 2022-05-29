@@ -54,6 +54,11 @@
   box-shadow: -3px 3px 4px rgb(31 51 73 / 15%);
   max-width: 250px;
   overflow-x: scroll;
+
+  &::-webkit-scrollbar {
+    width: 9px;
+    height: 9px;
+  }
 }
 
 .column .denominatorsContainer :global(.quotientLabel) {
@@ -67,6 +72,11 @@
   box-shadow: 3px 3px 4px rgb(31 51 73 / 15%);
   max-height: 250px;
   overflow-y: scroll;
+
+  &::-webkit-scrollbar {
+    width: 9px;
+    height: 9px;
+  }
 }
 
 .row .denominatorsContainer :global(.quotientLabel) {

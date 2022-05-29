@@ -37,7 +37,6 @@ export const BivariateMatrixCell = forwardRef(
     }: CellProps,
     ref,
   ) => {
-    console.log('render cell');
     const containerRef = useRef<HTMLDivElement>(null);
 
     let isHovered = false;

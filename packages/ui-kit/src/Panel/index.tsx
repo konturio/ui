@@ -2,7 +2,7 @@ import { Card } from '../Card';
 import cn from 'clsx';
 import s from './style.module.css';
 import { ReactChild } from 'react';
-import { Close24 } from '@kontur-ui/default-icons';
+import { Close24 } from '@konturio/default-icons';
 
 interface Panel {
   className?: string;

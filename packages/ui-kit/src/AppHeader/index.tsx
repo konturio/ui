@@ -2,7 +2,7 @@ import { ReactNode, useEffect } from 'react';
 import { Logo } from '../Logo';
 import { Button } from '../Button';
 import s from './style.module.css';
-import { Chat24 } from '@kontur-ui/default-icons';
+import { Chat24 } from '@konturio/default-icons';
 
 const CHAT_BTN_ID = 'kontur_header_chat_btn';
 

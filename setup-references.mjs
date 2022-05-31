@@ -7,7 +7,7 @@ const exec = util.promisify(childProcess.exec);
 
 const CONFIG = {
   packagesFolder: './packages',
-  npmNamespace: '@kontur-ui',
+  npmNamespace: '@konturio',
 };
 
 async function getTopology() {

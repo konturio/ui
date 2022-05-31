@@ -1,4 +1,4 @@
-import { EyeBallIcon } from '@kontur-ui/default-icons';
+import { EyeBallIcon } from '@konturio/default-icons';
 
 import { Button, ButtonProps } from '.';
 

@@ -1,8 +1,6 @@
 {
   "useWorkspaces": true,
-  "packages": [
-    "k2-packages/*"
-  ],
+  "packages": ["packages/*"],
   "version": "independent",
   "npmClient": "npm",
   "command": {

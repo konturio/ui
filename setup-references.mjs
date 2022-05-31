@@ -6,8 +6,8 @@ import childProcess from 'child_process';
 const exec = util.promisify(childProcess.exec);
 
 const CONFIG = {
-  packagesFolder: './k2-packages',
-  npmNamespace: '@k2-packages',
+  packagesFolder: './packages',
+  npmNamespace: '@kontur-ui',
 };
 
 async function getTopology() {

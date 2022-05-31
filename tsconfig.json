@@ -1,6 +1,6 @@
 {
   "files": [],
-  "references": [{ "path": "k2-packages" }],
+  "references": [{ "path": "packages" }],
   "compilerOptions": {
     "noErrorTruncation": true,
     "noImplicitAny": false,
@@ -27,14 +27,8 @@
     "esModuleInterop": true,
     "typeRoots": ["./node_modules/@types"],
     "allowSyntheticDefaultImports": true,
-    "isolatedModules": true,
+    "isolatedModules": true
   },
-  "exclude": [
-    "node_modules",
-    "k2-packages/*/node_modules",
-    "k2-packages/*/tslib"
-  ],
-  "include": [
-    "./global.d.ts",
-  ]
+  "exclude": ["node_modules", "packages/*/node_modules", "packages/*/tslib"],
+  "include": ["./global.d.ts"]
 }

@@ -2,7 +2,7 @@
   "name": "k2-front-end",
   "private": true,
   "workspaces": [
-    "k2-packages/*"
+    "packages/*"
   ],
   "scripts": {
     "build": "run-s auto:ts:references auto:lerna:pre-build auto:ts:build auto:lerna:build",
@@ -19,7 +19,7 @@
     "test": "jest",
     "test:coverage": "jest --coverage",
     "test:watch": "jest --watchAll",
-    "ts:clean": "find ./k2-packages -type d -name 'tslib' -exec rm -rf '{}' \\; & tsc --build --clean",
+    "ts:clean": "find ./packages -type d -name 'tslib' -exec rm -rf '{}' \\; & tsc --build --clean",
     "ts:watch": "tsc --build --watch",
     "auto:lerna:publish": "lerna publish from-package --yes",
     "auto:lerna:version": "lerna version",
@@ -36,7 +36,7 @@
     "auto:lerna:build": "lerna run build",
     "auto:ts:build": "tsc --build",
     "auto:ts:references": "node setup-references.mjs",
-    "figma:export": "patch-package && figma-export use-config && prettier --write k2-packages/default-icons/src/figma-icons/*"
+    "figma:export": "patch-package && figma-export use-config && prettier --write packages/default-icons/src/figma-icons/*"
   },
   "lint-staged": {
     "*/**/*.{css}": [

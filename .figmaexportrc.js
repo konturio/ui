@@ -6,7 +6,7 @@ const { parseFileSync } = require('css-variables-parser');
 // The file ID is the string of random alphanumeric characters found in the section of the URL after figma.com/file/.
 const FIGMA_FILE_ID = 'C2TlBs45hTL0U5pqZl2n9d';
 
-const variables = parseFileSync('./k2-packages/default-theme/variables.css');
+const variables = parseFileSync('./packages/default-theme/variables.css');
 const getVariable = (key) => variables[key].toUpperCase();
 
 const getComponentName = ({ basename, dirname }) =>
@@ -35,7 +35,7 @@ module.exports = {
         ],
         outputters: [
           require('@figma-export/output-components-as-svgr')({
-            output: './k2-packages/default-icons/src/figma-icons',
+            output: './packages/default-icons/src/figma-icons',
             getDirname: (options) => `./`, // to have all icons in one folder
             getComponentName,
             getFileExtension: () => '.tsx',

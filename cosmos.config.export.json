@@ -1,13 +1,13 @@
 {
   "$schema": "./node_modules/react-cosmos/config.schema.json",
   "watchDirs": [
-    "k2-packages"
+    "packages"
   ],
   "userDepsFilePath": "cosmos/cosmos.userdeps.js",
   "experimentalRendererUrl": "renderer.html",
   "globalImports": [
-    "k2-packages/default-theme/variables.css",
-    "k2-packages/default-theme/defaults.css",
-    "k2-packages/default-theme/typography.css"
+    "packages/default-theme/variables.css",
+    "packages/default-theme/defaults.css",
+    "packages/default-theme/typography.css"
   ]
 }

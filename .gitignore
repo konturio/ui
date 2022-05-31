@@ -19,7 +19,7 @@ dist
 *.log
 
 # Test
-k2-packages/coverage
+packages/coverage
 coverage/
 
 # Runtime data
@@ -45,4 +45,4 @@ npm_error.log
 cosmos/cosmos.userdeps.js
 cosmos/dist/
 cosmos-export/
-k2-packages/tsconfig.json
+packages/tsconfig.json

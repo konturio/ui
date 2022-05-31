@@ -1,6 +1,5 @@
 import { mock } from './mocks/mock-20';
 import { useCallback, useMemo, useRef, useState } from 'react';
-import { Indicator } from '@k2-packages/bivariate-tools';
 import { BivariateMatrixControlComponent } from '../index';
 import styles from './BivariateMatrixControlFixture.module.css';
 

@@ -10,3 +10,16 @@ export type BivariateMatrixHeadingType = {
   quality?: number;
   quotients: BivariateMatrixQuotientType[];
 };
+
+export type CornerRange = 'good' | 'bad' | 'important' | 'unimportant' | 'neutral';
+
+export type Copyright = string;
+
+export type Direction = [Array<CornerRange>, Array<CornerRange>];
+
+export type Indicator = {
+  name: string;
+  label: string;
+  direction: Direction;
+  copyrights: Copyright[];
+};

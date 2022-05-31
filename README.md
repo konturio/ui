@@ -14,7 +14,7 @@ Version track starts from v1.0.0 at `master` branch.
 
 Current approach rely on two workspaces:
 
-- `@k2-packages`, versioned application modules;
+- `@kontur-ui`, versioned application modules;
 
 Respectively k2-packages folders.
 
@@ -57,13 +57,13 @@ npm whoami --registry=https://nexus.kontur.io/repository/npm-a/
 To add dependency to all packages.
 
 ```sh
-$ lerna add @k2-packages/module3
+$ lerna add @kontur-ui/module3
 ```
 
 To add module3 as dependency to module2.
 
 ```sh
-$ lerna add @k2-packages/module3 --scope=@k2-packages/module2
+$ lerna add @kontur-ui/module3 --scope=@kontur-ui/module2
 ```
 
 ### Git branch naming

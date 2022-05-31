@@ -8,8 +8,7 @@
       "allowBranch": "master"
     },
     "publish": {
-      "conventionalCommits": true,
-      "registry": "https://nexus.kontur.io/repository/npm-snapshots-a/"
+      "conventionalCommits": true
     },
     "bootstrap": {
       "npmClientArgs": ["--no-package-lock", "--legacy-peer-deps"]

@@ -1,5 +1,5 @@
 import { Input as TrueInput } from '.';
-import { InfoOutline16, Search16 } from '@k2-packages/default-icons';
+import { InfoOutline16, Search16 } from '@kontur-ui/default-icons';
 import { ChangeEvent, useEffect, useState } from 'react';
 
 const Input = ({ value, ...props }) => {

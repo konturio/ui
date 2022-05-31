@@ -1,4 +1,4 @@
-import { EyeBallIcon } from '@k2-packages/default-icons';
+import { EyeBallIcon } from '@kontur-ui/default-icons';
 
 import { Button, ButtonProps } from '.';
 

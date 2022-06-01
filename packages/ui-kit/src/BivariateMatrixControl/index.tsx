@@ -280,6 +280,7 @@ const BivariateMatrixControl = forwardRef<HTMLDivElement | null, any>(
 
 BivariateMatrixControl.displayName = 'BivariateMatrixControl';
 
+// eslint-disable-next-line react/display-name
 export const BivariateMatrixControlComponent = memo(
   BivariateMatrixControl,
   (oldProps, newProps) => oldProps.matrix === newProps.matrix,

@@ -6,28 +6,22 @@ jobs:
   default:
     runs-on: ubuntu-latest
     env:
-      NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+      NPM_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
     steps:
-      - name: checkout
-        uses: actions/checkout@v2
-
-      - name: 'Use NodeJS 16'
-        uses: actions/setup-node@v2
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
         with:
-          node-version: '16'
-          registry-url: 'https://registry.npmjs.org'
+          node-version: 16
 
       - name: Install packages, build, test
         run: |
           npm install
           npm i lerna -g
           lerna bootstrap
-          npm run auto:lint'
+          npm run auto:lint
           npm run build
           npm run test
 
-      - name: Publish
-        if: github.ref == 'refs/heads/master'
+      - name: Publish package to NPM
+        if: github.ref == 'refs/heads/master' && github.event_name == 'push'
         run: npm run auto:lerna:publish
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}

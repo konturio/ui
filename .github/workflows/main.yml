@@ -5,8 +5,6 @@ on:
 jobs:
   default:
     runs-on: ubuntu-latest
-    env:
-      NPM_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
@@ -21,7 +19,9 @@ jobs:
           npm run auto:lint
           npm run build
           npm run test
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Publish package to NPM
-        if: github.ref == 'refs/heads/master' && github.event_name == 'push'
-        run: npm run auto:lerna:publish
+      # - name: Publish package to NPM
+      #   if: github.ref == 'refs/heads/master' && github.event_name == 'push'
+      #   run: npm run auto:lerna:publish

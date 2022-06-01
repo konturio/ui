@@ -13,7 +13,7 @@ jobs:
 
       - name: Install packages, build, test
         run: |
-          npm install
+          npm ci
           npm i lerna -g
           lerna bootstrap
           npm run auto:lint

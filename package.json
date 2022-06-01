@@ -21,7 +21,7 @@
     "test:watch": "jest --watchAll",
     "ts:clean": "find ./packages -type d -name 'tslib' -exec rm -rf '{}' \\; & tsc --build --clean",
     "ts:watch": "tsc --build --watch",
-    "auto:lerna:publish": "lerna publish from-package --yes --no-verify-access",
+    "auto:lerna:publish": "lerna publish from-package --yes",
     "auto:lerna:version": "lerna version",
     "auto:lint": "lerna run lint && eslint \"*/**/*.{ts,tsx}\" --quiet",
     "auto:typecheck": "tsc --noEmit",

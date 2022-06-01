@@ -8,7 +8,7 @@
   "type": "module",
   "scripts": {},
   "publishConfig": {
-    "access": "restricted"
+    "access": "public"
   },
   "gitHead": "997c9810c2404c1c8ba17fd17232a4c27bbcc25b"
 }

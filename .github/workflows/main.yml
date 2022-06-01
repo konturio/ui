@@ -23,6 +23,6 @@ jobs:
       - name: Publish package to NPM
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         run: |
-          echo "registry=http://registry.npmjs.org/" >> .npmrc
+          echo "registry=https://registry.npmjs.org/" >> .npmrc
           echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_AUTH_TOKEN }}" >> .npmrc
           npm run auto:lerna:publish

@@ -14,11 +14,11 @@ jobs:
       - name: Install packages, build, test
         run: |
           npm install
-          npm i lerna -g
-          lerna bootstrap
-          npm run auto:lint
-          npm run build
-          npm run test
+          # npm i lerna -g
+          # lerna bootstrap
+          # npm run auto:lint
+          # npm run build
+          # npm run test
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 

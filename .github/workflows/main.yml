@@ -14,13 +14,11 @@ jobs:
       - name: Install packages, build, test
         run: |
           npm install
-          # npm i lerna -g
-          # lerna bootstrap
-          # npm run auto:lint
-          # npm run build
-          # npm run test
-        # env:
-        #   NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          npm i lerna -g
+          lerna bootstrap
+          npm run auto:lint
+          npm run build
+          npm run test
 
       # - name: Publish package to NPM
       #   if: github.ref == 'refs/heads/master' && github.event_name == 'push'

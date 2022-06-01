@@ -6,8 +6,8 @@ jobs:
   default:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
         with:
           node-version: 16
 
@@ -20,6 +20,7 @@ jobs:
           npm run build
           npm run test
 
-      # - name: Publish package to NPM
-      #   if: github.ref == 'refs/heads/master' && github.event_name == 'push'
-      #   run: npm run auto:lerna:publish
+      - name: Publish package to NPM
+        if: github.ref == 'refs/heads/master' && github.event_name == 'push'
+        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_AUTH_TOKEN }}" >> .npmrc
+        run: npm run auto:lerna:publish

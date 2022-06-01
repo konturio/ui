@@ -19,8 +19,8 @@ jobs:
           # npm run auto:lint
           # npm run build
           # npm run test
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        # env:
+        #   NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       # - name: Publish package to NPM
       #   if: github.ref == 'refs/heads/master' && github.event_name == 'push'

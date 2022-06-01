@@ -15,6 +15,7 @@ jobs:
         run: |
           npm install
           npm i lerna -g
+          npm install -g npm@latest
           lerna bootstrap
           npm run auto:lint
           npm run build

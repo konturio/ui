@@ -30,7 +30,8 @@ import fixture19 from './../packages/ui-kit/src/Text/Text.fixture.tsx';
 import fixture20 from './../packages/ui-kit/src/TimeSlider/TimeSlider.fixture.tsx';
 import fixture21 from './../packages/ui-kit/src/Toggler/Toggler.fixture.tsx';
 
-import decorator0 from './../packages/ui-kit/cosmos.decorator.tsx';
+import decorator0 from './../cosmos.decorator.tsx';
+import decorator1 from './../packages/ui-kit/cosmos.decorator.tsx';
 
 export const rendererConfig = {
   "port": 5000
@@ -62,5 +63,6 @@ export const fixtures = {
 };
 
 export const decorators = {
-  'packages/ui-kit/cosmos.decorator.tsx': decorator0
+  'cosmos.decorator.tsx': decorator0,
+  'packages/ui-kit/cosmos.decorator.tsx': decorator1
 };

@@ -1,8 +1,6 @@
 {
   "$schema": "./node_modules/react-cosmos/config.schema.json",
-  "watchDirs": [
-    "packages"
-  ],
+  "watchDirs": ["packages"],
   "userDepsFilePath": "cosmos/cosmos.userdeps.js",
   "experimentalRendererUrl": "renderer.html",
   "globalImports": [

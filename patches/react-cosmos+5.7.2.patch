@@ -1,14 +1,15 @@
 diff --git a/node_modules/react-cosmos/dist/generateWebExport.js b/node_modules/react-cosmos/dist/generateWebExport.js
-index a6421d2..d1fb57d 100644
+index a6421d2..672e176 100644
 --- a/node_modules/react-cosmos/dist/generateWebExport.js
 +++ b/node_modules/react-cosmos/dist/generateWebExport.js
-@@ -7,7 +7,8 @@ exports.generateWebExport = generateWebExport;
+@@ -24,7 +24,9 @@ function _generateWebExport() {
+         switch (_context.prev = _context.next) {
+           case 0:
+             _context.next = 2;
+-            return (0, _generateExport.generateExport)([_webpack.webpackExport]);
++
++            // As we have vite bundler and do not need webpack to be run
++            return (0, _generateExport.generateExport)([]);
  
- var _generateExport = require("./export/generateExport");
- 
--var _webpack = require("./plugins/webpack");
-+// As we have vite bundler and do not need webpack to be run
-+var _webpack = {webpackExport: null} //require("./plugins/webpack");
- 
- function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
- 
+           case 2:
+           case "end":

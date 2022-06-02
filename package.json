@@ -6,6 +6,7 @@
   "workspaces": [
     "packages/*"
   ],
+  "homepage": "https://konturio.github.io/ui",
   "scripts": {
     "build": "run-s auto:ts:references auto:lerna:pre-build auto:ts:build auto:lerna:build",
     "dev": "run-p auto:lerna:pre-start auto:cosmos:renderer auto:cosmos auto:open",

@@ -1,0 +1,27 @@
+name: Surge PR Preview
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, closed]
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - uses: afc163/surge-preview@v1
+        id: preview_step
+        with:
+          surge_token: ${{ secrets.SURGE_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          dist: cosmos-export
+          teardown: 'true'
+          build: |
+            npm ci
+            npm run build
+            npm run cosmos:build:export
+      - name: Get the preview_url
+        run: echo "URL => ${{ steps.preview_step.outputs.preview_url }}"

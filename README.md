@@ -12,12 +12,6 @@ Lerna allows target versions of local dependent packages to be written as a `git
 
 Version track starts from v1.0.0 at `main` branch.
 
-Current approach rely on two workspaces:
-
-- `@konturio`, versioned application modules;
-
-Respectively k2-packages folders.
-
 ## Setup
 
 ### Package management
@@ -83,7 +77,7 @@ After you have finished working with the branch:
 - Select `Squash commits`
 - Write changelog in description of MR (it will be added in change log of all modules that depend on your MR)
 
-3. Make sure that all CI stages were successful and choice reviewer
+3. Make sure that all CI pipelines passed successfully and reviewer was assigned
 
 4. Make sure that all issues identified in the review process closed,
    and request have at least one :like: (not yours). If CI/CD pipeline without errors - accept MR.

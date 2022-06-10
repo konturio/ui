@@ -5,15 +5,21 @@
   align-items: center;
   width: var(--double-unit);
   height: var(--double-unit);
-  border-radius: var(--border-radius);
+  border-radius: var(--quarter-border-radius);
   outline: none;
   margin: 0;
   cursor: pointer;
   margin-right: var(--unit);
-  box-shadow: 0px 0px 0px 1px var(--base-strong-down);
+  border: 1px solid var(--base-strong-down);
   flex-shrink: 0;
+
+  &:hover {
+    border-color: var(--base-strong);
+  }
+
   &:checked {
-    background-color: var(--base-strong-down);
+    border-color: var(--base-strong);
+    background-color: var(--base-strong);
     & ~ .icon {
       visibility: visible;
     }
@@ -25,14 +31,15 @@
 
   &:disabled {
     cursor: not-allowed;
-    background-color: var(--faint-weak-down);
-    color: var(--icon-base-strong);
-    box-shadow: 0px 0px 0px 1px var(--faint-strong-down);
+    border-color: var(--faint-strong);
     & ~ .label {
-      color: var(--icon-base-strong);
+      color: var(--faint-strong);
+    }
+    & ~ .icon {
+      cursor: not-allowed;
     }
     &:checked {
-      background-color: var(--faint-strong-down);
+      background-color: var(--faint-strong);
     }
   }
 }
@@ -43,5 +50,9 @@
   visibility: hidden;
   svg {
     display: block;
+
+    & path {
+      stroke-width: 1px;
+    }
   }
 }

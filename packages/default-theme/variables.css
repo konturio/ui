@@ -121,6 +121,7 @@
   --double-unit: 16px;
   --border-radius: 4px;
   --half-border-radius: 2px;
+  --quarter-border-radius: 1px;
 
   /* Animations */
   --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);

@@ -4,25 +4,18 @@
   cursor: pointer;
   padding: var(--unit);
   align-items: center;
+
   &.disabled {
     cursor: not-allowed;
     .label {
-      color: var(--icon-base-strong);
+      color: var(--faint-strong);
     }
     .toggle {
-      background-color: var(--base-weak);
-      box-shadow: 0px 0px 0px 1px var(--faint-strong-down);
+      background-color: var(--faint-weak);
+
       &:after {
-        box-shadow: 0px 0px 0px 1px var(--faint-strong-down);
-      }
-    }
-    &.checked {
-      .toggle {
-        background-color: var(--faint-strong-down);
-        color: var(--icon-base-strong);
-      }
-      .label {
-        color: var(--icon-base-strong);
+        background-color: var(--faint-weak-up);
+        box-shadow: unset;
       }
     }
   }
@@ -32,32 +25,31 @@
 }
 
 .toggle {
-  height: var(--double-unit);
-  width: calc(var(--double-unit) * 2);
+  height: calc(var(--double-unit) + 4px);
+  width: calc(calc(var(--double-unit) * 2) + 4px);
   margin: 0 0.5em 0 0;
-  box-shadow: 0px 0px 0px 1px var(--base-strong-down);
-  border-radius: 0.6em;
+  border-radius: 20px;
   cursor: pointer;
-  background-color: var(--faint-weak-down);
+  background-color: var(--faint-strong);
 
   &:after {
     background-color: var(--base-weak);
     content: '';
     display: block;
-    width: calc(var(--double-unit) - 6px);
-    height: calc(var(--double-unit) - 6px);
+    width: calc(var(--double-unit) - 2px);
+    height: calc(var(--double-unit) - 2px);
     border-radius: 0.6em;
     position: relative;
     right: 0;
     margin: 3px;
-    transition: right ease 0.2s;
-    box-shadow: 0px 0px 0px 1px var(--base-strong-down);
+    transition: right ease-out 0.2s;
+    box-shadow: 0px 1px 4px 0px #00000033;
   }
 }
 
 .checked {
   .toggle {
-    background-color: var(--base-strong-down);
+    background-color: var(--base-strong);
     &:after {
       position: relative;
       right: calc(var(--double-unit) * -1);

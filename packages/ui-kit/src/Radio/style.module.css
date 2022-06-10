@@ -13,7 +13,10 @@
   border: 1px solid var(--base-strong-down);
   box-sizing: content-box;
   flex-shrink: 0;
+
   &:checked {
+    border-color: var(--base-strong);
+
     &:after {
       position: absolute;
       background-color: var(--base-strong);

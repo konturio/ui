@@ -41,10 +41,10 @@ export default function Fixture() {
         }
       >
         <Button size="small" variant="radio" id="button1">
-          Right
+          Left
         </Button>
         <Button size="small" variant="radio" id="button2">
-          Left
+          Right
         </Button>
       </ButtonGroup>
     </>

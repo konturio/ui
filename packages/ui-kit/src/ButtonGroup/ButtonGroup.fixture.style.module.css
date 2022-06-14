@@ -1,0 +1,9 @@
+.btnContainer {
+  flex: 1;
+  button {
+    width: 100%;
+  }
+}
+.groupContainer {
+  width: 200px;
+}

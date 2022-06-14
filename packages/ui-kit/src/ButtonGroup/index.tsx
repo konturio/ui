@@ -10,15 +10,19 @@ export interface ButtonGroupProps {
   classes?: {
     btnContainer?: string;
     groupContainer?: string;
+    label?: string;
   };
+  renderLabel?: JSX.Element | string;
 }
 
-export function ButtonGroup({ current, children, onChange, classes }: ButtonGroupProps) {
-  const buttonElements = Children.toArray(children).filter((button) => isValidElement(button));
-  const [activeBtn, setActiveBtn] = useState<string | undefined>(undefined);
+export function ButtonGroup({ current, children, onChange, classes, renderLabel }: ButtonGroupProps) {
+  const buttonElements = Children.toArray(children).filter((button) =>
+    isValidElement(button),
+  ) as ReactElement<ButtonProps>[];
+  const [activeBtn, setActiveBtn] = useState<string | undefined>(current);
 
   const buttons = useMemo(() => {
-    return buttonElements.map((button: any) => ({
+    return buttonElements.map((button) => ({
       props: button.props,
       element: button,
       isActive: button?.props?.id === activeBtn,
@@ -36,23 +40,23 @@ export function ButtonGroup({ current, children, onChange, classes }: ButtonGrou
   };
 
   return (
-    <div className={clsx(s.groupContainer, classes?.groupContainer)}>
-      {buttons.map((button) => (
-        <div
-          key={button.id}
-          className={clsx(
-            classes?.btnContainer,
-            s.button,
-            button.isActive && s.activeBtn,
-            button.isActive && 'activeBtn',
-          )}
-          onClick={() => {
-            onBtnClick(button.id);
-          }}
-        >
-          {React.cloneElement(button.element, button.props)}
-        </div>
-      ))}
+    <div className={s.root}>
+      {renderLabel && <div className={clsx(s.label, classes?.label)}>{renderLabel}</div>}
+      <div className={clsx(s.groupContainer, classes?.groupContainer)}>
+        {buttons.map((button) => (
+          <div
+            key={button.id}
+            className={clsx(classes?.btnContainer, s.button, button.isActive && s.activeBtn)}
+            onClick={() => {
+              if (button.id) {
+                onBtnClick(button.id);
+              }
+            }}
+          >
+            {React.cloneElement(button.element, { ...button.props, active: button.isActive })}
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

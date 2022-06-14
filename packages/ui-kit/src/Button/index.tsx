@@ -1,22 +1,23 @@
 import s from './style.module.css';
 import cn from 'clsx';
-import { ReactChild, forwardRef, Children } from 'react';
+import { ReactChild, forwardRef, Children, ReactNode } from 'react';
 
 export interface ButtonProps {
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
   disabled?: boolean;
   dark?: boolean;
   transparent?: boolean;
-  variant?: 'primary' | 'invert-outline' | 'invert';
+  variant?: 'primary' | 'invert-outline' | 'invert' | 'radio';
   size?: 'medium' | 'small';
   id?: string;
   className?: string;
   active?: boolean;
   iconBefore?: ReactChild | null;
   iconAfter?: ReactChild | null;
+  children?: ReactNode;
 }
 
-export const Button = forwardRef<HTMLButtonElement, React.PropsWithChildren<ButtonProps>>(
+export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   (
     {
       onClick,

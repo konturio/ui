@@ -85,6 +85,34 @@ export default {
       </div>
     </div>
   ),
+  radio: (
+    <div style={columnStyle}>
+      Radio small
+      <div style={rowStyle}>
+        <Button onClick={console.log} size="small" variant="radio">
+          Enabled
+        </Button>
+        <Button onClick={console.log} size="small" variant="radio" disabled>
+          Disabled
+        </Button>
+        <Button onClick={console.log} size="small" variant="radio" active>
+          Pressed
+        </Button>
+      </div>
+      Radio medium
+      <div style={rowStyle}>
+        <Button onClick={console.log} size="medium" variant="radio">
+          Enabled
+        </Button>
+        <Button onClick={console.log} size="medium" variant="radio" disabled>
+          Disabled
+        </Button>
+        <Button onClick={console.log} size="medium" variant="radio" active>
+          Pressed
+        </Button>
+      </div>
+    </div>
+  ),
   'all-types-light': (
     <>
       <div style={{ display: 'flex', flexDirection: 'column', gap: '1em' }}>

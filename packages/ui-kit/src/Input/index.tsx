@@ -10,7 +10,7 @@ export interface InputProps extends React.HTMLProps<HTMLInputElement> {
   message?: string;
   isFocused?: boolean;
   showTopPlaceholder?: boolean;
-  renderLabel?: JSX.Element;
+  renderLabel?: JSX.Element | string;
   classes?: {
     inputBox?: string;
     input?: string;

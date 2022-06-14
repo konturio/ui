@@ -6,13 +6,12 @@
   padding: var(--unit);
   cursor: pointer;
   border-radius: var(--border-radius);
-  font-weight: 600;
-  font-size: 14px;
   font-family: var(--font-family);
+  font-weight: 600;
   letter-spacing: 0.2px;
   line-height: 16px;
 
-  --button-box-shadow: 0 0 0 2px var(--base-weak), 0 0 0 4px var(--accent-strong);
+  --button-box-shadow: 0 0 0 2px var(--base-weak), 0 0 0 4px var(--complimentary-strong);
 
   --button-invert-background: var(--base-weak);
   --button-invert-color: var(--accent-strong);
@@ -27,7 +26,7 @@
 }
 
 .buttonDark {
-  --button-box-shadow: 0 0 0 2px var(--accent-strong-down);
+  --button-box-shadow: 0 0 0 2px var(--complimentary-strong-down);
 
   --button-invert-background: var(--brand-strong-down);
   --button-invert-color: var(--faint-weak-up);
@@ -49,6 +48,37 @@
   --button-invert-disabled-background: rgba(0, 0, 0, 0.1);
 
   --button-invert-active-background: rgba(0, 0, 0, 0.5);
+}
+
+.radio {
+  --button-box-shadow: inset 0 0 0 2px var(--complimentary-strong-down);
+  font-family: var(--font-xs);
+  font-weight: 400;
+  background-color: var(--base-weak);
+  color: var(--base-strong);
+
+  &:hover:not(:disabled) {
+    background-color: var(--faint-weak-up);
+  }
+  &:disabled {
+    cursor: default;
+    background-color: var(--faint-weak);
+    color: var(--text-faint-strong);
+  }
+  &:active:not(:disabled),
+  &.active {
+    font-weight: 600;
+    letter-spacing: 0;
+    background-color: var(--base-strong-down);
+    color: var(--base-weak);
+    &:hover {
+      background-color: var(--base-strong-down);
+    }
+  }
+  &:focus {
+    outline: none;
+    box-shadow: var(--button-box-shadow);
+  }
 }
 
 .primary {
@@ -73,7 +103,6 @@
   }
 }
 
-/*previously .invert-outline*/
 .invert {
   background-color: var(--button-invert-background);
   color: var(--button-invert-color);

@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 2.0.0-alpha.22 (2022-06-15)
+
+**Note:** Version bump only for package @konturio/default-icons
+
+
+
+
+
 # [2.0.0-alpha.21](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/default-icons@2.0.0-alpha.20...@k2-packages/default-icons@2.0.0-alpha.21) (2022-05-20)
 
 **Note:** Version bump only for package @k2-packages/default-icons

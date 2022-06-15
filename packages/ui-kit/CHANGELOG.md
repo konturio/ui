@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 3.0.0-alpha.40 (2022-06-15)
+
+**Note:** Version bump only for package @konturio/ui-kit
+
+
+
+
+
 # [3.0.0-alpha.39](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@3.0.0-alpha.38...@k2-packages/ui-kit@3.0.0-alpha.39) (2022-05-29)
 
 **Note:** Version bump only for package @k2-packages/ui-kit

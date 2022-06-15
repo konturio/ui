@@ -1,21 +1,29 @@
-import React, { Children, isValidElement, ReactElement, useMemo, useState } from 'react';
+import React, { Children, isValidElement, ReactElement, ReactNode, useMemo, useState } from 'react';
 import s from './style.module.css';
 import { ButtonProps } from '../Button';
 import clsx from 'clsx';
 
 export interface ButtonGroupProps {
   current?: string;
-  onChange: (buttonId: string) => void;
-  children: ReactElement<ButtonProps>[];
+  onChange?: (buttonId: string) => void;
+  children: ReactNode;
   classes?: {
     btnContainer?: string;
     groupContainer?: string;
     label?: string;
   };
   renderLabel?: JSX.Element | string;
+  borderWrap?: boolean;
 }
 
-export function ButtonGroup({ current, children, onChange, classes, renderLabel }: ButtonGroupProps) {
+export function ButtonGroup({
+  current,
+  children,
+  onChange,
+  classes,
+  renderLabel,
+  borderWrap = true,
+}: ButtonGroupProps) {
   const buttonElements = Children.toArray(children).filter((button) =>
     isValidElement(button),
   ) as ReactElement<ButtonProps>[];
@@ -25,7 +33,7 @@ export function ButtonGroup({ current, children, onChange, classes, renderLabel 
     return buttonElements.map((button) => ({
       props: button.props,
       element: button,
-      isActive: button?.props?.id === activeBtn,
+      isActive: button?.props?.id ? button.props.id === activeBtn : false,
       id: button?.props?.id,
     }));
   }, [buttonElements, activeBtn]);
@@ -33,7 +41,7 @@ export function ButtonGroup({ current, children, onChange, classes, renderLabel 
   const onBtnClick = (btnId: string) => {
     if (activeBtn !== btnId) {
       setActiveBtn(btnId);
-      onChange(btnId);
+      if (onChange) onChange(btnId);
     } else {
       setActiveBtn(undefined);
     }
@@ -42,7 +50,7 @@ export function ButtonGroup({ current, children, onChange, classes, renderLabel 
   return (
     <div className={s.root}>
       {renderLabel && <div className={clsx(s.label, classes?.label)}>{renderLabel}</div>}
-      <div className={clsx(s.groupContainer, classes?.groupContainer)}>
+      <div className={clsx(s.groupContainer, borderWrap && s.defaultBorderWrap, classes?.groupContainer)}>
         {buttons.map((button) => (
           <div
             key={button.id}

@@ -9,6 +9,20 @@
   padding-bottom: var(--unit);
 }
 
+.groupContainer.defaultBorderWrap {
+  & .button button {
+    border-top: 1px solid var(--faint-strong-down);
+    border-bottom: 1px solid var(--faint-strong-down);
+  }
+
+  & .button:last-child:not(.activeBtn) button {
+    border-right: 1px solid var(--faint-strong-down);
+  }
+  & .button:first-child:not(.activeBtn) button {
+    border-left: 1px solid var(--faint-strong-down);
+  }
+}
+
 .groupContainer {
   display: flex;
   align-items: stretch;
@@ -16,8 +30,6 @@
   border-radius: var(--half-unit);
 
   & .button button {
-    border-top: 1px solid var(--faint-strong-down);
-    border-bottom: 1px solid var(--faint-strong-down);
     border-radius: 0;
   }
   & .button.activeBtn button {
@@ -29,15 +41,7 @@
     border-radius: var(--half-unit) 0 0 var(--half-unit);
   }
 
-  & .button:first-child:not(.activeBtn) button {
-    border-left: 1px solid var(--faint-strong-down);
-  }
-
   & .button:last-child button {
     border-radius: 0 var(--half-unit) var(--half-unit) 0;
-  }
-
-  & .button:last-child:not(.activeBtn) button {
-    border-right: 1px solid var(--faint-strong-down);
   }
 }

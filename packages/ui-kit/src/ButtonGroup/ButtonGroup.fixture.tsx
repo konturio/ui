@@ -46,6 +46,25 @@ export default function Fixture() {
           Right
         </Button>
       </ButtonGroup>
+      <br />
+      <ButtonGroup
+        classes={classes}
+        current={second}
+        onChange={setSecond}
+        renderLabel={
+          <div style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
+            No border Prop <InfoOutline16 style={{ color: 'var(--faint-strong)' }} />
+          </div>
+        }
+        borderWrap={false}
+      >
+        <Button size="small" variant="radio" id="button1">
+          Left
+        </Button>
+        <Button size="small" variant="radio" id="button2">
+          Right
+        </Button>
+      </ButtonGroup>
     </div>
   );
 }

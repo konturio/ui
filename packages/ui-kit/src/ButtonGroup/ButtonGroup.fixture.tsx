@@ -9,12 +9,11 @@ const classes = {
   groupContainer: s.groupContainer,
 };
 
-console.log(classes);
 export default function Fixture() {
   const [first, setFirst] = useValue('first', { defaultValue: 'button1' as string });
   const [second, setSecond] = useValue('second', { defaultValue: 'button1' as string });
   return (
-    <>
+    <div style={{ display: 'flex', flexDirection: 'column' }}>
       <ButtonGroup current={first} onChange={setFirst}>
         <Button size="small" variant="radio" id="button1">
           Car
@@ -47,6 +46,6 @@ export default function Fixture() {
           Right
         </Button>
       </ButtonGroup>
-    </>
+    </div>
   );
 }

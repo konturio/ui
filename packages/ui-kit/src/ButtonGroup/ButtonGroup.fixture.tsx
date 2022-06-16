@@ -21,7 +21,7 @@ export default function Fixture() {
         <Button size="small" variant="radio" id="button2">
           Car
         </Button>
-        <Button size="small" variant="radio" id="button3">
+        <Button size="small" variant="radio" disabled id="button3">
           Car
         </Button>
         <Button size="small" variant="radio" id="button4">

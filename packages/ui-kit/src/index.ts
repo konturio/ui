@@ -9,7 +9,6 @@ export { Slider } from './Slider';
 export { TimeSlider } from './TimeSlider';
 export { IsochroneSlider } from './IsochroneSlider';
 export { Legend } from './Legend';
-export { BivariateMatrixControlComponent } from './BivariateMatrixControl';
 export { Rotator } from './Rotator';
 export { AppHeader } from './AppHeader';
 export { Details } from './Details';

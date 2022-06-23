@@ -1,8 +1,8 @@
-import GitHubCorners from '@uiw/react-github-corners';
+import GithubCorner from 'react-github-corner';
 
 export default ({ children }) => (
   <>
     {children}
-    <GitHubCorners size={40} href="https://github.com/konturio/ui" />
+    <GithubCorner size={40} href="https://github.com/konturio/ui" target="_blank" />
   </>
 );

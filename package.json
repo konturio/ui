@@ -98,6 +98,6 @@
     "open-cli": "^7.0.0",
     "patch-package": "6.4.7",
     "react-cosmos": "5.7.2",
-    "@uiw/react-github-corners": "1.5.14"
+    "react-github-corner": "2.5.0"
   }
 }

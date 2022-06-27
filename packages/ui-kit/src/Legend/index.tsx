@@ -29,6 +29,8 @@ interface LegendProps {
     x: Axis;
     y: Axis;
   };
+  onCellPointerOver: (e: MouseEvent, cell: Cell, i: number) => void;
+  onCellPointerLeave: (e: MouseEvent, cell: Cell, i: number) => void;
 }
 
 interface ArrowHeadProps {
@@ -50,7 +52,15 @@ const ArrowHead = ({ className, type }: ArrowHeadProps) => (
   </div>
 );
 
-export const Legend = ({ cells, size, axis, title, showAxisLabels = false }: LegendProps) => {
+export const Legend = ({
+  cells,
+  size,
+  axis,
+  title,
+  showAxisLabels = false,
+  onCellPointerOver,
+  onCellPointerLeave,
+}: LegendProps) => {
   const TEMPLATE = useMemo(
     () => [
       `y ${new Array(size + 1).fill('.').join(' ')}`,
@@ -69,10 +79,12 @@ export const Legend = ({ cells, size, axis, title, showAxisLabels = false }: Leg
       label: step.label || step.value.toFixed(1),
       className: styles.yStepsCell,
     })),
-    c: cells.map((cell) => ({
+    c: cells.map((cell, i) => ({
       label: <span>{cell.label}</span>,
       className: cn(styles.cell, styles.colorCell),
       style: { backgroundColor: cell.color },
+      ...(onCellPointerOver && { onPointerOver: (e: MouseEvent) => onCellPointerOver(e, cell, i) }),
+      ...(onCellPointerLeave && { onPointerLeave: (e: MouseEvent) => onCellPointerLeave(e, cell, i) }),
     })),
   });
 
@@ -104,6 +116,8 @@ export const Legend = ({ cells, size, axis, title, showAxisLabels = false }: Leg
             key={`${cell._position.x}|${cell._position.y}`}
             style={Object.assign(getCellPositionStyle(cell._position.x, cell._position.y), cell.style)}
             className={cn(cell.className, styles.cell)}
+            onPointerOver={cell.onPointerOver}
+            onPointerLeave={cell.onPointerLeave}
           >
             {cell.label}
           </div>

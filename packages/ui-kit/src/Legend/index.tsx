@@ -29,8 +29,8 @@ interface LegendProps {
     x: Axis;
     y: Axis;
   };
-  onCellPointerOver: (e: MouseEvent, cell: Cell, i: number) => void;
-  onCellPointerLeave: (e: MouseEvent, cell: Cell, i: number) => void;
+  onCellPointerOver?: (e: MouseEvent, cell: Cell, i: number) => void;
+  onCellPointerLeave?: (e: MouseEvent, cell: Cell, i: number) => void;
 }
 
 interface ArrowHeadProps {

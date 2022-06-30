@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.23](https://github.com/konturio/ui/compare/@konturio/default-icons@2.0.0-alpha.22...@konturio/default-icons@2.0.0-alpha.23) (2022-06-30)
+
+**Note:** Version bump only for package @konturio/default-icons
+
+
+
+
+
 # 2.0.0-alpha.22 (2022-06-15)
 
 **Note:** Version bump only for package @konturio/default-icons

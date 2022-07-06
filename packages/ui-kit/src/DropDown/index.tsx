@@ -1,16 +1,7 @@
+import React, {forwardRef, PropsWithChildren, useState} from 'react';
 import cn from 'clsx';
 import s from './style.module.css';
-import { HighlightSpan } from './HighlightSpan';
-import { SelectableElement } from './SelectableElement';
-import { useKeyPress } from './useKeyPress';
-
-/**
- * Blur event trigger closing dropdown before onClick fired.
- * For fix that we must reorder events: 'click' before 'blur'
- * More:
- * https://stackoverflow.com/questions/17769005/onclick-and-onblur-ordering-issue
- */
-// const stopBlurEvent = e => e.preventDefault();
+import {ChevronDown16, ChevronUp16} from '@konturio/default-icons';
 
 interface Option {
   label: string | React.ReactChild | React.ReactChild[];
@@ -18,59 +9,42 @@ interface Option {
   disabled?: boolean;
 }
 
-interface DropDownProps {
-  onChange(event): void;
-  selected?: Option['value'] | null;
+export interface DropdownProps {
   options: Option[];
-  /** Work only with string label */
-  highlightText?: string;
-  /** Enable onKeyPress handler */
-  isFocused?: boolean;
+  onChange: (value: Option['value']) => void;
+  label?: string | React.ReactChild | React.ReactChild[];
+  value?: Option['value'];
   className?: string;
-  /** Need for positioning badge in list */
-  badgeClass?: string;
-  /** trigger only in focused state */
-  onKeyPress?: (keyCode: number) => void;
-  onFocus?: (e: React.FormEvent<HTMLInputElement>) => void;
-  /** Join focus and select event into one event */
-  focusAsSelect?: boolean;
+  placeholder?: string;
+  classes?: {
+    label?: string;
+    selectBox?: string;
+    placeholder?: string;
+  };
 }
 
-export function DropDown({
-  options,
-  selected,
-  onChange,
-  highlightText,
-  isFocused,
-  className,
-  badgeClass,
-  onKeyPress,
-  onFocus,
-  focusAsSelect,
-}: DropDownProps): JSX.Element {
-  useKeyPress(onKeyPress, isFocused);
+function DropdownComponent(
+  { children, options, onChange, label, className, placeholder = 'Select Select', classes }: PropsWithChildren<DropdownProps>,
+  ref,
+) {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+
+  const toggleOpen = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
-    <div className={cn(s.root, className, { [s.focus]: isFocused })}>
-      {options.map(({ value, label, disabled }, i) => (
-        <SelectableElement
-          key={value}
-          id={String(value)}
-          disabled={disabled}
-          value={value}
-          onChange={onChange}
-          onFocus={onFocus}
-          focusAsSelect={focusAsSelect}
-          isSelected={value === selected}
-          badgeClass={badgeClass}
-          badge={i < 9 ? <span className={s.bind}>{i + 1}</span> : undefined}
-        >
-          {highlightText && typeof label === 'string' ? (
-            <HighlightSpan highlight={highlightText}>{label}</HighlightSpan>
-          ) : (
-            label
-          )}
-        </SelectableElement>
-      ))}
+    <div className={cn(s.root, className)}>
+      {label && <div className={cn(s.label, classes?.label)}>{label}</div>}
+      {children && <div className={s.icons}>{children}</div>}
+      <div className={cn(s.selectBox, classes?.selectBox)}>
+        <div className={cn(s.placeholder, classes?.placeholder)}>{placeholder}</div>
+        <div onClick={toggleOpen} className={s.openToggle}>
+          {isOpen ? <ChevronUp16 /> : <ChevronDown16 />}
+        </div>
+      </div>
     </div>
   );
 }
+
+export const DropDown = forwardRef(DropdownComponent);

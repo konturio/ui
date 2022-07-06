@@ -1,6 +1,6 @@
-import { SelectableElement } from './SelectableElement';
+import { SelectableElement } from '../SelectableElement';
 import { shallow } from 'enzyme';
-import s from './style.module.css';
+import s from '../style.module.css';
 
 describe('<SelectableElement> component', () => {
   it('Should call `onChange` on changes', () => {

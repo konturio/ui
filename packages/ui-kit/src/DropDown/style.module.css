@@ -1,70 +1,63 @@
 .root {
-  margin: 0;
-  margin-top: var(--unit);
-  padding: 0;
-  border-radius: 0 0 var(--border-radius) var(--border-radius);
-  overflow: auto
-}
+	display: flex;
+	flex-direction: column;
+	min-width: 160px;
 
-.selectable {
-  position: relative;
-}
+	& .label {
+		font-size: 14px;
+		font-weight: 500;
+		padding-bottom: var(--unit);
+	}
 
-.option {
-  display: flex;
-  padding-right: 2em;
-  position: relative;
-}
+	& .icons {
+		color: var(--faint-strong);
+		display: flex;
+		flex-flow: row nowrap;
+		align-content: center;
+		align-items: center;
+	}
 
-.option:hover {
-  background-color: rgba(var(--primary-color), 0.2);
-}
+	& .openToggle {
+		position: absolute;
+		right: 0;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		cursor: pointer;
+		color: var(--faint-strong);
+		padding: 0 var(--unit);
+	}
 
-.selected {
-  background-color: var(--secondary-color);
-  color: var(--secondary-text-color);
-}
+	& .placeholder {
+		color: var(--base-strong);
+		background: transparent;
+		pointer-events: none;
+		font-size: 14px;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		margin-right: 20px;
 
-.highlight {
-  background-color: rgba(251, 255, 0, 0.4);
-}
+		&.no-value {
+			color: var(--text-faint-strong);
+		}
+	}
 
-.radio {
-  position: absolute;
-  opacity: 0;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
+	& .selectBox {
+		display: flex;
+		flex-flow: row nowrap;
+		border-radius: var(--border-radius);
+		box-shadow: 0 0 0 1px var(--faint-strong-down);
+		border: none;
+		color: var(--base-strong);
+		position: relative;
+		background-color: var(--base-weak);
+		padding: var(--unit);
+		align-items: center;
+		cursor: pointer;
 
-.radio:focus~.option:after {
-  height: 100%;
-  width: 4px;
-  background-color: var(--primary-color);
-  content: '';
-  position: absolute;
-  display: block;
-  top: 0;
-  left: 0;
-}
-
-.badge {
-  right: var(--unit);
-  position: absolute;
-
-  top: var(--double-unit);
-}
-
-.bind {
-  border-radius: 4px;
-  height: 1em;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  background-color: #e6e6e6;
-  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.25), inset 0px 0px 1px rgba(255, 255, 255, 0.25);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.8em;
-  padding: 0.8em 0.5em 0.7em;
-  color: #6f6f6f;
+		&:active {
+			box-shadow: 0 0 0 2px var(--complimentary-strong-down);
+		}
+	}
 }

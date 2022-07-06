@@ -1,13 +1,13 @@
-import { DropDown } from './index';
-import { SelectableElement } from './SelectableElement';
-import { HighlightSpan } from './HighlightSpan';
+import { DropDownOld } from '../index';
+import { SelectableElement } from '../SelectableElement';
+import { HighlightSpan } from '../HighlightSpan';
 
 import { shallow } from 'enzyme';
 
 describe('<DropDown> component', () => {
   it('Should render dropdown items', () => {
     const wrapper = shallow(
-      <DropDown
+      <DropDownOld
         options={[
           { label: 'foo', value: 1 },
           { label: 'bar', value: '2' },
@@ -22,7 +22,7 @@ describe('<DropDown> component', () => {
   it('Should call `onChange` on changes', () => {
     const onChange = jest.fn();
     const wrapper = shallow(
-      <DropDown
+      <DropDownOld
         options={[
           { label: 'foo', value: 1 },
           { label: 'bar', value: '2' },
@@ -37,7 +37,7 @@ describe('<DropDown> component', () => {
   it('Should mark selected item', () => {
     const onChange = jest.fn();
     const wrapper = shallow(
-      <DropDown
+      <DropDownOld
         options={[
           { label: 'foo', value: 1 },
           { label: 'bar', value: '2' },
@@ -53,7 +53,7 @@ describe('<DropDown> component', () => {
 
   it('Should not pass badge to items with index more that 8', () => {
     const wrapper = shallow(
-      <DropDown
+      <DropDownOld
         options={new Array(10).fill(0).map((_, i) => ({
           label: 'foo' + i,
           value: i,
@@ -67,7 +67,7 @@ describe('<DropDown> component', () => {
 
   it('Should use <HighlightSpan /> if highlightText provided', () => {
     const wrapper = shallow(
-      <DropDown
+      <DropDownOld
         highlightText={'foo'}
         options={[
           { label: 'foo', value: 1 },

@@ -1,7 +1,7 @@
-import { DropDown } from './index';
+import { DropDownOld } from '../index';
 
 export default (
-  <DropDown
+  <DropDownOld
     options={[
       { label: 'foo', value: 1 },
       { label: 'bar', value: '2' },

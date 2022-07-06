@@ -33,7 +33,7 @@ export default (
           <Divider type="vertical">Vertical title</Divider>
         </div>
         <div style={{ width: '30%', height: 200, position: 'relative' }}>
-            <Divider type="vertical">&nbsp;</Divider>
+          <Divider type="vertical">&nbsp;</Divider>
         </div>
       </div>
     </Panel>

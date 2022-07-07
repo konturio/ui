@@ -4,7 +4,7 @@ import s from './style.module.css';
 import { ReactChild } from 'react';
 import { Close24 } from '@konturio/default-icons';
 
-interface Panel {
+interface Panel extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
   className?: string;
   header?: string | React.ReactChild | React.ReactChild[];
   onClose?: React.MouseEventHandler<HTMLButtonElement>;
@@ -22,9 +22,11 @@ export function Panel({
   onClose,
   customCloseBtn,
   classes,
+  ref,
+  ...rest
 }: React.PropsWithChildren<Panel>) {
   return (
-    <Card className={cn(s.card, className)}>
+    <Card className={cn(s.card, className)} {...rest}>
       {header && (
         <div className={cn(s.header, classes?.header)}>
           <div>{header}</div>

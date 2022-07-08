@@ -1,0 +1,47 @@
+.item {
+	position: relative;
+	cursor: pointer;
+	display: block;
+	border: none;
+	height: auto;
+	text-align: left;
+	line-height: 1em;
+	color: rgba(0, 0, 0, 0.87);
+	padding: 0.78571429rem 1.14285714rem !important;
+	font-size: 1rem;
+	text-transform: none;
+	font-weight: normal;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	-webkit-touch-callout: none;
+
+	&:first-child {
+		border-top-width: 0;
+	}
+
+	:hover {
+		background: rgba(0, 0, 0, 0.05);
+		color: rgba(0, 0, 0, 0.95);
+		z-index: 13;
+	}
+
+	.active {
+		background: transparent;
+		font-weight: bold;
+		color: rgba(0, 0, 0, 0.95);
+		-webkit-box-shadow: none;
+		box-shadow: none;
+		z-index: 12;
+	}
+
+	.selected {
+		background: rgba(0, 0, 0, 0.03);
+		color: rgba(0, 0, 0, 0.95);
+	}
+
+	.disabled {
+		cursor: default;
+		pointer-events: none;
+		opacity: 0.45;
+	}
+}

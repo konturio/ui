@@ -1,0 +1,48 @@
+.menu {
+	cursor: auto;
+	position: absolute;
+	left: 0;
+	display: none;
+	outline: none;
+	top: 100%;
+	min-width: -webkit-max-content;
+	min-width: -moz-max-content;
+	min-width: max-content;
+	margin: 0;
+	padding: 0 0;
+	background: #FFFFFF;
+	font-size: 1em;
+	text-shadow: none;
+	text-align: left;
+	-webkit-box-shadow: 0 2px 3px 0 rgba(34, 36, 38, 0.15);
+	box-shadow: 0 2px 3px 0 rgba(34, 36, 38, 0.15);
+	border: 1px solid rgba(34, 36, 38, 0.15);
+	border-radius: 0.28571429rem;
+	-webkit-transition: opacity 0.1s ease;
+	transition: opacity 0.1s ease;
+	z-index: 11;
+	will-change: transform, opacity;
+
+	& > * {
+		white-space: nowrap;
+	}
+
+	&.left {
+		left: auto;
+		right: 100%;
+		margin: 0 -0.5em 0 0 !important;
+		border-radius: 0.28571429rem !important;
+	}
+}
+
+[class*='dropdown'] > .menu.left {
+	left: auto !important;
+	right: 0 !important;
+}
+
+[class*='dropdown'] > .menu.left .menu,
+[class*='dropdown'] .menu .left.menu {
+	width: auto;
+	float: left;
+	margin: 0;
+}

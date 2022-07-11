@@ -2,7 +2,7 @@ import { ComponentClass, createElement, FunctionComponent, MouseEvent, ReactNode
 import cn from 'clsx';
 import styles from './DropDownItem.module.css';
 
-interface DropdownItemProps {
+export interface DropdownItemProps {
   /** Style as the currently chosen item. */
   active?: boolean;
 

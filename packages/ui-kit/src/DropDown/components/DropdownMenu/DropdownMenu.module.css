@@ -33,6 +33,22 @@
 		margin: 0 -0.5em 0 0 !important;
 		border-radius: 0.28571429rem !important;
 	}
+
+	&.scrolling {
+		overflow-x: hidden;
+		overflow-y: auto;
+		position: static;
+		border: none;
+		-webkit-box-shadow: none !important;
+		box-shadow: none !important;
+		border-radius: 0 !important;
+		margin: 0 !important;
+		min-width: 100% !important;
+		width: auto !important;
+		border-top: 1px solid rgba(34, 36, 38, 0.15);
+	}
+
+	&.transition {}
 }
 
 [class*='dropdown'] > .menu.left {
@@ -42,7 +58,46 @@
 
 [class*='dropdown'] > .menu.left .menu,
 [class*='dropdown'] .menu .left.menu {
-	width: auto;
-	float: left;
-	margin: 0;
+	left: auto;
+	right: 100%;
+	margin: 0 -0.5em 0 0 !important;
+	border-radius: 0.28571429rem !important;
+}
+
+[class*='dropdown'] > .menu.right .menu,
+[class*='dropdown'] .menu .right.menu {
+	left: 100% !important;
+	right: auto !important;
+	border-radius: 0.28571429rem !important;
+}
+
+[class*='dropdown'] > .visible .scrolling {
+	display: block;
+}
+
+/* Scrollbar in IE */
+@media all and (-ms-high-contrast: none) {
+	[class*='dropdown'] .scrolling.menu {
+		min-width: calc(100% -  17px );
+	}
+}
+@media only screen and (max-width: 767px) {
+	[class*='dropdown'] .scrolling.menu {
+		max-height: 10.28571429rem;
+	}
+}
+@media only screen and (min-width: 768px) {
+	[class*='dropdown'] .scrolling.menu {
+		max-height: 15.42857143rem;
+	}
+}
+@media only screen and (min-width: 992px) {
+	[class*='dropdown'] .scrolling.menu {
+		max-height: 20.57142857rem;
+	}
+}
+@media only screen and (min-width: 1920px) {
+	[class*='dropdown'] .scrolling.menu {
+		max-height: 20.57142857rem;
+	}
 }

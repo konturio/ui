@@ -1,16 +1,16 @@
-import React, {
+import {
   ComponentClass,
   forwardRef,
   FunctionComponent,
   PropsWithChildren,
   ReactNode,
-  SyntheticEvent,
-  useState
+  SyntheticEvent, useRef,
+  useState,
 } from 'react';
 import cn from 'clsx';
 import s from './style.module.css';
-import {ChevronDown16, ChevronUp16} from '@konturio/default-icons';
-import {DropdownItemProps} from "./components/DropdownItem/DropdownItem";
+import { ChevronDown16, ChevronUp16 } from '@konturio/default-icons';
+import { DropdownItemProps } from './components/DropdownItem/DropdownItem';
 
 export interface DropdownProps {
   /** Label prefixed to an option added by a user. */
@@ -66,7 +66,7 @@ export interface DropdownProps {
   defaultSelectedLabel?: number | string;
 
   /** Initial value of upward. */
-  defaultUpward?:  boolean;
+  defaultUpward?: boolean;
 
   /** Initial value or value array if multiple. */
   defaultValue?: number | string | boolean | (number | string | boolean)[];
@@ -222,7 +222,7 @@ export interface DropdownProps {
    * A selection dropdown can allow a user to search through a large list of choices.
    * Pass a function here to replace the default search.
    */
-  search?: boolean | ((val: string) => DropdownItemProps),
+  search?: boolean | ((val: string) => DropdownItemProps);
 
   /** A shorthand for a search input. */
   searchInput?: ReactNode;
@@ -268,24 +268,24 @@ export interface DropdownProps {
    * or go to the first when ArrowDown is pressed on the last( aka infinite selection )
    */
   wrapSelection?: boolean;
-
-  options: Option[];
-  onChange: (value: Option['value']) => void;
-  label?: string | React.ReactChild | React.ReactChild[];
-  value?: Option['value'];
-  className?: string;
-  placeholder?: string;
-  classes?: {
-    label?: string;
-    selectBox?: string;
-    placeholder?: string;
-  };
 }
 
 function DropdownComponent(
-  { children, options, onChange, label, className, placeholder = 'Select Select', classes }: PropsWithChildren<DropdownProps>,
+  {
+    children,
+    options,
+    onChange,
+    label,
+    className,
+    placeholder = 'Select Select',
+    classes,
+  }: PropsWithChildren<DropdownProps>,
   ref,
 ) {
+  const searchRef = useRef<HTMLInputElement | null>(null);
+  const sizerRef = useRef<HTMLSpanElement | null>(null);
+  const ref = useRef<HTMLDivElement | null>();
+
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const toggleOpen = () => {

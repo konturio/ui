@@ -1,52 +1,110 @@
 import cn from 'clsx';
 import styles from './DropdownSearchInput.module.css';
-import { ChangeEvent } from 'react';
+import { forwardRef } from 'react';
+import { Input } from '../Input/Input';
+import { AccessibilityAttributes } from '../../../utils/accessibility';
 
-interface DropdownSearchInputProps {
-  /** An input can have the auto complete. */
-  autoComplete?: string;
+export interface DropdownSearchInputProps {
+  /** Accessibility props for combobox slot. */
+  accessibilityComboboxProps?: AccessibilityAttributes;
 
-  /** Additional classes. */
-  className?: string;
+  /** Accessibility props for input slot. */
+  accessibilityInputProps?: AccessibilityAttributes;
 
-  /** An input can receive focus. */
-  tabIndex?: number;
+  /** A dropdown search input can show that it cannot be interacted with. */
+  disabled?: boolean;
 
-  /** The HTML input type. */
-  type?: string;
+  /** A dropdown search input can be formatted to appear inline in the context of a Dropdown. */
+  inline?: boolean;
 
-  /** Stored value. */
-  value: number | string;
+  /** Ref for input DOM node. */
+  inputRef?: React.Ref<HTMLInputElement>;
 
   /**
-   * Called on change.
+   * Called on input element focus.
+   *
+   * @param event - React's original SyntheticEvent.
    */
-  onChange: (ev: ChangeEvent, val: number | string, inputValue: string) => void;
-}
+  onFocus?: (ev: React.SyntheticEvent) => void;
 
-export function DropdownSearchInput({
-  autoComplete = 'off',
-  className,
-  tabIndex,
-  type = 'text',
-  value,
-  onChange,
-}: DropdownSearchInputProps) {
-  const dynamicClasses = cn(styles.search, className);
+  /**
+   * Called on input element blur.
+   *
+   * @param event - React's original SyntheticEvent.
+   */
+  onInputBlur?: (ev: React.SyntheticEvent) => void;
 
-  const handleChange = (ev: ChangeEvent<HTMLInputElement>) => {
-    onChange(ev, value, ev.target.value);
+  /**
+   * Called on input key down event.
+   *
+   * @param event - React's original SyntheticEvent.
+   */
+  onInputKeyDown?: (ev: React.SyntheticEvent) => void;
+
+  /**
+   * Called on input key up event.
+   *
+   * @param event - React's original SyntheticEvent.
+   */
+  onKeyUp?: (ev: React.SyntheticEvent) => void;
+
+  /** A placeholder message. */
+  placeholder?: string;
+
+  className?: string;
+
+  classes?: {
+    input: string;
+    wrapper: string;
   };
-
-  return (
-    <input
-      aria-autocomplete="list"
-      autoComplete={autoComplete}
-      className={dynamicClasses}
-      onChange={handleChange}
-      tabIndex={tabIndex}
-      type={type}
-      value={value}
-    />
-  );
 }
+
+/**
+ * A DropdownSearchInput represents item of 'search' Dropdown.
+ * Used to display the search input field.
+ */
+export const DropdownSearchInput = forwardRef<HTMLInputElement, DropdownSearchInputProps>(
+  (
+    {
+      accessibilityComboboxProps,
+      accessibilityInputProps,
+      inputRef,
+      inline,
+      placeholder,
+      disabled,
+      className,
+      classes,
+      onFocus,
+      onInputBlur,
+      onInputKeyDown,
+      onKeyUp,
+    }: DropdownSearchInputProps,
+    ref,
+  ) => {
+    return (
+      <Input
+        ref={ref}
+        disabled={disabled}
+        inputRef={inputRef}
+        onFocus={onFocus}
+        onKeyUp={onKeyUp}
+        wrapper={{
+          className: cx(dropdownSearchInputSlotClassNames.wrapper, className),
+          styles: cn(styles.wrapper, classes?.wrapper),
+          ...accessibilityComboboxProps,
+        }}
+        input={{
+          type: 'text',
+          className: dropdownSearchInputSlotClassNames.input,
+          styles: cn(styles.input, classes?.input, inline && styles.inline),
+          placeholder,
+          onBlur: onInputBlur,
+          onKeyDown: onInputKeyDown,
+          ...accessibilityInputProps,
+        }}
+      />
+    );
+  },
+);
+
+DropdownSearchInput.displayName = 'DropdownSearchInput';

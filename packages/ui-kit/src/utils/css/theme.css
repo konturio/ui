@@ -1,0 +1,124 @@
+@import url("global-vars.css");
+
+:root {
+	--theme-default-foreground: var(--colors-grey-750);
+	--theme-default-foreground1: var(--colors-grey-500);
+	--theme-default-foreground2: var(--colors-grey-450);
+	--theme-default-foreground3: var(--colors-white);
+	--theme-default-foreground4: var(--colors-white);
+	--theme-default-foreground7: var(--colors-grey-750);
+
+	--theme-default-background: var(--colors-white);
+	--theme-default-background1: var(--colors-grey-25);
+	--theme-default-background2: var(--colors-grey-50);
+	--theme-default-background3: var(--colors-grey-100);
+	--theme-default-background4: var(--colors-grey-150);
+	--theme-default-background5: var(--colors-grey-200);
+
+	--theme-default-border: var(--colors-grey-230);
+	--theme-default-border-1: var(--colors-grey-100);
+	--theme-default-border-2: var(--colors-grey-200);
+	--theme-default-border-3: var(--colors-grey-100);
+
+	--theme-default-foreground-hover: var(--colors-grey-750);
+	--theme-default-foreground-hover-1: var(--colors-white);
+	--theme-default-foreground-Hover-2: var(--colors-white);
+
+	--theme-default-background-hover: var(--colors-grey-50);
+	--theme-default-background-hover-1: var(--colors-grey-25);
+	--theme-default-background-hover-2: transparent;
+	--theme-default-background-hover-3: var(--colors-grey-150);
+	--theme-default-background-hover-4: var(--colors-grey-25);
+
+	--theme-default-border-hover: var(--colors-grey-250);
+
+	--theme-default-foreground-pressed: var(--colors-grey-750);
+	--theme-default-background-pressed: var(--colors-grey-200);
+
+	--theme-default-foreground-active: var(--colors-grey-750);
+	--theme-default-foreground-active-1: var(--colors-white);
+
+	--theme-default-background-active: var(--colors-grey-150);
+	--theme-default-background-active-1: var(--colors-white);
+
+	--theme-default-border-active: var(--colors-grey-270);
+
+	--theme-default-border-focus: var(--colors-black);
+	--theme-default-border-focus-within: var(--colors-white);
+
+	--theme-default-foreground-disabled: var(--colors-grey-250);
+	--theme-default-foreground-disabled-1: var(--colors-grey-250);
+
+	--theme-default-border-disabled: var(--colors-grey-200);
+
+	--theme-default-background-disabled: var(--colors-grey-100);
+	--theme-default-background-disabled-1: var(--colors-grey-100);
+
+	--theme-primary-background: var(--colors-primary-600);
+	--theme-primary-background-1: var(--colors-primary-50);
+	--theme-primary-background-2: var(--colors-primary-900);
+	--theme-primary-background-3: var(--colors-primary-1000);
+	--theme-primary-background-4: var(--colors-primary-800);
+	--theme-primary-background-5: var(--colors-primary-100);
+
+	--theme-primary-foreground: var(--colors-primary-600);
+	--theme-primary-foreground-1: var(--colors-primary-600);
+	--theme-primary-foreground-2: var(--colors-primary-700);
+	--theme-primary-foreground-3: var(--colors-primary-200);
+	--theme-primary-foreground-4: var(--colors-white);
+
+	--theme-primary-border: var(--colors-grey-200);
+	--theme-primary-border-1: var(--colors-primary-300);
+	--theme-primary-border-2: var(--colors-primary-200);
+
+	--theme-primary-foreground-hover: var(--colors-primary-600);
+	--theme-primary-foreground-hover-1: var(--colors-white);
+	--theme-primary-foreground-hover-2: var(--colors-primary-200);
+
+	--theme-primary-border-hover: var(--colors-primary-300);
+
+	--theme-primary-background-hover: var(--colors-primary-700);
+	--theme-primary-background-hover-1: var(--colors-primary-50);
+
+	--theme-primary-foreground-pressed: var(--colors-primary-700);
+	--theme-primary-foreground-pressed-1: var(--colors-white);
+
+	--theme-primary-background-pressed: var(--colors-primary-800);
+
+	--theme-primary-border-pressed: var(--colors-primary-300);
+
+	--theme-primary-foreground-active: var(--colors-primary-600);
+	--theme-primary-foreground-active-1: var(--colors-primary-600);
+	--theme-primary-foreground-active-2: var(--colors-primary-50);
+
+	--theme-primary-background-active: var(--colors-primary-600);
+	--theme-primary-background-active-1: var(--colors-primary-600);
+
+	--theme-primary-border-active: var(--colors-grey-200);
+	--theme-primary-border-active-1: var(--colors-primary-50);
+	--theme-primary-border-active-2: var(--colors-primary-300);
+
+	--theme-primary-foreground-focus: var(--colors-primary-600);
+	--theme-primary-foreground-focus-1: var(--colors-primary-600);
+	--theme-primary-foreground-focus-2: var(--colors-primary-700);
+	--theme-primary-foreground-focus-3: var(--colors-primary-50);
+	--theme-primary-foreground-focus-4: var(--colors-white);
+
+	--theme-primary-background-focus: var(--colors-primary-600);
+	--theme-primary-background-focus-1: var(--colors-primary-50);
+	--theme-primary-background-focus-2: var(--colors-primary-900);
+	--theme-primary-background-focus-3: var(--colors-primary-1000);
+
+	--theme-primary-border-focus: var(--colors-black);
+	--theme-primary-border-focus-1: var(--colors-primary-600);
+
+	--theme-primary-border-focus-within: var(--colors-white);
+
+	--theme-primary-foreground-disabled: var(--colors-grey-250);
+	--theme-primary-foreground-disabled-1: var(--colors-grey-250);
+
+	--theme-primary-border-disabled: var(--colors-grey-550);
+
+	--theme-primary-background-disabled: var(--colors-grey-100);
+	--theme-primary-background-disabled-1: var(--colors-grey-100);
+}

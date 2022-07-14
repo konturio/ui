@@ -1,0 +1,48 @@
+@import "colors.css";
+
+:root {
+	// border
+	--global-border-width: 1px;
+	--global-border-radius: 2px;
+	--global-focus-inner-border-color: var(--colors-white);
+	--global-focus-outer-border-color: var(--colors-black);
+
+	// shadow levels
+	--global-shadow-level-1: 0 .2rem .4rem -.075rem rgba(0, 0, 0, .1);
+	--global-shadow-level-2: 0 .4rem .7rem -.1rem rgba(0, 0, 0, .1);
+	--global-shadow-level-3: 0 .8rem 1rem -.2rem rgba(0, 0, 0, .1);
+	--global-shadow-level-4: 0 1.6rem 1.8rem -.4rem rgba(0, 0, 0, .1);
+	--global-shadow-level-1-dark: 0 .2rem .4rem -.075rem rgba(0, 0, 0, .25);
+
+	// font sizes
+	--global-font-size-smaller: 10px;
+	--global-font-size-small: 12px;
+	--global-font-size-medium: 14px;
+	--global-font-size-large: 18px;
+	--global-font-size-larger: 24px;
+	--global-font-size-largest: 28px;
+
+	// font weights
+	--global-font-weight-light: 200;
+	--global-font-weight-semilight: 300;
+	--global-font-weight-regular: 400;
+	--global-font-weight-semibold: 600;
+	--global-font-weight-bold: 700;
+
+	//  line heihts
+	--global-line-height-default: 1;
+	--global-line-height-smaller: 1.2;
+	--global-line-height-small: 1.3333;
+	--global-line-height-medium: 1.4286;
+	--global-line-height-large: 1.3333;
+	--global-line-height-larger: 1.3333;
+	--global-line-height-largest: 1.3333;
+
+	//  z-index
+	--global-zindex-background: 0; // Default value
+	--global-zindex-foreground: 1; // Put a component in front
+	--global-zindex-menu-item: 2; // Currently used only for menu item beak element
+	--global-zindex-overlay: 1000; // Dialog/popup/menu overlays
+	--global-zindex-overlay-priority: 1001; // for nested overlays, like tooltip in dialog.
+	--global-zindex-debug: 999999999; // for debug purposes
+}

@@ -1,5 +1,5 @@
 import { Context, ContextValue } from './types';
-import { useEffect } from 'react';
+import React from 'react';
 
 const createProvider = <Value>(Original: React.Provider<ContextValue<Value>>) => {
   const Provider: React.FC<React.ProviderProps<Value>> = (props) => {
@@ -19,14 +19,12 @@ const createProvider = <Value>(Original: React.Provider<ContextValue<Value>>) =>
       };
     }
 
-    useEffect(() => {
+    React.useEffect(() => {
       valueRef.current = props.value;
       versionRef.current += 1;
 
-      runWithNormalPriority(() => {
-        (contextValue.current as ContextValue<Value>).listeners.forEach((listener) => {
-          listener([versionRef.current, props.value]);
-        });
+      (contextValue.current as ContextValue<Value>).listeners.forEach((listener) => {
+        listener([versionRef.current, props.value]);
       });
     }, [props.value]);
 

@@ -1,0 +1,26 @@
+.menuItemIcon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 16px;
+	height: 16px;
+
+	& > :first-child {
+		height: 100%;
+		width: 100%;
+		& svg {
+			height: 100%;
+			width: 100%;
+		}
+	}
+
+	&.hasContent {
+		margin-right: 10px;
+	}
+
+	&.notIconOnly {
+		margin-top: 0;
+		margin-bottom: -8px;
+		vertical-align: top;
+	}
+}

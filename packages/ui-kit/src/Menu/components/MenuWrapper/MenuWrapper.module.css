@@ -1,0 +1,144 @@
+@import "../../mixins.css";
+
+:root {
+
+}
+
+.menuWrapper {
+	color: inherit;
+	line-height: 1;
+	position: relative;
+	vertical-align: middle;
+	display: block;
+
+	@mixin testMixin testIcon {
+		background: #ccc;
+	}
+
+	&.secondary {
+		background: salmon;
+	}
+
+	&.vertical {
+		border: solid 1px #26abff;
+	}
+
+	&.pills {
+		border-right: 5px;
+
+		&.vertical {
+			margin: 0 0 5px 0;
+		}
+
+		&:not(.vertical) {
+			margin: 0 8px 0 0;
+		}
+	}
+
+	&.underlined {
+		display: flex;
+		align-items: center;
+		height: 29px;
+		line-height: 100%;
+		padding: 0 4px;
+		margin: 0 4px 0 0;
+		box-shadow: none;
+
+		&:nth-child(n+2) {
+			margin-left: 4px;
+		}
+	}
+
+	&:not(.vertical):not(.pills):not(.underlined):not(.iconOnly) {
+		box-shadow: -1px 0 0 0 #3f4c59  inset;
+
+		&.primary {
+			box-shadow: -1px 0 0 0 #6f6f6f inset;
+		}
+	}
+
+	&.active {
+		color: #2cb3ff;
+
+		&:not(.underlined):not(.onHover) {
+			background: #55606b;
+
+			&.iconOnly {
+				background: #777777;
+			}
+
+			&:not(.iconOnly).primary {
+				color: #0978b7;
+			}
+		}
+
+		&.underlined {
+			color: #8c949b;
+		}
+
+		&.pointing.vertical::before {
+			content: "";
+			position: absolute;
+			width: 3px;
+			height: calc(100% + 4px);
+			top: -2px;
+			background-color: #333333;
+
+			&.isFromKeyboard {
+				display: none;
+			}
+
+			&.pointingEnd {
+				right: -2px;
+			}
+
+			&:not(.pointingEnd) {
+				left: -2px;
+			}
+		}
+
+		&.pointing:not(.vertical)::after {
+			visibility: visible;
+			background: #9ea5ab;
+			position: absolute;
+			content: "";
+			left: 50%;
+			transform: translateX(-50%) translateY(-50%) rotate(45deg);
+			margin: .5px 0 0;
+			width: 10px;
+			height: 10px;
+			border: none;
+			z-index: 10;
+			transition: background .1s ease;
+
+			&.pointingStart {
+				top: -1px;
+				border-top: 1px solid #888;
+				border-left: 1px solid #888;
+			}
+
+			&:not(.pointingStart) {
+				top: 100%;
+				border-bottom: 1px solid #888;
+				border-right: 1px solid #888;
+			}
+		}
+	}
+
+	&.isFromKeyboard {
+		color: #777777;
+
+		&:not(.underlined) {
+			background: #8c949b;
+
+			&.primary {
+				background: #2cb3ff;
+				color: #69737d;
+			}
+		}
+
+		&:not(.iconOnly):not(.underlined) {
+
+		}
+	}
+}

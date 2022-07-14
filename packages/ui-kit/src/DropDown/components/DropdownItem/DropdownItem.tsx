@@ -39,7 +39,6 @@ interface DropdownItemProps {
    * Called on dropdown item click.
    *
    * @param event - React's original SyntheticEvent.
-   * @param data - All props and proposed value.
    */
   onClick?: (e: React.MouseEvent | React.KeyboardEvent) => void;
 
@@ -57,10 +56,6 @@ interface DropdownItemProps {
   };
 }
 
-/**
- * A DropdownItem represents an option of Dropdown list.
- * Displays an item with optional rich media metadata.
- */
 const DropdownItemComponent = forwardRef<HTMLDivElement, DropdownItemProps>(
   (
     {

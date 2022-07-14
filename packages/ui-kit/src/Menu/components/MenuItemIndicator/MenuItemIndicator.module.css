@@ -1,0 +1,42 @@
+.menuItemIndicator {
+	position: relative;
+	float: right;
+	left: 12px;
+	user-select: none;
+	margin-right: var(--half-unit);
+	content: "";
+	display: block;
+	overflow: hidden;
+	height: 16px;
+	width: 16px;
+	background-size: 16px;
+
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' role='presentation' fill='#26abff' focusable='false' viewBox='8 8 16 16'%3E%3Cpath d='M19.49,16a.91.91,0,0,1-.29.7l-5,5a1,1,0,0,1-.71.3,1,1,0,0,1-1-1,1,1,0,0,1,.29-.7L17.08,16l-4.3-4.29a1,1,0,0,1-.29-.71,1,1,0,0,1,1.71-.71l5,5A1,1,0,0,1,19.49,16Z' /%3E%3C/svg%3E");
+
+	.active {
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' role='presentation' fill='#2cb3ff' focusable='false' viewBox='8 8 16 16'%3E%3Cpath d='M19.49,16a.91.91,0,0,1-.29.7l-5,5a1,1,0,0,1-.71.3,1,1,0,0,1-1-1,1,1,0,0,1,.29-.7L17.08,16l-4.3-4.29a1,1,0,0,1-.29-.71,1,1,0,0,1,1.71-.71l5,5A1,1,0,0,1,19.49,16Z' /%3E%3C/svg%3E");
+
+		&.primary {
+			background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' role='presentation' fill='#9dd6f8' focusable='false' viewBox='8 8 16 16'%3E%3Cpath d='M19.49,16a.91.91,0,0,1-.29.7l-5,5a1,1,0,0,1-.71.3,1,1,0,0,1-1-1,1,1,0,0,1,.29-.7L17.08,16l-4.3-4.29a1,1,0,0,1-.29-.71,1,1,0,0,1,1.71-.71l5,5A1,1,0,0,1,19.49,16Z' /%3E%3C/svg%3E");
+
+			&.vertical {
+				background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' role='presentation' fill='#0c9bed' focusable='false' viewBox='8 8 16 16'%3E%3Cpath d='M19.49,16a.91.91,0,0,1-.29.7l-5,5a1,1,0,0,1-.71.3,1,1,0,0,1-1-1,1,1,0,0,1,.29-.7L17.08,16l-4.3-4.29a1,1,0,0,1-.29-.71,1,1,0,0,1,1.71-.71l5,5A1,1,0,0,1,19.49,16Z' /%3E%3C/svg%3E");
+			}
+		}
+	}
+
+	&.underlined, &.iconOnly {
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' role='presentation' fill='#26abff' focusable='false' viewBox='8 8 16 16'%3E%3Cpath d='M19.49,16a.91.91,0,0,1-.29.7l-5,5a1,1,0,0,1-.71.3,1,1,0,0,1-1-1,1,1,0,0,1,.29-.7L17.08,16l-4.3-4.29a1,1,0,0,1-.29-.71,1,1,0,0,1,1.71-.71l5,5A1,1,0,0,1,19.49,16Z' /%3E%3C/svg%3E") !important;
+	}
+
+	&.inSubmenu {
+		position: absolute;
+		top: 6px;
+		right: 2px;
+		left: unset;
+	}
+
+	.horizontal {
+		transform: rotate(90deg);
+	}
+}

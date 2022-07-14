@@ -88,7 +88,7 @@ const ImageComponent = forwardRef<HTMLImageElement, ImageProps>(
       ...accessibility,
     };
 
-    return <img {...dynamicProps} className={dynamicClasses} ref={ref} />;
+    return <img {...dynamicProps} style={{ ...style, ...dynamicStyles }} className={dynamicClasses} ref={ref} />;
   },
 );
 

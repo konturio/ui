@@ -1,0 +1,42 @@
+.menuDivider {
+	--menu-divider-border-color: #3f4c59;
+
+	.primary {
+		--menu-divider-border-color: #43b148;
+	}
+
+	&.pointing.vertical {
+		margin-bottom: 4px;
+	}
+
+	&.pills {
+		margin: 0 4px 0 0;
+
+		&.vertical {
+			margin: 0 0 4px 0;
+		}
+	}
+
+	&.hasContent {
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		text-align: center;
+	}
+
+	&.withoutContent {
+		&.horizontal {
+			border-left: 1px solid  var(--menu-divider-border-color);
+			align-self: stretch;
+		}
+
+		&.vertical {
+			border-top: 1px solid var(--menu-divider-border-color);
+
+			&.inSubmenu {
+				margin: 8px 0;
+			}
+		}
+	}
+}
+

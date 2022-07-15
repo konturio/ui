@@ -1,0 +1,80 @@
+@import '../utils/css/theme.css';
+
+:root {
+	--menu-default-border-active: var(--theme-default-border-2);
+	--menu-default-background-active: var(--theme-default-background-active-1);
+	--menu-default-background-focus: var(--theme-default-background-focus-1);
+	--menu-default-foreground-disabled: var(--theme-default-foreground-disabled-1);
+
+	--menu-primary-foreground-hover: var(--colors-white);
+	--menu-primary-background-hover: var(--colors-primary-300);
+	--menu-primary-foreground-active: var(--colors-white);
+	--menu-primary-border-active: var(--colors-primary-600);
+	--menu-primary-background-active: var(--colors-primary-500);
+	--menu-primary-foreground-focus: var(--colors-white);
+	--menu-primary-background-focus: var(--colors-primary-300);
+	--menu-primary-foreground-disabled: var(--theme-primary-foreground-disabled-1);
+
+	--menu-color: var(--colors-grey-500);
+	--menu-colorActive: var(--colors-black);
+	--menu-colorHover: inherit;
+
+	--menu-borderColorFocus: var(--colors-white);
+
+	--menu-outlineColorFocus: var(--colors-black);
+
+	--menu-iconSize: 16px;
+
+	--menu-iconOnlyBorderRadius: var(--global-border-radius);
+	--menu-iconOnlyColorActive: var(--colors-primary-600);
+	--menu-iconOnlyColorFocus: var(--colors-primary-600);
+	--menu-iconOnlyColorHover: var(--colors-primary-600);
+
+	--menu-underlinedBorderColor: var(--colors-grey-200);
+
+	--menu-lineHeightBase: var(--global-line-height-medium);
+	--menu-horizontalPadding: 14px 18px;
+
+	--menu-verticalBackgroundColor: var(--theme-default-background);
+	--menu-verticalItemPadding: 7px 12px;
+	--menu-verticalBoxShadow: var(--global-shadow-level-2);
+	--menu-verticalDividerMargin: 8px 0;
+	--menu-verticalItemBorderWidth: 2px;
+	--menu-verticalItemBorderColor: transparent;
+	--menu-verticalPointingBorderColor: var(--theme-primary-border-active);
+	--menu-verticalBorderColor: var(--theme-default-border);
+
+	--menu-activeUnderlinedPrimaryColor: var(--colors-primary-600);
+	--menu-activeUnderlinedBorderBottomColor: var(--colors-black);
+
+	--menu-pointingIndicatorBackgroundColor: var(--colors-primary-600);
+
+	--menu-underlinedBottomBorderWidth: 2px;
+	--menu-underlinedColorHover: inherit;
+	--menu-primaryBorderColor: var(--theme-default-border-2);
+	--menu-primaryWrapperColorFocus: var(--colors-black);
+	--menu-primaryWrapperColor: var(--colors-black);
+
+	--menu-primaryWrapperBackgroundColorFocus: var(--colors-primary-500);
+
+	--menu-underlinedWrapperColorHover: var(--colors-black);
+	--menu-underlinedWrapperBackgroundHover: transparent;
+
+	--menu-dividerHeight: 1px;
+	--menu-borderWidth: 1px;
+	--menu-menuZIndex: var(--global-zindex-overlay);
+	--menu-beakZIndex: var(--global-zindex-menu-item);
+
+	--menu-wrapperColorActive: var(--colors-grey-500);
+	--menu-wrapperColorFocus: var(--colors-grey-500);
+	--menu-primaryWrapperColorHover: var(--colors-black);
+	--menu-wrapperBackgroundColorFocus: var(--colors-grey-150);
+
+	--menu-indicatorColor: var(--colors-grey-500);
+	--menu-activeIndicatorColor: var(--colors-grey-750);
+	--menu-activePrimaryIndicatorColor: var(--colors-grey-750);
+	--menu-activePrimaryVerticalIndicatorColor: var(--colors-black);
+	--menu-primaryIndicatorColorHover: var(--colors-black);
+	--menu-indicatorColorHover: var(--colors-grey-500);	
+}
+

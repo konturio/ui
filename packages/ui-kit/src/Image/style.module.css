@@ -1,17 +1,25 @@
+@import "variables.css";
+
 .img {
 	box-sizing: border-box;
 	display: inline-block;
 	vertical-align: middle;
+	height: auto;
 
 	&.fluid {
 		width: 100%;
 	}
 
-	&.avatar {
-		border-radius: var(--half-unit);
+	&.circular {
+		border-radius: var(--image-circular-radius);
 	}
 
-	&.circular {
-		border-radius: 50%;
+	&.avatar {
+		width: var(--image-avatar-size);
+		border-radius: var(--image-circular-radius);
+
+		&.fluid {
+			width: 100%;
+		}
 	}
 }

@@ -113,3 +113,5 @@ export { default as LayerLegend16 } from './LayerLegend16';
 export { default as LayerLegendSmall16 } from './LayerLegendSmall16';
 export { default as User24 } from './User24';
 export { default as InfoOutline16 } from './InfoOutline16';
+export { default as Update16 } from './Update16';
+export { default as Update32 } from './Update32';

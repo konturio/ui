@@ -1,9 +1,11 @@
+@import "../../variables.css";
+
 .menuItemIcon {
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	width: 16px;
-	height: 16px;
+	width: var(--menu-icon-size);
+	height: var(--menu-icon-size);
 
 	& > :first-child {
 		height: 100%;
@@ -18,7 +20,7 @@
 		margin-right: 10px;
 	}
 
-	&.notIconOnly {
+	&:not(.notIconOnly) {
 		margin-top: 0;
 		margin-bottom: -8px;
 		vertical-align: top;

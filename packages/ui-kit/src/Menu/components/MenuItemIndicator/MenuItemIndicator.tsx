@@ -57,6 +57,7 @@ const MenuItemIndicatorComponent = forwardRef<HTMLSpanElement, MenuItemIndicator
       [styles.active]: active,
       [styles.primary]: primary,
       [styles.underlined]: underlined,
+      menuItemIndicatorClass: true,
       className,
     });
 

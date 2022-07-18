@@ -16,65 +16,69 @@
 	--menu-primary-foreground-disabled: var(--theme-primary-foreground-disabled-1);
 
 	--menu-color: var(--colors-grey-500);
-	--menu-colorActive: var(--colors-black);
-	--menu-colorHover: inherit;
+	--menu-color-active: var(--colors-black);
+	--menu-color-hover: inherit;
 
-	--menu-borderColorFocus: var(--colors-white);
+	--menu-border-color-focus: var(--colors-white);
 
-	--menu-outlineColorFocus: var(--colors-black);
+	--menu-outline-color-focus: var(--colors-black);
 
-	--menu-iconSize: 16px;
+	--menu-icon-size: 16px;
 
-	--menu-iconOnlyBorderRadius: var(--global-border-radius);
-	--menu-iconOnlyColorActive: var(--colors-primary-600);
-	--menu-iconOnlyColorFocus: var(--colors-primary-600);
-	--menu-iconOnlyColorHover: var(--colors-primary-600);
+	--menu-icon-only-border-radius: var(--global-border-radius);
+	--menu-icon-only-color-active: var(--colors-primary-600);
+	--menu-icon-only-color-focus: var(--colors-primary-600);
+	--menu-icon-only-color-hover: var(--colors-primary-600);
 
-	--menu-underlinedBorderColor: var(--colors-grey-200);
+	--menu-underlined-border-color: var(--colors-grey-200);
 
-	--menu-lineHeightBase: var(--global-line-height-medium);
-	--menu-horizontalPadding: 14px 18px;
+	--menu-line-height-base: var(--global-line-height-medium);
+	--menu-horizontal-padding: 14px 18px;
 
-	--menu-verticalBackgroundColor: var(--theme-default-background);
-	--menu-verticalItemPadding: 7px 12px;
-	--menu-verticalBoxShadow: var(--global-shadow-level-2);
-	--menu-verticalDividerMargin: 8px 0;
-	--menu-verticalItemBorderWidth: 2px;
-	--menu-verticalItemBorderColor: transparent;
-	--menu-verticalPointingBorderColor: var(--theme-primary-border-active);
-	--menu-verticalBorderColor: var(--theme-default-border);
+	--menu-vertical-background-color: var(--theme-default-background);
+	--menu-vertical-item-padding: 7px 12px;
+	--menu-vertical-box-shadow: var(--global-shadow-level-2);
+	--menu-vertical-divider-margin: 8px 0;
+	--menu-vertical-item-border-width: 2px;
+	--menu-vertical-item-border-color: transparent;
+	--menu-vertical-pointing-border-color: var(--theme-primary-border-active);
+	--menu-vertical-border-color: var(--theme-default-border);
 
-	--menu-activeUnderlinedPrimaryColor: var(--colors-primary-600);
-	--menu-activeUnderlinedBorderBottomColor: var(--colors-black);
+	--menu-active-underlined-primary-color: var(--colors-primary-600);
+	--menu-active-underlined-border-bottom-color: var(--colors-black);
 
-	--menu-pointingIndicatorBackgroundColor: var(--colors-primary-600);
+	--menu-pointing-indicator-background-color: var(--colors-primary-600);
 
-	--menu-underlinedBottomBorderWidth: 2px;
-	--menu-underlinedColorHover: inherit;
-	--menu-primaryBorderColor: var(--theme-default-border-2);
-	--menu-primaryWrapperColorFocus: var(--colors-black);
-	--menu-primaryWrapperColor: var(--colors-black);
+	--menu-underlined-bottom-border-width: 2px;
+	--menu-underlined-color-hover: inherit;
+	--menu-primary-border-color: var(--theme-default-border-2);
+	--menu-primary-wrapper-color-focus: var(--colors-black);
+	--menu-primary-wrapper-color: var(--colors-black);
 
-	--menu-primaryWrapperBackgroundColorFocus: var(--colors-primary-500);
+	--menu-primary-wrapper-background-color-focus: var(--colors-primary-500);
 
-	--menu-underlinedWrapperColorHover: var(--colors-black);
-	--menu-underlinedWrapperBackgroundHover: transparent;
+	--menu-underlined-wrapper-color-hover: var(--colors-black);
+	--menu-underlined-wrapper-background-hover: transparent;
 
-	--menu-dividerHeight: 1px;
-	--menu-borderWidth: 1px;
-	--menu-menuZIndex: var(--global-zindex-overlay);
-	--menu-beakZIndex: var(--global-zindex-menu-item);
+	--menu-divider-height: 1px;
+	--menu-border-width: 1px;
+	--menu-menu-zindex: var(--global-zindex-overlay);
+	--menu-beak-zindex: var(--global-zindex-menu-item);
 
-	--menu-wrapperColorActive: var(--colors-grey-500);
-	--menu-wrapperColorFocus: var(--colors-grey-500);
-	--menu-primaryWrapperColorHover: var(--colors-black);
-	--menu-wrapperBackgroundColorFocus: var(--colors-grey-150);
+	--menu-wrapper-color-active: var(--colors-grey-500);
+	--menu-wrapper-color-focus: var(--colors-grey-500);
+	--menu-primary-wrapper-color-hover: var(--colors-black);
+	--menu-wrapper-background-color-focus: var(--colors-grey-150);
 
-	--menu-indicatorColor: var(--colors-grey-500);
-	--menu-activeIndicatorColor: var(--colors-grey-750);
-	--menu-activePrimaryIndicatorColor: var(--colors-grey-750);
-	--menu-activePrimaryVerticalIndicatorColor: var(--colors-black);
-	--menu-primaryIndicatorColorHover: var(--colors-black);
-	--menu-indicatorColorHover: var(--colors-grey-500);	
+	--menu-indicator-color: var(--colors-grey-500);
+	--menu-active-indicator-color: var(--colors-grey-750);
+	--menu-active-primary-indicator-color: var(--colors-grey-750);
+	--menu-active-primary-vertical-indicator-color: var(--colors-black);
+	--menu-primary-indicator-color-hover: var(--colors-black);
+	--menu-indicator-color-hover: var(--colors-grey-500);
+
+	--menu-vertical-pills-bottom-margin: 5px;
+	--menu-horizontal-pills-right-margin: 8px;
+	--menu-vertical-pointing-bottom-margin: 12px;
 }
 

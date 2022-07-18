@@ -3,7 +3,7 @@
 	float: right;
 	left: 12px;
 	user-select: none;
-	margin-right: var(--half-unit);
+	margin-right: 4px;
 	content: "";
 	display: block;
 	overflow: hidden;

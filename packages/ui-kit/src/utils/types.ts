@@ -6,5 +6,7 @@ export type ComponentFactory<P, V> = (
 
 export type NodeValue<P> = React.ReactNode | ((props?: Partial<P>) => React.ReactNode);
 
+export type ComponentProps<P> = React.ReactNode | P;
+
 export type ComponentWithFactory<B, P, V> = B & { create: ComponentFactory<P, V> };
 

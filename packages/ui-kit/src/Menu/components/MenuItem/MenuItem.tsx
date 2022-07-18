@@ -1,48 +1,46 @@
-import { Accessibility, menuItemBehavior, MenuItemBehaviorProps, submenuBehavior } from '@fluentui/accessibility';
-import { EventListener } from '@fluentui/react-component-event-listener';
+import {menuItemBehavior, MenuItemBehaviorProps, submenuBehavior} from '@fluentui/accessibility';
+import {EventListener} from '@fluentui/react-component-event-listener';
 import {
   focusAsync,
-  mergeVariablesOverrides,
-  useTelemetry,
-  useAutoControlled,
-  useFluentContext,
-  getElementType,
-  useUnhandledProps,
-  useAccessibility,
-  useStyles,
   ForwardRefWithAs,
+  getElementType,
+  mergeVariablesOverrides,
+  useAccessibility,
+  useAutoControlled,
   useContextSelectors,
+  useFluentContext,
   useOnIFrameFocus,
+  useStyles,
+  useTelemetry,
+  useUnhandledProps,
 } from '@fluentui/react-bindings';
 
-import { Ref, handleRef } from '@fluentui/react-component-ref';
+import {handleRef, Ref} from '@fluentui/react-component-ref';
 import * as customPropTypes from '@fluentui/react-proptypes';
 import * as _ from 'lodash';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
+import {ReactNode, SyntheticEvent} from 'react';
 import {
   childrenExist,
+  commonPropTypes,
   createShorthand,
   doesNodeContainClick,
-  UIComponentProps,
-  ChildrenComponentProps,
-  ContentComponentProps,
-  commonPropTypes,
   isFromKeyboard as isEventFromKeyboard,
   setWhatInputSource,
 } from '../../utils';
-import { Menu, MenuProps, MenuShorthandKinds } from './Menu';
-import { MenuItemIcon, MenuItemIconProps } from './MenuItemIcon';
-import { MenuItemContent, MenuItemContentProps } from './MenuItemContent';
-import { MenuItemIndicator, MenuItemIndicatorProps } from './MenuItemIndicator';
-import { MenuItemWrapper, MenuItemWrapperProps } from './MenuItemWrapper';
-import { ComponentEventHandler, ShorthandValue, ShorthandCollection, FluentComponentStaticProps } from '../../types';
-import { Popper, PopperShorthandProps, partitionPopperPropsFromShorthand } from '../../utils/positioner';
+import {Menu, MenuProps, MenuShorthandKinds} from './Menu';
+import {MenuItemIcon, MenuItemIconProps} from './MenuItemIcon';
+import {MenuItemContent} from './MenuItemContent';
+import {MenuItemIndicator, MenuItemIndicatorProps} from './MenuItemIndicator';
+import {MenuItemWrapper, MenuItemWrapperProps} from './MenuItemWrapper';
+import {ComponentEventHandler, FluentComponentStaticProps, ShorthandCollection, ShorthandValue} from '../../types';
+import {partitionPopperPropsFromShorthand, Popper, PopperShorthandProps} from '../../utils/positioner';
 
-import { MenuContext, MenuItemSubscribedValue } from './menuContext';
-import { ChevronEndIcon } from '@fluentui/react-icons-northstar';
-import {ReactNode} from "react";
+import {MenuContext, MenuItemSubscribedValue} from './menuContext';
+import {ChevronEndIcon} from '@fluentui/react-icons-northstar';
 import {AccessibilityAttributes} from "../../../utils/accessibility";
+import {ComponentProps} from "../../../utils/types";
 
 export interface MenuItemProps {
   /**
@@ -56,8 +54,8 @@ export interface MenuItemProps {
   /** A menu item can show it is currently unable to be interacted with. */
   disabled?: boolean;
 
-  /** Name or shorthand for Menu Item Icon */
-  icon?: ShorthandValue<MenuItemIconProps>;
+  /** Menu Item Icon */
+  icon?: ComponentProps<MenuItemIconProps> | string;
 
   /** A menu may have just icons. */
   iconOnly?: boolean;
@@ -76,19 +74,19 @@ export interface MenuItemProps {
    *
    * @param event - React's original SyntheticEvent.
    */
-  onClick?: (ev: React.SyntheticEvent<HTMLElement>) => void;
+  onClick?: (ev: SyntheticEvent) => void;
 
   /**
    * Called after user's focus.
    * @param event - React's original SyntheticEvent.
    */
-  onFocus?: (ev: React.SyntheticEvent<HTMLElement>) => void;
+  onFocus?: (ev: SyntheticEvent) => void;
 
   /**
    * Called after item blur.
    * @param event - React's original SyntheticEvent.
    */
-  onBlur?: (ev: React.SyntheticEvent<HTMLElement>) => void;
+  onBlur?: (ev: SyntheticEvent) => void;
 
   /** A menu can adjust its appearance to de-emphasize its contents. */
   pills?: boolean;
@@ -111,15 +109,15 @@ export interface MenuItemProps {
   /** A vertical menu displays elements vertically. */
   vertical?: boolean;
 
-  /** Shorthand for the wrapper component. */
-  wrapper?: ShorthandValue<MenuItemWrapperProps>;
+  /** Wrapper component. */
+  wrapper?: ComponentProps<MenuItemWrapperProps>;
 
   /** Events triggering the menu open. */
   on?: 'hover';
 
-  /** Shorthand for the submenu. */
+  /** Submenu. */
   menu?:
-    | ShorthandValue<MenuProps & { popper?: PopperShorthandProps }>
+    | ComponentProps<MenuProps & { popper?: PopperShorthandProps }>
     | ShorthandCollection<MenuItemProps, MenuShorthandKinds>;
 
   /** Indicates if the menu inside the item is open if the activeIndex is also the item's index. */
@@ -145,33 +143,21 @@ export interface MenuItemProps {
   onMenuOpenChange?: ComponentEventHandler<MenuItemProps>;
 
   className?: string;
-
+  children?: ReactNode;
   classes?: {
     submenu?: string;
-  };
-
-  children?: ReactNode;
+  },
 }
-
-export type MenuItemStylesProps = Required<
-  Pick<
-    MenuItemProps,
-    | 'primary'
-    | 'underlined'
-    | 'active'
-    | 'vertical'
-    | 'pointing'
-    | 'secondary'
-    | 'disabled'
-    | 'iconOnly'
-    | 'pills'
-    | 'inSubmenu'
-    >
-  > & { isFromKeyboard: boolean };
 
 export type MenuItemState = { isFromKeyboard: boolean; menuOpen: boolean };
 
 export const MenuItem = (React.forwardRef<HTMLAnchorElement, MenuItemProps>((inputProps, ref) => {
+  const context = useFluentContext();
+  const { setStart, setEnd } = useTelemetry(MenuItem.displayName, context.telemetry);
+  setStart();
+
+  menuItemClass
+
   const parentProps = (useContextSelectors(MenuContext, {
     active: v => v.activeIndex === inputProps.index,
     onItemClick: v => v.onItemClick,
@@ -179,7 +165,7 @@ export const MenuItem = (React.forwardRef<HTMLAnchorElement, MenuItemProps>((inp
     variables: v => v.variables,
     slotProps: v => v.slotProps.item,
     accessibility: v => v.behaviors.item,
-  }) as unknown) as MenuItemSubscribedValue;
+  }) as unknown) as MenuItemSubscribedValue; // TODO: we should improve typings for the useContextSelectors
 
   const props = {
     ...parentProps.slotProps,
@@ -566,9 +552,11 @@ export const MenuItem = (React.forwardRef<HTMLAnchorElement, MenuItemProps>((inp
       }),
     });
 
+    setEnd();
     return wrapperElement;
   }
 
+  setEnd();
   return menuItemInner;
 }) as unknown) as ForwardRefWithAs<'a', HTMLAnchorElement, MenuItemProps> & FluentComponentStaticProps<MenuItemProps>;
 

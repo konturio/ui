@@ -50,11 +50,9 @@ const MenuDividerComponent = forwardRef<HTMLLIElement, MenuDividerProps>((divide
 
   const dynamicClasses = cn({
     [styles.menuDivider]: true,
-    [styles.withoutContent]: !children,
     [styles.hasContent]: !!children,
     [styles.pills]: pills,
     [styles.pointing]: pointing,
-    [styles.horizontal]: !vertical,
     [styles.vertical]: vertical,
     [styles.inSubmenu]: inSubmenu,
     [styles.primary]: primary,

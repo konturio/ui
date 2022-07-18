@@ -1,9 +1,3 @@
-@import "../../mixins.css";
-
-:root {
-
-}
-
 .menuWrapper {
 	color: inherit;
 	line-height: 1;
@@ -11,27 +5,23 @@
 	vertical-align: middle;
 	display: block;
 
-	@mixin testMixin testIcon {
-		background: #ccc;
-	}
-
 	&.secondary {
 		background: salmon;
 	}
 
 	&.vertical {
-		border: solid 1px #26abff;
+		border: solid var(--menu-vertical-item-border-width) var(--menu-vertical-item-border-color);
 	}
 
 	&.pills {
-		border-right: 5px;
+		border-radius: 5px;
 
 		&.vertical {
-			margin: 0 0 5px 0;
+			margin: 0 0 var(--menu-vertical-pills-bottom-margin) 0;
 		}
 
 		&:not(.vertical) {
-			margin: 0 8px 0 0;
+			margin: 0 var(--menu-horizontal-pills-right-margin) 0 0;
 		}
 	}
 
@@ -39,7 +29,7 @@
 		display: flex;
 		align-items: center;
 		height: 29px;
-		line-height: 100%;
+		line-height: var(--menu-line-height-base);
 		padding: 0 4px;
 		margin: 0 4px 0 0;
 		box-shadow: none;
@@ -50,30 +40,34 @@
 	}
 
 	&:not(.vertical):not(.pills):not(.underlined):not(.iconOnly) {
-		box-shadow: -1px 0 0 0 #3f4c59  inset;
+		box-shadow: -1px 0 0 0 var(--theme-default-border)  inset;
 
 		&.primary {
-			box-shadow: -1px 0 0 0 #6f6f6f inset;
+			box-shadow: -1px 0 0 0 var(--menu-primary-border-color) inset;
 		}
 	}
 
-	&.active {
-		color: #2cb3ff;
+	&.primary:not(.vertical):not(.underlined) {
+		color: var(--menu-primary-wrapper-color)
+	}
+
+	&.active:not(.vertical) {
+		color: var(--menu-wrapper-color-active);
+
+		&.primary:not(.vertical):not(.underlined) {
+			color: var(--menu-primary-wrapper-color);
+		}
 
 		&:not(.underlined):not(.onHover) {
-			background: #55606b;
+			background: var(--menu-default-background-active);
 
-			&.iconOnly {
-				background: #777777;
+			&.primary {
+				background: var(--menu-primary-background-active);
 			}
 
 			&:not(.iconOnly).primary {
-				color: #0978b7;
+				color: var(--menu-primary-foreground-active);
 			}
-		}
-
-		&.underlined {
-			color: #8c949b;
 		}
 
 		&.pointing.vertical::before {
@@ -82,7 +76,7 @@
 			width: 3px;
 			height: calc(100% + 4px);
 			top: -2px;
-			background-color: #333333;
+			background-color: var(--menu-pointing-indicator-background-color);
 
 			&.isFromKeyboard {
 				display: none;
@@ -97,9 +91,10 @@
 			}
 		}
 
+		// pointing break
 		&.pointing:not(.vertical)::after {
 			visibility: visible;
-			background: #9ea5ab;
+			background: var(--menu-default-background-active);
 			position: absolute;
 			content: "";
 			left: 50%;
@@ -108,37 +103,171 @@
 			width: 10px;
 			height: 10px;
 			border: none;
-			z-index: 10;
+			z-index: var(--menu-beak-zindex);
 			transition: background .1s ease;
+
+			&.primary {
+				background: var(--menu-primary-background-active);
+			}
 
 			&.pointingStart {
 				top: -1px;
-				border-top: 1px solid #888;
-				border-left: 1px solid #888;
+				border-top: 1px solid var(--theme-default-border);
+				border-left: 1px solid var(--theme-default-border);
+
+				&.primary {
+					border-top: 1px solid var(--menu-primary-border-color);
+					border-left: 1px solid var(--menu-primary-border-color);
+				}
 			}
 
 			&:not(.pointingStart) {
 				top: 100%;
-				border-bottom: 1px solid #888;
-				border-right: 1px solid #888;
+				border-bottom: 1px solid var(--theme-default-border);
+				border-right: 1px solid var(--theme-default-border);
+
+				&.primary {
+					border-bottom: 1px solid var(--menu-primary-border-color);
+					border-right: 1px solid var(--menu-primary-border-color);
+				}
 			}
 		}
 	}
 
 	&.isFromKeyboard {
-		color: #777777;
+		color: var(--menu-wrapper-color-focus);
 
 		&:not(.underlined) {
-			background: #8c949b;
+			background: var(--menu-wrapper-background-color-focus);
 
 			&.primary {
-				background: #2cb3ff;
-				color: #69737d;
+				background: var(--menu-primary-wrapper-background-color-focus);
+				color: var(--menu-primary-wrapper-color-focus);
 			}
 		}
 
+		// focused styles
 		&:not(.iconOnly):not(.underlined) {
+			color: var(--menu-color-active);
+			background: var(--menu-default-background-focus);
 
+			&.primary {
+				color: var(--menu-primary-foreground-focus);
+				background: var(--menu-primary-background-focus);
+			}
+
+			&.vertical {
+				border: solid 1px var(--menu-border-color-focus);
+				outline: solid 1px var(--menu-outline-color-focus);
+				margin: 1px;
+				color: var(--theme-default-foreground-focus);
+
+				&.primary {
+					color: var(--menu-color);
+				}
+
+				&.active {
+					color: var(--menu-color-active);
+					background: var(--menu-default-background-active);
+
+					&.primary {
+						color: var(--menu-primary-foreground-active);
+						background: var(--menu-primary-background-active);
+					}
+				}
+			}
+		}
+
+		&.iconOnly {
+			color: var(--menu-icon-only-color-active);
+		}
+	}
+
+	&.active[data-tabs='true'] {
+		&:not(.underlined) {
+			background: var(--theme-default-background-active);
+
+			&.primary {
+				background: var(--theme-primary-background-active);
+
+				&:not(.iconOnly) {
+					color: var(--menu-primary-foreground-active);
+				}
+			}
+		}
+
+		.pointing.vertical::before {
+			content: "";
+			position: absolute;
+			width: 3px;
+			height: calc(100% + 4px);
+			top: -2px;
+			background-color: var(--menu-pointing-indicator-background-color);
+
+			.isFromKeyboard {
+				display: none;
+			}
+
+			.pointingEnd {
+				right: -2px;
+			}
+
+			:not(.pointingEnd) {
+				left: -2px;
+			}
+		}
+	}
+
+	&:hover:not(.disabled) {
+		background: var(--theme-default-background-hover);
+
+		&.primary {
+			background: var(--menu-primary-wrapper-color-hover);
+		}
+
+		.underlined {
+			color: var(--menu-underlined-wrapper-color-hover);
+			background: var(--menu-underlined-wrapper-background-hover);
+		}
+
+		.iconOnly {
+			color: var(--menu-icon-only-color-hover);
+		}
+
+		&>[class='menuItemClass']>[class='menuItemIndicatorClass'] {
+			color: var(--menu-indicator-color-hover);
+
+			&.primary {
+				color: var(--menu-primary-indicator-color-hover);
+			}
+
+			&:not(.vertical) {
+				transform: rotate(90deg);
+			}
+		}
+	}
+
+	.iconOnly {
+		border-radius: var(--menu-icon-only-border-radius);
+		display: flex;
+	}
+
+	&:first-child:not(.pills):not(.iconOnly):not(.underlined) {
+		&.vertical:not(.pointing):before {
+			display: none;
+		}
+
+		&:not(.vertical) {
+			border-bottom-left-radius: 3px;
+			border-top-left-radius: 3px;
+		}
+	}
+
+	&.disabled {
+		color: var(--menu-default-foreground-disabled);
+
+		&.primary {
+			color: var(--menu-primary-foreground-disabled);
 		}
 	}
 }

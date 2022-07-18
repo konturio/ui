@@ -5,7 +5,7 @@ import styles from './MenuItemIcon.module.css';
 import { ComponentWithFactory, NodeValue } from '../../../utils/types';
 import { nanoid } from 'nanoid';
 
-interface MenuItemIconProps {
+export interface MenuItemIconProps {
   /**
    * Accessibility behavior if overridden by the user.
    */
@@ -27,7 +27,7 @@ const MenuItemIconComponent = forwardRef<HTMLSpanElement, MenuItemIconProps>(
     const dynamicClasses = cn({
       [styles.menuItemIcon]: true,
       [styles.hasContent]: hasContent,
-      [styles.notIconOnly]: !iconOnly,
+      [styles.iconOnly]: iconOnly,
       className,
     });
 

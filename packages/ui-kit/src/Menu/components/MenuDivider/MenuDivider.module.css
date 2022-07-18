@@ -1,19 +1,17 @@
+@import "../../variables.css";
+
 .menuDivider {
-	--menu-divider-border-color: #3f4c59;
-
-	.primary {
-		--menu-divider-border-color: #43b148;
-	}
-
 	&.pointing.vertical {
-		margin-bottom: 4px;
+		margin-bottom: var(--menu-vertical-pointing-bottom-margin);
 	}
 
 	&.pills {
-		margin: 0 4px 0 0;
-
 		&.vertical {
-			margin: 0 0 4px 0;
+			margin: 0 0 var(--menu-vertical-pills-bottom-margin) 0;
+		}
+
+		&:not(.vertical) {
+			margin: 0 var(--menu-horizontal-pills-right-margin) 0 0;
 		}
 	}
 
@@ -24,17 +22,25 @@
 		text-align: center;
 	}
 
-	&.withoutContent {
-		&.horizontal {
-			border-left: 1px solid  var(--menu-divider-border-color);
-			align-self: stretch;
-		}
-
+	&:not(.hasContent) {
 		&.vertical {
-			border-top: 1px solid var(--menu-divider-border-color);
+			border-top: 1px solid var(--theme-default-border);
+
+			&.primary {
+				border-top: 1px solid var(--menu-primary-border-color);
+			}
 
 			&.inSubmenu {
 				margin: 8px 0;
+			}
+		}
+
+		&:not(.vertical) {
+			border-left: 1px solid var(--theme-default-border);
+			align-self: stretch;
+
+			&.primary {
+				border-left: 1px solid var(--menu-primary-border-color);
 			}
 		}
 	}

@@ -1,5 +1,7 @@
 import React from 'react';
 
 export type AssignableRef<ValueType> =
-  | ((instance: ValueType | null) => void)
+  | {
+      bivarianceHack(instance: ValueType | null): void;
+    }['bivarianceHack']
   | React.MutableRefObject<ValueType | null>;

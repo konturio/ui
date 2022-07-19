@@ -24,6 +24,8 @@
     "access": "public"
   },
   "dependencies": {
-    "react-is": "^18.2.0"
+    "nanoid": "^4.0.0",
+    "react-is": "^18.2.0",
+    "tabbable": "^5.3.3"
   }
 }

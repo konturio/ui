@@ -17,7 +17,7 @@ import fixture6 from './../packages/ui-kit/src/Card/Card.fixture.tsx';
 import fixture7 from './../packages/ui-kit/src/Checkbox/Checkbox.fixture.tsx';
 import fixture8 from './../packages/ui-kit/src/Details/Details.fixture.jsx';
 import fixture9 from './../packages/ui-kit/src/Divider/Divider.fixture.tsx';
-import fixture10 from './../packages/ui-kit/src/DropDown/Dropdown.fixture.tsx';
+import fixture10 from '../packages/ui-kit/src/DropDown_old/Dropdown.fixture.tsx';
 import fixture11 from './../packages/ui-kit/src/Input/Input.fixture.tsx';
 import fixture12 from './../packages/ui-kit/src/Legend/Legend.fixture.tsx';
 import fixture13 from './../packages/ui-kit/src/LineItem/LineItem.fixture.tsx';

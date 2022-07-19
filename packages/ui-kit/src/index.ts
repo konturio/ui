@@ -1,6 +1,6 @@
 export { Input } from './Input';
 export { Card } from './Card';
-export { DropDown } from './DropDown';
+export { DropDown } from './DropDown_old';
 export { Checkbox } from './Checkbox';
 export { Divider } from './Divider';
 export { LineItem } from './LineItem';

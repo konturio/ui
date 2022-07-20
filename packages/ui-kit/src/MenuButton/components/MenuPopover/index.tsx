@@ -4,7 +4,7 @@ import { useDropdownPopover } from '../../../Dropdown/components/DropdownPopover
 import { Popover } from '../../../Popover';
 import { ForwardRefComponent } from '../../../utils/component-helpers/polymorphic';
 import cn from 'clsx';
-import style from 'style.module.css';
+import style from './style.module.css';
 
 /**
  * MenuPopover

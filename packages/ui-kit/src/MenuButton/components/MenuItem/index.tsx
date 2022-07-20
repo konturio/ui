@@ -27,14 +27,7 @@ export const MenuItemImpl = React.forwardRef(({ as: Comp = 'div', className, ...
     className,
   });
 
-  return (
-    <Comp
-      role="menuitem"
-      {...props}
-      aria-disabled={disabled || undefined}
-      className={dynamicClasses}
-    />
-  );
+  return <Comp role="menuitem" {...props} aria-disabled={disabled || undefined} className={dynamicClasses} />;
 }) as ForwardRefComponent<'div', MenuItemImplProps>;
 
 MenuItemImpl.displayName = 'MenuItemImpl';

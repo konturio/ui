@@ -3,7 +3,7 @@ import { createDescendantContext } from '../utils/component-helpers/descendants'
 import { createContext } from '../utils/helpers/context';
 import { DropdownAction } from './reducer';
 import { DropdownContextValue, DropdownDescendant, DropdownState } from './types';
-import {makeId} from "../utils/helpers/helpers";
+import { makeId } from '../utils/helpers/helpers';
 
 type TriggerRef = React.RefObject<null | HTMLButtonElement>;
 type DropdownRef = React.RefObject<null | HTMLDivElement>;

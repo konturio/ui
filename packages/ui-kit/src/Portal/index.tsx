@@ -11,7 +11,7 @@ export interface PortalProps {
 /**
  * Portal
  */
-export const Portal = ({ children, type = 'reach-portal', containerRef }: PortalProps) => {
+export const Portal = ({ children, type = 'portal', containerRef }: PortalProps) => {
   const mountNode = React.useRef<HTMLDivElement | null>(null);
   const portalNode = React.useRef<HTMLElement | null>(null);
   const forceUpdate = useForceUpdate();

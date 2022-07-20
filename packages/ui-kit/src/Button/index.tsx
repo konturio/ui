@@ -1,38 +1,33 @@
 import s from './style.module.css';
 import cn from 'clsx';
-import { ReactChild, forwardRef, Children, ReactNode } from 'react';
+import { ButtonHTMLAttributes, Children, forwardRef, ReactChild, ReactNode } from 'react';
 
-export interface ButtonProps {
-  onClick?: React.MouseEventHandler<HTMLButtonElement>;
-  disabled?: boolean;
+export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   dark?: boolean;
   transparent?: boolean;
   variant?: 'primary' | 'invert-outline' | 'invert' | 'radio';
   size?: 'medium' | 'small';
   id?: string;
-  className?: string;
   active?: boolean;
   iconBefore?: ReactChild | null;
   iconAfter?: ReactChild | null;
   children?: ReactNode;
 }
 
-export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
+export const Button = forwardRef<HTMLButtonElement, React.PropsWithChildren<ButtonProps>>(
   (
     {
-      onClick,
       children,
-      disabled,
       className,
       active,
       variant = 'primary',
       size = 'medium',
       dark = false,
       transparent = false,
-      id,
       iconBefore,
       iconAfter,
-    }: React.PropsWithChildren<ButtonProps>,
+      ...props
+    },
     ref,
   ) => {
     return (
@@ -53,9 +48,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
             [s.active]: active,
           },
         )}
-        onClick={onClick}
-        disabled={disabled}
-        id={id}
+        {...props}
       >
         {iconBefore}
         {Children.count(children) > 0 && <div className={s.buttonContent}>{children}</div>}

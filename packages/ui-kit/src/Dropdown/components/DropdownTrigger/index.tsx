@@ -11,6 +11,8 @@ import {
 import { isRightClick } from '../../../utils/helpers/helpers';
 import { composeEventHandlers } from '../../../utils/helpers/events';
 import { ForwardRefComponent } from '../../../utils/component-helpers/polymorphic';
+import cn from 'clsx';
+import style from './style.module.css';
 
 export function useDropdownTrigger({
   onKeyDown,
@@ -105,9 +107,13 @@ export interface DropdownTriggerProps {
   children: React.ReactNode;
 }
 
-export const DropdownTrigger = React.forwardRef(({ as: Comp = 'button', ...rest }, forwardedRef) => {
+export const DropdownTrigger = React.forwardRef(({ as: Comp = 'button', className, ...rest }, forwardedRef) => {
   const { props } = useDropdownTrigger({ ...rest, ref: forwardedRef });
-  return <Comp data-reach-dropdown-trigger="" {...props} />;
+  const dynamicClasses = cn({
+    [style.dropdownTrigger]: true,
+    className,
+  });
+  return <Comp {...props} className={dynamicClasses} />;
 }) as ForwardRefComponent<'button', DropdownTriggerProps>;
 
 DropdownTrigger.displayName = 'DropdownTrigger';

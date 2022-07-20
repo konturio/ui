@@ -2,14 +2,13 @@
 	display: block;
 	user-select: none;
 	cursor: pointer;
-	color: inherit;
+	color: var(--base-strong);
 	font: inherit;
 	text-decoration: initial;
-	padding: 5px 20px;
+	padding: 10px 20px;
 
 	&.selected {
-		background: hsl(211, 81%, 36%);
-		color: white;
+		background: var(--base-weak-up);
 		outline: none;
 	}
 
@@ -17,14 +16,18 @@
 		opacity: 0.5;
 		cursor: not-allowed;
 	}
+
+	&:active {
+		background: var(--accent-weak);
+	}
 }
 
 .menuItems {
 	display: block;
 	white-space: nowrap;
-	border: solid 1px hsla(0, 0%, 0%, 0.25);
 	background: hsla(0, 100%, 100%, 0.99);
 	outline: none;
-	padding: 1rem 0;
-	font-size: 85%;
+	padding: var(--half-unit) 0;
+	border-radius: var(--border-radius-unit);
+	box-shadow: var(--elevation-3);
 }

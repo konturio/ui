@@ -6,6 +6,8 @@ import { ForwardRefComponent } from '../utils/component-helpers/polymorphic';
 import { Portal } from '../Portal';
 import { Position, positionDefault } from '../utils/position/position';
 import { PRect, useRect } from '../utils/position/rect';
+import cn from 'clsx';
+import style from './style.module.css';
 
 type PossibleNode = null | undefined | HTMLElement | SVGElement;
 
@@ -30,7 +32,7 @@ export const Popover = forwardRef(function Popover(props, ref) {
 Popover.displayName = 'Popover';
 
 const PopoverImpl = forwardRef(function PopoverImpl(
-  { as: Comp = 'div', targetRef, position = positionDefault, ...props },
+  { as: Comp = 'div', targetRef, position = positionDefault, className, ...props },
   forwardedRef,
 ) {
   const popoverRef = useRef<HTMLDivElement>(null);
@@ -40,9 +42,13 @@ const PopoverImpl = forwardRef(function PopoverImpl(
 
   useSimulateTabNavigationForReactTree(targetRef as any, popoverRef);
 
+  const dynamicClasses = cn({
+    [style.popover]: true,
+    className,
+  });
+
   return (
     <Comp
-      data-reach-popover=""
       ref={ref}
       {...props}
       style={{
@@ -50,6 +56,7 @@ const PopoverImpl = forwardRef(function PopoverImpl(
         ...getStyles(position, targetRect, popoverRect),
         ...props.style,
       }}
+      className={dynamicClasses}
     />
   );
 }) as ForwardRefComponent<'div', PopoverProps>;

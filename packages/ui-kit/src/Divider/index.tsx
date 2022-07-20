@@ -1,11 +1,8 @@
-import { ReactNode } from 'react';
+import { HTMLAttributes, PropsWithChildren } from 'react';
 import cn from 'clsx';
 import styles from './style.module.css';
 
-export interface DividerProps {
-  /** Primary content. */
-  children?: ReactNode;
-
+export interface DividerProps extends HTMLAttributes<HTMLDivElement> {
   /** Additional classes. */
   className?: string;
 
@@ -22,7 +19,15 @@ export interface DividerProps {
   type?: 'horizontal' | 'vertical';
 }
 
-export function Divider({ children, className, clearing, fitted, hidden, type }: DividerProps) {
+export function Divider({
+  children,
+  className,
+  clearing,
+  fitted,
+  hidden,
+  type,
+  ...props
+}: PropsWithChildren<DividerProps>) {
   const dynamicClasses = cn({
     className,
     [styles.divider]: true,
@@ -34,5 +39,9 @@ export function Divider({ children, className, clearing, fitted, hidden, type }:
     [styles.withoutChildren]: !children,
   });
 
-  return <div className={dynamicClasses}>{children && <div className={styles.dividerContent}>{children}</div>}</div>;
+  return (
+    <div className={dynamicClasses} {...props}>
+      {children && <div className={styles.dividerContent}>{children}</div>}
+    </div>
+  );
 }

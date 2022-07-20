@@ -230,6 +230,7 @@ export function useDropdownItem({
       ref,
       'data-valuetext': valueText,
       className: cn({ [style.disabled]: disabled, [style.selected]: isSelected }),
+      selected: isSelected,
       onClick: composeEventHandlers(onClick, handleClick),
       onDragStart: composeEventHandlers(onDragStart, handleDragStart),
       onMouseDown: composeEventHandlers(onMouseDown, handleMouseDown),

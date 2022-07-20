@@ -1,0 +1,8 @@
+.dropdownPopover {
+	display: block;
+	position: absolute;
+
+	&.hidden {
+		display: none;
+	}
+}

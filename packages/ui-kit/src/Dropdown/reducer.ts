@@ -11,7 +11,7 @@ import {
 } from './constants';
 import React from 'react';
 import { getOwnerDocument } from '../utils/helpers/helpers';
-import { DropdownState } from './index';
+import { DropdownState } from './types';
 
 export type DropdownAction =
   | { type: typeof DROPDOWN_ITEM_CLICK_MENU_ITEM }

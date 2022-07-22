@@ -1,12 +1,35 @@
 .root {
 	display: flex;
-	flex-direction: column;
 	min-width: 160px;
+
+	&:not(.inline) {
+		flex-direction: column;
+
+		& .label {
+			padding-bottom: var(--unit);
+		}
+
+		& .selectBox {
+			box-shadow: 0 0 0 1px var(--faint-strong-down);
+			padding: var(--unit);
+		}
+	}
+
+	&.inline {
+		flex-direction: row;
+
+		& .label {
+			padding-right: var(--unit);
+		}
+
+		& .selectBox {
+			padding: 0 var(--unit);
+		}
+	}
 
 	& .label {
 		font-size: 14px;
 		font-weight: 500;
-		padding-bottom: var(--unit);
 	}
 
 	& .icons {
@@ -47,17 +70,37 @@
 		display: flex;
 		flex-flow: row nowrap;
 		border-radius: var(--border-radius);
-		box-shadow: 0 0 0 1px var(--faint-strong-down);
 		border: none;
 		color: var(--base-strong);
 		position: relative;
 		background-color: var(--base-weak);
-		padding: var(--unit);
 		align-items: center;
 		cursor: pointer;
 
 		&:active {
 			box-shadow: 0 0 0 2px var(--complimentary-strong-down);
 		}
+
+		&:active {
+			background-color: var(--base-weak-up);
+		}
+	}
+
+	& .errorMessage {
+		font: var(--font-xs);
+		padding: var(--half-unit) 0;
+		font-weight: 400;
+		color: var(--error-strong);
+	}
+
+	&.disabled .selectBox {
+		pointer-events: none;
+		background: var(--faint-weak);
+		box-shadow: 0 0 0 1px var(--faint-weak-up);
+		color: var(--faint-weak-up);
+	}
+
+	&.error .selectBox {
+		box-shadow: 0 0 0 1px var(--error-strong);
 	}
 }

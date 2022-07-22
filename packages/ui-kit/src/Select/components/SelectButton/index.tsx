@@ -36,9 +36,7 @@ export const SelectButton = React.forwardRef(
         )}
         <div {...toggleProps} className={cn(s.selectBox, classes?.selectBox)}>
           <div className={cn(s.placeholder, classes?.placeholder)}>{value?.title || placeholder}</div>
-          <div className={s.openToggle}>
-            {open ? <ChevronUp16 /> : <ChevronDown16 />}
-          </div>
+          <div className={s.openToggle}>{open ? <ChevronUp16 /> : <ChevronDown16 />}</div>
         </div>
       </div>
     );

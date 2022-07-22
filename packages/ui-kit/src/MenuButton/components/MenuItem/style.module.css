@@ -13,11 +13,11 @@
 	}
 
 	&.disabled {
-		opacity: 0.5;
 		cursor: not-allowed;
+		color: var(--faint-strong);
 	}
 
-	&:active {
+	&:active:not(.disabled) {
 		background: var(--accent-weak);
 	}
 }

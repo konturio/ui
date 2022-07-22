@@ -14,6 +14,10 @@ import { ForwardRefComponent } from '../../../utils/component-helpers/polymorphi
 import cn from 'clsx';
 import style from './style.module.css';
 
+export interface DropdownTriggerProps {
+  children: React.ReactNode;
+}
+
 export function useDropdownTrigger({
   onKeyDown,
   onMouseDown,
@@ -101,10 +105,6 @@ export function useDropdownTrigger({
       type: 'button' as const,
     },
   };
-}
-
-export interface DropdownTriggerProps {
-  children: React.ReactNode;
 }
 
 export const DropdownTrigger = React.forwardRef(({ as: Comp = 'button', className, ...rest }, forwardedRef) => {

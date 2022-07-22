@@ -29,3 +29,5 @@ export * from './Dropdown';
 export * from './Dropdown/components';
 export * from './MenuButton';
 export * from './MenuButton/components';
+export * from './Select';
+export * from './Select/components';

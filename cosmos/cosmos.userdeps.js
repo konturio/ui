@@ -25,11 +25,12 @@ import fixture14 from './../packages/ui-kit/src/Logo/Logo.fixture.tsx';
 import fixture15 from './../packages/ui-kit/src/MenuButton/fixtures/MenuButton.fixture.tsx';
 import fixture16 from './../packages/ui-kit/src/Panel/Panel.fixture.tsx';
 import fixture17 from './../packages/ui-kit/src/Radio/Radio.fixture.tsx';
-import fixture18 from './../packages/ui-kit/src/Selector/Selector.fixture.tsx';
-import fixture19 from './../packages/ui-kit/src/Tabs/Tabs.fixture.tsx';
-import fixture20 from './../packages/ui-kit/src/Text/Text.fixture.tsx';
-import fixture21 from './../packages/ui-kit/src/TimeSlider/TimeSlider.fixture.tsx';
-import fixture22 from './../packages/ui-kit/src/Toggler/Toggler.fixture.tsx';
+import fixture18 from './../packages/ui-kit/src/Select/fixtures/Select.fixture.tsx';
+import fixture19 from './../packages/ui-kit/src/Selector/Selector.fixture.tsx';
+import fixture20 from './../packages/ui-kit/src/Tabs/Tabs.fixture.tsx';
+import fixture21 from './../packages/ui-kit/src/Text/Text.fixture.tsx';
+import fixture22 from './../packages/ui-kit/src/TimeSlider/TimeSlider.fixture.tsx';
+import fixture23 from './../packages/ui-kit/src/Toggler/Toggler.fixture.tsx';
 
 import decorator0 from './../cosmos.decorator.tsx';
 import decorator1 from './../packages/ui-kit/cosmos.decorator.tsx';
@@ -57,11 +58,12 @@ export const fixtures = {
   'packages/ui-kit/src/MenuButton/fixtures/MenuButton.fixture.tsx': { module: { default: fixture15 } },
   'packages/ui-kit/src/Panel/Panel.fixture.tsx': { module: { default: fixture16 } },
   'packages/ui-kit/src/Radio/Radio.fixture.tsx': { module: { default: fixture17 } },
-  'packages/ui-kit/src/Selector/Selector.fixture.tsx': { module: { default: fixture18 } },
-  'packages/ui-kit/src/Tabs/Tabs.fixture.tsx': { module: { default: fixture19 } },
-  'packages/ui-kit/src/Text/Text.fixture.tsx': { module: { default: fixture20 } },
-  'packages/ui-kit/src/TimeSlider/TimeSlider.fixture.tsx': { module: { default: fixture21 } },
-  'packages/ui-kit/src/Toggler/Toggler.fixture.tsx': { module: { default: fixture22 } }
+  'packages/ui-kit/src/Select/fixtures/Select.fixture.tsx': { module: { default: fixture18 } },
+  'packages/ui-kit/src/Selector/Selector.fixture.tsx': { module: { default: fixture19 } },
+  'packages/ui-kit/src/Tabs/Tabs.fixture.tsx': { module: { default: fixture20 } },
+  'packages/ui-kit/src/Text/Text.fixture.tsx': { module: { default: fixture21 } },
+  'packages/ui-kit/src/TimeSlider/TimeSlider.fixture.tsx': { module: { default: fixture22 } },
+  'packages/ui-kit/src/Toggler/Toggler.fixture.tsx': { module: { default: fixture23 } }
 };
 
 export const decorators = {

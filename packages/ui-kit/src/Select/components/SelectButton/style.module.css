@@ -1,63 +1,110 @@
 .root {
-	display: flex;
-	flex-direction: column;
-	min-width: 160px;
+  display: flex;
+  min-width: 160px;
 
-	& .label {
-		font-size: 14px;
-		font-weight: 500;
-		padding-bottom: var(--unit);
-	}
+  &:not(.inline) {
+    flex-direction: column;
 
-	& .icons {
-		color: var(--faint-strong);
-		display: flex;
-		flex-flow: row nowrap;
-		align-content: center;
-		align-items: center;
-	}
+    & .label {
+      padding-bottom: var(--unit);
+    }
 
-	& .openToggle {
-		position: absolute;
-		right: 0;
-		height: 100%;
-		display: flex;
-		align-items: center;
-		cursor: pointer;
-		color: var(--faint-strong);
-		padding: 0 var(--unit);
-	}
+    & .selectBox {
+      box-shadow: 0 0 0 1px var(--faint-strong-down);
+      padding: var(--unit);
+    }
+  }
 
-	& .placeholder {
-		color: var(--base-strong);
-		background: transparent;
-		pointer-events: none;
-		font-size: 14px;
-		overflow: hidden;
-		white-space: nowrap;
-		text-overflow: ellipsis;
-		margin-right: 20px;
+  &.inline {
+    flex-direction: row;
 
-		&.no-value {
-			color: var(--text-faint-strong);
-		}
-	}
+    & .label {
+      padding-right: var(--unit);
+    }
 
-	& .selectBox {
-		display: flex;
-		flex-flow: row nowrap;
-		border-radius: var(--border-radius);
-		box-shadow: 0 0 0 1px var(--faint-strong-down);
-		border: none;
-		color: var(--base-strong);
-		position: relative;
-		background-color: var(--base-weak);
-		padding: var(--unit);
-		align-items: center;
-		cursor: pointer;
+    & .selectBox {
+      padding: 0 var(--unit);
+    }
+  }
 
-		&:active {
-			box-shadow: 0 0 0 2px var(--complimentary-strong-down);
-		}
-	}
+  & .label {
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  & .icons {
+    color: var(--faint-strong);
+    display: flex;
+    flex-flow: row nowrap;
+    align-content: center;
+    align-items: center;
+  }
+
+  & .openToggle {
+    position: absolute;
+    right: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: var(--faint-strong);
+    padding: 0 var(--unit);
+  }
+
+  & .placeholder {
+    color: var(--base-strong);
+    background: transparent;
+    pointer-events: none;
+    font-size: 14px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin-right: 20px;
+
+    &.no-value {
+      color: var(--text-faint-strong);
+    }
+  }
+
+  & .selectBox {
+    display: flex;
+    flex-flow: row nowrap;
+    border-radius: var(--border-radius);
+    border: none;
+    color: var(--base-strong);
+    position: relative;
+    background-color: var(--base-weak);
+    align-items: center;
+    cursor: pointer;
+    line-height: 20px;
+
+    &:hover {
+      box-shadow: 0 0 0 1px var(--faint-strong);
+      background-color: var(--base-weak-up);
+    }
+
+    &:active,
+    &:focus {
+      box-shadow: 0 0 0 2px var(--complimentary-strong-down);
+      background-color: var(--base-weak-up);
+    }
+  }
+
+  & .errorMessage {
+    font: var(--font-xs);
+    padding: var(--half-unit) 0;
+    font-weight: 400;
+    color: var(--error-strong);
+  }
+
+  &.disabled .selectBox {
+    pointer-events: none;
+    background: var(--faint-weak);
+    box-shadow: 0 0 0 1px var(--faint-weak-up);
+    color: var(--faint-weak-up);
+  }
+
+  &.error .selectBox {
+    box-shadow: 0 0 0 1px var(--error-strong);
+  }
 }

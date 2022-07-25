@@ -1,0 +1,22 @@
+.selectItem {
+  padding: var(--unit);
+  margin: 2px 0;
+  cursor: pointer;
+
+  &.disabled {
+    cursor: not-allowed;
+    color: var(--faint-strong);
+  }
+
+  &.highlighted:not(.disabled) {
+    background: var(--base-weak-up);
+  }
+
+  &.selected:not(.disabled) {
+    background: var(--accent-weak);
+  }
+
+  &.hasDivider:not(:last-child) {
+    border-bottom: 1px solid var(--faint-weak);
+  }
+}

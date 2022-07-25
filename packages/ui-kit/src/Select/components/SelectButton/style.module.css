@@ -1,106 +1,106 @@
 .root {
-	display: flex;
-	min-width: 160px;
+  display: flex;
+  min-width: 160px;
 
-	&:not(.inline) {
-		flex-direction: column;
+  &:not(.inline) {
+    flex-direction: column;
 
-		& .label {
-			padding-bottom: var(--unit);
-		}
+    & .label {
+      padding-bottom: var(--unit);
+    }
 
-		& .selectBox {
-			box-shadow: 0 0 0 1px var(--faint-strong-down);
-			padding: var(--unit);
-		}
-	}
+    & .selectBox {
+      box-shadow: 0 0 0 1px var(--faint-strong-down);
+      padding: var(--unit);
+    }
+  }
 
-	&.inline {
-		flex-direction: row;
+  &.inline {
+    flex-direction: row;
 
-		& .label {
-			padding-right: var(--unit);
-		}
+    & .label {
+      padding-right: var(--unit);
+    }
 
-		& .selectBox {
-			padding: 0 var(--unit);
-		}
-	}
+    & .selectBox {
+      padding: 0 var(--unit);
+    }
+  }
 
-	& .label {
-		font-size: 14px;
-		font-weight: 500;
-	}
+  & .label {
+    font-size: 14px;
+    font-weight: 500;
+  }
 
-	& .icons {
-		color: var(--faint-strong);
-		display: flex;
-		flex-flow: row nowrap;
-		align-content: center;
-		align-items: center;
-	}
+  & .icons {
+    color: var(--faint-strong);
+    display: flex;
+    flex-flow: row nowrap;
+    align-content: center;
+    align-items: center;
+  }
 
-	& .openToggle {
-		position: absolute;
-		right: 0;
-		height: 100%;
-		display: flex;
-		align-items: center;
-		cursor: pointer;
-		color: var(--faint-strong);
-		padding: 0 var(--unit);
-	}
+  & .openToggle {
+    position: absolute;
+    right: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: var(--faint-strong);
+    padding: 0 var(--unit);
+  }
 
-	& .placeholder {
-		color: var(--base-strong);
-		background: transparent;
-		pointer-events: none;
-		font-size: 14px;
-		overflow: hidden;
-		white-space: nowrap;
-		text-overflow: ellipsis;
-		margin-right: 20px;
+  & .placeholder {
+    color: var(--base-strong);
+    background: transparent;
+    pointer-events: none;
+    font-size: 14px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin-right: 20px;
 
-		&.no-value {
-			color: var(--text-faint-strong);
-		}
-	}
+    &.no-value {
+      color: var(--text-faint-strong);
+    }
+  }
 
-	& .selectBox {
-		display: flex;
-		flex-flow: row nowrap;
-		border-radius: var(--border-radius);
-		border: none;
-		color: var(--base-strong);
-		position: relative;
-		background-color: var(--base-weak);
-		align-items: center;
-		cursor: pointer;
+  & .selectBox {
+    display: flex;
+    flex-flow: row nowrap;
+    border-radius: var(--border-radius);
+    border: none;
+    color: var(--base-strong);
+    position: relative;
+    background-color: var(--base-weak);
+    align-items: center;
+    cursor: pointer;
 
-		&:active {
-			box-shadow: 0 0 0 2px var(--complimentary-strong-down);
-		}
+    &:active {
+      box-shadow: 0 0 0 2px var(--complimentary-strong-down);
+    }
 
-		&:active {
-			background-color: var(--base-weak-up);
-		}
-	}
+    &:active {
+      background-color: var(--base-weak-up);
+    }
+  }
 
-	& .errorMessage {
-		font: var(--font-xs);
-		padding: var(--half-unit) 0;
-		font-weight: 400;
-		color: var(--error-strong);
-	}
+  & .errorMessage {
+    font: var(--font-xs);
+    padding: var(--half-unit) 0;
+    font-weight: 400;
+    color: var(--error-strong);
+  }
 
-	&.disabled .selectBox {
-		pointer-events: none;
-		background: var(--faint-weak);
-		box-shadow: 0 0 0 1px var(--faint-weak-up);
-		color: var(--faint-weak-up);
-	}
+  &.disabled .selectBox {
+    pointer-events: none;
+    background: var(--faint-weak);
+    box-shadow: 0 0 0 1px var(--faint-weak-up);
+    color: var(--faint-weak-up);
+  }
 
-	&.error .selectBox {
-		box-shadow: 0 0 0 1px var(--error-strong);
-	}
+  &.error .selectBox {
+    box-shadow: 0 0 0 1px var(--error-strong);
+  }
 }

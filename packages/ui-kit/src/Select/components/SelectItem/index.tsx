@@ -19,6 +19,7 @@ export const SelectItem = forwardRef(({ className, highlighted, selected, item, 
     [style.selected]: !item.disabled && selected,
     [style.disabled]: item.disabled,
     [style.hasDivider]: item.hasDivider,
+    className,
   });
 
   return (

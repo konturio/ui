@@ -63,7 +63,9 @@ export const SelectButton = React.forwardRef(
           <div className={cn(style.placeholder, classes?.placeholder)}>{value?.title || children}</div>
           <div className={style.openToggle}>{open ? <ChevronUp16 /> : <ChevronDown16 />}</div>
         </div>
-        {error && typeof error === 'string' ? <div className={cn(style.errorMessage, classes?.error)}>{error}</div> : null}
+        {error && typeof error === 'string' ? (
+          <div className={cn(style.errorMessage, classes?.error)}>{error}</div>
+        ) : null}
       </div>
     );
   },

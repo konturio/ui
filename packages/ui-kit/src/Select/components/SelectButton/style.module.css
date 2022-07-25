@@ -76,16 +76,16 @@
     background-color: var(--base-weak);
     align-items: center;
     cursor: pointer;
+    line-height: 20px;
 
     &:hover {
       box-shadow: 0 0 0 1px var(--faint-strong);
+      background-color: var(--base-weak-up);
     }
 
-    &:active {
+    &:active,
+    &:focus {
       box-shadow: 0 0 0 2px var(--complimentary-strong-down);
-    }
-
-    &:active {
       background-color: var(--base-weak-up);
     }
   }

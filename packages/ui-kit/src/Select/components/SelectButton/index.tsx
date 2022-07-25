@@ -59,10 +59,16 @@ export const SelectButton = React.forwardRef(
             {label}
           </label>
         )}
-        <div {...toggleProps} className={cn(style.selectBox, classes?.selectBox)}>
+        <button
+          disabled={disabled}
+          type="button"
+          aria-label="toggle menu"
+          {...toggleProps}
+          className={cn(style.selectBox, classes?.selectBox)}
+        >
           <div className={cn(style.placeholder, classes?.placeholder)}>{value?.title || children}</div>
           <div className={style.openToggle}>{open ? <ChevronUp16 /> : <ChevronDown16 />}</div>
-        </div>
+        </button>
         {error && typeof error === 'string' ? (
           <div className={cn(style.errorMessage, classes?.error)}>{error}</div>
         ) : null}

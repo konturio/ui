@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-alpha.45](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.0.0-alpha.44...@konturio/ui-kit@3.0.0-alpha.45) (2022-07-25)
+
+
+### Bug Fixes
+
+* **ui-kit:** fix menupopover style path ([91c3276](https://github.com/konturio/ui/commit/91c3276d1cd5a7d6b0f44fc89921388905c88015))
+* **ui-kit:** uikit menu color fixes ([967d9e2](https://github.com/konturio/ui/commit/967d9e2a485dd2d24d9810abcacd0af48bc29f25))
+
+
+### Features
+
+* **Select:** 10865 - Update dropdown  component implementation ([33b4c95](https://github.com/konturio/ui/commit/33b4c95d0f5fe3be146a92ffc936479766512660))
+* **ui-kit:** update select implementation ([#11](https://github.com/konturio/ui/issues/11)) ([f8902d8](https://github.com/konturio/ui/commit/f8902d801116f9b8b8f3da574858016b0459276e))
+
+
+
+
+
 # [3.0.0-alpha.44](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.0.0-alpha.43...@konturio/ui-kit@3.0.0-alpha.44) (2022-07-15)
 
 **Note:** Version bump only for package @konturio/ui-kit

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.4.0-alpha.12](https://github.com/konturio/ui/compare/@konturio/default-theme@2.4.0-alpha.11...@konturio/default-theme@2.4.0-alpha.12) (2022-07-25)
+
+
+### Bug Fixes
+
+* **ui-kit:** uikit menu color fixes ([967d9e2](https://github.com/konturio/ui/commit/967d9e2a485dd2d24d9810abcacd0af48bc29f25))
+
+
+
+
+
 # 2.4.0-alpha.11 (2022-06-15)
 
 **Note:** Version bump only for package @konturio/default-theme

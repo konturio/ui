@@ -77,6 +77,10 @@
     align-items: center;
     cursor: pointer;
 
+    &:hover {
+      box-shadow: 0 0 0 1px var(--faint-strong);
+    }
+
     &:active {
       box-shadow: 0 0 0 2px var(--complimentary-strong-down);
     }

@@ -22,7 +22,22 @@ export interface SelectProps {
 }
 
 export const Select = forwardRef(
-  ({ children, items, itemToString, label, placeholder, classes, className, disabled, error, type = 'classic', ...props }, ref) => {
+  (
+    {
+      children,
+      items,
+      itemToString,
+      label,
+      placeholder,
+      classes,
+      className,
+      disabled,
+      error,
+      type = 'classic',
+      ...props
+    },
+    ref,
+  ) => {
     const { isOpen, selectedItem, getToggleButtonProps, getLabelProps, getMenuProps, highlightedIndex, getItemProps } =
       useSelect({
         items,

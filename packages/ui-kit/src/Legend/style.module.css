@@ -42,20 +42,29 @@
   right: 0;
 }
 
-.xStepsCell {
+.xStepsCell,
+.xStepsCellNoLabel {
   display: flex;
   position: relative;
   width: auto;
 }
 
-.xStepsCell:before {
-  border-left: 1px solid var(--faint-strong);
-  content: '';
-  height: 16px;
-  width: 1px;
-  position: absolute;
-  top: 0;
-  left: 0;
+.xStepsCell {
+  &:before {
+    border-left: 1px solid var(--faint-strong);
+    content: '';
+    height: 16px;
+    width: 1px;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+.xStepsCellNoLabel {
+  &:before {
+    border-left: none;
+  }
 }
 
 .arrowX,

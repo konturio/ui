@@ -4,11 +4,14 @@ import styles from './style.module.css';
 import { Cell } from './types';
 import { fillTemplate } from './gridTemplate';
 
+/* Divisor and denominator pair */
+type Quotient = [string, string];
+
 type Axis = {
   label: string;
   steps: { label?: string; value: number }[];
   quality: number;
-  quotient: string[];
+  quotient: Quotient;
 };
 
 function safeReverse(arr) {
@@ -20,17 +23,21 @@ const getCellPositionStyle = (col: number, row: number) => ({
   gridRow: `${row + 1} / ${row + 2}`,
 });
 
-interface LegendProps {
+export interface LegendProps {
   cells: Cell[];
   size: number;
   title?: string;
   showAxisLabels?: boolean;
+  showSteps?: boolean;
+  showArrowHeads?: boolean;
   axis: {
     x: Axis;
     y: Axis;
   };
   onCellPointerOver?: (e: MouseEvent, cell: Cell, i: number) => void;
   onCellPointerLeave?: (e: MouseEvent, cell: Cell, i: number) => void;
+  renderXAxisLabel?: (axis: Axis, rootClassName: string) => JSX.Element;
+  renderYAxisLabel?: (axis: Axis, rootClassName: string) => JSX.Element;
 }
 
 interface ArrowHeadProps {
@@ -58,8 +65,12 @@ export const Legend = ({
   axis,
   title,
   showAxisLabels = false,
+  showSteps = true,
+  showArrowHeads = true,
   onCellPointerOver,
   onCellPointerLeave,
+  renderXAxisLabel,
+  renderYAxisLabel,
 }: LegendProps) => {
   const TEMPLATE = useMemo(
     () => [
@@ -71,14 +82,24 @@ export const Legend = ({
   );
 
   const gridCells = fillTemplate(TEMPLATE, {
-    x: axis.x.steps.map((step) => ({
-      label: step.label || step.value.toFixed(1),
-      className: styles.xStepsCell,
-    })),
-    y: safeReverse(axis.y.steps).map((step) => ({
-      label: step.label || step.value.toFixed(1),
-      className: styles.yStepsCell,
-    })),
+    x: showSteps
+      ? axis.x.steps.map((step) => ({
+          label: step.label || step.value.toFixed(1),
+          className: styles.xStepsCell,
+        }))
+      : axis.x.steps.map((step) => ({
+          label: '',
+          className: styles.xStepsCellNoLabel,
+        })),
+    y: showSteps
+      ? safeReverse(axis.y.steps).map((step) => ({
+          label: step.label || step.value.toFixed(1),
+          className: styles.yStepsCell,
+        }))
+      : safeReverse(axis.y.steps).map((step) => ({
+          label: '',
+          className: styles.yStepsCellNoLabel,
+        })),
     c: cells.map((cell, i) => ({
       label: <span>{cell.label}</span>,
       className: cn(styles.cell, styles.colorCell),
@@ -87,6 +108,20 @@ export const Legend = ({
       ...(onCellPointerLeave && { onPointerLeave: (e: MouseEvent) => onCellPointerLeave(e, cell, i) }),
     })),
   });
+
+  const xAxisLabel = () =>
+    renderXAxisLabel ? (
+      renderXAxisLabel(axis.x, styles.axisLabelX)
+    ) : (
+      <div className={styles.axisLabelX}>{axis.x.label}</div>
+    );
+
+  const yAxisLabel = () =>
+    renderYAxisLabel ? (
+      renderYAxisLabel(axis.y, styles.axisLabelY)
+    ) : (
+      <div className={styles.axisLabelY}>{axis.y.label}</div>
+    );
 
   return (
     <div>
@@ -98,17 +133,19 @@ export const Legend = ({
           gridTemplateRows: `repeat(${size + 2}, auto)`,
         }}
       >
-        {showAxisLabels && axis.x.label ? <div className={styles.axisLabelX}>{axis.x.label}</div> : null}
-        {showAxisLabels && axis.y.label ? <div className={styles.axisLabelY}>{axis.y.label}</div> : null}
+        {showAxisLabels && axis.x.label ? xAxisLabel() : null}
+        {showAxisLabels && axis.y.label ? yAxisLabel() : null}
 
         <div className={styles.arrowX}>
-          <ArrowHead type="horizontal" className={styles.arrowHeadX} />
+          {showArrowHeads && <ArrowHead type="horizontal" className={styles.arrowHeadX} />}
         </div>
         <div className={styles.arrowY}>
-          <ArrowHead
-            type="vertical"
-            className={cn({ [styles.arrowHeadY]: true, [styles.arrowHeadY_angle0]: !showAxisLabels })}
-          />
+          {showArrowHeads && (
+            <ArrowHead
+              type="vertical"
+              className={cn({ [styles.arrowHeadY]: true, [styles.arrowHeadY_angle0]: !showAxisLabels })}
+            />
+          )}
         </div>
 
         {gridCells.map((cell) => (

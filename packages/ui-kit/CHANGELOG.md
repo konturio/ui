@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-alpha.46](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.0.0-alpha.45...@konturio/ui-kit@3.0.0-alpha.46) (2022-07-28)
+
+
+### Features
+
+* **Legend:** 10841 - add possibility to hide labels/arrows/steps for Legend and custom render method of axis labels ([#13](https://github.com/konturio/ui/issues/13)) ([04d1b51](https://github.com/konturio/ui/commit/04d1b514f67d29e702a5744538e929adb1e0c256))
+
+
+
+
+
 # [3.0.0-alpha.45](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.0.0-alpha.44...@konturio/ui-kit@3.0.0-alpha.45) (2022-07-25)
 
 

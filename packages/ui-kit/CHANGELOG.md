@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-alpha.47](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.0.0-alpha.46...@konturio/ui-kit@3.0.0-alpha.47) (2022-08-02)
+
+
+### Features
+
+* **AppHeader:** return box-shadow instead of drop-shadow to unblock logout button ([1a29ef7](https://github.com/konturio/ui/commit/1a29ef7c0e47c4570e8ac592d72257e182245f53))
+
+
+
+
+
 # [3.0.0-alpha.46](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.0.0-alpha.45...@konturio/ui-kit@3.0.0-alpha.46) (2022-07-28)
 
 

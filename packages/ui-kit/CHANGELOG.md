@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-alpha.48](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.0.0-alpha.47...@konturio/ui-kit@3.0.0-alpha.48) (2022-08-04)
+
+
+### Features
+
+* **Select:** 10839 - add possibility to handle changes in select component ([#14](https://github.com/konturio/ui/issues/14)) ([4ce47af](https://github.com/konturio/ui/commit/4ce47afa225e0c6684cd6b0e86e88a784e03b124))
+
+
+
+
+
 # [3.0.0-alpha.47](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.0.0-alpha.46...@konturio/ui-kit@3.0.0-alpha.47) (2022-08-02)
 
 

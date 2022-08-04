@@ -1,3 +1,4 @@
+import { useValue } from 'react-cosmos/fixture';
 import { Select } from '../index';
 import { SelectItemType } from '../types';
 
@@ -16,11 +17,24 @@ function itemToString(item) {
 }
 
 export default {
-  Base: (
-    <Select label="Select Base" items={items} itemToString={itemToString}>
-      Select Example
-    </Select>
-  ),
+  Interactive: () => {
+    const [state, setState] = useValue('selected', { defaultValue: {} } as {
+      defaultValue: SelectItemType | null | undefined;
+    });
+
+    return (
+      <Select
+        onChange={(e) => {
+          setState(e.selectedItem);
+        }}
+        label="Select Base"
+        items={items}
+        itemToString={itemToString}
+      >
+        Select Example
+      </Select>
+    );
+  },
   Disabled: (
     <Select label="Select Disabled" items={items} itemToString={itemToString} disabled>
       Select Example

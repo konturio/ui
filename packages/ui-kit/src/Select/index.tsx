@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react';
 import { SelectButton, SelectButtonClasses } from './components/SelectButton';
-import { useSelect } from 'downshift';
+import { useSelect, UseSelectStateChange } from 'downshift';
 import { SelectItemType } from './types';
 import cn from 'clsx';
 import style from './style.module.css';
@@ -19,6 +19,7 @@ export interface SelectProps {
     menu?: string;
     menuItem?: string;
   };
+  onChange: (changes: UseSelectStateChange<SelectItemType>) => void;
 }
 
 export const Select = forwardRef(
@@ -34,6 +35,7 @@ export const Select = forwardRef(
       disabled,
       error,
       type = 'classic',
+      onChange: onSelectedItemChange,
       ...props
     },
     ref,
@@ -42,6 +44,7 @@ export const Select = forwardRef(
       useSelect({
         items,
         itemToString,
+        onSelectedItemChange,
       });
 
     return (

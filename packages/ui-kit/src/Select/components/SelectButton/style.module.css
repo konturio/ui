@@ -61,7 +61,7 @@
     text-overflow: ellipsis;
     margin-right: 20px;
 
-    &.no-value {
+    &.noValue {
       color: var(--text-faint-strong);
     }
   }
@@ -106,5 +106,9 @@
 
   &.error .selectBox {
     box-shadow: 0 0 0 1px var(--error-strong);
+  }
+
+  & .closeIcon:hover {
+    color: var(--faint-strong-up);
   }
 }

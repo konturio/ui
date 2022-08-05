@@ -1,5 +1,5 @@
-import React from 'react';
-import { ChevronDown16, ChevronUp16 } from '@konturio/default-icons';
+import React, { useCallback } from 'react';
+import { ChevronDown16, ChevronUp16, Close16 } from '@konturio/default-icons';
 import { ForwardRefComponent } from '../../../utils/component-helpers/polymorphic';
 import { SelectItemType } from '../../types';
 import cn from 'clsx';
@@ -24,6 +24,7 @@ export interface SelectButtonProps {
   disabled?: boolean;
   error?: boolean | string;
   type: 'classic' | 'inline';
+  reset: () => void;
 }
 
 export const SelectButton = React.forwardRef(
@@ -40,6 +41,7 @@ export const SelectButton = React.forwardRef(
       disabled,
       error,
       type,
+      reset,
       ...props
     },
     ref,
@@ -51,6 +53,16 @@ export const SelectButton = React.forwardRef(
       [style.inline]: type === 'inline',
       className,
     });
+
+    const onReset = useCallback(
+      (e: React.MouseEvent) => {
+        reset();
+        e.stopPropagation();
+      },
+      [reset],
+    );
+
+    const title = value?.title;
 
     return (
       <div className={dynamicClasses} {...props} ref={ref}>
@@ -66,8 +78,19 @@ export const SelectButton = React.forwardRef(
           {...toggleProps}
           className={cn(style.selectBox, classes?.selectBox)}
         >
-          <div className={cn(style.placeholder, classes?.placeholder)}>{value?.title || children}</div>
-          <div className={style.openToggle}>{open ? <ChevronUp16 /> : <ChevronDown16 />}</div>
+          <div className={cn(style.placeholder, !title && style.noValue, classes?.placeholder)}>
+            {title || children}
+          </div>
+
+          <div className={style.openToggle}>
+            {title ? (
+              <Close16 className={style.closeIcon} onClick={onReset} />
+            ) : open ? (
+              <ChevronUp16 />
+            ) : (
+              <ChevronDown16 />
+            )}
+          </div>
         </button>
         {error && typeof error === 'string' ? (
           <div className={cn(style.errorMessage, classes?.error)}>{error}</div>

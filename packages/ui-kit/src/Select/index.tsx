@@ -40,12 +40,20 @@ export const Select = forwardRef(
     },
     ref,
   ) => {
-    const { isOpen, selectedItem, getToggleButtonProps, getLabelProps, getMenuProps, highlightedIndex, getItemProps } =
-      useSelect({
-        items,
-        itemToString,
-        onSelectedItemChange,
-      });
+    const {
+      isOpen,
+      selectedItem,
+      reset,
+      getToggleButtonProps,
+      getLabelProps,
+      getMenuProps,
+      highlightedIndex,
+      getItemProps,
+    } = useSelect({
+      items,
+      itemToString,
+      onSelectedItemChange,
+    });
 
     return (
       <div
@@ -65,6 +73,7 @@ export const Select = forwardRef(
           open={isOpen}
           error={error}
           type={type}
+          reset={reset}
         >
           {children}
         </SelectButton>

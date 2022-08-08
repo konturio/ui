@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-alpha.49](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.0.0-alpha.48...@konturio/ui-kit@3.0.0-alpha.49) (2022-08-08)
+
+
+### Features
+
+* **select:** 10840 - add ability for select to reset value by cross icon, fix placeholder styles ([d3d0b87](https://github.com/konturio/ui/commit/d3d0b875af0c36843cedb76be5bfd35c7cab35a3))
+
+
+
+
+
 # [3.0.0-alpha.48](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.0.0-alpha.47...@konturio/ui-kit@3.0.0-alpha.48) (2022-08-04)
 
 

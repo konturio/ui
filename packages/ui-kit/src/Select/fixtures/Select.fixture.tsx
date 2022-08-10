@@ -99,4 +99,14 @@ export default {
       Select Example
     </Select>
   ),
+  MultiselectWithAggregate: (
+    <Select label="Multiselect With Aggregate" items={items} multiselect="aggregate">
+      Select Example
+    </Select>
+  ),
+  MultiselectWithChips: (
+    <Select label="Multiselect With Chips" items={items} multiselect="chips">
+      Select Example
+    </Select>
+  ),
 };

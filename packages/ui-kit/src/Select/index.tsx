@@ -7,7 +7,7 @@ import {
   UseSelectStateChange,
   UseSelectStateChangeOptions,
 } from 'downshift';
-import { SelectItemType } from './types';
+import { MULTISELECT_TYPE_CHIPS, MultiselectType, SelectItemType } from './types';
 import { ForwardRefComponent } from '../utils/component-helpers/polymorphic';
 import { SelectItem } from './components/SelectItem';
 import cn from 'clsx';
@@ -45,7 +45,7 @@ export interface SelectProps {
   defaultValue?: SelectItemType['value'] | SelectItemType['value'][];
   showSelectedIcon?: boolean;
   showEntryIcon?: boolean;
-  multiselect?: boolean;
+  multiselect?: MultiselectType;
   withResetButton?: boolean;
   itemToString?: (item: SelectItemType | SelectItemType[] | null) => string;
   label?: string | React.ReactChild | React.ReactChild[];
@@ -98,9 +98,19 @@ export const Select = forwardRef(
         : [],
     );
 
-    const resetMultiselect = useCallback(() => {
-      setSelectedItems([]);
-    }, [setSelectedItems]);
+    const resetMultiselect = useCallback(
+      (val?: SelectItemType['value']) => {
+        if (val !== undefined) {
+          const index = selectedItems.findIndex((itm) => itm.value === val);
+          if (index >= 0) {
+            setSelectedItems([...selectedItems.slice(0, index), ...selectedItems.slice(index + 1)]);
+          }
+        } else {
+          setSelectedItems([]);
+        }
+      },
+      [setSelectedItems, selectedItems],
+    );
 
     const onSelectChange = useCallback(
       (changes: UseSelectStateChange<SelectItemType>) => {
@@ -158,6 +168,18 @@ export const Select = forwardRef(
       getItemProps,
     } = useSelect(useSelectProps);
 
+    let selectButtonItems: undefined | string | { title: string; value: SelectItemType['value'] }[];
+    if (multiselect === MULTISELECT_TYPE_CHIPS && selectedItems.length) {
+      selectButtonItems = selectedItems.map((slItm) => ({
+        title: itemToString(slItm),
+        value: slItm.value,
+      }));
+    } else if (multiselect) {
+      selectButtonItems = itemToString(selectedItems);
+    } else if (selectedItem) {
+      selectButtonItems = itemToString(selectedItem);
+    }
+
     return (
       <div
         ref={ref}
@@ -169,7 +191,7 @@ export const Select = forwardRef(
         {...props}
       >
         <SelectButton
-          title={multiselect ? itemToString(selectedItems) : selectedItem ? itemToString(selectedItem) : undefined}
+          item={selectButtonItems}
           labelProps={getLabelProps()}
           toggleProps={getToggleButtonProps()}
           label={label}
@@ -178,6 +200,7 @@ export const Select = forwardRef(
           error={error}
           type={type}
           reset={multiselect ? resetMultiselect : reset}
+          multiselect={multiselect}
           withResetButton={withResetButton}
         >
           {children}

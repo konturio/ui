@@ -1,0 +1,21 @@
+.root {
+	border-radius: 4px;
+	background: var(--faint-weak);
+	padding: 2px var(--unit);
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+
+	& .btnContainer {
+		margin-left: var(--half-unit);
+
+		& .resetBtn {
+			color: var(--faint-strong-down);
+			margin-bottom: -3px;
+
+			&:hover {
+				color: var(--faint-strong-up);
+			}
+		}
+	}
+}

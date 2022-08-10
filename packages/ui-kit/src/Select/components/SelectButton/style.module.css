@@ -63,11 +63,17 @@
   & .placeholder {
     color: var(--base-strong);
     background: transparent;
-    pointer-events: none;
     font-size: 14px;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+
+    &.nonInteractable {
+      pointer-events: none;
+    }
 
     &.noValue {
       color: var(--text-faint-strong);

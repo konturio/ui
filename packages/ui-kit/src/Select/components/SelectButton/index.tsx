@@ -1,9 +1,10 @@
-import React, { useCallback } from 'react';
+import React, { ReactNode, useCallback } from 'react';
 import { ChevronDown16, ChevronUp16, Close16 } from '@konturio/default-icons';
 import { ForwardRefComponent } from '../../../utils/component-helpers/polymorphic';
-import { SelectItemType } from '../../types';
 import cn from 'clsx';
 import style from './style.module.css';
+import { MULTISELECT_TYPE_AGGREGATE, MULTISELECT_TYPE_CHIPS, MultiselectType, SelectItemType } from '../../types';
+import { MultiselectChip } from '../MultiselectChip';
 
 export interface SelectButtonClasses {
   label?: string;
@@ -18,20 +19,22 @@ export interface SelectButtonProps {
   placeholder?: string;
   toggleProps: Record<string, unknown>;
   labelProps: Record<string, unknown>;
+  withResetButton?: boolean;
+  multiselect?: MultiselectType;
   open?: boolean;
-  value: SelectItemType | null;
+  item?: string | { title: string; value: SelectItemType['value'] }[];
   classes?: SelectButtonClasses;
   disabled?: boolean;
   error?: boolean | string;
   type: 'classic' | 'inline';
-  reset: () => void;
+  reset: (val?: SelectItemType['value']) => void;
 }
 
 export const SelectButton = React.forwardRef(
   (
     {
       children = 'Select',
-      value,
+      item,
       open = false,
       label,
       className,
@@ -41,7 +44,9 @@ export const SelectButton = React.forwardRef(
       disabled,
       error,
       type,
+      withResetButton = true,
       reset,
+      multiselect,
       ...props
     },
     ref,
@@ -62,7 +67,22 @@ export const SelectButton = React.forwardRef(
       [reset],
     );
 
-    const title = value?.title;
+    let placeholderContent: ReactNode;
+    if (item) {
+      if (multiselect === MULTISELECT_TYPE_AGGREGATE && item) {
+        placeholderContent = <MultiselectChip onBtnClick={reset}>{item}</MultiselectChip>;
+      } else if (multiselect === MULTISELECT_TYPE_CHIPS && Array.isArray(item)) {
+        placeholderContent = item.map((itm, index) => (
+          <MultiselectChip key={`${itm.value}_${index}`} value={itm.value} onBtnClick={reset}>
+            {itm.title}
+          </MultiselectChip>
+        ));
+      } else {
+        placeholderContent = item;
+      }
+    } else {
+      placeholderContent = children;
+    }
 
     return (
       <div className={dynamicClasses} {...props} ref={ref}>
@@ -78,18 +98,26 @@ export const SelectButton = React.forwardRef(
           {...toggleProps}
           className={cn(style.selectBox, classes?.selectBox)}
         >
-          <div className={cn(style.placeholder, !title && style.noValue, classes?.placeholder)}>
-            {title || children}
+          <div
+            className={cn({
+              [style.placeholder]: true,
+              [style.nonInteractable]:
+                multiselect !== MULTISELECT_TYPE_AGGREGATE && multiselect !== MULTISELECT_TYPE_CHIPS,
+              [style.noValue]: !item,
+              [classes?.placeholder || '']: classes?.placeholder,
+            })}
+          >
+            {placeholderContent}
           </div>
 
-          <div className={style.openToggle}>
-            {title ? (
-              <Close16 className={style.closeIcon} onClick={onReset} />
-            ) : open ? (
-              <ChevronUp16 />
-            ) : (
-              <ChevronDown16 />
-            )}
+          <div className={style.buttonsContainer}>
+            {withResetButton &&
+            item &&
+            multiselect !== MULTISELECT_TYPE_AGGREGATE &&
+            multiselect !== MULTISELECT_TYPE_CHIPS ? (
+              <Close16 className={style.resetIcon} onClick={onReset} />
+            ) : null}
+            {open ? <ChevronUp16 /> : <ChevronDown16 />}
           </div>
         </button>
         {error && typeof error === 'string' ? (

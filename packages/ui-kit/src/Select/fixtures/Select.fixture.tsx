@@ -12,8 +12,11 @@ const items: SelectItemType[] = [
   { title: 'Computational Questions', value: 7 },
 ];
 
-function itemToString(item) {
-  return item ? item.title : '';
+function customItemToString(item: SelectItemType | SelectItemType[] | null): string {
+  if (Array.isArray(item)) {
+    return item.length ? item.map((itm) => `${itm.value}_${itm.title}`).join(', ') : '';
+  }
+  return item ? `${item.value}_${item.title}` : '';
 }
 
 export default {
@@ -24,29 +27,75 @@ export default {
 
     return (
       <Select
+        value={state?.value}
         onChange={(e) => {
           setState(e.selectedItem);
         }}
-        label="Select Base"
+        label="Interactive Select"
         items={items}
-        itemToString={itemToString}
       >
         Select Example
       </Select>
     );
   },
+  InteractiveWithDefaultValue: () => {
+    const [state, setState] = useValue('selected', { defaultValue: {} } as {
+      defaultValue: SelectItemType | SelectItemType[] | null | undefined;
+    });
+
+    return (
+      <Select
+        value={Array.isArray(state) ? state[0].value : state?.value}
+        defaultValue={items[2].value}
+        onSelect={setState}
+        label="Interactive Select With Default Value"
+        items={items}
+        itemToString={customItemToString}
+      >
+        Select Example
+      </Select>
+    );
+  },
+  InteractiveWithInitialValue: () => {
+    const [state, setState] = useValue('selected', { defaultValue: items[3] } as {
+      defaultValue: SelectItemType | null | undefined;
+    });
+
+    return (
+      <Select
+        value={state?.value}
+        onChange={(e) => {
+          setState(e.selectedItem);
+        }}
+        label="Interactive Select With Initial Value"
+        items={items}
+      >
+        Select Example
+      </Select>
+    );
+  },
+  WithEntryIcons: (
+    <Select label="Select With Entry Icons" items={items} showEntryIcon>
+      Select Example
+    </Select>
+  ),
   Disabled: (
-    <Select label="Select Disabled" items={items} itemToString={itemToString} disabled>
+    <Select label="Disabled Select" items={items} disabled>
       Select Example
     </Select>
   ),
   WithError: (
-    <Select label="Select With Error" items={items} itemToString={itemToString} error="Error messaqge">
+    <Select label="Select With Error" items={items} error="Error message" showSelectedIcon={false}>
       Select Example
     </Select>
   ),
   Inline: (
-    <Select label="Inline Select" items={items} type="inline" itemToString={itemToString}>
+    <Select label="Inline Select" items={items} type="inline">
+      Select Example
+    </Select>
+  ),
+  Multiselect: (
+    <Select style={{ width: 250 }} label="Multiselect" items={items} multiselect>
       Select Example
     </Select>
   ),

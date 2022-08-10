@@ -1,6 +1,6 @@
 .root {
-  display: flex;
   min-width: 160px;
+  display: flex;
 
   &:not(.inline) {
     flex-direction: column;
@@ -12,6 +12,10 @@
     & .selectBox {
       box-shadow: 0 0 0 1px var(--faint-strong-down);
       padding: var(--unit);
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
     }
   }
 
@@ -40,15 +44,20 @@
     align-items: center;
   }
 
-  & .openToggle {
-    position: absolute;
-    right: 0;
-    height: 100%;
+  & .buttonsContainer {
     display: flex;
     align-items: center;
     cursor: pointer;
     color: var(--faint-strong);
-    padding: 0 var(--unit);
+    margin-left: var(--unit);
+
+    & .resetIcon {
+      margin-right: 2px;
+
+      &:hover {
+        color: var(--faint-strong-up);
+      }
+    }
   }
 
   & .placeholder {
@@ -59,7 +68,6 @@
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    margin-right: 20px;
 
     &.noValue {
       color: var(--text-faint-strong);
@@ -106,9 +114,5 @@
 
   &.error .selectBox {
     box-shadow: 0 0 0 1px var(--error-strong);
-  }
-
-  & .closeIcon:hover {
-    color: var(--faint-strong-up);
   }
 }

@@ -1,7 +1,6 @@
 import React, { useCallback } from 'react';
 import { ChevronDown16, ChevronUp16, Close16 } from '@konturio/default-icons';
 import { ForwardRefComponent } from '../../../utils/component-helpers/polymorphic';
-import { SelectItemType } from '../../types';
 import cn from 'clsx';
 import style from './style.module.css';
 
@@ -18,8 +17,9 @@ export interface SelectButtonProps {
   placeholder?: string;
   toggleProps: Record<string, unknown>;
   labelProps: Record<string, unknown>;
+  withResetButton?: boolean;
   open?: boolean;
-  value: SelectItemType | null;
+  title?: string;
   classes?: SelectButtonClasses;
   disabled?: boolean;
   error?: boolean | string;
@@ -31,7 +31,7 @@ export const SelectButton = React.forwardRef(
   (
     {
       children = 'Select',
-      value,
+      title,
       open = false,
       label,
       className,
@@ -41,6 +41,7 @@ export const SelectButton = React.forwardRef(
       disabled,
       error,
       type,
+      withResetButton = true,
       reset,
       ...props
     },
@@ -62,8 +63,6 @@ export const SelectButton = React.forwardRef(
       [reset],
     );
 
-    const title = value?.title;
-
     return (
       <div className={dynamicClasses} {...props} ref={ref}>
         {label && (
@@ -82,14 +81,9 @@ export const SelectButton = React.forwardRef(
             {title || children}
           </div>
 
-          <div className={style.openToggle}>
-            {title ? (
-              <Close16 className={style.closeIcon} onClick={onReset} />
-            ) : open ? (
-              <ChevronUp16 />
-            ) : (
-              <ChevronDown16 />
-            )}
+          <div className={style.buttonsContainer}>
+            {withResetButton && title ? <Close16 className={style.resetIcon} onClick={onReset} /> : null}
+            {open ? <ChevronUp16 /> : <ChevronDown16 />}
           </div>
         </button>
         {error && typeof error === 'string' ? (

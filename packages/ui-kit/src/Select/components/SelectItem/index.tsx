@@ -17,7 +17,10 @@ export interface SelectItemProps {
 }
 
 export const SelectItem = forwardRef(
-  ({ className, highlighted, selected, item, title, itemProps, showSelectedIcon = true, showEntryIcon = false }, ref) => {
+  (
+    { className, highlighted, selected, item, title, itemProps, showSelectedIcon = true, showEntryIcon = false },
+    ref,
+  ) => {
     const dynamicClasses = cn({
       [style.selectItem]: true,
       [style.highlighted]: !item.disabled && highlighted,

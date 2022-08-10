@@ -1,12 +1,13 @@
 {
-  "extends": "stylelint-config-standard",
+  "extends": "stylelint-config-recommended",
   "rules": {
-    "css-modules/composed-class-names": false,
-    "css-modules/css-variables": [true, {
-      "resolve": {
-        "extensions": [".css"]
+    "at-rule-no-unknown": [true, { "ignoreAtRules": ["import-normalise"] }],
+    "selector-nested-pattern": "^&",
+    "selector-pseudo-class-no-unknown": [
+      true,
+      {
+        "ignorePseudoClasses": ["global"]
       }
-    }],
-    "at-rule-no-unknown": null
+    ]
   }
 }

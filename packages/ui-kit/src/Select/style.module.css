@@ -1,5 +1,7 @@
 .select {
 	position: relative;
+	font-family: var(--font-family);
+	font-weight: 400;
 
 	& .menu {
 		position: absolute;

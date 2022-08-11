@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-alpha.51](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.0.0-alpha.50...@konturio/ui-kit@3.0.0-alpha.51) (2022-08-11)
+
+
+### Bug Fixes
+
+* **ui-kit:** fixes for multiselect component ([#19](https://github.com/konturio/ui/issues/19)) ([a3547de](https://github.com/konturio/ui/commit/a3547dec75fe7e7b59a0e09c632937f0269ff562))
+
+
+
+
+
 # [3.0.0-alpha.50](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.0.0-alpha.49...@konturio/ui-kit@3.0.0-alpha.50) (2022-08-11)
 
 **Note:** Version bump only for package @konturio/ui-kit

@@ -88,7 +88,7 @@ export const Select = forwardRef(
   ) => {
     const initialSelectedItem = !multiselect && value && items ? items.find((itm) => itm.value === value) : undefined;
     const defaultSelectedItem =
-      !multiselect && defaultValue && items ? items.find((itm) => itm.value === defaultValue) : undefined;
+      !multiselect && defaultValue && items ? items.find((itm) => itm.value === defaultValue) : null;
 
     const [selectedItems, setSelectedItems] = useState<SelectItemType[]>(
       value
@@ -103,10 +103,38 @@ export const Select = forwardRef(
         if (val !== undefined) {
           const index = selectedItems.findIndex((itm) => itm.value === val);
           if (index >= 0) {
-            setSelectedItems([...selectedItems.slice(0, index), ...selectedItems.slice(index + 1)]);
+            const newSelectedItems = [...selectedItems.slice(0, index), ...selectedItems.slice(index + 1)];
+            setSelectedItems(newSelectedItems);
+            if (onChange && typeof onChange === 'function') {
+              const highlightedIndex = items.findIndex((itm) => itm.value === val);
+              const selectedItem = items.find((itm) => itm.value === val);
+
+              onChange({
+                highlightedIndex,
+                inputValue: '',
+                isOpen: true,
+                selectedItem,
+                type: '__item_click__' as any,
+              });
+            }
+            if (onSelect && typeof onSelect === 'function') {
+              onSelect(newSelectedItems);
+            }
           }
         } else {
           setSelectedItems([]);
+          if (onChange && typeof onChange === 'function') {
+            onChange({
+              highlightedIndex: -1,
+              inputValue: '',
+              isOpen: false,
+              selectedItem: null,
+              type: '__function_reset__' as any,
+            });
+          }
+          if (onSelect && typeof onSelect === 'function') {
+            onSelect([]);
+          }
         }
       },
       [setSelectedItems, selectedItems],

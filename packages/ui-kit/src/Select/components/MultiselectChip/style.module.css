@@ -5,13 +5,17 @@
 	display: flex;
 	flex-direction: row;
 	align-items: center;
+	font-family: var(--font-family);
+	font-size: 12px;
+	font-weight: 400;
 
 	& .btnContainer {
 		margin-left: var(--half-unit);
 
 		& .resetBtn {
 			color: var(--faint-strong-down);
-			margin-bottom: -3px;
+			margin-bottom: -2px;
+			height: 0.9rem;
 
 			&:hover {
 				color: var(--faint-strong-up);

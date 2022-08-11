@@ -63,13 +63,15 @@
   & .placeholder {
     color: var(--base-strong);
     background: transparent;
-    font-size: 14px;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
     display: flex;
     flex-direction: row;
     gap: 4px;
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 14px;
 
     &.nonInteractable {
       pointer-events: none;

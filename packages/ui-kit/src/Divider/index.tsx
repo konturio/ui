@@ -28,8 +28,7 @@ export function Divider({
   type,
   ...props
 }: PropsWithChildren<DividerProps>) {
-  const dynamicClasses = cn({
-    className,
+  const dynamicClasses = cn(className, {
     [styles.divider]: true,
     [styles.clearing]: clearing,
     [styles.fitted]: fitted,

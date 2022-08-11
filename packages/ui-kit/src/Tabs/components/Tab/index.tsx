@@ -1,26 +1,27 @@
-import {ForwardRefComponent} from "../../../utils/component-helpers/polymorphic";
-import {composeEventHandlers} from "../../../utils/helpers/events";
-import {makeId} from "../../../utils/helpers/helpers";
-import {useStatefulRefValue} from "../../../utils/hooks/useStatefulRefValue";
-import {forwardRef, useMemo, useRef} from "react";
-import {useComposedRefs} from "../../../utils/hooks/useComposedRefs";
-import {useDescendant} from "../../../utils/component-helpers/descendants";
+import { ForwardRefComponent } from '../../../utils/component-helpers/polymorphic';
+import { composeEventHandlers } from '../../../utils/helpers/events';
+import { makeId } from '../../../utils/helpers/helpers';
+import { useStatefulRefValue } from '../../../utils/hooks/useStatefulRefValue';
+import { forwardRef, ReactNode, useMemo, useRef } from 'react';
+import { useComposedRefs } from '../../../utils/hooks/useComposedRefs';
+import { useDescendant } from '../../../utils/component-helpers/descendants';
+import { TabsDescendantsContext, useTabsCtx } from '../../context';
+import { TABS_ORIENTATION_HORIZONTAL, TABS_ORIENTATION_VERTICAL } from '../../types';
+import cn from 'clsx';
+import style from './style.module.css';
 
 /**
  * Tab
  */
-const Tab = forwardRef(
+interface TabProps {
+  children?: ReactNode;
+  disabled?: boolean;
+  index?: number;
+}
+
+export const Tab = forwardRef(
   (
-    {
-      isSelected: _,
-      children,
-      as: Comp = 'button',
-      index: indexProp,
-      disabled,
-      onBlur,
-      onFocus,
-      ...props
-    },
+    { children, as: Comp = 'button', index: indexProp, disabled, onBlur, onFocus, className, ...props },
     forwardedRef,
   ) => {
     const { id: tabsId, onSelectTab, orientation, selectedIndex, setFocusedIndex } = useTabsCtx('Tab');
@@ -44,27 +45,25 @@ const Tab = forwardRef(
       onSelectTab(index);
     }
 
+    const dynamicClasses = cn({
+      [style.tab]: true,
+      [style.horizontal]: orientation === TABS_ORIENTATION_HORIZONTAL,
+      [style.vertical]: orientation === TABS_ORIENTATION_VERTICAL,
+      [style.selected]: isSelected,
+      [style.disabled]: disabled,
+      className,
+    });
+
     return (
       <Comp
-        // Each element with role `tab` has the property `aria-controls` referring
-        // to its associated `tabpanel` element.
-        // https://www.w3.org/TR/wai-aria-practices-1.2/#tabpanel
         aria-controls={makeId(tabsId, 'panel', index)}
         aria-disabled={disabled}
-        // The active tab element has the state `aria-selected` set to `true` and
-        // all other tab elements have it set to `false`.
-        // https://www.w3.org/TR/wai-aria-practices-1.2/#tabpanel
         aria-selected={isSelected}
-        // Each element that serves as a tab has role `tab` and is contained
-        // within the element with role `tablist`.
-        // https://www.w3.org/TR/wai-aria-practices-1.2/#tabpanel
+        className={dynamicClasses}
         role="tab"
         tabIndex={isSelected ? 0 : -1}
         {...props}
         ref={ref}
-        data-reach-tab=""
-        data-orientation={orientation}
-        data-selected={isSelected ? '' : undefined}
         disabled={disabled}
         id={makeId(tabsId, 'tab', index)}
         onClick={onSelect}
@@ -81,25 +80,5 @@ const Tab = forwardRef(
     );
   },
 ) as ForwardRefComponent<'button', TabProps>;
-
-/**
- * @see Docs https://reach.tech/tabs#tab-props
- */
-interface TabProps {
-  /**
-   * `Tab` can receive any type of children.
-   *
-   * @see Docs https://reach.tech/tabs#tab-children
-   */
-  children?: React.ReactNode;
-  /**
-   * Disables a tab when true. Clicking will not work and keyboard navigation
-   * will skip over it.
-   *
-   * @see Docs https://reach.tech/tabs#tab-disabled
-   */
-  disabled?: boolean;
-  index?: number;
-}
 
 Tab.displayName = 'Tab';

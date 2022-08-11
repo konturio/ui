@@ -1,8 +1,17 @@
-import { forwardRef, ReactNode, useEffect, useLayoutEffect, useRef } from 'react';
+import { forwardRef, memo, ReactNode, useLayoutEffect, useRef } from 'react';
 import { useDescendantKeyDown, useDescendants } from '../../../utils/component-helpers/descendants';
 import { useComposedRefs } from '../../../utils/hooks/useComposedRefs';
 import { composeEventHandlers } from '../../../utils/helpers/events';
-import { TABS_KEYBOARD_ACTIVATION_MANUAL } from '../../types';
+import { TABS_KEYBOARD_ACTIVATION_MANUAL, TABS_ORIENTATION_HORIZONTAL, TABS_ORIENTATION_VERTICAL } from '../../types';
+import { TabsDescendantsContext, useTabsCtx } from '../../context';
+import { isBoolean } from '../../../utils/helpers/typecheck';
+import { ForwardRefComponent, MemoComponent } from '../../../utils/component-helpers/polymorphic';
+import cn from 'clsx';
+import style from './style.module.css';
+
+function boolOrBoolString(value: unknown): value is 'true' | true {
+  return value === 'true' ? true : isBoolean(value) ? value : false;
+}
 
 /**
  * TabList
@@ -11,7 +20,7 @@ interface TabListProps {
   children?: ReactNode;
 }
 
-const TabListImpl = forwardRef(({ children, as: Comp = 'div', onKeyDown, ...props }, forwardedRef) => {
+const TabListImpl = forwardRef(({ children, as: Comp = 'div', onKeyDown, className, ...props }, forwardedRef) => {
   const {
     focusedIndex,
     isControlled,
@@ -34,7 +43,6 @@ const TabListImpl = forwardRef(({ children, as: Comp = 'div', onKeyDown, ...prop
       rotate: true,
       callback: onSelectTabWithKeyboard,
       filter: (tab) => !tab.disabled,
-      rtl: isRTL.current,
     }),
   );
 
@@ -47,22 +55,22 @@ const TabListImpl = forwardRef(({ children, as: Comp = 'div', onKeyDown, ...prop
     }
   }, [tabs, isControlled, selectedIndex, setSelectedIndex]);
 
+  const dynamicClasses = cn({
+    [style.tabList]: true,
+    [style.horizontal]: orientation === TABS_ORIENTATION_HORIZONTAL,
+    [style.vertical]: orientation === TABS_ORIENTATION_VERTICAL,
+    className,
+  });
+
   return (
-    <Comp
-      role="tablist"
-      aria-orientation={orientation}
-      {...props}
-      data-reach-tab-list=""
-      ref={ref}
-      onKeyDown={handleKeyDown}
-    >
+    <Comp role="tablist" className={dynamicClasses} {...props} ref={ref} onKeyDown={handleKeyDown}>
       {children}
     </Comp>
   );
-}) as Polymorphic.ForwardRefComponent<'div', TabListProps>;
+}) as ForwardRefComponent<'div', TabListProps>;
 
 TabListImpl.displayName = 'TabList';
 
-export const TabList = memo(TabListImpl) as Polymorphic.MemoComponent<'div', TabListProps>;
+export const TabList = memo(TabListImpl) as MemoComponent<'div', TabListProps>;
 
 TabList.displayName = 'TabList';

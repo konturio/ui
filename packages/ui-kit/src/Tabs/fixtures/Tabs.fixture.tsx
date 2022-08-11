@@ -1,5 +1,5 @@
 import { useValue } from 'react-cosmos/fixture';
-import { Tab, Tabs } from '.';
+import { Tab, Tabs } from '../index';
 
 const Content = ({ children }) => (
   <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '3rem' }}>{children}</div>

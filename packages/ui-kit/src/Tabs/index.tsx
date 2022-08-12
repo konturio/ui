@@ -38,7 +38,7 @@ export const Tabs = forwardRef(
       children,
       defaultIndex,
       orientation = TABS_ORIENTATION_HORIZONTAL,
-      index: controlledIndex = undefined,
+      index: controlledIndex,
       keyboardActivation = TABS_KEYBOARD_ACTIVATION_AUTO,
       onChange,
       readOnly = false,
@@ -92,11 +92,10 @@ export const Tabs = forwardRef(
       [keyboardActivation, onChange, setSelectedIndex, tabs],
     );
 
-    const dynamicClasses = cn({
+    const dynamicClasses = cn(className, {
       [style.tabs]: true,
       [style.horizonal]: orientation === TABS_ORIENTATION_HORIZONTAL,
       [style.vertical]: orientation === TABS_ORIENTATION_VERTICAL,
-      className,
     });
 
     return (

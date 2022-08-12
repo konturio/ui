@@ -59,10 +59,10 @@ export const Tab = forwardRef(
         aria-controls={makeId(tabsId, 'panel', index)}
         aria-disabled={disabled}
         aria-selected={isSelected}
-        className={dynamicClasses}
         role="tab"
         tabIndex={isSelected ? 0 : -1}
         {...props}
+        className={dynamicClasses}
         ref={ref}
         disabled={disabled}
         id={makeId(tabsId, 'tab', index)}

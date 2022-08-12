@@ -1,66 +1,126 @@
-import { Children, isValidElement, ReactNode, useCallback, useMemo } from 'react';
+import { DescendantProvider, useDescendantsInit } from '../utils/component-helpers/descendants';
+import { forwardRef, ReactNode, useCallback, useRef, useState } from 'react';
+import { isFunction } from '../utils/helpers/typecheck';
+import { getOwnerDocument, noop } from '../utils/helpers/helpers';
+import { ForwardRefComponent } from '../utils/component-helpers/polymorphic';
+import {
+  TabDescendant,
+  TABS_KEYBOARD_ACTIVATION_AUTO,
+  TABS_ORIENTATION_HORIZONTAL,
+  TABS_ORIENTATION_VERTICAL,
+  TabsContextValue,
+  TabsKeyboardActivation,
+  TabsOrientation,
+} from './types';
+import { nanoid } from 'nanoid';
+import { useControlledState } from '../utils/hooks/useControlledState';
+import { TabsDescendantsContext, TabsProvider } from './context';
 import cn from 'clsx';
-import s from './style.module.css';
+import style from './style.module.css';
 
-export interface TabsProps {
-  children: JSX.Element[] | JSX.Element;
-  current: string;
-  onTabChange: (tabId: string) => void;
-  classes?: {
-    tabBtn?: string;
-    tabName?: string;
-    tabBody?: string;
-    tabContainer?: string;
-  };
+/**
+ * Tabs
+ */
+interface TabsProps {
+  children: ReactNode | ((props: TabsContextValue) => ReactNode);
+  index?: number;
+  keyboardActivation?: TabsKeyboardActivation;
+  readOnly?: boolean;
+  defaultIndex?: number;
+  orientation?: TabsOrientation;
+  onChange?: (index: number) => void;
 }
 
-export function Tabs({ children, current: currentTabId, onTabChange: setCurrentTabId, classes }: TabsProps) {
-  const tabSelectHandler = useCallback(
-    (e: React.ChangeEvent<HTMLInputElement>) => setCurrentTabId(e.target.value),
-    [setCurrentTabId],
-  );
+export const Tabs = forwardRef(
+  (
+    {
+      as: Comp = 'div',
+      children,
+      defaultIndex,
+      orientation = TABS_ORIENTATION_HORIZONTAL,
+      index: controlledIndex,
+      keyboardActivation = TABS_KEYBOARD_ACTIVATION_AUTO,
+      onChange,
+      readOnly = false,
+      className,
+      ...props
+    },
+    ref,
+  ) => {
+    const { current: isControlled } = useRef(controlledIndex !== undefined);
 
-  const tabs: any[] = useMemo(() => {
-    return Children.toArray(children).map((tabChildren) => ({
-      ...(isValidElement(tabChildren) ? tabChildren.props : {}),
-      element: tabChildren,
-    }));
-  }, [children]);
+    const id = props.id || `tabs_${nanoid(4)}`;
+    const selectedPanelRef = useRef<HTMLElement | null>(null);
 
-  const currentTab = useMemo(() => tabs.find((tab) => tab.id === currentTabId), [tabs, currentTabId]);
+    const [selectedIndex, setSelectedIndex] = useControlledState({
+      controlledValue: controlledIndex,
+      defaultValue: defaultIndex ?? 0,
+      calledFrom: 'Tabs',
+    });
 
-  return (
-    <div className={s.tabsContainer}>
-      {tabs.length > 1 && (
-        <div className={s.navigation}>
-          {tabs.map((c) => (
-            <div key={c.id} className={classes?.tabContainer}>
-              <input
-                type="radio"
-                value={c.id}
-                onChange={tabSelectHandler}
-                checked={c.id === currentTabId}
-                className={s.input}
-                id={c.id}
-              />
-              <label htmlFor={c.id} className={cn(s.tabBtn, classes?.tabBtn, { [s.current]: c.id === currentTabId })}>
-                <span className={cn(s.name, classes?.tabName)}>{c.name}</span>
-              </label>
-            </div>
-          ))}
-        </div>
-      )}
-      <div className={cn(s.body, classes?.tabBody)}>{currentTab ? currentTab.element : null}</div>
-    </div>
-  );
-}
+    const [focusedIndex, setFocusedIndex] = useState(-1);
 
-export interface TabProps {
-  children: ReactNode;
-  id: string;
-  name: string;
-}
+    const [tabs, setTabs] = useDescendantsInit<TabDescendant>();
 
-export function Tab({ children, id, name }: TabProps) {
-  return <div className={s.tab}>{children}</div>;
-}
+    const onFocusPanel = useCallback(() => {
+      if (selectedPanelRef.current && isFunction(selectedPanelRef.current.focus)) {
+        selectedPanelRef.current.focus();
+      }
+    }, []);
+
+    const onSelectTab = useCallback(
+      (index: number) => {
+        onChange && onChange(index);
+        setSelectedIndex(index);
+      },
+      [onChange, setSelectedIndex],
+    );
+
+    const onSelectTabWithKeyboard = useCallback(
+      (index: number) => {
+        const tabElement = tabs[index]?.element;
+        const doc = getOwnerDocument(tabElement);
+        if (keyboardActivation === TABS_KEYBOARD_ACTIVATION_AUTO) {
+          onChange && onChange(index);
+          setSelectedIndex(index);
+        }
+
+        if (tabElement && tabElement !== doc.activeElement && isFunction(tabElement.focus)) {
+          tabElement.focus();
+        }
+      },
+      [keyboardActivation, onChange, setSelectedIndex, tabs],
+    );
+
+    const dynamicClasses = cn(className, {
+      [style.tabs]: true,
+      [style.horizonal]: orientation === TABS_ORIENTATION_HORIZONTAL,
+      [style.vertical]: orientation === TABS_ORIENTATION_VERTICAL,
+    });
+
+    return (
+      <DescendantProvider context={TabsDescendantsContext} items={tabs} set={setTabs}>
+        <TabsProvider
+          focusedIndex={focusedIndex}
+          id={id}
+          isControlled={isControlled}
+          keyboardActivation={keyboardActivation}
+          onFocusPanel={onFocusPanel}
+          onSelectTab={readOnly ? noop : onSelectTab}
+          onSelectTabWithKeyboard={readOnly ? noop : onSelectTabWithKeyboard}
+          orientation={orientation}
+          selectedIndex={selectedIndex}
+          selectedPanelRef={selectedPanelRef}
+          setFocusedIndex={setFocusedIndex}
+          setSelectedIndex={setSelectedIndex}
+        >
+          <Comp {...props} ref={ref} id={props.id} className={dynamicClasses}>
+            {isFunction(children) ? children({ focusedIndex, id, selectedIndex }) : children}
+          </Comp>
+        </TabsProvider>
+      </DescendantProvider>
+    );
+  },
+) as ForwardRefComponent<'div', TabsProps>;
+
+Tabs.displayName = 'Tabs';

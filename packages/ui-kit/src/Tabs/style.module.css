@@ -1,44 +1,5 @@
-.navigation {
-  display: flex;
-  flex-flow: row wrap;
-  font-weight: 500;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-  border-bottom: 1px solid var(--faint-weak);
-}
-
-.tabBtn {
-  display: inline-flex;
-  padding: var(--unit);
-  cursor: pointer;
-  color: var(--back-faint-weak-up);
-
-  &.current {
-    color: var(--accent-strong);
-    .name {
-      position: relative;
-      &:after {
-        content: '';
-        position: absolute;
-        height: 1px;
-        width: 100%;
-        background-color: var(--accent-strong);
-        bottom: calc(-1 * var(--unit) - 1px);
-        left: 0;
-      }
-    }
-  }
-
-  &:hover {
-    color: var(--accent-strong);
-  }
-}
-
-.input {
-  position: absolute;
-  opacity: 0;
-
-  &:focus + .tabBtn {
-    box-shadow: 0 0 0 2px var(--complimentary-strong-down);
-  }
+.tabs {
+	&.vertical {
+		display: flex;
+	}
 }

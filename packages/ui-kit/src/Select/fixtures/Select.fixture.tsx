@@ -104,6 +104,11 @@ export default {
       Select Example
     </Select>
   ),
+  MultiselectWithOverflow: (
+    <Select style={{ width: 270 }} label="Multiselect With Overflow" items={items} multiselect="aggregate">
+      Select Example
+    </Select>
+  ),
   MultiselectWithChips: (
     <Select label="Multiselect With Chips" items={items} multiselect="chips">
       Select Example

@@ -8,11 +8,22 @@
 	font-family: var(--font-family);
 	font-size: 12px;
 	font-weight: 400;
+	position: relative;
+	max-width: calc(100% - 16px);
+
+	& .textContainer {
+		text-overflow: ellipsis;
+		overflow: hidden;
+		margin-right: 12px;
+	}
 
 	& .btnContainer {
 		margin-left: var(--half-unit);
+		position: absolute;
+		right: 4px;
 
 		& .resetBtn {
+			top: 6px;
 			color: var(--faint-strong-down);
 			margin-bottom: -2px;
 			height: 0.9rem;

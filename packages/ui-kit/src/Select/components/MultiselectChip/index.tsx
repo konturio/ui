@@ -23,9 +23,7 @@ export const MultiselectChip = forwardRef(({ children, value, onBtnClick, classN
 
   return (
     <span className={cn(style.root, className)} ref={ref} {...rest}>
-      <span className={style.textContainer}>
-      {children}
-      </span>
+      <span className={style.textContainer}>{children}</span>
       {onBtnClick && (
         <span className={style.btnContainer}>
           <Close16 className={style.resetBtn} onClick={onClick} />

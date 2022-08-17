@@ -1,0 +1,149 @@
+.autocompleteButton {
+  min-width: 160px;
+  display: flex;
+
+  & .input {
+    border: none;
+    background: transparent;
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--text-faint-strong);
+    outline: none;
+    width: 100%;
+
+    &:focus, &:active {
+      border: none;
+      outline: none;
+
+      &::placeholder {
+        color: var(--faint-weak-up);
+      }
+    }
+  }
+
+  &:not(.inline) {
+    flex-direction: column;
+
+    & .label {
+      padding-bottom: var(--unit);
+    }
+
+    & .selectBox {
+      box-shadow: 0 0 0 1px var(--faint-strong-down);
+      padding: var(--unit);
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  &.inline {
+    flex-direction: row;
+
+    & .label {
+      padding-right: var(--unit);
+    }
+
+    & .selectBox {
+      padding: 0 var(--unit);
+    }
+  }
+
+  & .label {
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  & .icons {
+    color: var(--faint-strong);
+    display: flex;
+    flex-flow: row nowrap;
+    align-content: center;
+    align-items: center;
+  }
+
+  & .buttonsContainer {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: var(--faint-strong);
+    margin-left: var(--unit);
+
+    & .resetIcon {
+      margin-right: 2px;
+
+      &:hover {
+        color: var(--faint-strong-up);
+      }
+    }
+  }
+
+  & .placeholder {
+    color: var(--base-strong);
+    background: transparent;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 14px;
+    pointer-events: none;
+    width: 100%;
+
+    &.noValue {
+      color: var(--text-faint-strong);
+    }
+
+    & .textContent {
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+  & .selectBox {
+    display: flex;
+    flex-flow: row nowrap;
+    border-radius: var(--border-radius);
+    border: none;
+    color: var(--base-strong);
+    position: relative;
+    background-color: var(--base-weak);
+    align-items: center;
+    cursor: pointer;
+    line-height: 20px;
+
+    &:hover {
+      box-shadow: 0 0 0 1px var(--faint-strong);
+      background-color: var(--base-weak-up);
+    }
+
+    &:active,
+    &:focus {
+      box-shadow: 0 0 0 2px var(--complimentary-strong-down);
+      background-color: var(--base-weak-up);
+    }
+  }
+
+  & .errorMessage {
+    font: var(--font-xs);
+    padding: var(--half-unit) 0;
+    font-weight: 400;
+    color: var(--error-strong);
+  }
+
+  &.disabled .selectBox {
+    pointer-events: none;
+    background: var(--faint-weak);
+    box-shadow: 0 0 0 1px var(--faint-weak-up);
+    color: var(--faint-weak-up);
+  }
+
+  &.error .selectBox {
+    box-shadow: 0 0 0 1px var(--error-strong);
+  }
+}

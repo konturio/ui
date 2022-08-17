@@ -5,7 +5,7 @@ import { AutocompleteItemType } from '../../types';
 import cn from 'clsx';
 import style from './style.module.css';
 
-export interface SelectItemProps {
+export interface AutocompleteItemProps {
   className?: string;
   itemProps: any;
   item: AutocompleteItemType;
@@ -48,6 +48,6 @@ export const AutocompleteItem = forwardRef(
       </li>
     );
   },
-) as ForwardRefComponent<'li', SelectItemProps>;
+) as ForwardRefComponent<'li', AutocompleteItemProps>;
 
 AutocompleteItem.displayName = 'AutocompleteItem';

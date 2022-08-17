@@ -1,4 +1,4 @@
-import React, { forwardRef, useCallback, useState } from 'react';
+import React, { forwardRef, useCallback, useMemo, useState } from 'react';
 import { SelectButton, SelectButtonClasses } from './components/SelectButton';
 import {
   useSelect,
@@ -39,6 +39,10 @@ function multiselectStateReducer(
   }
 }
 
+function searchItem(searchVal: string, item: SelectItemType): boolean {
+  return item.title.toLowerCase().startsWith(searchVal.toLowerCase());
+}
+
 export interface SelectProps {
   items: SelectItemType[];
   value?: SelectItemType['value'] | SelectItemType['value'][];
@@ -50,6 +54,7 @@ export interface SelectProps {
   itemToString?: (item: SelectItemType | SelectItemType[] | null) => string;
   label?: string | React.ReactChild | React.ReactChild[];
   disabled?: boolean;
+  searchable?: boolean;
   error?: string;
   type?: 'classic' | 'inline';
   classes?: {
@@ -72,6 +77,7 @@ export const Select = forwardRef(
       showEntryIcon = false,
       multiselect,
       withResetButton = true,
+      searchable = false,
       itemToString = defaultItemToString,
       label,
       placeholder,
@@ -140,6 +146,8 @@ export const Select = forwardRef(
       [setSelectedItems, selectedItems],
     );
 
+    const [searchInput, setSearchInput] = useState<string>('');
+
     const onSelectChange = useCallback(
       (changes: UseSelectStateChange<SelectItemType>) => {
         if (onChange && typeof onChange === 'function') {
@@ -167,8 +175,11 @@ export const Select = forwardRef(
             onSelect(changes.selectedItem);
           }
         }
+        if (searchable) {
+          setSearchInput(changes.selectedItem?.title || '');
+        }
       },
-      [onChange, onSelect, multiselect, selectedItems],
+      [onChange, onSelect, multiselect, selectedItems, searchable, setSearchInput],
     );
 
     const useSelectProps: UseSelectProps<SelectItemType> = {
@@ -188,6 +199,7 @@ export const Select = forwardRef(
     const {
       isOpen,
       selectedItem,
+      openMenu,
       reset,
       getToggleButtonProps,
       getLabelProps,
@@ -196,17 +208,46 @@ export const Select = forwardRef(
       getItemProps,
     } = useSelect(useSelectProps);
 
-    let selectButtonItems: undefined | string | { title: string; value: SelectItemType['value'] }[];
-    if (multiselect === MULTISELECT_TYPE_CHIPS && selectedItems.length) {
-      selectButtonItems = selectedItems.map((slItm) => ({
-        title: itemToString(slItm),
-        value: slItm.value,
-      }));
-    } else if (multiselect) {
-      selectButtonItems = itemToString(selectedItems);
-    } else if (selectedItem) {
-      selectButtonItems = itemToString(selectedItem);
-    }
+    const hasFilteredItems =
+      !searchable || !searchInput ? true : items.findIndex((itm) => searchItem(searchInput, itm)) !== -1;
+
+    const onInputChange = useCallback(
+      (val: string) => {
+        setSearchInput(val);
+        if (!isOpen && hasFilteredItems) {
+          openMenu();
+        }
+      },
+      [setSearchInput, isOpen, openMenu, hasFilteredItems],
+    );
+
+    const selectButtonItems: undefined | string | { title: string; value: SelectItemType['value'] }[] = useMemo(() => {
+      if (multiselect === MULTISELECT_TYPE_CHIPS && selectedItems.length) {
+        return selectedItems.map((slItm) => ({
+          title: itemToString(slItm),
+          value: slItm.value,
+        }));
+      } else if (multiselect) {
+        return itemToString(selectedItems);
+      } else if (selectedItem) {
+        return itemToString(selectedItem);
+      }
+      return undefined;
+    }, [multiselect, selectedItem, selectedItems]);
+
+    const resetFunc = useCallback(
+      (val?: SelectItemType['value']) => {
+        if (searchable) {
+          setSearchInput('');
+        }
+        if (multiselect) {
+          resetMultiselect(val);
+        } else {
+          reset();
+        }
+      },
+      [searchable, setSearchInput, multiselect, resetMultiselect, reset],
+    );
 
     return (
       <div
@@ -227,27 +268,40 @@ export const Select = forwardRef(
           open={isOpen}
           error={error}
           type={type}
-          reset={multiselect ? resetMultiselect : reset}
+          reset={resetFunc}
           multiselect={multiselect}
+          searchable={searchable}
           withResetButton={withResetButton}
+          onInputChange={searchable ? onInputChange : undefined}
+          nonExpandable={!hasFilteredItems}
         >
           {children}
         </SelectButton>
-        <ul {...getMenuProps()} className={cn({ [style.menu]: true, [classes?.menu || '']: classes?.menu })}>
+
+        <ul
+          {...getMenuProps()}
+          className={cn({
+            [style.menu]: true,
+            [classes?.menu || '']: classes?.menu,
+            [style.hidden]: !hasFilteredItems,
+          })}
+        >
           {isOpen &&
-            items.map((item, index) => (
-              <SelectItem
-                key={`${item.value}${index}`}
-                item={item}
-                title={itemToString(item)}
-                itemProps={getItemProps({ item, index })}
-                className={classes?.menuItem}
-                highlighted={highlightedIndex === index}
-                selected={multiselect ? selectedItems.includes(item) : selectedItem === item}
-                showSelectedIcon={showSelectedIcon}
-                showEntryIcon={showEntryIcon}
-              />
-            ))}
+            items.map((item, index) => {
+              return !searchInput || searchItem(searchInput, item) ? (
+                <SelectItem
+                  key={`${item.value}${index}`}
+                  item={item}
+                  title={itemToString(item)}
+                  itemProps={getItemProps({ item, index })}
+                  className={classes?.menuItem}
+                  highlighted={highlightedIndex === index}
+                  selected={multiselect ? selectedItems.includes(item) : selectedItem === item}
+                  showSelectedIcon={showSelectedIcon}
+                  showEntryIcon={showEntryIcon}
+                />
+              ) : null;
+            })}
         </ul>
       </div>
     );

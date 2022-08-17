@@ -1,10 +1,11 @@
-import React, { ReactNode, useCallback } from 'react';
+import React, {ReactNode, useCallback, useEffect} from 'react';
 import { ChevronDown16, ChevronUp16, Close16 } from '@konturio/default-icons';
 import { ForwardRefComponent } from '../../../utils/component-helpers/polymorphic';
 import cn from 'clsx';
 import style from './style.module.css';
 import { MULTISELECT_TYPE_AGGREGATE, MULTISELECT_TYPE_CHIPS, MultiselectType, SelectItemType } from '../../types';
 import { MultiselectChip } from '../MultiselectChip';
+import { MultiselectSearchInput } from '../MultiselectSearchInput';
 
 export interface SelectButtonClasses {
   label?: string;
@@ -21,6 +22,7 @@ export interface SelectButtonProps {
   labelProps: Record<string, unknown>;
   withResetButton?: boolean;
   multiselect?: MultiselectType;
+  searchable?: boolean;
   open?: boolean;
   item?: string | { title: string; value: SelectItemType['value'] }[];
   classes?: SelectButtonClasses;
@@ -28,6 +30,8 @@ export interface SelectButtonProps {
   error?: boolean | string;
   type: 'classic' | 'inline';
   reset: (val?: SelectItemType['value']) => void;
+  onInputChange?: (val: string) => void;
+  nonExpandable?: boolean;
 }
 
 export const SelectButton = React.forwardRef(
@@ -42,11 +46,14 @@ export const SelectButton = React.forwardRef(
       toggleProps,
       labelProps,
       disabled,
+      searchable = false,
       error,
       type,
       withResetButton = true,
       reset,
       multiselect,
+      onInputChange,
+      nonExpandable = false,
       ...props
     },
     ref,
@@ -77,11 +84,15 @@ export const SelectButton = React.forwardRef(
             {itm.title}
           </MultiselectChip>
         ));
+      } else if (searchable) {
+        placeholderContent = <MultiselectSearchInput onChange={onInputChange}>{item as string}</MultiselectSearchInput>;
       } else {
-        placeholderContent = item;
+        placeholderContent = <span className={style.textContent}>{item}</span>;
       }
+    } else if (searchable) {
+      placeholderContent = <MultiselectSearchInput onChange={onInputChange} placeholder={children as string} />;
     } else {
-      placeholderContent = children;
+      placeholderContent = <span className={style.textContent}>{children}</span>;
     }
 
     return (
@@ -102,7 +113,7 @@ export const SelectButton = React.forwardRef(
             className={cn({
               [style.placeholder]: true,
               [style.nonInteractable]:
-                multiselect !== MULTISELECT_TYPE_AGGREGATE && multiselect !== MULTISELECT_TYPE_CHIPS,
+                multiselect !== MULTISELECT_TYPE_AGGREGATE && multiselect !== MULTISELECT_TYPE_CHIPS && !searchable,
               [style.noValue]: !item,
               [classes?.placeholder || '']: classes?.placeholder,
             })}
@@ -117,7 +128,7 @@ export const SelectButton = React.forwardRef(
             multiselect !== MULTISELECT_TYPE_CHIPS ? (
               <Close16 className={style.resetIcon} onClick={onReset} />
             ) : null}
-            {open ? <ChevronUp16 /> : <ChevronDown16 />}
+            {!nonExpandable ? open ? <ChevronUp16 /> : <ChevronDown16 /> : null}
           </div>
         </button>
         {error && typeof error === 'string' ? (

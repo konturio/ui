@@ -38,6 +38,26 @@ export default {
       </Select>
     );
   },
+  Searchable: () => {
+    const [state, setState] = useValue('selected', { defaultValue: {} } as {
+      defaultValue: SelectItemType | null | undefined;
+    });
+
+    return (
+      <Select
+        style={{ width: 280 }}
+        value={state?.value}
+        onChange={(e) => {
+          setState(e.selectedItem);
+        }}
+        label="Searchable Select"
+        items={items}
+        searchable
+      >
+        Searchable Select
+      </Select>
+    );
+  },
   InteractiveWithDefaultValue: () => {
     const [state, setState] = useValue('selected', { defaultValue: {} } as {
       defaultValue: SelectItemType | SelectItemType[] | null | undefined;

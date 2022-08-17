@@ -1,0 +1,19 @@
+.root {
+	border: none;
+	background: transparent;
+	font-family: var(--font-family);
+	font-weight: 400;
+	font-size: 14px;
+	color: var(--text-faint-strong);
+	outline: none;
+	width: 100%;
+
+	&:focus, &:active {
+		border: none;
+		outline: none;
+
+		&::placeholder {
+			color: var(--faint-weak-up);
+		}
+	}
+}

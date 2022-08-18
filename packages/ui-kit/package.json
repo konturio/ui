@@ -28,5 +28,6 @@
     "nanoid": "^4.0.0",
     "react-is": "^18.2.0",
     "tabbable": "^5.3.3"
-  }
+  },
+  "gitHead": "1fc6db3e611190c04e80e5fcb794ee5a8aacf427"
 }

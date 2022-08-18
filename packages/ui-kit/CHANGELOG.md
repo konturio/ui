@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-alpha.54](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.0.0-alpha.53...@konturio/ui-kit@3.0.0-alpha.54) (2022-08-18)
+
+
+### Bug Fixes
+
+* **ui-kit:** small fixes for tab components ([#23](https://github.com/konturio/ui/issues/23)) ([740c441](https://github.com/konturio/ui/commit/740c441c7579dd558a998d88df70084ee17a8457))
+
+
+
+
+
 # [3.0.0-alpha.53](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.0.0-alpha.52...@konturio/ui-kit@3.0.0-alpha.53) (2022-08-18)
 
 **Note:** Version bump only for package @konturio/ui-kit

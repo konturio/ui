@@ -56,8 +56,7 @@ export const AutocompleteButton = forwardRef(
       [style.disabled]: disabled,
       [style.error]: error,
       [style.inline]: type === 'inline',
-      className,
-    });
+    }, className);
 
     const onReset = useCallback(
       (e: React.MouseEvent) => {

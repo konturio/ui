@@ -81,8 +81,7 @@ export const AutocompleteButton = forwardRef(
           className={cn(style.selectBox, classes?.selectBox)}
         >
           <div
-            className={cn({
-              [style.placeholder]: true,
+            className={cn(style.placeholder, {
               [classes?.placeholder || '']: classes?.placeholder,
             })}
           >

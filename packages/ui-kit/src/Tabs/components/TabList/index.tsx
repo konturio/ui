@@ -55,8 +55,7 @@ const TabListImpl = forwardRef(({ children, as: Comp = 'div', onKeyDown, classNa
     }
   }, [tabs, isControlled, selectedIndex, setSelectedIndex]);
 
-  const dynamicClasses = cn(className, {
-    [style.tabList]: true,
+  const dynamicClasses = cn(className, style.tabList, {
     [style.horizontal]: orientation === TABS_ORIENTATION_HORIZONTAL,
     [style.vertical]: orientation === TABS_ORIENTATION_VERTICAL,
   });

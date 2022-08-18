@@ -45,13 +45,11 @@ export const Tab = forwardRef(
       onSelectTab(index);
     }
 
-    const dynamicClasses = cn({
-      [style.tab]: true,
+    const dynamicClasses = cn(className, style.tab, {
       [style.horizontal]: orientation === TABS_ORIENTATION_HORIZONTAL,
       [style.vertical]: orientation === TABS_ORIENTATION_VERTICAL,
       [style.selected]: isSelected,
       [style.disabled]: disabled,
-      className,
     });
 
     return (

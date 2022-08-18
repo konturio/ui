@@ -3,7 +3,6 @@ import { TabPanel, TabPanels } from '../components/TabPanel';
 import { Tab } from '../components/Tab';
 import { Tabs } from '../index';
 import { useValue } from 'react-cosmos/fixture';
-import { SelectItemType } from '../../Select/types';
 
 export default {
   Classic: (

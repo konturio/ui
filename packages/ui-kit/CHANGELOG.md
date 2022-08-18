@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-alpha.52](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.0.0-alpha.51...@konturio/ui-kit@3.0.0-alpha.52) (2022-08-18)
+
+
+### Bug Fixes
+
+* **ui-kit:** fix text-overflow behavior for select ([#21](https://github.com/konturio/ui/issues/21)) ([0750c45](https://github.com/konturio/ui/commit/0750c45a4d9a2cb79cc749cb54cc0278bfe71b42))
+
+
+
+
+
 # [3.0.0-alpha.51](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.0.0-alpha.50...@konturio/ui-kit@3.0.0-alpha.51) (2022-08-11)
 
 

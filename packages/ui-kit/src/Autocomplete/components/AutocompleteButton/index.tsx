@@ -51,12 +51,15 @@ export const AutocompleteButton = forwardRef(
     },
     ref,
   ) => {
-    const dynamicClasses = cn({
-      [style.autocompleteButton]: true,
-      [style.disabled]: disabled,
-      [style.error]: error,
-      [style.inline]: type === 'inline',
-    }, className);
+    const dynamicClasses = cn(
+      {
+        [style.autocompleteButton]: true,
+        [style.disabled]: disabled,
+        [style.error]: error,
+        [style.inline]: type === 'inline',
+      },
+      className,
+    );
 
     const onReset = useCallback(
       (e: React.MouseEvent) => {

@@ -78,10 +78,10 @@ export const SelectButton = React.forwardRef(
           </MultiselectChip>
         ));
       } else {
-        placeholderContent = item;
+        placeholderContent = <span className={style.textContent}>{item}</span>;
       }
     } else {
-      placeholderContent = children;
+      placeholderContent = <span className={style.textContent}>{children}</span>;
     }
 
     return (

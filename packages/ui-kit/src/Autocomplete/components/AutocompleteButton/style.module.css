@@ -1,6 +1,26 @@
-.root {
+.autocompleteButton {
   min-width: 160px;
   display: flex;
+
+  & .input {
+    border: none;
+    background: transparent;
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--text-faint-strong);
+    outline: none;
+    width: 100%;
+
+    &:focus, &:active {
+      border: none;
+      outline: none;
+
+      &::placeholder {
+        color: var(--faint-weak-up);
+      }
+    }
+  }
 
   &:not(.inline) {
     flex-direction: column;
@@ -72,11 +92,8 @@
     font-family: var(--font-family);
     font-weight: 400;
     font-size: 14px;
+    pointer-events: none;
     width: 100%;
-
-    &.nonInteractable {
-      pointer-events: none;
-    }
 
     &.noValue {
       color: var(--text-faint-strong);

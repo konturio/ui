@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-alpha.55](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.0.0-alpha.54...@konturio/ui-kit@3.0.0-alpha.55) (2022-08-23)
+
+
+### Bug Fixes
+
+* **ui-kit:** add default export to for tabs component ([83ae1a5](https://github.com/konturio/ui/commit/83ae1a595a2bbbcb9d06e1e58a69ae335bc891b0))
+
+
+
+
+
 # [3.0.0-alpha.54](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.0.0-alpha.53...@konturio/ui-kit@3.0.0-alpha.54) (2022-08-18)
 
 

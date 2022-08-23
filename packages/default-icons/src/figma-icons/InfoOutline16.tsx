@@ -8,7 +8,7 @@ const InfoOutline16 = (props: SVGProps<SVGSVGElement>) => (
       strokeLinecap="round"
       strokeLinejoin="round"
     />
-    <path d="M8 11L8 7.37481" stroke="currentColor" strokeLinejoin="round" />
+    <path d="M8 11L8 7.37482" stroke="currentColor" strokeLinejoin="round" />
     <path d="M8 6V5" stroke="currentColor" strokeLinejoin="round" />
   </svg>
 );

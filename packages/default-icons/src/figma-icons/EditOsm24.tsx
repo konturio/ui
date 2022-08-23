@@ -19,7 +19,7 @@ const EditOsm24 = (props: SVGProps<SVGSVGElement>) => (
     </g>
     <defs>
       <clipPath id="clip0_720_946">
-        <path d="M0 0H24V24H0V0Z" fill="white" />
+        <rect width={24} height={24} fill="white" />
       </clipPath>
     </defs>
   </svg>

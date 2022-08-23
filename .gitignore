@@ -39,6 +39,9 @@ node_modules/
 .eslintcache
 tsconfig.tsbuildinfo
 
+# Local config files
+*.local
+
 #error logs
 yarn-error.log
 npm_error.log

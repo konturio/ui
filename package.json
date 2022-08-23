@@ -39,7 +39,8 @@
     "auto:lerna:build": "lerna run build",
     "auto:ts:build": "tsc --build",
     "auto:ts:references": "node setup-references.mjs",
-    "figma:export": "patch-package && figma-export use-config && prettier --write packages/default-icons/src/figma-icons/*"
+    "figma:export": "patch-package && figma-export use-config && prettier --write packages/default-icons/src/figma-icons/*",
+    "figma:export-env": "export FIGMA_TOKEN=$(grep '^FIGMA_TOKEN' .env.local | cut -d '=' -f2) && patch-package && figma-export use-config && prettier --write packages/default-icons/src/figma-icons/*"
   },
   "lint-staged": {
     "*/**/*.{css}": [

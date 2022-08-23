@@ -13,10 +13,7 @@ const Location24 = (props: SVGProps<SVGSVGElement>) => (
     </g>
     <defs>
       <clipPath id="clip0_105_20">
-        <path
-          d="M0 12C0 5.37258 5.37258 0 12 0C18.6274 0 24 5.37258 24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12Z"
-          fill="white"
-        />
+        <rect width={24} height={24} rx={12} fill="white" />
       </clipPath>
     </defs>
   </svg>

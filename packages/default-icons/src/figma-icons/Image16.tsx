@@ -8,9 +8,9 @@ const Image16 = (props: SVGProps<SVGSVGElement>) => (
       strokeLinecap="round"
       strokeLinejoin="round"
     />
-    <path d="M14 10L10.6667 6.66667L3.33334 14" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M14 10L10.6667 6.66666L3.33334 14" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" />
     <path
-      d="M5.66666 6.66667C6.21895 6.66667 6.66666 6.21895 6.66666 5.66667C6.66666 5.11438 6.21895 4.66667 5.66666 4.66667C5.11438 4.66667 4.66666 5.11438 4.66666 5.66667C4.66666 6.21895 5.11438 6.66667 5.66666 6.66667Z"
+      d="M5.66666 6.66666C6.21895 6.66666 6.66666 6.21895 6.66666 5.66666C6.66666 5.11438 6.21895 4.66666 5.66666 4.66666C5.11438 4.66666 4.66666 5.11438 4.66666 5.66666C4.66666 6.21895 5.11438 6.66666 5.66666 6.66666Z"
       stroke="currentColor"
       strokeLinecap="round"
       strokeLinejoin="round"

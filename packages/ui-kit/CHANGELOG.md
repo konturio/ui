@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-alpha.56](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.0.0-alpha.55...@konturio/ui-kit@3.0.0-alpha.56) (2022-08-24)
+
+
+### Bug Fixes
+
+* **ui-kit:** add ability to pass selected class to tab ([9a3950e](https://github.com/konturio/ui/commit/9a3950ea954cd20a184d50c13690658737dad2bc))
+* **ui-kit:** add ability to pass selected class to tab ([2e19391](https://github.com/konturio/ui/commit/2e19391d515b70fe0abaac1ccf6eda7ea1448a16))
+
+
+
+
+
 # [3.0.0-alpha.55](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.0.0-alpha.54...@konturio/ui-kit@3.0.0-alpha.55) (2022-08-23)
 
 

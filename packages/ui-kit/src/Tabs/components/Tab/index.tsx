@@ -17,11 +17,14 @@ interface TabProps {
   children?: ReactNode;
   disabled?: boolean;
   index?: number;
+  classes?: {
+    selected?: string;
+  }
 }
 
 export const Tab = forwardRef(
   (
-    { children, as: Comp = 'button', index: indexProp, disabled, onBlur, onFocus, className, ...props },
+    { children, as: Comp = 'button', index: indexProp, disabled, onBlur, onFocus, className, classes, ...props },
     forwardedRef,
   ) => {
     const { id: tabsId, onSelectTab, orientation, selectedIndex, setFocusedIndex } = useTabsCtx('Tab');
@@ -45,7 +48,7 @@ export const Tab = forwardRef(
       onSelectTab(index);
     }
 
-    const dynamicClasses = cn(className, style.tab, {
+    const dynamicClasses = cn(className, style.tab, isSelected && classes?.selected, {
       [style.horizontal]: orientation === TABS_ORIENTATION_HORIZONTAL,
       [style.vertical]: orientation === TABS_ORIENTATION_VERTICAL,
       [style.selected]: isSelected,

@@ -19,7 +19,7 @@ interface TabProps {
   index?: number;
   classes?: {
     selected?: string;
-  }
+  };
 }
 
 export const Tab = forwardRef(

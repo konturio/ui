@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-alpha.59](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.0.0-alpha.58...@konturio/ui-kit@3.0.0-alpha.59) (2022-08-25)
+
+
+### Bug Fixes
+
+* **ui-kit:** add noValue styling in Select component ([283a9e6](https://github.com/konturio/ui/commit/283a9e6077cd37b27f4c12a7126ae2fbeaf2df5a))
+
+
+
+
+
 # [3.0.0-alpha.58](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.0.0-alpha.57...@konturio/ui-kit@3.0.0-alpha.58) (2022-08-25)
 
 

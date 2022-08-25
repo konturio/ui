@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-alpha.58](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.0.0-alpha.57...@konturio/ui-kit@3.0.0-alpha.58) (2022-08-25)
+
+
+### Bug Fixes
+
+* **ui-kit:** fix className in Select ([1090361](https://github.com/konturio/ui/commit/109036190bd731744b614c5b8e639b12a50d8748))
+
+
+
+
+
 # [3.0.0-alpha.57](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.0.0-alpha.56...@konturio/ui-kit@3.0.0-alpha.57) (2022-08-25)
 
 

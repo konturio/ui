@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-alpha.63](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.0.0-alpha.62...@konturio/ui-kit@3.0.0-alpha.63) (2022-08-25)
+
+
+### Bug Fixes
+
+* **ui-kit:** add additional classes to MultiselectChip ([2e5e0fd](https://github.com/konturio/ui/commit/2e5e0fde005c7f6645cb284ea49b692ba5b6f101))
+
+
+
+
+
 # [3.0.0-alpha.62](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.0.0-alpha.61...@konturio/ui-kit@3.0.0-alpha.62) (2022-08-25)
 
 **Note:** Version bump only for package @konturio/ui-kit

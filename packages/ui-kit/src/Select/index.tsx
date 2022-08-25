@@ -176,7 +176,7 @@ export const Select = forwardRef(
 
     const onOpenChange = useCallback(
       (changes: UseSelectStateChange<SelectItemType>) => {
-        if (changes.isOpen! && onClose && typeof onClose === 'function') {
+        if (!changes.isOpen && onClose && typeof onClose === 'function') {
           onClose(multiselect ? selectedItems : changes.selectedItem);
         }
       },

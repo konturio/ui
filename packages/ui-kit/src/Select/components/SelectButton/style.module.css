@@ -86,6 +86,7 @@
     & .textContent {
       overflow: hidden;
       text-overflow: ellipsis;
+      display: flex;
     }
   }
 

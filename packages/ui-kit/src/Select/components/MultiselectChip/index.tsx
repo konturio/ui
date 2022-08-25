@@ -22,10 +22,10 @@ export const MultiselectChip = forwardRef(({ children, value, onBtnClick, classN
   );
 
   return (
-    <span className={cn(style.root, className)} ref={ref} {...rest}>
-      <span className={style.textContainer}>{children}</span>
+    <span className={cn('multiselectChip', style.root, className)} ref={ref} {...rest}>
+      <span className={cn('textContainer', style.textContainer)}>{children}</span>
       {onBtnClick && (
-        <span className={style.btnContainer}>
+        <span className={cn('btnContainer', style.btnContainer)}>
           <Close16 className={style.resetBtn} onClick={onClick} />
         </span>
       )}

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-alpha.61](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.0.0-alpha.60...@konturio/ui-kit@3.0.0-alpha.61) (2022-08-25)
+
+
+### Bug Fixes
+
+* **ui-kit:** add onClose handler to Select component ([3fe3ae1](https://github.com/konturio/ui/commit/3fe3ae1bca094d1d149e10a21ff040610c7319e7))
+
+
+
+
+
 # [3.0.0-alpha.60](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.0.0-alpha.59...@konturio/ui-kit@3.0.0-alpha.60) (2022-08-25)
 
 

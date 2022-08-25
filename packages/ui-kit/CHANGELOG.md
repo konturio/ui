@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-alpha.64](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.0.0-alpha.63...@konturio/ui-kit@3.0.0-alpha.64) (2022-08-25)
+
+
+### Bug Fixes
+
+* **ui-kit:** add OnReset handler to Select component ([9e5625e](https://github.com/konturio/ui/commit/9e5625e2ea40960b794715caeb944fb1e44c33ad))
+
+
+
+
+
 # [3.0.0-alpha.63](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.0.0-alpha.62...@konturio/ui-kit@3.0.0-alpha.63) (2022-08-25)
 
 

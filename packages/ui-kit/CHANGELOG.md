@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-alpha.57](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.0.0-alpha.56...@konturio/ui-kit@3.0.0-alpha.57) (2022-08-25)
+
+
+### Bug Fixes
+
+* **ui-kit:** remove height jitter in Select component ([652af38](https://github.com/konturio/ui/commit/652af38845aca358a4ada8498aab8dce045aa3d6))
+
+
+
+
+
 # [3.0.0-alpha.56](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.0.0-alpha.55...@konturio/ui-kit@3.0.0-alpha.56) (2022-08-24)
 
 

@@ -211,10 +211,9 @@ export const Select = forwardRef(
     return (
       <div
         ref={ref}
-        className={cn({
+        className={cn(className, {
           [style.select]: true,
           [style.open]: isOpen,
-          className,
         })}
         {...props}
       >

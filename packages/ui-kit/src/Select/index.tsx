@@ -61,6 +61,7 @@ export interface SelectProps {
   onChange?: (changes: UseSelectStateChange<SelectItemType>) => void;
   onSelect?: (selection: SelectItemType | SelectItemType[] | null | undefined) => void;
   onClose?: (selection: SelectItemType | SelectItemType[] | null | undefined) => void;
+  onReset?: () => void;
 }
 
 export const Select = forwardRef(
@@ -85,6 +86,7 @@ export const Select = forwardRef(
       onChange,
       onSelect,
       onClose,
+      onReset,
       ...props
     },
     ref,
@@ -103,6 +105,7 @@ export const Select = forwardRef(
 
     const resetMultiselect = useCallback(
       (val?: SelectItemType['value']) => {
+        console.log('resetMultiselect', val);
         if (val !== undefined) {
           const index = selectedItems.findIndex((itm) => itm.value === val);
           if (index >= 0) {
@@ -221,6 +224,20 @@ export const Select = forwardRef(
       selectButtonItems = itemToString(selectedItem);
     }
 
+    const resetFunc = useCallback(
+      (val?: SelectItemType['value']) => {
+        if (multiselect) {
+          resetMultiselect(val);
+        } else {
+          reset();
+        }
+        if (!val && onReset && typeof onReset === 'function') {
+          onReset();
+        }
+      },
+      [multiselect, resetMultiselect, reset, onReset],
+    );
+
     const noValue = !selectedItem && !selectedItems.length;
 
     return (
@@ -241,7 +258,7 @@ export const Select = forwardRef(
           open={isOpen}
           error={error}
           type={type}
-          reset={multiselect ? resetMultiselect : reset}
+          reset={resetFunc}
           multiselect={multiselect}
           withResetButton={withResetButton}
         >

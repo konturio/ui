@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-alpha.60](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.0.0-alpha.59...@konturio/ui-kit@3.0.0-alpha.60) (2022-08-25)
+
+
+### Bug Fixes
+
+* **ui-kit:** fix Select text container alignment ([5d4fa33](https://github.com/konturio/ui/commit/5d4fa33b75bb761fe27d3fdc4bb21fa485005f9c))
+
+
+
+
+
 # [3.0.0-alpha.59](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.0.0-alpha.58...@konturio/ui-kit@3.0.0-alpha.59) (2022-08-25)
 
 

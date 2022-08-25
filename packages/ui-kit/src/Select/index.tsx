@@ -56,6 +56,7 @@ export interface SelectProps {
     button?: SelectButtonClasses;
     menu?: string;
     menuItem?: string;
+    noValue?: string;
   };
   onChange?: (changes: UseSelectStateChange<SelectItemType>) => void;
   onSelect?: (selection: SelectItemType | SelectItemType[] | null | undefined) => void;
@@ -208,10 +209,12 @@ export const Select = forwardRef(
       selectButtonItems = itemToString(selectedItem);
     }
 
+    const noValue = !selectedItem && !selectedItems.length;
+
     return (
       <div
         ref={ref}
-        className={cn(className, {
+        className={cn(className, noValue && classes?.noValue, {
           [style.select]: true,
           [style.open]: isOpen,
         })}

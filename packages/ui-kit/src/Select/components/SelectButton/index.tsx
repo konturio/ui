@@ -51,12 +51,11 @@ export const SelectButton = React.forwardRef(
     },
     ref,
   ) => {
-    const dynamicClasses = cn({
+    const dynamicClasses = cn('selectButton', className, {
       [style.root]: true,
       [style.disabled]: disabled,
       [style.error]: error,
       [style.inline]: type === 'inline',
-      className,
     });
 
     const onReset = useCallback(
@@ -96,7 +95,7 @@ export const SelectButton = React.forwardRef(
           type="button"
           aria-label="toggle menu"
           {...toggleProps}
-          className={cn(style.selectBox, classes?.selectBox)}
+          className={cn('selectBox', style.selectBox, classes?.selectBox)}
         >
           <div
             className={cn({
@@ -110,7 +109,7 @@ export const SelectButton = React.forwardRef(
             {placeholderContent}
           </div>
 
-          <div className={style.buttonsContainer}>
+          <div className={cn(style.buttonsContainer, 'buttonsContainer')}>
             {withResetButton &&
             item &&
             multiselect !== MULTISELECT_TYPE_AGGREGATE &&
@@ -121,7 +120,7 @@ export const SelectButton = React.forwardRef(
           </div>
         </button>
         {error && typeof error === 'string' ? (
-          <div className={cn(style.errorMessage, classes?.error)}>{error}</div>
+          <div className={cn('errorMessage', style.errorMessage, classes?.error)}>{error}</div>
         ) : null}
       </div>
     );

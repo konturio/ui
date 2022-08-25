@@ -60,6 +60,7 @@ export interface SelectProps {
   };
   onChange?: (changes: UseSelectStateChange<SelectItemType>) => void;
   onSelect?: (selection: SelectItemType | SelectItemType[] | null | undefined) => void;
+  onClose?: (selection: SelectItemType | SelectItemType[] | null | undefined) => void;
 }
 
 export const Select = forwardRef(
@@ -83,6 +84,7 @@ export const Select = forwardRef(
       type = 'classic',
       onChange,
       onSelect,
+      onClose,
       ...props
     },
     ref,
@@ -172,12 +174,22 @@ export const Select = forwardRef(
       [onChange, onSelect, multiselect, selectedItems],
     );
 
+    const onOpenChange = useCallback(
+      (changes: UseSelectStateChange<SelectItemType>) => {
+        if (changes.isOpen! && onClose && typeof onClose === 'function') {
+          onClose(multiselect ? selectedItems : changes.selectedItem);
+        }
+      },
+      [onClose, multiselect, selectedItems],
+    );
+
     const useSelectProps: UseSelectProps<SelectItemType> = {
       items,
       itemToString,
       initialSelectedItem: initialSelectedItem || defaultSelectedItem,
       defaultSelectedItem,
       onSelectedItemChange: onSelectChange,
+      onIsOpenChange: onOpenChange,
     };
 
     if (multiselect) {

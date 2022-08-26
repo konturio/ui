@@ -97,7 +97,7 @@ export const Autocomplete = forwardRef(
       getItemProps,
       selectedItem,
     } = useCombobox({
-      items,
+      items: filteredItems,
       itemToString,
       initialSelectedItem: initialSelectedItem || defaultSelectedItem,
       defaultSelectedItem,
@@ -113,6 +113,8 @@ export const Autocomplete = forwardRef(
 
     const { ref, ...restComboProps } = getComboboxProps();
     const combinedRef = useComposedRefs(forwardedRef, ref);
+
+    console.log('render autocomplete');
 
     return (
       <div
@@ -139,11 +141,14 @@ export const Autocomplete = forwardRef(
         >
           {children}
         </AutocompleteButton>
-        <ul {...getMenuProps()} className={cn({ [style.menu]: true, [classes?.menu || '']: classes?.menu })}>
+        <ul
+          {...getMenuProps()}
+          className={cn(classes?.menu, { [style.menu]: true, [style.noItems]: filteredItems.length === 0 })}
+        >
           {isOpen &&
             filteredItems.map((item, index) => (
               <AutocompleteItem
-                key={`${item.value}${index}`}
+                key={item.value}
                 item={item}
                 title={itemToString(item)}
                 itemProps={getItemProps({ item, index })}

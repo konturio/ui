@@ -11,6 +11,8 @@
     color: var(--text-faint-strong);
     outline: none;
     width: 100%;
+    text-overflow: ellipsis;
+    height: 20px;
 
     &:focus, &:active {
       border: none;

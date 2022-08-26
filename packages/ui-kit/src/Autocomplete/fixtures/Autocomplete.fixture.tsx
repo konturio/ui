@@ -20,6 +20,17 @@ function customItemToString(item: AutocompleteItemType | AutocompleteItemType[] 
 }
 
 export default {
+  NotControlled: () => (
+    <Autocomplete
+      onChange={(e) => {
+        console.log('on change value', e);
+      }}
+      label="Non-controlled Autocomplete"
+      items={items}
+    >
+      Non-controlled Autocomplete
+    </Autocomplete>
+  ),
   Interactive: () => {
     const [state, setState] = useValue('selected', { defaultValue: {} } as {
       defaultValue: AutocompleteItemType | null | undefined;

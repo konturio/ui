@@ -116,10 +116,9 @@ export const Autocomplete = forwardRef(
 
     return (
       <div
-        className={cn({
+        className={cn(className, {
           [style.autocomplete]: true,
           [style.open]: isOpen,
-          className,
         })}
         {...props}
         {...restComboProps}

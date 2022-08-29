@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useValue } from 'react-cosmos/fixture';
 import { Timeline } from '..';
 import testData from './testData';
@@ -11,6 +11,7 @@ const episodesMap = testData.reduce(
   {} as Record<
     string,
     {
+      name: string;
       id: number;
       startedAt: string;
       endedAt: string;
@@ -20,7 +21,7 @@ const episodesMap = testData.reduce(
 
 export default {
   Timeline_Points: () => {
-    const [data, setData] = useState(() =>
+    const [data] = useState(() =>
       Object.values(episodesMap).map((d) => ({
         id: d.id,
         start: new Date(d.startedAt),
@@ -28,7 +29,7 @@ export default {
       })),
     );
 
-    const [selected, setSelected] = useState([] as number[]);
+    const [selected, setSelected] = useState([] as (number | string)[]);
 
     const [cluster] = useValue('cluster', {
       defaultValue: true,

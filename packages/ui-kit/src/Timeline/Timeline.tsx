@@ -1,11 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { DataSet } from 'vis-data';
-import {
-  DataItemCollectionType,
-  DataItem,
-  Timeline as VisTimeline,
-  TimelineOptions as VisTimelineOptions,
-} from 'vis-timeline';
+import { DataItem, Timeline as VisTimeline, TimelineOptions as VisTimelineOptions } from 'vis-timeline';
 import 'vis-timeline/styles/vis-timeline-graph2d.min.css';
 
 export interface TimelineEntry {

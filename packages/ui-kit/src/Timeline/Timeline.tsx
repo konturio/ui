@@ -25,13 +25,13 @@ interface TimelineProps extends TimelineOptions {
 }
 
 // TODO: Contribute it to timeline-vis package
-interface OnSelectPayload {
+export interface OnSelectPayload {
   event: PointerEvent;
   items: TimelineEntry['id'][];
 }
 
 // TODO: Contribute it to timeline-vis package
-interface OnClickPayload {
+export interface OnClickPayload {
   event: PointerEvent;
   customTime: null;
   group: null;

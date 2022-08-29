@@ -36,5 +36,6 @@ module.exports = {
     'react/prop-types': 'off', // Work incorrect  https://github.com/yannickcr/eslint-plugin-react/issues/2971
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
+    'prettier/prettier': 'warn',
   },
 };

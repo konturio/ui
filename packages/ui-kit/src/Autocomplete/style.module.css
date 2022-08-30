@@ -5,6 +5,7 @@
 
 	& .menu {
 		position: absolute;
+		z-index: 1;
 		right: 0;
 		list-style: none;
 		display: block;

@@ -1,16 +1,16 @@
 import { SVGProps, memo } from 'react';
 
-const Expand24 = (props: SVGProps<SVGSVGElement>) => (
+const Collapse224 = (props: SVGProps<SVGSVGElement>) => (
   <svg width={24} height={24} viewBox="0 0 24 24" fill="none" {...props}>
     <path
-      d="M19.369 10.369L19.369 4.63096M19.369 4.63096L13.6309 4.63096M19.369 4.63096L13.924 10.076"
+      d="M7.94253 6.63606L12 10.6935M12 10.6935L16.0574 6.63606M12 10.6935L12 2.57884"
       stroke="currentColor"
       strokeWidth={1.3}
       strokeLinecap="round"
       strokeLinejoin="round"
     />
     <path
-      d="M4.63095 13.631L4.63095 19.369M4.63095 19.369L10.369 19.369M4.63095 19.369L10.076 13.924"
+      d="M16.0574 17.3639L12 13.3065M12 13.3065L7.94256 17.3639M12 13.3065L12 21.4212"
       stroke="currentColor"
       strokeWidth={1.3}
       strokeLinecap="round"
@@ -19,6 +19,6 @@ const Expand24 = (props: SVGProps<SVGSVGElement>) => (
   </svg>
 );
 
-Expand24.displayName = 'Expand24';
-const Memo = memo(Expand24);
+Collapse224.displayName = 'Collapse224';
+const Memo = memo(Collapse224);
 export default Memo;

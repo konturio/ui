@@ -1,4 +1,4 @@
-import React, { forwardRef, useCallback, useState } from 'react';
+import React, { forwardRef, useCallback, useEffect, useMemo, useState } from 'react';
 import { AutocompleteButton, AutocompleteButtonClasses } from './components/AutocompleteButton';
 import { useCombobox, UseComboboxStateChange } from 'downshift';
 import { AutocompleteItemType } from './types';
@@ -68,10 +68,21 @@ export const Autocomplete = forwardRef(
     },
     forwardedRef,
   ) => {
-    const initialSelectedItem = value && items ? items.find((itm) => itm.value === value) : undefined;
-    const defaultSelectedItem = defaultValue && items ? items.find((itm) => itm.value === defaultValue) : null;
+    const defaultSelectedItem = useMemo(
+      () => (defaultValue && items ? items.find((itm) => itm.value === defaultValue) : null),
+      [defaultValue, items],
+    );
 
     const [filteredItems, setFilteredItems] = useState<AutocompleteItemType[]>(items);
+    const [selectedItem, setSelectedItem] = useState<AutocompleteItemType | null>(defaultSelectedItem || null);
+
+    useEffect(() => {
+      setSelectedItem(
+        value !== undefined && items
+          ? items.find((itm) => itm.value === value) || defaultSelectedItem || null
+          : defaultSelectedItem || null,
+      );
+    }, [value]);
 
     const onAutocompleteChange = useCallback(
       (changes: UseComboboxStateChange<AutocompleteItemType>) => {
@@ -81,13 +92,17 @@ export const Autocomplete = forwardRef(
         if (onSelect && typeof onSelect === 'function') {
           onSelect(changes.selectedItem);
         }
+        setSelectedItem(changes.selectedItem || null);
       },
-      [onChange, onSelect],
+      [onChange, onSelect, setSelectedItem],
     );
+
+    const reset = useCallback(() => {
+      setSelectedItem(defaultSelectedItem || null);
+    }, [setSelectedItem, defaultSelectedItem]);
 
     const {
       isOpen,
-      reset,
       getToggleButtonProps,
       getLabelProps,
       getMenuProps,
@@ -95,12 +110,9 @@ export const Autocomplete = forwardRef(
       getInputProps,
       highlightedIndex,
       getItemProps,
-      selectedItem,
     } = useCombobox({
       items: filteredItems,
       itemToString,
-      initialSelectedItem: initialSelectedItem || defaultSelectedItem,
-      defaultSelectedItem,
       onSelectedItemChange: onAutocompleteChange,
       onInputValueChange({ inputValue }) {
         if (inputValue) {
@@ -109,12 +121,11 @@ export const Autocomplete = forwardRef(
           setFilteredItems(items);
         }
       },
+      selectedItem,
     });
 
     const { ref, ...restComboProps } = getComboboxProps();
     const combinedRef = useComposedRefs(forwardedRef, ref);
-
-    console.log('render autocomplete');
 
     return (
       <div

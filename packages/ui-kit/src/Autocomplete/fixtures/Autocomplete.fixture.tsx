@@ -12,13 +12,6 @@ const items: AutocompleteItemType[] = [
   { title: 'Computational Questions', value: 7 },
 ];
 
-function customItemToString(item: AutocompleteItemType | AutocompleteItemType[] | null): string {
-  if (Array.isArray(item)) {
-    return item.length ? item.map((itm) => `${itm.value}_${itm.title}`).join(', ') : '';
-  }
-  return item ? `${item.value}_${item.title}` : '';
-}
-
 export default {
   NotControlled: () => (
     <Autocomplete
@@ -61,7 +54,6 @@ export default {
         onSelect={setState}
         label="Interactive Autocomplete With Default Value"
         items={items}
-        itemToString={customItemToString}
       >
         Autocomplete Example
       </Autocomplete>

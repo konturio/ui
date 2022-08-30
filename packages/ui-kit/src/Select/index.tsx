@@ -1,4 +1,4 @@
-import React, { forwardRef, useCallback, useState } from 'react';
+import React, { forwardRef, useCallback, useEffect, useState } from 'react';
 import { SelectButton, SelectButtonClasses } from './components/SelectButton';
 import {
   useSelect,
@@ -95,17 +95,24 @@ export const Select = forwardRef(
     const defaultSelectedItem =
       !multiselect && defaultValue && items ? items.find((itm) => itm.value === defaultValue) : null;
 
-    const [selectedItems, setSelectedItems] = useState<SelectItemType[]>(
-      value
-        ? ((Array.isArray(value) ? value : [value])
+    const [selectedItems, setSelectedItems] = useState<SelectItemType[]>([]);
+
+    useEffect(() => {
+      if (value) {
+        setSelectedItems(
+          (Array.isArray(value) ? value : [value])
             .map((initItm) => items.find((itm) => itm.value === initItm))
-            .filter((itm) => itm !== undefined) as SelectItemType[])
-        : [],
-    );
+            .filter((itm) => itm !== undefined) as SelectItemType[],
+        );
+      } else {
+        if (selectedItems.length) {
+          setSelectedItems([]);
+        }
+      }
+    }, [value]);
 
     const resetMultiselect = useCallback(
       (val?: SelectItemType['value']) => {
-        console.log('resetMultiselect', val);
         if (val !== undefined) {
           const index = selectedItems.findIndex((itm) => itm.value === val);
           if (index >= 0) {

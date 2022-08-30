@@ -32,5 +32,7 @@ export * from './MenuButton';
 export * from './MenuButton/components';
 export * from './Select';
 export * from './Select/components';
+export * from './Select/types';
 export * from './Autocomplete';
 export * from './Autocomplete/components';
+export * from './Autocomplete/types';

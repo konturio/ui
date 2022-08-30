@@ -134,6 +134,6 @@ export { default as Play24 } from './Play24';
 export { default as DoubleChevronLeft24 } from './DoubleChevronLeft24';
 export { default as DoubleChevronRight24 } from './DoubleChevronRight24';
 export { default as ColumnWidth16 } from './ColumnWidth16';
-export { default as Twoxtwo16 } from './Twoxtwo16';
+export { default as TwoXTwo16 } from './TwoXTwo16';
 export { default as Tags16 } from './Tags16';
 export { default as Upload24 } from './Upload24';

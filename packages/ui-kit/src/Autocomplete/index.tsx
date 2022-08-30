@@ -1,6 +1,6 @@
 import React, { forwardRef, useCallback, useEffect, useMemo, useState } from 'react';
 import { AutocompleteButton, AutocompleteButtonClasses } from './components/AutocompleteButton';
-import { useCombobox, UseComboboxStateChange } from 'downshift';
+import { useCombobox, UseComboboxStateChange, UseComboboxStateChangeTypes } from 'downshift';
 import { AutocompleteItemType } from './types';
 import { ForwardRefComponent } from '../utils/component-helpers/polymorphic';
 import { AutocompleteItem } from './components/AutocompleteItem';
@@ -99,7 +99,13 @@ export const Autocomplete = forwardRef(
 
     const reset = useCallback(() => {
       setSelectedItem(defaultSelectedItem || null);
-    }, [setSelectedItem, defaultSelectedItem]);
+      if (onChange && typeof onChange === 'function') {
+        onChange({ selectedItem: defaultSelectedItem || null, type: UseComboboxStateChangeTypes.FunctionReset });
+      }
+      if (onSelect && typeof onSelect === 'function') {
+        onSelect(defaultSelectedItem || null);
+      }
+    }, [setSelectedItem, defaultSelectedItem, onChange, onSelect]);
 
     const {
       isOpen,

@@ -100,7 +100,7 @@ export const Autocomplete = forwardRef(
     const reset = useCallback(() => {
       setSelectedItem(defaultSelectedItem || null);
       if (onChange && typeof onChange === 'function') {
-        onChange({ selectedItem: defaultSelectedItem || null, type: '__function_reset__' });
+        onChange({ selectedItem: defaultSelectedItem || null, type: '__function_reset__' as any });
       }
       if (onSelect && typeof onSelect === 'function') {
         onSelect(defaultSelectedItem || null);

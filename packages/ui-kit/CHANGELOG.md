@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-alpha.68](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.0.0-alpha.67...@konturio/ui-kit@3.0.0-alpha.68) (2022-08-30)
+
+
+### Bug Fixes
+
+* **ui-kit:** autocomplete reset behaviour fix ([ebfd122](https://github.com/konturio/ui/commit/ebfd122491415e77ff37fa01c7e70938a1b237c1))
+
+
+
+
+
 # [3.0.0-alpha.67](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.0.0-alpha.66...@konturio/ui-kit@3.0.0-alpha.67) (2022-08-30)
 
 

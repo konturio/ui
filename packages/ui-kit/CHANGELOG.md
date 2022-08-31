@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-alpha.72](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.0.0-alpha.71...@konturio/ui-kit@3.0.0-alpha.72) (2022-08-31)
+
+
+### Bug Fixes
+
+* **ui-kit:** small updates for radiobutton ([fc38ffe](https://github.com/konturio/ui/commit/fc38ffe60e81f8c749e34e9d81681bddc4920476))
+
+
+
+
+
 # [3.0.0-alpha.71](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.0.0-alpha.70...@konturio/ui-kit@3.0.0-alpha.71) (2022-08-31)
 
 

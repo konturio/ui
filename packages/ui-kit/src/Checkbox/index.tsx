@@ -1,32 +1,81 @@
-import React, { ChangeEvent } from 'react';
+import React, { ChangeEvent, forwardRef, useCallback, useEffect, useState } from 'react';
 import { Finish16 } from '@konturio/default-icons';
 import { LineItem } from '../LineItem';
-import s from './style.module.css';
+import style from './style.module.css';
+import cn from 'clsx';
+import { ForwardRefComponent } from '../utils/component-helpers/polymorphic';
 
-interface Checkbox {
+interface CheckboxProps {
   id: string;
   name?: string;
   label?: React.ReactChild | React.ReactChild[];
   className?: string;
-  onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
+  onChange?: (isChecked: boolean) => void;
   block?: boolean;
+  classes?: {
+    input?: string;
+    icon?: string;
+    disabled?: string;
+  };
 }
 
-export function Checkbox({
-  name,
-  label,
-  className = '',
-  block = true,
-  id,
-  ...native
-}: Checkbox &
-  React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>): React.ReactElement {
-  return (
-    <LineItem id={id} label={label} className={className} block={block} cursor="pointer">
-      <input id={id} name={name} type="checkbox" className={s.checkbox} {...native} />
-      <div className={s.icon}>
-        <Finish16 />
-      </div>
-    </LineItem>
-  );
-}
+export const Checkbox = forwardRef(
+  (
+    {
+      name,
+      checked: checkboxChecked,
+      onChange,
+      label,
+      className = '',
+      block = true,
+      id,
+      classes,
+      disabled,
+      ...nativeProps
+    },
+    ref,
+  ) => {
+    const [checked, setChecked] = useState<boolean | undefined>(checkboxChecked);
+
+    useEffect(() => {
+      setChecked(checkboxChecked);
+    }, [checkboxChecked]);
+
+    const onCheckboxChange = useCallback(
+      (e: ChangeEvent<HTMLInputElement>) => {
+        setChecked(e.target.checked);
+        if (onChange && typeof onChange === 'function') {
+          onChange(e.target.checked);
+        }
+      },
+      [setChecked, onChange],
+    );
+
+    return (
+      <LineItem
+        id={id}
+        label={label}
+        className={cn(className, disabled && classes?.disabled)}
+        block={block}
+        cursor="pointer"
+      >
+        <input
+          id={id}
+          name={name}
+          type="checkbox"
+          className={cn(style.checkbox, classes?.input)}
+          checked={checked}
+          onChange={onCheckboxChange}
+          ref={ref}
+          disabled={disabled}
+          {...nativeProps}
+        />
+        <div className={cn(style.icon, classes?.input)}>
+          <Finish16 />
+        </div>
+      </LineItem>
+    );
+  },
+) as ForwardRefComponent<'input', CheckboxProps>;
+
+Checkbox.displayName = 'Checkbox';

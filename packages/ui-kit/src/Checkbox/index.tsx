@@ -23,7 +23,7 @@ export const Checkbox = forwardRef(
   (
     {
       name,
-      checked: checkboxChecked,
+      checked: checkboxChecked = false,
       onChange,
       label,
       className = '',

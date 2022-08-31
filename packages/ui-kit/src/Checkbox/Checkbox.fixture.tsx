@@ -5,8 +5,8 @@ const css = (s: { raw: readonly string[] }) => s.raw[0];
 export default {
   Uncontrolled: (
     <div style={{ display: 'flex', flexFlow: 'column nowrap' }}>
-      <Checkbox id="unchecked" label="Unchecked" checked={false} readOnly />
-      <Checkbox id="focused" label="Focused" autoFocus checked={false} readOnly />
+      <Checkbox id="unchecked" label="Unchecked" readOnly />
+      <Checkbox id="focused" label="Focused" autoFocus readOnly />
       <Checkbox id="disabled" label="Disabled" disabled readOnly />
       <Checkbox id="checked" label="Checked" checked readOnly />
       <Checkbox id="checked-disabled" label="Checked disabled" checked disabled readOnly />

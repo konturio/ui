@@ -2,6 +2,8 @@ import { Menu, MenuButton } from '../index';
 import { MenuItem, MenuList } from '../components';
 import { Button } from '../../Button';
 import { Divider } from '../../Divider';
+import { DropdownTrigger, HiddenTrigger } from '../../Dropdown/components/DropdownTrigger';
+import { useState } from 'react';
 
 const menuAction = (action: string) => {
   return () => {
@@ -44,6 +46,32 @@ export default {
       </MenuList>
     </Menu>
   ),
+  WithoutButton: () => {
+    const [isExpanded, setIsExpanded] = useState<boolean>(true);
+
+    const onBtnClick = () => {
+      setIsExpanded(true);
+    };
+
+    const onDropdownClose = () => {
+      setIsExpanded(false);
+    };
+
+    return (
+      <>
+        <button onClick={onBtnClick}>open</button>
+        <Menu>
+          <DropdownTrigger isExpanded={isExpanded} onDropdownClose={onDropdownClose} />
+          <MenuList>
+            <MenuItem onSelect={menuAction('Download')}>Download</MenuItem>
+            <MenuItem onSelect={menuAction('Copy')}>Create a Copy</MenuItem>
+            <MenuItem onSelect={menuAction('Mark as Draft')}>Mark as Draft</MenuItem>
+            <MenuItem onSelect={menuAction('Delete')}>Delete</MenuItem>
+          </MenuList>
+        </Menu>
+      </>
+    );
+  },
   WithDivider: (
     <Menu>
       <MenuButton as={Button} size="small" id="actions-button">

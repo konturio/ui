@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-alpha.73](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.0.0-alpha.72...@konturio/ui-kit@3.0.0-alpha.73) (2022-08-31)
+
+
+### Bug Fixes
+
+* **ui-kit:** fix default state for Checkbox ([c249620](https://github.com/konturio/ui/commit/c24962046655ed26f2e12cc8398b066d8d0f7e33))
+
+
+
+
+
 # [3.0.0-alpha.72](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.0.0-alpha.71...@konturio/ui-kit@3.0.0-alpha.72) (2022-08-31)
 
 

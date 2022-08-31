@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.28](https://github.com/konturio/ui/compare/@konturio/default-icons@2.0.0-alpha.27...@konturio/default-icons@2.0.0-alpha.28) (2022-08-31)
+
+
+### Bug Fixes
+
+* **default-icons:** fix icons name ([cb90a18](https://github.com/konturio/ui/commit/cb90a1892c7f42192c05357babaab36fc445b462))
+
+
+
+
+
 # [2.0.0-alpha.27](https://github.com/konturio/ui/compare/@konturio/default-icons@2.0.0-alpha.26...@konturio/default-icons@2.0.0-alpha.27) (2022-08-30)
 
 

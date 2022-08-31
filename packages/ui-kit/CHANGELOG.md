@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-alpha.71](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.0.0-alpha.70...@konturio/ui-kit@3.0.0-alpha.71) (2022-08-31)
+
+
+### Bug Fixes
+
+* **default-icons:** fix icons name ([cb90a18](https://github.com/konturio/ui/commit/cb90a1892c7f42192c05357babaab36fc445b462))
+
+
+
+
+
 # [3.0.0-alpha.70](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.0.0-alpha.69...@konturio/ui-kit@3.0.0-alpha.70) (2022-08-30)
 
 **Note:** Version bump only for package @konturio/ui-kit

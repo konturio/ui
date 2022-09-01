@@ -2,8 +2,8 @@ import { Menu, MenuButton } from '../index';
 import { MenuItem, MenuList } from '../components';
 import { Button } from '../../Button';
 import { Divider } from '../../Divider';
-import { DropdownTrigger, HiddenTrigger } from '../../Dropdown/components/DropdownTrigger';
-import { useState } from 'react';
+import { DropdownTrigger, DropdownTriggerRefProvider } from '../../Dropdown/components/DropdownTrigger';
+import { MutableRefObject, useEffect, useRef, useState } from 'react';
 
 const menuAction = (action: string) => {
   return () => {
@@ -49,12 +49,18 @@ export default {
   WithoutButton: () => {
     const [isExpanded, setIsExpanded] = useState<boolean>(true);
 
-    const onBtnClick = () => {
-      setIsExpanded(true);
+    const onBtnClick = (ev: React.MouseEvent<HTMLButtonElement>) => {
+      if (!isExpanded) {
+        setIsExpanded(true);
+      }
     };
 
     const onDropdownClose = () => {
-      setIsExpanded(false);
+      requestAnimationFrame(() => {
+        if (isExpanded) {
+          setIsExpanded(false);
+        }
+      });
     };
 
     return (
@@ -68,6 +74,60 @@ export default {
             <MenuItem onSelect={menuAction('Mark as Draft')}>Mark as Draft</MenuItem>
             <MenuItem onSelect={menuAction('Delete')}>Delete</MenuItem>
           </MenuList>
+        </Menu>
+      </>
+    );
+  },
+  ArbitraryPosition: () => {
+    const [isExpanded, setIsExpanded] = useState<boolean>(false);
+
+    const onBtnClick = (ev: React.MouseEvent<HTMLButtonElement>) => {
+      if (!isExpanded) {
+        setIsExpanded(true);
+      }
+    };
+
+    const onDropdownClose = () => {
+      requestAnimationFrame(() => {
+        if (isExpanded) {
+          setIsExpanded(false);
+        }
+      });
+    };
+
+    const [targetRef, setTargetRef] = useState<MutableRefObject<HTMLDivElement | null>>();
+
+    const rf = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+      if (rf.current) {
+        setTargetRef(rf);
+      }
+    }, []);
+
+    return (
+      <>
+        <div
+          ref={rf}
+          style={{ position: 'absolute', left: 100 + Math.random() * 500, top: 100 + Math.random() * 500 }}
+        ></div>
+        <button onClick={onBtnClick}>open</button>
+        <Menu>
+          {targetRef?.current && (
+            <>
+              <DropdownTriggerRefProvider
+                triggerRef={targetRef}
+                isExpanded={isExpanded}
+                onDropdownClose={onDropdownClose}
+              />
+              <MenuList>
+                <MenuItem onSelect={menuAction('Download')}>Download</MenuItem>
+                <MenuItem onSelect={menuAction('Copy')}>Create a Copy</MenuItem>
+                <MenuItem onSelect={menuAction('Mark as Draft')}>Mark as Draft</MenuItem>
+                <MenuItem onSelect={menuAction('Delete')}>Delete</MenuItem>
+              </MenuList>
+            </>
+          )}
         </Menu>
       </>
     );

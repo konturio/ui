@@ -1,4 +1,4 @@
-import React, {useRef} from 'react';
+import React, { useRef } from 'react';
 import { DropdownDescendantContext, useDropdownContext } from '../../context';
 import { useComposedRefs } from '../../../utils/hooks/useComposedRefs';
 import { useDescendants } from '../../../utils/component-helpers/descendants';
@@ -150,3 +150,15 @@ export const DropdownTrigger = React.forwardRef(
 ) as ForwardRefComponent<'button', DropdownTriggerProps>;
 
 DropdownTrigger.displayName = 'DropdownTrigger';
+
+interface DropdownTriggerRefProviderProps extends DropdownTriggerProps {
+  triggerRef: React.MutableRefObject<any>;
+}
+
+export const DropdownTriggerRefProvider = ({ triggerRef, ...rest }: DropdownTriggerRefProviderProps) => {
+  const {
+    props: { ref },
+  } = useDropdownTrigger({ ...rest, ref: triggerRef });
+  ref(triggerRef.current);
+  return null;
+};

@@ -21,7 +21,7 @@ const episodesMap = testData.reduce(
 );
 
 export default {
-  Timeline_Ranges: () => {
+  ['Timeline Ranges']: () => {
     const [data] = useState(() =>
       Object.values(episodesMap).map((d) => ({
         id: d.id,
@@ -65,7 +65,7 @@ export default {
       </div>
     );
   },
-  Timeline_Points: () => {
+  ['Timeline Points']: () => {
     const [data] = useState(() =>
       Object.values(episodesMap).map((d) => ({
         id: d.id,
@@ -89,9 +89,77 @@ export default {
           stack={stack}
           onSelect={(entries) => setSelected(entries.map((e) => e.id))}
           selected={selected}
-          tooltipComponent={({ originalItemData }) => (
-            <div>{originalItemData.id ? originalItemData.id : 'Click to open'}</div>
-          )}
+        />
+        <ul>
+          {Object.values(episodesMap).map((d) => (
+            <li
+              key={d.id}
+              style={{ color: selected.includes(d.id) ? 'red' : 'inherit' }}
+              onClick={() => {
+                setSelected([d.id]);
+              }}
+            >
+              {d.name}
+            </li>
+          ))}
+        </ul>
+      </div>
+    );
+  },
+  ['Custom Components']: () => {
+    const [data] = useState(() =>
+      Object.values(episodesMap).map((d) => ({
+        id: d.id,
+        start: new Date(d.updatedAt),
+      })),
+    );
+
+    const [selected, setSelected] = useState([] as (number | string)[]);
+    const [cluster] = useValue('cluster', {
+      defaultValue: true,
+    });
+    const [stack] = useValue('stack', {
+      defaultValue: true,
+    });
+
+    return (
+      <div style={{ minWidth: '85%' }}>
+        <Timeline
+          dataset={data}
+          cluster={cluster}
+          stack={stack}
+          onSelect={(entries) => setSelected(entries.map((e) => e.id))}
+          selected={selected}
+          tooltipComponent={({ originalItemData }) => {
+            console.log('🚀 ~ file: Timeline.fixture.tsx ~ line 177 ~ originalItemData', originalItemData);
+            return (
+              <div>
+                {originalItemData.id ? (
+                  <ul>
+                    <li>Start: {originalItemData.start}</li>
+                    <li>End: {originalItemData.end}</li>
+                  </ul>
+                ) : (
+                  'Click to open'
+                )}
+              </div>
+            );
+          }}
+          timelineEntryComponent={({ isCluster }) => {
+            return (
+              <div
+                style={{
+                  backgroundColor: isCluster ? 'red' : 'transparent',
+                  position: 'absolute',
+                  right: 0,
+                  left: 0,
+                  top: 0,
+                  bottom: 0,
+                  borderRadius: '50%',
+                }}
+              ></div>
+            );
+          }}
         />
         <ul>
           {Object.values(episodesMap).map((d) => (

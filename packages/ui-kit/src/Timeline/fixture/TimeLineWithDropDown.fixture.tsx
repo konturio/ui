@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { useValue } from 'react-cosmos/fixture';
-import { Timeline } from '..';
 import { TimeLineWithDropDown } from '../TimeLineWithDropDown';
 import testData from './testData';
 
@@ -21,7 +20,7 @@ const episodesMap = testData.reduce(
 );
 
 export default {
-  Timeline_Ranges: () => {
+  ['Timeline Ranges']: () => {
     const [data] = useState(() =>
       Object.values(episodesMap).map((d) => ({
         id: d.id,
@@ -44,7 +43,6 @@ export default {
       <div style={{ minWidth: '85%' }}>
         <TimeLineWithDropDown
           dataset={data}
-          cluster={cluster}
           stack={stack}
           onSelect={(entries) => setSelected(entries.map((e) => e.id))}
           selected={selected}

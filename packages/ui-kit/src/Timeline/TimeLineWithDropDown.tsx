@@ -1,11 +1,11 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 import { DropdownTriggerRefProvider } from '../Dropdown';
 import { Menu, MenuItem, MenuList } from '../MenuButton';
 import { Timeline } from './Timeline';
 import type { TimelineProps, TimelineEntry } from './Timeline';
 import type { MutableRefObject } from 'react';
 
-export interface TimeLineWithDropDownProps extends Omit<TimelineProps, 'onSelect'> {
+export interface TimeLineWithDropDownProps extends Omit<TimelineProps, 'onSelect' | 'cluster'> {
   // "onSelect" does not contain an event because of a cluster that has action from the menu instead of the timeline
   onSelect: (item: TimelineEntry[]) => void;
 }
@@ -16,6 +16,16 @@ export function TimeLineWithDropDown(props: TimeLineWithDropDownProps) {
   const [eventTargetElement, setEventTargetElement] = useState<MutableRefObject<EventTarget | null>>({ current: null });
 
   const { onSelect: originalOnSelect } = props;
+  const timelineProps = useMemo(
+    () => ({
+      ...props,
+      cluster: {
+        // in conflicts with menu
+        fitOnDoubleClick: false,
+      },
+    }),
+    [props],
+  );
   const onSelect = useCallback(
     (items: TimelineEntry[], event: PointerEvent) => {
       if (items.length < 2) {
@@ -50,7 +60,7 @@ export function TimeLineWithDropDown(props: TimeLineWithDropDownProps) {
           ))}
         </MenuList>
       </Menu>
-      <Timeline {...props} onSelect={onSelect} />
+      <Timeline {...timelineProps} onSelect={onSelect} />
     </div>
   );
 }

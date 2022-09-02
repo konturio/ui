@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import { DataSet } from 'vis-data';
 import { DataItem, Timeline as VisTimeline, TimelineItem, TimelineOptions as VisTimelineOptions } from 'vis-timeline';
 import 'vis-timeline/styles/vis-timeline-graph2d.min.css';
-import { takeTheDateWindow } from './dateUtils';
 
 export interface TimelineEntry {
   id: string | number;
@@ -17,7 +16,11 @@ export interface TimelineOptions {
   /* Show overlapped entries as stack */
   stack: boolean;
   /* Join bunch of small entries in cluster */
-  cluster: boolean;
+  cluster:
+    | boolean
+    | {
+        fitOnDoubleClick: boolean;
+      };
   tooltipComponent?: ({
     originalItemData,
     parsedItemData,
@@ -25,7 +28,12 @@ export interface TimelineOptions {
     originalItemData: TimelineItem;
     parsedItemData?: TimelineItem;
   }) => JSX.Element;
-  timelineEntryComponent?: ({ item, data }: { item: unknown; data: unknown }) => JSX.Element;
+  timelineEntryComponent?: (data: {
+    content: string;
+    isCluster: boolean;
+    end: null | Date;
+    start: Date;
+  }) => JSX.Element;
   onSelect?: (item: TimelineEntry[], event: PointerEvent) => void;
   onHover?: (item: TimelineEntry[], event: PointerEvent) => void;
 }
@@ -64,27 +72,30 @@ const createDatasetItem = (e: TimelineEntry): DataItem => ({
   start: e.start,
   end: e.end,
   content: '',
+  tooltip: '123',
 });
 
-const createTimeLineOptions = (data: DataSet<DataItem, 'id'>, options: TimelineOptions): VisTimelineOptions => {
-  const { min, max } = takeTheDateWindow(data);
+const createTimeLineOptions = (options: TimelineOptions): VisTimelineOptions => {
   const timelineOptions: VisTimelineOptions = {
-    max,
-    min,
     stack: options.stack,
   };
 
   if (options.cluster) {
-    timelineOptions.cluster = {};
+    timelineOptions.cluster = options.cluster === true ? {} : options.cluster;
   }
 
   const { timelineEntryComponent: createTimelineEntryComponent } = options;
   if (createTimelineEntryComponent) {
     // TODO fix types in library
     // @ts-expect-error error in typings of library
-    timelineOptions.template = (item: unknown, el: Element, data: unknown) => {
-      ReactDOM.render(createTimelineEntryComponent({ item, data }), el);
-      return el;
+    timelineOptions.template = (item: unknown, el: Element, data) => {
+      const component = createTimelineEntryComponent(data);
+      if (component === null) {
+        return el;
+      }
+      const wrapper = document.createElement('div');
+      ReactDOM.render(component, wrapper);
+      return wrapper;
     };
   }
 
@@ -94,6 +105,7 @@ const createTimeLineOptions = (data: DataSet<DataItem, 'id'>, options: TimelineO
       // TODO fix types in library
       // @ts-expect-error error in typings of library, template can return Element
       template: (originalItemData, parsedItemData) => {
+        console.log('template call')
         const wrapper = document.createElement('div');
         ReactDOM.render(createTooltipComponent({ originalItemData, parsedItemData }), wrapper);
         return wrapper;
@@ -110,29 +122,39 @@ export function Timeline({ dataset, selected, ...rest }: TimelineProps): JSX.Ele
   const data = useMemo(() => new DataSet(dataset.map(createDatasetItem)), [dataset]);
   const dataMap = useMemo(() => new Map(dataset.map((d) => [d.id, d])), [dataset]);
 
-  // Timeline init. Takes a lot of time (about ~2 sec on example dataset);
-  const optionsRef = useRef(options);
+  // Timeline init
   const [timeline, setTimeline] = useState<VisTimeline | null>(null);
   useEffect(() => {
     if (timelineContainerRef.current === null) return;
-    const timeline = new VisTimeline(
-      timelineContainerRef.current,
-      data,
-      // I use options from ref, for avoid timeline recreation when only options changed
-      createTimeLineOptions(data, optionsRef.current),
-    );
+    const timeline = new VisTimeline(timelineContainerRef.current, []);
     setTimeline(timeline);
     return () => {
       timeline.destroy();
     };
-  }, [data]);
+  }, []);
 
-  // Update options
-  const dataRef = useRef(data);
+  const zoomLimit = useRef<{ max: Date; min: Date } | null>(null);
   useEffect(() => {
     if (!timeline) return;
-    timeline.setOptions(createTimeLineOptions(dataRef.current, options));
-    // I use data from ref, because data changes will handled by timeline instance change
+    timeline.setData({ items: data });
+    // Limit max zoom
+    zoomLimit.current = timeline.getItemRange();
+  }, [timeline, data]);
+
+  const firstPass = useRef(true);
+  useEffect(() => {
+    if (!timeline) return;
+    const timelineOptions = createTimeLineOptions(options);
+    if (zoomLimit.current) {
+      timelineOptions.max = zoomLimit.current.max;
+      timelineOptions.min = zoomLimit.current.min;
+    }
+    timeline.setOptions(timelineOptions);
+
+    if (firstPass.current) {
+      firstPass.current = false;
+      timeline.fit();
+    }
   }, [timeline, options]);
 
   // Add selection

@@ -1,11 +1,14 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
+import ReactDOM from 'react-dom';
 import { DataSet } from 'vis-data';
-import { DataItem, Timeline as VisTimeline, TimelineOptions as VisTimelineOptions } from 'vis-timeline';
+import { DataItem, Timeline as VisTimeline, TimelineItem, TimelineOptions as VisTimelineOptions } from 'vis-timeline';
 import 'vis-timeline/styles/vis-timeline-graph2d.min.css';
+import { takeTheDateWindow } from './dateUtils';
 
 export interface TimelineEntry {
   id: string | number;
   start: Date;
+  tooltip?: string;
   end?: Date;
   group?: string;
 }
@@ -15,11 +18,19 @@ export interface TimelineOptions {
   stack: boolean;
   /* Join bunch of small entries in cluster */
   cluster: boolean;
-  onSelect?: (item: TimelineEntry[]) => void;
-  onHover?: (item: TimelineEntry[]) => void;
+  tooltipComponent?: ({
+    originalItemData,
+    parsedItemData,
+  }: {
+    originalItemData: TimelineItem;
+    parsedItemData?: TimelineItem;
+  }) => JSX.Element;
+  timelineEntryComponent?: ({ item, data }: { item: unknown; data: unknown }) => JSX.Element;
+  onSelect?: (item: TimelineEntry[], event: PointerEvent) => void;
+  onHover?: (item: TimelineEntry[], event: PointerEvent) => void;
 }
 
-interface TimelineProps extends TimelineOptions {
+export interface TimelineProps extends TimelineOptions {
   dataset: TimelineEntry[];
   selected: TimelineEntry['id'][];
 }
@@ -56,18 +67,38 @@ const createDatasetItem = (e: TimelineEntry): DataItem => ({
 });
 
 const createTimeLineOptions = (data: DataSet<DataItem, 'id'>, options: TimelineOptions): VisTimelineOptions => {
+  const { min, max } = takeTheDateWindow(data);
   const timelineOptions: VisTimelineOptions = {
-    max: data.max('id')?.end,
-    min: data.min('id')?.start,
+    max,
+    min,
     stack: options.stack,
-    template: (item, el, data) => {
-      const div = document.createElement('div');
-      return div;
-    },
   };
 
   if (options.cluster) {
     timelineOptions.cluster = {};
+  }
+
+  const { timelineEntryComponent: createTimelineEntryComponent } = options;
+  if (createTimelineEntryComponent) {
+    // TODO fix types in library
+    // @ts-expect-error error in typings of library
+    timelineOptions.template = (item: unknown, el: Element, data: unknown) => {
+      ReactDOM.render(createTimelineEntryComponent({ item, data }), el);
+      return el;
+    };
+  }
+
+  const { tooltipComponent: createTooltipComponent } = options;
+  if (createTooltipComponent) {
+    timelineOptions.tooltip = {
+      // TODO fix types in library
+      // @ts-expect-error error in typings of library, template can return Element
+      template: (originalItemData, parsedItemData) => {
+        const wrapper = document.createElement('div');
+        ReactDOM.render(createTooltipComponent({ originalItemData, parsedItemData }), wrapper);
+        return wrapper;
+      },
+    };
   }
 
   return timelineOptions;
@@ -109,7 +140,6 @@ export function Timeline({ dataset, selected, ...rest }: TimelineProps): JSX.Ele
     if (timeline === null) return;
     /* Find out what cluster should be highlighted */
     // TODO - add itemSet in public interface if lib
-    // TODO - performance can be improved here by using more clever algorithm
     // @ts-expect-error timeline not expose itemSet in interface.
     const affectedClusters = timeline.itemSet.clusters.reduce((acc, cluster) => {
       const clusterEntries = cluster.getData().items.map((i) => i.id);
@@ -134,14 +164,14 @@ export function Timeline({ dataset, selected, ...rest }: TimelineProps): JSX.Ele
         // @ts-expect-error timeline not expose itemSet in interface.
         const cluster = timeline.itemSet.clusters.find((c) => c.id === payload.item);
         const entriesInCluster = cluster.getData().items.map((e) => dataMapRef.current.get(e.id));
-        onSelect(entriesInCluster);
+        onSelect(entriesInCluster, payload.event);
       } else {
         const selectedEntries = timeline.getSelection().reduce((acc, id) => {
           const entry = dataMapRef.current.get(id);
           if (entry) acc.push(entry);
           return acc;
         }, [] as TimelineEntry[]);
-        onSelect(selectedEntries);
+        onSelect(selectedEntries, payload.event);
       }
     };
     timeline.on('click', onSelectCb);

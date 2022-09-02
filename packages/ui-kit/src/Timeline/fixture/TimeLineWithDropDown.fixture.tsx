@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useValue } from 'react-cosmos/fixture';
 import { Timeline } from '..';
+import { TimeLineWithDropDown } from '../TimeLineWithDropDown';
 import testData from './testData';
 
 const episodesMap = testData.reduce(
@@ -15,7 +16,6 @@ const episodesMap = testData.reduce(
       id: number;
       startedAt: string;
       endedAt: string;
-      updatedAt: string;
     }
   >,
 );
@@ -42,56 +42,12 @@ export default {
 
     return (
       <div style={{ minWidth: '85%' }}>
-        <Timeline
+        <TimeLineWithDropDown
           dataset={data}
           cluster={cluster}
           stack={stack}
           onSelect={(entries) => setSelected(entries.map((e) => e.id))}
           selected={selected}
-        />
-        <ul>
-          {Object.values(episodesMap).map((d) => (
-            <li
-              key={d.id}
-              style={{ color: selected.includes(d.id) ? 'red' : 'inherit' }}
-              onClick={() => {
-                setSelected([d.id]);
-              }}
-            >
-              {d.name}
-            </li>
-          ))}
-        </ul>
-      </div>
-    );
-  },
-  Timeline_Points: () => {
-    const [data] = useState(() =>
-      Object.values(episodesMap).map((d) => ({
-        id: d.id,
-        start: new Date(d.updatedAt),
-      })),
-    );
-
-    const [selected, setSelected] = useState([] as (number | string)[]);
-    const [cluster] = useValue('cluster', {
-      defaultValue: true,
-    });
-    const [stack] = useValue('stack', {
-      defaultValue: true,
-    });
-
-    return (
-      <div style={{ minWidth: '85%' }}>
-        <Timeline
-          dataset={data}
-          cluster={cluster}
-          stack={stack}
-          onSelect={(entries) => setSelected(entries.map((e) => e.id))}
-          selected={selected}
-          tooltipComponent={({ originalItemData }) => (
-            <div>{originalItemData.id ? originalItemData.id : 'Click to open'}</div>
-          )}
         />
         <ul>
           {Object.values(episodesMap).map((d) => (

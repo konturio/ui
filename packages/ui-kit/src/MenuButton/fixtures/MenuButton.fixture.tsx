@@ -2,7 +2,7 @@ import { Menu, MenuButton } from '../index';
 import { MenuItem, MenuList } from '../components';
 import { Button } from '../../Button';
 import { Divider } from '../../Divider';
-import { DropdownTrigger, DropdownTriggerRefProvider } from '../../Dropdown/components/DropdownTrigger';
+import { DropdownTrigger, DropdownTriggerRefProvider } from '../../Dropdown';
 import { MutableRefObject, useEffect, useRef, useState } from 'react';
 
 const menuAction = (action: string) => {
@@ -15,7 +15,7 @@ export default {
   Base: (
     <div>
       <Menu>
-        <MenuButton id="actions-button">
+        <MenuButton>
           Actions{' '}
           <span aria-hidden="true" style={{ userSelect: 'none' }}>
             ▾
@@ -32,7 +32,7 @@ export default {
   ),
   WithButton: (
     <Menu>
-      <MenuButton as={Button} size="small" id="actions-button">
+      <MenuButton as={Button} size="small">
         Actions{' '}
         <span aria-hidden="true" style={{ userSelect: 'none' }}>
           ▾
@@ -46,26 +46,20 @@ export default {
       </MenuList>
     </Menu>
   ),
-  WithoutButton: () => {
+  ControlledManner: () => {
     const [isExpanded, setIsExpanded] = useState<boolean>(true);
 
     const onBtnClick = (ev: React.MouseEvent<HTMLButtonElement>) => {
-      if (!isExpanded) {
-        setIsExpanded(true);
-      }
+      setIsExpanded(true);
     };
 
     const onDropdownClose = () => {
-      requestAnimationFrame(() => {
-        if (isExpanded) {
-          setIsExpanded(false);
-        }
-      });
+      setIsExpanded(false);
     };
 
     return (
       <>
-        <button onClick={onBtnClick}>open</button>
+        {!isExpanded && <button onClick={onBtnClick}>trigger <code>setIsExpanded(true)</code></button>}
         <Menu>
           <DropdownTrigger isExpanded={isExpanded} onDropdownClose={onDropdownClose} />
           <MenuList>
@@ -88,11 +82,7 @@ export default {
     };
 
     const onDropdownClose = () => {
-      requestAnimationFrame(() => {
-        if (isExpanded) {
-          setIsExpanded(false);
-        }
-      });
+      setIsExpanded((curr) => !curr);
     };
 
     const [targetRef, setTargetRef] = useState<MutableRefObject<HTMLDivElement | null>>();
@@ -134,7 +124,7 @@ export default {
   },
   WithDivider: (
     <Menu>
-      <MenuButton as={Button} size="small" id="actions-button">
+      <MenuButton as={Button} size="small">
         Actions{' '}
         <span aria-hidden="true" style={{ userSelect: 'none' }}>
           ▾
@@ -151,7 +141,7 @@ export default {
   ),
   WithDisabled: (
     <Menu>
-      <MenuButton as={Button} size="small" id="actions-button">
+      <MenuButton as={Button} size="small">
         Actions{' '}
         <span aria-hidden="true" style={{ userSelect: 'none' }}>
           ▾

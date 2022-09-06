@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-alpha.74](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.0.0-alpha.73...@konturio/ui-kit@3.0.0-alpha.74) (2022-09-06)
+
+
+### Bug Fixes
+
+* **ui-kit:** add ability to control menu button from outside ([33d2f19](https://github.com/konturio/ui/commit/33d2f1970aae2e482cd227c04ed883b2819d8cb4))
+
+
+### Features
+
+* **ui-kit:** add ability to show MenuButton at arbitrary position ([39b78e2](https://github.com/konturio/ui/commit/39b78e2a809bb2dc92bc4f47ef294c9fd140d871))
+
+
+
+
+
 # [3.0.0-alpha.73](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.0.0-alpha.72...@konturio/ui-kit@3.0.0-alpha.73) (2022-08-31)
 
 

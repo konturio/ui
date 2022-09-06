@@ -10,6 +10,7 @@ export { default as LocationFilled16 } from './LocationFilled16';
 export { default as Info24 } from './Info24';
 export { default as Locate24 } from './Locate24';
 export { default as Loader24 } from './Loader24';
+export { default as Loading16 } from './Loading16';
 export { default as Measure24 } from './Measure24';
 export { default as Chart24 } from './Chart24';
 export { default as ChartColumn24 } from './ChartColumn24';

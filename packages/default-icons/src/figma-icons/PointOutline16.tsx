@@ -8,7 +8,7 @@ const PointOutline16 = (props: SVGProps<SVGSVGElement>) => (
       strokeLinecap="square"
       strokeLinejoin="bevel"
     />
-    <circle cx={8.09814} cy={6.6025} r={1} fill="currentColor" />
+    <circle cx={8.09814} cy={6.60251} r={1} fill="currentColor" />
   </svg>
 );
 

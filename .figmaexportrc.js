@@ -13,12 +13,9 @@ const getComponentName = ({ basename, dirname }) =>
   `${pascalCase(basename)}${getComponentNamePostfixByIconDirName(dirname)}`;
 
 getComponentNamePostfixByIconDirName = (dirname) => {
-  const postfixByDirname = {
-    '24px': 24,
-    '16px': 16,
-  };
-
-  return postfixByDirname[dirname] || '';
+  if (dirname.includes('24px')) return 24;
+  if (dirname.includes('16px')) return 16;
+  return '';
 };
 
 module.exports = {
@@ -48,6 +45,7 @@ module.exports = {
                 [getVariable('base-strong-down')]: 'currentColor',
                 [getVariable('faint-strong')]: 'currentColor',
                 [getVariable('icon-base-strong')]: 'currentColor',
+                [getVariable('faint-weak-up')]: 'currentColor',
               },
               // template is default, but we need to add displayName to every icon component
               // https://github.com/gregberge/svgr/blob/main/packages/babel-plugin-transform-svg-component/src/defaultTemplate.ts

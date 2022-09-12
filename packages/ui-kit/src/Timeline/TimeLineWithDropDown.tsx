@@ -1,8 +1,9 @@
+/* eslint-disable prettier/prettier */
 import { useCallback, useMemo, useState } from 'react';
 import { DropdownTriggerRefProvider } from '../Dropdown';
 import { Menu, MenuItem, MenuList } from '../MenuButton';
 import { Timeline } from './Timeline';
-import type { TimelineProps, TimelineEntry } from './Timeline';
+import type { TimelineProps, TimelineEntry } from './types';
 import type { MutableRefObject } from 'react';
 
 export interface TimeLineWithDropDownProps extends Omit<TimelineProps, 'onSelect' | 'cluster'> {
@@ -51,7 +52,6 @@ export function TimeLineWithDropDown(props: TimeLineWithDropDownProps) {
           isExpanded={isExpanded}
           onDropdownClose={onDropdownClose}
         />
-
         <MenuList>
           {menuItems.map((item) => (
             <MenuItem key={item.id} onSelect={() => originalOnSelect([item])}>

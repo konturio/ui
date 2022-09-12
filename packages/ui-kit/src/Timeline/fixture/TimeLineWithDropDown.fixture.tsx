@@ -31,10 +31,6 @@ export default {
 
     const [selected, setSelected] = useState([] as (number | string)[]);
 
-    const [cluster] = useValue('cluster', {
-      defaultValue: true,
-    });
-
     const [stack] = useValue('stack', {
       defaultValue: true,
     });

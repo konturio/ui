@@ -21,7 +21,7 @@ export { ActionsBar, ActionsBarBTN } from './ActionsBar';
 export { Text } from './Text';
 export { ButtonGroup } from './ButtonGroup';
 export { Modal } from './Modal';
-export { Timeline } from './Timeline';
+export * from './Timeline';
 export * from './Legend';
 export * from './Popover';
 export * from './Portal';

@@ -65,6 +65,50 @@ export default {
       </div>
     );
   },
+  ['Timeline single range']: () => {
+    const [data] = useState(() =>
+      Object.values([episodesMap[0]]).map((d) => ({
+        id: d.id,
+        start: new Date(d.startedAt),
+        end: new Date(d.endedAt),
+      })),
+    );
+
+    const [selected, setSelected] = useState([] as (number | string)[]);
+
+    const [cluster] = useValue('cluster', {
+      defaultValue: true,
+    });
+
+    const [stack] = useValue('stack', {
+      defaultValue: true,
+    });
+
+    return (
+      <div style={{ minWidth: '85%' }}>
+        <Timeline
+          dataset={data}
+          cluster={cluster}
+          stack={stack}
+          onSelect={(entries) => setSelected(entries.map((e) => e.id))}
+          selected={selected}
+        />
+        <ul>
+          {Object.values(episodesMap).map((d) => (
+            <li
+              key={d.id}
+              style={{ color: selected.includes(d.id) ? 'red' : 'inherit' }}
+              onClick={() => {
+                setSelected([d.id]);
+              }}
+            >
+              {d.name}
+            </li>
+          ))}
+        </ul>
+      </div>
+    );
+  },
   ['Timeline Points']: () => {
     const [data] = useState(() =>
       Object.values(episodesMap).map((d) => ({
@@ -131,7 +175,6 @@ export default {
           onSelect={(entries) => setSelected(entries.map((e) => e.id))}
           selected={selected}
           tooltipComponent={({ originalItemData }) => {
-            console.log('🚀 ~ file: Timeline.fixture.tsx ~ line 177 ~ originalItemData', originalItemData);
             return (
               <div>
                 {originalItemData.id ? (

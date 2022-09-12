@@ -55,8 +55,9 @@ import fixture44 from './../packages/ui-kit/tslib/Selector/Selector.fixture.js';
 import fixture45 from './../packages/ui-kit/tslib/Tabs/fixtures/Tabs.fixture.js';
 import fixture46 from './../packages/ui-kit/tslib/Text/Text.fixture.js';
 import fixture47 from './../packages/ui-kit/tslib/Timeline/fixture/Timeline.fixture.js';
-import fixture48 from './../packages/ui-kit/tslib/TimeSlider/TimeSlider.fixture.js';
-import fixture49 from './../packages/ui-kit/tslib/Toggler/Toggler.fixture.js';
+import fixture48 from './../packages/ui-kit/tslib/Timeline/fixture/TimeLineWithDropDown.fixture.js';
+import fixture49 from './../packages/ui-kit/tslib/TimeSlider/TimeSlider.fixture.js';
+import fixture50 from './../packages/ui-kit/tslib/Toggler/Toggler.fixture.js';
 
 import decorator0 from './../cosmos.decorator.tsx';
 import decorator1 from './../packages/ui-kit/cosmos.decorator.tsx';
@@ -114,8 +115,9 @@ export const fixtures = {
   'packages/ui-kit/tslib/Tabs/fixtures/Tabs.fixture.js': { module: { default: fixture45 } },
   'packages/ui-kit/tslib/Text/Text.fixture.js': { module: { default: fixture46 } },
   'packages/ui-kit/tslib/Timeline/fixture/Timeline.fixture.js': { module: { default: fixture47 } },
-  'packages/ui-kit/tslib/TimeSlider/TimeSlider.fixture.js': { module: { default: fixture48 } },
-  'packages/ui-kit/tslib/Toggler/Toggler.fixture.js': { module: { default: fixture49 } }
+  'packages/ui-kit/tslib/Timeline/fixture/TimeLineWithDropDown.fixture.js': { module: { default: fixture48 } },
+  'packages/ui-kit/tslib/TimeSlider/TimeSlider.fixture.js': { module: { default: fixture49 } },
+  'packages/ui-kit/tslib/Toggler/Toggler.fixture.js': { module: { default: fixture50 } }
 };
 
 export const decorators = {

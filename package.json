@@ -93,9 +93,9 @@
     "stylelint-config-recommended": "^6.0.0"
   },
   "devDependencies": {
-    "@figma-export/cli": "4.3.0",
-    "@figma-export/output-components-as-svgr": "4.2.0",
-    "@figma-export/transform-svg-with-svgo": "4.3.0",
+    "@figma-export/cli": "^4.3.0",
+    "@figma-export/output-components-as-svgr": "^4.2.0",
+    "@figma-export/transform-svg-with-svgo": "^4.3.0",
     "css-variables-parser": "1.0.1",
     "lint-staged": "^11.1.1",
     "open-cli": "^7.0.0",

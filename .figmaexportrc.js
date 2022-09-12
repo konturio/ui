@@ -27,7 +27,16 @@ module.exports = {
         onlyFromPages: ['Icons'],
         transformers: [
           require('@figma-export/transform-svg-with-svgo')({
-            plugins: [{ name: 'removeXMLNS' }],
+            plugins: [
+              { name: 'removeXMLNS' },
+              {
+                name: 'cleanupIDs',
+                params: {
+                  minify: false,
+                },
+              },
+              { name: 'collapseGroups' },
+            ],
           }),
         ],
         outputters: [
@@ -41,11 +50,7 @@ module.exports = {
               memo: true,
               jsxRuntime: 'automatic',
               replaceAttrValues: {
-                [getVariable('base-weak-up')]: 'currentColor',
-                [getVariable('base-strong-down')]: 'currentColor',
-                [getVariable('faint-strong')]: 'currentColor',
-                [getVariable('icon-base-strong')]: 'currentColor',
-                [getVariable('faint-weak-up')]: 'currentColor',
+                ['#051626']: 'currentColor',
               },
               // template is default, but we need to add displayName to every icon component
               // https://github.com/gregberge/svgr/blob/main/packages/babel-plugin-transform-svg-component/src/defaultTemplate.ts

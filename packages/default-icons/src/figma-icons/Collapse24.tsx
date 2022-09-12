@@ -10,7 +10,7 @@ const Collapse24 = (props: SVGProps<SVGSVGElement>) => (
       strokeLinejoin="round"
     />
     <path
-      d="M10.369 19.369L10.369 13.631M10.369 13.631L4.63096 13.631M10.369 13.631L3.92401 20.076"
+      d="M10.369 19.3691L10.369 13.631M10.369 13.631L4.63096 13.631M10.369 13.631L3.92401 20.076"
       stroke="currentColor"
       strokeWidth={1.3}
       strokeLinecap="round"

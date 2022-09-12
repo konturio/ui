@@ -9,13 +9,13 @@ const BivariateMatrix16 = (props: SVGProps<SVGSVGElement>) => (
       strokeLinejoin="round"
     />
     <path
-      d="M8 9.68873L5.4669 12.2218L8 14.7549L10.5331 12.2218L8 9.68873Z"
+      d="M8 9.68871L5.4669 12.2218L8 14.7549L10.5331 12.2218L8 9.68871Z"
       stroke="currentColor"
       strokeLinecap="round"
       strokeLinejoin="round"
     />
     <path
-      d="M8 1.2451L5.4669 3.7782L8 6.3113L10.5331 3.7782L8 1.2451Z"
+      d="M8 1.24506L5.4669 3.77817L8 6.31127L10.5331 3.77817L8 1.24506Z"
       stroke="currentColor"
       strokeLinecap="round"
       strokeLinejoin="round"

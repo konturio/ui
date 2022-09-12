@@ -38,7 +38,7 @@ const Community24 = (props: SVGProps<SVGSVGElement>) => (
       strokeLinejoin="round"
     />
     <path
-      d="M14.83 9.17L18.36 5.64"
+      d="M14.83 9.17001L18.36 5.64001"
       stroke="currentColor"
       strokeWidth={1.3}
       strokeLinecap="round"

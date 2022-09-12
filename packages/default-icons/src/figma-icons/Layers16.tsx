@@ -10,7 +10,7 @@ const Layers16 = (props: SVGProps<SVGSVGElement>) => (
     />
     <path d="M2.33334 8L8 10.6667L13.6667 8" stroke="currentColor" strokeLinecap="square" strokeLinejoin="bevel" />
     <path
-      d="M8 2.66666L2.33334 5.33332L8 7.99999L13.6667 5.33332L8 2.66666Z"
+      d="M8 2.66667L2.33334 5.33334L8 8L13.6667 5.33334L8 2.66667Z"
       stroke="currentColor"
       strokeLinecap="square"
       strokeLinejoin="bevel"

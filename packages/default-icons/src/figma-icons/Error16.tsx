@@ -6,7 +6,7 @@ const Error16 = (props: SVGProps<SVGSVGElement>) => (
       fillRule="evenodd"
       clipRule="evenodd"
       d="M8 0C3.55556 0 0 3.55556 0 8C0 12.4444 3.55556 16 8 16C12.4444 16 16 12.4444 16 8C16 3.55556 12.4444 0 8 0Z"
-      fill="#D93A3A"
+      fill="currentColor"
     />
     <path d="M13 7.2L3 7.2L3 8.8L13 8.8V7.2Z" fill="white" />
   </svg>

@@ -10,7 +10,7 @@ const Expand24 = (props: SVGProps<SVGSVGElement>) => (
       strokeLinejoin="round"
     />
     <path
-      d="M4.63095 13.631L4.63095 19.369M4.63095 19.369L10.369 19.369M4.63095 19.369L10.076 13.924"
+      d="M4.63095 13.631L4.63095 19.3691M4.63095 19.3691L10.369 19.3691M4.63095 19.3691L10.076 13.924"
       stroke="currentColor"
       strokeWidth={1.3}
       strokeLinecap="round"

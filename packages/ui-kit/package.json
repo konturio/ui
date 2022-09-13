@@ -27,7 +27,9 @@
     "downshift": "^6.1.7",
     "nanoid": "^4.0.0",
     "react-is": "^18.2.0",
-    "tabbable": "^5.3.3"
+    "tabbable": "^5.3.3",
+    "vis-data": "^7.1.4",
+    "vis-timeline": "^7.7.0"
   },
   "gitHead": "aec29cbed5f7b5841fb91d37348acd45b3c71fce"
 }

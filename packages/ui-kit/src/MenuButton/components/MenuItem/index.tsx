@@ -1,7 +1,7 @@
 import React from 'react';
-import { useDropdownItem } from '../../../Dropdown/components/DropdownItem';
+import { useDropdownItem } from '../../../Dropdown';
 import { ForwardRefComponent } from '../../../utils/component-helpers/polymorphic';
-import { useDropdownItems } from '../../../Dropdown/components/DropdownItems';
+import { useDropdownItems } from '../../../Dropdown';
 import cn from 'clsx';
 import style from './style.module.css';
 

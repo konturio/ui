@@ -16,15 +16,15 @@ export default {
   Interactive: () => {
     const [state, setState] = useState('foo');
 
-    const onChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-      setState((state) => e.target.value);
+    const onChange = useCallback((val) => {
+      return () => setState((state) => val);
     }, []);
 
     return (
       <div style={{ display: 'flex', flexFlow: 'column nowrap' }}>
-        <Radio id="one" label="Foo" value="foo" checked={state === 'foo'} onChange={onChange} />
-        <Radio id="two" label="Bar" value="bar" checked={state === 'bar'} onChange={onChange} />
-        <Radio id="three" label="Baz" value="baz" checked={state === 'baz'} onChange={onChange} />
+        <Radio id="one" label="Foo" value="foo" checked={state === 'foo'} onChange={onChange('foo')} />
+        <Radio id="two" label="Bar" value="bar" checked={state === 'bar'} onChange={onChange('two')} />
+        <Radio id="three" label="Baz" value="baz" checked={state === 'baz'} onChange={onChange('three')} />
         <code style={{ whiteSpace: 'pre', marginTop: '1em' }}>{JSON.stringify(state, null, 2)}</code>
       </div>
     );

@@ -7,7 +7,7 @@ const ArrowExternal24 = (props: SVGProps<SVGSVGElement>) => (
       stroke="currentColor"
       strokeWidth={1.3}
       strokeLinecap="square"
-      strokeLinejoin="bevel"
+      strokeLinejoin="round"
     />
   </svg>
 );

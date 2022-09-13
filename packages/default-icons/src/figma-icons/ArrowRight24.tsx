@@ -2,13 +2,8 @@ import { SVGProps, memo } from 'react';
 
 const ArrowRight24 = (props: SVGProps<SVGSVGElement>) => (
   <svg width={24} height={24} viewBox="0 0 24 24" fill="none" {...props}>
-    <path
-      d="M12.4997 7.23547L17.2642 12M17.2642 12L12.4997 16.7646M17.2642 12L6.73535 12"
-      stroke="currentColor"
-      strokeWidth={1.3}
-      strokeLinecap="square"
-      strokeLinejoin="bevel"
-    />
+    <path d="M5 12H19" stroke="currentColor" strokeWidth={1.3} strokeLinejoin="round" />
+    <path d="M12 5L19 12L12 19" stroke="currentColor" strokeWidth={1.3} strokeLinejoin="round" />
   </svg>
 );
 

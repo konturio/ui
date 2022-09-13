@@ -3,10 +3,9 @@ import { SVGProps, memo } from 'react';
 const Measure24 = (props: SVGProps<SVGSVGElement>) => (
   <svg width={24} height={24} viewBox="0 0 24 24" fill="none" {...props}>
     <path
-      d="M3.9 3V20.1H21M3.9 3L2 4.9M3.9 3L5.8 4.9M21 20.1L19.1 18.2M21 20.1L19.1 22"
+      d="M3.9 3V20.1H21M3.9 3L1.5 5.4M3.9 3L6.3 5.4M21 20.1L18.5 17.6M21 20.1L18.5 22.6"
       stroke="currentColor"
       strokeWidth={1.3}
-      strokeLinecap="round"
       strokeLinejoin="round"
     />
     <path

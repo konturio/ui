@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.1](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.0.0...@konturio/ui-kit@3.0.1) (2022-09-13)
+
+**Note:** Version bump only for package @konturio/ui-kit
+
+
+
+
+
 # [3.0.0](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.0.0-alpha.74...@konturio/ui-kit@3.0.0) (2022-09-13)
 
 **Note:** Version bump only for package @konturio/ui-kit

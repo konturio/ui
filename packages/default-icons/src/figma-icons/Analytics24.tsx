@@ -3,7 +3,7 @@ import { SVGProps, memo } from 'react';
 const Analytics24 = (props: SVGProps<SVGSVGElement>) => (
   <svg width={24} height={24} viewBox="0 0 24 24" fill="none" {...props}>
     <path
-      d="M11.164 4.19355C6.46396 4.19355 2.66396 7.99355 2.66396 12.6935C2.66396 17.3935 6.46396 21.1935 11.164 21.1935C15.864 21.1935 19.664 17.3935 19.664 12.6935H11.164V4.19355Z"
+      d="M11.164 4.19355C6.46396 4.19355 2.66396 7.99355 2.66396 12.6936C2.66396 17.3935 6.46396 21.1936 11.164 21.1936C15.864 21.1936 19.664 17.3935 19.664 12.6936H11.164V4.19355Z"
       stroke="currentColor"
       strokeWidth={1.3}
       strokeMiterlimit={10}

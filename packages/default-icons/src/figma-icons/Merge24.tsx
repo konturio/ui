@@ -20,7 +20,7 @@ const Merge24 = (props: SVGProps<SVGSVGElement>) => (
       fillRule="evenodd"
       clipRule="evenodd"
       d="M12 7C10.4218 8.10085 9.38918 9.92984 9.38918 12C9.38918 14.0702 10.4218 15.8992 12 17C13.5782 15.8992 14.6108 14.0702 14.6108 12C14.6108 9.92984 13.5782 8.10085 12 7Z"
-      fill="#051626"
+      fill="currentColor"
     />
   </svg>
 );

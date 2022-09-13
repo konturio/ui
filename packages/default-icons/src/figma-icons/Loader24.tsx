@@ -20,14 +20,14 @@ const Loader24 = (props: SVGProps<SVGSVGElement>) => (
     <path d="M18 12H22" stroke="currentColor" strokeWidth={1.3} strokeLinecap="round" strokeLinejoin="round" />
     <path d="M2 12H6" stroke="currentColor" strokeWidth={1.3} strokeLinecap="round" strokeLinejoin="round" />
     <path
-      d="M16.24 7.76L19.07 4.93"
+      d="M16.24 7.75999L19.07 4.92999"
       stroke="currentColor"
       strokeWidth={1.3}
       strokeLinecap="round"
       strokeLinejoin="round"
     />
     <path
-      d="M4.93 4.93L7.76 7.76"
+      d="M4.93 4.92999L7.76 7.75999"
       stroke="currentColor"
       strokeWidth={1.3}
       strokeLinecap="round"

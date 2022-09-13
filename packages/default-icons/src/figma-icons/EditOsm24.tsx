@@ -14,7 +14,6 @@ const EditOsm24 = (props: SVGProps<SVGSVGElement>) => (
         d="M17.3521 0.660553H23.3521M23.3521 0.660553V6.66055M23.3521 0.660553L17.3521 6.66055"
         stroke="currentColor"
         strokeWidth={1.3}
-        strokeLinecap="round"
       />
     </g>
     <defs>

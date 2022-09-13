@@ -1,6 +1,6 @@
 import { SVGProps, memo } from 'react';
 
-const PlayOutline24 = (props: SVGProps<SVGSVGElement>) => (
+const PlayOutlineTv24 = (props: SVGProps<SVGSVGElement>) => (
   <svg width={24} height={24} viewBox="0 0 24 24" fill="none" {...props}>
     <path
       d="M9 9.45221C9 9.10875 9.39914 8.89102 9.72535 9.05654L14.7464 11.6043C15.0845 11.7759 15.0845 12.2241 14.7464 12.3957L9.72535 14.9435C9.39914 15.109 9 14.8913 9 14.5478V9.45221Z"
@@ -23,6 +23,6 @@ const PlayOutline24 = (props: SVGProps<SVGSVGElement>) => (
   </svg>
 );
 
-PlayOutline24.displayName = 'PlayOutline24';
-const Memo = memo(PlayOutline24);
+PlayOutlineTv24.displayName = 'PlayOutlineTv24';
+const Memo = memo(PlayOutlineTv24);
 export default Memo;

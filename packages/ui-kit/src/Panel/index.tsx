@@ -25,7 +25,7 @@ interface Panel extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElem
   };
 }
 
-export function PanelComp({
+export function Panel({
   className,
   children,
   header,

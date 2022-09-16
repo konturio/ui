@@ -1,5 +1,5 @@
 .header {
-  padding: var(--double-unit);
+  padding: var(--unit) var(--double-unit);
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
@@ -7,13 +7,31 @@
   align-items: flex-start;
 }
 
+.hoverable :hover{
+  cursor: pointer;
+}
+
+.headerTitle {
+  display: flex;
+  align-items: center;
+  gap: var(--unit);
+}
+
 .close {
   margin-left: 1em;
-  color: var(--faint-strong);
-  cursor: pointer;
   border-radius: var(--border-radius);
   svg {
     display: block;
+  }
+}
+
+.contentContainer{
+  &.show {
+    height: 100%;
+  }
+
+  &.collapse{
+    height: 0;
   }
 }
 
@@ -28,5 +46,18 @@
 
   &:hover {
     background-color: var(--base-weak-up);
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .modalCover {
+    height: 100%;
+  }
+  .modalCover,
+  .modalCover * {
+    z-index: var(--modal);
+  }
+  .modalCover > section {
+    left: 0;
   }
 }

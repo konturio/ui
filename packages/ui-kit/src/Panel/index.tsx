@@ -2,16 +2,26 @@ import { Card } from '../Card';
 import cn from 'clsx';
 import s from './style.module.css';
 import { ReactChild } from 'react';
-import { Close24 } from '@konturio/default-icons';
+import { Text } from '../Text';
+import { ChevronDown24, ChevronUp24 } from '@konturio/default-icons';
+import { Modal } from '../Modal';
 
 interface Panel extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
   className?: string;
   header?: string | React.ReactChild | React.ReactChild[];
-  onClose?: React.MouseEventHandler<HTMLButtonElement>;
+  headerIcon?: React.ReactChild;
+  isOpen?: boolean;
+  onHeaderClick?: React.MouseEventHandler<HTMLDivElement>;
   customCloseBtn?: ReactChild;
   classes?: {
     header?: string;
+    headerTitle?: string;
     closeBtn?: string;
+    modal?: string
+  };
+  modal?: {
+    onModalClick: () => void
+    showInModal: boolean;
   };
 }
 
@@ -19,33 +29,49 @@ export function Panel({
   className,
   children,
   header,
-  onClose,
+  headerIcon,
+  onHeaderClick,
   customCloseBtn,
   classes,
   ref,
+  isOpen = true,
+  modal,
   ...rest
 }: React.PropsWithChildren<Panel>) {
-  return (
-    <Card className={cn(s.card, className)} {...rest}>
-      {header && (
-        <div className={cn(s.header, classes?.header)}>
-          <div>{header}</div>
-          {onClose && !customCloseBtn ? (
-            <button className={cn(s.close, classes?.closeBtn)} onClick={onClose}>
-              <Close24 />
-            </button>
-          ) : null}
-        </div>
-      )}
-      {onClose && customCloseBtn ? (
-        <button className={classes?.closeBtn} onClick={onClose}>
-          {customCloseBtn}
-        </button>
-      ) : null}
 
+  const panel = <Card className={cn(s.card, className)} {...rest}>
+    {header && (
+      <div className={cn(onHeaderClick && s.hoverable)}>
+        <div className={cn(s.header, classes?.header)} onClick={onHeaderClick}>
+          <div className={cn(s.headerTitle, classes?.headerTitle)}>
+            {headerIcon}
+            <Text type="heading-l">{header}</Text>
+          </div>
+          {onHeaderClick && (
+            <button className={cn(s.close, classes?.closeBtn)}>
+              {customCloseBtn ? customCloseBtn
+                : isOpen ? <ChevronUp24 /> : <ChevronDown24 />}
+            </button>
+          )}
+        </div>
+      </div>
+    )}
+    <div className={cn(s.contentContainer, isOpen ? s.show : s.collapse)}>
       {children}
-    </Card>
-  );
+    </div>
+  </Card>
+
+
+  if (isOpen && modal?.showInModal)
+    return (
+      <Modal
+        onModalCloseCallback={modal.onModalClick}
+        className={cn(s.modalCover, classes?.modal)}
+      >
+        {panel}
+      </Modal>
+    );
+  return <>{panel}</>;
 }
 
 interface PanelIconProps {

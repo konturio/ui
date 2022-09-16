@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.3](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.0.2...@konturio/ui-kit@3.0.3) (2022-09-16)
+
+
+### Bug Fixes
+
+* **ui-kit Panel:** 12405 - new panel design - folding panel ([#29](https://github.com/konturio/ui/issues/29)) ([eb99e37](https://github.com/konturio/ui/commit/eb99e37e6f2f72295ae59d98b4a8c0bb8c44b2e3))
+
+
+
+
+
 ## [3.0.2](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.0.1...@konturio/ui-kit@3.0.2) (2022-09-13)
 
 **Note:** Version bump only for package @konturio/ui-kit

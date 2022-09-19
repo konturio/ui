@@ -13,11 +13,13 @@ export function AppHeader({
   installChat,
   logo = <Logo height={24} />,
   afterChatContent,
+  chatBtnText = 'Chat with us',
 }: React.PropsWithChildren<{
   title: string | JSX.Element;
   logo?: JSX.Element;
   onChatClick?: React.MouseEventHandler<HTMLButtonElement>;
   installChat?: (id: string) => void;
+  chatBtnText?: string;
   afterChatContent?: ReactNode;
 }>) {
   useEffect(() => {
@@ -40,7 +42,7 @@ export function AppHeader({
         transparent
         iconBefore={<Chat24 />}
       >
-        Chat with us
+        {chatBtnText}
       </Button>
       {afterChatContent && <div className={s.afterChatContent}>{afterChatContent}</div>}
     </div>

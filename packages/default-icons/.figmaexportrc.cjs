@@ -1,14 +1,13 @@
 const { pascalCase } = require('@figma-export/utils');
-const { parseFileSync } = require('css-variables-parser');
 
 // Link to our figma file: https://www.figma.com/file/C2TlBs45hTL0U5pqZl2n9d/Kontur-Design-System?node-id=1199%3A9800
 // Each Figma file has a unique URL containing its ID.
 // The file ID is the string of random alphanumeric characters found in the section of the URL after figma.com/file/.
 const FIGMA_FILE_ID = 'C2TlBs45hTL0U5pqZl2n9d';
 
-const variables = parseFileSync('./packages/default-theme/variables.css');
-const getVariable = (key) => variables[key].toUpperCase();
-
+// in figma we have component name like 24px/disasters
+// 24px - dirname, disasters - basename
+// in case of naming icon 24px/subdirectory/disasters, it will be 24px/subdirectory - dirname, disasters- basename
 const getComponentName = ({ basename, dirname }) =>
   `${pascalCase(basename)}${getComponentNamePostfixByIconDirName(dirname)}`;
 
@@ -41,7 +40,7 @@ module.exports = {
         ],
         outputters: [
           require('@figma-export/output-components-as-svgr')({
-            output: './packages/default-icons/src/figma-icons',
+            output: './src/figma-icons',
             getDirname: (options) => `./`, // to have all icons in one folder
             getComponentName,
             getFileExtension: () => '.tsx',

@@ -91,17 +91,3 @@ If you need release modules in NPM nexus repo, you need some extra steps:
 8. Rebuild the app where you want to use the new modules
 
 > is something wrong in CI as workaround you can run `npm run publish` manually
-
-### Export icons from Figma
-
-Before export icons, you will need to generate a Personal Access Token in Figma.
-
-1. Go to the File Browser.
-2. Click your name at the top left and go to the Settings tab.
-3. Under Personal Access Tokens, click Create a new personal access token.
-4. Copy this token. This is your Figma API key.
-
-Copy the token. Now you can start export!
-
-`export FIGMA_TOKEN=<personalAccessToken>`
-`npm run figma:export`

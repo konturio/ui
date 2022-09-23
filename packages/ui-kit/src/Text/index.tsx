@@ -12,7 +12,7 @@ type TextTypes =
   | 'heading-xl';
 
 export function Text({ children, type }: React.PropsWithChildren<{ type: TextTypes }>) {
-  return isValidElement(children) ? (
+  return isValidElement<{ className: string }>(children) ? (
     cloneElement(children, { className: `k-font-${type} ${children.props.className}` })
   ) : (
     <span className={`k-font-${type}`}>{children}</span>

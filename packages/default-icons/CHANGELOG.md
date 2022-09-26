@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.1.0](https://github.com/konturio/ui/compare/@konturio/default-icons@2.0.0...@konturio/default-icons@2.1.0) (2022-09-26)
+
+
+### Features
+
+* **core:** vite, react, typescript versions up ([bb613ef](https://github.com/konturio/ui/commit/bb613eff936845646652a21ccd734e92f5ec298c))
+* **icon-export:** 12326 - Move figma-export config and dependencies to icons package, update readme in icons package ([aaa6d80](https://github.com/konturio/ui/commit/aaa6d80a5ef1010112ff8259ea488b9e0b4d9826))
+
+
+
+
+
 # [2.0.0](https://github.com/konturio/ui/compare/@konturio/default-icons@2.0.0-alpha.32...@konturio/default-icons@2.0.0) (2022-09-13)
 
 

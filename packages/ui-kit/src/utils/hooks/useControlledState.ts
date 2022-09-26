@@ -1,4 +1,5 @@
-import { useState, useRef, useCallback, Dispatch, SetStateAction } from 'react';
+import type { Dispatch, SetStateAction } from 'react';
+import { useState, useRef, useCallback } from 'react';
 
 export function useControlledState<T = unknown>({
   controlledValue,

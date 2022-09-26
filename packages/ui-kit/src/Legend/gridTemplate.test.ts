@@ -2,7 +2,7 @@ import { fillTemplate } from './gridTemplate';
 
 describe('fillTemplate fill array with elements according to template', () => {
   it('Should calc correct position', () => {
-    // eslint-disable-next-line prettier/prettier
+    // prettier-ignore
     const TEMPLATE = [
       'x x',
       'x x ',
@@ -23,7 +23,7 @@ describe('fillTemplate fill array with elements according to template', () => {
   });
 
   it('Should select right value', () => {
-    // eslint-disable-next-line prettier/prettier
+    // prettier-ignore
     const TEMPLATE = [
       'x y c',
     ];
@@ -40,11 +40,8 @@ describe('fillTemplate fill array with elements according to template', () => {
   });
 
   it('Should ignore unavailable values', () => {
-    // eslint-disable-next-line prettier/prettier
-    const TEMPLATE = [
-      'x . c',
-      '. y .',
-    ];
+    // prettier-ignore
+    const TEMPLATE = ['x . c', '. y .'];
 
     const DATA = {
       x: [{ value: 'x1' }],
@@ -62,12 +59,8 @@ describe('fillTemplate fill array with elements according to template', () => {
   });
 
   it('Integration test', () => {
-    // eslint-disable-next-line prettier/prettier
-    const TEMPLATE = [
-      'y . . . .',
-      'y c c c .',
-      '. x x x x'
-    ];
+    // prettier-ignore
+    const TEMPLATE = ['y . . . .', 'y c c c .', '. x x x x'];
 
     const DATA = {
       x: [{ value: 'x1' }, { value: 'x2' }, { value: 'x3' }, { value: 'x4' }],

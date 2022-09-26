@@ -179,8 +179,8 @@ export default {
               <div>
                 {originalItemData.id ? (
                   <ul>
-                    <li>Start: {originalItemData.start}</li>
-                    <li>End: {originalItemData.end}</li>
+                    <li>Start: {String(originalItemData.start)}</li>
+                    <li>End: {String(originalItemData.end)}</li>
                   </ul>
                 ) : (
                   'Click to open'

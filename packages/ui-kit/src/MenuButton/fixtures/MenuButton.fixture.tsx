@@ -3,7 +3,8 @@ import { MenuItem, MenuList } from '../components';
 import { Button } from '../../Button';
 import { Divider } from '../../Divider';
 import { DropdownTrigger, DropdownTriggerRefProvider } from '../../Dropdown';
-import { MutableRefObject, useEffect, useRef, useState } from 'react';
+import type { MutableRefObject} from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 const menuAction = (action: string) => {
   return () => {

@@ -1,6 +1,6 @@
 import ReactDOM from 'react-dom';
 import type { TimelineOptions as VisTimelineOptions } from 'vis-timeline';
-import { TimelineOptions } from '../types';
+import type { TimelineOptions } from '../types';
 
 export const toVisTimelineOptions = (options: TimelineOptions): VisTimelineOptions => {
   const timelineOptions: VisTimelineOptions = {

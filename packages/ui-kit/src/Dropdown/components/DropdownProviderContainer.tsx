@@ -1,6 +1,7 @@
 import React from 'react';
-import { DropdownDescendant, DropdownState } from '../types';
-import { DropdownDescendantContext, DropdownProvider, DropdownProviderProps } from '../context';
+import type { DropdownDescendant, DropdownState } from '../types';
+import type { DropdownProviderProps } from '../context';
+import { DropdownDescendantContext, DropdownProvider } from '../context';
 import { DescendantProvider, useDescendantsInit } from '../../utils/component-helpers/descendants';
 import { nanoid } from 'nanoid';
 import { focusElement, makeId } from '../../utils/helpers/helpers';

@@ -1,8 +1,8 @@
-import React from 'react';
+import type React from 'react';
 import { createDescendantContext } from '../utils/component-helpers/descendants';
 import { createContext } from '../utils/helpers/context';
-import { DropdownAction } from './reducer';
-import { DropdownContextValue, DropdownDescendant, DropdownState } from './types';
+import type { DropdownAction } from './reducer';
+import type { DropdownContextValue, DropdownDescendant, DropdownState } from './types';
 import { makeId } from '../utils/helpers/helpers';
 
 type TriggerRef = React.RefObject<null | HTMLButtonElement>;

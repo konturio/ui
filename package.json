@@ -54,7 +54,7 @@
     ]
   },
   "lint-staged": {
-    "*/**/*.{css}": [
+    "*/**/*.css": [
       "stylelint"
     ],
     "*/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
@@ -72,16 +72,17 @@
     "@types/jest": "^27.0.0",
     "@types/react": "^18.0.21",
     "@types/react-dom": "^18.0.6",
-    "@typescript-eslint/eslint-plugin": "^5.28.0",
-    "@typescript-eslint/parser": "^5.28.0",
-    "autoprefixer": "^10.3.1",
-    "clsx": "^1.1.1",
-    "eslint": "^7.32.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-import": "^2.23.4",
-    "eslint-plugin-prettier": "^3.4.0",
-    "eslint-plugin-react": "^7.24.0",
-    "eslint-plugin-react-hooks": "^4.2.0",
+    "@typescript-eslint/eslint-plugin": "^5.38.0",
+    "@typescript-eslint/parser": "^5.38.0",
+    "autoprefixer": "^10.4.12",
+    "clsx": "^1.2.1",
+    "eslint": "^8.24.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-import-resolver-typescript": "^3.5.1",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.31.8",
+    "eslint-plugin-react-hooks": "4.6.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.0.6",
     "jest-css-modules-transform": "^4.3.0",
@@ -92,7 +93,7 @@
     "postcss": "^8.3.6",
     "postcss-nested": "^5.0.6",
     "postcss-normalize": "^10.0.0",
-    "prettier": "^2.3.2",
+    "prettier": "^2.7.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "stylelint": "^14.1.0",

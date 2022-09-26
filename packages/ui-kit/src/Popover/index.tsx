@@ -1,11 +1,14 @@
 import { tabbable } from 'tabbable';
-import { CSSProperties, forwardRef, ReactNode, RefObject, useEffect, useRef } from 'react';
+import type { CSSProperties, ReactNode, RefObject} from 'react';
+import { forwardRef, useEffect, useRef } from 'react';
 import { useComposedRefs } from '../utils/hooks/useComposedRefs';
 import { getOwnerDocument } from '../utils/helpers/helpers';
-import { ForwardRefComponent } from '../utils/component-helpers/polymorphic';
+import type { ForwardRefComponent } from '../utils/component-helpers/polymorphic';
 import { Portal } from '../Portal';
-import { Position, positionDefault } from '../utils/position/position';
-import { PRect, useRect } from '../utils/position/rect';
+import type { Position} from '../utils/position/position';
+import { positionDefault } from '../utils/position/position';
+import type { PRect} from '../utils/position/rect';
+import { useRect } from '../utils/position/rect';
 import cn from 'clsx';
 import style from './style.module.css';
 

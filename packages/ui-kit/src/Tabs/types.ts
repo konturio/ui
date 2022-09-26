@@ -1,5 +1,5 @@
-import { Descendant } from '../utils/component-helpers/descendants';
-import { Dispatch, MutableRefObject, SetStateAction } from 'react';
+import type { Descendant } from '../utils/component-helpers/descendants';
+import type { Dispatch, MutableRefObject, SetStateAction } from 'react';
 
 export const TABS_KEYBOARD_ACTIVATION_AUTO = 'auto';
 export const TABS_KEYBOARD_ACTIVATION_MANUAL = 'auto';

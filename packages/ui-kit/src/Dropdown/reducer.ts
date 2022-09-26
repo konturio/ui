@@ -9,9 +9,9 @@ import {
   DROPDOWN_ITEM_SELECT_ITEM_AT_INDEX,
   DROPDOWN_ITEM_SET_BUTTON_ID,
 } from './constants';
-import React from 'react';
+import type React from 'react';
 import { getOwnerDocument } from '../utils/helpers/helpers';
-import { DropdownState } from './types';
+import type { DropdownState } from './types';
 
 export type DropdownAction =
   | { type: typeof DROPDOWN_ITEM_CLICK_MENU_ITEM }

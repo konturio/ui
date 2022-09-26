@@ -1,5 +1,6 @@
 import s from './style.module.css';
-import { PropsWithChildren, useCallback, useEffect, useRef, useState } from 'react';
+import type { PropsWithChildren} from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import clsx from 'clsx';
 
 interface ModalProps {

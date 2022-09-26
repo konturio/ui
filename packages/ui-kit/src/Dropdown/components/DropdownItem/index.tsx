@@ -4,7 +4,7 @@ import { useDescendant } from '../../../utils/component-helpers/descendants';
 import { useComposedRefs } from '../../../utils/hooks/useComposedRefs';
 import { focusElement, getOwnerDocument, isRightClick, noop } from '../../../utils/helpers/helpers';
 import { composeEventHandlers } from '../../../utils/helpers/events';
-import { ForwardRefComponent } from '../../../utils/component-helpers/polymorphic';
+import type { ForwardRefComponent } from '../../../utils/component-helpers/polymorphic';
 import {
   DROPDOWN_ITEM_CLEAR_SELECTION_INDEX,
   DROPDOWN_ITEM_CLICK_MENU_ITEM,

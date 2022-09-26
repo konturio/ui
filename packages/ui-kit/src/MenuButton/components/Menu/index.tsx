@@ -1,7 +1,7 @@
 import React from 'react';
 import { isFragment } from 'react-is';
 import { DropdownProviderContainer, useDropdownContext } from '../../../Dropdown';
-import { ForwardRefComponent } from '../../../utils/component-helpers/polymorphic';
+import type { ForwardRefComponent } from '../../../utils/component-helpers/polymorphic';
 import cn from 'clsx';
 import style from './style.module.css';
 

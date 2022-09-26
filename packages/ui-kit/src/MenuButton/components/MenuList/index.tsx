@@ -1,6 +1,6 @@
 import React from 'react';
 import { MenuItems } from '../MenuItem';
-import { ForwardRefComponent } from '../../../utils/component-helpers/polymorphic';
+import type { ForwardRefComponent } from '../../../utils/component-helpers/polymorphic';
 import { MenuPopover } from '../MenuPopover';
 import cn from 'clsx';
 import style from './style.module.css';

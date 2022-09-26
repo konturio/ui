@@ -1,4 +1,4 @@
-import React from 'react';
+import type React from 'react';
 
 /**
  * Wraps a lib-defined event handler and a user-defined event handler, returning

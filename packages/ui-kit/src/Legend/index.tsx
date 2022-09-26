@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 import cn from 'clsx';
 import styles from './style.module.css';
-import { Cell } from './types';
+import type { Cell } from './types';
 import { fillTemplate } from './gridTemplate';
 
 /* Divisor and denominator pair */

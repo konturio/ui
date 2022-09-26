@@ -1,4 +1,5 @@
-import { ReactNode, useEffect } from 'react';
+import type { ReactNode} from 'react';
+import { useEffect } from 'react';
 import { Logo } from '../Logo';
 import { Button } from '../Button';
 import s from './style.module.css';

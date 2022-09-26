@@ -1,6 +1,6 @@
 import { forwardRef } from 'react';
-import { ForwardRefComponent } from '../../../utils/component-helpers/polymorphic';
-import { SelectItemType } from '../../types';
+import type { ForwardRefComponent } from '../../../utils/component-helpers/polymorphic';
+import type { SelectItemType } from '../../types';
 import cn from 'clsx';
 import style from './style.module.css';
 import { ArrowRight24, Finish24 } from '@konturio/default-icons';

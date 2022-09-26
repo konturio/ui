@@ -11,7 +11,7 @@ import {
 } from '../../constants';
 import { isRightClick } from '../../../utils/helpers/helpers';
 import { composeEventHandlers } from '../../../utils/helpers/events';
-import { ForwardRefComponent } from '../../../utils/component-helpers/polymorphic';
+import type { ForwardRefComponent } from '../../../utils/component-helpers/polymorphic';
 import cn from 'clsx';
 import style from './style.module.css';
 

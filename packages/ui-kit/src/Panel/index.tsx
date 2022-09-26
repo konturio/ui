@@ -1,7 +1,7 @@
 import { Card } from '../Card';
 import cn from 'clsx';
 import s from './style.module.css';
-import { ReactChild } from 'react';
+import type { ReactChild } from 'react';
 import { Text } from '../Text';
 import { ChevronDown24, ChevronUp24 } from '@konturio/default-icons';
 import { Modal } from '../Modal';

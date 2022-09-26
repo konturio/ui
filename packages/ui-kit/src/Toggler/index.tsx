@@ -1,4 +1,4 @@
-import { ChangeEvent } from 'react';
+import type { ChangeEvent } from 'react';
 import cn from 'clsx';
 import s from './style.module.css';
 

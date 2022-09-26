@@ -1,5 +1,5 @@
-import { CSSProperties } from 'react';
-import { PRect } from './rect';
+import type { CSSProperties } from 'react';
+import type { PRect } from './rect';
 
 export type Position = (targetRect?: PRect | null, popoverRect?: PRect | null) => CSSProperties;
 

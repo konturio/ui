@@ -1,4 +1,4 @@
-import { Descendant } from '../utils/component-helpers/descendants';
+import type { Descendant } from '../utils/component-helpers/descendants';
 
 export type DropdownDescendant = Descendant<HTMLElement> & {
   key: string;

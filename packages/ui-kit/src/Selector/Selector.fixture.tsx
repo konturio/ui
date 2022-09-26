@@ -1,4 +1,5 @@
-import { Selector, OptionType } from '.';
+import type { OptionType } from '.';
+import { Selector } from '.';
 
 const options: OptionType[] = [
   {

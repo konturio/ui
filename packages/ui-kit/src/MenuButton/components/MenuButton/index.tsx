@@ -1,5 +1,5 @@
 import React from 'react';
-import { ForwardRefComponent } from '../../../utils/component-helpers/polymorphic';
+import type { ForwardRefComponent } from '../../../utils/component-helpers/polymorphic';
 import { useDropdownTrigger } from '../../../Dropdown';
 import cn from 'clsx';
 import style from './style.module.css';

@@ -1,8 +1,8 @@
 import React from 'react';
-import { Position } from '../../../utils/position/position';
+import type { Position } from '../../../utils/position/position';
 import { useDropdownPopover } from '../../../Dropdown';
 import { Popover } from '../../../Popover';
-import { ForwardRefComponent } from '../../../utils/component-helpers/polymorphic';
+import type { ForwardRefComponent } from '../../../utils/component-helpers/polymorphic';
 import cn from 'clsx';
 import style from './style.module.css';
 

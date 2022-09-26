@@ -1,9 +1,11 @@
-import React, { ReactNode, useCallback } from 'react';
+import type { ReactNode} from 'react';
+import React, { useCallback } from 'react';
 import { ChevronDown16, ChevronUp16, Close16 } from '@konturio/default-icons';
-import { ForwardRefComponent } from '../../../utils/component-helpers/polymorphic';
+import type { ForwardRefComponent } from '../../../utils/component-helpers/polymorphic';
 import cn from 'clsx';
 import style from './style.module.css';
-import { MULTISELECT_TYPE_AGGREGATE, MULTISELECT_TYPE_CHIPS, MultiselectType, SelectItemType } from '../../types';
+import type { MultiselectType, SelectItemType } from '../../types';
+import { MULTISELECT_TYPE_AGGREGATE, MULTISELECT_TYPE_CHIPS } from '../../types';
 import { MultiselectChip } from '../MultiselectChip';
 
 export interface SelectButtonClasses {
@@ -68,7 +70,7 @@ export const SelectButton = React.forwardRef(
 
     let placeholderContent: ReactNode;
     if (item) {
-      if (multiselect === MULTISELECT_TYPE_AGGREGATE && item) {
+      if (multiselect === MULTISELECT_TYPE_AGGREGATE && item && typeof item === 'string') {
         placeholderContent = <MultiselectChip onBtnClick={reset}>{item}</MultiselectChip>;
       } else if (multiselect === MULTISELECT_TYPE_CHIPS && Array.isArray(item)) {
         placeholderContent = item.map((itm, index) => (
@@ -77,7 +79,7 @@ export const SelectButton = React.forwardRef(
           </MultiselectChip>
         ));
       } else {
-        placeholderContent = <span className={style.textContent}>{item}</span>;
+        placeholderContent = <span className={style.textContent}>{String(item)}</span>;
       }
     } else {
       placeholderContent = <span className={style.textContent}>{children}</span>;

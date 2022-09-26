@@ -1,6 +1,7 @@
 import { EyeBallIcon } from '@konturio/default-icons';
 
-import { Button, ButtonProps } from '.';
+import type { ButtonProps } from '.';
+import { Button } from '.';
 
 const rowStyle = {
   margin: '1em',

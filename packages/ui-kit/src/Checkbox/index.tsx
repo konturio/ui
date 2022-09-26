@@ -1,9 +1,10 @@
-import React, { ChangeEvent, forwardRef, useCallback, useEffect, useState } from 'react';
+import type { ChangeEvent} from 'react';
+import React, { forwardRef, useCallback, useEffect, useState } from 'react';
 import { Finish16 } from '@konturio/default-icons';
 import { LineItem } from '../LineItem';
 import style from './style.module.css';
 import cn from 'clsx';
-import { ForwardRefComponent } from '../utils/component-helpers/polymorphic';
+import type { ForwardRefComponent } from '../utils/component-helpers/polymorphic';
 
 interface CheckboxProps {
   id: string;

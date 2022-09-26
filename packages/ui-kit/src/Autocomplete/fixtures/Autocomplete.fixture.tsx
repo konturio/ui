@@ -1,5 +1,5 @@
 import { useValue } from 'react-cosmos/fixture';
-import { AutocompleteItemType } from '../types';
+import type { AutocompleteItemType } from '../types';
 import { Autocomplete } from '../index';
 
 const items: AutocompleteItemType[] = [

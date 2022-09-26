@@ -1,6 +1,6 @@
 import { useValue } from 'react-cosmos/fixture';
 import { Select } from '../index';
-import { SelectItemType } from '../types';
+import type { SelectItemType } from '../types';
 
 const items: SelectItemType[] = [
   { title: 'Multiple Choice Questions', value: 1 },

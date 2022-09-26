@@ -1,4 +1,4 @@
-import { Cell } from './types';
+import type { Cell } from './types';
 
 export function createMatrix(cells: Cell[], rowSize = 3) {
   const matrix: Cell[][] = [[]];

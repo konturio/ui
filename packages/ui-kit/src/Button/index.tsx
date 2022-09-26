@@ -1,6 +1,7 @@
 import s from './style.module.css';
 import cn from 'clsx';
-import { ButtonHTMLAttributes, Children, forwardRef, ReactChild, ReactNode } from 'react';
+import type { ButtonHTMLAttributes, ReactChild, ReactNode } from 'react';
+import { Children, forwardRef } from 'react';
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   dark?: boolean;

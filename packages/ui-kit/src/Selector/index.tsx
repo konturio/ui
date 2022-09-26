@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react';
 import cn from 'clsx';
-import { OptionType } from './Option';
+import type { OptionType } from './Option';
 import { SelectedItems } from './SelectedItems';
 import { SimpleSelector } from './SimpleSelector';
 import styles from './style.module.css';

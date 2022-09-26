@@ -1,7 +1,8 @@
-import { MenuItemImpl, MenuItemImplProps } from '../MenuItem';
+import type { MenuItemImplProps } from '../MenuItem';
+import { MenuItemImpl } from '../MenuItem';
 import React from 'react';
 import { noop } from '../../../utils/helpers/helpers';
-import { ForwardRefComponent } from '../../../utils/component-helpers/polymorphic';
+import type { ForwardRefComponent } from '../../../utils/component-helpers/polymorphic';
 import cn from 'clsx';
 import style from './style.module.css';
 

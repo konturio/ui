@@ -1,7 +1,7 @@
 import React from 'react';
 import { Popover } from '../../../Popover';
-import { ForwardRefComponent } from '../../../utils/component-helpers/polymorphic';
-import { Position } from '../../../utils/position/position';
+import type { ForwardRefComponent } from '../../../utils/component-helpers/polymorphic';
+import type { Position } from '../../../utils/position/position';
 import { useComposedRefs } from '../../../utils/hooks/useComposedRefs';
 import { elementContainsEventTarget, getOwnerDocument } from '../../../utils/helpers/helpers';
 import { DROPDOWN_ITEM_CLOSE_MENU } from '../../constants';

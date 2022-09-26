@@ -1,8 +1,10 @@
 import React, { forwardRef, useCallback, useEffect, useMemo, useState } from 'react';
-import { AutocompleteButton, AutocompleteButtonClasses } from './components/AutocompleteButton';
-import { useCombobox, UseComboboxStateChange } from 'downshift';
-import { AutocompleteItemType } from './types';
-import { ForwardRefComponent } from '../utils/component-helpers/polymorphic';
+import type { AutocompleteButtonClasses } from './components/AutocompleteButton';
+import { AutocompleteButton } from './components/AutocompleteButton';
+import type { UseComboboxStateChange } from 'downshift';
+import { useCombobox } from 'downshift';
+import type { AutocompleteItemType } from './types';
+import type { ForwardRefComponent } from '../utils/component-helpers/polymorphic';
 import { AutocompleteItem } from './components/AutocompleteItem';
 import cn from 'clsx';
 import style from './style.module.css';

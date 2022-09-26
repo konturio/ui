@@ -1,8 +1,9 @@
-import React, { ChangeEvent, forwardRef, useCallback } from 'react';
+import type { ChangeEvent} from 'react';
+import React, { forwardRef, useCallback } from 'react';
 import { LineItem } from '../LineItem';
 import style from './style.module.css';
 import cn from 'clsx';
-import { ForwardRefComponent } from '../utils/component-helpers/polymorphic';
+import type { ForwardRefComponent } from '../utils/component-helpers/polymorphic';
 
 interface RadioProps {
   id: string;

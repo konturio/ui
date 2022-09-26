@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import { useCallback, useMemo, useState } from 'react';
 import { DropdownTriggerRefProvider } from '../Dropdown';
 import { Menu, MenuItem, MenuList } from '../MenuButton';

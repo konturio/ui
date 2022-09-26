@@ -1,11 +1,12 @@
-import { forwardRef, memo, ReactNode, useLayoutEffect, useRef } from 'react';
+import type { ReactNode} from 'react';
+import { forwardRef, memo, useLayoutEffect, useRef } from 'react';
 import { useDescendantKeyDown, useDescendants } from '../../../utils/component-helpers/descendants';
 import { useComposedRefs } from '../../../utils/hooks/useComposedRefs';
 import { composeEventHandlers } from '../../../utils/helpers/events';
 import { TABS_KEYBOARD_ACTIVATION_MANUAL, TABS_ORIENTATION_HORIZONTAL, TABS_ORIENTATION_VERTICAL } from '../../types';
 import { TabsDescendantsContext, useTabsCtx } from '../../context';
 import { isBoolean } from '../../../utils/helpers/typecheck';
-import { ForwardRefComponent, MemoComponent } from '../../../utils/component-helpers/polymorphic';
+import type { ForwardRefComponent, MemoComponent } from '../../../utils/component-helpers/polymorphic';
 import cn from 'clsx';
 import style from './style.module.css';
 

@@ -1,9 +1,9 @@
 import { forwardRef } from 'react';
-import { ForwardRefComponent } from '../../../utils/component-helpers/polymorphic';
 import { ArrowRight24, Finish24 } from '@konturio/default-icons';
-import { AutocompleteItemType } from '../../types';
 import cn from 'clsx';
 import style from './style.module.css';
+import type { AutocompleteItemType } from '../../types';
+import type { ForwardRefComponent } from '../../../utils/component-helpers/polymorphic';
 
 export interface AutocompleteItemProps {
   className?: string;

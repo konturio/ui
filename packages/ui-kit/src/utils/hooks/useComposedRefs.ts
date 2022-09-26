@@ -1,5 +1,5 @@
 import { useCallback } from 'react';
-import { AssignableRef } from '../types';
+import type { AssignableRef } from '../types';
 import { isFunction } from '../helpers/typecheck';
 
 /**

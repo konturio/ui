@@ -17,8 +17,8 @@
     "lint": "node check-exports.mjs"
   },
   "peerDependencies": {
-    "clsx": "^1.1.1",
-    "react": "^17.0.2"
+    "clsx": "^1.2.1",
+    "react": "^18.2.0"
   },
   "publishConfig": {
     "access": "public"

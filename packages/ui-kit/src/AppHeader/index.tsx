@@ -1,9 +1,7 @@
 import type { ReactNode} from 'react';
 import { useEffect } from 'react';
 import { Logo } from '../Logo';
-import { Button } from '../Button';
 import s from './style.module.css';
-import { Chat24 } from '@konturio/default-icons';
 
 const CHAT_BTN_ID = 'kontur_header_chat_btn';
 
@@ -14,13 +12,11 @@ export function AppHeader({
   installChat,
   logo = <Logo height={24} />,
   afterChatContent,
-  chatBtnText = 'Chat with us',
 }: React.PropsWithChildren<{
   title: string | JSX.Element;
   logo?: JSX.Element;
   onChatClick?: React.MouseEventHandler<HTMLButtonElement>;
   installChat?: (id: string) => void;
-  chatBtnText?: string;
   afterChatContent?: ReactNode;
 }>) {
   useEffect(() => {
@@ -34,17 +30,6 @@ export function AppHeader({
       <div className={s.logo}>{logo}</div>
       <div className={s.title}>{title}</div>
       <div className={s.children}>{children}</div>
-      <Button
-        id={CHAT_BTN_ID}
-        onClick={onChatClick}
-        dark
-        variant="invert"
-        size="small"
-        transparent
-        iconBefore={<Chat24 />}
-      >
-        {chatBtnText}
-      </Button>
       {afterChatContent && <div className={s.afterChatContent}>{afterChatContent}</div>}
     </div>
   );

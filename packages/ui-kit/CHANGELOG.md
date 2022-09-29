@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.1.2](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.1.1...@konturio/ui-kit@3.1.2) (2022-09-29)
+
+
+### Bug Fixes
+
+* **app-header:** remove irrelevant chat props ([1f7fd4e](https://github.com/konturio/ui/commit/1f7fd4e74f645e6e857a724278b29dce19b28a64))
+
+
+
+
+
 ## [3.1.1](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.1.0...@konturio/ui-kit@3.1.1) (2022-09-28)
 
 **Note:** Version bump only for package @konturio/ui-kit

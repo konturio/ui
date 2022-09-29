@@ -26,13 +26,8 @@
 }
 
 .contentContainer{
-  &.show {
-    height: 100%;
-  }
-
-  &.collapse{
-    height: 0;
-  }
+  height: 100%;
+  overflow: auto;
 }
 
 .panelIcon {

@@ -23,6 +23,10 @@ interface Panel extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElem
     onModalClick: () => void
     showInModal: boolean;
   };
+  minContentHeightPx?: number;
+  contentContainerRef?: (node: HTMLDivElement) => void;
+  contentClassName?: string;
+  resize?: 'vertical' | 'horizontal' | 'both' | 'none'
 }
 
 export function Panel({
@@ -36,6 +40,10 @@ export function Panel({
   ref,
   isOpen = true,
   modal,
+  minContentHeightPx,
+  contentContainerRef,
+  contentClassName,
+  resize = 'none',
   ...rest
 }: React.PropsWithChildren<Panel>) {
 
@@ -56,9 +64,13 @@ export function Panel({
         </div>
       </div>
     )}
-    <div className={cn(s.contentContainer, isOpen ? s.show : s.collapse)}>
+    {isOpen && <div
+      className={cn(s.contentContainer, contentClassName)}
+      ref={contentContainerRef}
+      style={{ minHeight: minContentHeightPx || 'unset', resize: resize }}
+    >
       {children}
-    </div>
+    </div>}
   </Card>
 
 

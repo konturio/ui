@@ -1,7 +1,7 @@
 import cn from 'clsx';
-import type { ButtonProps } from '../Button';
 import { Button } from '../Button';
 import s from './style.module.css';
+import type { ButtonProps } from '../Button';
 
 export function ActionsBar({ children }: React.PropsWithChildren<unknown>) {
   return <div className={s.actionsBar}>{children}</div>;

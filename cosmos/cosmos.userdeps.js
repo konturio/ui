@@ -30,35 +30,34 @@ import fixture19 from './../packages/ui-kit/src/Select/fixtures/Select.fixture.t
 import fixture20 from './../packages/ui-kit/src/Selector/Selector.fixture.tsx';
 import fixture21 from './../packages/ui-kit/src/Tabs/fixtures/Tabs.fixture.tsx';
 import fixture22 from './../packages/ui-kit/src/Text/Text.fixture.tsx';
-import fixture23 from './../packages/ui-kit/src/Textarea/Textarea.fixture.tsx';
-import fixture24 from './../packages/ui-kit/src/Timeline/fixture/Timeline.fixture.tsx';
-import fixture25 from './../packages/ui-kit/src/Timeline/fixture/TimeLineWithDropDown.fixture.tsx';
-import fixture26 from './../packages/ui-kit/src/TimeSlider/TimeSlider.fixture.tsx';
-import fixture27 from './../packages/ui-kit/src/Toggler/Toggler.fixture.tsx';
-import fixture28 from './../packages/ui-kit/tslib/ActionsBar/ActionsBar.fixture.js';
-import fixture29 from './../packages/ui-kit/tslib/AppHeader/AppHeader.fixture.js';
-import fixture30 from './../packages/ui-kit/tslib/Autocomplete/fixtures/Autocomplete.fixture.js';
-import fixture31 from './../packages/ui-kit/tslib/Button/Button.fixture.js';
-import fixture32 from './../packages/ui-kit/tslib/ButtonGroup/ButtonGroup.fixture.js';
-import fixture33 from './../packages/ui-kit/tslib/Card/Card.fixture.js';
-import fixture34 from './../packages/ui-kit/tslib/Checkbox/Checkbox.fixture.js';
-import fixture35 from './../packages/ui-kit/tslib/Divider/Divider.fixture.js';
-import fixture36 from './../packages/ui-kit/tslib/DropDown_old/Dropdown.fixture.js';
-import fixture37 from './../packages/ui-kit/tslib/Input/Input.fixture.js';
-import fixture38 from './../packages/ui-kit/tslib/Legend/Legend.fixture.js';
-import fixture39 from './../packages/ui-kit/tslib/LineItem/LineItem.fixture.js';
-import fixture40 from './../packages/ui-kit/tslib/Logo/Logo.fixture.js';
-import fixture41 from './../packages/ui-kit/tslib/MenuButton/fixtures/MenuButton.fixture.js';
-import fixture42 from './../packages/ui-kit/tslib/Panel/Panel.fixture.js';
-import fixture43 from './../packages/ui-kit/tslib/Radio/Radio.fixture.js';
-import fixture44 from './../packages/ui-kit/tslib/Select/fixtures/Select.fixture.js';
-import fixture45 from './../packages/ui-kit/tslib/Selector/Selector.fixture.js';
-import fixture46 from './../packages/ui-kit/tslib/Tabs/fixtures/Tabs.fixture.js';
-import fixture47 from './../packages/ui-kit/tslib/Text/Text.fixture.js';
-import fixture48 from './../packages/ui-kit/tslib/Timeline/fixture/Timeline.fixture.js';
-import fixture49 from './../packages/ui-kit/tslib/Timeline/fixture/TimeLineWithDropDown.fixture.js';
-import fixture50 from './../packages/ui-kit/tslib/TimeSlider/TimeSlider.fixture.js';
-import fixture51 from './../packages/ui-kit/tslib/Toggler/Toggler.fixture.js';
+import fixture23 from './../packages/ui-kit/src/Timeline/fixture/Timeline.fixture.tsx';
+import fixture24 from './../packages/ui-kit/src/Timeline/fixture/TimeLineWithDropDown.fixture.tsx';
+import fixture25 from './../packages/ui-kit/src/TimeSlider/TimeSlider.fixture.tsx';
+import fixture26 from './../packages/ui-kit/src/Toggler/Toggler.fixture.tsx';
+import fixture27 from './../packages/ui-kit/tslib/ActionsBar/ActionsBar.fixture.js';
+import fixture28 from './../packages/ui-kit/tslib/AppHeader/AppHeader.fixture.js';
+import fixture29 from './../packages/ui-kit/tslib/Autocomplete/fixtures/Autocomplete.fixture.js';
+import fixture30 from './../packages/ui-kit/tslib/Button/Button.fixture.js';
+import fixture31 from './../packages/ui-kit/tslib/ButtonGroup/ButtonGroup.fixture.js';
+import fixture32 from './../packages/ui-kit/tslib/Card/Card.fixture.js';
+import fixture33 from './../packages/ui-kit/tslib/Checkbox/Checkbox.fixture.js';
+import fixture34 from './../packages/ui-kit/tslib/Divider/Divider.fixture.js';
+import fixture35 from './../packages/ui-kit/tslib/DropDown_old/Dropdown.fixture.js';
+import fixture36 from './../packages/ui-kit/tslib/Input/Input.fixture.js';
+import fixture37 from './../packages/ui-kit/tslib/Legend/Legend.fixture.js';
+import fixture38 from './../packages/ui-kit/tslib/LineItem/LineItem.fixture.js';
+import fixture39 from './../packages/ui-kit/tslib/Logo/Logo.fixture.js';
+import fixture40 from './../packages/ui-kit/tslib/MenuButton/fixtures/MenuButton.fixture.js';
+import fixture41 from './../packages/ui-kit/tslib/Panel/Panel.fixture.js';
+import fixture42 from './../packages/ui-kit/tslib/Radio/Radio.fixture.js';
+import fixture43 from './../packages/ui-kit/tslib/Select/fixtures/Select.fixture.js';
+import fixture44 from './../packages/ui-kit/tslib/Selector/Selector.fixture.js';
+import fixture45 from './../packages/ui-kit/tslib/Tabs/fixtures/Tabs.fixture.js';
+import fixture46 from './../packages/ui-kit/tslib/Text/Text.fixture.js';
+import fixture47 from './../packages/ui-kit/tslib/Timeline/fixture/Timeline.fixture.js';
+import fixture48 from './../packages/ui-kit/tslib/Timeline/fixture/TimeLineWithDropDown.fixture.js';
+import fixture49 from './../packages/ui-kit/tslib/TimeSlider/TimeSlider.fixture.js';
+import fixture50 from './../packages/ui-kit/tslib/Toggler/Toggler.fixture.js';
 
 import decorator0 from './../cosmos.decorator.tsx';
 import decorator1 from './../packages/ui-kit/cosmos.decorator.tsx';
@@ -91,35 +90,34 @@ export const fixtures = {
   'packages/ui-kit/src/Selector/Selector.fixture.tsx': { module: { default: fixture20 } },
   'packages/ui-kit/src/Tabs/fixtures/Tabs.fixture.tsx': { module: { default: fixture21 } },
   'packages/ui-kit/src/Text/Text.fixture.tsx': { module: { default: fixture22 } },
-  'packages/ui-kit/src/Textarea/Textarea.fixture.tsx': { module: { default: fixture23 } },
-  'packages/ui-kit/src/Timeline/fixture/Timeline.fixture.tsx': { module: { default: fixture24 } },
-  'packages/ui-kit/src/Timeline/fixture/TimeLineWithDropDown.fixture.tsx': { module: { default: fixture25 } },
-  'packages/ui-kit/src/TimeSlider/TimeSlider.fixture.tsx': { module: { default: fixture26 } },
-  'packages/ui-kit/src/Toggler/Toggler.fixture.tsx': { module: { default: fixture27 } },
-  'packages/ui-kit/tslib/ActionsBar/ActionsBar.fixture.js': { module: { default: fixture28 } },
-  'packages/ui-kit/tslib/AppHeader/AppHeader.fixture.js': { module: { default: fixture29 } },
-  'packages/ui-kit/tslib/Autocomplete/fixtures/Autocomplete.fixture.js': { module: { default: fixture30 } },
-  'packages/ui-kit/tslib/Button/Button.fixture.js': { module: { default: fixture31 } },
-  'packages/ui-kit/tslib/ButtonGroup/ButtonGroup.fixture.js': { module: { default: fixture32 } },
-  'packages/ui-kit/tslib/Card/Card.fixture.js': { module: { default: fixture33 } },
-  'packages/ui-kit/tslib/Checkbox/Checkbox.fixture.js': { module: { default: fixture34 } },
-  'packages/ui-kit/tslib/Divider/Divider.fixture.js': { module: { default: fixture35 } },
-  'packages/ui-kit/tslib/DropDown_old/Dropdown.fixture.js': { module: { default: fixture36 } },
-  'packages/ui-kit/tslib/Input/Input.fixture.js': { module: { default: fixture37 } },
-  'packages/ui-kit/tslib/Legend/Legend.fixture.js': { module: { default: fixture38 } },
-  'packages/ui-kit/tslib/LineItem/LineItem.fixture.js': { module: { default: fixture39 } },
-  'packages/ui-kit/tslib/Logo/Logo.fixture.js': { module: { default: fixture40 } },
-  'packages/ui-kit/tslib/MenuButton/fixtures/MenuButton.fixture.js': { module: { default: fixture41 } },
-  'packages/ui-kit/tslib/Panel/Panel.fixture.js': { module: { default: fixture42 } },
-  'packages/ui-kit/tslib/Radio/Radio.fixture.js': { module: { default: fixture43 } },
-  'packages/ui-kit/tslib/Select/fixtures/Select.fixture.js': { module: { default: fixture44 } },
-  'packages/ui-kit/tslib/Selector/Selector.fixture.js': { module: { default: fixture45 } },
-  'packages/ui-kit/tslib/Tabs/fixtures/Tabs.fixture.js': { module: { default: fixture46 } },
-  'packages/ui-kit/tslib/Text/Text.fixture.js': { module: { default: fixture47 } },
-  'packages/ui-kit/tslib/Timeline/fixture/Timeline.fixture.js': { module: { default: fixture48 } },
-  'packages/ui-kit/tslib/Timeline/fixture/TimeLineWithDropDown.fixture.js': { module: { default: fixture49 } },
-  'packages/ui-kit/tslib/TimeSlider/TimeSlider.fixture.js': { module: { default: fixture50 } },
-  'packages/ui-kit/tslib/Toggler/Toggler.fixture.js': { module: { default: fixture51 } }
+  'packages/ui-kit/src/Timeline/fixture/Timeline.fixture.tsx': { module: { default: fixture23 } },
+  'packages/ui-kit/src/Timeline/fixture/TimeLineWithDropDown.fixture.tsx': { module: { default: fixture24 } },
+  'packages/ui-kit/src/TimeSlider/TimeSlider.fixture.tsx': { module: { default: fixture25 } },
+  'packages/ui-kit/src/Toggler/Toggler.fixture.tsx': { module: { default: fixture26 } },
+  'packages/ui-kit/tslib/ActionsBar/ActionsBar.fixture.js': { module: { default: fixture27 } },
+  'packages/ui-kit/tslib/AppHeader/AppHeader.fixture.js': { module: { default: fixture28 } },
+  'packages/ui-kit/tslib/Autocomplete/fixtures/Autocomplete.fixture.js': { module: { default: fixture29 } },
+  'packages/ui-kit/tslib/Button/Button.fixture.js': { module: { default: fixture30 } },
+  'packages/ui-kit/tslib/ButtonGroup/ButtonGroup.fixture.js': { module: { default: fixture31 } },
+  'packages/ui-kit/tslib/Card/Card.fixture.js': { module: { default: fixture32 } },
+  'packages/ui-kit/tslib/Checkbox/Checkbox.fixture.js': { module: { default: fixture33 } },
+  'packages/ui-kit/tslib/Divider/Divider.fixture.js': { module: { default: fixture34 } },
+  'packages/ui-kit/tslib/DropDown_old/Dropdown.fixture.js': { module: { default: fixture35 } },
+  'packages/ui-kit/tslib/Input/Input.fixture.js': { module: { default: fixture36 } },
+  'packages/ui-kit/tslib/Legend/Legend.fixture.js': { module: { default: fixture37 } },
+  'packages/ui-kit/tslib/LineItem/LineItem.fixture.js': { module: { default: fixture38 } },
+  'packages/ui-kit/tslib/Logo/Logo.fixture.js': { module: { default: fixture39 } },
+  'packages/ui-kit/tslib/MenuButton/fixtures/MenuButton.fixture.js': { module: { default: fixture40 } },
+  'packages/ui-kit/tslib/Panel/Panel.fixture.js': { module: { default: fixture41 } },
+  'packages/ui-kit/tslib/Radio/Radio.fixture.js': { module: { default: fixture42 } },
+  'packages/ui-kit/tslib/Select/fixtures/Select.fixture.js': { module: { default: fixture43 } },
+  'packages/ui-kit/tslib/Selector/Selector.fixture.js': { module: { default: fixture44 } },
+  'packages/ui-kit/tslib/Tabs/fixtures/Tabs.fixture.js': { module: { default: fixture45 } },
+  'packages/ui-kit/tslib/Text/Text.fixture.js': { module: { default: fixture46 } },
+  'packages/ui-kit/tslib/Timeline/fixture/Timeline.fixture.js': { module: { default: fixture47 } },
+  'packages/ui-kit/tslib/Timeline/fixture/TimeLineWithDropDown.fixture.js': { module: { default: fixture48 } },
+  'packages/ui-kit/tslib/TimeSlider/TimeSlider.fixture.js': { module: { default: fixture49 } },
+  'packages/ui-kit/tslib/Toggler/Toggler.fixture.js': { module: { default: fixture50 } }
 };
 
 export const decorators = {

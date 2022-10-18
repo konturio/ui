@@ -94,9 +94,9 @@ export default {
       Select Example
     </Select>
   ),
-  StickyLabel: (
-    <Select label="StickyLabel Select" items={items}
-      showTopPlaceholder placeholder='POPS'
+  TopPlaceholder: (
+    <Select label="Animated placeholder" items={items}
+      showTopPlaceholder placeholder='i`m placeholder'
     >
     </Select>
   ),

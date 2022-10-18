@@ -142,6 +142,7 @@
     & .topPlaceholder{
       top: -10px;
       background: var(--base-weak);
+      padding: 0 4px;
     }
   }
 

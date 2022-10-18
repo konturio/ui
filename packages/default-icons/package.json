@@ -9,7 +9,7 @@
   "type": "module",
   "main": "tslib/index.js",
   "types": "tslib/index.d.ts",
-  "files": [
+  "files": [ 
     "tslib"
   ],
   "scripts": {

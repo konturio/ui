@@ -65,6 +65,7 @@ export interface SelectProps {
   onSelect?: (selection: SelectItemType | SelectItemType[] | null | undefined) => void;
   onClose?: (selection: SelectItemType | SelectItemType[] | null | undefined) => void;
   onReset?: () => void;
+  showTopPlaceholder?: boolean;
 }
 
 export const Select = forwardRef(
@@ -90,6 +91,7 @@ export const Select = forwardRef(
       onSelect,
       onClose,
       onReset,
+      showTopPlaceholder,
       ...props
     },
     ref,
@@ -271,6 +273,9 @@ export const Select = forwardRef(
           reset={resetFunc}
           multiselect={multiselect}
           withResetButton={withResetButton}
+          classes={classes?.button}
+          showTopPlaceholder={showTopPlaceholder}
+          placeholder={placeholder}
         >
           {children}
         </SelectButton>

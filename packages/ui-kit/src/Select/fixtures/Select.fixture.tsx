@@ -94,6 +94,12 @@ export default {
       Select Example
     </Select>
   ),
+  StickyLabel: (
+    <Select label="StickyLabel Select" items={items}
+      showTopPlaceholder placeholder='POPS'
+    >
+    </Select>
+  ),
   Multiselect: (
     <Select style={{ width: 250 }} label="Multiselect" items={items} multiselect>
       Select Example

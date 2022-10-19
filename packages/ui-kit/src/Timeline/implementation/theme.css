@@ -1,0 +1,9 @@
+@import 'vis-timeline/styles/vis-timeline-graph2d.min.css';
+
+.vis-item.vis-range {
+  border-radius: 0px
+}
+
+.vis-cluster { 
+  background-color: #97b0f8
+}

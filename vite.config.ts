@@ -1,5 +1,5 @@
-import react from '@vitejs/plugin-react';
 import * as path from 'path';
+import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
 
 declare const process: {
@@ -8,9 +8,8 @@ declare const process: {
   };
 };
 
-import { UserConfig, UserConfigFn } from 'vite';
 
-const { BROWSER, PORT } = process.env;
+const { PORT } = process.env;
 
 // https://vitejs.dev/config/
 export default ({ mode }) => {

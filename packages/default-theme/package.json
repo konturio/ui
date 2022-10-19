@@ -6,7 +6,9 @@
     "url": "git@github.com:konturio/ui.git"
   },
   "type": "module",
-  "scripts": {},
+  "scripts": {
+    "build": "node copy-css.mjs"
+  },
   "publishConfig": {
     "access": "public"
   },

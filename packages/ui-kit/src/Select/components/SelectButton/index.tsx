@@ -1,12 +1,11 @@
-import type { ReactNode } from 'react';
 import React, { useCallback } from 'react';
 import { ChevronDown16, ChevronUp16, Close16 } from '@konturio/default-icons';
-import type { ForwardRefComponent } from '../../../utils/component-helpers/polymorphic';
 import cn from 'clsx';
+import { SELECTION_NODES } from '../../types';
 import style from './style.module.css';
-import type { MultiselectType, SelectItemType } from '../../types';
-import { MULTISELECT_TYPE_AGGREGATE, MULTISELECT_TYPE_CHIPS } from '../../types';
-import { MultiselectChip } from '../MultiselectChip';
+import { SelectContent } from './SelectContent';
+import type { SelectItemType, SelectMode } from '../../types';
+import type { ForwardRefComponent } from '../../../utils/component-helpers/polymorphic';
 
 export interface SelectButtonClasses {
   label?: string;
@@ -24,7 +23,7 @@ export interface SelectButtonProps {
   toggleProps: Record<string, unknown>;
   labelProps: Record<string, unknown>;
   withResetButton?: boolean;
-  multiselect?: MultiselectType;
+  selectMode: SelectMode;
   open?: boolean;
   item?: string | { title: string; value: SelectItemType['value'] }[];
   classes?: SelectButtonClasses;
@@ -50,7 +49,7 @@ export const SelectButton = React.forwardRef(
       type,
       withResetButton = true,
       reset,
-      multiselect,
+      selectMode,
       placeholder,
       showTopPlaceholder,
       ...props
@@ -63,7 +62,6 @@ export const SelectButton = React.forwardRef(
       [style.error]: error,
       [style.inline]: type === 'inline',
     });
-    console.log('%c⧭ showTopPlaceholder игеещт', 'color: #00e600', showTopPlaceholder, placeholder);
 
     const onReset = useCallback(
       (e: React.MouseEvent) => {
@@ -73,52 +71,9 @@ export const SelectButton = React.forwardRef(
       [reset],
     );
 
-
-    const getPlaceholderAndItem = (): ReactNode => {
-      // Several options here
-      // placeholder space - can be occupied with value, with placeholder(multiple options), or Select children
-      // in case item is selected(presented) - top placeholder should be shown in addition
-      // to the item (on top)
-
-      let itemContent: ReactNode;
-      if (item) {
-        if (multiselect === MULTISELECT_TYPE_AGGREGATE && item && typeof item === 'string') {
-          itemContent = <MultiselectChip onBtnClick={reset}>{item}</MultiselectChip>;
-        } else if (multiselect === MULTISELECT_TYPE_CHIPS && Array.isArray(item)) {
-          itemContent = item.map((itm, index) => (
-            <MultiselectChip key={`${itm.value}_${index}`} value={itm.value} onBtnClick={reset}>
-              {itm.title}
-            </MultiselectChip>
-          ));
-        } else {
-          itemContent = <span className={style.textContent}>{String(item)}</span>;
-        }
-      }
-      else if (item && !placeholder) {
-        itemContent = <span className={style.textContent}>{children}</span>;
-      }
-
-      if (!placeholder) return itemContent
-
-      if (!showTopPlaceholder && item) {
-        return itemContent;
-      }
-
-      return (
-        <div className={style.combinedItemAndTopPlaceholder}>
-          <div className={style.itemWrap}>
-            {itemContent}
-          </div>
-          <div className={cn(
-            style.topPlaceholder,
-            classes?.topPlaceholder,
-          )}>
-            {placeholder}
-          </div>
-        </div>
-      );
-    };
-
+    const isInteractiveSelectionMode =
+      selectMode === SELECTION_NODES.SINGLE || selectMode === SELECTION_NODES.MULTI_AGGREGATED_STRING;
+    
     return (
       <div className={dynamicClasses} {...props} ref={ref}>
         {label && (
@@ -134,23 +89,19 @@ export const SelectButton = React.forwardRef(
           className={cn('selectBox', style.selectBox, classes?.selectBox)}
         >
           <div
-            className={cn({
-              [style.placeholder]: true,
-              [style.nonInteractable]:
-                multiselect !== MULTISELECT_TYPE_AGGREGATE && multiselect !== MULTISELECT_TYPE_CHIPS,
-                [style.noValue]: !item,
-                [style.hasValue]: item,
-              [classes?.placeholder || '']: classes?.placeholder,
+            className={cn(style.placeholder, {
+              [style.nonInteractable]: !isInteractiveSelectionMode,
+              [style.noValue]: children === null || children === undefined,
+              className,
             })}
           >
-            {getPlaceholderAndItem()}
+            <SelectContent selectMode={selectMode} onReset={reset}>
+              {item ?? children}
+            </SelectContent>
           </div>
 
           <div className={cn(style.buttonsContainer, 'buttonsContainer')}>
-            {withResetButton &&
-              item &&
-              multiselect !== MULTISELECT_TYPE_AGGREGATE &&
-              multiselect !== MULTISELECT_TYPE_CHIPS ? (
+            {withResetButton && item && !isInteractiveSelectionMode ? (
               <Close16 className={style.resetIcon} onClick={onReset} />
             ) : null}
             {open ? <ChevronUp16 /> : <ChevronDown16 />}

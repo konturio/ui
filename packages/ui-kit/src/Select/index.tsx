@@ -1,20 +1,21 @@
 import React, { forwardRef, useCallback, useEffect, useState } from 'react';
-import type { SelectButtonClasses } from './components/SelectButton';
+import {
+  useSelect
+} from 'downshift';
+import cn from 'clsx';
 import { SelectButton } from './components/SelectButton';
+import { getSelectMode } from './types';
+import { MULTISELECT_TYPE_CHIPS } from './types';
+import { SelectItem } from './components/SelectItem';
+import style from './style.module.css';
+import type { SelectButtonClasses } from './components/SelectButton';
 import type {
   UseSelectProps,
   UseSelectState,
   UseSelectStateChange,
   UseSelectStateChangeOptions} from 'downshift';
-import {
-  useSelect
-} from 'downshift';
-import type { MultiselectType, SelectItemType } from './types';
-import { MULTISELECT_TYPE_CHIPS } from './types';
+import type { SelectItemType , MultiSelectProp} from './types';
 import type { ForwardRefComponent } from '../utils/component-helpers/polymorphic';
-import { SelectItem } from './components/SelectItem';
-import cn from 'clsx';
-import style from './style.module.css';
 
 function defaultItemToString(item: SelectItemType | SelectItemType[] | null): string {
   if (Array.isArray(item)) {
@@ -48,7 +49,7 @@ export interface SelectProps {
   defaultValue?: SelectItemType['value'] | SelectItemType['value'][];
   showSelectedIcon?: boolean;
   showEntryIcon?: boolean;
-  multiselect?: MultiselectType;
+  multiselect: MultiSelectProp;
   withResetButton?: boolean;
   itemToString?: (item: SelectItemType | SelectItemType[] | null) => string;
   label?: string | React.ReactChild | React.ReactChild[];
@@ -96,6 +97,8 @@ export const Select = forwardRef(
     },
     ref,
   ) => {
+    /* Backward capability */
+    const selectionMode = getSelectMode(multiselect);
     const initialSelectedItem = !multiselect && value && items ? items.find((itm) => itm.value === value) : undefined;
     const defaultSelectedItem =
       !multiselect && defaultValue && items ? items.find((itm) => itm.value === defaultValue) : null;
@@ -271,7 +274,7 @@ export const Select = forwardRef(
           error={error}
           type={type}
           reset={resetFunc}
-          multiselect={multiselect}
+          selectMode={selectionMode}
           withResetButton={withResetButton}
           classes={classes?.button}
           showTopPlaceholder={showTopPlaceholder}

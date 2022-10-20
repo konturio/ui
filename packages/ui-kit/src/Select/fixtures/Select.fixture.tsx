@@ -52,7 +52,7 @@ export default {
         items={items}
         itemToString={customItemToString}
       >
-        Select Example
+        Never Visible
       </Select>
     );
   },
@@ -70,48 +70,54 @@ export default {
         label="Interactive Select With Initial Value"
         items={items}
       >
-        Select Example
       </Select>
     );
   },
+  AlwaysShowPlacehoder: (
+    <Select label="Show placeholder on top when value selected" items={items}
+      alwaysShowPlaceholder
+    >
+      Placeholder
+    </Select>
+  ),
   WithEntryIcons: (
     <Select label="Select With Entry Icons" items={items} showEntryIcon>
-      Select Example
+      Placeholder
     </Select>
   ),
   Disabled: (
     <Select label="Disabled Select" items={items} disabled>
-      Select Example
+      Placeholder
     </Select>
   ),
   WithError: (
     <Select label="Select With Error" items={items} error="Error message" showSelectedIcon={false}>
-      Select Example
+      Placeholder
     </Select>
   ),
   Inline: (
     <Select label="Inline Select" items={items} type="inline">
-      Select Example
+      Placeholder
     </Select>
   ),
   Multiselect: (
     <Select style={{ width: 250 }} label="Multiselect" items={items} multiselect>
-      Select Example
+      Placeholder
     </Select>
   ),
   MultiselectWithAggregate: (
     <Select label="Multiselect With Aggregate" items={items} multiselect="aggregate">
-      Select Example
+      Placeholder
     </Select>
   ),
   MultiselectWithOverflow: (
     <Select style={{ width: 270 }} label="Multiselect With Overflow" items={items} multiselect="aggregate">
-      Select Example
+      Placeholder
     </Select>
   ),
   MultiselectWithChips: (
     <Select label="Multiselect With Chips" items={items} multiselect="chips">
-      Select Example
+      Placeholder
     </Select>
   ),
 };

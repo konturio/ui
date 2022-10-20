@@ -73,6 +73,13 @@ export default {
       </Select>
     );
   },
+  AlwaysShowPlacehoder: (
+    <Select label="Show placeholder on top when value selected" items={items}
+      alwaysShowPlaceholder
+    >
+      Placeholder
+    </Select>
+  ),
   WithEntryIcons: (
     <Select label="Select With Entry Icons" items={items} showEntryIcon>
       Placeholder

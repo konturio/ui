@@ -31,6 +31,7 @@ export interface SelectButtonProps {
   error?: boolean | string;
   type: 'classic' | 'inline';
   reset: (val?: SelectItemType['value']) => void;
+  alwaysShowPlaceholder?: boolean
 }
 
 export const SelectButton = React.forwardRef(
@@ -51,6 +52,7 @@ export const SelectButton = React.forwardRef(
       reset,
       selectMode,
       value,
+      alwaysShowPlaceholder,
       ...props
     },
     ref,
@@ -88,13 +90,23 @@ export const SelectButton = React.forwardRef(
           className={cn('selectBox', style.selectBox, classes?.selectBox)}
         >
           <div
-            className={cn(style.placeholder, {
-              [style.nonInteractable]: !isInteractiveSelectionMode,
-              [style.noValue]: value === null || value === undefined,
-              className,
-            })}
+            className={cn(
+              style.placeholderWrap,
+              item === null || item === undefined || (Array.isArray(item) && !item.length) ?
+                style.noValue : style.hasValue,
+              {
+                [style.nonInteractable]: !isInteractiveSelectionMode,
+                [style.alwaysShowPlaceholder]: alwaysShowPlaceholder,
+                className,
+              },
+            )}
           >
-            <SelectContent selectMode={selectMode} onReset={reset} placeholder={<Placeholder>{children}</Placeholder>}>
+            <SelectContent
+              selectMode={selectMode}
+              onReset={reset}
+              placeholder={<Placeholder>{children}</Placeholder>}
+              alwaysShowPlaceholder={alwaysShowPlaceholder}
+            >
               {item}
             </SelectContent>
           </div>

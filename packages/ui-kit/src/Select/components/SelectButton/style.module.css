@@ -61,7 +61,7 @@
     }
   }
 
-  & .placeholder {
+  & .placeholderWrap {
     color: var(--base-strong);
     background: transparent;
     overflow: hidden;
@@ -130,5 +130,23 @@
 
   &.error .selectBox {
     box-shadow: 0 0 0 1px var(--error-strong);
+  }
+
+  & .placeholder{
+    position: absolute;
+    transition: 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+    top: 8px;
+  }
+
+  & .alwaysShowPlaceholder.hasValue{
+    & .placeholder {
+      top: -10px;
+      background: var(--base-weak);
+      padding: 0 4px;
+    }
+  }
+  
+  & button:focus .placeholder{
+    color: var(--complimentary-strong-down);
   }
 }

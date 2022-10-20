@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.2.0](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.1.3...@konturio/ui-kit@3.2.0) (2022-10-20)
+
+
+### Features
+
+* **textarea:** 9250 - add Textarea component ([#35](https://github.com/konturio/ui/issues/35)) ([eb04d19](https://github.com/konturio/ui/commit/eb04d19943acb249b3a2dbe7aadb02cda982a221))
+
+
+
+
+
 ## [3.1.3](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.1.2...@konturio/ui-kit@3.1.3) (2022-09-30)
 
 **Note:** Version bump only for package @konturio/ui-kit

@@ -65,6 +65,7 @@ export interface SelectProps {
   onSelect?: (selection: SelectItemType | SelectItemType[] | null | undefined) => void;
   onClose?: (selection: SelectItemType | SelectItemType[] | null | undefined) => void;
   onReset?: () => void;
+  alwaysShowPlaceholder?: boolean
 }
 
 export const Select = forwardRef(
@@ -90,6 +91,7 @@ export const Select = forwardRef(
       onSelect,
       onClose,
       onReset,
+      alwaysShowPlaceholder,
       ...props
     },
     ref,
@@ -274,6 +276,7 @@ export const Select = forwardRef(
           selectMode={selectionMode}
           withResetButton={withResetButton}
           value={initialSelectedItem}
+          alwaysShowPlaceholder={alwaysShowPlaceholder}
         >
           {children}
         </SelectButton>

@@ -7,12 +7,14 @@ export function SelectContent({
   selectMode,
   onReset,
   children,
+  alwaysShowPlaceholder,
   placeholder = null,
 }: {
   selectMode: SelectMode;
   onReset?: (val?: string | number | undefined) => void;
   children: Array<{ value: string | number | undefined; title: React.ReactNode }> | React.ReactNode;
   placeholder?: JSX.Element | null;
+  alwaysShowPlaceholder?: boolean
 }): JSX.Element | null {
   if (children === null || children === '' || children === undefined) return placeholder;
 
@@ -51,7 +53,11 @@ export function SelectContent({
         console.error(`Wrong children type in <MultiselectContent />. ReactNode expected`);
         return placeholder;
       }
+      console.log('%c⧭ case', 'color: #aa00ff', alwaysShowPlaceholder );
 
-      return <span className={style.textContent}>{children}</span>;
+      return <>
+        {alwaysShowPlaceholder && placeholder}
+        <span className={style.textContent}>{children}</span>
+      </>;
   }
 }

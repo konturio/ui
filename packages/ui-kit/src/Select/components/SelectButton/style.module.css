@@ -143,10 +143,14 @@
       top: -10px;
       background: var(--base-weak);
       padding: 0 4px;
+      color: var(--faint-strong);    
+      font-size: 12px;
+      pointer-events: none;
+      max-width: calc(100% - 25px);  
     }
   }
   
-  & button:focus .placeholder{
+  & button:focus .placeholder, & button:focus .alwaysShowPlaceholder .placeholder{
     color: var(--complimentary-strong-down);
   }
 }

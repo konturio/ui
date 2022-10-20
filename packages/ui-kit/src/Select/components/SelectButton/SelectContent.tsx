@@ -53,7 +53,6 @@ export function SelectContent({
         console.error(`Wrong children type in <MultiselectContent />. ReactNode expected`);
         return placeholder;
       }
-      console.log('%c⧭ case', 'color: #aa00ff', alwaysShowPlaceholder );
 
       return <>
         {alwaysShowPlaceholder && placeholder}

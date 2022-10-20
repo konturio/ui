@@ -71,7 +71,6 @@ export const SelectButton = React.forwardRef(
       },
       [reset],
     );
-    console.log('%c⧭', 'color: #e50000', alwaysShowPlaceholder);
 
     const isInteractiveSelectionMode =
       selectMode === SELECTION_NODES.SINGLE || selectMode === SELECTION_NODES.MULTI_AGGREGATED_STRING;

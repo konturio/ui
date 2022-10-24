@@ -9,6 +9,7 @@
   ],
   "homepage": "https://konturio.github.io/ui",
   "scripts": {
+    "postinstall": "patch-package",
     "build": "run-s ts:clean auto:ts:references auto:lerna:pre-build auto:ts:build auto:lerna:build",
     "build:watch": "run-s auto:ts:references auto:lerna:pre-build auto:ts:build:watch auto:lerna:build",
     "dev": "run-p auto:lerna:pre-start auto:cosmos:renderer auto:cosmos auto:open",
@@ -41,7 +42,7 @@
     "auto:lerna:build": "lerna run build",
     "auto:ts:build": "tsc --build",
     "auto:ts:build:watch": "tsc --build --watch",
-    "auto:ts:references": "node setup-references.mjs",
+    "auto:ts:references": "node setup-references.mjs"
   },
   "browserslist": {
     "production": [

@@ -1,9 +1,25 @@
 @import 'vis-timeline/styles/vis-timeline-graph2d.min.css';
 
+.vis-item {
+  /* border: none; */
+}
+
 .vis-item.vis-range {
   border-radius: 0px
 }
 
+.vis-item .vis-item-content {
+  box-sizing: border-box;
+  padding: 0;
+  display: block;
+}
+
 .vis-cluster { 
-  background-color: #97b0f8
+  background-color: none
+}
+
+.vis-item.vis-range .vis-item-content {
+  display: block;
+  position: relative;
+  height: 100%;
 }

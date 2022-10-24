@@ -152,15 +152,16 @@ export default {
   },
   ['Custom Components']: () => {
     const [data] = useState(() =>
-      Object.values(episodesMap).map((d) => ({
+      Object.values(episodesMap).slice(0, 2).map((d) => ({
         id: d.id,
-        start: new Date(d.updatedAt),
+        start: new Date(d.startedAt),
+        end: new Date(d.endedAt),
       })),
     );
 
     const [selected, setSelected] = useState([] as (number | string)[]);
     const [cluster] = useValue('cluster', {
-      defaultValue: true,
+      defaultValue: false,
     });
     const [stack] = useValue('stack', {
       defaultValue: true,
@@ -188,36 +189,20 @@ export default {
               </div>
             );
           }}
-          timelineEntryComponent={({ isCluster }) => {
-            return (
-              <div
-                style={{
-                  backgroundColor: isCluster ? 'red' : 'transparent',
-                  position: 'absolute',
-                  right: 0,
-                  left: 0,
-                  top: 0,
-                  bottom: 0,
-                  borderRadius: '50%',
-                }}
-              ></div>
-            );
-          }}
+          timelineEntryComponent={CustomComponent}
         />
-        <ul>
-          {Object.values(episodesMap).map((d) => (
-            <li
-              key={d.id}
-              style={{ color: selected.includes(d.id) ? 'red' : 'inherit' }}
-              onClick={() => {
-                setSelected([d.id]);
-              }}
-            >
-              {d.name}
-            </li>
-          ))}
-        </ul>
       </div>
     );
   },
 };
+
+function CustomComponent({ isCluster }: { isCluster: boolean }) {
+  return (
+    <div
+      style={{
+        backgroundColor: isCluster ? 'red' : 'green',
+        height: '14px',
+      }}
+    >123</div>
+  );
+}

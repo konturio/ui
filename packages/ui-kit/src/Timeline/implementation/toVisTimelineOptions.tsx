@@ -1,4 +1,5 @@
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
+
 import type { TimelineOptions as VisTimelineOptions } from 'vis-timeline';
 import type { TimelineOptions } from '../types';
 
@@ -11,17 +12,13 @@ export const toVisTimelineOptions = (options: TimelineOptions): VisTimelineOptio
     timelineOptions.cluster = options.cluster === true ? {} : options.cluster;
   }
 
-  const { timelineEntryComponent: createTimelineEntryComponent } = options;
-  if (createTimelineEntryComponent) {
+  const { timelineEntryComponent: TimelineEntryComponent} = options;
+  if (TimelineEntryComponent) {
     // TODO fix types in library
-    // @ts-expect-error error in typings of library
     timelineOptions.template = (item: unknown, el: Element, data) => {
-      const component = createTimelineEntryComponent(data);
-      if (component === null) {
-        return el;
-      }
       const wrapper = document.createElement('div');
-      ReactDOM.render(component, wrapper);
+      const root = createRoot(wrapper);
+      root.render(<TimelineEntryComponent {...data} />);
       return wrapper;
     };
   }
@@ -33,7 +30,8 @@ export const toVisTimelineOptions = (options: TimelineOptions): VisTimelineOptio
       // @ts-expect-error error in typings of library, template can return Element
       template: (originalItemData, parsedItemData) => {
         const wrapper = document.createElement('div');
-        ReactDOM.render(createTooltipComponent({ originalItemData, parsedItemData }), wrapper);
+        const root = createRoot(wrapper);
+        root.render(createTooltipComponent({ originalItemData, parsedItemData }));
         return wrapper;
       },
     };

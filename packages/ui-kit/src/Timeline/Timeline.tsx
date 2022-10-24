@@ -2,9 +2,8 @@ import { useEffect, useImperativeHandle, useMemo, useRef, forwardRef } from 'rea
 import { DataSet } from 'vis-data';
 import { toVisTimelineOptions } from './implementation/toVisTimelineOptions';
 import { toVisTimelineDataset } from './implementation/toVisTimelineDataset';
-
-import type { TimelineOptions, TimelineEntry, OnClickPayload } from './types';
 import { useVisTimeline } from './implementation/useVisTimeline';
+import type { TimelineOptions, TimelineEntry, OnClickPayload } from './types';
 
 export interface TimelineProps extends TimelineOptions {
   dataset: TimelineEntry[];
@@ -50,6 +49,7 @@ export const Timeline = forwardRef<TimelineImperativeApi | null, TimelineProps>(
         timelineOptions.min = zoomLimit.current.min;
       }
       timeline.setOptions(timelineOptions);
+      timeline.redraw();
 
       if (firstPass.current) {
         firstPass.current = false;

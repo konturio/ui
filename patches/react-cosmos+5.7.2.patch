@@ -1,3 +1,16 @@
+diff --git a/node_modules/react-cosmos/dist/dom/ErrorCatch.js b/node_modules/react-cosmos/dist/dom/ErrorCatch.js
+index 9c18d48..b561eda 100644
+--- a/node_modules/react-cosmos/dist/dom/ErrorCatch.js
++++ b/node_modules/react-cosmos/dist/dom/ErrorCatch.js
+@@ -93,7 +93,7 @@ var ErrorCatch = /*#__PURE__*/function (_React$Component) {
+       // takes care of it in a nicer way. We used to render both for a while but
+       // it proved annoying. react-error-overlay has a slight delay and seeing
+       // the same error reported twice feels clumsy.
+-      if (__DEV__) {
++      if (import.meta.env.DEV) {
+         return null;
+       } // In static exports, however, where react-error-overlay is missing,
+       // rendering plain error details is superior to showing a blank screen.
 diff --git a/node_modules/react-cosmos/dist/dom/index.js b/node_modules/react-cosmos/dist/dom/index.js
 index 5828849..ed64872 100644
 --- a/node_modules/react-cosmos/dist/dom/index.js

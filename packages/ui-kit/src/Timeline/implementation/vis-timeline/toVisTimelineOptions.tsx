@@ -1,7 +1,7 @@
 import { createRoot } from 'react-dom/client';
-
 import type { TimelineOptions as VisTimelineOptions } from 'vis-timeline';
-import type { TimelineOptions } from '../types';
+import type { TimelineProps } from '../../types';
+type TimelineOptions = Omit<TimelineProps, 'dataset' | 'selected'>;
 
 export const toVisTimelineOptions = (options: TimelineOptions): VisTimelineOptions => {
   const timelineOptions: VisTimelineOptions = {
@@ -9,10 +9,10 @@ export const toVisTimelineOptions = (options: TimelineOptions): VisTimelineOptio
   };
 
   if (options.cluster) {
-    timelineOptions.cluster = options.cluster === true ? {} : options.cluster;
+    timelineOptions.cluster = options.cluster;
   }
 
-  const { timelineEntryComponent: TimelineEntryComponent} = options;
+  const { timelineEntryComponent: TimelineEntryComponent } = options;
   if (TimelineEntryComponent) {
     // TODO fix types in library
     timelineOptions.template = (item: unknown, el: Element, data) => {
@@ -23,15 +23,15 @@ export const toVisTimelineOptions = (options: TimelineOptions): VisTimelineOptio
     };
   }
 
-  const { tooltipComponent: createTooltipComponent } = options;
-  if (createTooltipComponent) {
+  const { tooltipComponent: TooltipComponent } = options;
+  if (TooltipComponent) {
     timelineOptions.tooltip = {
       // TODO fix types in library
       // @ts-expect-error error in typings of library, template can return Element
       template: (originalItemData, parsedItemData) => {
         const wrapper = document.createElement('div');
         const root = createRoot(wrapper);
-        root.render(createTooltipComponent({ originalItemData, parsedItemData }));
+        root.render(<TooltipComponent {...originalItemData} />);
         return wrapper;
       },
     };

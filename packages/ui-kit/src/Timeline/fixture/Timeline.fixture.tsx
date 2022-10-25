@@ -1,7 +1,8 @@
-import { useState } from 'react';
-import { useValue } from 'react-cosmos/fixture';
+import { useMemo, useState } from 'react';
+import { useValue, useSelect } from 'react-cosmos/fixture';
 import { Timeline } from '..';
 import testData from './testData';
+import { useSelectExtra } from './useSelectExtra';
 
 const episodesMap = testData.reduce(
   (acc, i, n) => {
@@ -31,11 +32,7 @@ export default {
     );
 
     const [selected, setSelected] = useState([] as (number | string)[]);
-
-    const [cluster] = useValue('cluster', {
-      defaultValue: true,
-    });
-
+    const cluster = useSelectExtra([false as const, { fitOnDoubleClick: true }]);
     const [stack] = useValue('stack', {
       defaultValue: true,
     });
@@ -75,11 +72,7 @@ export default {
     );
 
     const [selected, setSelected] = useState([] as (number | string)[]);
-
-    const [cluster] = useValue('cluster', {
-      defaultValue: true,
-    });
-
+    const cluster = useSelectExtra([false as const, { fitOnDoubleClick: true }]);
     const [stack] = useValue('stack', {
       defaultValue: true,
     });
@@ -118,9 +111,8 @@ export default {
     );
 
     const [selected, setSelected] = useState([] as (number | string)[]);
-    const [cluster] = useValue('cluster', {
-      defaultValue: true,
-    });
+
+    const cluster = useSelectExtra([false as const, { fitOnDoubleClick: true }]);
     const [stack] = useValue('stack', {
       defaultValue: true,
     });
@@ -150,19 +142,17 @@ export default {
       </div>
     );
   },
-  ['Custom Components']: () => {
+  ['Single Point']: () => {
     const [data] = useState(() =>
-      Object.values(episodesMap).slice(0, 2).map((d) => ({
+      Object.values(episodesMap).slice(0, 1).map((d) => ({
         id: d.id,
-        start: new Date(d.startedAt),
-        end: new Date(d.endedAt),
+        start: new Date(d.updatedAt),
       })),
     );
 
     const [selected, setSelected] = useState([] as (number | string)[]);
-    const [cluster] = useValue('cluster', {
-      defaultValue: false,
-    });
+
+    const cluster = useSelectExtra([false as const, { fitOnDoubleClick: true }]);
     const [stack] = useValue('stack', {
       defaultValue: true,
     });
@@ -175,34 +165,21 @@ export default {
           stack={stack}
           onSelect={(entries) => setSelected(entries.map((e) => e.id))}
           selected={selected}
-          tooltipComponent={({ originalItemData }) => {
-            return (
-              <div>
-                {originalItemData.id ? (
-                  <ul>
-                    <li>Start: {String(originalItemData.start)}</li>
-                    <li>End: {String(originalItemData.end)}</li>
-                  </ul>
-                ) : (
-                  'Click to open'
-                )}
-              </div>
-            );
-          }}
-          timelineEntryComponent={CustomComponent}
         />
+        <ul>
+          {Object.values(episodesMap).map((d) => (
+            <li
+              key={d.id}
+              style={{ color: selected.includes(d.id) ? 'red' : 'inherit' }}
+              onClick={() => {
+                setSelected([d.id]);
+              }}
+            >
+              {d.name}
+            </li>
+          ))}
+        </ul>
       </div>
     );
   },
 };
-
-function CustomComponent({ isCluster }: { isCluster: boolean }) {
-  return (
-    <div
-      style={{
-        backgroundColor: isCluster ? 'red' : 'green',
-        height: '14px',
-      }}
-    >123</div>
-  );
-}

@@ -35,5 +35,11 @@ export default ({ mode }) => {
     },
     base: '',
     root: './cosmos',
+    optimizeDeps: {
+      exclude: ['vis-timeline', 'vis-data']
+    },
+    define: {
+      __DEV__: mode === 'development'
+    }
   });
 };

@@ -1,20 +1,17 @@
 import { useEffect, useImperativeHandle, useMemo, useRef, forwardRef } from 'react';
 import { DataSet } from 'vis-data';
-import { toVisTimelineOptions } from './implementation/toVisTimelineOptions';
-import { toVisTimelineDataset } from './implementation/toVisTimelineDataset';
-import { useVisTimeline } from './implementation/useVisTimeline';
-import type { TimelineOptions, TimelineEntry, OnClickPayload } from './types';
+import { toVisTimelineOptions } from './toVisTimelineOptions';
+import { toVisTimelineDataset } from './toVisTimelineDataset';
+import { useVisTimeline } from './useVisTimeline';
+import type { TimelineProps, TimelineEntry } from '../../types';
+import type { OnClickPayload } from './types';
 
-export interface TimelineProps extends TimelineOptions {
-  dataset: TimelineEntry[];
-  selected: TimelineEntry['id'][];
-}
 
 export interface TimelineImperativeApi {
   fit: () => void;
 }
 
-export const Timeline = forwardRef<TimelineImperativeApi | null, TimelineProps>(
+export const VisTimeline = forwardRef<TimelineImperativeApi | null, TimelineProps>(
   ({ dataset, selected, ...rest }, ref) => {
     const options = useMemo(() => rest, Object.values(rest));
     const timelineContainerRef = useRef(null);
@@ -82,7 +79,7 @@ export const Timeline = forwardRef<TimelineImperativeApi | null, TimelineProps>(
       if (!dataMapRef.current) return;
       const onSelectCb = (payload: OnClickPayload) => {
         if (payload.isCluster) {
-          // TODO - add itemSet in public interface if lib
+          // TODO - add itemSet in public interface of lib
           // @ts-expect-error timeline not expose itemSet in interface.
           const cluster = timeline.itemSet.clusters.find((c) => c.id === payload.item);
           const entriesInCluster = cluster.getData().items.map((e) => dataMapRef.current.get(e.id));
@@ -107,4 +104,4 @@ export const Timeline = forwardRef<TimelineImperativeApi | null, TimelineProps>(
   },
 );
 
-Timeline.displayName = 'Timeline';
+VisTimeline.displayName = 'VisTimeline';

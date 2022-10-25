@@ -1,7 +1,7 @@
 import { useCallback, useMemo, useState } from 'react';
 import { DropdownTriggerRefProvider } from '../Dropdown';
 import { Menu, MenuItem, MenuList } from '../MenuButton';
-import { Timeline } from './Timeline';
+import { Timeline } from './';
 import type { TimelineProps, TimelineEntry } from './types';
 import type { MutableRefObject } from 'react';
 

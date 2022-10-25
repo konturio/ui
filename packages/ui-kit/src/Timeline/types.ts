@@ -1,64 +1,36 @@
-import type { TimelineItem } from 'vis-timeline';
-
 export interface TimelineEntry {
   id: string | number;
   start: Date;
-  tooltip?: string;
   end?: Date;
+  tooltip?: string;
   group?: string;
 }
 
-export interface TimelineOptions {
+interface ClusterOptions {
+  fitOnDoubleClick: boolean;
+}
+
+export type TimelineEntryComponent = (data: {
+  content: string;
+  isCluster: boolean;
+  end: null | Date;
+  start: Date;
+}) => JSX.Element;
+
+export type TimelineTooltipComponent = (props: unknown) => JSX.Element;
+export interface TimelineProps {
+  dataset: TimelineEntry[];
+  selected: TimelineEntry['id'][];
   /* Show overlapped entries as stack */
   stack: boolean;
   /* Join bunch of small entries in cluster */
-  cluster:
-    | boolean
-    | {
-        fitOnDoubleClick: boolean;
-      };
-  tooltipComponent?: ({
-    originalItemData,
-    parsedItemData,
-  }: {
-    originalItemData: TimelineItem;
-    parsedItemData?: TimelineItem;
-  }) => JSX.Element;
-  timelineEntryComponent?: (data: {
-    content: string;
-    isCluster: boolean;
-    end: null | Date;
-    start: Date;
-  }) => JSX.Element;
+  cluster: false | ClusterOptions;
+  tooltipComponent?: TimelineTooltipComponent;
+  timelineEntryComponent?: TimelineEntryComponent;
   onSelect?: (item: TimelineEntry[], event: PointerEvent) => void;
   onHover?: (item: TimelineEntry[], event: PointerEvent) => void;
 }
 
-export interface TimelineProps extends TimelineOptions {
-  dataset: TimelineEntry[];
-  selected: TimelineEntry['id'][];
-}
-
-// TODO: Contribute it to timeline-vis package
-export interface OnSelectPayload {
-  event: PointerEvent;
-  items: TimelineEntry['id'][];
-}
-
-// TODO: Contribute it to timeline-vis package
-export interface OnClickPayload {
-  event: PointerEvent;
-  customTime: null;
-  group: null;
-  isCluster: boolean;
-  /* Cluster that will be selected */
-  item: null | string;
-  /* Items that was selected */
-  items: null | TimelineEntry['id'][];
-  pageX: number;
-  pageY: number;
-  time: Date;
-  what: 'background' | 'item';
-  x: number;
-  y: number;
+export interface TimelineImperativeApi {
+  fit: () => void;
 }

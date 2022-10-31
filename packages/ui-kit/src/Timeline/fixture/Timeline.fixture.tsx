@@ -1,5 +1,5 @@
-import { useCallback, useMemo, useState } from 'react';
-import { useValue, useSelect } from 'react-cosmos/fixture';
+import { useCallback, useState } from 'react';
+import { useValue } from 'react-cosmos/fixture';
 import { Timeline } from '..';
 import testData from './testData';
 import { useSelectExtra } from './useSelectExtra';

@@ -1,0 +1,17 @@
+.timelineEntry {
+  background-color: var(--faint-strong);
+  opacity: .7;
+  margin-top: 2px;
+  margin-bottom: 2px; 
+  border-right: 2px solid white;
+  border-left: 2px solid white;
+}
+
+.timelineEntry.cluster {
+  opacity: 1;
+}
+
+.selected {
+  margin: 0;
+  border: 2px solid var(--back-accent-strong);
+}

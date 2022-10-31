@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 import { useValue, useSelect } from 'react-cosmos/fixture';
 import { Timeline } from '..';
 import testData from './testData';
@@ -32,32 +32,23 @@ export default {
     );
 
     const [selected, setSelected] = useState([] as (number | string)[]);
+    const onSelect = useCallback((entries) => {
+      setSelected(entries.map((e) => e.id));
+    }, []);
     const cluster = useSelectExtra([false as const, { fitOnDoubleClick: true }]);
     const [stack] = useValue('stack', {
       defaultValue: true,
     });
 
     return (
-      <div style={{ minWidth: '85%' }}>
-        <Timeline
-          dataset={data}
-          cluster={cluster}
-          stack={stack}
-          onSelect={(entries) => setSelected(entries.map((e) => e.id))}
-          selected={selected}
-        />
-        <ul>
-          {Object.values(episodesMap).map((d) => (
-            <li
-              key={d.id}
-              style={{ color: selected.includes(d.id) ? 'red' : 'inherit' }}
-              onClick={() => {
-                setSelected([d.id]);
-              }}
-            >
-              {d.name}
-            </li>
-          ))}
+      <div style={{ width: '85%' }}>
+        <Timeline dataset={data} cluster={cluster} stack={stack} onSelect={onSelect} selected={selected} />
+        <ul style={{ height: '100px' }}>
+          {Object.values(episodesMap)
+            .filter((e) => selected.includes(e.id))
+            .map((d) => (
+              <li key={d.id}>{d.name}</li>
+            ))}
         </ul>
       </div>
     );
@@ -72,32 +63,24 @@ export default {
     );
 
     const [selected, setSelected] = useState([] as (number | string)[]);
+    const onSelect = useCallback((entries) => {
+      setSelected(entries.map((e) => e.id));
+    }, []);
+
     const cluster = useSelectExtra([false as const, { fitOnDoubleClick: true }]);
     const [stack] = useValue('stack', {
       defaultValue: true,
     });
 
     return (
-      <div style={{ minWidth: '85%' }}>
-        <Timeline
-          dataset={data}
-          cluster={cluster}
-          stack={stack}
-          onSelect={(entries) => setSelected(entries.map((e) => e.id))}
-          selected={selected}
-        />
+      <div style={{ width: '85%' }}>
+        <Timeline dataset={data} cluster={cluster} stack={stack} onSelect={onSelect} selected={selected} />
         <ul>
-          {Object.values(episodesMap).map((d) => (
-            <li
-              key={d.id}
-              style={{ color: selected.includes(d.id) ? 'red' : 'inherit' }}
-              onClick={() => {
-                setSelected([d.id]);
-              }}
-            >
-              {d.name}
-            </li>
-          ))}
+          {Object.values(episodesMap)
+            .filter((e) => selected.includes(e.id))
+            .map((d) => (
+              <li key={d.id}>{d.name}</li>
+            ))}
         </ul>
       </div>
     );
@@ -112,18 +95,22 @@ export default {
 
     const [selected, setSelected] = useState([] as (number | string)[]);
 
-    const cluster = useSelectExtra([false as const, { fitOnDoubleClick: true }]);
+    const cluster = useSelectExtra([false as const, { fitOnDoubleClick: true },  { fitOnDoubleClick: true, showStipes: false }]);
     const [stack] = useValue('stack', {
       defaultValue: true,
     });
+    const onSelect = useCallback((entries) => {
+      setSelected(entries.map((e) => e.id));
+    }, []);
+
 
     return (
-      <div style={{ minWidth: '85%' }}>
+      <div style={{ width: '85%' }}>
         <Timeline
           dataset={data}
           cluster={cluster}
           stack={stack}
-          onSelect={(entries) => setSelected(entries.map((e) => e.id))}
+          onSelect={onSelect}
           selected={selected}
         />
         <ul>
@@ -144,10 +131,12 @@ export default {
   },
   ['Single Point']: () => {
     const [data] = useState(() =>
-      Object.values(episodesMap).slice(0, 1).map((d) => ({
-        id: d.id,
-        start: new Date(d.updatedAt),
-      })),
+      Object.values(episodesMap)
+        .slice(0, 1)
+        .map((d) => ({
+          id: d.id,
+          start: new Date(d.updatedAt),
+        })),
     );
 
     const [selected, setSelected] = useState([] as (number | string)[]);
@@ -158,7 +147,7 @@ export default {
     });
 
     return (
-      <div style={{ minWidth: '85%' }}>
+      <div style={{ width: '85%' }}>
         <Timeline
           dataset={data}
           cluster={cluster}
@@ -167,17 +156,11 @@ export default {
           selected={selected}
         />
         <ul>
-          {Object.values(episodesMap).map((d) => (
-            <li
-              key={d.id}
-              style={{ color: selected.includes(d.id) ? 'red' : 'inherit' }}
-              onClick={() => {
-                setSelected([d.id]);
-              }}
-            >
-              {d.name}
-            </li>
-          ))}
+          {Object.values(episodesMap)
+            .filter((e) => selected.includes(e.id))
+            .map((d) => (
+              <li key={d.id}>{d.name}</li>
+            ))}
         </ul>
       </div>
     );

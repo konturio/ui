@@ -7,7 +7,7 @@
 - Declarative - usual props (`TimelineProps` interface)
 - Imperative - usual props (`TimelineImperativeApi` interface)
 
-fixture/imperativeApi.fixture.tsx show example how to use imperative part
+fixture/ImperativeApi.fixture.fixture.tsx show example how to use imperative part
 
 ## Implementations
 

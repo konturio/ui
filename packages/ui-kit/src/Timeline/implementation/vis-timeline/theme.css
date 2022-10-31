@@ -1,25 +1,84 @@
+
 @import 'vis-timeline/styles/vis-timeline-graph2d.min.css';
+.vis-item.vis-dot {
+  border: none;
+}
+
+.vis-item.vis-line {
+  border: none;
+  border-color: black;
+  width: 1px;
+}
+
+.vis-item.vis-box {
+  width: 14px;
+  height: 21px;
+  background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQiIGhlaWdodD0iMjEiIHZpZXdCb3g9IjAgMCAxNCAyMSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTcgMTlMNi42Mjc4NiAxOS4zMzM5TDcgMTkuNzQ4Nkw3LjM3MjE0IDE5LjMzMzlMNyAxOVpNNyAxOUM3LjM3MjE0IDE5LjMzMzkgNy4zNzIyMiAxOS4zMzM4IDcuMzcyMzMgMTkuMzMzN0w3LjM3MjY3IDE5LjMzMzNMNy4zNzM3NSAxOS4zMzIxTDcuMzc3NTMgMTkuMzI3OUw3LjM5MTQ1IDE5LjMxMjJDNy40MDM1MiAxOS4yOTg2IDcuNDIxMSAxOS4yNzg3IDcuNDQzODIgMTkuMjUyN0M3LjQ4OTI2IDE5LjIwMDcgNy41NTUyOCAxOS4xMjQ1IDcuNjM4OTQgMTkuMDI2QzcuODA2MjQgMTguODI4OSA4LjA0NDI0IDE4LjU0MjYgOC4zMjkzOCAxOC4xODI4QzguODk5MjUgMTcuNDYzNiA5LjY1OTU3IDE2LjQ0ODEgMTAuNDIwNyAxNS4yNjI4QzExLjkyNyAxMi45MTcyIDEzLjUgOS44MTE1OSAxMy41IDdDMTMuNSAzLjQxMDE1IDEwLjU4OTkgMC41IDcgMC41QzMuNDEwMTUgMC41IDAuNSAzLjQxMDE1IDAuNSA3QzAuNSA5LjgxMTU5IDIuMDcyOTYgMTIuOTE3MiAzLjU3OTI4IDE1LjI2MjhDNC4zNDA0MyAxNi40NDgxIDUuMTAwNzUgMTcuNDYzNiA1LjY3MDYyIDE4LjE4MjhDNS45NTU3NiAxOC41NDI2IDYuMTkzNzYgMTguODI4OSA2LjM2MTA2IDE5LjAyNkM2LjQ0NDcyIDE5LjEyNDUgNi41MTA3NCAxOS4yMDA3IDYuNTU2MTggMTkuMjUyN0M2LjU3ODkgMTkuMjc4NyA2LjU5NjQ4IDE5LjI5ODYgNi42MDg1NSAxOS4zMTIyTDYuNjIyNDcgMTkuMzI3OUw2LjYyNjI1IDE5LjMzMjFMNi42MjczMyAxOS4zMzMzTDYuNjI3NjcgMTkuMzMzN0M2LjYyNzc4IDE5LjMzMzggNi42Mjc4NiAxOS4zMzM5IDcgMTlaIiBmaWxsPSIjQjhCREMxIiBzdHJva2U9IndoaXRlIi8+Cjwvc3ZnPgo=");
+  background-size: contain;
+  background-position: center;
+}
+
+.vis-item.vis-box.vis-selected {
+  border: none;
+  outline: none;
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQiIGhlaWdodD0iMjEiIHZpZXdCb3g9IjAgMCAxNCAyMSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTcgMTlMNi42Mjc4NiAxOS4zMzM5TDcgMTkuNzQ4Nkw3LjM3MjE0IDE5LjMzMzlMNyAxOVpNNyAxOUM3LjM3MjE0IDE5LjMzMzkgNy4zNzIyMiAxOS4zMzM4IDcuMzcyMzMgMTkuMzMzN0w3LjM3MjY3IDE5LjMzMzNMNy4zNzM3NSAxOS4zMzIxTDcuMzc3NTMgMTkuMzI3OUw3LjM5MTQ1IDE5LjMxMjJDNy40MDM1MiAxOS4yOTg2IDcuNDIxMSAxOS4yNzg3IDcuNDQzODIgMTkuMjUyN0M3LjQ4OTI2IDE5LjIwMDcgNy41NTUyOCAxOS4xMjQ1IDcuNjM4OTQgMTkuMDI2QzcuODA2MjQgMTguODI4OSA4LjA0NDI0IDE4LjU0MjYgOC4zMjkzOCAxOC4xODI4QzguODk5MjUgMTcuNDYzNiA5LjY1OTU3IDE2LjQ0ODEgMTAuNDIwNyAxNS4yNjI4QzExLjkyNyAxMi45MTcyIDEzLjUgOS44MTE1OSAxMy41IDdDMTMuNSAzLjQxMDE1IDEwLjU4OTkgMC41IDcgMC41QzMuNDEwMTUgMC41IDAuNSAzLjQxMDE1IDAuNSA3QzAuNSA5LjgxMTU5IDIuMDcyOTYgMTIuOTE3MiAzLjU3OTI4IDE1LjI2MjhDNC4zNDA0MyAxNi40NDgxIDUuMTAwNzUgMTcuNDYzNiA1LjY3MDYyIDE4LjE4MjhDNS45NTU3NiAxOC41NDI2IDYuMTkzNzYgMTguODI4OSA2LjM2MTA2IDE5LjAyNkM2LjQ0NDcyIDE5LjEyNDUgNi41MTA3NCAxOS4yMDA3IDYuNTU2MTggMTkuMjUyN0M2LjU3ODkgMTkuMjc4NyA2LjU5NjQ4IDE5LjI5ODYgNi42MDg1NSAxOS4zMTIyTDYuNjIyNDcgMTkuMzI3OUw2LjYyNjI1IDE5LjMzMjFMNi42MjczMyAxOS4zMzMzTDYuNjI3NjcgMTkuMzMzN0M2LjYyNzc4IDE5LjMzMzggNi42Mjc4NiAxOS4zMzM5IDcgMTlaIiBmaWxsPSIjQjhCREMxIiBzdHJva2U9IiMyMzZERDMiLz4KPC9zdmc+Cg==");
+  background-size: contain;
+  background-position: center;
+}
+
+.vis-timeline {
+  border: none
+}
+
+.vis-content {
+  border-bottom: 1px solid var(--faint-strong);
+}
 
 .vis-item {
-  /* border: none; */
+  border: none;
+  background-color: var(--faint-strong);
 }
 
 .vis-item.vis-range {
-  border-radius: 0px
+  border-radius: 0px;
+  min-height: 14px;
+  border: 1px solid white;
+}
+
+.vis-item.vis-range.vis-selected {
+  border-color: var(--back-accent-strong);
+  outline: 1px solid var(--back-accent-strong);
+  background-color: var(--faint-strong);
+}
+
+.vis-item.vis-line.vis-selected {
+  background-color: var(--back-accent-strong)
 }
 
 .vis-item .vis-item-content {
   box-sizing: border-box;
-  padding: 0;
   display: block;
 }
 
-.vis-cluster { 
-  background-color: none
+.vis-cluster, .vis-selected.vis-cluster {
+  background-color: var(--faint-strong-up);
 }
 
 .vis-item.vis-range .vis-item-content {
   display: block;
   position: relative;
   height: 100%;
+}
+
+.vis-time-axis .vis-text {
+  font-size: 11px;
+  line-height: 14px;
+}
+
+.vis-panel.vis-bottom,
+.vis-panel.vis-center,
+.vis-panel.vis-left,
+.vis-panel.vis-right,
+.vis-panel.vis-top {
+  border: none;
 }

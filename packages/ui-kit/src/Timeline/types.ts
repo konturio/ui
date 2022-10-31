@@ -13,6 +13,7 @@ interface ClusterOptions {
 export type TimelineEntryComponent = (data: {
   content: string;
   isCluster: boolean;
+  isSelected: boolean;
   end: null | Date;
   start: Date;
 }) => JSX.Element;
@@ -34,3 +35,5 @@ export interface TimelineProps {
 export interface TimelineImperativeApi {
   fit: () => void;
 }
+
+export type TimelineOptions = Omit<TimelineProps, 'dataset' | 'selected'>;

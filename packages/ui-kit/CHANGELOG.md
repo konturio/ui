@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.3.0](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.2.1...@konturio/ui-kit@3.3.0) (2022-10-31)
+
+
+### Features
+
+* add kontur styling ([10a60cf](https://github.com/konturio/ui/commit/10a60cf0282578c9a4c55df4c232b117deadbe76))
+* add templates support to timeline ([ae4eff2](https://github.com/konturio/ui/commit/ae4eff2b223167803fdeff7122a36b2d13a72d84))
+
+
+
+
+
 ## [3.2.1](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.2.0...@konturio/ui-kit@3.2.1) (2022-10-20)
 
 **Note:** Version bump only for package @konturio/ui-kit

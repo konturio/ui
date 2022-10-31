@@ -18,7 +18,18 @@ export type TimelineEntryComponent = (data: {
   start: Date;
 }) => JSX.Element;
 
-export type TimelineTooltipComponent = (props: unknown) => JSX.Element;
+export type TimelineTooltipComponent = (props: {
+  className?: string;
+  align?: 'auto' | 'center' | 'left' | 'right';
+  content: string;
+  end?: string | number | Date;
+  group?: string | number;
+  id: string | number;
+  style?: string;
+  title?: string;
+  selectable?: boolean
+}) => JSX.Element;
+
 export interface TimelineProps {
   dataset: TimelineEntry[];
   selected: TimelineEntry['id'][];

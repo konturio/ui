@@ -13,17 +13,18 @@ export const toVisTimelineOptions = (options: TimelineOptions): VisTimelineOptio
     timelineOptions.cluster = options.cluster;
     if (timelineOptions.cluster.titleTemplate === undefined) {
       timelineOptions.cluster.titleTemplate = ''
+      // https://github.com/visjs/vis-timeline/issues/1543
+      // @ts-expect-error - this property added by patch package 
       timelineOptions.cluster.contentTemplate = () => '';
     }
   }
 
   const { timelineEntryComponent: TimelineEntryComponent } = options;
   if (TimelineEntryComponent) {
-    // TODO fix types in library
-    timelineOptions.template = (item: unknown, el: Element, data, isSelected) => {
+    timelineOptions.template = (item: unknown, el: Element, data) => {
       const wrapper = document.createElement('div');
       const root = createRoot(wrapper);
-      root.render(<div id="listener" onClick={(e) => console.log(e)}><TimelineEntryComponent {...data} isSelected={isSelected} /></div>);
+      root.render(<div id="listener" onClick={(e) => console.log(e)}><TimelineEntryComponent {...data} isSelected={false} /></div>);
       return wrapper;
     };
   }

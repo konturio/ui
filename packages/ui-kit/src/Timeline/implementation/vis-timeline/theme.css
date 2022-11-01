@@ -60,7 +60,7 @@
   display: block;
 }
 
-.vis-cluster, .vis-selected.vis-cluster {
+.vis-cluster, .vis-item.vis-range.vis-selected.vis-cluster {
   background-color: var(--faint-strong-up);
 }
 

@@ -20,14 +20,18 @@ async function getTopology() {
 }
 
 async function takeOnlyTypescriptPackages(packages) {
-  const tsConfigs = await Promise.allSettled(packages.map((pkg) => access(`${pkg}/tsconfig.json`, constants.R_OK)));
+  const tsConfigs = await Promise.allSettled(
+    packages.map((pkg) => access(`${pkg}/tsconfig.build.json`, constants.R_OK)),
+  );
   return packages.filter((_, idx) => tsConfigs[idx].status === 'fulfilled');
 }
 
 function createTsConfigWithReferences(packages) {
   return {
     files: [],
-    references: packages.map((pkg) => ({ path: pkg.replace(`${CONFIG.packagesFolder}/`, '') })),
+    references: packages.map((pkg) => ({
+      path: pkg.replace(`${CONFIG.packagesFolder}/`, '') + '/tsconfig.build.json',
+    })),
     compilerOptions: {
       composite: true,
     },

@@ -30,7 +30,7 @@ function createTsConfigWithReferences(packages) {
   return {
     files: [],
     references: packages.map((pkg) => ({
-      path: pkg.replace(`${CONFIG.packagesFolder}/`, '') + '/tsconfig.build.json',
+      path: path.resolve(pkg.replace(`${CONFIG.packagesFolder}/`, ''), 'tsconfig.build.json'),
     })),
     compilerOptions: {
       composite: true,

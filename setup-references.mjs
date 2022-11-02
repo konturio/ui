@@ -1,6 +1,7 @@
-import { constants } from 'fs';
-import { writeFile, access } from 'fs/promises';
+import { constants, accessSync } from 'fs';
+import { writeFile } from 'fs/promises';
 import util from 'util';
+import path from 'path';
 import childProcess from 'child_process';
 
 const exec = util.promisify(childProcess.exec);
@@ -19,18 +20,23 @@ async function getTopology() {
   return topology;
 }
 
-async function takeOnlyTypescriptPackages(packages) {
-  const tsConfigs = await Promise.allSettled(
-    packages.map((pkg) => access(`${pkg}/tsconfig.build.json`, constants.R_OK)),
-  );
-  return packages.filter((_, idx) => tsConfigs[idx].status === 'fulfilled');
-}
+const pathExists = (path) => {
+  try {
+    accessSync(path, constants.R_OK);
+    return true;
+  } catch (_) {
+    return false;
+  }
+};
+
+const takeOnlyTypescriptPackages = (packages) =>
+  packages.filter((p) => pathExists(path.resolve(p, 'tsconfig.build.json')));
 
 function createTsConfigWithReferences(packages) {
   return {
     files: [],
     references: packages.map((pkg) => ({
-      path: path.resolve(pkg.replace(`${CONFIG.packagesFolder}/`, ''), 'tsconfig.build.json'),
+      path: pkg.replace(`${CONFIG.packagesFolder}/`, '') + '/tsconfig.build.json',
     })),
     compilerOptions: {
       composite: true,
@@ -41,7 +47,7 @@ function createTsConfigWithReferences(packages) {
 (async () => {
   const topology = await getTopology();
   const packages = topology.map((pkg) => pkg.replace(CONFIG.npmNamespace, CONFIG.packagesFolder));
-  const tsPackages = await takeOnlyTypescriptPackages(packages);
+  const tsPackages = takeOnlyTypescriptPackages(packages);
   const tsConfig = createTsConfigWithReferences(tsPackages);
   const json = JSON.stringify(tsConfig, null, 2);
   writeFile(`${CONFIG.packagesFolder}/tsconfig.json`, json);

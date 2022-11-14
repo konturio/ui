@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.1.0](https://github.com/konturio/ui/compare/@konturio/default-theme@3.0.1...@konturio/default-theme@3.1.0) (2022-11-14)
+
+
+### Features
+
+* **build:** 12977 - separate ts config to tsconfig.build.json and tsconfig.json ([7cda350](https://github.com/konturio/ui/commit/7cda350777e9024e6ac07d2879d0970321fb80e4))
+
+
+
+
+
 ## [3.0.1](https://github.com/konturio/ui/compare/@konturio/default-theme@3.0.0...@konturio/default-theme@3.0.1) (2022-10-31)
 
 **Note:** Version bump only for package @konturio/default-theme

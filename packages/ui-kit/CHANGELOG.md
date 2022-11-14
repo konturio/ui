@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.4.0](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.3.0...@konturio/ui-kit@3.4.0) (2022-11-14)
+
+
+### Bug Fixes
+
+* **timeline:** cluster change color after selection ([665a699](https://github.com/konturio/ui/commit/665a6998dc39ca753b434fe930f1896a525fa597))
+
+
+### Features
+
+* **build:** 12977 - separate ts config to tsconfig.build.json and tsconfig.json ([7cda350](https://github.com/konturio/ui/commit/7cda350777e9024e6ac07d2879d0970321fb80e4))
+
+
+
+
+
 # [3.3.0](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.2.1...@konturio/ui-kit@3.3.0) (2022-10-31)
 
 

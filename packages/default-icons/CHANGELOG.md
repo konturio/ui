@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.2.0](https://github.com/konturio/ui/compare/@konturio/default-icons@2.1.2...@konturio/default-icons@2.2.0) (2022-11-14)
+
+
+### Features
+
+* **build:** 12977 - separate ts config to tsconfig.build.json and tsconfig.json ([7cda350](https://github.com/konturio/ui/commit/7cda350777e9024e6ac07d2879d0970321fb80e4))
+
+
+
+
+
 ## [2.1.2](https://github.com/konturio/ui/compare/@konturio/default-icons@2.1.1...@konturio/default-icons@2.1.2) (2022-10-20)
 
 **Note:** Version bump only for package @konturio/default-icons

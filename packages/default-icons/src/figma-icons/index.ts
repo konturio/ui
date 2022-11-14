@@ -153,3 +153,8 @@ export { default as Analytics16 } from './Analytics16';
 export { default as DoubleChevronUp24 } from './DoubleChevronUp24';
 export { default as DoubleChevronDown24 } from './DoubleChevronDown24';
 export { default as History24 } from './History24';
+export { default as Video24 } from './Video24';
+export { default as TimelinePoint24 } from './TimelinePoint24';
+export { default as TimelinePoints24 } from './TimelinePoints24';
+export { default as Ninja24 } from './Ninja24';
+export { default as Kontur24 } from './Kontur24';

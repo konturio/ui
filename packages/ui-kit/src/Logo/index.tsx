@@ -3,6 +3,7 @@ const colors = {
   dark: 'black',
   light: 'white',
   contrast: 'black',
+  grey: '#848C94'
 };
 
 export function Logo({
@@ -12,7 +13,7 @@ export function Logo({
   id = 'kontur_logo_svg_id',
 }: {
   compact?: boolean;
-  palette?: 'colorful' | 'dark' | 'light' | 'contrast';
+  palette?: 'colorful' | 'dark' | 'light' | 'contrast' | 'grey';
   height?: number;
   id?: string;
 }) {

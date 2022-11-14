@@ -25,4 +25,10 @@ export default {
       <Logo compact palette="light" />
     </>
   ),
+  Grey: (
+    <>
+      <Logo palette="grey" />
+      <Logo compact palette="grey" />
+    </>
+  )
 };

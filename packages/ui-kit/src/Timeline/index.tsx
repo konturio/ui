@@ -6,4 +6,6 @@ export const Timeline = forwardRef<TimelineImperativeApi | null, TimelineProps>(
   return <VisTimeline ref={ref} {...props} />;
 });
 
+export type { TimelineProps };
+
 Timeline.displayName = 'Timeline';

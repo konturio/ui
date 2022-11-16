@@ -157,6 +157,10 @@
   padding: var(--unit);
 }
 
+.small-xs {
+  padding: var(--half-unit);
+}
+
 .buttonContent {
   padding-right: 8px;
   padding-left: 8px;

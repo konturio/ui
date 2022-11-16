@@ -8,3 +8,7 @@
 .actionsBTN {
   margin: var(--unit);
 }
+
+.actionsBTN.small {
+  margin: var(--half-unit);
+}

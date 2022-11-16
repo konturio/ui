@@ -1,17 +1,18 @@
-import s from './style.module.css';
 import cn from 'clsx';
-import type { ButtonHTMLAttributes, ReactChild, ReactNode } from 'react';
 import { Children, forwardRef } from 'react';
+import { Text } from '../Text';
+import s from './style.module.css';
+import type { ButtonHTMLAttributes, ReactNode, JSXElementConstructor, ReactElement } from 'react';
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   dark?: boolean;
   transparent?: boolean;
   variant?: 'primary' | 'invert-outline' | 'invert' | 'radio';
-  size?: 'medium' | 'small';
+  size?: 'medium' | 'small' | 'small-xs';
   id?: string;
   active?: boolean;
-  iconBefore?: ReactChild | null;
-  iconAfter?: ReactChild | null;
+  iconBefore?: string | number | ReactElement<any, string | JSXElementConstructor<any>> | null;
+  iconAfter?: string | number | ReactElement<any, string | JSXElementConstructor<any>> | null;
   children?: ReactNode;
 }
 
@@ -52,7 +53,14 @@ export const Button = forwardRef<HTMLButtonElement, React.PropsWithChildren<Butt
         {...props}
       >
         {iconBefore}
-        {Children.count(children) > 0 && <div className={s.buttonContent}>{children}</div>}
+        {Children.count(children) > 0 &&
+          (size === 'small-xs' ? (
+            <Text type="caption">
+              <span className={s.buttonContent}>{children}</span>
+            </Text>
+          ) : (
+            <span className={s.buttonContent}>{children}</span>
+          ))}
         {iconAfter}
       </button>
     );

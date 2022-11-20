@@ -1,7 +1,8 @@
 import { useState } from 'react';
-import { Panel, ShortStateListenersType } from '.';
+import { Panel } from '.';
+import type {ShortStateListenersType} from '.';
 
-export default function fixture() {
+export default function Fixture() {
   const [isOpen, setIsOpen] = useState(false)
   const [isShortStateOpen, setIsShortStateOpen] = useState(false)
 

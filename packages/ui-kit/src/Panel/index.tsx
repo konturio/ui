@@ -111,16 +111,16 @@ export function Panel({
     if (isOpen && isShortStateOpen) return <>
       <button
         className={cn(s.close, classes?.closeBtn)}
-        onClick={shortStateListeners?.onFullStateOpen}
+        onClick={shortStateListeners?.onClose}
       >
-        <ChevronDown24 />
+        <ChevronUp24 />
       </button>
 
       <button
         className={cn(s.close, classes?.closeBtn)}
-        onClick={shortStateListeners?.onClose}
+        onClick={shortStateListeners?.onFullStateOpen}
       >
-        <ChevronUp24 />
+        <ChevronDown24 />
       </button>
     </>
     // Full state panel header

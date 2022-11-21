@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Panel } from '.';
-import type {ShortStateListenersType} from '.';
+import type { ShortStateListenersType } from '.';
 
 export default function Fixture() {
   const [isOpen, setIsOpen] = useState(false)
@@ -51,11 +51,11 @@ export default function Fixture() {
         </div>
       </Panel>
 
-      <Panel header="Short state" resize='vertical' minContentHeightPx={60}
+      <Panel header="With short state" resize='vertical' minContentHeightPx={60}
 
         isOpen={isOpen}
 
-        shortStateContent={<>WIth short state</>}
+        shortStateContent={<div style={{ margin: 'auto', padding: '2em' }}>Short state</div>}
         isShortStateOpen={isShortStateOpen}
         shortStateListeners={shortStateListeners}
         style={{ width: '200px', height: '100%' }}

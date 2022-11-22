@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.5.0](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.4.2...@konturio/ui-kit@3.5.0) (2022-11-22)
+
+
+### Features
+
+* **ui-kit: panel:** 12482 - implement panel short content and its controls ([#41](https://github.com/konturio/ui/issues/41)) ([1927ddd](https://github.com/konturio/ui/commit/1927ddde052abeae9ccea04e8d3c9e6860d98acb))
+
+
+
+
+
 ## [3.4.2](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.4.1...@konturio/ui-kit@3.4.2) (2022-11-16)
 
 **Note:** Version bump only for package @konturio/ui-kit

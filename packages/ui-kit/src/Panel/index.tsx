@@ -1,7 +1,7 @@
 import { Card } from '../Card';
 import cn from 'clsx';
 import s from './style.module.css';
-import type { ReactElement } from 'react';
+import { ReactElement, useMemo } from 'react';
 import { Text } from '../Text';
 import { ChevronDown24, ChevronUp24, DoubleChevronDown24, DoubleChevronUp24 } from '@konturio/default-icons';
 import { Modal } from '../Modal';
@@ -76,26 +76,27 @@ export function Panel({
   ...rest
 }: React.PropsWithChildren<Panel>) {
 
+  const panelStyles = useMemo(() => {
+    return { minHeight: minContentHeightPx || 'unset', resize }
+  }, [minContentHeightPx, resize])
+
   function panelContent() {
-    if (isShortStateOpen && shortStateContent && isOpen) return (
+    let content: React.ReactNode | null = null
+
+    if (isShortStateOpen && shortStateContent && isOpen) content = shortStateContent
+    else if (isOpen) content = children
+
+    if (content) return (
       <div
         className={cn(s.contentContainer, contentClassName)}
         ref={contentContainerRef}
-        style={{ minHeight: minContentHeightPx || 'unset', resize: resize }}
+        style={panelStyles}
       >
-        {shortStateContent}
+        {content}
       </div>
     );
 
-    if (isOpen) return (<div
-      className={cn(s.contentContainer, contentClassName)}
-      ref={contentContainerRef}
-      style={{ minHeight: minContentHeightPx || 'unset', resize: resize }}
-    >
-      {children}
-    </div>)
-
-    return null;
+    return null
   }
 
   function headerControls() {

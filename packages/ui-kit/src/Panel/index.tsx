@@ -1,17 +1,31 @@
 import { Card } from '../Card';
 import cn from 'clsx';
 import s from './style.module.css';
-import { ReactElement, useMemo } from 'react';
+import type { ReactElement } from 'react';
+import { useMemo } from 'react';
 import { Text } from '../Text';
-import { ChevronDown24, ChevronUp24, DoubleChevronDown24, DoubleChevronUp24 } from '@konturio/default-icons';
+import {
+  ChevronDown24,
+  ChevronUp24,
+  DoubleChevronDown24,
+  DoubleChevronUp24
+} from '@konturio/default-icons';
 import { Modal } from '../Modal';
 
 export type ShortStateListenersType = {
-  onClose: React.MouseEventHandler<HTMLButtonElement | HTMLDivElement>
-  onFullStateOpen: React.MouseEventHandler<HTMLButtonElement | HTMLDivElement>
-  onShortStateOpen: React.MouseEventHandler<HTMLButtonElement | HTMLDivElement>
+  onClose: React.MouseEventHandler<
+    HTMLButtonElement | HTMLDivElement
+  >
+  onFullStateOpen: React.MouseEventHandler<
+    HTMLButtonElement | HTMLDivElement
+  >
+  onShortStateOpen: React.MouseEventHandler<
+    HTMLButtonElement | HTMLDivElement
+  >
 }
-interface Panel extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
+interface Panel extends React.DetailedHTMLProps<
+  React.HTMLAttributes<HTMLDivElement>, HTMLDivElement
+> { 
   className?: string;
   header?: string | React.ReactElement | React.ReactElement[];
   headerIcon?: ReactElement;
@@ -83,7 +97,8 @@ export function Panel({
   function panelContent() {
     let content: React.ReactNode | null = null
 
-    if (isShortStateOpen && shortStateContent && isOpen) content = shortStateContent
+    if (isShortStateOpen && shortStateContent && isOpen)
+      content = shortStateContent
     else if (isOpen) content = children
 
     if (content) return (

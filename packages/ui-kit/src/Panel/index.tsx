@@ -1,18 +1,37 @@
 import { Card } from '../Card';
 import cn from 'clsx';
 import s from './style.module.css';
-import type { ReactChild } from 'react';
+import type { ReactElement } from 'react';
+import { useMemo } from 'react';
 import { Text } from '../Text';
-import { ChevronDown24, ChevronUp24 } from '@konturio/default-icons';
+import {
+  ChevronDown24,
+  ChevronUp24,
+  DoubleChevronDown24,
+  DoubleChevronUp24
+} from '@konturio/default-icons';
 import { Modal } from '../Modal';
 
-interface Panel extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
+export type ShortStateListenersType = {
+  onClose: React.MouseEventHandler<
+    HTMLButtonElement | HTMLDivElement
+  >
+  onFullStateOpen: React.MouseEventHandler<
+    HTMLButtonElement | HTMLDivElement
+  >
+  onShortStateOpen: React.MouseEventHandler<
+    HTMLButtonElement | HTMLDivElement
+  >
+}
+interface Panel extends React.DetailedHTMLProps<
+  React.HTMLAttributes<HTMLDivElement>, HTMLDivElement
+> { 
   className?: string;
-  header?: string | React.ReactChild | React.ReactChild[];
-  headerIcon?: React.ReactChild;
+  header?: string | React.ReactElement | React.ReactElement[];
+  headerIcon?: ReactElement;
   isOpen?: boolean;
   onHeaderClick?: React.MouseEventHandler<HTMLDivElement>;
-  customCloseBtn?: ReactChild;
+  customCloseBtn?: ReactElement;
   classes?: {
     header?: string;
     headerTitle?: string;
@@ -26,7 +45,28 @@ interface Panel extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElem
   minContentHeightPx?: number;
   contentContainerRef?: (node: HTMLDivElement) => void;
   contentClassName?: string;
-  resize?: 'vertical' | 'horizontal' | 'both' | 'none'
+  resize?: 'vertical' | 'horizontal' | 'both' | 'none';
+  /**
+   * Optional JSX content of panels short state.
+   * Creates short state of the panel.
+   * 
+   * when used:
+   * @param isShortStateOpen - required to show the short state
+   * @param shortStateListeners - required to handle clicks on panel icons
+   */
+  shortStateContent?: ReactElement;
+  /**
+   * @param isOpen must also be `true` to display short state content
+   */
+  isShortStateOpen?: boolean;
+  /**
+   * you can import `ShortStateListenersType` to conveniently describe this propert
+   */
+  shortStateListeners?: {
+    onClose: React.MouseEventHandler<HTMLButtonElement | HTMLDivElement>
+    onFullStateOpen: React.MouseEventHandler<HTMLButtonElement | HTMLDivElement>
+    onShortStateOpen: React.MouseEventHandler<HTMLButtonElement | HTMLDivElement>
+  }
 }
 
 export function Panel({
@@ -44,33 +84,107 @@ export function Panel({
   contentContainerRef,
   contentClassName,
   resize = 'none',
+  shortStateContent,
+  isShortStateOpen,
+  shortStateListeners,
   ...rest
 }: React.PropsWithChildren<Panel>) {
 
+  const panelStyles = useMemo(() => {
+    return { minHeight: minContentHeightPx || 'unset', resize }
+  }, [minContentHeightPx, resize])
+
+  function panelContent() {
+    let content: React.ReactNode | null = null
+
+    if (isShortStateOpen && shortStateContent && isOpen)
+      content = shortStateContent
+    else if (isOpen) content = children
+
+    if (content) return (
+      <div
+        className={cn(s.contentContainer, contentClassName)}
+        ref={contentContainerRef}
+        style={panelStyles}
+      >
+        {content}
+      </div>
+    );
+
+    return null
+  }
+
+  function headerControls() {
+    // Simple panel controls
+    if (!shortStateContent && !onHeaderClick) return null;
+    if (!shortStateContent) return (
+      <button className={cn(s.close, classes?.closeBtn)}>
+        {customCloseBtn ? customCloseBtn
+          : isOpen ? <ChevronUp24 /> : <ChevronDown24 />}
+      </button>
+    )
+    // Short state panel header
+    if (isOpen && isShortStateOpen) return <>
+      <button
+        className={cn(s.close, classes?.closeBtn)}
+        onClick={shortStateListeners?.onClose}
+      >
+        <ChevronUp24 />
+      </button>
+
+      <button
+        className={cn(s.close, classes?.closeBtn)}
+        onClick={shortStateListeners?.onFullStateOpen}
+      >
+        <ChevronDown24 />
+      </button>
+    </>
+    // Full state panel header
+    if (isOpen) return <>
+      <button
+        className={cn(s.close, classes?.closeBtn)}
+        onClick={shortStateListeners?.onShortStateOpen}
+      >
+        <ChevronUp24 />
+      </button>
+
+      <button
+        className={cn(s.close, classes?.closeBtn)}
+        onClick={shortStateListeners?.onClose}
+      >
+        <DoubleChevronUp24 />
+      </button>
+    </>
+    // Closed panel header
+    return <>
+      <button
+        className={cn(s.close, classes?.closeBtn)}
+        onClick={shortStateListeners?.onFullStateOpen}
+      >
+        <DoubleChevronDown24 />
+      </button>
+
+      <button
+        className={cn(s.close, classes?.closeBtn)}
+        onClick={shortStateListeners?.onShortStateOpen}
+      >
+        <ChevronDown24 />
+      </button>
+    </>
+  }
+
   const panel = <Card className={cn(s.card, className)} {...rest}>
-    {header && (
-      <div className={cn(onHeaderClick && s.hoverable)}>
+    {header &&
+      (<div className={cn(onHeaderClick && s.hoverable)}>
         <div className={cn(s.header, classes?.header)} onClick={onHeaderClick}>
           <div className={cn(s.headerTitle, classes?.headerTitle)}>
             {headerIcon}
             <Text type="heading-l">{header}</Text>
           </div>
-          {onHeaderClick && (
-            <button className={cn(s.close, classes?.closeBtn)}>
-              {customCloseBtn ? customCloseBtn
-                : isOpen ? <ChevronUp24 /> : <ChevronDown24 />}
-            </button>
-          )}
+          {headerControls()}
         </div>
-      </div>
-    )}
-    {isOpen && <div
-      className={cn(s.contentContainer, contentClassName)}
-      ref={contentContainerRef}
-      style={{ minHeight: minContentHeightPx || 'unset', resize: resize }}
-    >
-      {children}
-    </div>}
+      </div>)}
+    {panelContent()}
   </Card>
 
 
@@ -87,7 +201,7 @@ export function Panel({
 }
 
 interface PanelIconProps {
-  icon: ReactChild;
+  icon: ReactElement;
   clickHandler?: () => void;
   className?: string;
 }

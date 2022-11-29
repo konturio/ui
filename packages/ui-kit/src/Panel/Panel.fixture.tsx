@@ -51,13 +51,13 @@ export default function Fixture() {
         </Panel>
       </div>
 
-      <Panel header="Resizable panel" resize='vertical' minContentHeightPx={40}>
+      <Panel header="Resizable panel" resize='vertical' minContentHeight={200}>
         <div style={{ display: 'flex', margin: 'auto' }}>
           <div style={{ margin: 'auto', padding: '2em' }}>Content</div>
         </div>
       </Panel>
 
-      <Panel header="With short state" resize='vertical' minContentHeightPx={60}
+      <Panel header="With short state" resize='vertical' minContentHeight={60}
 
         isOpen={isOpen}
 

@@ -42,7 +42,7 @@ interface Panel extends React.DetailedHTMLProps<
     onModalClick: () => void
     showInModal: boolean;
   };
-  minContentHeightPx?: number;
+  minContentHeight?: number | string;
   contentContainerRef?: (node: HTMLDivElement) => void;
   contentClassName?: string;
   resize?: 'vertical' | 'horizontal' | 'both' | 'none';
@@ -80,7 +80,7 @@ export function Panel({
   ref,
   isOpen = true,
   modal,
-  minContentHeightPx,
+  minContentHeight,
   contentContainerRef,
   contentClassName,
   resize = 'none',
@@ -91,8 +91,8 @@ export function Panel({
 }: React.PropsWithChildren<Panel>) {
 
   const panelStyles = useMemo(() => {
-    return { minHeight: minContentHeightPx || 'unset', resize }
-  }, [minContentHeightPx, resize])
+    return { minHeight: minContentHeight || 'unset', resize }
+  }, [minContentHeight, resize])
 
   function panelContent() {
     let content: React.ReactNode | null = null

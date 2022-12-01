@@ -1,25 +1,49 @@
-import { useState } from 'react';
+import { ChevronDown24, ChevronUp24, DoubleChevronDown24, DoubleChevronUp24 } from '@konturio/default-icons';
+import { useEffect, useState } from 'react';
+import type { PanelCustomControl } from '.';
 import { Panel } from '.';
-import type { ShortStateListenersType } from '.';
 
 export default function Fixture() {
-  const [isOpen, setIsOpen] = useState(false)
-  const [isShortStateOpen, setIsShortStateOpen] = useState(false)
-
-  const shortStateListeners: ShortStateListenersType = {
-    onClose: () => {
-      setIsOpen(false)
-      setIsShortStateOpen(false)
-    },
-    onFullStateOpen: () => {
-      setIsOpen(true)
-      setIsShortStateOpen(false)
-    },
-    onShortStateOpen: () => {
-      setIsOpen(true)
-      setIsShortStateOpen(true)
-    },
+  // This whole thing can be wrapped into custom hook
+  const [panelState, setPanelState] = useState<'full' | 'short' | 'closed'>('full')
+  const openFullControl: PanelCustomControl = {
+    icon: <DoubleChevronDown24 />,
+    onWrapperClick: () => setPanelState('full') 
   }
+  const openHalfwayControl: PanelCustomControl = {
+    icon: <ChevronDown24 />,
+    onWrapperClick: () => setPanelState(prevState => prevState === 'closed' ? 'short' : 'full') 
+  }
+  const closeHalfwayControl: PanelCustomControl = {
+    icon: <ChevronUp24 />,
+    onWrapperClick: () => setPanelState(prevState => prevState === 'full' ? 'short' : 'closed') 
+  }
+  const closeControl: PanelCustomControl = {
+    icon: <DoubleChevronUp24 />,
+    onWrapperClick: () => setPanelState('closed') 
+  }
+  const [panelControls, setPanelControls] = useState<PanelCustomControl[]>([])
+
+  useEffect(() => {
+    panelState === 'full' && setPanelControls([closeHalfwayControl, closeControl])
+    panelState === 'short' && setPanelControls([closeHalfwayControl, openHalfwayControl])
+    panelState === 'closed' && setPanelControls([openFullControl, openHalfwayControl])
+  }, [panelState])
+  
+
+
+  const panelContent = {
+    full:
+      <div style={{ display: 'flex', margin: 'auto' }}>
+        <div style={{ margin: 'auto', padding: '2em' }}>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta mollitia aut dignissimos dolorem doloremque eos unde eveniet veritatis modi in et dolor, quia expedita sequi eius, optio animi, sunt blanditiis!
+          <br />
+        </div>
+      </div>,
+    short: <div style={{ margin: 'auto', padding: '2em' }}>Short state</div>,
+    closed: null
+  }
+
 
   return (
     <div style={{ display: 'flex', gap: '1em', flexDirection: 'row', flexWrap: 'wrap', paddingBottom: '40px' }}>
@@ -57,24 +81,13 @@ export default function Fixture() {
         </div>
       </Panel>
 
-      <Panel header="With short state" resize='vertical' minContentHeight={60}
-
-        isOpen={isOpen}
-
-        shortStateContent={
-          <div style={{ margin: 'auto', padding: '2em' }}>Short state</div>
-        }
-        isShortStateOpen={isShortStateOpen}
-        shortStateListeners={shortStateListeners}
+      <Panel
+        header={`With short state. Current state: ${panelState}`} resize='vertical' minContentHeight={60}
+        isOpen={panelState !== 'closed'}
         style={{ width: '200px' }}
-
+        customControls={panelControls}
       >
-        <div style={{ display: 'flex', margin: 'auto' }}>
-          <div style={{ margin: 'auto', padding: '2em' }}>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta mollitia aut dignissimos dolorem doloremque eos unde eveniet veritatis modi in et dolor, quia expedita sequi eius, optio animi, sunt blanditiis!
-            <br />
-          </div>
-        </div>
+        {panelContent[panelState]}
       </Panel>
     </div>
   );

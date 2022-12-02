@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.5.3](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.5.2...@konturio/ui-kit@3.5.3) (2022-12-02)
+
+
+### Bug Fixes
+
+* **ui-kit: panel:** fix styles for mobile ([#44](https://github.com/konturio/ui/issues/44)) ([16f196e](https://github.com/konturio/ui/commit/16f196ee85a954fe663607ba719aae29a70a717c))
+
+
+
+
+
 ## [3.5.2](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.5.1...@konturio/ui-kit@3.5.2) (2022-12-01)
 
 **Note:** Version bump only for package @konturio/ui-kit

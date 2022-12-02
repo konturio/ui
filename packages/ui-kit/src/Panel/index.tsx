@@ -57,8 +57,8 @@ export function Panel({
 }: React.PropsWithChildren<Panel>) {
 
   const panel = <Card className={cn(s.card, className)} {...rest}>
-    {header && <div className={cn(onHeaderClick && s.hoverable)}>
-      <div className={cn(s.header, classes?.header)} onClick={onHeaderClick}>
+    {header && <div className={cn(classes?.header, onHeaderClick && s.hoverable)}>
+      <div className={cn(s.headerContent)} onClick={onHeaderClick}>
         <div className={cn(s.headerTitle, classes?.headerTitle)}>
           {headerIcon}
           <Text type="heading-l">{header}</Text>

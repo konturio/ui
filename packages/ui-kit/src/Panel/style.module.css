@@ -2,7 +2,7 @@
   height: 100%;
 }
 
-.header {
+.headerContent {
   padding: var(--unit) var(--double-unit);
   display: flex;
   flex-flow: row nowrap;
@@ -17,6 +17,7 @@
 
 .headerTitle {
   display: flex;
+  flex: 1 1 auto;
   align-items: center;
   gap: var(--unit);
 }

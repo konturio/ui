@@ -100,20 +100,6 @@ export default function Fixture() {
         {panelContent[panelState]}
       </Panel>
 
-      
-      {/* <Panel
-        header={`With short state. Current state: ${panelState}`} resize='vertical' minContentHeight={60}
-        isOpen={panelState !== 'closed'}
-        style={{ width: '200px' }}
-        customControls={panelControls}
-        modal={{
-          showInModal: true, onModalClick() {
-            // noop
-          },          
-        }}
-      >
-        {panelContent[panelState]}
-      </Panel> */}
     </div>
   );
 

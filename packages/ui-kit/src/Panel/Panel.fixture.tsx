@@ -82,6 +82,16 @@ export default function Fixture() {
       </Panel>
 
       <Panel
+        header={'Wide panel with controls'} resize='vertical' minContentHeight={60}
+        isOpen={true}
+        style={{ width: '100%' }}
+        customControls={[openHalfwayControl, closeHalfwayControl]}
+      >
+        <h5>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas aliquid maiores minima veniam vitae! Non repellat esse, cupiditate earum minus dolore cum quas, accusantium deleniti quod, inventore ea nisi vitae?</h5>
+      </Panel>
+
+        
+      <Panel
         header={`With short state. Current state: ${panelState}`} resize='vertical' minContentHeight={60}
         isOpen={panelState !== 'closed'}
         style={{ width: '200px' }}
@@ -89,6 +99,7 @@ export default function Fixture() {
       >
         {panelContent[panelState]}
       </Panel>
+
     </div>
   );
 

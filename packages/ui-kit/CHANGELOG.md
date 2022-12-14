@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.6.0](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.5.3...@konturio/ui-kit@3.6.0) (2022-12-14)
+
+
+### Features
+
+* add Heading  and Animation components ([166cb89](https://github.com/konturio/ui/commit/166cb892f7e6bc4bdfbd7f8ca3b48d58800ea6c8))
+
+
+
+
+
 ## [3.5.3](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.5.2...@konturio/ui-kit@3.5.3) (2022-12-02)
 
 

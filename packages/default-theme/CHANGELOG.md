@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.2.0](https://github.com/konturio/ui/compare/@konturio/default-theme@3.1.1...@konturio/default-theme@3.2.0) (2022-12-14)
+
+
+### Features
+
+* add Heading  and Animation components ([166cb89](https://github.com/konturio/ui/commit/166cb892f7e6bc4bdfbd7f8ca3b48d58800ea6c8))
+
+
+
+
+
 ## [3.1.1](https://github.com/konturio/ui/compare/@konturio/default-theme@3.1.0...@konturio/default-theme@3.1.1) (2022-12-01)
 
 **Note:** Version bump only for package @konturio/default-theme

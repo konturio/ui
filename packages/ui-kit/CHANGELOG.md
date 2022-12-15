@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.6.1](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.6.0...@konturio/ui-kit@3.6.1) (2022-12-15)
+
+
+### Bug Fixes
+
+* reexports ([8b21633](https://github.com/konturio/ui/commit/8b21633847ee1ab50c67dd4d23bbd7133a6bf379))
+
+
+
+
+
 # [3.6.0](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.5.3...@konturio/ui-kit@3.6.0) (2022-12-14)
 
 

@@ -30,6 +30,7 @@ interface Panel extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElem
   };
   contentHeight?: number | string;
   minContentHeight?: number | string;
+  maxContentHeight?: number | string;
   contentContainerRef?: (node: HTMLDivElement) => void;
   contentClassName?: string;
   resize?: 'vertical' | 'horizontal' | 'both' | 'none';
@@ -49,6 +50,7 @@ export function Panel({
   modal,
   contentHeight,
   minContentHeight,
+  maxContentHeight,
   contentContainerRef,
   contentClassName,
   customControls,
@@ -88,7 +90,8 @@ export function Panel({
       style={{
         resize: resize,
         height: contentHeight || 'unset',
-        minHeight: minContentHeight || 'unset'
+        minHeight: minContentHeight || 'unset',
+        maxHeight: maxContentHeight || 'unset'
       }}
     >
       {children}

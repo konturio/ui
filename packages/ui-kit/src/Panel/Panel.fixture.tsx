@@ -1,4 +1,4 @@
-import { ChevronDown24, ChevronUp24, DoubleChevronDown24, DoubleChevronUp24 } from '@konturio/default-icons';
+import { ChevronDown24, ChevronUp24, Disasters24, DoubleChevronDown24, DoubleChevronUp24 } from '@konturio/default-icons';
 import { useEffect, useState } from 'react';
 import type { PanelCustomControl } from '.';
 import { Panel } from '.';
@@ -82,7 +82,8 @@ export default function Fixture() {
       </Panel>
 
       <Panel
-        header={'Wide panel with controls'} resize='vertical' minContentHeight={60}
+        header={'Wide panel with controls'} resize='vertical' 
+        minContentHeight={60} maxContentHeight={150}
         isOpen={true}
         style={{ width: '100%' }}
         customControls={[openHalfwayControl, closeHalfwayControl]}
@@ -96,6 +97,18 @@ export default function Fixture() {
         isOpen={panelState !== 'closed'}
         style={{ width: '200px' }}
         customControls={panelControls}
+        headerIcon={<Disasters24 />}
+      >
+        {panelContent[panelState]}
+      </Panel>
+      
+      <Panel
+        header={`Icon`} resize='vertical' 
+        minContentHeight={60}
+        isOpen={true}
+        style={{ width: '200px' }}
+        customControls={panelControls}
+        headerIcon={<Disasters24 />}
       >
         {panelContent[panelState]}
       </Panel>

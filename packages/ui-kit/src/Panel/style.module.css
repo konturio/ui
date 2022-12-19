@@ -3,7 +3,7 @@
 }
 
 .headerContent {
-  padding: var(--unit) var(--double-unit);
+  padding: var(--unit);
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
@@ -21,9 +21,12 @@
   align-items: center;
   gap: var(--unit);
 }
+.headerIconWrap{
+display: flex;
+}
 
 .close {
-  margin-left: 1em;
+  margin-left: var(--half-unit);
   border-radius: var(--border-radius);
   svg {
     display: block;

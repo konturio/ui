@@ -62,7 +62,9 @@ export function Panel({
     {header && <div className={cn(classes?.header, onHeaderClick && s.hoverable)}>
       <div className={cn(s.headerContent)} onClick={onHeaderClick}>
         <div className={cn(s.headerTitle, classes?.headerTitle)}>
-          {headerIcon}
+          <div className={s.headerIconWrap}>
+            {headerIcon}
+          </div>
           <Text type="heading-l">{header}</Text>
         </div>
         {/* backwards compatibility */}

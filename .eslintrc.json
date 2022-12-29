@@ -11,7 +11,8 @@
   },
   "extends": [
     "plugin:@typescript-eslint/recommended",
-    "plugin:react/recommended"
+    "plugin:react/recommended",
+    "plugin:prettier/recommended"
   ],
   "parserOptions": {
     "ecmaVersion": 2020,
@@ -21,6 +22,7 @@
     }
   },
   "rules": {
+    "prettier/prettier": "warn",
     "import/order": [
       "warn",
       {

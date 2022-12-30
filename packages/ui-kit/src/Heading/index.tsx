@@ -1,12 +1,6 @@
 import { isValidElement, cloneElement, createElement } from 'react';
 
-type HeadingTypes =
-  | 'heading-01'
-  | 'heading-02'
-  | 'heading-03'
-  | 'heading-04'
-  | 'heading-05'
-  | 'heading-06';
+type HeadingTypes = 'heading-01' | 'heading-02' | 'heading-03' | 'heading-04' | 'heading-05' | 'heading-06';
 
 const typeToClass = (type) => `k-font-${type}`;
 

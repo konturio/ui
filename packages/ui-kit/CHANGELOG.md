@@ -7,1096 +7,609 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 **Note:** Version bump only for package @konturio/ui-kit
 
-
-
-
-
 ## [3.6.1](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.6.0...@konturio/ui-kit@3.6.1) (2022-12-15)
-
 
 ### Bug Fixes
 
-* reexports ([8b21633](https://github.com/konturio/ui/commit/8b21633847ee1ab50c67dd4d23bbd7133a6bf379))
-
-
-
-
+- reexports ([8b21633](https://github.com/konturio/ui/commit/8b21633847ee1ab50c67dd4d23bbd7133a6bf379))
 
 # [3.6.0](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.5.3...@konturio/ui-kit@3.6.0) (2022-12-14)
 
-
 ### Features
 
-* add Heading  and Animation components ([166cb89](https://github.com/konturio/ui/commit/166cb892f7e6bc4bdfbd7f8ca3b48d58800ea6c8))
-
-
-
-
+- add Heading and Animation components ([166cb89](https://github.com/konturio/ui/commit/166cb892f7e6bc4bdfbd7f8ca3b48d58800ea6c8))
 
 ## [3.5.3](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.5.2...@konturio/ui-kit@3.5.3) (2022-12-02)
 
-
 ### Bug Fixes
 
-* **ui-kit: panel:** fix styles for mobile ([#44](https://github.com/konturio/ui/issues/44)) ([16f196e](https://github.com/konturio/ui/commit/16f196ee85a954fe663607ba719aae29a70a717c))
-
-
-
-
+- **ui-kit: panel:** fix styles for mobile ([#44](https://github.com/konturio/ui/issues/44)) ([16f196e](https://github.com/konturio/ui/commit/16f196ee85a954fe663607ba719aae29a70a717c))
 
 ## [3.5.2](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.5.1...@konturio/ui-kit@3.5.2) (2022-12-01)
 
 **Note:** Version bump only for package @konturio/ui-kit
 
-
-
-
-
 ## [3.5.1](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.5.0...@konturio/ui-kit@3.5.1) (2022-11-29)
 
 **Note:** Version bump only for package @konturio/ui-kit
 
-
-
-
-
 # [3.5.0](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.4.2...@konturio/ui-kit@3.5.0) (2022-11-22)
-
 
 ### Features
 
-* **ui-kit: panel:** 12482 - implement panel short content and its controls ([#41](https://github.com/konturio/ui/issues/41)) ([1927ddd](https://github.com/konturio/ui/commit/1927ddde052abeae9ccea04e8d3c9e6860d98acb))
-
-
-
-
+- **ui-kit: panel:** 12482 - implement panel short content and its controls ([#41](https://github.com/konturio/ui/issues/41)) ([1927ddd](https://github.com/konturio/ui/commit/1927ddde052abeae9ccea04e8d3c9e6860d98acb))
 
 ## [3.4.2](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.4.1...@konturio/ui-kit@3.4.2) (2022-11-16)
 
 **Note:** Version bump only for package @konturio/ui-kit
 
-
-
-
-
 ## [3.4.1](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.4.0...@konturio/ui-kit@3.4.1) (2022-11-15)
 
 **Note:** Version bump only for package @konturio/ui-kit
 
-
-
-
-
 # [3.4.0](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.3.0...@konturio/ui-kit@3.4.0) (2022-11-14)
-
 
 ### Bug Fixes
 
-* **timeline:** cluster change color after selection ([665a699](https://github.com/konturio/ui/commit/665a6998dc39ca753b434fe930f1896a525fa597))
-
+- **timeline:** cluster change color after selection ([665a699](https://github.com/konturio/ui/commit/665a6998dc39ca753b434fe930f1896a525fa597))
 
 ### Features
 
-* **build:** 12977 - separate ts config to tsconfig.build.json and tsconfig.json ([7cda350](https://github.com/konturio/ui/commit/7cda350777e9024e6ac07d2879d0970321fb80e4))
-
-
-
-
+- **build:** 12977 - separate ts config to tsconfig.build.json and tsconfig.json ([7cda350](https://github.com/konturio/ui/commit/7cda350777e9024e6ac07d2879d0970321fb80e4))
 
 # [3.3.0](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.2.1...@konturio/ui-kit@3.3.0) (2022-10-31)
 
-
 ### Features
 
-* add kontur styling ([10a60cf](https://github.com/konturio/ui/commit/10a60cf0282578c9a4c55df4c232b117deadbe76))
-* add templates support to timeline ([ae4eff2](https://github.com/konturio/ui/commit/ae4eff2b223167803fdeff7122a36b2d13a72d84))
-
-
-
-
+- add kontur styling ([10a60cf](https://github.com/konturio/ui/commit/10a60cf0282578c9a4c55df4c232b117deadbe76))
+- add templates support to timeline ([ae4eff2](https://github.com/konturio/ui/commit/ae4eff2b223167803fdeff7122a36b2d13a72d84))
 
 ## [3.2.1](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.2.0...@konturio/ui-kit@3.2.1) (2022-10-20)
 
 **Note:** Version bump only for package @konturio/ui-kit
 
-
-
-
-
 # [3.2.0](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.1.3...@konturio/ui-kit@3.2.0) (2022-10-20)
-
 
 ### Features
 
-* **textarea:** 9250 - add Textarea component ([#35](https://github.com/konturio/ui/issues/35)) ([eb04d19](https://github.com/konturio/ui/commit/eb04d19943acb249b3a2dbe7aadb02cda982a221))
-
-
-
-
+- **textarea:** 9250 - add Textarea component ([#35](https://github.com/konturio/ui/issues/35)) ([eb04d19](https://github.com/konturio/ui/commit/eb04d19943acb249b3a2dbe7aadb02cda982a221))
 
 ## [3.1.3](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.1.2...@konturio/ui-kit@3.1.3) (2022-09-30)
 
 **Note:** Version bump only for package @konturio/ui-kit
 
-
-
-
-
 ## [3.1.2](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.1.1...@konturio/ui-kit@3.1.2) (2022-09-29)
-
 
 ### Bug Fixes
 
-* **app-header:** remove irrelevant chat props ([1f7fd4e](https://github.com/konturio/ui/commit/1f7fd4e74f645e6e857a724278b29dce19b28a64))
-
-
-
-
+- **app-header:** remove irrelevant chat props ([1f7fd4e](https://github.com/konturio/ui/commit/1f7fd4e74f645e6e857a724278b29dce19b28a64))
 
 ## [3.1.1](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.1.0...@konturio/ui-kit@3.1.1) (2022-09-28)
 
 **Note:** Version bump only for package @konturio/ui-kit
 
-
-
-
-
 # [3.1.0](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.0.4...@konturio/ui-kit@3.1.0) (2022-09-26)
-
 
 ### Features
 
-* **core:** vite, react, typescript versions up ([bb613ef](https://github.com/konturio/ui/commit/bb613eff936845646652a21ccd734e92f5ec298c))
-
-
-
-
+- **core:** vite, react, typescript versions up ([bb613ef](https://github.com/konturio/ui/commit/bb613eff936845646652a21ccd734e92f5ec298c))
 
 ## [3.0.4](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.0.3...@konturio/ui-kit@3.0.4) (2022-09-19)
 
 **Note:** Version bump only for package @konturio/ui-kit
 
-
-
-
-
 ## [3.0.3](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.0.2...@konturio/ui-kit@3.0.3) (2022-09-16)
-
 
 ### Bug Fixes
 
-* **ui-kit Panel:** 12405 - new panel design - folding panel ([#29](https://github.com/konturio/ui/issues/29)) ([eb99e37](https://github.com/konturio/ui/commit/eb99e37e6f2f72295ae59d98b4a8c0bb8c44b2e3))
-
-
-
-
+- **ui-kit Panel:** 12405 - new panel design - folding panel ([#29](https://github.com/konturio/ui/issues/29)) ([eb99e37](https://github.com/konturio/ui/commit/eb99e37e6f2f72295ae59d98b4a8c0bb8c44b2e3))
 
 ## [3.0.2](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.0.1...@konturio/ui-kit@3.0.2) (2022-09-13)
 
 **Note:** Version bump only for package @konturio/ui-kit
 
-
-
-
-
 ## [3.0.1](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.0.0...@konturio/ui-kit@3.0.1) (2022-09-13)
 
 **Note:** Version bump only for package @konturio/ui-kit
-
-
-
-
 
 # [3.0.0](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.0.0-alpha.74...@konturio/ui-kit@3.0.0) (2022-09-13)
 
 **Note:** Version bump only for package @konturio/ui-kit
 
-
-
-
-
 # [3.0.0-alpha.74](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.0.0-alpha.73...@konturio/ui-kit@3.0.0-alpha.74) (2022-09-06)
-
 
 ### Bug Fixes
 
-* **ui-kit:** add ability to control menu button from outside ([33d2f19](https://github.com/konturio/ui/commit/33d2f1970aae2e482cd227c04ed883b2819d8cb4))
-
+- **ui-kit:** add ability to control menu button from outside ([33d2f19](https://github.com/konturio/ui/commit/33d2f1970aae2e482cd227c04ed883b2819d8cb4))
 
 ### Features
 
-* **ui-kit:** add ability to show MenuButton at arbitrary position ([39b78e2](https://github.com/konturio/ui/commit/39b78e2a809bb2dc92bc4f47ef294c9fd140d871))
-
-
-
-
+- **ui-kit:** add ability to show MenuButton at arbitrary position ([39b78e2](https://github.com/konturio/ui/commit/39b78e2a809bb2dc92bc4f47ef294c9fd140d871))
 
 # [3.0.0-alpha.73](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.0.0-alpha.72...@konturio/ui-kit@3.0.0-alpha.73) (2022-08-31)
 
-
 ### Bug Fixes
 
-* **ui-kit:** fix default state for Checkbox ([c249620](https://github.com/konturio/ui/commit/c24962046655ed26f2e12cc8398b066d8d0f7e33))
-
-
-
-
+- **ui-kit:** fix default state for Checkbox ([c249620](https://github.com/konturio/ui/commit/c24962046655ed26f2e12cc8398b066d8d0f7e33))
 
 # [3.0.0-alpha.72](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.0.0-alpha.71...@konturio/ui-kit@3.0.0-alpha.72) (2022-08-31)
 
-
 ### Bug Fixes
 
-* **ui-kit:** small updates for radiobutton ([fc38ffe](https://github.com/konturio/ui/commit/fc38ffe60e81f8c749e34e9d81681bddc4920476))
-
-
-
-
+- **ui-kit:** small updates for radiobutton ([fc38ffe](https://github.com/konturio/ui/commit/fc38ffe60e81f8c749e34e9d81681bddc4920476))
 
 # [3.0.0-alpha.71](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.0.0-alpha.70...@konturio/ui-kit@3.0.0-alpha.71) (2022-08-31)
 
-
 ### Bug Fixes
 
-* **default-icons:** fix icons name ([cb90a18](https://github.com/konturio/ui/commit/cb90a1892c7f42192c05357babaab36fc445b462))
-
-
-
-
+- **default-icons:** fix icons name ([cb90a18](https://github.com/konturio/ui/commit/cb90a1892c7f42192c05357babaab36fc445b462))
 
 # [3.0.0-alpha.70](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.0.0-alpha.69...@konturio/ui-kit@3.0.0-alpha.70) (2022-08-30)
 
 **Note:** Version bump only for package @konturio/ui-kit
 
-
-
-
-
 # [3.0.0-alpha.69](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.0.0-alpha.68...@konturio/ui-kit@3.0.0-alpha.69) (2022-08-30)
-
 
 ### Bug Fixes
 
-* **ui-kit:** build fix ([447ecc1](https://github.com/konturio/ui/commit/447ecc15b9e303e9bab384667fb1795712e8a1d5))
-* **ui-kit:** build fix ([90d2365](https://github.com/konturio/ui/commit/90d2365a8ae807bad260ede73e33489f34690dda))
-
-
-
-
+- **ui-kit:** build fix ([447ecc1](https://github.com/konturio/ui/commit/447ecc15b9e303e9bab384667fb1795712e8a1d5))
+- **ui-kit:** build fix ([90d2365](https://github.com/konturio/ui/commit/90d2365a8ae807bad260ede73e33489f34690dda))
 
 # [3.0.0-alpha.68](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.0.0-alpha.67...@konturio/ui-kit@3.0.0-alpha.68) (2022-08-30)
 
-
 ### Bug Fixes
 
-* **ui-kit:** autocomplete reset behaviour fix ([ebfd122](https://github.com/konturio/ui/commit/ebfd122491415e77ff37fa01c7e70938a1b237c1))
-
-
-
-
+- **ui-kit:** autocomplete reset behaviour fix ([ebfd122](https://github.com/konturio/ui/commit/ebfd122491415e77ff37fa01c7e70938a1b237c1))
 
 # [3.0.0-alpha.67](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.0.0-alpha.66...@konturio/ui-kit@3.0.0-alpha.67) (2022-08-30)
 
-
 ### Bug Fixes
 
-* **ui-kit:** update Autocomplete uncontrolles state behavior ([2ef511f](https://github.com/konturio/ui/commit/2ef511f5d4be282b7e603711f6359cfb82b64593))
-
-
-
-
+- **ui-kit:** update Autocomplete uncontrolles state behavior ([2ef511f](https://github.com/konturio/ui/commit/2ef511f5d4be282b7e603711f6359cfb82b64593))
 
 # [3.0.0-alpha.66](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.0.0-alpha.65...@konturio/ui-kit@3.0.0-alpha.66) (2022-08-26)
 
-
 ### Bug Fixes
 
-* **ui-kit:** add some small Autocomplete fixes ([c10863f](https://github.com/konturio/ui/commit/c10863f50e06a12dc1b47820987dedc09f867ce9))
-
-
-
-
+- **ui-kit:** add some small Autocomplete fixes ([c10863f](https://github.com/konturio/ui/commit/c10863f50e06a12dc1b47820987dedc09f867ce9))
 
 # [3.0.0-alpha.65](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.0.0-alpha.64...@konturio/ui-kit@3.0.0-alpha.65) (2022-08-26)
 
-
 ### Bug Fixes
 
-* **ui-kit:** fix className for autocomplete component ([d19d0ea](https://github.com/konturio/ui/commit/d19d0ea14555f821c49995ef9d99ef61ea435291))
-
-
-
-
+- **ui-kit:** fix className for autocomplete component ([d19d0ea](https://github.com/konturio/ui/commit/d19d0ea14555f821c49995ef9d99ef61ea435291))
 
 # [3.0.0-alpha.64](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.0.0-alpha.63...@konturio/ui-kit@3.0.0-alpha.64) (2022-08-25)
 
-
 ### Bug Fixes
 
-* **ui-kit:** add OnReset handler to Select component ([9e5625e](https://github.com/konturio/ui/commit/9e5625e2ea40960b794715caeb944fb1e44c33ad))
-
-
-
-
+- **ui-kit:** add OnReset handler to Select component ([9e5625e](https://github.com/konturio/ui/commit/9e5625e2ea40960b794715caeb944fb1e44c33ad))
 
 # [3.0.0-alpha.63](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.0.0-alpha.62...@konturio/ui-kit@3.0.0-alpha.63) (2022-08-25)
 
-
 ### Bug Fixes
 
-* **ui-kit:** add additional classes to MultiselectChip ([2e5e0fd](https://github.com/konturio/ui/commit/2e5e0fde005c7f6645cb284ea49b692ba5b6f101))
-
-
-
-
+- **ui-kit:** add additional classes to MultiselectChip ([2e5e0fd](https://github.com/konturio/ui/commit/2e5e0fde005c7f6645cb284ea49b692ba5b6f101))
 
 # [3.0.0-alpha.62](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.0.0-alpha.61...@konturio/ui-kit@3.0.0-alpha.62) (2022-08-25)
 
 **Note:** Version bump only for package @konturio/ui-kit
 
-
-
-
-
 # [3.0.0-alpha.61](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.0.0-alpha.60...@konturio/ui-kit@3.0.0-alpha.61) (2022-08-25)
-
 
 ### Bug Fixes
 
-* **ui-kit:** add onClose handler to Select component ([3fe3ae1](https://github.com/konturio/ui/commit/3fe3ae1bca094d1d149e10a21ff040610c7319e7))
-
-
-
-
+- **ui-kit:** add onClose handler to Select component ([3fe3ae1](https://github.com/konturio/ui/commit/3fe3ae1bca094d1d149e10a21ff040610c7319e7))
 
 # [3.0.0-alpha.60](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.0.0-alpha.59...@konturio/ui-kit@3.0.0-alpha.60) (2022-08-25)
 
-
 ### Bug Fixes
 
-* **ui-kit:** fix Select text container alignment ([5d4fa33](https://github.com/konturio/ui/commit/5d4fa33b75bb761fe27d3fdc4bb21fa485005f9c))
-
-
-
-
+- **ui-kit:** fix Select text container alignment ([5d4fa33](https://github.com/konturio/ui/commit/5d4fa33b75bb761fe27d3fdc4bb21fa485005f9c))
 
 # [3.0.0-alpha.59](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.0.0-alpha.58...@konturio/ui-kit@3.0.0-alpha.59) (2022-08-25)
 
-
 ### Bug Fixes
 
-* **ui-kit:** add noValue styling in Select component ([283a9e6](https://github.com/konturio/ui/commit/283a9e6077cd37b27f4c12a7126ae2fbeaf2df5a))
-
-
-
-
+- **ui-kit:** add noValue styling in Select component ([283a9e6](https://github.com/konturio/ui/commit/283a9e6077cd37b27f4c12a7126ae2fbeaf2df5a))
 
 # [3.0.0-alpha.58](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.0.0-alpha.57...@konturio/ui-kit@3.0.0-alpha.58) (2022-08-25)
 
-
 ### Bug Fixes
 
-* **ui-kit:** fix className in Select ([1090361](https://github.com/konturio/ui/commit/109036190bd731744b614c5b8e639b12a50d8748))
-
-
-
-
+- **ui-kit:** fix className in Select ([1090361](https://github.com/konturio/ui/commit/109036190bd731744b614c5b8e639b12a50d8748))
 
 # [3.0.0-alpha.57](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.0.0-alpha.56...@konturio/ui-kit@3.0.0-alpha.57) (2022-08-25)
 
-
 ### Bug Fixes
 
-* **ui-kit:** remove height jitter in Select component ([652af38](https://github.com/konturio/ui/commit/652af38845aca358a4ada8498aab8dce045aa3d6))
-
-
-
-
+- **ui-kit:** remove height jitter in Select component ([652af38](https://github.com/konturio/ui/commit/652af38845aca358a4ada8498aab8dce045aa3d6))
 
 # [3.0.0-alpha.56](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.0.0-alpha.55...@konturio/ui-kit@3.0.0-alpha.56) (2022-08-24)
 
-
 ### Bug Fixes
 
-* **ui-kit:** add ability to pass selected class to tab ([9a3950e](https://github.com/konturio/ui/commit/9a3950ea954cd20a184d50c13690658737dad2bc))
-* **ui-kit:** add ability to pass selected class to tab ([2e19391](https://github.com/konturio/ui/commit/2e19391d515b70fe0abaac1ccf6eda7ea1448a16))
-
-
-
-
+- **ui-kit:** add ability to pass selected class to tab ([9a3950e](https://github.com/konturio/ui/commit/9a3950ea954cd20a184d50c13690658737dad2bc))
+- **ui-kit:** add ability to pass selected class to tab ([2e19391](https://github.com/konturio/ui/commit/2e19391d515b70fe0abaac1ccf6eda7ea1448a16))
 
 # [3.0.0-alpha.55](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.0.0-alpha.54...@konturio/ui-kit@3.0.0-alpha.55) (2022-08-23)
 
-
 ### Bug Fixes
 
-* **ui-kit:** add default export to for tabs component ([83ae1a5](https://github.com/konturio/ui/commit/83ae1a595a2bbbcb9d06e1e58a69ae335bc891b0))
-
-
-
-
+- **ui-kit:** add default export to for tabs component ([83ae1a5](https://github.com/konturio/ui/commit/83ae1a595a2bbbcb9d06e1e58a69ae335bc891b0))
 
 # [3.0.0-alpha.54](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.0.0-alpha.53...@konturio/ui-kit@3.0.0-alpha.54) (2022-08-18)
 
-
 ### Bug Fixes
 
-* **ui-kit:** small fixes for tab components ([#23](https://github.com/konturio/ui/issues/23)) ([740c441](https://github.com/konturio/ui/commit/740c441c7579dd558a998d88df70084ee17a8457))
-
-
-
-
+- **ui-kit:** small fixes for tab components ([#23](https://github.com/konturio/ui/issues/23)) ([740c441](https://github.com/konturio/ui/commit/740c441c7579dd558a998d88df70084ee17a8457))
 
 # [3.0.0-alpha.53](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.0.0-alpha.52...@konturio/ui-kit@3.0.0-alpha.53) (2022-08-18)
 
 **Note:** Version bump only for package @konturio/ui-kit
 
-
-
-
-
 # [3.0.0-alpha.52](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.0.0-alpha.51...@konturio/ui-kit@3.0.0-alpha.52) (2022-08-18)
-
 
 ### Bug Fixes
 
-* **ui-kit:** fix text-overflow behavior for select ([#21](https://github.com/konturio/ui/issues/21)) ([0750c45](https://github.com/konturio/ui/commit/0750c45a4d9a2cb79cc749cb54cc0278bfe71b42))
-
-
-
-
+- **ui-kit:** fix text-overflow behavior for select ([#21](https://github.com/konturio/ui/issues/21)) ([0750c45](https://github.com/konturio/ui/commit/0750c45a4d9a2cb79cc749cb54cc0278bfe71b42))
 
 # [3.0.0-alpha.51](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.0.0-alpha.50...@konturio/ui-kit@3.0.0-alpha.51) (2022-08-11)
 
-
 ### Bug Fixes
 
-* **ui-kit:** fixes for multiselect component ([#19](https://github.com/konturio/ui/issues/19)) ([a3547de](https://github.com/konturio/ui/commit/a3547dec75fe7e7b59a0e09c632937f0269ff562))
-
-
-
-
+- **ui-kit:** fixes for multiselect component ([#19](https://github.com/konturio/ui/issues/19)) ([a3547de](https://github.com/konturio/ui/commit/a3547dec75fe7e7b59a0e09c632937f0269ff562))
 
 # [3.0.0-alpha.50](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.0.0-alpha.49...@konturio/ui-kit@3.0.0-alpha.50) (2022-08-11)
 
 **Note:** Version bump only for package @konturio/ui-kit
 
-
-
-
-
 # [3.0.0-alpha.49](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.0.0-alpha.48...@konturio/ui-kit@3.0.0-alpha.49) (2022-08-08)
-
 
 ### Features
 
-* **select:** 10840 - add ability for select to reset value by cross icon, fix placeholder styles ([d3d0b87](https://github.com/konturio/ui/commit/d3d0b875af0c36843cedb76be5bfd35c7cab35a3))
-
-
-
-
+- **select:** 10840 - add ability for select to reset value by cross icon, fix placeholder styles ([d3d0b87](https://github.com/konturio/ui/commit/d3d0b875af0c36843cedb76be5bfd35c7cab35a3))
 
 # [3.0.0-alpha.48](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.0.0-alpha.47...@konturio/ui-kit@3.0.0-alpha.48) (2022-08-04)
 
-
 ### Features
 
-* **Select:** 10839 - add possibility to handle changes in select component ([#14](https://github.com/konturio/ui/issues/14)) ([4ce47af](https://github.com/konturio/ui/commit/4ce47afa225e0c6684cd6b0e86e88a784e03b124))
-
-
-
-
+- **Select:** 10839 - add possibility to handle changes in select component ([#14](https://github.com/konturio/ui/issues/14)) ([4ce47af](https://github.com/konturio/ui/commit/4ce47afa225e0c6684cd6b0e86e88a784e03b124))
 
 # [3.0.0-alpha.47](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.0.0-alpha.46...@konturio/ui-kit@3.0.0-alpha.47) (2022-08-02)
 
-
 ### Features
 
-* **AppHeader:** return box-shadow instead of drop-shadow to unblock logout button ([1a29ef7](https://github.com/konturio/ui/commit/1a29ef7c0e47c4570e8ac592d72257e182245f53))
-
-
-
-
+- **AppHeader:** return box-shadow instead of drop-shadow to unblock logout button ([1a29ef7](https://github.com/konturio/ui/commit/1a29ef7c0e47c4570e8ac592d72257e182245f53))
 
 # [3.0.0-alpha.46](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.0.0-alpha.45...@konturio/ui-kit@3.0.0-alpha.46) (2022-07-28)
 
-
 ### Features
 
-* **Legend:** 10841 - add possibility to hide labels/arrows/steps for Legend and custom render method of axis labels ([#13](https://github.com/konturio/ui/issues/13)) ([04d1b51](https://github.com/konturio/ui/commit/04d1b514f67d29e702a5744538e929adb1e0c256))
-
-
-
-
+- **Legend:** 10841 - add possibility to hide labels/arrows/steps for Legend and custom render method of axis labels ([#13](https://github.com/konturio/ui/issues/13)) ([04d1b51](https://github.com/konturio/ui/commit/04d1b514f67d29e702a5744538e929adb1e0c256))
 
 # [3.0.0-alpha.45](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.0.0-alpha.44...@konturio/ui-kit@3.0.0-alpha.45) (2022-07-25)
 
-
 ### Bug Fixes
 
-* **ui-kit:** fix menupopover style path ([91c3276](https://github.com/konturio/ui/commit/91c3276d1cd5a7d6b0f44fc89921388905c88015))
-* **ui-kit:** uikit menu color fixes ([967d9e2](https://github.com/konturio/ui/commit/967d9e2a485dd2d24d9810abcacd0af48bc29f25))
-
+- **ui-kit:** fix menupopover style path ([91c3276](https://github.com/konturio/ui/commit/91c3276d1cd5a7d6b0f44fc89921388905c88015))
+- **ui-kit:** uikit menu color fixes ([967d9e2](https://github.com/konturio/ui/commit/967d9e2a485dd2d24d9810abcacd0af48bc29f25))
 
 ### Features
 
-* **Select:** 10865 - Update dropdown  component implementation ([33b4c95](https://github.com/konturio/ui/commit/33b4c95d0f5fe3be146a92ffc936479766512660))
-* **ui-kit:** update select implementation ([#11](https://github.com/konturio/ui/issues/11)) ([f8902d8](https://github.com/konturio/ui/commit/f8902d801116f9b8b8f3da574858016b0459276e))
-
-
-
-
+- **Select:** 10865 - Update dropdown component implementation ([33b4c95](https://github.com/konturio/ui/commit/33b4c95d0f5fe3be146a92ffc936479766512660))
+- **ui-kit:** update select implementation ([#11](https://github.com/konturio/ui/issues/11)) ([f8902d8](https://github.com/konturio/ui/commit/f8902d801116f9b8b8f3da574858016b0459276e))
 
 # [3.0.0-alpha.44](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.0.0-alpha.43...@konturio/ui-kit@3.0.0-alpha.44) (2022-07-15)
 
 **Note:** Version bump only for package @konturio/ui-kit
 
-
-
-
-
 # [3.0.0-alpha.43](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.0.0-alpha.42...@konturio/ui-kit@3.0.0-alpha.43) (2022-06-28)
 
 **Note:** Version bump only for package @konturio/ui-kit
-
-
-
-
 
 # [3.0.0-alpha.42](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.0.0-alpha.41...@konturio/ui-kit@3.0.0-alpha.42) (2022-06-21)
 
 **Note:** Version bump only for package @konturio/ui-kit
 
-
-
-
-
 # [3.0.0-alpha.41](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.0.0-alpha.40...@konturio/ui-kit@3.0.0-alpha.41) (2022-06-16)
 
 **Note:** Version bump only for package @konturio/ui-kit
-
-
-
-
 
 # 3.0.0-alpha.40 (2022-06-15)
 
 **Note:** Version bump only for package @konturio/ui-kit
 
-
-
-
-
 # [3.0.0-alpha.39](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@3.0.0-alpha.38...@k2-packages/ui-kit@3.0.0-alpha.39) (2022-05-29)
 
 **Note:** Version bump only for package @k2-packages/ui-kit
-
-
-
-
 
 # [3.0.0-alpha.38](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@3.0.0-alpha.36...@k2-packages/ui-kit@3.0.0-alpha.38) (2022-05-27)
 
 **Note:** Version bump only for package @k2-packages/ui-kit
 
-
-
-
-
 # [3.0.0-alpha.37](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@3.0.0-alpha.36...@k2-packages/ui-kit@3.0.0-alpha.37) (2022-05-27)
 
 **Note:** Version bump only for package @k2-packages/ui-kit
-
-
-
-
 
 # [3.0.0-alpha.36](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@3.0.0-alpha.35...@k2-packages/ui-kit@3.0.0-alpha.36) (2022-05-26)
 
 **Note:** Version bump only for package @k2-packages/ui-kit
 
-
-
-
-
 # [3.0.0-alpha.35](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@3.0.0-alpha.34...@k2-packages/ui-kit@3.0.0-alpha.35) (2022-05-23)
 
 **Note:** Version bump only for package @k2-packages/ui-kit
 
-
-
-
-
 # [3.0.0-alpha.34](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@3.0.0-alpha.32...@k2-packages/ui-kit@3.0.0-alpha.34) (2022-05-20)
-
 
 ### Bug Fixes
 
-* **bivariate-matrix:** add react-cosmos mock for AxisControl ([d791da7](https://gitlab.com/kontur-private/k2/k2-front-end/commit/d791da75c270a044c336e0fdea7a8ac3de82a163))
-* **bivariate-matrix:** reduce bivariate matrix renders count ([de2755c](https://gitlab.com/kontur-private/k2/k2-front-end/commit/de2755c061750256c5f15f1d19237662faa72a93))
-* **bivariate-matrix:** refactor bivariate matrix cell component ([0112d69](https://gitlab.com/kontur-private/k2/k2-front-end/commit/0112d692c190d5b1d48a101d749600344220cddd))
-
-
-
-
+- **bivariate-matrix:** add react-cosmos mock for AxisControl ([d791da7](https://gitlab.com/kontur-private/k2/k2-front-end/commit/d791da75c270a044c336e0fdea7a8ac3de82a163))
+- **bivariate-matrix:** reduce bivariate matrix renders count ([de2755c](https://gitlab.com/kontur-private/k2/k2-front-end/commit/de2755c061750256c5f15f1d19237662faa72a93))
+- **bivariate-matrix:** refactor bivariate matrix cell component ([0112d69](https://gitlab.com/kontur-private/k2/k2-front-end/commit/0112d692c190d5b1d48a101d749600344220cddd))
 
 # [3.0.0-alpha.33](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@3.0.0-alpha.32...@k2-packages/ui-kit@3.0.0-alpha.33) (2022-05-19)
 
-
 ### Bug Fixes
 
-* **bivariate-matrix:** add react-cosmos mock for AxisControl ([d791da7](https://gitlab.com/kontur-private/k2/k2-front-end/commit/d791da75c270a044c336e0fdea7a8ac3de82a163))
-* **bivariate-matrix:** reduce bivariate matrix renders count ([de2755c](https://gitlab.com/kontur-private/k2/k2-front-end/commit/de2755c061750256c5f15f1d19237662faa72a93))
-* **bivariate-matrix:** refactor bivariate matrix cell component ([0112d69](https://gitlab.com/kontur-private/k2/k2-front-end/commit/0112d692c190d5b1d48a101d749600344220cddd))
-
-
-
-
+- **bivariate-matrix:** add react-cosmos mock for AxisControl ([d791da7](https://gitlab.com/kontur-private/k2/k2-front-end/commit/d791da75c270a044c336e0fdea7a8ac3de82a163))
+- **bivariate-matrix:** reduce bivariate matrix renders count ([de2755c](https://gitlab.com/kontur-private/k2/k2-front-end/commit/de2755c061750256c5f15f1d19237662faa72a93))
+- **bivariate-matrix:** refactor bivariate matrix cell component ([0112d69](https://gitlab.com/kontur-private/k2/k2-front-end/commit/0112d692c190d5b1d48a101d749600344220cddd))
 
 # [3.0.0-alpha.32](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@3.0.0-alpha.31...@k2-packages/ui-kit@3.0.0-alpha.32) (2022-05-17)
 
 **Note:** Version bump only for package @k2-packages/ui-kit
 
-
-
-
-
 # [3.0.0-alpha.31](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@3.0.0-alpha.30...@k2-packages/ui-kit@3.0.0-alpha.31) (2022-05-11)
 
 **Note:** Version bump only for package @k2-packages/ui-kit
-
-
-
-
 
 # [3.0.0-alpha.30](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@3.0.0-alpha.29...@k2-packages/ui-kit@3.0.0-alpha.30) (2022-05-10)
 
 **Note:** Version bump only for package @k2-packages/ui-kit
 
-
-
-
-
 # [3.0.0-alpha.29](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@3.0.0-alpha.28...@k2-packages/ui-kit@3.0.0-alpha.29) (2022-05-04)
 
 **Note:** Version bump only for package @k2-packages/ui-kit
-
-
-
-
 
 # [3.0.0-alpha.28](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@3.0.0-alpha.27...@k2-packages/ui-kit@3.0.0-alpha.28) (2022-04-27)
 
 **Note:** Version bump only for package @k2-packages/ui-kit
 
-
-
-
-
 # [3.0.0-alpha.27](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@3.0.0-alpha.24...@k2-packages/ui-kit@3.0.0-alpha.27) (2022-04-20)
-
 
 ### Bug Fixes
 
-* **bivariate-legend:** Fix bivariate legend axes label style ([deb3ff1](https://gitlab.com/kontur-private/k2/k2-front-end/commit/deb3ff10f4cf1ecd62bfb55f7920b1999b2325c4))
-* **bivariate-matrix:** Update biv matrix to add ability to select empty cells ([4a5223d](https://gitlab.com/kontur-private/k2/k2-front-end/commit/4a5223d44830b56a8be9c31c90aa40260ed517e6))
-
-
-
-
+- **bivariate-legend:** Fix bivariate legend axes label style ([deb3ff1](https://gitlab.com/kontur-private/k2/k2-front-end/commit/deb3ff10f4cf1ecd62bfb55f7920b1999b2325c4))
+- **bivariate-matrix:** Update biv matrix to add ability to select empty cells ([4a5223d](https://gitlab.com/kontur-private/k2/k2-front-end/commit/4a5223d44830b56a8be9c31c90aa40260ed517e6))
 
 # [3.0.0-alpha.26](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@3.0.0-alpha.25...@k2-packages/ui-kit@3.0.0-alpha.26) (2022-04-07)
 
-
 ### Bug Fixes
 
-* **bivariate-legend:** Fix bivariate legend axes label style ([deb3ff1](https://gitlab.com/kontur-private/k2/k2-front-end/commit/deb3ff10f4cf1ecd62bfb55f7920b1999b2325c4))
-
-
-
-
+- **bivariate-legend:** Fix bivariate legend axes label style ([deb3ff1](https://gitlab.com/kontur-private/k2/k2-front-end/commit/deb3ff10f4cf1ecd62bfb55f7920b1999b2325c4))
 
 # [3.0.0-alpha.25](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@3.0.0-alpha.24...@k2-packages/ui-kit@3.0.0-alpha.25) (2022-03-25)
 
-
 ### Bug Fixes
 
-* **bivariate-matrix:** Update biv matrix to add ability to select empty cells ([4a5223d](https://gitlab.com/kontur-private/k2/k2-front-end/commit/4a5223d44830b56a8be9c31c90aa40260ed517e6))
-
-
-
-
+- **bivariate-matrix:** Update biv matrix to add ability to select empty cells ([4a5223d](https://gitlab.com/kontur-private/k2/k2-front-end/commit/4a5223d44830b56a8be9c31c90aa40260ed517e6))
 
 # [3.0.0-alpha.24](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@3.0.0-alpha.20...@k2-packages/ui-kit@3.0.0-alpha.24) (2022-03-21)
 
 **Note:** Version bump only for package @k2-packages/ui-kit
 
-
-
-
-
 # [3.0.0-alpha.23](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@3.0.0-alpha.20...@k2-packages/ui-kit@3.0.0-alpha.23) (2022-03-17)
 
 **Note:** Version bump only for package @k2-packages/ui-kit
 
-
-
-
-
 # [3.0.0-alpha.20](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@3.0.0-alpha.19...@k2-packages/ui-kit@3.0.0-alpha.20) (2022-02-17)
-
 
 ### Bug Fixes
 
-* **dropdown:** Add dropdown fixture ([6f836b8](https://gitlab.com/kontur-private/k2/k2-front-end/commit/6f836b84f854f211846485d83e6bc21d408d5b88))
-
-
-
-
+- **dropdown:** Add dropdown fixture ([6f836b8](https://gitlab.com/kontur-private/k2/k2-front-end/commit/6f836b84f854f211846485d83e6bc21d408d5b88))
 
 # [3.0.0-alpha.19](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@3.0.0-alpha.18...@k2-packages/ui-kit@3.0.0-alpha.19) (2022-02-01)
 
-
 ### Features
 
-* **ui-kit-input:** Add password mode to Input field ([ac8c0ef](https://gitlab.com/kontur-private/k2/k2-front-end/commit/ac8c0ef8bf6ab0a407bf76048240485a1fb689c4))
-
-
-
-
+- **ui-kit-input:** Add password mode to Input field ([ac8c0ef](https://gitlab.com/kontur-private/k2/k2-front-end/commit/ac8c0ef8bf6ab0a407bf76048240485a1fb689c4))
 
 # [3.0.0-alpha.18](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@3.0.0-alpha.15...@k2-packages/ui-kit@3.0.0-alpha.18) (2022-01-17)
 
-
 ### Bug Fixes
 
-* **legend:** Stylefix for legend cells ([075a693](https://gitlab.com/kontur-private/k2/k2-front-end/commit/075a69318415f971053cfce76400cba075464555))
-
+- **legend:** Stylefix for legend cells ([075a693](https://gitlab.com/kontur-private/k2/k2-front-end/commit/075a69318415f971053cfce76400cba075464555))
 
 ### Features
 
-* **new-components:** Add modal component ([3c996e3](https://gitlab.com/kontur-private/k2/k2-front-end/commit/3c996e318e8d02f140131e9038ed8cd4dd322426))
-
-
-
-
+- **new-components:** Add modal component ([3c996e3](https://gitlab.com/kontur-private/k2/k2-front-end/commit/3c996e318e8d02f140131e9038ed8cd4dd322426))
 
 # [3.0.0-alpha.17](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@3.0.0-alpha.16...@k2-packages/ui-kit@3.0.0-alpha.17) (2022-01-12)
 
-
 ### Bug Fixes
 
-* **legend:** Stylefix for legend cells ([075a693](https://gitlab.com/kontur-private/k2/k2-front-end/commit/075a69318415f971053cfce76400cba075464555))
-
-
-
-
+- **legend:** Stylefix for legend cells ([075a693](https://gitlab.com/kontur-private/k2/k2-front-end/commit/075a69318415f971053cfce76400cba075464555))
 
 # [3.0.0-alpha.16](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@3.0.0-alpha.15...@k2-packages/ui-kit@3.0.0-alpha.16) (2022-01-12)
 
-
 ### Features
 
-* **new-components:** Add modal component ([3c996e3](https://gitlab.com/kontur-private/k2/k2-front-end/commit/3c996e318e8d02f140131e9038ed8cd4dd322426))
-
-
-
-
+- **new-components:** Add modal component ([3c996e3](https://gitlab.com/kontur-private/k2/k2-front-end/commit/3c996e318e8d02f140131e9038ed8cd4dd322426))
 
 # [3.0.0-alpha.15](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@3.0.0-alpha.12...@k2-packages/ui-kit@3.0.0-alpha.15) (2021-12-23)
 
-
 ### Bug Fixes
 
-* add missing export ([df1d38f](https://gitlab.com/kontur-private/k2/k2-front-end/commit/df1d38f32f62d07b0cb2fb85e8c4830eb71ff95f))
-
+- add missing export ([df1d38f](https://gitlab.com/kontur-private/k2/k2-front-end/commit/df1d38f32f62d07b0cb2fb85e8c4830eb71ff95f))
 
 ### Features
 
-* add line item ([508bf73](https://gitlab.com/kontur-private/k2/k2-front-end/commit/508bf73bf12c38ddefd7cc6b54bba1a5be446d68))
-
-
-
-
+- add line item ([508bf73](https://gitlab.com/kontur-private/k2/k2-front-end/commit/508bf73bf12c38ddefd7cc6b54bba1a5be446d68))
 
 # [3.0.0-alpha.14](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@3.0.0-alpha.13...@k2-packages/ui-kit@3.0.0-alpha.14) (2021-12-23)
 
 **Note:** Version bump only for package @k2-packages/ui-kit
 
-
-
-
-
 # [3.0.0-alpha.13](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@3.0.0-alpha.12...@k2-packages/ui-kit@3.0.0-alpha.13) (2021-12-22)
 
 **Note:** Version bump only for package @k2-packages/ui-kit
-
-
-
-
 
 # [3.0.0-alpha.12](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@3.0.0-alpha.11...@k2-packages/ui-kit@3.0.0-alpha.12) (2021-11-26)
 
 **Note:** Version bump only for package @k2-packages/ui-kit
 
-
-
-
-
 # [3.0.0-alpha.11](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@3.0.0-alpha.9...@k2-packages/ui-kit@3.0.0-alpha.11) (2021-11-25)
-
 
 ### Features
 
-* allow overwrite logotype ([f413ed1](https://gitlab.com/kontur-private/k2/k2-front-end/commit/f413ed1df8ec540ead45f35af64d4ab6780f998b))
-* **ui-kit:** Add button group ([8bcc17b](https://gitlab.com/kontur-private/k2/k2-front-end/commit/8bcc17b9f07d70e4e6f0cdca3270f0c8b4bedeb1))
-* **ui:** Add new icons and button bar ([d400220](https://gitlab.com/kontur-private/k2/k2-front-end/commit/d4002206790b6f5a42e0d21aba1e972e25508bc1))
-
-
-
-
+- allow overwrite logotype ([f413ed1](https://gitlab.com/kontur-private/k2/k2-front-end/commit/f413ed1df8ec540ead45f35af64d4ab6780f998b))
+- **ui-kit:** Add button group ([8bcc17b](https://gitlab.com/kontur-private/k2/k2-front-end/commit/8bcc17b9f07d70e4e6f0cdca3270f0c8b4bedeb1))
+- **ui:** Add new icons and button bar ([d400220](https://gitlab.com/kontur-private/k2/k2-front-end/commit/d4002206790b6f5a42e0d21aba1e972e25508bc1))
 
 # [3.0.0-alpha.10](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@3.0.0-alpha.9...@k2-packages/ui-kit@3.0.0-alpha.10) (2021-11-25)
 
-
 ### Features
 
-* **ui-kit:** Add button group ([8bcc17b](https://gitlab.com/kontur-private/k2/k2-front-end/commit/8bcc17b9f07d70e4e6f0cdca3270f0c8b4bedeb1))
-* **ui:** Add new icons and button bar ([d400220](https://gitlab.com/kontur-private/k2/k2-front-end/commit/d4002206790b6f5a42e0d21aba1e972e25508bc1))
-
-
-
-
+- **ui-kit:** Add button group ([8bcc17b](https://gitlab.com/kontur-private/k2/k2-front-end/commit/8bcc17b9f07d70e4e6f0cdca3270f0c8b4bedeb1))
+- **ui:** Add new icons and button bar ([d400220](https://gitlab.com/kontur-private/k2/k2-front-end/commit/d4002206790b6f5a42e0d21aba1e972e25508bc1))
 
 # [3.0.0-alpha.9](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@3.0.0-alpha.8...@k2-packages/ui-kit@3.0.0-alpha.9) (2021-11-17)
 
 **Note:** Version bump only for package @k2-packages/ui-kit
 
-
-
-
-
 # [3.0.0-alpha.8](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@3.0.0-alpha.6...@k2-packages/ui-kit@3.0.0-alpha.8) (2021-11-17)
-
 
 ### Bug Fixes
 
-* **analytics-pane:** Fixes for anaylitics panel ([6ae2c80](https://gitlab.com/kontur-private/k2/k2-front-end/commit/6ae2c808c1d4f36b4ca8b8c0e2e0ef18249d93d2))
-* shrinked controls ([d92baa5](https://gitlab.com/kontur-private/k2/k2-front-end/commit/d92baa5a2ddf7887b92801a6c73290f1ea4e083f))
-* Tabs ui komponent: ([48c165d](https://gitlab.com/kontur-private/k2/k2-front-end/commit/48c165d4e4a9cd5b4da5d2718612da85c1a44eaa))
-
-
-
-
+- **analytics-pane:** Fixes for anaylitics panel ([6ae2c80](https://gitlab.com/kontur-private/k2/k2-front-end/commit/6ae2c808c1d4f36b4ca8b8c0e2e0ef18249d93d2))
+- shrinked controls ([d92baa5](https://gitlab.com/kontur-private/k2/k2-front-end/commit/d92baa5a2ddf7887b92801a6c73290f1ea4e083f))
+- Tabs ui komponent: ([48c165d](https://gitlab.com/kontur-private/k2/k2-front-end/commit/48c165d4e4a9cd5b4da5d2718612da85c1a44eaa))
 
 # [3.0.0-alpha.7](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@3.0.0-alpha.6...@k2-packages/ui-kit@3.0.0-alpha.7) (2021-11-16)
 
-
 ### Bug Fixes
 
-* **analytics-pane:** Fixes for anaylitics panel ([6ae2c80](https://gitlab.com/kontur-private/k2/k2-front-end/commit/6ae2c808c1d4f36b4ca8b8c0e2e0ef18249d93d2))
-* Tabs ui komponent: ([48c165d](https://gitlab.com/kontur-private/k2/k2-front-end/commit/48c165d4e4a9cd5b4da5d2718612da85c1a44eaa))
-
-
-
-
+- **analytics-pane:** Fixes for anaylitics panel ([6ae2c80](https://gitlab.com/kontur-private/k2/k2-front-end/commit/6ae2c808c1d4f36b4ca8b8c0e2e0ef18249d93d2))
+- Tabs ui komponent: ([48c165d](https://gitlab.com/kontur-private/k2/k2-front-end/commit/48c165d4e4a9cd5b4da5d2718612da85c1a44eaa))
 
 # [3.0.0-alpha.6](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@3.0.0-alpha.5...@k2-packages/ui-kit@3.0.0-alpha.6) (2021-11-10)
 
-
 ### Bug Fixes
 
-* **ui-kit-tabs:** Fix styling ([173d5ba](https://gitlab.com/kontur-private/k2/k2-front-end/commit/173d5babba76c05251a3d57787d9d614c1b5e90a))
-
-
-
-
+- **ui-kit-tabs:** Fix styling ([173d5ba](https://gitlab.com/kontur-private/k2/k2-front-end/commit/173d5babba76c05251a3d57787d9d614c1b5e90a))
 
 # [3.0.0-alpha.5](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@3.0.0-alpha.4...@k2-packages/ui-kit@3.0.0-alpha.5) (2021-11-10)
 
-
 ### Bug Fixes
 
-* **ui-kit-panel:** Panel lint fix ([0ab385b](https://gitlab.com/kontur-private/k2/k2-front-end/commit/0ab385b72c23095a62c32e6a57a4841b4833662d))
-
+- **ui-kit-panel:** Panel lint fix ([0ab385b](https://gitlab.com/kontur-private/k2/k2-front-end/commit/0ab385b72c23095a62c32e6a57a4841b4833662d))
 
 ### Features
 
-* **ui-components:** Add ability to provide additional styling for tabs and panel ([9f0ace7](https://gitlab.com/kontur-private/k2/k2-front-end/commit/9f0ace719b32f352d9cdb5047221340f01f232d8))
-
-
-
-
+- **ui-components:** Add ability to provide additional styling for tabs and panel ([9f0ace7](https://gitlab.com/kontur-private/k2/k2-front-end/commit/9f0ace719b32f352d9cdb5047221340f01f232d8))
 
 # [3.0.0-alpha.4](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@3.0.0-alpha.3...@k2-packages/ui-kit@3.0.0-alpha.4) (2021-10-27)
 
 **Note:** Version bump only for package @k2-packages/ui-kit
 
-
-
-
-
 # [3.0.0-alpha.3](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@3.0.0-alpha.2...@k2-packages/ui-kit@3.0.0-alpha.3) (2021-10-26)
-
 
 ### Features
 
-* block layout option for radio and checkbox ([b45005e](https://gitlab.com/kontur-private/k2/k2-front-end/commit/b45005ec10b477dc0d15c83eea702aa009bacd72))
-
-
-
-
+- block layout option for radio and checkbox ([b45005e](https://gitlab.com/kontur-private/k2/k2-front-end/commit/b45005ec10b477dc0d15c83eea702aa009bacd72))
 
 # [3.0.0-alpha.2](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@3.0.0-alpha.1...@k2-packages/ui-kit@3.0.0-alpha.2) (2021-09-14)
 
-
 ### Bug Fixes
 
-* mark pakagens as es6 module, ([04ddf96](https://gitlab.com/kontur-private/k2/k2-front-end/commit/04ddf96cca47f098ce7f92fa561fd5063bcc1270))
-
-
-
-
+- mark pakagens as es6 module, ([04ddf96](https://gitlab.com/kontur-private/k2/k2-front-end/commit/04ddf96cca47f098ce7f92fa561fd5063bcc1270))
 
 # [3.0.0-alpha.1](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@3.0.0-alpha.0...@k2-packages/ui-kit@3.0.0-alpha.1) (2021-09-10)
 
-
 ### Features
 
-* add css copy ([3707591](https://gitlab.com/kontur-private/k2/k2-front-end/commit/3707591c1e14729803d3b93252acecee1d941740))
-
-
-
-
+- add css copy ([3707591](https://gitlab.com/kontur-private/k2/k2-front-end/commit/3707591c1e14729803d3b93252acecee1d941740))
 
 # [3.0.0-alpha.0](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@2.17.4-alpha.0...@k2-packages/ui-kit@3.0.0-alpha.0) (2021-09-10)
 
-
 ### Features
 
-* add only builded files in packages ([1d174f9](https://gitlab.com/kontur-private/k2/k2-front-end/commit/1d174f9d6898f549fb257d92e17e10fb781cfc71))
-
-
-
-
+- add only builded files in packages ([1d174f9](https://gitlab.com/kontur-private/k2/k2-front-end/commit/1d174f9d6898f549fb257d92e17e10fb781cfc71))
 
 ## [2.17.4-alpha.0](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@2.17.3...@k2-packages/ui-kit@2.17.4-alpha.0) (2021-09-10)
 
 **Note:** Version bump only for package @k2-packages/ui-kit
 
-
-
-
-
 ## [2.17.3](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@2.17.2...@k2-packages/ui-kit@2.17.3) (2021-08-31)
 
 **Note:** Version bump only for package @k2-packages/ui-kit
 
-
-
-
-
 ## [2.17.2](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@2.17.1...@k2-packages/ui-kit@2.17.2) (2021-08-19)
-
 
 ### Bug Fixes
 
-* uikit / roll back change matrix labels width ([a53e2cd](https://gitlab.com/kontur-private/k2/k2-front-end/commit/a53e2cd6f3196733f3a4bdd2b52fac05f5517223))
-
-
-
-
+- uikit / roll back change matrix labels width ([a53e2cd](https://gitlab.com/kontur-private/k2/k2-front-end/commit/a53e2cd6f3196733f3a4bdd2b52fac05f5517223))
 
 ## [2.17.1](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@2.17.0...@k2-packages/ui-kit@2.17.1) (2021-08-18)
 
-
 ### Bug Fixes
 
-* axis control ladder ([8bbdbf2](https://gitlab.com/kontur-private/k2/k2-front-end/commit/8bbdbf2d3c7f952df7c4b3a3c5a485fd18e6294b))
-
-
-
-
+- axis control ladder ([8bbdbf2](https://gitlab.com/kontur-private/k2/k2-front-end/commit/8bbdbf2d3c7f952df7c4b3a3c5a485fd18e6294b))
 
 # [2.17.0](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@2.16.0...@k2-packages/ui-kit@2.17.0) (2021-08-13)
 
 **Note:** Version bump only for package @k2-packages/ui-kit
 
-
-
-
-
 # [2.16.0](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@2.15.2...@k2-packages/ui-kit@2.16.0) (2021-08-13)
-
 
 ### Bug Fixes
 
-* add missing exports ([6d4eb1a](https://gitlab.com/kontur-private/k2/k2-front-end/commit/6d4eb1ad21c255b1c074c91751160cb8477c2e64))
-
+- add missing exports ([6d4eb1a](https://gitlab.com/kontur-private/k2/k2-front-end/commit/6d4eb1ad21c255b1c074c91751160cb8477c2e64))
 
 ### Features
 
-* add active state for button ([ef83d58](https://gitlab.com/kontur-private/k2/k2-front-end/commit/ef83d58102b4751f905802ab4dc71edda55babdc))
-* use new color system ([2cc3947](https://gitlab.com/kontur-private/k2/k2-front-end/commit/2cc39471022b664bbcf21d245893ecc7bf67e22d))
-
-
-
-
+- add active state for button ([ef83d58](https://gitlab.com/kontur-private/k2/k2-front-end/commit/ef83d58102b4751f905802ab4dc71edda55babdc))
+- use new color system ([2cc3947](https://gitlab.com/kontur-private/k2/k2-front-end/commit/2cc39471022b664bbcf21d245893ecc7bf67e22d))
 
 ## [2.15.2](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@2.15.1...@k2-packages/ui-kit@2.15.2) (2021-08-11)
 
-
 ### Bug Fixes
 
-* main file name ([a404a34](https://gitlab.com/kontur-private/k2/k2-front-end/commit/a404a34031088a4386ccd94d348bd6d02e73d3a1))
-
-
-
-
+- main file name ([a404a34](https://gitlab.com/kontur-private/k2/k2-front-end/commit/a404a34031088a4386ccd94d348bd6d02e73d3a1))
 
 ## [2.15.1](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@2.15.0...@k2-packages/ui-kit@2.15.1) (2021-08-11)
 
-
 ### Bug Fixes
 
-* add exports and auto check for feature ([fbca0aa](https://gitlab.com/kontur-private/k2/k2-front-end/commit/fbca0aa1ab50ee9d6d67fb5307eca6884f794816))
-
-
-
-
+- add exports and auto check for feature ([fbca0aa](https://gitlab.com/kontur-private/k2/k2-front-end/commit/fbca0aa1ab50ee9d6d67fb5307eca6884f794816))
 
 # [2.15.0](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@2.14.3...@k2-packages/ui-kit@2.15.0) (2021-08-09)
 
-
 ### Bug Fixes
 
-* autofix eslint rules ([4d2e7d0](https://gitlab.com/kontur-private/k2/k2-front-end/commit/4d2e7d09186fb5dc9c1236623de359737df2b70f))
-* color in input ([967336d](https://gitlab.com/kontur-private/k2/k2-front-end/commit/967336d1526eb3e1ec9e30042c275edfead7e528))
-* legend now support different sizes ([cdcd55b](https://gitlab.com/kontur-private/k2/k2-front-end/commit/cdcd55bca96bfad8ddbe4b1eef583f9df686138c))
-* manual fixes of linting ([2a62d46](https://gitlab.com/kontur-private/k2/k2-front-end/commit/2a62d46d7fa8bea26c8f7185f43f9fa444b6ff84))
-* radio in checkbox broken layout in chrome ([37f50f3](https://gitlab.com/kontur-private/k2/k2-front-end/commit/37f50f31ac894de6ef1bee9c547ffc4f11d20d8f))
-* test failing sinse react 17 not supported ([6691b64](https://gitlab.com/kontur-private/k2/k2-front-end/commit/6691b643d8ed34e622b836965809cb5c795b1cd9))
-
+- autofix eslint rules ([4d2e7d0](https://gitlab.com/kontur-private/k2/k2-front-end/commit/4d2e7d09186fb5dc9c1236623de359737df2b70f))
+- color in input ([967336d](https://gitlab.com/kontur-private/k2/k2-front-end/commit/967336d1526eb3e1ec9e30042c275edfead7e528))
+- legend now support different sizes ([cdcd55b](https://gitlab.com/kontur-private/k2/k2-front-end/commit/cdcd55bca96bfad8ddbe4b1eef583f9df686138c))
+- manual fixes of linting ([2a62d46](https://gitlab.com/kontur-private/k2/k2-front-end/commit/2a62d46d7fa8bea26c8f7185f43f9fa444b6ff84))
+- radio in checkbox broken layout in chrome ([37f50f3](https://gitlab.com/kontur-private/k2/k2-front-end/commit/37f50f31ac894de6ef1bee9c547ffc4f11d20d8f))
+- test failing sinse react 17 not supported ([6691b64](https://gitlab.com/kontur-private/k2/k2-front-end/commit/6691b643d8ed34e622b836965809cb5c795b1cd9))
 
 ### Features
 
-* add cosmos decorator ([6732d8f](https://gitlab.com/kontur-private/k2/k2-front-end/commit/6732d8fcca65a835e1547028473363495bfe481e))
-* add new checkboxes ([220de3c](https://gitlab.com/kontur-private/k2/k2-front-end/commit/220de3c0bb4b9265f2f24fca19e503ef465abfa9))
-* add sizes ([e79125e](https://gitlab.com/kontur-private/k2/k2-front-end/commit/e79125ebe86436e41b90935e462d48cf2df3f448))
-* app header ([f0da602](https://gitlab.com/kontur-private/k2/k2-front-end/commit/f0da6023b0e24a46666a3321227b675c7aa840fc))
-* Details ([bcb3f0b](https://gitlab.com/kontur-private/k2/k2-front-end/commit/bcb3f0b911b91801a8c64957cabd9314126b3b78))
-* fixature for slider ([c08f48e](https://gitlab.com/kontur-private/k2/k2-front-end/commit/c08f48ead1a66ed4c92eab35302e3da425694a9f))
-* improve perfomance of legend ([769307f](https://gitlab.com/kontur-private/k2/k2-front-end/commit/769307f2c52603ea67addae1edbbd21514a6b594))
-* map button ([5932357](https://gitlab.com/kontur-private/k2/k2-front-end/commit/593235721b1b810adf44738951469ebe9837e119))
-* Pannel and Card ([e34dfb8](https://gitlab.com/kontur-private/k2/k2-front-end/commit/e34dfb896500953507146aba3157514b752be4ef))
-* redesign selector ([4bf9aa0](https://gitlab.com/kontur-private/k2/k2-front-end/commit/4bf9aa01f6ffc881551c23c5f1ddd0d3d96b04df))
-* Tabs ([755778b](https://gitlab.com/kontur-private/k2/k2-front-end/commit/755778b629e4bf35e7c6be385661f764bd6c4ed3))
-* Toogler ([124aeb5](https://gitlab.com/kontur-private/k2/k2-front-end/commit/124aeb57143cb9d7868864184f7ed7a1e2827cac))
-* update deps to latest versions ([6ff940e](https://gitlab.com/kontur-private/k2/k2-front-end/commit/6ff940e12884bca89684a27397e467abf24404c3))
-
-
-
-
+- add cosmos decorator ([6732d8f](https://gitlab.com/kontur-private/k2/k2-front-end/commit/6732d8fcca65a835e1547028473363495bfe481e))
+- add new checkboxes ([220de3c](https://gitlab.com/kontur-private/k2/k2-front-end/commit/220de3c0bb4b9265f2f24fca19e503ef465abfa9))
+- add sizes ([e79125e](https://gitlab.com/kontur-private/k2/k2-front-end/commit/e79125ebe86436e41b90935e462d48cf2df3f448))
+- app header ([f0da602](https://gitlab.com/kontur-private/k2/k2-front-end/commit/f0da6023b0e24a46666a3321227b675c7aa840fc))
+- Details ([bcb3f0b](https://gitlab.com/kontur-private/k2/k2-front-end/commit/bcb3f0b911b91801a8c64957cabd9314126b3b78))
+- fixature for slider ([c08f48e](https://gitlab.com/kontur-private/k2/k2-front-end/commit/c08f48ead1a66ed4c92eab35302e3da425694a9f))
+- improve perfomance of legend ([769307f](https://gitlab.com/kontur-private/k2/k2-front-end/commit/769307f2c52603ea67addae1edbbd21514a6b594))
+- map button ([5932357](https://gitlab.com/kontur-private/k2/k2-front-end/commit/593235721b1b810adf44738951469ebe9837e119))
+- Pannel and Card ([e34dfb8](https://gitlab.com/kontur-private/k2/k2-front-end/commit/e34dfb896500953507146aba3157514b752be4ef))
+- redesign selector ([4bf9aa0](https://gitlab.com/kontur-private/k2/k2-front-end/commit/4bf9aa01f6ffc881551c23c5f1ddd0d3d96b04df))
+- Tabs ([755778b](https://gitlab.com/kontur-private/k2/k2-front-end/commit/755778b629e4bf35e7c6be385661f764bd6c4ed3))
+- Toogler ([124aeb5](https://gitlab.com/kontur-private/k2/k2-front-end/commit/124aeb57143cb9d7868864184f7ed7a1e2827cac))
+- update deps to latest versions ([6ff940e](https://gitlab.com/kontur-private/k2/k2-front-end/commit/6ff940e12884bca89684a27397e467abf24404c3))
 
 ## [2.14.3](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/ui-kit@2.14.2...@k2-packages/ui-kit@2.14.3) (2021-08-02)
 

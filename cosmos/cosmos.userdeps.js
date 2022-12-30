@@ -45,7 +45,7 @@ import decorator0 from './../cosmos.decorator.tsx';
 import decorator1 from './../packages/ui-kit/cosmos.decorator.tsx';
 
 export const rendererConfig = {
-  "port": 5000
+  port: 5000,
 };
 
 export const fixtures = {
@@ -81,10 +81,10 @@ export const fixtures = {
   'packages/ui-kit/src/Timeline/fixture/Timeline.fixture.tsx': { module: { default: fixture29 } },
   'packages/ui-kit/src/Timeline/fixture/TimeLineWithDropDown.fixture.tsx': { module: { default: fixture30 } },
   'packages/ui-kit/src/TimeSlider/TimeSlider.fixture.tsx': { module: { default: fixture31 } },
-  'packages/ui-kit/src/Toggler/Toggler.fixture.tsx': { module: { default: fixture32 } }
+  'packages/ui-kit/src/Toggler/Toggler.fixture.tsx': { module: { default: fixture32 } },
 };
 
 export const decorators = {
   'cosmos.decorator.tsx': decorator0,
-  'packages/ui-kit/cosmos.decorator.tsx': decorator1
+  'packages/ui-kit/cosmos.decorator.tsx': decorator1,
 };

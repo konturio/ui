@@ -1,5 +1,5 @@
 import { DescendantProvider, useDescendant, useDescendantsInit } from '../../../utils/component-helpers/descendants';
-import type { ReactNode} from 'react';
+import type { ReactNode } from 'react';
 import { forwardRef, memo, useEffect, useMemo, useRef } from 'react';
 import { useComposedRefs } from '../../../utils/hooks/useComposedRefs';
 import type { ForwardRefComponent, MemoComponent } from '../../../utils/component-helpers/polymorphic';

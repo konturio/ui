@@ -14,7 +14,7 @@ export function SelectContent({
   onReset?: (val?: string | number | undefined) => void;
   children: Array<{ value: string | number | undefined; title: React.ReactNode }> | React.ReactNode;
   placeholder?: JSX.Element | null;
-  alwaysShowPlaceholder?: boolean
+  alwaysShowPlaceholder?: boolean;
 }): JSX.Element | null {
   if (children === null || children === '' || children === undefined) return placeholder;
 
@@ -54,9 +54,11 @@ export function SelectContent({
         return placeholder;
       }
 
-      return <>
-        {alwaysShowPlaceholder && placeholder}
-        <span className={style.textContent}>{children}</span>
-      </>;
+      return (
+        <>
+          {alwaysShowPlaceholder && placeholder}
+          <span className={style.textContent}>{children}</span>
+        </>
+      );
   }
 }

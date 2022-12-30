@@ -1,4 +1,4 @@
-import type { ReactNode} from 'react';
+import type { ReactNode } from 'react';
 import { forwardRef, memo, useLayoutEffect, useRef } from 'react';
 import { useDescendantKeyDown, useDescendants } from '../../../utils/component-helpers/descendants';
 import { useComposedRefs } from '../../../utils/hooks/useComposedRefs';

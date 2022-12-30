@@ -1,33 +1,33 @@
 .menuItem {
-	display: block;
-	user-select: none;
-	cursor: pointer;
-	color: var(--base-strong);
-	font: inherit;
-	text-decoration: initial;
-	padding: 10px 20px;
+  display: block;
+  user-select: none;
+  cursor: pointer;
+  color: var(--base-strong);
+  font: inherit;
+  text-decoration: initial;
+  padding: 10px 20px;
 
-	&.selected {
-		background: var(--base-weak-up);
-		outline: none;
-	}
+  &.selected {
+    background: var(--base-weak-up);
+    outline: none;
+  }
 
-	&.disabled {
-		cursor: not-allowed;
-		color: var(--faint-strong);
-	}
+  &.disabled {
+    cursor: not-allowed;
+    color: var(--faint-strong);
+  }
 
-	&:active:not(.disabled) {
-		background: var(--accent-weak);
-	}
+  &:active:not(.disabled) {
+    background: var(--accent-weak);
+  }
 }
 
 .menuItems {
-	display: block;
-	white-space: nowrap;
-	background: hsla(0, 100%, 100%, 0.99);
-	outline: none;
-	padding: var(--half-unit) 0;
-	border-radius: var(--border-radius-unit);
-	box-shadow: var(--elevation-3);
+  display: block;
+  white-space: nowrap;
+  background: hsla(0, 100%, 100%, 0.99);
+  outline: none;
+  padding: var(--half-unit) 0;
+  border-radius: var(--border-radius-unit);
+  box-shadow: var(--elevation-3);
 }

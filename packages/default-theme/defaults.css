@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
   margin: 0;
   font: var(--font);
   height: 100%;

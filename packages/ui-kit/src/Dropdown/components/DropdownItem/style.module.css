@@ -1,17 +1,17 @@
 .dropdownItem {
-	display: block;
-	user-select: none;
-	cursor: pointer;
-	padding: 5px 20px;
+  display: block;
+  user-select: none;
+  cursor: pointer;
+  padding: 5px 20px;
 
-	&.selected {
-		background: hsla(211, 81%, 36%, 1);
-		color: hsla(0, 100%, 100%, 1);
-		outline: none;
-	}
+  &.selected {
+    background: hsla(211, 81%, 36%, 1);
+    color: hsla(0, 100%, 100%, 1);
+    outline: none;
+  }
 
-	.disabled {
-		opacity: 0.5;
-		cursor: not-allowed;
-	}
+  &.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
 }

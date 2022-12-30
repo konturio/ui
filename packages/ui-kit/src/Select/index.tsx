@@ -1,19 +1,13 @@
 import React, { forwardRef, useCallback, useEffect, useState } from 'react';
-import {
-  useSelect
-} from 'downshift';
+import { useSelect } from 'downshift';
 import cn from 'clsx';
 import { SelectButton } from './components/SelectButton';
 import { getSelectMode, SELECTION_NODES } from './types';
 import { SelectItem } from './components/SelectItem';
 import style from './style.module.css';
 import type { SelectButtonClasses } from './components/SelectButton';
-import type {
-  UseSelectProps,
-  UseSelectState,
-  UseSelectStateChange,
-  UseSelectStateChangeOptions} from 'downshift';
-import type { SelectItemType , MultiSelectProp} from './types';
+import type { UseSelectProps, UseSelectState, UseSelectStateChange, UseSelectStateChangeOptions } from 'downshift';
+import type { SelectItemType, MultiSelectProp } from './types';
 import type { ForwardRefComponent } from '../utils/component-helpers/polymorphic';
 
 function defaultItemToString(item: SelectItemType | SelectItemType[] | null): string {
@@ -65,7 +59,7 @@ export interface SelectProps {
   onSelect?: (selection: SelectItemType | SelectItemType[] | null | undefined) => void;
   onClose?: (selection: SelectItemType | SelectItemType[] | null | undefined) => void;
   onReset?: () => void;
-  alwaysShowPlaceholder?: boolean
+  alwaysShowPlaceholder?: boolean;
 }
 
 export const Select = forwardRef(

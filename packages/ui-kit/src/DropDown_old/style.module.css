@@ -3,7 +3,7 @@
   margin-top: var(--unit);
   padding: 0;
   border-radius: 0 0 var(--border-radius) var(--border-radius);
-  overflow: auto
+  overflow: auto;
 }
 
 .selectable {
@@ -37,7 +37,7 @@
   padding: 0;
 }
 
-.radio:focus~.option:after {
+.radio:focus ~ .option:after {
   height: 100%;
   width: 4px;
   background-color: var(--primary-color);

@@ -15,9 +15,9 @@ export { Details } from './Details';
 export { Logo } from './Logo';
 export { Button } from './Button';
 export { Panel, PanelIcon } from './Panel';
-export type { PanelCustomControl } from './Panel'
+export type { PanelCustomControl } from './Panel';
 export { Radio } from './Radio';
-export { Textarea } from './Textarea'
+export { Textarea } from './Textarea';
 export { Toggler } from './Toggler';
 export { ActionsBar, ActionsBarBTN } from './ActionsBar';
 export { Text } from './Text';

@@ -1,4 +1,4 @@
-import type { ChangeEvent} from 'react';
+import type { ChangeEvent } from 'react';
 import React, { forwardRef, useCallback, useEffect, useState } from 'react';
 import { Finish16 } from '@konturio/default-icons';
 import { LineItem } from '../LineItem';

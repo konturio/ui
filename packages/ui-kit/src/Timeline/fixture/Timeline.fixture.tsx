@@ -95,7 +95,11 @@ export default {
 
     const [selected, setSelected] = useState([] as (number | string)[]);
 
-    const cluster = useSelectExtra([false as const, { fitOnDoubleClick: true },  { fitOnDoubleClick: true, showStipes: false }]);
+    const cluster = useSelectExtra([
+      false as const,
+      { fitOnDoubleClick: true },
+      { fitOnDoubleClick: true, showStipes: false },
+    ]);
     const [stack] = useValue('stack', {
       defaultValue: true,
     });
@@ -103,16 +107,9 @@ export default {
       setSelected(entries.map((e) => e.id));
     }, []);
 
-
     return (
       <div style={{ width: '85%' }}>
-        <Timeline
-          dataset={data}
-          cluster={cluster}
-          stack={stack}
-          onSelect={onSelect}
-          selected={selected}
-        />
+        <Timeline dataset={data} cluster={cluster} stack={stack} onSelect={onSelect} selected={selected} />
         <ul>
           {Object.values(episodesMap).map((d) => (
             <li

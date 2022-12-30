@@ -1,5 +1,5 @@
 .ease-out {
-  animation-duration: .4s;
+  animation-duration: 0.4s;
   animation-timing-function: ease-out;
 }
 
@@ -36,7 +36,6 @@
   0% {
     opacity: 0;
     transform: translateY(50%);
-
   }
   100% {
     opacity: 1;
@@ -48,7 +47,6 @@
   0% {
     opacity: 0;
     transform: translateY(-50%);
-
   }
   100% {
     opacity: 1;
@@ -60,7 +58,6 @@
   0% {
     opacity: 0;
     transform: translateX(50%);
-
   }
   100% {
     opacity: 1;
@@ -72,7 +69,6 @@
   0% {
     opacity: 0;
     transform: translateX(-50%);
-
   }
   100% {
     opacity: 1;

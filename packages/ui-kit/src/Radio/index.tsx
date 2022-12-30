@@ -1,4 +1,4 @@
-import type { ChangeEvent} from 'react';
+import type { ChangeEvent } from 'react';
 import React, { forwardRef, useCallback } from 'react';
 import { LineItem } from '../LineItem';
 import style from './style.module.css';

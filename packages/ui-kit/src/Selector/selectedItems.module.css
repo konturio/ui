@@ -10,7 +10,6 @@
   cursor: pointer;
   justify-content: space-between;
   border-radius: var(--border-radius);
-
 }
 
 .selectedBox:hover {

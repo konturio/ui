@@ -3,7 +3,7 @@ const colors = {
   dark: 'black',
   light: 'white',
   contrast: 'black',
-  grey: '#848C94'
+  grey: '#848C94',
 };
 
 export function Logo({

@@ -31,7 +31,7 @@ export interface SelectButtonProps {
   error?: boolean | string;
   type: 'classic' | 'inline';
   reset: (val?: SelectItemType['value']) => void;
-  alwaysShowPlaceholder?: boolean
+  alwaysShowPlaceholder?: boolean;
 }
 
 export const SelectButton = React.forwardRef(
@@ -92,8 +92,9 @@ export const SelectButton = React.forwardRef(
           <div
             className={cn(
               style.placeholderWrap,
-              item === null || item === undefined || (Array.isArray(item) && !item.length) ?
-                style.noValue : style.hasValue,
+              item === null || item === undefined || (Array.isArray(item) && !item.length)
+                ? style.noValue
+                : style.hasValue,
               {
                 [style.nonInteractable]: !isInteractiveSelectionMode,
                 [style.alwaysShowPlaceholder]: alwaysShowPlaceholder,

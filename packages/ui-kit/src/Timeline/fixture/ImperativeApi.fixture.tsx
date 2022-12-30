@@ -37,9 +37,12 @@ export default {
     }, []);
 
     return (
-      <div style={{ minWidth: '85%', display: 'flex', flexFlow: 'column nowrap', gap: '8px'}}>
-        <Button size='small' onClick={fitTimeline}> Fit </Button>
-        <div >
+      <div style={{ minWidth: '85%', display: 'flex', flexFlow: 'column nowrap', gap: '8px' }}>
+        <Button size="small" onClick={fitTimeline}>
+          {' '}
+          Fit{' '}
+        </Button>
+        <div>
           <Timeline ref={timelineApi} dataset={data} cluster={false} stack={false} selected={[]} />
         </div>
       </div>

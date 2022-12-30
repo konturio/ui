@@ -1,4 +1,4 @@
-import type { ReactElement} from 'react';
+import type { ReactElement } from 'react';
 import React, { Children, isValidElement, memo, useMemo, useState } from 'react';
 import s from './style.module.css';
 import type { ButtonProps } from '../Button';

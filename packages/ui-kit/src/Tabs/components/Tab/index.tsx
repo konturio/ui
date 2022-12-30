@@ -2,7 +2,7 @@ import type { ForwardRefComponent } from '../../../utils/component-helpers/polym
 import { composeEventHandlers } from '../../../utils/helpers/events';
 import { makeId } from '../../../utils/helpers/helpers';
 import { useStatefulRefValue } from '../../../utils/hooks/useStatefulRefValue';
-import type { ReactNode} from 'react';
+import type { ReactNode } from 'react';
 import { forwardRef, useMemo, useRef } from 'react';
 import { useComposedRefs } from '../../../utils/hooks/useComposedRefs';
 import { useDescendant } from '../../../utils/component-helpers/descendants';

@@ -69,14 +69,11 @@ export default {
         }}
         label="Interactive Select With Initial Value"
         items={items}
-      >
-      </Select>
+      ></Select>
     );
   },
   AlwaysShowPlacehoder: (
-    <Select label="Show placeholder on top when value selected" items={items}
-      alwaysShowPlaceholder
-    >
+    <Select label="Show placeholder on top when value selected" items={items} alwaysShowPlaceholder>
       Placeholder
     </Select>
   ),

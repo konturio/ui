@@ -30,5 +30,5 @@ export default {
       <Logo palette="grey" />
       <Logo compact palette="grey" />
     </>
-  )
+  ),
 };

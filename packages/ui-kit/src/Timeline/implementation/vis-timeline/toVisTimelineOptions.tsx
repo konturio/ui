@@ -12,9 +12,9 @@ export const toVisTimelineOptions = (options: TimelineOptions): VisTimelineOptio
   if (options.cluster) {
     timelineOptions.cluster = options.cluster;
     if (timelineOptions.cluster.titleTemplate === undefined) {
-      timelineOptions.cluster.titleTemplate = ''
+      timelineOptions.cluster.titleTemplate = '';
       // https://github.com/visjs/vis-timeline/issues/1543
-      // @ts-expect-error - this property added by patch package 
+      // @ts-expect-error - this property added by patch package
       timelineOptions.cluster.contentTemplate = () => '';
     }
   }
@@ -24,7 +24,11 @@ export const toVisTimelineOptions = (options: TimelineOptions): VisTimelineOptio
     timelineOptions.template = (item: unknown, el: Element, data) => {
       const wrapper = document.createElement('div');
       const root = createRoot(wrapper);
-      root.render(<div id="listener" onClick={(e) => console.log(e)}><TimelineEntryComponent {...data} isSelected={false} /></div>);
+      root.render(
+        <div id="listener" onClick={(e) => console.log(e)}>
+          <TimelineEntryComponent {...data} isSelected={false} />
+        </div>,
+      );
       return wrapper;
     };
   }
@@ -41,6 +45,10 @@ export const toVisTimelineOptions = (options: TimelineOptions): VisTimelineOptio
         return wrapper;
       },
     };
+  }
+
+  if (typeof options.margin !== 'undefined') {
+    timelineOptions.margin = options.margin;
   }
 
   return timelineOptions;

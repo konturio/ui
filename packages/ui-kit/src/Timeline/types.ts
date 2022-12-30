@@ -1,3 +1,5 @@
+import type { TimelineOptions as VisTimelineOptions } from 'vis-timeline';
+
 export interface TimelineEntry {
   id: string | number;
   start: Date;
@@ -27,7 +29,7 @@ export type TimelineTooltipComponent = (props: {
   id: string | number;
   style?: string;
   title?: string;
-  selectable?: boolean
+  selectable?: boolean;
 }) => JSX.Element;
 
 export interface TimelineProps {
@@ -41,6 +43,7 @@ export interface TimelineProps {
   timelineEntryComponent?: TimelineEntryComponent;
   onSelect?: (item: TimelineEntry[], event: PointerEvent) => void;
   onHover?: (item: TimelineEntry[], event: PointerEvent) => void;
+  margin?: VisTimelineOptions['margin'];
 }
 
 export interface TimelineImperativeApi {

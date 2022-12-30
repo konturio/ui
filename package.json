@@ -67,7 +67,7 @@
       "git add"
     ],
     "*/**/*.{ts,tsx}": [
-      "eslint --cache --fix --rule 'no-console: [error, { allow: [warn, error, info, assert] }]'"
+      "npm run lint:fix"
     ]
   },
   "resolutions": {

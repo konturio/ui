@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.7.0](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.6.2...@konturio/ui-kit@3.7.0) (2023-01-03)
+
+
+### Features
+
+* **ui-kit:-timeline:** 13937-add-configuration-for-timline-paddings ([#51](https://github.com/konturio/ui/issues/51)) ([01f4964](https://github.com/konturio/ui/commit/01f49641416ade565347f5d521b77538f55326ee))
+
+
+
+
+
 ## [3.6.2](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.6.1...@konturio/ui-kit@3.6.2) (2022-12-19)
 
 **Note:** Version bump only for package @konturio/ui-kit

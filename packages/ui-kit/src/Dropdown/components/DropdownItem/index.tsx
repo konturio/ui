@@ -1,18 +1,18 @@
 import React from 'react';
+import cn from 'clsx';
 import { useStatefulRefValue } from '../../../utils/hooks/useStatefulRefValue';
 import { useDescendant } from '../../../utils/component-helpers/descendants';
 import { useComposedRefs } from '../../../utils/hooks/useComposedRefs';
 import { focusElement, getOwnerDocument, isRightClick, noop } from '../../../utils/helpers/helpers';
 import { composeEventHandlers } from '../../../utils/helpers/events';
-import type { ForwardRefComponent } from '../../../utils/component-helpers/polymorphic';
 import {
   DROPDOWN_ITEM_CLEAR_SELECTION_INDEX,
   DROPDOWN_ITEM_CLICK_MENU_ITEM,
   DROPDOWN_ITEM_SELECT_ITEM_AT_INDEX,
 } from '../../constants';
 import { DropdownDescendantContext, useDropdownContext, useItemId } from '../../context';
-import cn from 'clsx';
 import style from './style.module.css';
+import type { ForwardRefComponent } from '../../../utils/component-helpers/polymorphic';
 
 export function useDropdownItem({
   index: indexProp,

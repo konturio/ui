@@ -1,8 +1,8 @@
 import React from 'react';
-import type { ForwardRefComponent } from '../../../utils/component-helpers/polymorphic';
-import { useDropdownTrigger } from '../../../Dropdown';
 import cn from 'clsx';
+import { useDropdownTrigger } from '../../../Dropdown';
 import style from './style.module.css';
+import type { ForwardRefComponent } from '../../../utils/component-helpers/polymorphic';
 
 export interface MenuButtonProps {
   children: React.ReactNode;

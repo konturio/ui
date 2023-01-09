@@ -1,9 +1,9 @@
 import { forwardRef } from 'react';
+import cn from 'clsx';
+import { ArrowRight24, Finish24 } from '@konturio/default-icons';
+import style from './style.module.css';
 import type { ForwardRefComponent } from '../../../utils/component-helpers/polymorphic';
 import type { SelectItemType } from '../../types';
-import cn from 'clsx';
-import style from './style.module.css';
-import { ArrowRight24, Finish24 } from '@konturio/default-icons';
 
 export interface SelectItemProps {
   className?: string;

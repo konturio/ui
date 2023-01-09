@@ -1,8 +1,8 @@
 import React, { useRef, useLayoutEffect } from 'react';
 import cn from 'clsx';
 import styles from './simpleSelector.module.css';
-import type { OptionType } from './Option';
 import { Option } from './Option';
+import type { OptionType } from './Option';
 
 interface SimpleSelectorProps {
   orientation?: 'vertical' | 'horizontal';

@@ -4,9 +4,9 @@ import cn from 'clsx';
 import { SELECTION_NODES } from '../../types';
 import style from './style.module.css';
 import { SelectContent } from './SelectContent';
+import { Placeholder } from './Placeholder';
 import type { SelectItemType, SelectMode } from '../../types';
 import type { ForwardRefComponent } from '../../../utils/component-helpers/polymorphic';
-import { Placeholder } from './Placeholder';
 
 export interface SelectButtonClasses {
   label?: string;

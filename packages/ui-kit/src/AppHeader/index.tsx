@@ -1,6 +1,6 @@
-import type { ReactNode } from 'react';
 import { Logo } from '../Logo';
 import s from './style.module.css';
+import type { ReactNode } from 'react';
 
 export function AppHeader({
   title,

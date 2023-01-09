@@ -1,8 +1,8 @@
 import { useMemo } from 'react';
 import cn from 'clsx';
 import styles from './style.module.css';
-import type { Cell } from './types';
 import { fillTemplate } from './gridTemplate';
+import type { Cell } from './types';
 
 /* Divisor and denominator pair */
 type Quotient = [string, string];

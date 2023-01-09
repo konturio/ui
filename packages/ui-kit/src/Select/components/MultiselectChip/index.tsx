@@ -1,10 +1,10 @@
-import type { SelectItemType } from '../../types';
-import type { HTMLAttributes } from 'react';
 import { forwardRef, useCallback } from 'react';
-import type { ForwardRefComponent } from '../../../utils/component-helpers/polymorphic';
 import { Close16 } from '@konturio/default-icons';
 import cn from 'clsx';
 import style from './style.module.css';
+import type { ForwardRefComponent } from '../../../utils/component-helpers/polymorphic';
+import type { HTMLAttributes } from 'react';
+import type { SelectItemType } from '../../types';
 
 export interface MultiselectChipProps extends HTMLAttributes<HTMLSpanElement> {
   value?: SelectItemType['value'];

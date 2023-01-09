@@ -1,4 +1,5 @@
 import React from 'react';
+import cn from 'clsx';
 import { DropdownDescendantContext, useDropdownContext, useItemId } from '../../context';
 import { useDescendantKeyDown, useDescendants } from '../../../utils/component-helpers/descendants';
 import { useComposedRefs } from '../../../utils/hooks/useComposedRefs';
@@ -12,10 +13,9 @@ import { usePrevious } from '../../../utils/hooks/usePrevious';
 import { composeEventHandlers } from '../../../utils/helpers/events';
 import { focusElement } from '../../../utils/helpers/helpers';
 import { isString } from '../../../utils/helpers/typecheck';
+import style from './style.module.css';
 import type { ForwardRefComponent } from '../../../utils/component-helpers/polymorphic';
 import type { DropdownDescendant } from '../../types';
-import cn from 'clsx';
-import style from './style.module.css';
 
 function findItemFromTypeahead(items: DropdownDescendant[], string = '') {
   if (!string) {

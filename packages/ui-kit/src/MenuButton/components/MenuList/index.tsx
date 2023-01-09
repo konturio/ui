@@ -1,9 +1,9 @@
 import React from 'react';
-import { MenuItems } from '../MenuItem';
-import type { ForwardRefComponent } from '../../../utils/component-helpers/polymorphic';
-import { MenuPopover } from '../MenuPopover';
 import cn from 'clsx';
+import { MenuItems } from '../MenuItem';
+import { MenuPopover } from '../MenuPopover';
 import style from './style.module.css';
+import type { ForwardRefComponent } from '../../../utils/component-helpers/polymorphic';
 
 /**
  * MenuList

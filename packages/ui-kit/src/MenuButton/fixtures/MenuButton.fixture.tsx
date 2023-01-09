@@ -1,10 +1,10 @@
+import { useEffect, useRef, useState } from 'react';
 import { Menu, MenuButton } from '../index';
 import { MenuItem, MenuList } from '../components';
 import { Button } from '../../Button';
 import { Divider } from '../../Divider';
 import { DropdownTrigger, DropdownTriggerRefProvider } from '../../Dropdown';
 import type { MutableRefObject } from 'react';
-import { useEffect, useRef, useState } from 'react';
 
 const menuAction = (action: string) => {
   return () => {

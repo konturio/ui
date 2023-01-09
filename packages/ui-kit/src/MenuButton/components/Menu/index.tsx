@@ -1,9 +1,9 @@
 import React from 'react';
 import { isFragment } from 'react-is';
-import { DropdownProviderContainer, useDropdownContext } from '../../../Dropdown';
-import type { ForwardRefComponent } from '../../../utils/component-helpers/polymorphic';
 import cn from 'clsx';
+import { DropdownProviderContainer, useDropdownContext } from '../../../Dropdown';
 import style from './style.module.css';
+import type { ForwardRefComponent } from '../../../utils/component-helpers/polymorphic';
 
 export interface MenuProps {
   children:

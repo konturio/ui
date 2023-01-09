@@ -1,8 +1,8 @@
 import { useCallback, useRef, useState } from 'react';
 import { Timeline } from '..';
+import { Button } from '../../Button';
 import testData from './testData';
 import type { TimelineImperativeApi } from '../types';
-import { Button } from '../../Button';
 
 const episodesMap = testData.reduce(
   (acc, i, n) => {

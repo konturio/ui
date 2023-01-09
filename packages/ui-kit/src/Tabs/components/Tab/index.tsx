@@ -1,15 +1,15 @@
-import type { ForwardRefComponent } from '../../../utils/component-helpers/polymorphic';
+import { forwardRef, useMemo, useRef } from 'react';
+import cn from 'clsx';
 import { composeEventHandlers } from '../../../utils/helpers/events';
 import { makeId } from '../../../utils/helpers/helpers';
 import { useStatefulRefValue } from '../../../utils/hooks/useStatefulRefValue';
-import type { ReactNode } from 'react';
-import { forwardRef, useMemo, useRef } from 'react';
 import { useComposedRefs } from '../../../utils/hooks/useComposedRefs';
 import { useDescendant } from '../../../utils/component-helpers/descendants';
 import { TabsDescendantsContext, useTabsCtx } from '../../context';
 import { TABS_ORIENTATION_HORIZONTAL, TABS_ORIENTATION_VERTICAL } from '../../types';
-import cn from 'clsx';
 import style from './style.module.css';
+import type { ReactNode } from 'react';
+import type { ForwardRefComponent } from '../../../utils/component-helpers/polymorphic';
 
 /**
  * Tab

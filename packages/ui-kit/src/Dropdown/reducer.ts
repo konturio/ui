@@ -1,3 +1,4 @@
+import { getOwnerDocument } from '../utils/helpers/helpers';
 import {
   DROPDOWN_ITEM_CLEAR_SELECTION_INDEX,
   DROPDOWN_ITEM_CLICK_MENU_ITEM,
@@ -10,7 +11,6 @@ import {
   DROPDOWN_ITEM_SET_BUTTON_ID,
 } from './constants';
 import type React from 'react';
-import { getOwnerDocument } from '../utils/helpers/helpers';
 import type { DropdownState } from './types';
 
 export type DropdownAction =

@@ -1,6 +1,6 @@
 import { useValue } from 'react-cosmos/fixture';
-import type { AutocompleteItemType } from '../types';
 import { Autocomplete } from '../index';
+import type { AutocompleteItemType } from '../types';
 
 const items: AutocompleteItemType[] = [
   { title: 'Multiple Choice Questions', value: 1 },

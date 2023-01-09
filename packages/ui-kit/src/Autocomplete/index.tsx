@@ -1,14 +1,14 @@
 import React, { forwardRef, useCallback, useEffect, useMemo, useState } from 'react';
-import type { AutocompleteButtonClasses } from './components/AutocompleteButton';
-import { AutocompleteButton } from './components/AutocompleteButton';
-import type { UseComboboxStateChange } from 'downshift';
 import { useCombobox } from 'downshift';
+import cn from 'clsx';
+import { useComposedRefs } from '../utils/hooks/useComposedRefs';
+import { AutocompleteButton } from './components/AutocompleteButton';
+import { AutocompleteItem } from './components/AutocompleteItem';
+import style from './style.module.css';
+import type { AutocompleteButtonClasses } from './components/AutocompleteButton';
+import type { UseComboboxStateChange } from 'downshift';
 import type { AutocompleteItemType } from './types';
 import type { ForwardRefComponent } from '../utils/component-helpers/polymorphic';
-import { AutocompleteItem } from './components/AutocompleteItem';
-import cn from 'clsx';
-import style from './style.module.css';
-import { useComposedRefs } from '../utils/hooks/useComposedRefs';
 
 function defaultItemToString(item: AutocompleteItemType | AutocompleteItemType[] | null): string {
   if (Array.isArray(item)) {

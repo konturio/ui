@@ -1,11 +1,11 @@
-import { Card } from '../Card';
 import cn from 'clsx';
+import { ChevronDown24, ChevronUp24 } from '@konturio/default-icons';
+import { nanoid } from 'nanoid';
+import { Card } from '../Card';
+import { Text } from '../Text';
+import { Modal } from '../Modal';
 import s from './style.module.css';
 import type { MouseEventHandler, ReactElement } from 'react';
-import { Text } from '../Text';
-import { ChevronDown24, ChevronUp24 } from '@konturio/default-icons';
-import { Modal } from '../Modal';
-import { nanoid } from 'nanoid';
 
 export type PanelCustomControl = {
   icon: ReactElement;

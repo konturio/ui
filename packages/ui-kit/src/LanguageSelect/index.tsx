@@ -1,5 +1,5 @@
-import s from './style.module.css';
 import cn from 'clsx';
+import s from './style.module.css';
 
 export interface LanguageSelect {
   languages: Array<string>;

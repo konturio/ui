@@ -1,7 +1,7 @@
 import React, { forwardRef, useCallback, useEffect, useImperativeHandle, useRef, useState } from 'react';
 import cn from 'clsx';
-import s from './style.module.css';
 import { Eye16, EyeOff16 } from '@konturio/default-icons';
+import s from './style.module.css';
 
 export interface InputProps extends React.HTMLProps<HTMLInputElement> {
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;

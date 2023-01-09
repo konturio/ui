@@ -1,6 +1,6 @@
-import { Divider } from './index';
-import { Panel } from '../Panel';
 import { CallIcon } from '@konturio/default-icons';
+import { Panel } from '../Panel';
+import { Divider } from './index';
 
 export default (
   <div style={{ display: 'flex', flexDirection: 'column', gap: 16, width: '100%', maxWidth: '800px' }}>

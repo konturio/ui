@@ -1,7 +1,7 @@
-import type { PropsWithChildren } from 'react';
 import React from 'react';
 import cn from 'clsx';
 import s from './style.module.css';
+import type { PropsWithChildren } from 'react';
 
 interface LineItem {
   id?: string;

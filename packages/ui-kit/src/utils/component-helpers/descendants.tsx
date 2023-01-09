@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { useForceUpdate } from '../hooks/useForceUpdate';
 import { useLayoutEffect } from 'react';
+import { useForceUpdate } from '../hooks/useForceUpdate';
 import { noop } from '../helpers/helpers';
 
 function createDescendantContext<DescendantType extends Descendant>(name: string, initialValue = {}) {

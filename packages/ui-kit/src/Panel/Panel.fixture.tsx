@@ -6,8 +6,8 @@ import {
   DoubleChevronUp24,
 } from '@konturio/default-icons';
 import { useEffect, useState } from 'react';
-import type { PanelCustomControl } from '.';
 import { Panel } from '.';
+import type { PanelCustomControl } from '.';
 
 export default function Fixture() {
   // This whole thing can be wrapped into custom hook

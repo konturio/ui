@@ -1,7 +1,7 @@
-import s from './style.module.css';
-import type { PropsWithChildren} from 'react';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import clsx from 'clsx';
+import s from './style.module.css';
+import type { PropsWithChildren } from 'react';
 
 interface ModalProps {
   show?: boolean;

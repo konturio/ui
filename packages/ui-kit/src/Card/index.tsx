@@ -1,6 +1,6 @@
 import cn from 'clsx';
-import s from './style.module.css';
 import { forwardRef } from 'react';
+import s from './style.module.css';
 
 interface CardProps extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
   className?: string;

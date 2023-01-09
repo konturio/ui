@@ -1,9 +1,9 @@
 import React, { useCallback } from 'react';
 import cn from 'clsx';
-import type { OptionType } from './Option';
 import { SelectedItems } from './SelectedItems';
 import { SimpleSelector } from './SimpleSelector';
 import styles from './style.module.css';
+import type { OptionType } from './Option';
 
 function createChecker(selected?: string | string[]): (value: OptionType) => boolean {
   if (selected === undefined) return () => false;

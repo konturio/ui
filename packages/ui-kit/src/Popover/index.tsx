@@ -1,16 +1,16 @@
 import { tabbable } from 'tabbable';
-import type { CSSProperties, ReactNode, RefObject} from 'react';
 import { forwardRef, useEffect, useRef } from 'react';
+import cn from 'clsx';
 import { useComposedRefs } from '../utils/hooks/useComposedRefs';
 import { getOwnerDocument } from '../utils/helpers/helpers';
-import type { ForwardRefComponent } from '../utils/component-helpers/polymorphic';
 import { Portal } from '../Portal';
-import type { Position} from '../utils/position/position';
 import { positionDefault } from '../utils/position/position';
-import type { PRect} from '../utils/position/rect';
 import { useRect } from '../utils/position/rect';
-import cn from 'clsx';
 import style from './style.module.css';
+import type { PRect } from '../utils/position/rect';
+import type { Position } from '../utils/position/position';
+import type { ForwardRefComponent } from '../utils/component-helpers/polymorphic';
+import type { CSSProperties, ReactNode, RefObject } from 'react';
 
 type PossibleNode = null | undefined | HTMLElement | SVGElement;
 

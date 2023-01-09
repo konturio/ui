@@ -1,13 +1,13 @@
 import React from 'react';
-import type { DropdownDescendant, DropdownState } from '../types';
-import type { DropdownProviderProps } from '../context';
+import { nanoid } from 'nanoid';
 import { DropdownDescendantContext, DropdownProvider } from '../context';
 import { DescendantProvider, useDescendantsInit } from '../../utils/component-helpers/descendants';
-import { nanoid } from 'nanoid';
 import { focusElement, makeId } from '../../utils/helpers/helpers';
 import { dropdownReducer } from '../reducer';
 import { DROPDOWN_DISABLE_TOOLTIPS } from '../constants';
 import { isFunction } from '../../utils/helpers/typecheck';
+import type { DropdownProviderProps } from '../context';
+import type { DropdownDescendant, DropdownState } from '../types';
 
 const initialState: DropdownState = {
   triggerId: null,

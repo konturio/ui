@@ -1,6 +1,6 @@
-import type { HTMLAttributes, PropsWithChildren } from 'react';
 import cn from 'clsx';
 import styles from './style.module.css';
+import type { HTMLAttributes, PropsWithChildren } from 'react';
 
 export interface DividerProps extends HTMLAttributes<HTMLDivElement> {
   /** Additional classes. */

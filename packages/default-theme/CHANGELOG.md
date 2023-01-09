@@ -5,234 +5,129 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 # [3.2.0](https://github.com/konturio/ui/compare/@konturio/default-theme@3.1.1...@konturio/default-theme@3.2.0) (2022-12-14)
 
-
 ### Features
 
-* add Heading  and Animation components ([166cb89](https://github.com/konturio/ui/commit/166cb892f7e6bc4bdfbd7f8ca3b48d58800ea6c8))
-
-
-
-
+- add Heading and Animation components ([166cb89](https://github.com/konturio/ui/commit/166cb892f7e6bc4bdfbd7f8ca3b48d58800ea6c8))
 
 ## [3.1.1](https://github.com/konturio/ui/compare/@konturio/default-theme@3.1.0...@konturio/default-theme@3.1.1) (2022-12-01)
 
 **Note:** Version bump only for package @konturio/default-theme
 
-
-
-
-
 # [3.1.0](https://github.com/konturio/ui/compare/@konturio/default-theme@3.0.1...@konturio/default-theme@3.1.0) (2022-11-14)
-
 
 ### Features
 
-* **build:** 12977 - separate ts config to tsconfig.build.json and tsconfig.json ([7cda350](https://github.com/konturio/ui/commit/7cda350777e9024e6ac07d2879d0970321fb80e4))
-
-
-
-
+- **build:** 12977 - separate ts config to tsconfig.build.json and tsconfig.json ([7cda350](https://github.com/konturio/ui/commit/7cda350777e9024e6ac07d2879d0970321fb80e4))
 
 ## [3.0.1](https://github.com/konturio/ui/compare/@konturio/default-theme@3.0.0...@konturio/default-theme@3.0.1) (2022-10-31)
 
 **Note:** Version bump only for package @konturio/default-theme
 
-
-
-
-
 # [3.0.0](https://github.com/konturio/ui/compare/@konturio/default-theme@2.4.0-alpha.12...@konturio/default-theme@3.0.0) (2022-09-13)
 
 **Note:** Version bump only for package @konturio/default-theme
 
-
-
-
-
 # [2.4.0-alpha.12](https://github.com/konturio/ui/compare/@konturio/default-theme@2.4.0-alpha.11...@konturio/default-theme@2.4.0-alpha.12) (2022-07-25)
-
 
 ### Bug Fixes
 
-* **ui-kit:** uikit menu color fixes ([967d9e2](https://github.com/konturio/ui/commit/967d9e2a485dd2d24d9810abcacd0af48bc29f25))
-
-
-
-
+- **ui-kit:** uikit menu color fixes ([967d9e2](https://github.com/konturio/ui/commit/967d9e2a485dd2d24d9810abcacd0af48bc29f25))
 
 # 2.4.0-alpha.11 (2022-06-15)
 
 **Note:** Version bump only for package @konturio/default-theme
 
-
-
-
-
 # [2.4.0-alpha.10](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/default-theme@2.4.0-alpha.9...@k2-packages/default-theme@2.4.0-alpha.10) (2022-05-27)
 
 **Note:** Version bump only for package @k2-packages/default-theme
-
-
-
-
 
 # [2.4.0-alpha.9](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/default-theme@2.4.0-alpha.8...@k2-packages/default-theme@2.4.0-alpha.9) (2022-05-10)
 
 **Note:** Version bump only for package @k2-packages/default-theme
 
-
-
-
-
 # [2.4.0-alpha.8](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/default-theme@2.4.0-alpha.7...@k2-packages/default-theme@2.4.0-alpha.8) (2022-05-06)
 
 **Note:** Version bump only for package @k2-packages/default-theme
-
-
-
-
 
 # [2.4.0-alpha.7](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/default-theme@2.4.0-alpha.6...@k2-packages/default-theme@2.4.0-alpha.7) (2022-05-04)
 
 **Note:** Version bump only for package @k2-packages/default-theme
 
-
-
-
-
 # [2.4.0-alpha.6](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/default-theme@2.4.0-alpha.5...@k2-packages/default-theme@2.4.0-alpha.6) (2022-04-27)
 
 **Note:** Version bump only for package @k2-packages/default-theme
 
-
-
-
-
 # [2.4.0-alpha.5](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/default-theme@2.4.0-alpha.3...@k2-packages/default-theme@2.4.0-alpha.5) (2022-03-21)
-
 
 ### Features
 
-* **default-theme:** Default variables update ([9891714](https://gitlab.com/kontur-private/k2/k2-front-end/commit/98917143fe3588c7cbb32d335bb78103f9ab66c7))
-
-
-
-
+- **default-theme:** Default variables update ([9891714](https://gitlab.com/kontur-private/k2/k2-front-end/commit/98917143fe3588c7cbb32d335bb78103f9ab66c7))
 
 # [2.4.0-alpha.4](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/default-theme@2.4.0-alpha.3...@k2-packages/default-theme@2.4.0-alpha.4) (2022-03-01)
 
-
 ### Features
 
-* **default-theme:** Default variables update ([9891714](https://gitlab.com/kontur-private/k2/k2-front-end/commit/98917143fe3588c7cbb32d335bb78103f9ab66c7))
-
-
-
-
+- **default-theme:** Default variables update ([9891714](https://gitlab.com/kontur-private/k2/k2-front-end/commit/98917143fe3588c7cbb32d335bb78103f9ab66c7))
 
 # [2.4.0-alpha.3](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/default-theme@2.4.0-alpha.2...@k2-packages/default-theme@2.4.0-alpha.3) (2022-01-25)
 
-
 ### Bug Fixes
 
-* **default-theme:** Add default-theme vars" ([8218592](https://gitlab.com/kontur-private/k2/k2-front-end/commit/82185922b896889931cf1eef8aaeb1a6efc6fb2d))
-
-
-
-
+- **default-theme:** Add default-theme vars" ([8218592](https://gitlab.com/kontur-private/k2/k2-front-end/commit/82185922b896889931cf1eef8aaeb1a6efc6fb2d))
 
 # [2.4.0-alpha.2](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/default-theme@2.4.0-alpha.0...@k2-packages/default-theme@2.4.0-alpha.2) (2022-01-17)
 
-
 ### Features
 
-* **new-components:** Add modal component ([3c996e3](https://gitlab.com/kontur-private/k2/k2-front-end/commit/3c996e318e8d02f140131e9038ed8cd4dd322426))
-
-
-
-
+- **new-components:** Add modal component ([3c996e3](https://gitlab.com/kontur-private/k2/k2-front-end/commit/3c996e318e8d02f140131e9038ed8cd4dd322426))
 
 # [2.4.0-alpha.1](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/default-theme@2.4.0-alpha.0...@k2-packages/default-theme@2.4.0-alpha.1) (2022-01-12)
 
-
 ### Features
 
-* **new-components:** Add modal component ([3c996e3](https://gitlab.com/kontur-private/k2/k2-front-end/commit/3c996e318e8d02f140131e9038ed8cd4dd322426))
-
-
-
-
+- **new-components:** Add modal component ([3c996e3](https://gitlab.com/kontur-private/k2/k2-front-end/commit/3c996e318e8d02f140131e9038ed8cd4dd322426))
 
 # [2.4.0-alpha.0](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/default-theme@2.3.2-alpha.1...@k2-packages/default-theme@2.4.0-alpha.0) (2021-09-23)
 
-
 ### Features
 
-* add base text style ([696b136](https://gitlab.com/kontur-private/k2/k2-front-end/commit/696b136da288dc9b9189298b07988dfcd8a40254))
-
-
-
-
+- add base text style ([696b136](https://gitlab.com/kontur-private/k2/k2-front-end/commit/696b136da288dc9b9189298b07988dfcd8a40254))
 
 ## [2.3.2-alpha.1](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/default-theme@2.3.2-alpha.0...@k2-packages/default-theme@2.3.2-alpha.1) (2021-09-14)
 
-
 ### Bug Fixes
 
-* mark pakagens as es6 module, ([04ddf96](https://gitlab.com/kontur-private/k2/k2-front-end/commit/04ddf96cca47f098ce7f92fa561fd5063bcc1270))
-
-
-
-
+- mark pakagens as es6 module, ([04ddf96](https://gitlab.com/kontur-private/k2/k2-front-end/commit/04ddf96cca47f098ce7f92fa561fd5063bcc1270))
 
 ## [2.3.2-alpha.0](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/default-theme@2.3.1...@k2-packages/default-theme@2.3.2-alpha.0) (2021-09-10)
 
 **Note:** Version bump only for package @k2-packages/default-theme
 
-
-
-
-
 ## [2.3.1](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/default-theme@2.3.0...@k2-packages/default-theme@2.3.1) (2021-08-31)
 
 **Note:** Version bump only for package @k2-packages/default-theme
 
-
-
-
-
 # [2.3.0](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/default-theme@2.2.0...@k2-packages/default-theme@2.3.0) (2021-08-13)
-
 
 ### Features
 
-* add active state for button ([ef83d58](https://gitlab.com/kontur-private/k2/k2-front-end/commit/ef83d58102b4751f905802ab4dc71edda55babdc))
-* use new color system ([2cc3947](https://gitlab.com/kontur-private/k2/k2-front-end/commit/2cc39471022b664bbcf21d245893ecc7bf67e22d))
-
-
-
-
+- add active state for button ([ef83d58](https://gitlab.com/kontur-private/k2/k2-front-end/commit/ef83d58102b4751f905802ab4dc71edda55babdc))
+- use new color system ([2cc3947](https://gitlab.com/kontur-private/k2/k2-front-end/commit/2cc39471022b664bbcf21d245893ecc7bf67e22d))
 
 # [2.2.0](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/default-theme@2.1.1...@k2-packages/default-theme@2.2.0) (2021-08-09)
 
-
 ### Bug Fixes
 
-* autofix eslint rules ([4d2e7d0](https://gitlab.com/kontur-private/k2/k2-front-end/commit/4d2e7d09186fb5dc9c1236623de359737df2b70f))
-* radio in checkbox broken layout in chrome ([37f50f3](https://gitlab.com/kontur-private/k2/k2-front-end/commit/37f50f31ac894de6ef1bee9c547ffc4f11d20d8f))
-
+- autofix eslint rules ([4d2e7d0](https://gitlab.com/kontur-private/k2/k2-front-end/commit/4d2e7d09186fb5dc9c1236623de359737df2b70f))
+- radio in checkbox broken layout in chrome ([37f50f3](https://gitlab.com/kontur-private/k2/k2-front-end/commit/37f50f31ac894de6ef1bee9c547ffc4f11d20d8f))
 
 ### Features
 
-* app header ([f0da602](https://gitlab.com/kontur-private/k2/k2-front-end/commit/f0da6023b0e24a46666a3321227b675c7aa840fc))
-* map button ([5932357](https://gitlab.com/kontur-private/k2/k2-front-end/commit/593235721b1b810adf44738951469ebe9837e119))
-* Pannel and Card ([e34dfb8](https://gitlab.com/kontur-private/k2/k2-front-end/commit/e34dfb896500953507146aba3157514b752be4ef))
-* Tabs ([755778b](https://gitlab.com/kontur-private/k2/k2-front-end/commit/755778b629e4bf35e7c6be385661f764bd6c4ed3))
-* use Opti.fill color cheme, ([b8fa88c](https://gitlab.com/kontur-private/k2/k2-front-end/commit/b8fa88c54f1961b70c2deedb09ed9924793a5192))
-
-
-
-
+- app header ([f0da602](https://gitlab.com/kontur-private/k2/k2-front-end/commit/f0da6023b0e24a46666a3321227b675c7aa840fc))
+- map button ([5932357](https://gitlab.com/kontur-private/k2/k2-front-end/commit/593235721b1b810adf44738951469ebe9837e119))
+- Pannel and Card ([e34dfb8](https://gitlab.com/kontur-private/k2/k2-front-end/commit/e34dfb896500953507146aba3157514b752be4ef))
+- Tabs ([755778b](https://gitlab.com/kontur-private/k2/k2-front-end/commit/755778b629e4bf35e7c6be385661f764bd6c4ed3))
+- use Opti.fill color cheme, ([b8fa88c](https://gitlab.com/kontur-private/k2/k2-front-end/commit/b8fa88c54f1961b70c2deedb09ed9924793a5192))
 
 ## [2.1.1](https://gitlab.com/kontur-private/k2/k2-front-end/compare/@k2-packages/default-theme@2.1.0...@k2-packages/default-theme@2.1.1) (2020-12-08)
 

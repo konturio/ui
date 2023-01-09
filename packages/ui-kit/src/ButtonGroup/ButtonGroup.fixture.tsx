@@ -1,8 +1,8 @@
 import { useValue } from 'react-cosmos/fixture';
 import { InfoOutline16 } from '@konturio/default-icons';
-import { ButtonGroup } from './index';
 import { Button } from '../Button';
 import s from './ButtonGroup.fixture.style.module.css';
+import { ButtonGroup } from './index';
 
 const classes = {
   btnContainer: s.btnContainer,

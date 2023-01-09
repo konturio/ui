@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
-import type { AssignableRef } from '../types';
 import { isFunction } from '../helpers/typecheck';
+import type { AssignableRef } from '../types';
 
 /**
  * Passes or assigns an arbitrary value to a ref function or object.

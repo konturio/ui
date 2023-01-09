@@ -1,7 +1,7 @@
+import { useMemo } from 'react';
 import { createDescendantContext } from '../utils/component-helpers/descendants';
 import { createContext } from '../utils/helpers/context';
 import type { InternalTabsContextValue, TabDescendant, TabPanelDescendant, TabsContextValue } from './types';
-import { useMemo } from 'react';
 
 const TabsDescendantsContext = createDescendantContext<TabDescendant>('TabsDescendantsContext');
 const TabPanelDescendantsContext = createDescendantContext<TabPanelDescendant>('TabPanelDescendantsContext');

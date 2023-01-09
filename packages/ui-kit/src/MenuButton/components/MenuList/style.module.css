@@ -1,9 +1,9 @@
 .menuList {
-	display: block;
-	white-space: nowrap;
-	border: solid 1px hsla(0, 0%, 0%, 0.25);
-	background: hsla(0, 100%, 100%, 0.99);
-	outline: none;
-	padding: 1rem 0;
-	font-size: 85%;
+  display: block;
+  white-space: nowrap;
+  border: solid 1px hsla(0, 0%, 0%, 0.25);
+  background: hsla(0, 100%, 100%, 0.99);
+  outline: none;
+  padding: 1rem 0;
+  font-size: 85%;
 }

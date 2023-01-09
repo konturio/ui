@@ -10,17 +10,16 @@
     box-shadow: 0 0 0 1px var(--faint-strong-down);
     line-height: 20px;
     padding: var(--unit);
-  
+
     &:focus {
       outline: none;
     }
-  
+
     &:hover {
       box-shadow: 0 0 0 1px var(--faint-strong);
     }
   }
 }
-
 
 .label {
   font-size: 14px;

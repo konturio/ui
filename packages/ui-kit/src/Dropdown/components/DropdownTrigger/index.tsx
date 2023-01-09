@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import cn from 'clsx';
 import { DropdownDescendantContext, useDropdownContext } from '../../context';
 import { useComposedRefs } from '../../../utils/hooks/useComposedRefs';
 import { useDescendants } from '../../../utils/component-helpers/descendants';
@@ -11,9 +12,8 @@ import {
 } from '../../constants';
 import { isRightClick } from '../../../utils/helpers/helpers';
 import { composeEventHandlers } from '../../../utils/helpers/events';
-import type { ForwardRefComponent } from '../../../utils/component-helpers/polymorphic';
-import cn from 'clsx';
 import style from './style.module.css';
+import type { ForwardRefComponent } from '../../../utils/component-helpers/polymorphic';
 
 export interface DropdownTriggerProps {
   children?: React.ReactNode;

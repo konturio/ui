@@ -1,10 +1,10 @@
+import { useEffect, useRef, useState } from 'react';
 import { Menu, MenuButton } from '../index';
 import { MenuItem, MenuList } from '../components';
 import { Button } from '../../Button';
 import { Divider } from '../../Divider';
 import { DropdownTrigger, DropdownTriggerRefProvider } from '../../Dropdown';
-import type { MutableRefObject} from 'react';
-import { useEffect, useRef, useState } from 'react';
+import type { MutableRefObject } from 'react';
 
 const menuAction = (action: string) => {
   return () => {
@@ -60,7 +60,11 @@ export default {
 
     return (
       <>
-        {!isExpanded && <button onClick={onBtnClick}>trigger <code>setIsExpanded(true)</code></button>}
+        {!isExpanded && (
+          <button onClick={onBtnClick}>
+            trigger <code>setIsExpanded(true)</code>
+          </button>
+        )}
         <Menu>
           <DropdownTrigger isExpanded={isExpanded} onDropdownClose={onDropdownClose} />
           <MenuList>

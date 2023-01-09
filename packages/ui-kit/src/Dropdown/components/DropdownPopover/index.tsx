@@ -1,14 +1,14 @@
 import React from 'react';
+import cn from 'clsx';
 import { Popover } from '../../../Popover';
-import type { ForwardRefComponent } from '../../../utils/component-helpers/polymorphic';
-import type { Position } from '../../../utils/position/position';
 import { useComposedRefs } from '../../../utils/hooks/useComposedRefs';
 import { elementContainsEventTarget, getOwnerDocument } from '../../../utils/helpers/helpers';
 import { DROPDOWN_ITEM_CLOSE_MENU } from '../../constants';
 import { composeEventHandlers } from '../../../utils/helpers/events';
 import { useDropdownContext } from '../../context';
-import cn from 'clsx';
 import style from './style.module.css';
+import type { Position } from '../../../utils/position/position';
+import type { ForwardRefComponent } from '../../../utils/component-helpers/polymorphic';
 
 export function useDropdownPopover({
   onBlur,

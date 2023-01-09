@@ -1,8 +1,8 @@
-import type { ReactElement} from 'react';
 import React, { Children, isValidElement, memo, useMemo, useState } from 'react';
-import s from './style.module.css';
-import type { ButtonProps } from '../Button';
 import clsx from 'clsx';
+import s from './style.module.css';
+import type { ReactElement } from 'react';
+import type { ButtonProps } from '../Button';
 
 export interface ButtonGroupProps {
   current?: string;

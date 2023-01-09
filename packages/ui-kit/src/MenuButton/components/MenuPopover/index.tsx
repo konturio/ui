@@ -1,10 +1,10 @@
 import React from 'react';
-import type { Position } from '../../../utils/position/position';
+import cn from 'clsx';
 import { useDropdownPopover } from '../../../Dropdown';
 import { Popover } from '../../../Popover';
-import type { ForwardRefComponent } from '../../../utils/component-helpers/polymorphic';
-import cn from 'clsx';
 import style from './style.module.css';
+import type { Position } from '../../../utils/position/position';
+import type { ForwardRefComponent } from '../../../utils/component-helpers/polymorphic';
 
 /**
  * MenuPopover

@@ -1,8 +1,8 @@
 import { useCallback, useRef, useState } from 'react';
 import { Timeline } from '..';
+import { Button } from '../../Button';
 import testData from './testData';
 import type { TimelineImperativeApi } from '../types';
-import { Button } from '../../Button';
 
 const episodesMap = testData.reduce(
   (acc, i, n) => {
@@ -37,9 +37,12 @@ export default {
     }, []);
 
     return (
-      <div style={{ minWidth: '85%', display: 'flex', flexFlow: 'column nowrap', gap: '8px'}}>
-        <Button size='small' onClick={fitTimeline}> Fit </Button>
-        <div >
+      <div style={{ minWidth: '85%', display: 'flex', flexFlow: 'column nowrap', gap: '8px' }}>
+        <Button size="small" onClick={fitTimeline}>
+          {' '}
+          Fit{' '}
+        </Button>
+        <div>
           <Timeline ref={timelineApi} dataset={data} cluster={false} stack={false} selected={[]} />
         </div>
       </div>

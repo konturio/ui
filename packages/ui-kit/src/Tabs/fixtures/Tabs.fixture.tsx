@@ -1,8 +1,8 @@
+import { useValue } from 'react-cosmos/fixture';
 import { TabList } from '../components/TabList';
 import { TabPanel, TabPanels } from '../components/TabPanel';
 import { Tab } from '../components/Tab';
 import { Tabs } from '../index';
-import { useValue } from 'react-cosmos/fixture';
 
 export default {
   Classic: (

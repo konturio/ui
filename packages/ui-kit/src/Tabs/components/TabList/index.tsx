@@ -1,14 +1,14 @@
-import type { ReactNode} from 'react';
 import { forwardRef, memo, useLayoutEffect, useRef } from 'react';
+import cn from 'clsx';
 import { useDescendantKeyDown, useDescendants } from '../../../utils/component-helpers/descendants';
 import { useComposedRefs } from '../../../utils/hooks/useComposedRefs';
 import { composeEventHandlers } from '../../../utils/helpers/events';
 import { TABS_KEYBOARD_ACTIVATION_MANUAL, TABS_ORIENTATION_HORIZONTAL, TABS_ORIENTATION_VERTICAL } from '../../types';
 import { TabsDescendantsContext, useTabsCtx } from '../../context';
 import { isBoolean } from '../../../utils/helpers/typecheck';
-import type { ForwardRefComponent, MemoComponent } from '../../../utils/component-helpers/polymorphic';
-import cn from 'clsx';
 import style from './style.module.css';
+import type { ForwardRefComponent, MemoComponent } from '../../../utils/component-helpers/polymorphic';
+import type { ReactNode } from 'react';
 
 function boolOrBoolString(value: unknown): value is 'true' | true {
   return value === 'true' ? true : isBoolean(value) ? value : false;

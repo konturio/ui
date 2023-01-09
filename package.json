@@ -17,7 +17,7 @@
     "cosmos:build:export": "run-s auto:cosmos:export cosmos:renderer:export",
     "cosmos:renderer:export": "vite build",
     "publish": "run-s build auto:lerna:publish",
-    "lint:fix": "eslint \"*/**/*.{ts,tsx}\" --quiet --fix",
+    "lint:fix": "eslint \"*/**/*.{ts,tsx}\" --fix",
     "lint-staged": "npx --no-install lint-staged",
     "release": "run-s build lint:fix auto:lint auto:typecheck auto:lerna:version",
     "release:push": "git push && git push origin --tags",
@@ -29,8 +29,8 @@
     "ts:watch": "tsc --build --watch",
     "auto:lerna:publish": "lerna publish from-package --yes --no-verify-access",
     "auto:lerna:version": "lerna version",
-    "auto:lint": "lerna run lint && eslint \"*/**/*.{ts,tsx}\" --quiet",
-    "auto:typecheck": "tsc --noEmit",
+    "auto:lint": "lerna run lint && eslint \"*/**/*.{ts,tsx}\"",
+    "auto:typecheck": "tsc --noEmit -p tsconfig.json",
     "auto:open": "npx open-cli http://localhost:5000",
     "auto:lerna:bootstrap": "lerna bootstrap",
     "auto:lerna:link": "lerna link",
@@ -42,7 +42,9 @@
     "auto:lerna:build": "lerna run build",
     "auto:ts:build": "tsc --build",
     "auto:ts:build:watch": "tsc --build --watch",
-    "auto:ts:references": "node setup-references.mjs"
+    "auto:ts:references": "node setup-references.mjs",
+    "prettier": "prettier --write \"*/**/*.{ts,tsx,js,jsx,json,css,scss,md}\"",
+    "prepare": "husky install"
   },
   "browserslist": {
     "production": [
@@ -65,7 +67,7 @@
       "git add"
     ],
     "*/**/*.{ts,tsx}": [
-      "eslint --cache --fix --rule 'no-console: [error, { allow: [warn, error, info, assert] }]'"
+      "npm run lint:fix"
     ]
   },
   "resolutions": {
@@ -110,7 +112,8 @@
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^2.1.0",
-    "lint-staged": "^11.1.1",
+    "husky": "^8.0.2",
+    "lint-staged": "^11.2.6",
     "open-cli": "^7.0.0",
     "patch-package": "6.4.7",
     "postcss-cli": "^10.0.0",

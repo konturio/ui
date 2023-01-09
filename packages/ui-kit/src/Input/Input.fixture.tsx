@@ -1,7 +1,7 @@
-import { Input as TrueInput } from '.';
 import { InfoOutline16, Search16 } from '@konturio/default-icons';
-import type { ChangeEvent} from 'react';
 import { useEffect, useState } from 'react';
+import { Input as TrueInput } from '.';
+import type { ChangeEvent } from 'react';
 
 const Input = ({ value, ...props }) => {
   const [innerVal, setInnerVal] = useState(value || '');

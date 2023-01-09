@@ -1,4 +1,4 @@
-.card{
+.card {
   height: 100%;
 }
 
@@ -11,7 +11,7 @@
   align-items: flex-start;
 }
 
-.hoverable :hover{
+.hoverable :hover {
   cursor: pointer;
 }
 
@@ -21,8 +21,8 @@
   align-items: center;
   gap: var(--unit);
 }
-.headerIconWrap{
-display: flex;
+.headerIconWrap {
+  display: flex;
 }
 
 .close {
@@ -33,7 +33,7 @@ display: flex;
   }
 }
 
-.contentContainer{
+.contentContainer {
   height: 100%;
   overflow: auto;
 }

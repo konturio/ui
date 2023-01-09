@@ -22,6 +22,7 @@
     }
   },
   "rules": {
+    "no-console": ["warn", { "allow": ["warn", "error", "info", "assert"] }],
     "prettier/prettier": "warn",
     "import/order": [
       "warn",

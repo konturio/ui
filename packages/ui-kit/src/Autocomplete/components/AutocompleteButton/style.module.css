@@ -14,7 +14,8 @@
     text-overflow: ellipsis;
     height: 20px;
 
-    &:focus, &:active {
+    &:focus,
+    &:active {
       border: none;
       outline: none;
 

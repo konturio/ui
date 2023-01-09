@@ -1,9 +1,9 @@
 import React from 'react';
-import { useDropdownItem } from '../../../Dropdown';
-import type { ForwardRefComponent } from '../../../utils/component-helpers/polymorphic';
-import { useDropdownItems } from '../../../Dropdown';
 import cn from 'clsx';
+import { useDropdownItem } from '../../../Dropdown';
+import { useDropdownItems } from '../../../Dropdown';
 import style from './style.module.css';
+import type { ForwardRefComponent } from '../../../utils/component-helpers/polymorphic';
 
 export interface MenuItemImplProps {
   children: React.ReactNode;

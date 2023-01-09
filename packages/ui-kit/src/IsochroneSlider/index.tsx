@@ -1,5 +1,5 @@
-import s from './style.module.css';
 import { Card } from '../Card';
+import s from './style.module.css';
 import { Slider } from './Slider';
 
 type Color = string;

@@ -1,8 +1,8 @@
 .menuPopover {
-	display: block;
-	position: absolute;
+  display: block;
+  position: absolute;
 
-	&.hidden {
-		display: none;
-	}
+  &.hidden {
+    display: none;
+  }
 }

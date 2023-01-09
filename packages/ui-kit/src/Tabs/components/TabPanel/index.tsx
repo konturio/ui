@@ -1,12 +1,12 @@
-import { DescendantProvider, useDescendant, useDescendantsInit } from '../../../utils/component-helpers/descendants';
-import type { ReactNode} from 'react';
 import { forwardRef, memo, useEffect, useMemo, useRef } from 'react';
+import { DescendantProvider, useDescendant, useDescendantsInit } from '../../../utils/component-helpers/descendants';
 import { useComposedRefs } from '../../../utils/hooks/useComposedRefs';
-import type { ForwardRefComponent, MemoComponent } from '../../../utils/component-helpers/polymorphic';
 import { TabPanelDescendantsContext, useTabsCtx } from '../../context';
-import type { TabPanelDescendant } from '../../types';
 import { useStatefulRefValue } from '../../../utils/hooks/useStatefulRefValue';
 import { makeId } from '../../../utils/helpers/helpers';
+import type { TabPanelDescendant } from '../../types';
+import type { ReactNode } from 'react';
+import type { ForwardRefComponent, MemoComponent } from '../../../utils/component-helpers/polymorphic';
 
 /**
  * TabPanels

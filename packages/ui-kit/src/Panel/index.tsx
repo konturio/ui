@@ -1,16 +1,16 @@
-import { Card } from '../Card';
 import cn from 'clsx';
+import { ChevronDown24, ChevronUp24 } from '@konturio/default-icons';
+import { nanoid } from 'nanoid';
+import { Card } from '../Card';
+import { Text } from '../Text';
+import { Modal } from '../Modal';
 import s from './style.module.css';
 import type { MouseEventHandler, ReactElement } from 'react';
-import { Text } from '../Text';
-import { ChevronDown24, ChevronUp24 } from '@konturio/default-icons';
-import { Modal } from '../Modal';
-import { nanoid } from 'nanoid';
 
 export type PanelCustomControl = {
   icon: ReactElement;
-  onWrapperClick: MouseEventHandler<HTMLButtonElement>
-}
+  onWrapperClick: MouseEventHandler<HTMLButtonElement>;
+};
 interface Panel extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
   className?: string;
   header?: string | ReactElement | ReactElement[];
@@ -22,10 +22,10 @@ interface Panel extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElem
     header?: string;
     headerTitle?: string;
     closeBtn?: string;
-    modal?: string
+    modal?: string;
   };
   modal?: {
-    onModalClick: () => void
+    onModalClick: () => void;
     showInModal: boolean;
   };
   contentHeight?: number | string;
@@ -57,56 +57,48 @@ export function Panel({
   resize = 'none',
   ...rest
 }: React.PropsWithChildren<Panel>) {
+  const panel = (
+    <Card className={cn(s.card, className)} {...rest}>
+      {header && (
+        <div className={cn(classes?.header, onHeaderClick && s.hoverable)}>
+          <div className={cn(s.headerContent)} onClick={onHeaderClick}>
+            <div className={cn(s.headerTitle, classes?.headerTitle)}>
+              <div className={s.headerIconWrap}>{headerIcon}</div>
+              <Text type="heading-l">{header}</Text>
+            </div>
+            {/* backwards compatibility */}
+            {!customControls && onHeaderClick && (
+              <button className={cn(s.close, classes?.closeBtn)}>{isOpen ? <ChevronUp24 /> : <ChevronDown24 />}</button>
+            )}
 
-  const panel = <Card className={cn(s.card, className)} {...rest}>
-    {header && <div className={cn(classes?.header, onHeaderClick && s.hoverable)}>
-      <div className={cn(s.headerContent)} onClick={onHeaderClick}>
-        <div className={cn(s.headerTitle, classes?.headerTitle)}>
-          <div className={s.headerIconWrap}>
-            {headerIcon}
+            {customControls?.map((control) => (
+              <button className={cn(s.close, classes?.closeBtn)} onClick={control.onWrapperClick} key={nanoid(4)}>
+                {control.icon}
+              </button>
+            ))}
           </div>
-          <Text type="heading-l">{header}</Text>
         </div>
-        {/* backwards compatibility */}
-        {!customControls && onHeaderClick && (
-          <button className={cn(s.close, classes?.closeBtn)}>
-            {isOpen ? <ChevronUp24 /> : <ChevronDown24 />}
-          </button>
-        )}
-
-        {customControls?.map(control => (
-          <button
-            className={cn(s.close, classes?.closeBtn)}
-            onClick={control.onWrapperClick}
-            key={nanoid(4)}
-          >
-            {control.icon}
-          </button>
-        ))}
-      </div>
-    </div>
-    }
-    {isOpen && <div
-      className={cn(s.contentContainer, contentClassName)}
-      ref={contentContainerRef}
-      style={{
-        resize: resize,
-        height: contentHeight || 'unset',
-        minHeight: minContentHeight || 'unset',
-        maxHeight: maxContentHeight || 'unset'
-      }}
-    >
-      {children}
-    </div>}
-  </Card>
-
+      )}
+      {isOpen && (
+        <div
+          className={cn(s.contentContainer, contentClassName)}
+          ref={contentContainerRef}
+          style={{
+            resize: resize,
+            height: contentHeight || 'unset',
+            minHeight: minContentHeight || 'unset',
+            maxHeight: maxContentHeight || 'unset',
+          }}
+        >
+          {children}
+        </div>
+      )}
+    </Card>
+  );
 
   if (isOpen && modal?.showInModal)
     return (
-      <Modal
-        onModalCloseCallback={modal.onModalClick}
-        className={cn(s.modalCover, classes?.modal)}
-      >
+      <Modal onModalCloseCallback={modal.onModalClick} className={cn(s.modalCover, classes?.modal)}>
         {panel}
       </Modal>
     );

@@ -57,7 +57,7 @@ function TextareaComponent(
   ref,
 ): JSX.Element {
   const [focus, setFocus] = useState(isFocused);
-  const textareaStyles = { maxWidth, minWidth, maxHeight, minHeight }
+  const textareaStyles = { maxWidth, minWidth, maxHeight, minHeight };
 
   useEffect(() => {
     setFocus(isFocused);

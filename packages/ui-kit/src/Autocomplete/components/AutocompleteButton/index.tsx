@@ -1,9 +1,9 @@
 import React, { forwardRef, useCallback } from 'react';
 import { ChevronDown16, ChevronUp16, Close16 } from '@konturio/default-icons';
-import type { ForwardRefComponent } from '../../../utils/component-helpers/polymorphic';
-import type { AutocompleteItemType } from '../../types';
 import cn from 'clsx';
 import style from './style.module.css';
+import type { ForwardRefComponent } from '../../../utils/component-helpers/polymorphic';
+import type { AutocompleteItemType } from '../../types';
 
 export interface AutocompleteButtonClasses {
   label?: string;

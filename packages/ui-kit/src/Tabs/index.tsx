@@ -1,24 +1,16 @@
-import { DescendantProvider, useDescendantsInit } from '../utils/component-helpers/descendants';
-import type { ReactNode} from 'react';
 import { forwardRef, useCallback, useRef, useState } from 'react';
+import { nanoid } from 'nanoid';
+import cn from 'clsx';
+import { DescendantProvider, useDescendantsInit } from '../utils/component-helpers/descendants';
 import { isFunction } from '../utils/helpers/typecheck';
 import { getOwnerDocument, noop } from '../utils/helpers/helpers';
-import type { ForwardRefComponent } from '../utils/component-helpers/polymorphic';
-import type {
-  TabDescendant,
-  TabsContextValue,
-  TabsKeyboardActivation,
-  TabsOrientation} from './types';
-import {
-  TABS_KEYBOARD_ACTIVATION_AUTO,
-  TABS_ORIENTATION_HORIZONTAL,
-  TABS_ORIENTATION_VERTICAL
-} from './types';
-import { nanoid } from 'nanoid';
 import { useControlledState } from '../utils/hooks/useControlledState';
+import { TABS_KEYBOARD_ACTIVATION_AUTO, TABS_ORIENTATION_HORIZONTAL, TABS_ORIENTATION_VERTICAL } from './types';
 import { TabsDescendantsContext, TabsProvider } from './context';
-import cn from 'clsx';
 import style from './style.module.css';
+import type { TabDescendant, TabsContextValue, TabsKeyboardActivation, TabsOrientation } from './types';
+import type { ForwardRefComponent } from '../utils/component-helpers/polymorphic';
+import type { ReactNode } from 'react';
 
 /**
  * Tabs

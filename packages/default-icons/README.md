@@ -1,19 +1,20 @@
 ## Default icons
 
-This module contain React components which contain SVG element. 
+This module contain React components which contain SVG element.
 
-SVG elements based on 
-[Material design icons](https://material.io/resources/icons) 
+SVG elements based on
+[Material design icons](https://material.io/resources/icons)
 and exported with [Figma](https://www.figma.com/) design tool from icon font.
 
 ### How to add new icon manually
-   * Create SVG icon and export it
-   * Open SVG file with text editor or IDE
-   * Copy content
-   * Create `{NewName}Icon.tsx` file in `src/icons` directory
-   * Past content from SVG file to `{NewName}Icon.tsx`
-   * and bring to the following form:
-   
+
+- Create SVG icon and export it
+- Open SVG file with text editor or IDE
+- Copy content
+- Create `{NewName}Icon.tsx` file in `src/icons` directory
+- Past content from SVG file to `{NewName}Icon.tsx`
+- and bring to the following form:
+
 ```typescript jsx
 import React, { FC } from 'react';
 
@@ -29,23 +30,27 @@ const CloseIcon: FC = (props: React.SVGProps<SVGSVGElement>) => (
 export default React.memo(CloseIcon);
 ```
 
-
 ### Alternatives
 
 #### Material icons
+
 You can get all icons from external packages as [Material icons](https://material-ui.com/components/material-icons/)
 
 #### React Icons
+
 Include popular icons in your React projects easly with [react-icons](https://react-icons.netlify.com/), which utilizes ES6 imports that allows you to include only the icons that your project is using.
 
 #### SVGR
-It can help you to transform SVGs into React components. 
+
+It can help you to transform SVGs into React components.
 
 You can choose the way you prefer:
-   * SVGR can be run from the [CLI](https://react-svgr.com/docs/cli/)
-   * SVGR can be used as a [webpack loader](https://react-svgr.com/docs/webpack/), this way you can import your SVG directly as a React Component
+
+- SVGR can be run from the [CLI](https://react-svgr.com/docs/cli/)
+- SVGR can be used as a [webpack loader](https://react-svgr.com/docs/webpack/), this way you can import your SVG directly as a React Component
 
 ### Export icons from Figma
+
 Before export icons, you will need to generate a Personal Access Token in Figma.
 
 1. Open [Figma Files](https://www.figma.com/files)

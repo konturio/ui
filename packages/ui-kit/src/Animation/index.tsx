@@ -8,11 +8,7 @@ export function Animation({
   children,
   variant,
   direction,
-  className
+  className,
 }: React.PropsWithChildren<{ variant: AnimationVariants; className?: string; direction?: AnimationDirections }>) {
-  return (
-    <div className={cn(s['ease-out'], s[variant], direction && s[direction], className)}>
-      {children}
-    </div>
-  );
+  return <div className={cn(s['ease-out'], s[variant], direction && s[direction], className)}>{children}</div>;
 }

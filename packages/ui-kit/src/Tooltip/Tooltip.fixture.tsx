@@ -23,18 +23,14 @@ export default {
         </Dummy>
         <Dummy onClick={(e) => setClickPosition({ x: e.clientX, y: e.clientY })}>Click me</Dummy>
         {hoverPosition && (
-          <Tooltip
-            content={'Some long long long long long long text in tooltip'}
-            position={hoverPosition}
-            hoverBehavior={true}
-          />
+          <Tooltip position={hoverPosition} hoverBehavior={true}>
+            {'Some long long long long long long text in tooltip'}
+          </Tooltip>
         )}
         {clickPosition && (
-          <Tooltip
-            content={'Some long long long long long long text in tooltip'}
-            onClose={() => setClickPosition(null)}
-            position={clickPosition}
-          />
+          <Tooltip onClose={() => setClickPosition(null)} position={clickPosition}>
+            {'Some long long long long long long text in tooltip'}
+          </Tooltip>
         )}
       </div>
     );

@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.9.0](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.8.0...@konturio/ui-kit@3.9.0) (2023-01-12)
+
+### Features
+
+- **ui-kit:** replace content prop with children prop ([1c61e40](https://github.com/konturio/ui/commit/1c61e40c13dd6ee79d84335c28c2bbf180579d57))
+
 # [3.8.0](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.7.0...@konturio/ui-kit@3.8.0) (2023-01-12)
 
 ### Bug Fixes

@@ -1,6 +1,6 @@
-import type { Coords, TooltipPlacement } from '~core/shared_state/currentTooltip';
+import type { TooltipCoords, TooltipPlacement } from '../types';
 
-export function findTooltipPlacement(clickPosition: Coords): TooltipPlacement {
+export function findTooltipPlacement(clickPosition: TooltipCoords): TooltipPlacement {
   if (!globalThis.visualViewport) {
     console.warn('visualViewport not available, fallback value will be used');
     return 'top-left';

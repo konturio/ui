@@ -111,6 +111,7 @@
     "vite": "^3.1.8"
   },
   "devDependencies": {
+    "postcss-custom-media": "^8.0.0",
     "@vitejs/plugin-react": "^2.1.0",
     "husky": "^8.0.2",
     "lint-staged": "^11.2.6",

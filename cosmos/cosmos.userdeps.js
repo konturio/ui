@@ -40,7 +40,7 @@ import fixture29 from './../packages/ui-kit/src/Timeline/fixture/Timeline.fixtur
 import fixture30 from './../packages/ui-kit/src/Timeline/fixture/TimeLineWithDropDown.fixture.tsx';
 import fixture31 from './../packages/ui-kit/src/TimeSlider/TimeSlider.fixture.tsx';
 import fixture32 from './../packages/ui-kit/src/Toggler/Toggler.fixture.tsx';
-
+import fixture33 from './../packages/ui-kit/src/Tooltip/Tooltip.fixture.tsx';
 import decorator0 from './../cosmos.decorator.tsx';
 import decorator1 from './../packages/ui-kit/cosmos.decorator.tsx';
 
@@ -82,6 +82,7 @@ export const fixtures = {
   'packages/ui-kit/src/Timeline/fixture/TimeLineWithDropDown.fixture.tsx': { module: { default: fixture30 } },
   'packages/ui-kit/src/TimeSlider/TimeSlider.fixture.tsx': { module: { default: fixture31 } },
   'packages/ui-kit/src/Toggler/Toggler.fixture.tsx': { module: { default: fixture32 } },
+  'packages/ui-kit/src/Tooltip/Tooltip.fixture.tsx': { module: { default: fixture33 } },
 };
 
 export const decorators = {

@@ -25,12 +25,10 @@ function CustomComponent({ isCluster }: { isCluster: boolean }) {
   return (
     <div
       style={{
-        backgroundColor: isCluster ? 'red' : 'green',
-        height: '14px',
+        backgroundColor: isCluster ? 'yellow' : 'green',
+        height: '34px',
       }}
-    >
-      123
-    </div>
+    ></div>
   );
 }
 
@@ -55,6 +53,7 @@ export default {
     return (
       <div style={{ minWidth: '85%' }}>
         <Timeline
+          margin={1}
           dataset={data}
           cluster={cluster}
           stack={stack}

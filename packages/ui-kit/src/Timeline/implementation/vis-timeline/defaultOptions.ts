@@ -8,4 +8,9 @@ export const getDefaultOptions = (): TimelineOptions => ({
       vertical: 14,
     },
   },
+  template: (item: unknown, el: Element, data) => {
+    const wrapper = document.createElement('div');
+    wrapper.classList.add('vis-item-default-template');
+    return wrapper;
+  },
 });

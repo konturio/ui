@@ -1,4 +1,5 @@
 import { createRoot } from 'react-dom/client';
+import { flushSync } from 'react-dom';
 import { getDefaultOptions } from './defaultOptions';
 import type { TimelineOptions as VisTimelineOptions } from 'vis-timeline';
 import type { TimelineOptions } from '../../types';
@@ -21,14 +22,14 @@ export const toVisTimelineOptions = (options: TimelineOptions): VisTimelineOptio
 
   const { timelineEntryComponent: TimelineEntryComponent } = options;
   if (TimelineEntryComponent) {
-    timelineOptions.template = (item: unknown, el: Element, data) => {
+    timelineOptions.template = (item: unknown, el: Element, data: any) => {
       const wrapper = document.createElement('div');
       const root = createRoot(wrapper);
-      root.render(
-        <div id="listener" onClick={(e) => console.log(e)}>
-          <TimelineEntryComponent {...data} isSelected={false} />
-        </div>,
-      );
+
+      flushSync(() => {
+        root.render(<TimelineEntryComponent {...data} isSelected={false} />);
+      });
+
       return wrapper;
     };
   }
@@ -41,7 +42,11 @@ export const toVisTimelineOptions = (options: TimelineOptions): VisTimelineOptio
       template: (originalItemData, parsedItemData) => {
         const wrapper = document.createElement('div');
         const root = createRoot(wrapper);
-        root.render(<TooltipComponent {...originalItemData} />);
+
+        flushSync(() => {
+          root.render(<TooltipComponent {...originalItemData} />);
+        });
+
         return wrapper;
       },
     };

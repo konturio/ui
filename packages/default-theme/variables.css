@@ -136,11 +136,19 @@
   --modal: 1000;
   --tooltip: 1100;
 
-  /* Shadows */
+  /* DEPRECATED - Old Theme shadow variables */
+  /* TODO: remove this section after we migrate all old variables usages to new ones */
   --elevation-1: 0 1px 2px rgba(0, 0, 0, 0.3), 0 16px 24px rgba(0, 0, 0, 0.06), 0 2px 6px rgba(0, 0, 0, 0.04),
     0 0 1px rgba(0, 0, 0, 0.04);
   --elevation-2: 0 4px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.3), 0 16px 24px rgba(0, 0, 0, 0.06),
     0 2px 6px rgba(0, 0, 0, 0.04), 0 0 1px rgba(0, 0, 0, 0.04);
   --elevation-3: 0px 1px 2px rgba(0, 0, 0, 0.15), 0px 6px 12px rgba(0, 0, 0, 0.06), 0px 2px 6px rgba(0, 0, 0, 0.1),
     0px 0px 1px rgba(0, 0, 0, 0.02);
+
+  /* New shadows */
+  --shadow-small: 0px 1px 4px rgba(0, 0, 0, 0.2);
+  --shadow-medium: 0px 1px 2px rgba(0, 0, 0, 0.15), 0px 6px 8px rgba(0, 0, 0, 0.06), 0px 2px 6px rgba(0, 0, 0, 0.1),
+    0px 0px 1px rgba(0, 0, 0, 0.02);
+  --shadow-large: 0px 4px 8px rgba(0, 0, 0, 0.15), 0px 1px 2px rgba(0, 0, 0, 0.2), 0px 16px 24px rgba(0, 0, 0, 0.06),
+    0px 2px 6px rgba(0, 0, 0, 0.04);
 }

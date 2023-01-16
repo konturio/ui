@@ -27,7 +27,7 @@ export default {
   ['Custom Timeline Entry']: () => {
     const [data] = useState(() =>
       Object.values(episodesMap)
-        .slice(0, 10)
+        .slice(0, 20)
         .map((d) => ({
           id: d.id,
           start: new Date(d.startedAt),
@@ -42,6 +42,11 @@ export default {
     });
 
     const selectHandler = useCallback((entries: TimelineEntry[]) => setSelected(entries.map((e) => e.id)), []);
+    const getClusterClassName = useCallback(
+      (entries: TimelineEntry[]) =>
+        entries.length > 3 ? 'custom-cluster-classname' : 'custom-cluster-classname-small',
+      [],
+    );
 
     return (
       <div style={{ minWidth: '85%' }}>
@@ -53,7 +58,7 @@ export default {
           onSelect={selectHandler}
           selected={selected}
           timelineEntryClassName="entry-custom-classname"
-          getClusterClassName={() => 'custom-cluster-classname'}
+          getClusterClassName={getClusterClassName}
         />
       </div>
     );

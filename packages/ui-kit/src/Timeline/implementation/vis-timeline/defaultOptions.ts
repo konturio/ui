@@ -1,5 +1,11 @@
 import type { TimelineOptions } from 'vis-timeline';
 
+export const getDefaultEntry = () => {
+  const wrapper = document.createElement('div');
+  wrapper.classList.add('vis-item-default');
+  return wrapper;
+};
+
 export const getDefaultOptions = (): TimelineOptions => ({
   margin: {
     axis: 17,
@@ -8,9 +14,5 @@ export const getDefaultOptions = (): TimelineOptions => ({
       vertical: 14,
     },
   },
-  template: (item: unknown, el: Element, data) => {
-    const wrapper = document.createElement('div');
-    wrapper.classList.add('vis-item-default-template');
-    return wrapper;
-  },
+  template: getDefaultEntry,
 });

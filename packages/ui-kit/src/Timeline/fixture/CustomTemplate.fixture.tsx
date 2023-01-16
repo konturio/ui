@@ -3,6 +3,7 @@ import { useValue } from 'react-cosmos/fixture';
 import { Timeline } from '..';
 import testData from './testData';
 import { useSelectExtra } from './useSelectExtra';
+import './custom-template.css';
 import type { TimelineEntry } from '../types';
 
 const episodesMap = testData.reduce(
@@ -21,19 +22,6 @@ const episodesMap = testData.reduce(
     }
   >,
 );
-
-function CustomComponent({ isCluster }: { isCluster: boolean }) {
-  return (
-    <div
-      style={{
-        backgroundColor: isCluster ? 'yellow' : 'green',
-        border: `1px solid black`,
-        height: '34px',
-        boxSizing: 'border-box',
-      }}
-    ></div>
-  );
-}
 
 export default {
   ['Custom Timeline Entry']: () => {
@@ -64,7 +52,8 @@ export default {
           stack={stack}
           onSelect={selectHandler}
           selected={selected}
-          timelineEntryComponent={CustomComponent}
+          timelineEntryClassName="entry-custom-classname"
+          getClusterClassName={() => 'custom-cluster-classname'}
         />
       </div>
     );

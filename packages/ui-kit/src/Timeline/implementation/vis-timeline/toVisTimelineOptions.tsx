@@ -1,4 +1,3 @@
-import { createRoot } from 'react-dom/client';
 import { getDefaultEntry, getDefaultOptions } from './defaultOptions';
 import type { TimelineOptions as VisTimelineOptions } from 'vis-timeline';
 import type { TimelineOptions } from '../../types';
@@ -34,22 +33,6 @@ export const toVisTimelineOptions = (options: TimelineOptions): VisTimelineOptio
       }
 
       return entry;
-    };
-  }
-
-  const { tooltipComponent: TooltipComponent } = options;
-  if (TooltipComponent) {
-    timelineOptions.tooltip = {
-      // TODO fix types in library
-      // @ts-expect-error error in typings of library, template can return Element
-      template: (originalItemData, parsedItemData) => {
-        const wrapper = document.createElement('div');
-        const root = createRoot(wrapper);
-
-        root.render(<TooltipComponent {...originalItemData} />);
-
-        return wrapper;
-      },
     };
   }
 

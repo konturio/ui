@@ -50,11 +50,11 @@
   background-color: var(--faint-strong);
 }
 
-.vis-item .vis-item-default-template {
+.vis-item > div {
   background-color: var(--faint-strong);
 }
 
-.vis-item.vis-range.vis-selected .vis-item-default-template {
+.vis-item.vis-range.vis-selected > div {
   border: 1px solid var(--back-accent-strong);
 }
 
@@ -67,11 +67,10 @@
 
 .vis-item.vis-range .vis-item-content > div {
   min-height: 14px;
-  height: fit-content;
 }
 
-.vis-cluster .vis-item-default-template,
-.vis-item.vis-range.vis-selected.vis-cluster .vis-item-default-template {
+.vis-cluster > div,
+.vis-item.vis-range.vis-selected.vis-cluster > div {
   background-color: var(--faint-strong-up);
 }
 

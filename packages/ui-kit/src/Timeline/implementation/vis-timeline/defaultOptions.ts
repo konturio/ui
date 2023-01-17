@@ -1,9 +1,8 @@
 import type { TimelineOptions } from 'vis-timeline';
 
 export const getDefaultEntry = () => {
-  const wrapper = document.createElement('div');
-  wrapper.classList.add('vis-item-default');
-  return wrapper;
+  const entry = document.createElement('div');
+  return entry;
 };
 
 export const getDefaultOptions = (): TimelineOptions => ({

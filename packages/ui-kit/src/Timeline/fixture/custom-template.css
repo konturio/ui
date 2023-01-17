@@ -1,0 +1,12 @@
+.entry-custom-classname {
+  background-color: orange;
+  height: 34px;
+}
+
+.custom-cluster-classname {
+  background-color: lightblue;
+}
+
+.custom-cluster-classname-small {
+  background-color: red;
+}

@@ -39,8 +39,8 @@ export interface TimelineProps {
   stack: boolean;
   /* Join bunch of small entries in cluster */
   cluster: false | ClusterOptions;
-  tooltipComponent?: TimelineTooltipComponent;
-  timelineEntryComponent?: TimelineEntryComponent;
+  timelineEntryClassName?: string;
+  getClusterClassName?: (cluster: TimelineEntry[]) => string;
   onSelect?: (item: TimelineEntry[], event: PointerEvent) => void;
   onHover?: (item: TimelineEntry[], event: PointerEvent) => void;
   margin?: VisTimelineOptions['margin'];

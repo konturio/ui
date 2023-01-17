@@ -1,8 +1,10 @@
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import { useValue } from 'react-cosmos/fixture';
 import { Timeline } from '..';
 import testData from './testData';
 import { useSelectExtra } from './useSelectExtra';
+import './custom-template.css';
+import type { TimelineEntry } from '../types';
 
 const episodesMap = testData.reduce(
   (acc, i, n) => {
@@ -21,24 +23,11 @@ const episodesMap = testData.reduce(
   >,
 );
 
-function CustomComponent({ isCluster }: { isCluster: boolean }) {
-  return (
-    <div
-      style={{
-        backgroundColor: isCluster ? 'red' : 'green',
-        height: '14px',
-      }}
-    >
-      123
-    </div>
-  );
-}
-
 export default {
   ['Custom Timeline Entry']: () => {
     const [data] = useState(() =>
       Object.values(episodesMap)
-        .slice(0, 2)
+        .slice(0, 20)
         .map((d) => ({
           id: d.id,
           start: new Date(d.startedAt),
@@ -47,20 +36,29 @@ export default {
     );
 
     const [selected, setSelected] = useState([] as (number | string)[]);
-    const cluster = useSelectExtra([false as const, { fitOnDoubleClick: true }]);
+    const cluster = useSelectExtra([{ fitOnDoubleClick: true }, false as const]);
     const [stack] = useValue('stack', {
-      defaultValue: true,
+      defaultValue: false,
     });
+
+    const selectHandler = useCallback((entries: TimelineEntry[]) => setSelected(entries.map((e) => e.id)), []);
+    const getClusterClassName = useCallback(
+      (entries: TimelineEntry[]) =>
+        entries.length > 3 ? 'custom-cluster-classname' : 'custom-cluster-classname-small',
+      [],
+    );
 
     return (
       <div style={{ minWidth: '85%' }}>
         <Timeline
+          margin={1}
           dataset={data}
           cluster={cluster}
           stack={stack}
-          onSelect={(entries) => setSelected(entries.map((e) => e.id))}
+          onSelect={selectHandler}
           selected={selected}
-          timelineEntryComponent={CustomComponent}
+          timelineEntryClassName="entry-custom-classname"
+          getClusterClassName={getClusterClassName}
         />
       </div>
     );

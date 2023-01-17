@@ -20,14 +20,15 @@ async function* getFiles(dir) {
 
 async function getCssFiles(dir) {
   const cssFiles = [];
-  for await (const file of getFiles(CONFIG.srcDir)) {
+  for await (const file of getFiles(dir)) {
     if (file.slice(-4) === '.css') cssFiles.push(file);
   }
   return cssFiles;
 }
 
 (async () => {
-  const cssFiles = await getCssFiles(CONFIG.srcDir);
+  const cssFiles = (await getCssFiles(CONFIG.srcDir)).filter((file) => !file.includes('/fixture/'));
+
   cssFiles.forEach((cssFile) => {
     copyFile(cssFile, cssFile.replace(CONFIG.srcDir, CONFIG.outputDir));
   });

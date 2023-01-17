@@ -42,11 +42,12 @@
 
 .vis-item.vis-range {
   border-radius: 0px;
-  border-style: none;
+  border: 1px solid white;
 }
 
 .vis-item.vis-range.vis-selected {
   outline: 1px solid var(--back-accent-strong);
+  border: 1px solid var(--back-accent-strong);
   background-color: var(--faint-strong);
 }
 
@@ -55,7 +56,11 @@
 }
 
 .vis-item.vis-range.vis-selected > div {
-  border: 1px solid var(--back-accent-strong);
+  /* border: 1px solid var(--back-accent-strong); */
+}
+
+.vis-item .vis-item-content {
+  padding: 0px;
 }
 
 .vis-item.vis-range .vis-item-content {

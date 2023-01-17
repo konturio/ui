@@ -1,5 +1,4 @@
 import { createRoot } from 'react-dom/client';
-import { flushSync } from 'react-dom';
 import { getDefaultEntry, getDefaultOptions } from './defaultOptions';
 import type { TimelineOptions as VisTimelineOptions } from 'vis-timeline';
 import type { TimelineOptions } from '../../types';
@@ -47,9 +46,7 @@ export const toVisTimelineOptions = (options: TimelineOptions): VisTimelineOptio
         const wrapper = document.createElement('div');
         const root = createRoot(wrapper);
 
-        flushSync(() => {
-          root.render(<TooltipComponent {...originalItemData} />);
-        });
+        root.render(<TooltipComponent {...originalItemData} />);
 
         return wrapper;
       },

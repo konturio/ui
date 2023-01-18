@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.9.2](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.9.1...@konturio/ui-kit@3.9.2) (2023-01-18)
+
+### Bug Fixes
+
+- **ui-kit:-timeline:** fix custom timeline entry rendering ([#54](https://github.com/konturio/ui/issues/54)) ([3b56066](https://github.com/konturio/ui/commit/3b56066364b82acf1e373afcafb69956e4c7f491))
+
 ## [3.9.1](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.9.0...@konturio/ui-kit@3.9.1) (2023-01-17)
 
 **Note:** Version bump only for package @konturio/ui-kit

@@ -37,15 +37,15 @@ export default {
 
     const [selected, setSelected] = useState([] as (number | string)[]);
     const cluster = useSelectExtra([{ fitOnDoubleClick: true }, false as const]);
-    const [stack] = useValue('stack', {
-      defaultValue: false,
-    });
+    const [stack] = useValue('stack', { defaultValue: false });
+
+    const [blueClusterTreshold] = useValue('Blue cluster treshold', { defaultValue: 3 });
 
     const selectHandler = useCallback((entries: TimelineEntry[]) => setSelected(entries.map((e) => e.id)), []);
     const getClusterClassName = useCallback(
       (entries: TimelineEntry[]) =>
-        entries.length > 3 ? 'custom-cluster-classname' : 'custom-cluster-classname-small',
-      [],
+        entries.length > blueClusterTreshold ? 'custom-cluster-classname' : 'custom-cluster-classname-small',
+      [blueClusterTreshold],
     );
 
     return (

@@ -1,6 +1,8 @@
 .tooltipContent {
+  box-sizing: border-box;
   position: absolute;
   display: flex;
+  justify-content: space-between;
   padding: var(--unit) var(--unit) var(--half-unit) var(--unit);
   max-width: 268px;
   max-height: 200px;

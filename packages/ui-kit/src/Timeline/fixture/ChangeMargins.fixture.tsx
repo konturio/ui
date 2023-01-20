@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useValue } from 'react-cosmos/fixture';
 import { Timeline } from '..';
 import testData from './testData';
+import { useSelectExtra } from './useSelectExtra';
 
 const episodesMap = testData.reduce(
   (acc, i, n) => {
@@ -42,6 +43,9 @@ export default {
       defaultValue: 14,
     });
 
+    const cluster = useSelectExtra([false as const, { fitOnDoubleClick: true }]);
+    const [stack] = useValue('stack', { defaultValue: true });
+
     return (
       <div style={{ minWidth: '85%', display: 'flex', flexFlow: 'column nowrap', gap: '8px' }}>
         <div>
@@ -54,8 +58,8 @@ export default {
               },
             }}
             dataset={data}
-            cluster={false}
-            stack={true}
+            cluster={cluster}
+            stack={stack}
             selected={[]}
           />
         </div>

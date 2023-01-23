@@ -1,10 +1,10 @@
 import type { TimelineOptions as VisTimelineOptions } from 'vis-timeline';
+import type { TooltipProps } from '../Tooltip/Tooltip/Tooltip';
 
 export interface TimelineEntry {
   id: string | number;
   start: Date;
   end?: Date;
-  tooltip?: string;
   group?: string;
 }
 
@@ -12,25 +12,12 @@ interface ClusterOptions {
   fitOnDoubleClick: boolean;
 }
 
-export type TimelineEntryComponent = (data: {
-  content: string;
-  isCluster: boolean;
-  isSelected: boolean;
-  end: null | Date;
-  start: Date;
-}) => JSX.Element;
+export type TolltipEntry =
+  | TimelineEntry
+  | { id: string | number; isCluster: true; items: TimelineEntry[]; start: Date; end?: Date; selected: boolean };
 
-export type TimelineTooltipComponent = (props: {
-  className?: string;
-  align?: 'auto' | 'center' | 'left' | 'right';
-  content: string;
-  end?: string | number | Date;
-  group?: string | number;
-  id: string | number;
-  style?: string;
-  title?: string;
-  selectable?: boolean;
-}) => JSX.Element;
+export type EntryTooltipProps = { entry: TimelineEntry } & TooltipProps;
+export type TimelineTooltipComponent = (props: Exclude<EntryTooltipProps, 'hoverBehavior'>) => JSX.Element;
 
 export interface TimelineProps {
   dataset: TimelineEntry[];
@@ -44,6 +31,7 @@ export interface TimelineProps {
   onSelect?: (item: TimelineEntry[], event: PointerEvent) => void;
   onHover?: (item: TimelineEntry[], event: PointerEvent) => void;
   margin?: VisTimelineOptions['margin'];
+  tooltipComponent?: TimelineTooltipComponent;
 }
 
 export interface TimelineImperativeApi {

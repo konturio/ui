@@ -1,8 +1,9 @@
-import { useEffect, useImperativeHandle, useMemo, useRef, forwardRef } from 'react';
+import { useEffect, useImperativeHandle, useMemo, useRef, forwardRef, useState } from 'react';
 import { DataSet } from 'vis-data';
 import { toVisTimelineDataset } from './toVisTimelineDataset';
 import { useVisTimeline } from './useVisTimeline';
-import type { TimelineProps } from '../../types';
+import type { TolltipEntry, TimelineProps } from '../../types';
+import type { TooltipCoords } from '../../../Tooltip/types';
 
 export interface TimelineImperativeApi {
   fit: () => void;
@@ -14,8 +15,12 @@ export const VisTimeline = forwardRef<TimelineImperativeApi | null, TimelineProp
     const timelineContainerRef = useRef(null);
     const data = useMemo(() => new DataSet(dataset.map(toVisTimelineDataset)), [dataset]);
 
+    const { tooltipComponent: TooltipComponent } = rest;
+
+    const [tooltipData, setTooltipData] = useState<{ entry: TolltipEntry; position: TooltipCoords } | null>(null);
+
     // Timeline implementation
-    const timeline = useVisTimeline(timelineContainerRef, data, options);
+    const timeline = useVisTimeline(timelineContainerRef, data, options, setTooltipData);
 
     useImperativeHandle(
       ref,
@@ -41,7 +46,19 @@ export const VisTimeline = forwardRef<TimelineImperativeApi | null, TimelineProp
       timeline.setSelection([selected, ...affectedClusters]);
     }, [timeline, selected]);
 
-    return <div ref={timelineContainerRef}></div>;
+    return (
+      <>
+        <div ref={timelineContainerRef}></div>
+        {TooltipComponent && tooltipData && (
+          <TooltipComponent
+            hoverBehavior
+            position={tooltipData.position}
+            entry={tooltipData.entry}
+            onClose={() => setTooltipData(null)}
+          />
+        )}
+      </>
+    );
   },
 );
 

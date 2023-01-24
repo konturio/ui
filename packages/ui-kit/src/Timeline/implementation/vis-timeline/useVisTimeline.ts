@@ -3,16 +3,20 @@ import { Timeline as VisTimeline } from 'vis-timeline';
 import { toVisTimelineOptions } from './toVisTimelineOptions';
 import './theme.css';
 import { toTimelineEntry } from './toTimlineEntry';
+import { getClusterById } from './getClusterById';
+import { toTooltipEntry } from './toTooltipEntry';
 import type { DataSet } from 'vis-data';
 import type { DataItem } from 'vis-timeline';
 import type { MutableRefObject } from 'react';
-import type { OnClickPayload } from './types';
-import type { TimelineEntry, TimelineOptions } from '../../types';
+import type { OnEntryClickPayload } from './types';
+import type { TolltipEntry, TimelineOptions, TimelineEntry } from '../../types';
+import type { TooltipCoords } from '../../../Tooltip/types';
 
 export function useVisTimeline(
   timelineContainerRef: MutableRefObject<null>,
   data: DataSet<DataItem, 'id'>,
   options: TimelineOptions,
+  setTooltipEntry: (payload: { entry: TolltipEntry; position: TooltipCoords } | null) => void,
 ) {
   const [timeline, setTimeline] = useState<VisTimeline | null>(null);
   const timelineRef = useRef(timeline);
@@ -47,21 +51,53 @@ export function useVisTimeline(
   /* Implement onSelect handler trough 'click' listener */
   const dataMapRef = useRef(data);
   const { onSelect } = options;
+
+  useEffect(() => {
+    if (timeline === null) return;
+
+    const onItemHover = ({ item, event }: { item: number; event: MouseEvent }) => {
+      const entry = dataMapRef.current.get(item) || getClusterById(item, timeline);
+
+      if (entry) {
+        setTooltipEntry({
+          entry: toTooltipEntry(entry),
+          position: { x: event.clientX, y: event.clientY },
+        });
+      }
+    };
+
+    const onItemOut = () => {
+      setTooltipEntry(null);
+    };
+
+    timeline.on('itemover', onItemHover);
+    timeline.on('itemout', onItemOut);
+
+    return () => {
+      timeline.off('itemover', onItemHover);
+      timeline.off('itemout', onItemOut);
+    };
+  }, [timeline]);
+
   useEffect(() => {
     if (!onSelect) return;
     if (timeline === null) return;
     if (!dataMapRef.current) return;
-    const onSelectCb = (payload: OnClickPayload) => {
+    const onSelectCb = (payload: OnEntryClickPayload) => {
+      if (payload.what !== 'item') return;
+
       if (payload.isCluster) {
         // TODO - add itemSet in public interface of lib
-        // @ts-expect-error timeline not expose itemSet in interface.
-        const cluster = timeline.itemSet.clusters.find((c) => c.id === payload.item);
+        const cluster = getClusterById(payload.item, timeline);
         const entriesInCluster = cluster.getData().items.map((e) => dataMapRef.current.get(e.id));
         onSelect(entriesInCluster, payload.event);
       } else {
         const selectedEntries = timeline.getSelection().reduce((acc, id) => {
           const entry = dataMapRef.current.get(id);
-          if (entry) acc.push(toTimelineEntry(entry));
+          if (entry) {
+            const timelineEntry = toTimelineEntry(entry);
+            acc.push(timelineEntry);
+          }
           return acc;
         }, [] as TimelineEntry[]);
         onSelect(selectedEntries, payload.event);

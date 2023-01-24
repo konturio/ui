@@ -5,19 +5,18 @@ export interface OnSelectPayload {
 }
 
 // TODO: Contribute it to timeline-vis package
-export interface OnClickPayload {
+export interface OnEntryClickPayload {
   event: PointerEvent;
-  customTime: null;
-  group: null;
+  group: string | null;
   isCluster: boolean;
   /* Cluster that will be selected */
-  item: null | string;
+  item: number | string;
   /* Items that was selected */
-  items: null | string[];
+  items: number[] | null;
   pageX: number;
   pageY: number;
   time: Date;
-  what: 'background' | 'item';
+  what: 'background' | 'item' | 'axis' | 'group-label' | 'custom-time' | 'current-time';
   x: number;
   y: number;
 }

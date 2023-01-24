@@ -6,7 +6,17 @@ import s from './Tooltip.module.css';
 import type { LegacyRef, PropsWithChildren } from 'react';
 import type { PlacementFn, TooltipCoords, TooltipPlacement } from '../types';
 
-type MouseClickEvent = React.MouseEvent<HTMLDivElement, MouseEvent>;
+export type MouseClickEvent = React.MouseEvent<HTMLDivElement, MouseEvent>;
+
+export type TooltipProps = PropsWithChildren<{
+  position: TooltipCoords;
+  onClose?: (e: MouseClickEvent) => void;
+  transitionRef?: LegacyRef<any>;
+  getPlacement?: TooltipPlacement | PlacementFn;
+  hoverBehavior?: boolean;
+  classes?: { popupContent?: string };
+  onOuterClick?: (e: MouseClickEvent) => void;
+}>;
 
 const stopPropagation = (e: MouseClickEvent) => e.stopPropagation();
 
@@ -19,15 +29,7 @@ export function Tooltip({
   hoverBehavior = false,
   onOuterClick,
   onClose,
-}: PropsWithChildren<{
-  position: TooltipCoords;
-  onClose?: (e: MouseClickEvent) => void;
-  transitionRef?: LegacyRef<any>;
-  getPlacement?: TooltipPlacement | PlacementFn;
-  hoverBehavior?: boolean;
-  classes?: { popupContent?: string };
-  onOuterClick?: (e: MouseClickEvent) => void;
-}>) {
+}: TooltipProps) {
   const onClickOuter = useCallback(
     (e: MouseClickEvent) => {
       if (onOuterClick && hoverBehavior === true) {

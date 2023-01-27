@@ -4,7 +4,6 @@ import { nanoid } from 'nanoid';
 import { Card } from '../Card';
 import { Modal } from '../Modal';
 import { Heading } from '../Heading';
-import { Text } from '../Text';
 import s from './style.module.css';
 import type { MouseEventHandler, ReactElement } from 'react';
 

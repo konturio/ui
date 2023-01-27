@@ -1,8 +1,6 @@
 {
   "$schema": "./node_modules/react-cosmos/config.schema.json",
-  "watchDirs": [
-    "packages"
-  ],
+  "watchDirs": ["packages"],
   "staticPath": "public",
   "userDepsFilePath": "cosmos/cosmos.userdeps.js",
   "experimentalRendererUrl": "http://localhost:8080/renderer.html",
@@ -10,5 +8,6 @@
     "packages/default-theme/variables.css",
     "packages/default-theme/defaults.css",
     "packages/default-theme/typography.css"
-  ]
+  ],
+  "port": 5001
 }

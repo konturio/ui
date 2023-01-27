@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.10.0](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.9.2...@konturio/ui-kit@3.10.0) (2023-01-27)
+
+### Features
+
+- **ui-kit:timeline:** add tooltip-component prop ([#58](https://github.com/konturio/ui/issues/58)) ([76adb90](https://github.com/konturio/ui/commit/76adb90d65272efbd7bae3131375340cc2b05038))
+
 ## [3.9.2](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.9.1...@konturio/ui-kit@3.9.2) (2023-01-18)
 
 ### Bug Fixes

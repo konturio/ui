@@ -12,7 +12,7 @@ export function Heading({
   type,
   tag,
   margins = true,
-}: React.PropsWithChildren<{ type: HeadingTypes; tag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'; margins: boolean }>) {
+}: React.PropsWithChildren<{ type: HeadingTypes; tag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'; margins?: boolean }>) {
   if (isValidElement<{ className: string }>(children)) {
     return cloneElement(children, {
       className: getClassName(type, margins, children.props.className),

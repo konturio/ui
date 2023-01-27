@@ -3,51 +3,16 @@ import { SVGProps, memo } from 'react';
 const Area24 = (props: SVGProps<SVGSVGElement>) => (
   <svg width={24} height={24} viewBox="0 0 24 24" fill="none" {...props}>
     <path
-      d="M6 16V8M18 16V8M16 6H8M16 18H8"
-      stroke="currentColor"
-      strokeWidth={1.3}
-      strokeLinecap="square"
-      strokeLinejoin="bevel"
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M7.35 5.35H16.65V6.65H7.35V5.35ZM6.65 7.35V16.65H5.35V7.35H6.65ZM18.65 7.35V16.65H17.35V7.35H18.65ZM7.35 17.35H16.65V18.65H7.35V17.35Z"
+      fill="currentColor"
     />
-    <rect
-      x={4.65}
-      y={16.65}
-      width={2.7}
-      height={2.7}
-      stroke="currentColor"
-      strokeWidth={1.3}
-      strokeLinecap="square"
-      strokeLinejoin="bevel"
-    />
-    <rect
-      x={4.65}
-      y={4.65}
-      width={2.7}
-      height={2.7}
-      stroke="currentColor"
-      strokeWidth={1.3}
-      strokeLinecap="square"
-      strokeLinejoin="bevel"
-    />
-    <rect
-      x={16.65}
-      y={4.65}
-      width={2.7}
-      height={2.7}
-      stroke="currentColor"
-      strokeWidth={1.3}
-      strokeLinecap="square"
-      strokeLinejoin="bevel"
-    />
-    <rect
-      x={16.65}
-      y={16.65}
-      width={2.7}
-      height={2.7}
-      stroke="currentColor"
-      strokeWidth={1.3}
-      strokeLinecap="square"
-      strokeLinejoin="bevel"
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M5.3 17.3V18.7H6.7V17.3H5.3ZM5.3 5.3V6.7H6.7V5.3H5.3ZM17.3 5.3V6.7H18.7V5.3H17.3ZM17.3 17.3V18.7H18.7V17.3H17.3ZM5 4C4.44772 4 4 4.44772 4 5V7C4 7.55228 4.44772 8 5 8H7C7.55228 8 8 7.55228 8 7V5C8 4.44772 7.55228 4 7 4H5ZM5 16C4.44772 16 4 16.4477 4 17V19C4 19.5523 4.44772 20 5 20H7C7.55228 20 8 19.5523 8 19V17C8 16.4477 7.55228 16 7 16H5ZM16 5C16 4.44772 16.4477 4 17 4H19C19.5523 4 20 4.44772 20 5V7C20 7.55228 19.5523 8 19 8H17C16.4477 8 16 7.55228 16 7V5ZM17 16C16.4477 16 16 16.4477 16 17V19C16 19.5523 16.4477 20 17 20H19C19.5523 20 20 19.5523 20 19V17C20 16.4477 19.5523 16 19 16H17Z"
+      fill="currentColor"
     />
   </svg>
 );

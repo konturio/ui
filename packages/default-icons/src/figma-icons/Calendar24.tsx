@@ -3,15 +3,17 @@ import { SVGProps, memo } from 'react';
 const Calendar24 = (props: SVGProps<SVGSVGElement>) => (
   <svg width={24} height={24} viewBox="0 0 24 24" fill="none" {...props}>
     <path
-      d="M19 4H5C3.89543 4 3 4.89543 3 6V20C3 21.1046 3.89543 22 5 22H19C20.1046 22 21 21.1046 21 20V6C21 4.89543 20.1046 4 19 4Z"
-      stroke="currentColor"
-      strokeWidth={1.3}
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M5.00001 4.65001C4.25442 4.65001 3.65001 5.25442 3.65001 6.00001V20C3.65001 20.7456 4.25442 21.35 5.00001 21.35H19C19.7456 21.35 20.35 20.7456 20.35 20V6.00001C20.35 5.25442 19.7456 4.65001 19 4.65001H5.00001ZM2.35001 6.00001C2.35001 4.53645 3.53645 3.35001 5.00001 3.35001H19C20.4636 3.35001 21.65 4.53645 21.65 6.00001V20C21.65 21.4636 20.4636 22.65 19 22.65H5.00001C3.53645 22.65 2.35001 21.4636 2.35001 20V6.00001Z"
+      fill="currentColor"
     />
-    <path d="M3 10H21" stroke="currentColor" strokeWidth={1.3} strokeLinecap="round" strokeLinejoin="round" />
-    <path d="M16 2V6" stroke="currentColor" strokeWidth={1.3} strokeLinecap="square" strokeLinejoin="round" />
-    <path d="M8 2V6" stroke="currentColor" strokeWidth={1.3} strokeLinecap="square" strokeLinejoin="round" />
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M8.00001 1.35001C8.35899 1.35001 8.65001 1.64102 8.65001 2.00001V6.00001C8.65001 6.35899 8.35899 6.65001 8.00001 6.65001C7.64102 6.65001 7.35001 6.35899 7.35001 6.00001V2.00001C7.35001 1.64102 7.64102 1.35001 8.00001 1.35001ZM16 1.35001C16.359 1.35001 16.65 1.64102 16.65 2.00001V6.00001C16.65 6.35899 16.359 6.65001 16 6.65001C15.641 6.65001 15.35 6.35899 15.35 6.00001V2.00001C15.35 1.64102 15.641 1.35001 16 1.35001ZM2.35001 10C2.35001 9.64102 2.64102 9.35001 3.00001 9.35001H21C21.359 9.35001 21.65 9.64102 21.65 10C21.65 10.359 21.359 10.65 21 10.65H3.00001C2.64102 10.65 2.35001 10.359 2.35001 10Z"
+      fill="currentColor"
+    />
   </svg>
 );
 

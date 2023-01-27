@@ -3,14 +3,11 @@ import { SVGProps, memo } from 'react';
 const Info24 = (props: SVGProps<SVGSVGElement>) => (
   <svg width={24} height={24} viewBox="0 0 24 24" fill="none" {...props}>
     <path
-      d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
-      stroke="currentColor"
-      strokeWidth={1.3}
-      strokeLinecap="square"
-      strokeLinejoin="bevel"
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M12 2.65001C6.83614 2.65001 2.65 6.83614 2.65 12C2.65 17.1639 6.83614 21.35 12 21.35C17.1639 21.35 21.35 17.1639 21.35 12C21.35 6.83614 17.1639 2.65001 12 2.65001ZM1.35 12C1.35 6.11817 6.11817 1.35001 12 1.35001C17.8818 1.35001 22.65 6.11817 22.65 12C22.65 17.8818 17.8818 22.65 12 22.65C6.11817 22.65 1.35 17.8818 1.35 12ZM11.35 8.00001C11.35 7.64102 11.641 7.35001 12 7.35001H12.01C12.369 7.35001 12.66 7.64102 12.66 8.00001C12.66 8.35899 12.369 8.65001 12.01 8.65001H12C11.641 8.65001 11.35 8.35899 11.35 8.00001ZM12 11.35C12.359 11.35 12.65 11.641 12.65 12V16C12.65 16.359 12.359 16.65 12 16.65C11.641 16.65 11.35 16.359 11.35 16V12C11.35 11.641 11.641 11.35 12 11.35Z"
+      fill="currentColor"
     />
-    <path d="M12 16V12" stroke="currentColor" strokeWidth={1.3} strokeLinecap="square" strokeLinejoin="bevel" />
-    <path d="M12 8H12.01" stroke="currentColor" strokeWidth={1.3} strokeLinecap="square" strokeLinejoin="bevel" />
   </svg>
 );
 

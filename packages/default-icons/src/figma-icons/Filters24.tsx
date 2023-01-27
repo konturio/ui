@@ -2,18 +2,24 @@ import { SVGProps, memo } from 'react';
 
 const Filters24 = (props: SVGProps<SVGSVGElement>) => (
   <svg width={24} height={24} viewBox="0 0 24 24" fill="none" {...props}>
-    <path d="M3 17L6 17" stroke="currentColor" strokeWidth={1.3} strokeLinecap="square" strokeLinejoin="round" />
-    <path d="M21 7L18 7" stroke="currentColor" strokeWidth={1.3} strokeLinecap="square" strokeLinejoin="round" />
-    <path d="M14 17L21 17" stroke="currentColor" strokeWidth={1.3} strokeLinecap="square" strokeLinejoin="round" />
-    <path d="M10 7H3" stroke="currentColor" strokeWidth={1.3} strokeLinecap="square" strokeLinejoin="round" />
-    <circle
-      r={2.5}
-      transform="matrix(-1 0 0 1 8.5 17)"
-      stroke="currentColor"
-      strokeWidth={1.3}
-      strokeLinecap="square"
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M2.35 7.00001C2.35 6.64102 2.64101 6.35001 3 6.35001H10C10.359 6.35001 10.65 6.64102 10.65 7.00001C10.65 7.35899 10.359 7.65001 10 7.65001H3C2.64101 7.65001 2.35 7.35899 2.35 7.00001ZM18 6.35001L21 6.35001C21.359 6.35001 21.65 6.64102 21.65 7.00001C21.65 7.35899 21.359 7.65001 21 7.65001L18 7.65001C17.641 7.65001 17.35 7.35899 17.35 7.00001C17.35 6.64102 17.641 6.35001 18 6.35001ZM2.35 17C2.35 16.641 2.64101 16.35 3 16.35H6C6.35898 16.35 6.65 16.641 6.65 17C6.65 17.359 6.35898 17.65 6 17.65H3C2.64101 17.65 2.35 17.359 2.35 17ZM13.35 17C13.35 16.641 13.641 16.35 14 16.35H21C21.359 16.35 21.65 16.641 21.65 17C21.65 17.359 21.359 17.65 21 17.65H14C13.641 17.65 13.35 17.359 13.35 17Z"
+      fill="currentColor"
     />
-    <circle cx={15.5} cy={7} r={2.5} stroke="currentColor" strokeWidth={1.3} strokeLinecap="square" />
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M8.5 15.15C9.52172 15.15 10.35 15.9783 10.35 17C10.35 18.0217 9.52172 18.85 8.5 18.85C7.47827 18.85 6.65 18.0217 6.65 17C6.65 15.9783 7.47827 15.15 8.5 15.15ZM11.65 17C11.65 15.2603 10.2397 13.85 8.5 13.85C6.7603 13.85 5.35 15.2603 5.35 17C5.35 18.7397 6.7603 20.15 8.5 20.15C10.2397 20.15 11.65 18.7397 11.65 17Z"
+      fill="currentColor"
+    />
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M15.5 5.15001C14.4783 5.15001 13.65 5.97828 13.65 7.00001C13.65 8.02173 14.4783 8.85001 15.5 8.85001C16.5217 8.85001 17.35 8.02173 17.35 7.00001C17.35 5.97828 16.5217 5.15001 15.5 5.15001ZM12.35 7.00001C12.35 5.26031 13.7603 3.85001 15.5 3.85001C17.2397 3.85001 18.65 5.26031 18.65 7.00001C18.65 8.7397 17.2397 10.15 15.5 10.15C13.7603 10.15 12.35 8.7397 12.35 7.00001Z"
+      fill="currentColor"
+    />
   </svg>
 );
 

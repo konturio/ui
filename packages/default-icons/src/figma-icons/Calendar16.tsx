@@ -3,14 +3,29 @@ import { SVGProps, memo } from 'react';
 const Calendar16 = (props: SVGProps<SVGSVGElement>) => (
   <svg width={16} height={16} viewBox="0 0 16 16" fill="none" {...props}>
     <path
-      d="M12.6667 2.66667H3.33333C2.59695 2.66667 2 3.26363 2 4.00001V13.3333C2 14.0697 2.59695 14.6667 3.33333 14.6667H12.6667C13.403 14.6667 14 14.0697 14 13.3333V4.00001C14 3.26363 13.403 2.66667 12.6667 2.66667Z"
-      stroke="currentColor"
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M3.33333 3.16667C2.8731 3.16667 2.5 3.53977 2.5 4.00001V13.3333C2.5 13.7936 2.8731 14.1667 3.33333 14.1667H12.6667C13.1269 14.1667 13.5 13.7936 13.5 13.3333V4.00001C13.5 3.53977 13.1269 3.16667 12.6667 3.16667H3.33333ZM1.5 4.00001C1.5 2.98748 2.32081 2.16667 3.33333 2.16667H12.6667C13.6792 2.16667 14.5 2.98748 14.5 4.00001V13.3333C14.5 14.3459 13.6792 15.1667 12.6667 15.1667H3.33333C2.32081 15.1667 1.5 14.3459 1.5 13.3333V4.00001Z"
+      fill="currentColor"
     />
-    <path d="M2 6.66667H14" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" />
-    <path d="M10.6667 1.33333V3.99999" stroke="currentColor" strokeLinecap="square" strokeLinejoin="round" />
-    <path d="M5.33333 1.33333V3.99999" stroke="currentColor" strokeLinecap="square" strokeLinejoin="round" />
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M1.5 6.66667C1.5 6.39053 1.72386 6.16667 2 6.16667H14C14.2761 6.16667 14.5 6.39053 14.5 6.66667C14.5 6.94281 14.2761 7.16667 14 7.16667H2C1.72386 7.16667 1.5 6.94281 1.5 6.66667Z"
+      fill="currentColor"
+    />
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M10.6667 0.833328C10.9428 0.833328 11.1667 1.05719 11.1667 1.33333V3.99999C11.1667 4.27614 10.9428 4.49999 10.6667 4.49999C10.3905 4.49999 10.1667 4.27614 10.1667 3.99999V1.33333C10.1667 1.05719 10.3905 0.833328 10.6667 0.833328Z"
+      fill="currentColor"
+    />
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M5.33333 0.833328C5.60947 0.833328 5.83333 1.05719 5.83333 1.33333V3.99999C5.83333 4.27614 5.60947 4.49999 5.33333 4.49999C5.05719 4.49999 4.83333 4.27614 4.83333 3.99999V1.33333C4.83333 1.05719 5.05719 0.833328 5.33333 0.833328Z"
+      fill="currentColor"
+    />
   </svg>
 );
 

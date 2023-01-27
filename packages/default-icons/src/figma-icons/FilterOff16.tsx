@@ -2,12 +2,42 @@ import { SVGProps, memo } from 'react';
 
 const FilterOff16 = (props: SVGProps<SVGSVGElement>) => (
   <svg width={16} height={16} viewBox="0 0 16 16" fill="none" {...props}>
-    <path d="M1 11.5L2 11.5" stroke="currentColor" strokeWidth={1.3} strokeLinecap="square" strokeLinejoin="round" />
-    <path d="M15 4.5L13 4.5" stroke="currentColor" strokeWidth={1.3} strokeLinecap="square" strokeLinejoin="round" />
-    <path d="M10 11.5L15 11.5" stroke="currentColor" strokeWidth={1.3} strokeLinecap="square" strokeLinejoin="round" />
-    <path d="M6 4.5H1" stroke="currentColor" strokeWidth={1.3} strokeLinecap="square" strokeLinejoin="round" />
-    <circle r={2} transform="matrix(-1 0 0 1 5 11.5)" stroke="currentColor" strokeWidth={1.3} strokeLinecap="square" />
-    <circle cx={11} cy={4.5} r={2} stroke="currentColor" strokeWidth={1.3} strokeLinecap="square" />
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M15.65 11.5C15.65 11.141 15.359 10.85 15 10.85L10 10.85C9.64102 10.85 9.35001 11.141 9.35001 11.5C9.35001 11.859 9.64102 12.15 10 12.15H15C15.359 12.15 15.65 11.859 15.65 11.5Z"
+      fill="currentColor"
+    />
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M0.350006 4.50001C0.350006 4.85899 0.641021 5.15001 1.00001 5.15001H6.00001C6.35899 5.15001 6.65001 4.85899 6.65001 4.50001C6.65001 4.14102 6.35899 3.85001 6.00001 3.85001H1.00001C0.641021 3.85001 0.350006 4.14102 0.350006 4.50001Z"
+      fill="currentColor"
+    />
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M3.23025 11.5C3.23025 11.859 2.93924 12.15 2.58025 12.15H1.00001C0.641021 12.15 0.350006 11.859 0.350006 11.5C0.350006 11.141 0.641021 10.85 1.00001 10.85H2.58025C2.93924 10.85 3.23025 11.141 3.23025 11.5Z"
+      fill="currentColor"
+    />
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M5.00001 10.15C5.74559 10.15 6.35001 10.7544 6.35001 11.5C6.35001 12.2456 5.74559 12.85 5.00001 12.85C4.25442 12.85 3.65001 12.2456 3.65001 11.5C3.65001 10.7544 4.25442 10.15 5.00001 10.15ZM7.65001 11.5C7.65001 10.0365 6.46356 8.85001 5.00001 8.85001C3.53645 8.85001 2.35001 10.0365 2.35001 11.5C2.35001 12.9636 3.53645 14.15 5.00001 14.15C6.46356 14.15 7.65001 12.9636 7.65001 11.5Z"
+      fill="currentColor"
+    />
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M12.35 4.50001C12.35 4.14102 12.641 3.85001 13 3.85001L15 3.85001C15.359 3.85001 15.65 4.14102 15.65 4.50001C15.65 4.85899 15.359 5.15001 15 5.15001L13 5.15001C12.641 5.15001 12.35 4.85899 12.35 4.50001Z"
+      fill="currentColor"
+    />
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M11 3.15001C10.2544 3.15001 9.65001 3.75442 9.65001 4.50001C9.65001 5.24559 10.2544 5.85001 11 5.85001C11.7456 5.85001 12.35 5.24559 12.35 4.50001C12.35 3.75442 11.7456 3.15001 11 3.15001ZM8.35001 4.50001C8.35001 3.03645 9.53645 1.85001 11 1.85001C12.4636 1.85001 13.65 3.03645 13.65 4.50001C13.65 5.96356 12.4636 7.15001 11 7.15001C9.53645 7.15001 8.35001 5.96356 8.35001 4.50001Z"
+      fill="currentColor"
+    />
   </svg>
 );
 

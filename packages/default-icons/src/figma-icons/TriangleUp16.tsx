@@ -2,7 +2,7 @@ import { SVGProps, memo } from 'react';
 
 const TriangleUp16 = (props: SVGProps<SVGSVGElement>) => (
   <svg width={16} height={16} viewBox="0 0 16 16" fill="none" {...props}>
-    <path d="M5 13L11 8L5 3" fill="currentColor" />
+    <path d="M13 11L8 5L3 11" fill="currentColor" />
   </svg>
 );
 

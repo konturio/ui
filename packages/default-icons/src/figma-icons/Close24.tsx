@@ -2,8 +2,12 @@ import { SVGProps, memo } from 'react';
 
 const Close24 = (props: SVGProps<SVGSVGElement>) => (
   <svg width={24} height={24} viewBox="0 0 24 24" fill="none" {...props}>
-    <path d="M6 6L18 18" stroke="currentColor" strokeWidth={1.3} strokeLinejoin="bevel" />
-    <path d="M18 6L6 18" stroke="currentColor" strokeWidth={1.3} strokeLinejoin="bevel" />
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M5.54039 5.54039C5.79423 5.28655 6.20578 5.28655 6.45963 5.54039L12 11.0808L17.5404 5.54039C17.7942 5.28655 18.2058 5.28655 18.4596 5.54039C18.7135 5.79423 18.7135 6.20578 18.4596 6.45963L12.9192 12L18.4596 17.5404C18.7135 17.7942 18.7135 18.2058 18.4596 18.4596C18.2058 18.7135 17.7942 18.7135 17.5404 18.4596L12 12.9192L6.45963 18.4596C6.20578 18.7135 5.79423 18.7135 5.54039 18.4596C5.28655 18.2058 5.28655 17.7942 5.54039 17.5404L11.0808 12L5.54039 6.45963C5.28655 6.20578 5.28655 5.79423 5.54039 5.54039Z"
+      fill="currentColor"
+    />
   </svg>
 );
 

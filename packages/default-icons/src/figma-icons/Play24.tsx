@@ -3,18 +3,16 @@ import { SVGProps, memo } from 'react';
 const Play24 = (props: SVGProps<SVGSVGElement>) => (
   <svg width={24} height={24} viewBox="0 0 24 24" fill="none" {...props}>
     <path
-      d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
-      stroke="currentColor"
-      strokeWidth={1.3}
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M12 2.65C6.83614 2.65 2.65001 6.83614 2.65001 12C2.65001 17.1639 6.83614 21.35 12 21.35C17.1639 21.35 21.35 17.1639 21.35 12C21.35 6.83614 17.1639 2.65 12 2.65ZM1.35001 12C1.35001 6.11817 6.11817 1.35 12 1.35C17.8818 1.35 22.65 6.11817 22.65 12C22.65 17.8818 17.8818 22.65 12 22.65C6.11817 22.65 1.35001 17.8818 1.35001 12Z"
+      fill="currentColor"
     />
     <path
-      d="M10 8L16 12L10 16V8Z"
-      stroke="currentColor"
-      strokeWidth={1.3}
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M9.6933 7.42691C9.90465 7.3138 10.1611 7.32619 10.3606 7.45917L16.3606 11.4592C16.5414 11.5797 16.65 11.7827 16.65 12C16.65 12.2173 16.5414 12.4203 16.3606 12.5408L10.3606 16.5408C10.1611 16.6738 9.90465 16.6862 9.6933 16.5731C9.48195 16.46 9.35001 16.2397 9.35001 16V8C9.35001 7.76028 9.48195 7.54002 9.6933 7.42691ZM10.65 9.21453V14.7855L14.8282 12L10.65 9.21453Z"
+      fill="currentColor"
     />
   </svg>
 );

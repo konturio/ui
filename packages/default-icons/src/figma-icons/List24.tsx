@@ -2,12 +2,12 @@ import { SVGProps, memo } from 'react';
 
 const List24 = (props: SVGProps<SVGSVGElement>) => (
   <svg width={24} height={24} viewBox="0 0 24 24" fill="none" {...props}>
-    <path d="M8 18H21" stroke="currentColor" strokeWidth={1.3} strokeLinecap="square" strokeLinejoin="round" />
-    <path d="M3 18H3.01" stroke="currentColor" strokeWidth={1.3} strokeLinecap="square" strokeLinejoin="round" />
-    <path d="M8 12H21" stroke="currentColor" strokeWidth={1.3} strokeLinecap="square" strokeLinejoin="round" />
-    <path d="M3 12H3.01" stroke="currentColor" strokeWidth={1.3} strokeLinecap="square" strokeLinejoin="round" />
-    <path d="M8 6H21" stroke="currentColor" strokeWidth={1.3} strokeLinecap="square" strokeLinejoin="round" />
-    <path d="M3 6H3.01" stroke="currentColor" strokeWidth={1.3} strokeLinecap="square" strokeLinejoin="round" />
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M2.35 6.00001C2.35 5.64102 2.64101 5.35001 3 5.35001H3.01C3.36898 5.35001 3.66 5.64102 3.66 6.00001C3.66 6.35899 3.36898 6.65001 3.01 6.65001H3C2.64101 6.65001 2.35 6.35899 2.35 6.00001ZM7.35 6.00001C7.35 5.64102 7.64101 5.35001 8 5.35001H21C21.359 5.35001 21.65 5.64102 21.65 6.00001C21.65 6.35899 21.359 6.65001 21 6.65001H8C7.64101 6.65001 7.35 6.35899 7.35 6.00001ZM2.35 12C2.35 11.641 2.64101 11.35 3 11.35H3.01C3.36898 11.35 3.66 11.641 3.66 12C3.66 12.359 3.36898 12.65 3.01 12.65H3C2.64101 12.65 2.35 12.359 2.35 12ZM7.35 12C7.35 11.641 7.64101 11.35 8 11.35H21C21.359 11.35 21.65 11.641 21.65 12C21.65 12.359 21.359 12.65 21 12.65H8C7.64101 12.65 7.35 12.359 7.35 12ZM2.35 18C2.35 17.641 2.64101 17.35 3 17.35H3.01C3.36898 17.35 3.66 17.641 3.66 18C3.66 18.359 3.36898 18.65 3.01 18.65H3C2.64101 18.65 2.35 18.359 2.35 18ZM7.35 18C7.35 17.641 7.64101 17.35 8 17.35H21C21.359 17.35 21.65 17.641 21.65 18C21.65 18.359 21.359 18.65 21 18.65H8C7.64101 18.65 7.35 18.359 7.35 18Z"
+      fill="currentColor"
+    />
   </svg>
 );
 

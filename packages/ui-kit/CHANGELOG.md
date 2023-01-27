@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.10.2](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.10.1...@konturio/ui-kit@3.10.2) (2023-01-27)
+
+### Bug Fixes
+
+- 13281 - placeholder overflow select container ([b837bfb](https://github.com/konturio/ui/commit/b837bfbe47216ba5bdcd42517c4d258c099456ae))
+
 ## [3.10.1](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.10.0...@konturio/ui-kit@3.10.1) (2023-01-27)
 
 **Note:** Version bump only for package @konturio/ui-kit

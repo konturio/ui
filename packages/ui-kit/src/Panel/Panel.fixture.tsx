@@ -5,35 +5,41 @@ import {
   DoubleChevronDown24,
   DoubleChevronUp24,
 } from '@konturio/default-icons';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Panel } from '.';
 import type { PanelCustomControl } from '.';
 
 export default function Fixture() {
   // This whole thing can be wrapped into custom hook
   const [panelState, setPanelState] = useState<'full' | 'short' | 'closed'>('full');
-  const openFullControl: PanelCustomControl = {
-    icon: <DoubleChevronDown24 />,
-    onWrapperClick: () => setPanelState('full'),
-  };
-  const openHalfwayControl: PanelCustomControl = {
-    icon: <ChevronDown24 />,
-    onWrapperClick: () => setPanelState((prevState) => (prevState === 'closed' ? 'short' : 'full')),
-  };
-  const closeHalfwayControl: PanelCustomControl = {
-    icon: <ChevronUp24 />,
-    onWrapperClick: () => setPanelState((prevState) => (prevState === 'full' ? 'short' : 'closed')),
-  };
-  const closeControl: PanelCustomControl = {
-    icon: <DoubleChevronUp24 />,
-    onWrapperClick: () => setPanelState('closed'),
-  };
+  const panelApiRef = useRef<Record<string, PanelCustomControl>>({
+    openFullControl: {
+      icon: <DoubleChevronDown24 />,
+      onWrapperClick: () => setPanelState('full'),
+    },
+    openHalfwayControl: {
+      icon: <ChevronDown24 />,
+      onWrapperClick: () => setPanelState((prevState) => (prevState === 'closed' ? 'short' : 'full')),
+    },
+    closeHalfwayControl: {
+      icon: <ChevronUp24 />,
+      onWrapperClick: () => setPanelState((prevState) => (prevState === 'full' ? 'short' : 'closed')),
+    },
+    closeControl: {
+      icon: <DoubleChevronUp24 />,
+      onWrapperClick: () => setPanelState('closed'),
+    },
+  });
+
   const [panelControls, setPanelControls] = useState<PanelCustomControl[]>([]);
 
   useEffect(() => {
-    panelState === 'full' && setPanelControls([closeHalfwayControl, closeControl]);
-    panelState === 'short' && setPanelControls([closeHalfwayControl, openHalfwayControl]);
-    panelState === 'closed' && setPanelControls([openFullControl, openHalfwayControl]);
+    panelState === 'full' &&
+      setPanelControls([panelApiRef.current.closeHalfwayControl, panelApiRef.current.closeControl]);
+    panelState === 'short' &&
+      setPanelControls([panelApiRef.current.closeHalfwayControl, panelApiRef.current.openHalfwayControl]);
+    panelState === 'closed' &&
+      setPanelControls([panelApiRef.current.openFullControl, panelApiRef.current.openHalfwayControl]);
   }, [panelState]);
 
   const panelContent = {
@@ -89,9 +95,9 @@ export default function Fixture() {
         maxContentHeight={150}
         isOpen={true}
         style={{ width: '100%' }}
-        customControls={[openHalfwayControl, closeHalfwayControl]}
+        customControls={[panelApiRef.current.openHalfwayControl, panelApiRef.current.closeHalfwayControl]}
       >
-        <h5>
+        <h5 style={{ padding: '2em' }}>
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas aliquid maiores minima veniam vitae! Non
           repellat esse, cupiditate earum minus dolore cum quas, accusantium deleniti quod, inventore ea nisi vitae?
         </h5>

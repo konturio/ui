@@ -35,12 +35,14 @@ import fixture24 from './../packages/ui-kit/src/Text/Text.fixture.tsx';
 import fixture25 from './../packages/ui-kit/src/Textarea/Textarea.fixture.tsx';
 import fixture26 from './../packages/ui-kit/src/Timeline/fixture/ChangeMargins.fixture.tsx';
 import fixture27 from './../packages/ui-kit/src/Timeline/fixture/CustomTemplate.fixture.tsx';
-import fixture28 from './../packages/ui-kit/src/Timeline/fixture/ImperativeApi.fixture.tsx';
-import fixture29 from './../packages/ui-kit/src/Timeline/fixture/Timeline.fixture.tsx';
-import fixture30 from './../packages/ui-kit/src/Timeline/fixture/TimeLineWithDropDown.fixture.tsx';
-import fixture31 from './../packages/ui-kit/src/TimeSlider/TimeSlider.fixture.tsx';
-import fixture32 from './../packages/ui-kit/src/Toggler/Toggler.fixture.tsx';
-import fixture33 from './../packages/ui-kit/src/Tooltip/Tooltip.fixture.tsx';
+import fixture28 from './../packages/ui-kit/src/Timeline/fixture/EntryTooltip.fixture.tsx';
+import fixture29 from './../packages/ui-kit/src/Timeline/fixture/ImperativeApi.fixture.tsx';
+import fixture30 from './../packages/ui-kit/src/Timeline/fixture/Timeline.fixture.tsx';
+import fixture31 from './../packages/ui-kit/src/Timeline/fixture/TimeLineWithDropDown.fixture.tsx';
+import fixture32 from './../packages/ui-kit/src/TimeSlider/TimeSlider.fixture.tsx';
+import fixture33 from './../packages/ui-kit/src/Toggler/Toggler.fixture.tsx';
+import fixture34 from './../packages/ui-kit/src/Tooltip/Tooltip.fixture.tsx';
+
 import decorator0 from './../cosmos.decorator.tsx';
 import decorator1 from './../packages/ui-kit/cosmos.decorator.tsx';
 
@@ -77,12 +79,13 @@ export const fixtures = {
   'packages/ui-kit/src/Textarea/Textarea.fixture.tsx': { module: { default: fixture25 } },
   'packages/ui-kit/src/Timeline/fixture/ChangeMargins.fixture.tsx': { module: { default: fixture26 } },
   'packages/ui-kit/src/Timeline/fixture/CustomTemplate.fixture.tsx': { module: { default: fixture27 } },
-  'packages/ui-kit/src/Timeline/fixture/ImperativeApi.fixture.tsx': { module: { default: fixture28 } },
-  'packages/ui-kit/src/Timeline/fixture/Timeline.fixture.tsx': { module: { default: fixture29 } },
-  'packages/ui-kit/src/Timeline/fixture/TimeLineWithDropDown.fixture.tsx': { module: { default: fixture30 } },
-  'packages/ui-kit/src/TimeSlider/TimeSlider.fixture.tsx': { module: { default: fixture31 } },
-  'packages/ui-kit/src/Toggler/Toggler.fixture.tsx': { module: { default: fixture32 } },
-  'packages/ui-kit/src/Tooltip/Tooltip.fixture.tsx': { module: { default: fixture33 } },
+  'packages/ui-kit/src/Timeline/fixture/EntryTooltip.fixture.tsx': { module: { default: fixture28 } },
+  'packages/ui-kit/src/Timeline/fixture/ImperativeApi.fixture.tsx': { module: { default: fixture29 } },
+  'packages/ui-kit/src/Timeline/fixture/Timeline.fixture.tsx': { module: { default: fixture30 } },
+  'packages/ui-kit/src/Timeline/fixture/TimeLineWithDropDown.fixture.tsx': { module: { default: fixture31 } },
+  'packages/ui-kit/src/TimeSlider/TimeSlider.fixture.tsx': { module: { default: fixture32 } },
+  'packages/ui-kit/src/Toggler/Toggler.fixture.tsx': { module: { default: fixture33 } },
+  'packages/ui-kit/src/Tooltip/Tooltip.fixture.tsx': { module: { default: fixture34 } },
 };
 
 export const decorators = {

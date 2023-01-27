@@ -133,7 +133,6 @@
   }
 
   & .placeholder {
-    position: absolute;
     transition: 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;
     top: 8px;
   }

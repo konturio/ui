@@ -45,7 +45,7 @@ export interface SelectProps {
   multiselect?: MultiSelectProp;
   withResetButton?: boolean;
   itemToString?: (item: SelectItemType | SelectItemType[] | null) => string;
-  label?: string | React.ReactChild | React.ReactChild[];
+  label?: string | number | React.ReactElement | React.ReactElement[];
   disabled?: boolean;
   error?: string;
   type?: 'classic' | 'inline';
@@ -272,7 +272,7 @@ export const Select = forwardRef(
           value={initialSelectedItem}
           alwaysShowPlaceholder={alwaysShowPlaceholder}
         >
-          {children}
+          {children ?? placeholder}
         </SelectButton>
         <ul {...getMenuProps()} className={cn({ [style.menu]: true, [classes?.menu || '']: classes?.menu })}>
           {isOpen &&

@@ -34,7 +34,7 @@ export default {
         label="Interactive Select"
         items={items}
       >
-        Select Example
+        Placeholder example
       </Select>
     );
   },

@@ -1,18 +1,22 @@
 import { Card } from '.';
 
+const style = `
+.card-fixture-wrapper {
+  margin: 16px
+}`;
+
 export default (
-  <>
-    <Card>
-      <div style={{ height: '400px', display: 'flex', margin: 'auto' }}>
+  <div>
+    <style>{style}</style>
+    <Card className="card-fixture-wrapper" inline>
+      <div style={{ display: 'flex', margin: 'auto' }}>
         <div style={{ margin: 'auto', padding: '1em' }}>Content</div>
       </div>
     </Card>
-    <div>
-      <Card inline>
-        <div style={{ display: 'flex', margin: 'auto' }}>
-          <div style={{ margin: 'auto', padding: '1em' }}>Content</div>
-        </div>
-      </Card>
-    </div>
-  </>
+    <Card inline>
+      <div style={{ display: 'flex', margin: 'auto' }}>
+        <div style={{ margin: 'auto', padding: '1em' }}>Content</div>
+      </div>
+    </Card>
+  </div>
 );

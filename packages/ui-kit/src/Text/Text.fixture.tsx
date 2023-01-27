@@ -7,10 +7,6 @@ export default (
         color: green;
       }`}
     </style>
-    <Text type="heading-l">
-      <h1>This is for component and layout headings</h1>
-    </Text>
-    <Text type="heading-m">This is for component and layout headings</Text>
     <Text type="short-l">
       This is for short paragraphs with no more than four lines and is commonly used in components.
     </Text>

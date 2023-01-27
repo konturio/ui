@@ -2,8 +2,9 @@ import cn from 'clsx';
 import { ChevronDown24, ChevronUp24 } from '@konturio/default-icons';
 import { nanoid } from 'nanoid';
 import { Card } from '../Card';
-import { Text } from '../Text';
 import { Modal } from '../Modal';
+import { Heading } from '../Heading';
+import { Text } from '../Text';
 import s from './style.module.css';
 import type { MouseEventHandler, ReactElement } from 'react';
 
@@ -63,8 +64,10 @@ export function Panel({
         <div className={cn(classes?.header, onHeaderClick && s.hoverable)}>
           <div className={cn(s.headerContent)} onClick={onHeaderClick}>
             <div className={cn(s.headerTitle, classes?.headerTitle)}>
-              <div className={s.headerIconWrap}>{headerIcon}</div>
-              <Text type="heading-l">{header}</Text>
+              {headerIcon && <div className={s.headerIconWrap}>{headerIcon}</div>}
+              <Heading type="heading-04" margins={false}>
+                {header}
+              </Heading>
             </div>
             {/* backwards compatibility */}
             {!customControls && onHeaderClick && (

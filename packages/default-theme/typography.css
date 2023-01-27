@@ -85,35 +85,8 @@ a {
 }
 
 /* This is for component and layout headings */
-.k-font-heading-m {
-  font-family: var(--font-family);
-  font-style: normal;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 18px;
-  letter-spacing: 0.0016em;
-}
-
-/* This is for component and layout headings */
-.k-font-heading-l {
-  font-family: var(--font-family);
-  font-style: normal;
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 22px;
-}
-
-/* This is for component and layout headings */
-.k-font-heading-xl {
-  font-family: var(--font-family);
-  font-style: normal;
-  font-weight: 500;
-  font-size: 32px;
-  line-height: 40px;
-}
-
 .k-font-heading-06 {
-  font-family: 'IBM Plex Sans';
+  font-family: var(--font-family);
   font-style: normal;
   font-weight: 600;
   font-size: 12px;
@@ -121,7 +94,7 @@ a {
 }
 
 .k-font-heading-05 {
-  font-family: 'IBM Plex Sans';
+  font-family: var(--font-family);
   font-style: normal;
   font-weight: 600;
   font-size: 14px;
@@ -129,7 +102,7 @@ a {
 }
 
 .k-font-heading-04 {
-  font-family: 'IBM Plex Sans';
+  font-family: var(--font-family);
   font-style: normal;
   font-weight: 600;
   font-size: 16px;
@@ -137,7 +110,7 @@ a {
 }
 
 .k-font-heading-03 {
-  font-family: 'IBM Plex Sans';
+  font-family: var(--font-family);
   font-style: normal;
   font-weight: 600;
   font-size: 20px;
@@ -145,7 +118,7 @@ a {
 }
 
 .k-font-heading-02 {
-  font-family: 'IBM Plex Sans';
+  font-family: var(--font-family);
   font-style: normal;
   font-weight: 500;
   font-size: 28px;
@@ -153,9 +126,18 @@ a {
 }
 
 .k-font-heading-01 {
-  font-family: 'IBM Plex Sans';
+  font-family: var(--font-family);
   font-style: normal;
   font-weight: 500;
   font-size: 32px;
   line-height: 40px;
+}
+
+.k-font-heading-01.k-font-unset-margins,
+.k-font-heading-02.k-font-unset-margins,
+.k-font-heading-03.k-font-unset-margins,
+.k-font-heading-04.k-font-unset-margins,
+.k-font-heading-05.k-font-unset-margins,
+.k-font-heading-06.k-font-unset-margins {
+  margin: 0;
 }

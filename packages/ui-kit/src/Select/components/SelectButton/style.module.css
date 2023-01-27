@@ -133,8 +133,11 @@
   }
 
   & .placeholder {
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
     transition: 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;
-    top: 8px;
+    top: var(--unit);
   }
 
   & .alwaysShowPlaceholder.hasValue {

@@ -47,7 +47,7 @@ import decorator0 from './../cosmos.decorator.tsx';
 import decorator1 from './../packages/ui-kit/cosmos.decorator.tsx';
 
 export const rendererConfig = {
-  port: 5000,
+  port: 5001,
 };
 
 export const fixtures = {

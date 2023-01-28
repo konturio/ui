@@ -23,6 +23,19 @@
 
   --button-invert-active-color: var(--accent-strong-up);
   --button-invert-active-background: var(--accent-weak);
+
+  /* Focus styles will appear when the element is focused using the keyboard.
+   Browsers that don't support :focus-visible use the focus styles defined
+   in the :focus rule and ignore the second style rule completely */
+  &:focus {
+    outline: none;
+    box-shadow: var(--button-box-shadow);
+  }
+
+  /* Focus styles defined in the :focus rule are only in effect when :focus-visible is also active. */
+  &:focus:not(:focus-visible) {
+    box-shadow: none;
+  }
 }
 
 .buttonDark {
@@ -75,10 +88,6 @@
       background-color: var(--base-strong-down);
     }
   }
-  &:focus {
-    outline: none;
-    box-shadow: var(--button-box-shadow);
-  }
 }
 
 .primary {
@@ -97,10 +106,6 @@
     background-color: var(--back-accent-strong);
     color: var(--base-weak);
   }
-  &:focus {
-    outline: none;
-    box-shadow: var(--button-box-shadow);
-  }
 }
 
 .invert {
@@ -118,10 +123,6 @@
   &.active {
     background-color: var(--button-invert-active-background);
     color: var(--button-invert-active-color);
-  }
-  &:focus {
-    outline: none;
-    box-shadow: var(--button-box-shadow);
   }
 }
 
@@ -142,10 +143,6 @@
     background-color: var(--button-invert-active-background);
     color: var(--button-invert-active-color);
     border-color: var(--button-invert-active-color);
-  }
-  &:focus {
-    outline: none;
-    box-shadow: var(--button-box-shadow);
   }
 }
 

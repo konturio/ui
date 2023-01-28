@@ -9,5 +9,5 @@
     "packages/default-theme/defaults.css",
     "packages/default-theme/typography.css"
   ],
-  "port": 5000
+  "port": 5001
 }

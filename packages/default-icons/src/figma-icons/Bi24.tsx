@@ -3,21 +3,11 @@ import { SVGProps, memo } from 'react';
 const Bi24 = (props: SVGProps<SVGSVGElement>) => (
   <svg width={24} height={24} viewBox="0 0 24 24" fill="none" {...props}>
     <path
-      d="M20 14H14V20H20V14Z"
-      stroke="currentColor"
-      strokeWidth={1.3}
-      strokeLinecap="square"
-      strokeLinejoin="bevel"
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M3.35001 4.00001C3.35001 3.64102 3.64102 3.35001 4.00001 3.35001H10C10.359 3.35001 10.65 3.64102 10.65 4.00001V10C10.65 10.359 10.359 10.65 10 10.65H4.00001C3.64102 10.65 3.35001 10.359 3.35001 10V4.00001ZM4.65001 4.65001V9.35001H9.35001V4.65001H4.65001ZM13.35 4.00001C13.35 3.64102 13.641 3.35001 14 3.35001H20C20.359 3.35001 20.65 3.64102 20.65 4.00001V10C20.65 10.359 20.359 10.65 20 10.65H14C13.641 10.65 13.35 10.359 13.35 10V4.00001ZM14.65 4.65001V9.35001H19.35V4.65001H14.65ZM3.35001 14C3.35001 13.641 3.64102 13.35 4.00001 13.35H10C10.359 13.35 10.65 13.641 10.65 14V20C10.65 20.359 10.359 20.65 10 20.65H4.00001C3.64102 20.65 3.35001 20.359 3.35001 20V14ZM4.65001 14.65V19.35H9.35001V14.65H4.65001ZM13.35 14C13.35 13.641 13.641 13.35 14 13.35H20C20.359 13.35 20.65 13.641 20.65 14V20C20.65 20.359 20.359 20.65 20 20.65H14C13.641 20.65 13.35 20.359 13.35 20V14ZM14.65 14.65V19.35H19.35V14.65H14.65Z"
+      fill="currentColor"
     />
-    <path
-      d="M10 14H4V20H10V14Z"
-      stroke="currentColor"
-      strokeWidth={1.3}
-      strokeLinecap="square"
-      strokeLinejoin="bevel"
-    />
-    <path d="M20 4H14V10H20V4Z" stroke="currentColor" strokeWidth={1.3} strokeLinecap="square" strokeLinejoin="bevel" />
-    <path d="M10 4H4V10H10V4Z" stroke="currentColor" strokeWidth={1.3} strokeLinecap="square" strokeLinejoin="bevel" />
   </svg>
 );
 

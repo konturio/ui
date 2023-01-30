@@ -2,8 +2,12 @@ import { SVGProps, memo } from 'react';
 
 const DoubleChevronRight24 = (props: SVGProps<SVGSVGElement>) => (
   <svg width={24} height={24} viewBox="0 0 24 24" fill="none" {...props}>
-    <path d="M12 17L17 12L12 7" stroke="currentColor" strokeWidth={1.3} strokeLinecap="square" strokeLinejoin="round" />
-    <path d="M6 17L11 12L6 7" stroke="currentColor" strokeWidth={1.3} strokeLinecap="square" strokeLinejoin="round" />
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M5.54038 6.54039C5.79422 6.28655 6.20578 6.28655 6.45962 6.54039L11.4596 11.5404C11.5815 11.6623 11.65 11.8276 11.65 12C11.65 12.1724 11.5815 12.3377 11.4596 12.4596L6.45962 17.4596C6.20578 17.7135 5.79422 17.7135 5.54038 17.4596C5.28654 17.2058 5.28654 16.7942 5.54038 16.5404L10.0808 12L5.54038 7.45963C5.28654 7.20578 5.28654 6.79423 5.54038 6.54039ZM11.5404 6.54039C11.7942 6.28655 12.2058 6.28655 12.4596 6.54039L17.4596 11.5404C17.5815 11.6623 17.65 11.8276 17.65 12C17.65 12.1724 17.5815 12.3377 17.4596 12.4596L12.4596 17.4596C12.2058 17.7135 11.7942 17.7135 11.5404 17.4596C11.2865 17.2058 11.2865 16.7942 11.5404 16.5404L16.0808 12L11.5404 7.45963C11.2865 7.20578 11.2865 6.79423 11.5404 6.54039Z"
+      fill="currentColor"
+    />
   </svg>
 );
 

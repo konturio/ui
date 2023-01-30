@@ -2,12 +2,31 @@ import { SVGProps, memo } from 'react';
 
 const Locate24 = (props: SVGProps<SVGSVGElement>) => (
   <svg width={24} height={24} viewBox="0 0 24 24" fill="none" {...props}>
-    <circle cx={12} cy={12} r={7.35} stroke="currentColor" strokeWidth={1.3} />
-    <circle r={2.35} transform="matrix(1 0 0 -1 12 12)" stroke="currentColor" strokeWidth={1.3} />
-    <path d="M12 1V5" stroke="currentColor" strokeWidth={1.3} />
-    <path d="M23 12L19 12" stroke="currentColor" strokeWidth={1.3} />
-    <path d="M12 19L12 23" stroke="currentColor" strokeWidth={1.3} />
-    <path d="M5 12H1" stroke="currentColor" strokeWidth={1.3} />
+    <g clipPath="url(#clip0_1688_25972)">
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M12 18.7C15.7003 18.7 18.7 15.7003 18.7 12C18.7 8.2997 15.7003 5.30001 12 5.30001C8.29969 5.30001 5.3 8.2997 5.3 12C5.3 15.7003 8.29969 18.7 12 18.7ZM12 20C16.4183 20 20 16.4183 20 12C20 7.58173 16.4183 4.00001 12 4.00001C7.58172 4.00001 4 7.58173 4 12C4 16.4183 7.58172 20 12 20Z"
+        fill="currentColor"
+      />
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M12 10.3C12.9389 10.3 13.7 11.0611 13.7 12C13.7 12.9389 12.9389 13.7 12 13.7C11.0611 13.7 10.3 12.9389 10.3 12C10.3 11.0611 11.0611 10.3 12 10.3ZM12 9.00001C13.6569 9.00001 15 10.3432 15 12C15 13.6569 13.6569 15 12 15C10.3431 15 9 13.6569 9 12C9 10.3432 10.3431 9.00001 12 9.00001Z"
+        fill="currentColor"
+      />
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M12 0.350006C12.359 0.350006 12.65 0.641021 12.65 1.00001V4.00001C12.65 4.35899 12.359 4.65001 12 4.65001C11.641 4.65001 11.35 4.35899 11.35 4.00001V1.00001C11.35 0.641021 11.641 0.350006 12 0.350006ZM0.349998 12C0.349998 11.641 0.641013 11.35 0.999998 11.35H4C4.35898 11.35 4.65 11.641 4.65 12C4.65 12.359 4.35898 12.65 4 12.65H0.999998C0.641013 12.65 0.349998 12.359 0.349998 12ZM19.35 12C19.35 11.641 19.641 11.35 20 11.35H23C23.359 11.35 23.65 11.641 23.65 12C23.65 12.359 23.359 12.65 23 12.65H20C19.641 12.65 19.35 12.359 19.35 12ZM12 19.35C12.359 19.35 12.65 19.641 12.65 20V23C12.65 23.359 12.359 23.65 12 23.65C11.641 23.65 11.35 23.359 11.35 23V20C11.35 19.641 11.641 19.35 12 19.35Z"
+        fill="currentColor"
+      />
+    </g>
+    <defs>
+      <clipPath id="clip0_1688_25972">
+        <rect width={24} height={24} fill="white" />
+      </clipPath>
+    </defs>
   </svg>
 );
 

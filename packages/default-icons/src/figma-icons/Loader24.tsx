@@ -2,38 +2,12 @@ import { SVGProps, memo } from 'react';
 
 const Loader24 = (props: SVGProps<SVGSVGElement>) => (
   <svg width={24} height={24} viewBox="0 0 24 24" fill="none" {...props}>
-    <path d="M12 18V22" stroke="currentColor" strokeWidth={1.3} strokeLinecap="round" strokeLinejoin="round" />
     <path
-      d="M16.24 16.24L19.07 19.07"
-      stroke="currentColor"
-      strokeWidth={1.3}
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M12 1.35001C12.359 1.35001 12.65 1.64102 12.65 2.00001V6.00001C12.65 6.35899 12.359 6.65001 12 6.65001C11.641 6.65001 11.35 6.35899 11.35 6.00001V2.00001C11.35 1.64102 11.641 1.35001 12 1.35001ZM4.47038 4.47039C4.72422 4.21655 5.13578 4.21655 5.38962 4.47039L8.21962 7.30039C8.47346 7.55423 8.47346 7.96579 8.21962 8.21963C7.96578 8.47347 7.55422 8.47347 7.30038 8.21963L4.47038 5.38963C4.21654 5.13578 4.21654 4.72423 4.47038 4.47039ZM19.5296 4.47039C19.7835 4.72423 19.7835 5.13578 19.5296 5.38963L16.6996 8.21963C16.4458 8.47347 16.0342 8.47347 15.7804 8.21963C15.5265 7.96579 15.5265 7.55423 15.7804 7.30039L18.6104 4.47039C18.8642 4.21655 19.2758 4.21655 19.5296 4.47039ZM1.35 12C1.35 11.641 1.64101 11.35 2 11.35H6C6.35898 11.35 6.65 11.641 6.65 12C6.65 12.359 6.35898 12.65 6 12.65H2C1.64101 12.65 1.35 12.359 1.35 12ZM17.35 12C17.35 11.641 17.641 11.35 18 11.35H22C22.359 11.35 22.65 11.641 22.65 12C22.65 12.359 22.359 12.65 22 12.65H18C17.641 12.65 17.35 12.359 17.35 12ZM8.21962 15.7804C8.47346 16.0342 8.47346 16.4458 8.21962 16.6996L5.38962 19.5296C5.13578 19.7835 4.72422 19.7835 4.47038 19.5296C4.21654 19.2758 4.21654 18.8642 4.47038 18.6104L7.30038 15.7804C7.55422 15.5265 7.96578 15.5265 8.21962 15.7804ZM15.7804 15.7804C16.0342 15.5265 16.4458 15.5265 16.6996 15.7804L19.5296 18.6104C19.7835 18.8642 19.7835 19.2758 19.5296 19.5296C19.2758 19.7835 18.8642 19.7835 18.6104 19.5296L15.7804 16.6996C15.5265 16.4458 15.5265 16.0342 15.7804 15.7804ZM12 17.35C12.359 17.35 12.65 17.641 12.65 18V22C12.65 22.359 12.359 22.65 12 22.65C11.641 22.65 11.35 22.359 11.35 22V18C11.35 17.641 11.641 17.35 12 17.35Z"
+      fill="currentColor"
     />
-    <path
-      d="M4.93 19.07L7.76 16.24"
-      stroke="currentColor"
-      strokeWidth={1.3}
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-    <path d="M18 12H22" stroke="currentColor" strokeWidth={1.3} strokeLinecap="round" strokeLinejoin="round" />
-    <path d="M2 12H6" stroke="currentColor" strokeWidth={1.3} strokeLinecap="round" strokeLinejoin="round" />
-    <path
-      d="M16.24 7.75999L19.07 4.92999"
-      stroke="currentColor"
-      strokeWidth={1.3}
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-    <path
-      d="M4.93 4.92999L7.76 7.75999"
-      stroke="currentColor"
-      strokeWidth={1.3}
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-    <path d="M12 2V6" stroke="currentColor" strokeWidth={1.3} strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 );
 

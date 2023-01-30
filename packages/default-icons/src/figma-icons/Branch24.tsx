@@ -3,27 +3,29 @@ import { SVGProps, memo } from 'react';
 const Branch24 = (props: SVGProps<SVGSVGElement>) => (
   <svg width={24} height={24} viewBox="0 0 24 24" fill="none" {...props}>
     <path
-      d="M6 21C7.65685 21 9 19.6569 9 18C9 16.3431 7.65685 15 6 15C4.34315 15 3 16.3431 3 18C3 19.6569 4.34315 21 6 21Z"
-      stroke="currentColor"
-      strokeWidth={1.3}
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M6 15.65C4.70213 15.65 3.65 16.7021 3.65 18C3.65 19.2979 4.70213 20.35 6 20.35C7.29787 20.35 8.35 19.2979 8.35 18C8.35 16.7021 7.29787 15.65 6 15.65ZM2.35 18C2.35 15.9842 3.98416 14.35 6 14.35C8.01584 14.35 9.65 15.9842 9.65 18C9.65 20.0158 8.01584 21.65 6 21.65C3.98416 21.65 2.35 20.0158 2.35 18Z"
+      fill="currentColor"
     />
     <path
-      d="M18 9C18 11.3869 17.0518 13.6761 15.364 15.364C13.6761 17.0518 11.3869 18 9 18"
-      stroke="currentColor"
-      strokeWidth={1.3}
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M18 8.35001C18.359 8.35001 18.65 8.64102 18.65 9.00001C18.65 11.5593 17.6333 14.0139 15.8236 15.8236C14.0139 17.6333 11.5593 18.65 9 18.65C8.64101 18.65 8.35 18.359 8.35 18C8.35 17.641 8.64101 17.35 9 17.35C11.2146 17.35 13.3384 16.4703 14.9043 14.9043C16.4703 13.3384 17.35 11.2146 17.35 9.00001C17.35 8.64102 17.641 8.35001 18 8.35001Z"
+      fill="currentColor"
     />
     <path
-      d="M18 9C19.6569 9 21 7.65685 21 6C21 4.34315 19.6569 3 18 3C16.3431 3 15 4.34315 15 6C15 7.65685 16.3431 9 18 9Z"
-      stroke="currentColor"
-      strokeWidth={1.3}
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M18 3.65001C16.7021 3.65001 15.65 4.70214 15.65 6.00001C15.65 7.29788 16.7021 8.35001 18 8.35001C19.2979 8.35001 20.35 7.29788 20.35 6.00001C20.35 4.70214 19.2979 3.65001 18 3.65001ZM14.35 6.00001C14.35 3.98417 15.9842 2.35001 18 2.35001C20.0158 2.35001 21.65 3.98417 21.65 6.00001C21.65 8.01585 20.0158 9.65001 18 9.65001C15.9842 9.65001 14.35 8.01585 14.35 6.00001Z"
+      fill="currentColor"
     />
-    <path d="M6 3V15" stroke="currentColor" strokeWidth={1.3} strokeLinecap="round" strokeLinejoin="round" />
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M6 2.35001C6.35898 2.35001 6.65 2.64102 6.65 3.00001V15C6.65 15.359 6.35898 15.65 6 15.65C5.64101 15.65 5.35 15.359 5.35 15V3.00001C5.35 2.64102 5.64101 2.35001 6 2.35001Z"
+      fill="currentColor"
+    />
   </svg>
 );
 

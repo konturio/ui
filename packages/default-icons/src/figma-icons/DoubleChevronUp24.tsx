@@ -3,18 +3,10 @@ import { SVGProps, memo } from 'react';
 const DoubleChevronUp24 = (props: SVGProps<SVGSVGElement>) => (
   <svg width={24} height={24} viewBox="0 0 24 24" fill="none" {...props}>
     <path
-      d="M16.5 11.5L11.5 6.5L6.5 11.5"
-      stroke="currentColor"
-      strokeWidth={1.3}
-      strokeLinecap="square"
-      strokeLinejoin="round"
-    />
-    <path
-      d="M16.5 17.5L11.5 12.5L6.5 17.5"
-      stroke="currentColor"
-      strokeWidth={1.3}
-      strokeLinecap="square"
-      strokeLinejoin="round"
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M11.5 5.85C11.6724 5.85 11.8377 5.91848 11.9596 6.04038L16.9596 11.0404C17.2135 11.2942 17.2135 11.7058 16.9596 11.9596C16.7058 12.2135 16.2942 12.2135 16.0404 11.9596L11.5 7.41924L6.95962 11.9596C6.70578 12.2135 6.29422 12.2135 6.04038 11.9596C5.78654 11.7058 5.78654 11.2942 6.04038 11.0404L11.0404 6.04038C11.1623 5.91848 11.3276 5.85 11.5 5.85ZM6.04038 17.0404L11.0404 12.0404C11.2942 11.7865 11.7058 11.7865 11.9596 12.0404L16.9596 17.0404C17.2135 17.2942 17.2135 17.7058 16.9596 17.9596C16.7058 18.2135 16.2942 18.2135 16.0404 17.9596L11.5 13.4192L6.95962 17.9596C6.70578 18.2135 6.29422 18.2135 6.04038 17.9596C5.78654 17.7058 5.78654 17.2942 6.04038 17.0404Z"
+      fill="currentColor"
     />
   </svg>
 );

@@ -4,11 +4,11 @@ const InfoError16 = (props: SVGProps<SVGSVGElement>) => (
   <svg width={16} height={16} viewBox="0 0 16 16" fill="none" {...props}>
     <g clipPath="url(#clip0_302_731)">
       <path
-        d="M16 8C16 12.4183 12.4183 16 8 16C3.58172 16 0 12.4183 0 8C0 3.58172 3.58172 0 8 0C12.4183 0 16 3.58172 16 8Z"
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M8 16C12.4183 16 16 12.4183 16 8C16 3.58172 12.4183 0 8 0C3.58172 0 0 3.58172 0 8C0 12.4183 3.58172 16 8 16ZM8.80001 4C8.80001 3.55817 8.44184 3.2 8.00001 3.2C7.55818 3.2 7.20001 3.55817 7.20001 4V8C7.20001 8.44182 7.55818 8.8 8.00001 8.8C8.44184 8.8 8.80001 8.44182 8.80001 8V4ZM8.00001 10.5333C7.55818 10.5333 7.20001 10.8915 7.20001 11.3333C7.20001 11.7752 7.55818 12.1333 8.00001 12.1333H8.00668C8.44851 12.1333 8.80668 11.7752 8.80668 11.3333C8.80668 10.8915 8.44851 10.5333 8.00668 10.5333H8.00001Z"
         fill="currentColor"
       />
-      <path d="M8 4V8" stroke="white" strokeWidth={1.6} strokeLinecap="square" strokeLinejoin="round" />
-      <path d="M8 11.3333H8.00667" stroke="white" strokeWidth={1.6} strokeLinecap="square" strokeLinejoin="round" />
     </g>
     <defs>
       <clipPath id="clip0_302_731">

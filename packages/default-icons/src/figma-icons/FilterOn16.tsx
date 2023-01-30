@@ -2,12 +2,30 @@ import { SVGProps, memo } from 'react';
 
 const FilterOn16 = (props: SVGProps<SVGSVGElement>) => (
   <svg width={16} height={16} viewBox="0 0 16 16" fill="none" {...props}>
-    <path d="M1 11.5L2 11.5" stroke="currentColor" strokeWidth={1.3} strokeLinecap="square" strokeLinejoin="round" />
-    <path d="M10 11.5L15 11.5" stroke="currentColor" strokeWidth={1.3} strokeLinecap="square" strokeLinejoin="round" />
-    <path d="M4 4.5H1" stroke="currentColor" strokeWidth={1.3} strokeLinecap="square" strokeLinejoin="round" />
-    <circle r={2} transform="matrix(-1 0 0 1 5 11.5)" stroke="currentColor" strokeWidth={1.3} strokeLinecap="square" />
-    <circle cx={11.5} cy={4.5} r={4.5} fill="currentColor" />
-    <path d="M9.5 5L11 6.5L14 3.5" stroke="white" strokeWidth={1.3} strokeLinecap="square" strokeLinejoin="round" />
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M15.65 11.5C15.65 11.141 15.359 10.85 15 10.85H10C9.64101 10.85 9.35 11.141 9.35 11.5C9.35 11.859 9.64101 12.15 10 12.15H15C15.359 12.15 15.65 11.859 15.65 11.5Z"
+      fill="currentColor"
+    />
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M0.349997 4.5C0.349997 4.14102 0.641012 3.85 0.999997 3.85H4C4.35898 3.85 4.65 4.14102 4.65 4.5C4.65 4.85898 4.35898 5.15 4 5.15H0.999997C0.641012 5.15 0.349997 4.85898 0.349997 4.5Z"
+      fill="currentColor"
+    />
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M4.99999 8.85001C6.46355 8.85001 7.64999 10.0365 7.64999 11.5C7.64999 12.9636 6.46355 14.15 4.99999 14.15C3.7607 14.15 2.7201 13.2993 2.43029 12.15H0.999991C0.641006 12.15 0.349991 11.859 0.349991 11.5C0.349991 11.141 0.641006 10.85 0.999991 10.85H2.43029C2.7201 9.70071 3.7607 8.85001 4.99999 8.85001ZM6.34999 11.5C6.34999 10.7544 5.74558 10.15 4.99999 10.15C4.25441 10.15 3.64999 10.7544 3.64999 11.5C3.64999 12.2456 4.25441 12.85 4.99999 12.85C5.74558 12.85 6.34999 12.2456 6.34999 11.5Z"
+      fill="currentColor"
+    />
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M11.5 9C13.9853 9 16 6.98528 16 4.5C16 2.01472 13.9853 0 11.5 0C9.01472 0 7 2.01472 7 4.5C7 6.98528 9.01472 9 11.5 9ZM14.4596 3.95963C14.7135 3.70578 14.7135 3.29423 14.4596 3.04039C14.2058 2.78655 13.7942 2.78655 13.5404 3.04039L11 5.58077L9.95962 4.54039C9.70578 4.28655 9.29422 4.28655 9.04038 4.54039C8.78654 4.79423 8.78654 5.20578 9.04038 5.45963L10.5404 6.95963C10.7942 7.21347 11.2058 7.21347 11.4596 6.95963L14.4596 3.95963Z"
+      fill="currentColor"
+    />
   </svg>
 );
 

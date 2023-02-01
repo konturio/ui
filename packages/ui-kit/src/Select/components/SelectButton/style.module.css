@@ -133,7 +133,6 @@
   }
 
   & .placeholder {
-    width: 100%;
     overflow: hidden;
     text-overflow: ellipsis;
     transition: 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;
@@ -142,6 +141,8 @@
 
   & .alwaysShowPlaceholder.hasValue {
     & .placeholder {
+      display: inline;
+      position: absolute;
       top: -10px;
       background: var(--base-weak);
       padding: 0 4px;

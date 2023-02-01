@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.11.1](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.11.0...@konturio/ui-kit@3.11.1) (2023-02-01)
+
+### Bug Fixes
+
+- **select:** 14471 ([cd0f684](https://github.com/konturio/ui/commit/cd0f684dde5ce4b1fcd24370be02b9745db5ce50))
+
 # [3.11.0](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.10.3...@konturio/ui-kit@3.11.0) (2023-01-30)
 
 ### Features

@@ -48,7 +48,7 @@
     padding: var(--double-unit);
     max-height: 90%;
     max-width: 100%;
-    background-color: var(--back-faint-weak-down);
+    background-color: var(--base-weak);
     color: var(--base-strong);
     font-weight: 400;
     font-size: 16px;

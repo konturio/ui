@@ -10,13 +10,12 @@ import type { DataItem } from 'vis-timeline';
 import type { MutableRefObject } from 'react';
 import type { OnEntryClickPayload } from './types';
 import type { TolltipEntry, TimelineOptions, TimelineEntry } from '../../types';
-import type { TooltipCoords } from '../../../Tooltip/types';
 
 export function useVisTimeline(
   timelineContainerRef: MutableRefObject<null>,
   data: DataSet<DataItem, 'id'>,
   options: TimelineOptions,
-  setTooltipEntry: (payload: { entry: TolltipEntry; position: TooltipCoords } | null) => void,
+  setTooltipEntry: (payload: { entry: TolltipEntry; target: Element } | null) => void,
 ) {
   const [timeline, setTimeline] = useState<VisTimeline | null>(null);
   const timelineRef = useRef(timeline);
@@ -61,7 +60,7 @@ export function useVisTimeline(
       if (entry) {
         setTooltipEntry({
           entry: toTooltipEntry(entry),
-          position: { x: event.clientX, y: event.clientY },
+          target: event.target as Element,
         });
       }
     };

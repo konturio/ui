@@ -1,9 +1,8 @@
-import { useEffect, useImperativeHandle, useMemo, useRef, forwardRef, useState } from 'react';
+import { useEffect, useImperativeHandle, useMemo, useRef, forwardRef, useState, useCallback } from 'react';
 import { DataSet } from 'vis-data';
 import { toVisTimelineDataset } from './toVisTimelineDataset';
 import { useVisTimeline } from './useVisTimeline';
 import type { TolltipEntry, TimelineProps } from '../../types';
-import type { TooltipCoords } from '../../../Tooltip/types';
 
 export interface TimelineImperativeApi {
   fit: () => void;
@@ -17,10 +16,28 @@ export const VisTimeline = forwardRef<TimelineImperativeApi | null, TimelineProp
 
     const { tooltipComponent: TooltipComponent } = rest;
 
-    const [tooltipData, setTooltipData] = useState<{ entry: TolltipEntry; position: TooltipCoords } | null>(null);
+    const tooltipTargetRef = useRef<Element | null>(null);
+
+    const [tooltipData, setTooltipData] = useState<{
+      entry: TolltipEntry;
+    } | null>(null);
+
+    const setTolltip = useCallback((payload: { entry: TolltipEntry; target: Element } | null) => {
+      setTooltipData((prev) => {
+        if (payload === null) {
+          tooltipTargetRef.current = null;
+          return null;
+        }
+
+        const { entry, target } = payload;
+        tooltipTargetRef.current = target;
+
+        return { entry };
+      });
+    }, []);
 
     // Timeline implementation
-    const timeline = useVisTimeline(timelineContainerRef, data, options, setTooltipData);
+    const timeline = useVisTimeline(timelineContainerRef, data, options, setTolltip);
 
     useImperativeHandle(
       ref,
@@ -53,7 +70,7 @@ export const VisTimeline = forwardRef<TimelineImperativeApi | null, TimelineProp
           <TooltipComponent
             hoverBehavior
             open={tooltipData !== null}
-            position={tooltipData.position}
+            triggerRef={tooltipTargetRef}
             entry={tooltipData.entry}
             onClose={() => setTooltipData(null)}
           />

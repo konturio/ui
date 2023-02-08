@@ -23,3 +23,35 @@
 .unset {
   display: none;
 }
+
+.arrow {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  transform: rotate(45deg);
+  background-color: var(--back-faint-weak-down);
+  left: var(--tooltip-arrox-x-position);
+  top: var(--tooltip-arrow-y-position);
+}
+
+@media (--mobile) {
+  .arrow {
+    display: none;
+  }
+}
+
+.arrow-top {
+  bottom: -5px;
+}
+
+.arrow-bottom {
+  top: -5px;
+}
+
+.arrow-left {
+  right: -5px;
+}
+
+.arrow-right {
+  left: -5px;
+}

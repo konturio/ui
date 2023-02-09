@@ -10,13 +10,18 @@ import type { DataItem } from 'vis-timeline';
 import type { MutableRefObject } from 'react';
 import type { OnEntryClickPayload } from './types';
 import type { TooltipEntry, TimelineOptions, TimelineEntry } from '../../types';
-import type { TooltipCoords } from '../../../Tooltip/types';
+
+function useSyncedRef<T>(data: T) {
+  const dataRef = useRef<T>() as MutableRefObject<T>;
+  dataRef.current = data;
+  return dataRef;
+}
 
 export function useVisTimeline(
   timelineContainerRef: MutableRefObject<null>,
   data: DataSet<DataItem, 'id'>,
   options: TimelineOptions,
-  setTooltipEntry: (payload: { entry: TooltipEntry; position: TooltipCoords } | null) => void,
+  setTooltipEntry: (payload: { entry: TooltipEntry; target: Element } | null) => void,
 ) {
   const [timeline, setTimeline] = useState<VisTimeline | null>(null);
   const timelineRef = useRef(timeline);
@@ -49,20 +54,19 @@ export function useVisTimeline(
   }, [data]);
 
   /* Implement onSelect handler trough 'click' listener */
-  const dataMapRef = useRef(data);
-  dataMapRef.current = data;
+  const dataMapRef = useSyncedRef(data);
   const { onSelect } = options;
 
   useEffect(() => {
     if (timeline === null) return;
 
-    const onItemHover = ({ item, event }: { item: number; event: MouseEvent }) => {
+    const onItemHover = ({ item, event }: { item: number; event: { target: Element } }) => {
       const entry = dataMapRef.current.get(item) || getClusterById(item, timeline);
 
       if (entry) {
         setTooltipEntry({
           entry: toTooltipEntry(entry),
-          position: { x: event.clientX, y: event.clientY },
+          target: event.target,
         });
       }
     };
@@ -78,7 +82,7 @@ export function useVisTimeline(
       timeline.off('itemover', onItemHover);
       timeline.off('itemout', onItemOut);
     };
-  }, [timeline, dataMapRef, setTooltipEntry]);
+  }, [timeline, setTooltipEntry, dataMapRef]);
 
   useEffect(() => {
     if (!onSelect) return;
@@ -109,7 +113,7 @@ export function useVisTimeline(
       timeline.off('click', onSelectCb);
     };
     // I use data from ref, because data changes will handled by timeline instance change
-  }, [timeline, onSelect]);
+  }, [timeline, onSelect, dataMapRef]);
 
   return timeline;
 }

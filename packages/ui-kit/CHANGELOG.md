@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.12.2](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.12.1...@konturio/ui-kit@3.12.2) (2023-02-09)
+
+### Reverts
+
+- Revert "feat(tooltip): calculate position with floating-ui (#66)" ([4a20e7f](https://github.com/konturio/ui/commit/4a20e7fdaf4d459226094a8e04fb32e399ac7085)), closes [#66](https://github.com/konturio/ui/issues/66)
+
 ## [3.12.1](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.12.0...@konturio/ui-kit@3.12.1) (2023-02-09)
 
 **Note:** Version bump only for package @konturio/ui-kit

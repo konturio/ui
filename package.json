@@ -74,6 +74,7 @@
     "@turf/difference": "6.0.1"
   },
   "dependencies": {
+    "@floating-ui/react-dom": "^1.2.2",
     "@types/jest": "^27.0.0",
     "@types/react": "^18.0.21",
     "@types/react-dom": "^18.0.6",
@@ -111,13 +112,13 @@
     "vite": "^3.1.8"
   },
   "devDependencies": {
-    "postcss-custom-media": "^8.0.0",
     "@vitejs/plugin-react": "^2.1.0",
     "husky": "^8.0.2",
     "lint-staged": "^11.2.6",
     "open-cli": "^7.0.0",
     "patch-package": "6.4.7",
     "postcss-cli": "^10.0.0",
+    "postcss-custom-media": "^8.0.0",
     "react-cosmos": "5.7.2",
     "react-github-corner": "2.5.0"
   }

@@ -10,13 +10,12 @@ import type { DataItem } from 'vis-timeline';
 import type { MutableRefObject } from 'react';
 import type { OnEntryClickPayload } from './types';
 import type { TolltipEntry, TimelineOptions, TimelineEntry } from '../../types';
-import type { TooltipCoords } from '../../../Tooltip/types';
 
 export function useVisTimeline(
   timelineContainerRef: MutableRefObject<null>,
   data: DataSet<DataItem, 'id'>,
   options: TimelineOptions,
-  setTooltipEntry: (payload: { entry: TolltipEntry; position: TooltipCoords } | null) => void,
+  setTooltipEntry: (payload: { entry: TolltipEntry; target: Element } | null) => void,
 ) {
   const [timeline, setTimeline] = useState<VisTimeline | null>(null);
   const timelineRef = useRef(timeline);
@@ -55,13 +54,13 @@ export function useVisTimeline(
   useEffect(() => {
     if (timeline === null) return;
 
-    const onItemHover = ({ item, event }: { item: number; event: MouseEvent }) => {
+    const onItemHover = ({ item, event }: { item: number; event: { target: Element } }) => {
       const entry = dataMapRef.current.get(item) || getClusterById(item, timeline);
 
       if (entry) {
         setTooltipEntry({
           entry: toTooltipEntry(entry),
-          position: { x: event.clientX, y: event.clientY },
+          target: event.target,
         });
       }
     };
@@ -77,7 +76,7 @@ export function useVisTimeline(
       timeline.off('itemover', onItemHover);
       timeline.off('itemout', onItemOut);
     };
-  }, [timeline]);
+  }, [setTooltipEntry, timeline]);
 
   useEffect(() => {
     if (!onSelect) return;

@@ -23,7 +23,7 @@ export const VisTimeline = forwardRef<TimelineImperativeApi | null, TimelineProp
     } | null>(null);
 
     const setTolltip = useCallback((payload: { entry: TolltipEntry; target: Element } | null) => {
-      setTooltipData((prev) => {
+      setTooltipData(() => {
         if (payload === null) {
           tooltipTargetRef.current = null;
           return null;
@@ -70,7 +70,7 @@ export const VisTimeline = forwardRef<TimelineImperativeApi | null, TimelineProp
           <TooltipComponent
             hoverBehavior
             open={tooltipData !== null}
-            triggerRef={tooltipTargetRef}
+            anchor={tooltipTargetRef}
             entry={tooltipData.entry}
             onClose={() => setTooltipData(null)}
           />

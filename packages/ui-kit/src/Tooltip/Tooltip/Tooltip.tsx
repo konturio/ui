@@ -4,41 +4,23 @@ import { arrow, autoUpdate, flip, offset, shift, useFloating } from '@floating-u
 import { TooltipContent } from '../TooltipContent/TooltipContent';
 import s from './Tooltip.module.css';
 import { calculatePlacement } from './calculatePlacement';
-import type { CSSProperties, MutableRefObject } from 'react';
-import type { LegacyRef, PropsWithChildren } from 'react';
-import type { PlacementFn, TooltipCoords, TooltipPlacement } from '../types';
-import type { Placement } from '@floating-ui/react-dom';
+import { isPosition, isTargetRef } from './inferAnchorType';
+import type { CSSProperties } from 'react';
+import type { TooltipProps } from '../types';
 
 export type MouseClickEvent = React.MouseEvent<HTMLDivElement, MouseEvent>;
-
-export type TooltipProps = PropsWithChildren<{
-  position?: TooltipCoords | null;
-  onClose?: (e: MouseClickEvent) => void;
-  transitionRef?: LegacyRef<any>;
-  placement?: Placement;
-  /** @deprecated please use `plecement instead, `getPlacement` will be removed in future versions */
-  getPlacement?: TooltipPlacement | PlacementFn;
-  hoverBehavior?: boolean;
-  classes?: { popupContent?: string };
-  onOuterClick?: (e: MouseClickEvent) => void;
-  triggerRef?: MutableRefObject<any>;
-  open?: boolean;
-  offset?: number;
-}>;
 
 const defaultPlacement = 'top';
 
 export function Tooltip({
   children,
-  position,
-  transitionRef,
+  anchor,
   placement: placementProp,
   getPlacement,
   classes,
   hoverBehavior = false,
   onOuterClick,
   onClose,
-  triggerRef,
   open = true, // required for backward compatibility
   offset: offsetValue = 7, // include arrow size which equals sqrt(5^2 + 5^2) = 7.07 ~ 7,
 }: TooltipProps) {
@@ -61,8 +43,8 @@ export function Tooltip({
   const arrowRef = useRef<HTMLDivElement | null>(null);
 
   const placement = useMemo(
-    () => calculatePlacement(getPlacement, placementProp, position) || defaultPlacement,
-    [getPlacement, placementProp, position],
+    () => calculatePlacement(getPlacement, placementProp, anchor) || defaultPlacement,
+    [getPlacement, placementProp, anchor],
   );
 
   const {
@@ -86,41 +68,45 @@ export function Tooltip({
     ],
   });
 
-  useLayoutEffect(() => {
-    if (triggerRef) refs.setReference(triggerRef.current);
-  }, [triggerRef, refs]);
+  const position = isPosition(anchor) ? anchor : null;
+  const targetRef = isTargetRef(anchor) ? anchor : null;
 
   useLayoutEffect(() => {
-    if (position)
-      refs.setReference({
-        getBoundingClientRect() {
-          return {
-            width: 0,
-            height: 0,
-            x: position.x,
-            y: position.y,
-            top: position.y,
-            left: position.x,
-            right: position.x,
-            bottom: position.y,
-          };
-        },
-      });
+    if (!targetRef) return;
+    refs.setReference(targetRef.current);
+  }, [targetRef, refs]);
+
+  useLayoutEffect(() => {
+    if (!position) return;
+
+    const { x, y } = position;
+
+    refs.setReference({
+      getBoundingClientRect() {
+        return {
+          width: 0,
+          height: 0,
+          x,
+          y,
+          top: y,
+          left: x,
+          right: x,
+          bottom: y,
+        };
+      },
+    });
   }, [position, refs]);
-
-  const x = floatingX ?? 0;
-  const y = floatingY ?? 0;
 
   const positionVariables = useMemo<CSSProperties>(
     () =>
       ({
         '--tooltip-arrox-x-position': arrowX != null ? `${arrowX}px` : '',
         '--tooltip-arrow-y-position': arrowY != null ? `${arrowY}px` : '',
-        '--tooltip-x-position': `${x}px`,
-        '--tooltip-y-position': `${y}px`,
+        '--tooltip-x-position': `${floatingX ?? 0}px`,
+        '--tooltip-y-position': `${floatingY ?? 0}px`,
         '--tooltip-placement': strategy,
       } as CSSProperties),
-    [arrowX, arrowY, strategy, x, y],
+    [arrowX, arrowY, floatingX, floatingY, strategy],
   );
 
   const arrowSide = useMemo(() => {
@@ -130,12 +116,9 @@ export function Tooltip({
 
   if (!open) return null;
 
-  if (!triggerRef && !position) throw new Error('Tooltip: either triggerRef or position should be provided.');
-  if (!!position && !!triggerRef) throw new Error('Tooltip: only one of triggerRef or position should be provided.');
-
   return (
     <div
-      ref={transitionRef}
+      ref={targetRef}
       className={clsx(s.tooltipContainer, { [s.hoverTooltip]: hoverBehavior })}
       onClick={onClickOuter}
       style={positionVariables}

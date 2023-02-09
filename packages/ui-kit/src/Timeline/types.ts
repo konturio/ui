@@ -1,5 +1,5 @@
 import type { TimelineOptions as VisTimelineOptions } from 'vis-timeline';
-import type { TooltipProps } from '../Tooltip/Tooltip/Tooltip';
+import type { TooltipProps } from '../Tooltip/types';
 
 export interface TimelineEntry {
   id: string | number;

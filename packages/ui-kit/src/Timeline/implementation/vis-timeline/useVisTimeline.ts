@@ -54,13 +54,13 @@ export function useVisTimeline(
   useEffect(() => {
     if (timeline === null) return;
 
-    const onItemHover = ({ item, event }: { item: number; event: MouseEvent }) => {
+    const onItemHover = ({ item, event }: { item: number; event: { target: Element } }) => {
       const entry = dataMapRef.current.get(item) || getClusterById(item, timeline);
 
       if (entry) {
         setTooltipEntry({
           entry: toTooltipEntry(entry),
-          target: event.target as Element,
+          target: event.target,
         });
       }
     };
@@ -76,7 +76,7 @@ export function useVisTimeline(
       timeline.off('itemover', onItemHover);
       timeline.off('itemout', onItemOut);
     };
-  }, [timeline]);
+  }, [setTooltipEntry, timeline]);
 
   useEffect(() => {
     if (!onSelect) return;

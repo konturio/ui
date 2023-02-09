@@ -2,21 +2,15 @@ import clsx from 'clsx';
 import { Close16 } from '@konturio/default-icons';
 import { forwardRef } from 'react';
 import s from './TooltipContent.module.css';
-import type { MouseClickEvent } from '../Tooltip/Tooltip';
 import type { PropsWithChildren } from 'react';
 
-export const TooltipContent = forwardRef<
-  HTMLDivElement,
-  PropsWithChildren<{ className?: string; onClose?: (e: MouseClickEvent) => void }>
->(function TooltipContent(
-  {
-    children,
-    onClose,
-    className,
-  }: PropsWithChildren<{
-    onClose?: (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
-    className?: string;
-  }>,
+type TooltipContentProps = PropsWithChildren<{
+  onClose?: (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
+  className?: string;
+}>;
+
+export const TooltipContent = forwardRef<HTMLDivElement, TooltipContentProps>(function TooltipContent(
+  { children, onClose, className }: TooltipContentProps,
   ref,
 ) {
   return (

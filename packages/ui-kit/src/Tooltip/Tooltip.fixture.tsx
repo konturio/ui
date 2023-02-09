@@ -53,11 +53,11 @@ export default {
               </Dummy>
               <Dummy onClick={(e) => setClickPosition({ x: e.clientX, y: e.clientY })}>Click me</Dummy>
 
-              <Tooltip position={hoverPosition} hoverBehavior={true} open={!!hoverPosition}>
+              <Tooltip anchor={hoverPosition} hoverBehavior={true} open={!!hoverPosition}>
                 {'Some long long long long long long text in tooltip'}
               </Tooltip>
 
-              <Tooltip onClose={() => setClickPosition(null)} position={clickPosition} open={!!clickPosition}>
+              <Tooltip onClose={() => setClickPosition(null)} anchor={clickPosition} open={!!clickPosition}>
                 {'Some long long long long long long text in tooltip'}
               </Tooltip>
             </div>
@@ -98,10 +98,10 @@ export default {
             <Dummy ref={targetClickRef} onClick={(e) => setIsClickOpened((prev) => !prev)}>
               Click me
             </Dummy>
-            <Tooltip triggerRef={targetHoverRef} open={isHoverOpened} hoverBehavior>
+            <Tooltip anchor={targetHoverRef} open={isHoverOpened} hoverBehavior>
               {'Some long long long long long long text in tooltip'}
             </Tooltip>
-            <Tooltip triggerRef={targetClickRef} open={isClickOpened} onClose={() => setIsClickOpened(false)}>
+            <Tooltip anchor={targetClickRef} open={isClickOpened} onClose={() => setIsClickOpened(false)}>
               {'Some long long long long long long text in tooltip'}
             </Tooltip>
           </div>

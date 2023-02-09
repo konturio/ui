@@ -15,6 +15,7 @@ const defaultPlacement = 'top';
 export function Tooltip({
   children,
   anchor,
+  transitionRef,
   placement: placementProp,
   getPlacement,
   classes,
@@ -113,7 +114,7 @@ export function Tooltip({
 
   return (
     <div
-      ref={targetRef}
+      ref={transitionRef}
       className={clsx(s.tooltipContainer, { [s.hoverTooltip]: hoverBehavior })}
       onClick={onClickOuter}
       style={positionVariables}

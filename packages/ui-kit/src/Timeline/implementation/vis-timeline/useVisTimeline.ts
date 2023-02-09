@@ -9,13 +9,19 @@ import type { DataSet } from 'vis-data';
 import type { DataItem } from 'vis-timeline';
 import type { MutableRefObject } from 'react';
 import type { OnEntryClickPayload } from './types';
-import type { TolltipEntry, TimelineOptions, TimelineEntry } from '../../types';
+import type { TooltipEntry, TimelineOptions, TimelineEntry } from '../../types';
+
+function useSyncedRef<T>(data: T) {
+  const dataRef = useRef<T>() as MutableRefObject<T>;
+  dataRef.current = data;
+  return dataRef;
+}
 
 export function useVisTimeline(
   timelineContainerRef: MutableRefObject<null>,
   data: DataSet<DataItem, 'id'>,
   options: TimelineOptions,
-  setTooltipEntry: (payload: { entry: TolltipEntry; target: Element } | null) => void,
+  setTooltipEntry: (payload: { entry: TooltipEntry; target: Element } | null) => void,
 ) {
   const [timeline, setTimeline] = useState<VisTimeline | null>(null);
   const timelineRef = useRef(timeline);
@@ -48,7 +54,7 @@ export function useVisTimeline(
   }, [data]);
 
   /* Implement onSelect handler trough 'click' listener */
-  const dataMapRef = useRef(data);
+  const dataMapRef = useSyncedRef(data);
   const { onSelect } = options;
 
   useEffect(() => {
@@ -76,7 +82,7 @@ export function useVisTimeline(
       timeline.off('itemover', onItemHover);
       timeline.off('itemout', onItemOut);
     };
-  }, [setTooltipEntry, timeline]);
+  }, [timeline, setTooltipEntry, dataMapRef]);
 
   useEffect(() => {
     if (!onSelect) return;
@@ -107,7 +113,7 @@ export function useVisTimeline(
       timeline.off('click', onSelectCb);
     };
     // I use data from ref, because data changes will handled by timeline instance change
-  }, [timeline, onSelect]);
+  }, [timeline, onSelect, dataMapRef]);
 
   return timeline;
 }

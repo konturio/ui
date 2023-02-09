@@ -12,7 +12,7 @@ interface ClusterOptions {
   fitOnDoubleClick: boolean;
 }
 
-export type TolltipEntry =
+export type TooltipEntry =
   | TimelineEntry
   | { id: string | number; isCluster: true; items: TimelineEntry[]; start: Date; end?: Date; selected: boolean };
 

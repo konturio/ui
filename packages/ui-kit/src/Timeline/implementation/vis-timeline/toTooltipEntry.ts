@@ -1,6 +1,6 @@
-import type { TolltipEntry } from '../../types';
+import type { TooltipEntry } from '../../types';
 
-export const toTooltipEntry = (entry): TolltipEntry => {
+export const toTooltipEntry = (entry): TooltipEntry => {
   if (entry.isCluster) {
     return {
       id: entry.id,

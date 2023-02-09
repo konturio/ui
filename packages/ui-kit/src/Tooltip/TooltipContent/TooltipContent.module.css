@@ -1,17 +1,15 @@
 .tooltipContent {
   box-sizing: border-box;
+  position: absolute;
   display: flex;
   justify-content: space-between;
-  padding: var(--half-unit) var(--unit);
+  padding: var(--unit) var(--unit) var(--half-unit) var(--unit);
   max-width: 268px;
   max-height: 200px;
-  background-color: var(--back-faint-weak-down);
+  overflow-y: auto;
+  background-color: var(--base-strong);
   color: var(--base-weak);
   border-radius: var(--border-radius);
-  top: var(--tooltip-y-position);
-  left: var(--tooltip-x-position);
-  position: var(--tooltip-placement);
-  width: max-content;
 }
 
 .closeIcon {
@@ -53,6 +51,5 @@
     font-weight: 400;
     font-size: 16px;
     border-radius: var(--unit) var(--unit) 0 0;
-    top: unset;
   }
 }

@@ -12,7 +12,7 @@ export type TooltipProps = PropsWithChildren<{
   onClose?: (e: MouseClickEvent) => void;
   offset?: number;
   placement?: Placement;
-  /** @deprecated please use `plecement instead, `getPlacement` will be removed in future versions */
+  /** @deprecated please use `placement instead, `getPlacement` will be removed in future versions */
   getPlacement?: TooltipPlacement | PlacementFn;
   hoverBehavior?: boolean;
   classes?: { popupContent?: string };

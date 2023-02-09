@@ -1,4 +1,4 @@
-import type { MutableRefObject, PropsWithChildren } from 'react';
+import type { LegacyRef, MutableRefObject, PropsWithChildren } from 'react';
 import type { Placement } from '@floating-ui/react-dom';
 
 export type TooltipCoords = { x: number; y: number };
@@ -8,6 +8,7 @@ export type TooltipPlacement = 'top-left' | 'top-right' | 'bottom-left' | 'botto
 export type MouseClickEvent = React.MouseEvent<HTMLDivElement, MouseEvent>;
 
 export type TooltipProps = PropsWithChildren<{
+  transitionRef?: LegacyRef<any> | MutableRefObject<any>;
   anchor: TooltipCoords | MutableRefObject<any> | null;
   onClose?: (e: MouseClickEvent) => void;
   offset?: number;

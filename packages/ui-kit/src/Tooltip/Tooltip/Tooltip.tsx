@@ -58,15 +58,10 @@ export function Tooltip({
     placement: placement,
     open,
     whileElementsMounted: autoUpdate,
-    middleware: [
-      offset(offsetValue),
-      flip({
-        fallbackAxisSideDirection: 'start',
-      }),
-      shift({ padding: 5 }),
-      arrow({ element: arrowRef }),
-    ],
+    middleware: [offset(offsetValue), flip(), shift({ padding: 5 }), arrow({ element: arrowRef })],
   });
+
+  if (anchor == null) console.error('anchor prop is null, Tooltip will not be rendered');
 
   const position = isPosition(anchor) ? anchor : null;
   const targetRef = isTargetRef(anchor) ? anchor : null;
@@ -114,7 +109,7 @@ export function Tooltip({
     return `arrow-${side}`;
   }, [finalPlacement]);
 
-  if (!open) return null;
+  if (!open || anchor === null) return null;
 
   return (
     <div
@@ -129,7 +124,9 @@ export function Tooltip({
         onClose={hoverBehavior ? undefined : onClose}
       >
         {children}
-        <div ref={arrowRef} className={clsx(s.arrow, s[arrowSide])}></div>
+        <div ref={arrowRef} className={clsx(s.arrow, s[arrowSide])}>
+          <div className={s.arrowInner} />
+        </div>
       </TooltipContent>
     </div>
   );

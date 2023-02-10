@@ -9,7 +9,8 @@ export type MouseClickEvent = React.MouseEvent<HTMLDivElement, MouseEvent>;
 
 export type TooltipProps = PropsWithChildren<{
   transitionRef?: LegacyRef<any> | MutableRefObject<any>;
-  anchor: TooltipCoords | MutableRefObject<any> | null;
+  position?: TooltipCoords | null;
+  triggerRef?: MutableRefObject<any>;
   onClose?: (e: MouseClickEvent) => void;
   offset?: number;
   placement?: Placement;

@@ -1,4 +1,3 @@
-import { isPosition } from './inferAnchorType';
 import type { PlacementFn, TooltipProps, TooltipPlacement } from '../types';
 import type { Placement } from '@floating-ui/react-dom';
 
@@ -20,7 +19,7 @@ function mapPlacement(deprecadedPlacement: TooltipPlacement): Placement {
 export function calculatePlacement(
   deprecadedPlacement?: TooltipPlacement | PlacementFn,
   placement?: Placement,
-  ancor?: TooltipProps['anchor'],
+  position?: TooltipProps['position'],
 ): Placement | undefined {
   if (deprecadedPlacement && placement)
     console.error(
@@ -29,9 +28,9 @@ export function calculatePlacement(
 
   if (placement) return placement;
 
-  if (isPosition(ancor)) {
+  if (position) {
     if (typeof deprecadedPlacement === 'function') {
-      return mapPlacement(deprecadedPlacement(ancor));
+      return mapPlacement(deprecadedPlacement(position));
     } else if (deprecadedPlacement) return mapPlacement(deprecadedPlacement);
   }
 

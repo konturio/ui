@@ -70,7 +70,7 @@ export const VisTimeline = forwardRef<TimelineImperativeApi | null, TimelineProp
           <TooltipComponent
             hoverBehavior
             open={tooltipData !== null}
-            anchor={tooltipTargetRef}
+            triggerRef={tooltipTargetRef}
             entry={tooltipData.entry}
             onClose={() => setTooltipData(null)}
           />

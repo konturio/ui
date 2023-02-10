@@ -4,7 +4,6 @@ import { arrow, autoUpdate, flip, offset, shift, useFloating } from '@floating-u
 import { TooltipContent } from '../TooltipContent/TooltipContent';
 import s from './Tooltip.module.css';
 import { calculatePlacement } from './calculatePlacement';
-import { isPosition, isTargetRef } from './inferAnchorType';
 import type { CSSProperties } from 'react';
 import type { TooltipProps } from '../types';
 
@@ -14,7 +13,8 @@ const defaultPlacement = 'top';
 
 export function Tooltip({
   children,
-  anchor,
+  position,
+  triggerRef,
   transitionRef,
   placement: placementProp,
   getPlacement,
@@ -44,8 +44,8 @@ export function Tooltip({
   const arrowRef = useRef<HTMLDivElement | null>(null);
 
   const placement = useMemo(
-    () => calculatePlacement(getPlacement, placementProp, anchor) || defaultPlacement,
-    [getPlacement, placementProp, anchor],
+    () => calculatePlacement(getPlacement, placementProp, position) || defaultPlacement,
+    [getPlacement, placementProp, position],
   );
 
   const {
@@ -61,37 +61,6 @@ export function Tooltip({
     whileElementsMounted: autoUpdate,
     middleware: [offset(offsetValue), flip(), shift({ padding: 5 }), arrow({ element: arrowRef })],
   });
-
-  if (anchor == null) console.error('anchor prop is null, Tooltip will not be rendered');
-
-  const position = isPosition(anchor) ? anchor : null;
-  const targetRef = isTargetRef(anchor) ? anchor : null;
-
-  useLayoutEffect(() => {
-    if (!targetRef) return;
-    refs.setReference(targetRef.current);
-  }, [targetRef, refs]);
-
-  useLayoutEffect(() => {
-    if (!position) return;
-
-    const { x, y } = position;
-
-    refs.setReference({
-      getBoundingClientRect() {
-        return {
-          width: 0,
-          height: 0,
-          x,
-          y,
-          top: y,
-          left: x,
-          right: x,
-          bottom: y,
-        };
-      },
-    });
-  }, [position, refs]);
 
   const positionVariables = useMemo<CSSProperties>(
     () =>
@@ -110,7 +79,29 @@ export function Tooltip({
     return `arrow-${side}`;
   }, [finalPlacement]);
 
-  if (!open || anchor === null) return null;
+  useLayoutEffect(() => {
+    if (triggerRef) {
+      refs.setReference(triggerRef.current);
+    } else if (position) {
+      const { x, y } = position;
+      refs.setReference({
+        getBoundingClientRect() {
+          return { width: 0, height: 0, x, y, top: y, left: x, right: x, bottom: y };
+        },
+      });
+    }
+  }, [position, refs, triggerRef]);
+
+  if (position && triggerRef) {
+    console.error('Both position and triggerRef are provided. Tooltip will be rendered with triggerRef');
+  }
+
+  if (!position && !triggerRef) {
+    console.error('Tooltip will not be rendered because neither position nor triggerRef are provided');
+    return null;
+  }
+
+  if (!open) return null;
 
   return (
     <div

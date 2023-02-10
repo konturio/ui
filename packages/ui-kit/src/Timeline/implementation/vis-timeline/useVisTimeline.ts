@@ -82,7 +82,7 @@ export function useVisTimeline(
       timeline.off('itemover', onItemHover);
       timeline.off('itemout', onItemOut);
     };
-  }, [timeline, setTooltipEntry, dataMapRef]);
+  }, [timeline, setTooltipEntry]);
 
   useEffect(() => {
     if (!onSelect) return;

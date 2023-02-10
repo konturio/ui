@@ -32,6 +32,24 @@ export default {
     const [overflowX] = useValue('overflowX', { defaultValue: false });
     const [overflowY] = useValue('overflowY', { defaultValue: false });
 
+    const [placement] = useSelect('placement', {
+      options: [
+        'top',
+        'top-start',
+        'top-end',
+        'bottom',
+        'bottom-start',
+        'bottom-end',
+        'left',
+        'left-start',
+        'left-end',
+        'right',
+        'right-start',
+        'right-end',
+      ],
+      defaultValue: 'top',
+    });
+
     return (
       <div style={{ position: 'absolute', width: '100%', height: '100%', overflow: 'auto' }}>
         <div style={{ minWidth: overflowX ? '200%' : '100%', minHeight: overflowY ? '200%' : '100%', display: 'flex' }}>
@@ -53,11 +71,16 @@ export default {
               </Dummy>
               <Dummy onClick={(e) => setClickPosition({ x: e.clientX, y: e.clientY })}>Click me</Dummy>
 
-              <Tooltip position={hoverPosition} hoverBehavior={true} open={!!hoverPosition}>
+              <Tooltip placement={placement} position={hoverPosition} hoverBehavior={true} open={!!hoverPosition}>
                 {'Some long long long long long long text in tooltip'}
               </Tooltip>
 
-              <Tooltip onClose={() => setClickPosition(null)} position={clickPosition} open={!!clickPosition}>
+              <Tooltip
+                placement={placement}
+                onClose={() => setClickPosition(null)}
+                position={clickPosition}
+                open={!!clickPosition}
+              >
                 {'Some long long long long long long text in tooltip'}
               </Tooltip>
             </div>

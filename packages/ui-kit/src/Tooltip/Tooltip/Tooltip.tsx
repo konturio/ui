@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import { useCallback, useLayoutEffect, useMemo, useRef } from 'react';
 import { arrow, autoUpdate, flip, offset, shift, useFloating } from '@floating-ui/react-dom';
-import { TooltipContent } from '../TooltipContent/TooltipContent';
+import { Close16 } from '@konturio/default-icons';
 import s from './Tooltip.module.css';
 import { calculatePlacement } from './calculatePlacement';
 import type { CSSProperties } from 'react';
@@ -103,6 +103,8 @@ export function Tooltip({
 
   if (!open) return null;
 
+  const onCloseProp = hoverBehavior ? undefined : onClose;
+
   return (
     <div
       ref={transitionRef}
@@ -110,16 +112,23 @@ export function Tooltip({
       onClick={onClickOuter}
       style={positionVariables}
     >
-      <TooltipContent
-        ref={refs.setFloating}
-        className={classes?.popupContent}
-        onClose={hoverBehavior ? undefined : onClose}
-      >
-        {children}
+      <div ref={refs.setFloating} className={s.tooltipContent}>
+        <div className={clsx(s.contentBody, clsx)}>
+          <div>
+            {children}
+            <div className={s.bodyBottom}></div>
+          </div>
+
+          {onCloseProp && (
+            <div className={s.closeIcon} onClick={onCloseProp}>
+              <Close16 />
+            </div>
+          )}
+        </div>
         <div ref={arrowRef} className={clsx(s.arrow, s[arrowSide])}>
           <div className={s.arrowInner} />
         </div>
-      </TooltipContent>
+      </div>
     </div>
   );
 }

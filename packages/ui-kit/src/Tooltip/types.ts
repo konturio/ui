@@ -19,5 +19,5 @@ export type TooltipProps = PropsWithChildren<{
   hoverBehavior?: boolean;
   classes?: { popupContent?: string };
   onOuterClick?: (e: MouseClickEvent) => void;
-  open: boolean;
+  open?: boolean;
 }>;

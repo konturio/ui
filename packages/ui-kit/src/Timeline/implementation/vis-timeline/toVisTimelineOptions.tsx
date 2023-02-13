@@ -1,6 +1,6 @@
 import { getDefaultEntry, getDefaultOptions } from './defaultOptions';
 import type { TimelineOptions as VisTimelineOptions } from 'vis-timeline';
-import type { TimelineOptions } from '../../types';
+import type { TimelineCluster, TimelineEntry, TimelineOptions } from '../../types';
 
 export const toVisTimelineOptions = (options: TimelineOptions): VisTimelineOptions => {
   const timelineOptions: VisTimelineOptions = {
@@ -18,13 +18,13 @@ export const toVisTimelineOptions = (options: TimelineOptions): VisTimelineOptio
     }
   }
 
-  const { timelineEntryClassName, getClusterClassName } = options;
-  if (timelineEntryClassName || getClusterClassName) {
-    timelineOptions.template = (item: unknown, el: Element, data: any) => {
+  const { getEntryClassName, getClusterClassName } = options;
+  if (getEntryClassName || getClusterClassName) {
+    timelineOptions.template = (item: TimelineEntry, el: Element, data: TimelineCluster) => {
       const entry = getDefaultEntry();
 
-      if (timelineEntryClassName) {
-        entry.classList.add(timelineEntryClassName);
+      if (getEntryClassName) {
+        entry.classList.add(getEntryClassName(item));
       }
 
       if (data.isCluster && getClusterClassName) {

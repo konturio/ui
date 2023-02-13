@@ -6,30 +6,34 @@ export interface TimelineEntry {
   start: Date;
   end?: Date;
   group?: string;
+  selected?: boolean;
+}
+
+export interface TimelineCluster extends TimelineEntry {
+  isCluster: true;
+  items: TimelineEntry[];
 }
 
 interface ClusterOptions {
   fitOnDoubleClick: boolean;
 }
 
-export type TooltipEntry =
-  | TimelineEntry
-  | { id: string | number; isCluster: true; items: TimelineEntry[]; start: Date; end?: Date; selected: boolean };
+export type TooltipEntry = TimelineEntry | TimelineCluster;
 
 export type EntryTooltipProps = { entry: TimelineEntry } & TooltipProps;
 export type TimelineTooltipComponent = (props: Exclude<EntryTooltipProps, 'hoverBehavior'>) => JSX.Element;
 
-export interface TimelineProps {
-  dataset: TimelineEntry[];
-  selected: TimelineEntry['id'][];
+export interface TimelineProps<T extends TimelineEntry = TimelineEntry> {
+  dataset: T[];
+  selected: T['id'][];
   /* Show overlapped entries as stack */
   stack: boolean;
   /* Join bunch of small entries in cluster */
   cluster: false | ClusterOptions;
-  timelineEntryClassName?: string;
-  getClusterClassName?: (cluster: TimelineEntry[]) => string;
-  onSelect?: (item: TimelineEntry[], event: PointerEvent) => void;
-  onHover?: (item: TimelineEntry[], event: PointerEvent) => void;
+  getEntryClassName?: (item: T) => string;
+  getClusterClassName?: (cluster: T[]) => string;
+  onSelect?: (item: T[], event: PointerEvent) => void;
+  onHover?: (item: T[], event: PointerEvent) => void;
   margin?: VisTimelineOptions['margin'];
   tooltipComponent?: TimelineTooltipComponent;
 }

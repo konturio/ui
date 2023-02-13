@@ -57,7 +57,7 @@ export default {
           stack={stack}
           onSelect={selectHandler}
           selected={selected}
-          timelineEntryClassName="entry-custom-classname"
+          getEntryClassName={() => 'entry-custom-classname'}
           getClusterClassName={getClusterClassName}
         />
       </div>

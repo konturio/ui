@@ -21,9 +21,14 @@ jobs:
           npm run build
           npm run test
 
+      - uses: actions-ecosystem/action-regex-match@v2
+        id: regex-match
+        with:
+          text: ${{ github.ref }}
+          regex: '^v[0-9]+$'
+
       - name: Publish package to NPM
-        branches: ['v[0-9]+']
-        if: github.event_name == 'push'
+        if:  ${{ steps.regex-match.outputs.match != '' }} && github.event_name == 'push'
         run: |
           echo "registry=https://registry.npmjs.org/" >> .npmrc
           echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_AUTH_TOKEN }}" >> .npmrc

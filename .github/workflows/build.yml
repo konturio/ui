@@ -22,7 +22,8 @@ jobs:
           npm run test
 
       - name: Publish package to NPM
-        if: github.ref == 'refs/heads/v[0-9]' && github.event_name == 'push'
+        branches: ['v[0-9]+']
+        if: github.event_name == 'push'
         run: |
           echo "registry=https://registry.npmjs.org/" >> .npmrc
           echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_AUTH_TOKEN }}" >> .npmrc

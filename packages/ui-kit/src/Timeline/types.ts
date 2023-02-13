@@ -3,6 +3,7 @@ import type { TooltipProps } from '../Tooltip/types';
 
 export interface TimelineEntry {
   id: string | number;
+  content: string;
   start: Date;
   end?: Date;
   group?: string;

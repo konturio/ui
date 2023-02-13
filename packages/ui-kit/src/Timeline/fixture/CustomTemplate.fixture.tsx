@@ -32,6 +32,7 @@ export default {
           id: d.id,
           start: new Date(d.startedAt),
           end: new Date(d.endedAt),
+          content: '',
         })),
     );
 

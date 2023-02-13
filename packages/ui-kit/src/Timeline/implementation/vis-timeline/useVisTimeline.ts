@@ -6,7 +6,6 @@ import { toTimelineEntry } from './toTimlineEntry';
 import { getClusterById } from './getClusterById';
 import { toTooltipEntry } from './toTooltipEntry';
 import type { DataSet } from 'vis-data';
-import type { DataItem } from 'vis-timeline';
 import type { MutableRefObject } from 'react';
 import type { OnEntryClickPayload } from './types';
 import type { TooltipEntry, TimelineOptions, TimelineEntry } from '../../types';
@@ -19,7 +18,7 @@ function useSyncedRef<T>(data: T) {
 
 export function useVisTimeline(
   timelineContainerRef: MutableRefObject<null>,
-  data: DataSet<DataItem, 'id'>,
+  data: DataSet<TimelineEntry, 'id'>,
   options: TimelineOptions,
   setTooltipEntry: (payload: { entry: TooltipEntry; target: Element } | null) => void,
 ) {

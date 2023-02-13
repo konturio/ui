@@ -9,6 +9,7 @@ export const toTooltipEntry = (entry): TooltipEntry => {
       start: entry.data.start,
       end: entry.data.end,
       selected: entry.selected,
+      content: entry.content,
     };
   }
   return entry;

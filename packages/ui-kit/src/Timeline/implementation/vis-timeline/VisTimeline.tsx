@@ -1,6 +1,5 @@
 import { useEffect, useImperativeHandle, useMemo, useRef, forwardRef, useState, useCallback } from 'react';
 import { DataSet } from 'vis-data';
-import { toVisTimelineDataset } from './toVisTimelineDataset';
 import { useVisTimeline } from './useVisTimeline';
 import type { TooltipEntry, TimelineProps } from '../../types';
 
@@ -12,7 +11,7 @@ export const VisTimeline = forwardRef<TimelineImperativeApi | null, TimelineProp
   ({ dataset, selected, ...rest }, ref) => {
     const options = useMemo(() => rest, Object.values(rest));
     const timelineContainerRef = useRef(null);
-    const data = useMemo(() => new DataSet(dataset.map(toVisTimelineDataset)), [dataset]);
+    const data = useMemo(() => new DataSet(dataset), [dataset]);
 
     const { tooltipComponent: TooltipComponent } = rest;
 

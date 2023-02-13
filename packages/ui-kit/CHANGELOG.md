@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.14.0](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.13.0...@konturio/ui-kit@3.14.0) (2023-02-13)
+
+### Features
+
+- **timeline:** data driven timeline className ([3396a05](https://github.com/konturio/ui/commit/3396a052b978c3c300ed4fab23e55613914f4045))
+
 # [3.13.0](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.12.2...@konturio/ui-kit@3.13.0) (2023-02-10)
 
 **Note:** Version bump only for package @konturio/ui-kit

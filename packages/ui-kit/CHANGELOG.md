@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.14.2](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.14.1...@konturio/ui-kit@3.14.2) (2023-02-13)
+
+### Bug Fixes
+
+- dataset loose additional properties ([0e94550](https://github.com/konturio/ui/commit/0e945502f7b9d6c8d135e168c2a4d16c081c9cf3))
+
 ## [3.14.1](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.14.0...@konturio/ui-kit@3.14.1) (2023-02-13)
 
 ### Bug Fixes

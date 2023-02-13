@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.14.1](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.14.0...@konturio/ui-kit@3.14.1) (2023-02-13)
+
+### Bug Fixes
+
+- missing deps ([2644f91](https://github.com/konturio/ui/commit/2644f9105b9c49b70f0c84320995479c5a29065f))
+
 # [3.14.0](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.13.0...@konturio/ui-kit@3.14.0) (2023-02-13)
 
 ### Features

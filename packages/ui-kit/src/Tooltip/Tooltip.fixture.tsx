@@ -1,6 +1,6 @@
-import { forwardRef, useRef, useState } from 'react';
+import { forwardRef } from 'react';
 import { useSelect, useValue } from 'react-cosmos/fixture';
-import { Tooltip } from '.';
+import { Tooltip, useClickTooltip, useCoordsClickTooltip, useCoordsHoverTooltip, useHoverTooltip } from '.';
 
 const Dummy = forwardRef<HTMLDivElement, React.PropsWithChildren<React.HTMLAttributes<HTMLDivElement>>>(function Dummy2(
   { children, ...rest },
@@ -26,8 +26,8 @@ const Dummy = forwardRef<HTMLDivElement, React.PropsWithChildren<React.HTMLAttri
 
 export default {
   CoodsPositioning: () => {
-    const [hoverPosition, setHoverPosition] = useState<null | { x: number; y: number }>(null);
-    const [clickPosition, setClickPosition] = useState<null | { x: number; y: number }>(null);
+    const hoverTooltip = useCoordsHoverTooltip();
+    const clickTooltip = useCoordsClickTooltip();
 
     const [overflowX] = useValue('overflowX', { defaultValue: false });
     const [overflowY] = useValue('overflowY', { defaultValue: false });
@@ -63,15 +63,10 @@ export default {
             }}
           >
             <div style={{ display: 'flex', flexFlow: 'column nowrap' }}>
-              <Dummy
-                onPointerEnter={(e) => setHoverPosition({ x: e.clientX, y: e.clientY })}
-                onPointerLeave={() => setHoverPosition(null)}
-              >
-                Hover me
-              </Dummy>
-              <Dummy onClick={(e) => setClickPosition({ x: e.clientX, y: e.clientY })}>Click me</Dummy>
+              <Dummy {...hoverTooltip.triggerProps}>Hover me</Dummy>
+              <Dummy {...clickTooltip.triggerProps}>Click me</Dummy>
 
-              <Tooltip placement={placement} position={hoverPosition} hoverBehavior={true} open={!!hoverPosition}>
+              <Tooltip placement={placement} {...hoverTooltip.tooltipProps}>
                 <div>
                   <div>Paragraph 1</div>
                   <div>
@@ -84,12 +79,7 @@ export default {
                 </div>
               </Tooltip>
 
-              <Tooltip
-                placement={placement}
-                onClose={() => setClickPosition(null)}
-                position={clickPosition}
-                open={!!clickPosition}
-              >
+              <Tooltip placement={placement} {...clickTooltip.tooltipProps}>
                 {'Some long long long long long long text in tooltip'}
               </Tooltip>
             </div>
@@ -99,11 +89,9 @@ export default {
     );
   },
   TriggerPositioning: () => {
-    const targetHoverRef = useRef<HTMLDivElement>(null);
-    const [isHoverOpened, setIsHoverOpened] = useState(false);
+    const hoverTooltip = useHoverTooltip();
 
-    const [isClickOpened, setIsClickOpened] = useState(false);
-    const targetClickRef = useRef<HTMLDivElement>(null);
+    const clickTooltip = useClickTooltip();
 
     const [overflowX] = useValue('overflowX', { defaultValue: false });
     const [overflowY] = useValue('overflowY', { defaultValue: false });
@@ -138,25 +126,12 @@ export default {
               alignItems: 'center',
             }}
           >
-            <Dummy
-              ref={targetHoverRef}
-              onMouseEnter={() => setIsHoverOpened(true)}
-              onMouseLeave={() => setIsHoverOpened(false)}
-            >
-              Hover me
-            </Dummy>
-            <Dummy ref={targetClickRef} onClick={(e) => setIsClickOpened((prev) => !prev)}>
-              Click me
-            </Dummy>
-            <Tooltip placement={placement} triggerRef={targetHoverRef} open={isHoverOpened} hoverBehavior>
+            <Dummy {...hoverTooltip.triggerProps}>Hover me</Dummy>
+            <Dummy {...clickTooltip.triggerProps}>Click me</Dummy>
+            <Tooltip placement={placement} {...hoverTooltip.tooltipProps}>
               {'Some long long long long long long text in tooltip'}
             </Tooltip>
-            <Tooltip
-              placement={placement}
-              triggerRef={targetClickRef}
-              open={isClickOpened}
-              onClose={() => setIsClickOpened(false)}
-            >
+            <Tooltip placement={placement} {...clickTooltip.tooltipProps}>
               <div>
                 <div>Paragraph 1</div>
                 <div>

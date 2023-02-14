@@ -3,7 +3,7 @@ import type { TooltipProps } from '../Tooltip/types';
 
 export interface TimelineEntry {
   id: string | number;
-  content: string;
+  content?: string;
   start: Date;
   end?: Date;
   group?: string;
@@ -31,7 +31,7 @@ export interface TimelineProps<T extends TimelineEntry = TimelineEntry> {
   stack: boolean;
   /* Join bunch of small entries in cluster */
   cluster: false | ClusterOptions;
-  getEntryClassName?: (item: T) => string;
+  getEntryClassName?: (item: T, defaultClassName?: string) => string;
   getClusterClassName?: (cluster: T[]) => string;
   onSelect?: (item: T[], event: PointerEvent) => void;
   onHover?: (item: T[], event: PointerEvent) => void;

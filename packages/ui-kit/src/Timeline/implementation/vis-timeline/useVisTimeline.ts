@@ -1,11 +1,12 @@
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef, useMemo } from 'react';
+import { DataSet } from 'vis-data';
 import { Timeline as VisTimeline } from 'vis-timeline';
 import { toVisTimelineOptions } from './toVisTimelineOptions';
 import './theme.css';
 import { toTimelineEntry } from './toTimlineEntry';
 import { getClusterById } from './getClusterById';
 import { toTooltipEntry } from './toTooltipEntry';
-import type { DataSet } from 'vis-data';
+import { toVisTimelineDataset } from './toVisTimelineDataset';
 import type { MutableRefObject } from 'react';
 import type { OnEntryClickPayload } from './types';
 import type { TooltipEntry, TimelineOptions, TimelineEntry } from '../../types';
@@ -18,10 +19,12 @@ function useSyncedRef<T>(data: T) {
 
 export function useVisTimeline(
   timelineContainerRef: MutableRefObject<null>,
-  data: DataSet<TimelineEntry, 'id'>,
+  data: TimelineEntry[],
   options: TimelineOptions,
   setTooltipEntry: (payload: { entry: TooltipEntry; target: Element } | null) => void,
 ) {
+  const dataset = useMemo(() => new DataSet(data.map(toVisTimelineDataset)), [data]);
+
   const [timeline, setTimeline] = useState<VisTimeline | null>(null);
   const timelineRef = useRef(timeline);
   /* Create timeline instance */
@@ -30,7 +33,7 @@ export function useVisTimeline(
   useEffect(() => {
     if (timelineContainerRef.current === null) return;
     const visOptions = toVisTimelineOptions(options);
-    const timeline = new VisTimeline(timelineContainerRef.current, data, visOptions);
+    const timeline = new VisTimeline(timelineContainerRef.current, dataset, visOptions);
     setTimeline(timeline);
     timelineRef.current = timeline;
     // timeline.fit(); uncomment if not fit
@@ -49,11 +52,11 @@ export function useVisTimeline(
   /* Update dataset */
   useEffect(() => {
     if (!timelineRef.current) return;
-    timelineRef.current.setData({ items: data });
-  }, [data]);
+    timelineRef.current.setData({ items: dataset });
+  }, [dataset]);
 
   /* Implement onSelect handler trough 'click' listener */
-  const dataMapRef = useSyncedRef(data);
+  const dataMapRef = useSyncedRef(dataset);
   const { onSelect } = options;
 
   useEffect(() => {
@@ -81,7 +84,7 @@ export function useVisTimeline(
       timeline.off('itemover', onItemHover);
       timeline.off('itemout', onItemOut);
     };
-  }, [timeline, setTooltipEntry]);
+  }, [timeline, setTooltipEntry, dataMapRef]);
 
   useEffect(() => {
     if (!onSelect) return;

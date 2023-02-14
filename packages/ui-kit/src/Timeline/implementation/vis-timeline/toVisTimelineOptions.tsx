@@ -19,22 +19,22 @@ export const toVisTimelineOptions = (options: TimelineOptions): VisTimelineOptio
   }
 
   const { getEntryClassName, getClusterClassName } = options;
-  if (getEntryClassName || getClusterClassName) {
-    timelineOptions.template = (item: TimelineEntry, el: Element, data: TimelineCluster) => {
-      const entry = getDefaultEntry();
+  timelineOptions.template = (item: TimelineEntry, el: Element, data: TimelineCluster) => {
+    const entry = getDefaultEntry();
+    const defaultClassName = 'timeline-item';
+    if (getEntryClassName) {
+      entry.classList.add(getEntryClassName(item, defaultClassName));
+    } else {
+      entry.classList.add(defaultClassName);
+    }
 
-      if (getEntryClassName) {
-        entry.classList.add(getEntryClassName(item));
-      }
+    if (data.isCluster && getClusterClassName) {
+      const clusterClassName = getClusterClassName(data.items);
+      entry.classList.add(clusterClassName);
+    }
 
-      if (data.isCluster && getClusterClassName) {
-        const clusterClassName = getClusterClassName(data.items);
-        entry.classList.add(clusterClassName);
-      }
-
-      return entry;
-    };
-  }
+    return entry;
+  };
 
   if (typeof options.margin !== 'undefined') {
     timelineOptions.margin = options.margin;

@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.16.0](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.15.0...@konturio/ui-kit@3.16.0) (2023-02-15)
+
+### Features
+
+- **timeline:** use css clip mask for markers ([7509357](https://github.com/konturio/ui/commit/7509357a470002035af2b4e533b10666896f9b8c))
+
 # [3.15.0](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.14.2...@konturio/ui-kit@3.15.0) (2023-02-14)
 
 ### Features

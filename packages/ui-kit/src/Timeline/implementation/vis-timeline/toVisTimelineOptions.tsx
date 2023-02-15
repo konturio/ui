@@ -23,7 +23,12 @@ export function toVisTimelineOptions<T extends TimelineEntry>(options: TimelineO
     const entry = getDefaultEntry();
     const defaultClassName = 'timeline-item';
     if (getEntryClassName) {
-      entry.classList.add(getEntryClassName(item, defaultClassName));
+      const classNames = getEntryClassName(item, defaultClassName);
+      if (typeof classNames === 'string') {
+        classNames.split(' ').forEach((cn) => {
+          entry.classList.add(cn);
+        });
+      }
     } else {
       entry.classList.add(defaultClassName);
     }

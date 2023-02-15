@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.18.0](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.17.0...@konturio/ui-kit@3.18.0) (2023-02-15)
+
+### Bug Fixes
+
+- **timeline:** allow to omit classname ([0d176d2](https://github.com/konturio/ui/commit/0d176d2da06c84c8e7df2fa5c77b01f42aea9a77))
+
+### Features
+
+- **timeline:** add default border around point marker ([fe31f38](https://github.com/konturio/ui/commit/fe31f388935ba8a03086ea9a76111347e96bfe33))
+
 # [3.17.0](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.16.0...@konturio/ui-kit@3.17.0) (2023-02-15)
 
 ### Features

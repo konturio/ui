@@ -5,12 +5,13 @@ import { Timeline } from './';
 import type { TimelineProps, TimelineEntry } from './types';
 import type { MutableRefObject } from 'react';
 
-export interface TimeLineWithDropDownProps extends Omit<TimelineProps, 'onSelect' | 'cluster'> {
+export interface TimeLineWithDropDownProps<T extends TimelineEntry>
+  extends Omit<TimelineProps<T>, 'onSelect' | 'cluster'> {
   // "onSelect" does not contain an event because of a cluster that has action from the menu instead of the timeline
   onSelect: (item: TimelineEntry[]) => void;
 }
 
-export function TimeLineWithDropDown(props: TimeLineWithDropDownProps) {
+export function TimeLineWithDropDown<T extends TimelineEntry>(props: TimeLineWithDropDownProps<T>) {
   const [isExpanded, setIsExpanded] = useState(false);
   const [menuItems, setMenuItems] = useState<TimelineEntry[]>([]);
   const [eventTargetElement, setEventTargetElement] = useState<MutableRefObject<EventTarget | null>>({ current: null });

@@ -1,6 +1,6 @@
-import type { TooltipEntry } from '../../types';
+import type { TimelineEntry, TooltipEntry } from '../../types';
 
-export const toTooltipEntry = (entry): TooltipEntry => {
+export const toTooltipEntry = <T extends TimelineEntry>(entry): TooltipEntry<T> => {
   if (entry.isCluster) {
     return {
       id: entry.id,

@@ -51,6 +51,19 @@
   background-position: center;
 }
 
+.vis-item.vis-box:before {
+  clip-path: var(--clippath-focus);
+  background-color: var(--faint-strong-up);
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+
 .vis-item.vis-box.vis-selected:before {
   clip-path: var(--clippath-focus);
   background-color: var(--back-accent-strong);
@@ -72,7 +85,7 @@
 .vis-item.vis-range.vis-selected {
   outline: 1px solid var(--back-accent-strong);
   border: 1px solid var(--back-accent-strong);
-  background-color: var(--faint-strong);
+  background-color: unset;
 }
 
 .vis-item .vis-item-content {

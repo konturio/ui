@@ -2,7 +2,7 @@ import { getDefaultEntry, getDefaultOptions } from './defaultOptions';
 import type { TimelineOptions as VisTimelineOptions } from 'vis-timeline';
 import type { TimelineCluster, TimelineEntry, TimelineOptions } from '../../types';
 
-export const toVisTimelineOptions = (options: TimelineOptions): VisTimelineOptions => {
+export function toVisTimelineOptions<T extends TimelineEntry>(options: TimelineOptions<T>): VisTimelineOptions {
   const timelineOptions: VisTimelineOptions = {
     ...getDefaultOptions(),
     stack: options.stack,
@@ -19,7 +19,7 @@ export const toVisTimelineOptions = (options: TimelineOptions): VisTimelineOptio
   }
 
   const { getEntryClassName, getClusterClassName } = options;
-  timelineOptions.template = (item: TimelineEntry, el: Element, data: TimelineCluster) => {
+  timelineOptions.template = (item: T, el: Element, data: T & TimelineCluster<T>) => {
     const entry = getDefaultEntry();
     const defaultClassName = 'timeline-item';
     if (getEntryClassName) {
@@ -36,9 +36,9 @@ export const toVisTimelineOptions = (options: TimelineOptions): VisTimelineOptio
     return entry;
   };
 
-  if (typeof options.margin !== 'undefined') {
+  if (options.margin !== undefined) {
     timelineOptions.margin = options.margin;
   }
 
   return timelineOptions;
-};
+}

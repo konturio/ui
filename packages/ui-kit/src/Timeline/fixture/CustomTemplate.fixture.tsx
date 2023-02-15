@@ -4,7 +4,6 @@ import { Timeline } from '..';
 import testData from './testData';
 import { useSelectExtra } from './useSelectExtra';
 import './custom-template.css';
-import type { TimelineEntry } from '../types';
 
 const episodesMap = testData.reduce(
   (acc, i, n) => {
@@ -36,17 +35,17 @@ export default {
         })),
     );
 
-    const [selected, setSelected] = useState([] as (number | string)[]);
+    const [selected, setSelected] = useState(new Array<number>());
     const cluster = useSelectExtra([{ fitOnDoubleClick: true }, false as const]);
     const [stack] = useValue('stack', { defaultValue: false });
 
-    const [blueClusterTreshold] = useValue('Blue cluster treshold', { defaultValue: 3 });
+    const [blueClusterThreshold] = useValue('Blue cluster treshold', { defaultValue: 3 });
 
-    const selectHandler = useCallback((entries: TimelineEntry[]) => setSelected(entries.map((e) => e.id)), []);
+    const selectHandler = useCallback((entries) => setSelected(entries.map((e) => e.id)), []);
     const getClusterClassName = useCallback(
-      (entries: TimelineEntry[]) =>
-        entries.length > blueClusterTreshold ? 'custom-cluster-classname' : 'custom-cluster-classname-small',
-      [blueClusterTreshold],
+      (entries: { id: string | number; start: Date }[]) =>
+        entries.length > blueClusterThreshold ? 'custom-cluster-classname' : 'custom-cluster-classname-small',
+      [blueClusterThreshold],
     );
 
     return (

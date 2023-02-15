@@ -10,37 +10,42 @@ export interface TimelineEntry {
   selected?: boolean;
 }
 
-export interface TimelineCluster extends TimelineEntry {
+export interface TimelineCluster<T extends TimelineEntry> {
   isCluster: true;
-  items: TimelineEntry[];
+  items: T[];
 }
 
 interface ClusterOptions {
   fitOnDoubleClick: boolean;
 }
 
-export type TooltipEntry = TimelineEntry | TimelineCluster;
+export type TooltipEntry<T extends TimelineEntry> = TimelineEntry | TimelineCluster<T>;
 
-export type EntryTooltipProps = { entry: TimelineEntry } & TooltipProps;
-export type TimelineTooltipComponent = (props: Exclude<EntryTooltipProps, 'hoverBehavior'>) => JSX.Element;
+export interface EntryTooltipProps<T extends TimelineEntry> extends TooltipProps {
+  entry: TooltipEntry<T>;
+}
+export type TimelineTooltipComponent<T extends TimelineEntry> = (
+  props: Exclude<EntryTooltipProps<T>, 'hoverBehavior'>,
+) => JSX.Element;
 
-export interface TimelineProps<T extends TimelineEntry = TimelineEntry> {
-  dataset: T[];
-  selected: T['id'][];
+export interface TimelineOptions<T extends TimelineEntry> {
   /* Show overlapped entries as stack */
   stack: boolean;
   /* Join bunch of small entries in cluster */
   cluster: false | ClusterOptions;
-  getEntryClassName?: (item: T, defaultClassName?: string) => string;
-  getClusterClassName?: (cluster: T[]) => string;
   onSelect?: (item: T[], event: PointerEvent) => void;
   onHover?: (item: T[], event: PointerEvent) => void;
   margin?: VisTimelineOptions['margin'];
-  tooltipComponent?: TimelineTooltipComponent;
+  getEntryClassName?: (item: T, defaultClassName?: string) => string;
+  getClusterClassName?: (cluster: T[]) => string;
+  tooltipComponent?: TimelineTooltipComponent<T>;
+}
+
+export interface TimelineProps<T extends TimelineEntry> extends TimelineOptions<T> {
+  dataset: T[];
+  selected: T['id'][];
 }
 
 export interface TimelineImperativeApi {
   fit: () => void;
 }
-
-export type TimelineOptions = Omit<TimelineProps, 'dataset' | 'selected'>;

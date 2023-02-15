@@ -17,11 +17,11 @@ function useSyncedRef<T>(data: T) {
   return dataRef;
 }
 
-export function useVisTimeline(
+export function useVisTimeline<T extends TimelineEntry>(
   timelineContainerRef: MutableRefObject<null>,
-  data: TimelineEntry[],
-  options: TimelineOptions,
-  setTooltipEntry: (payload: { entry: TooltipEntry; target: Element } | null) => void,
+  data: T[],
+  options: TimelineOptions<T>,
+  setTooltipEntry: (payload: { entry: TooltipEntry<T>; target: Element } | null) => void,
 ) {
   const dataset = useMemo(() => new DataSet(data.map(toVisTimelineDataset)), [data]);
 
@@ -102,11 +102,11 @@ export function useVisTimeline(
         const selectedEntries = timeline.getSelection().reduce((acc, id) => {
           const entry = dataMapRef.current.get(id);
           if (entry) {
-            const timelineEntry = toTimelineEntry(entry);
+            const timelineEntry = toTimelineEntry<T>(entry);
             acc.push(timelineEntry);
           }
           return acc;
-        }, [] as TimelineEntry[]);
+        }, [] as T[]);
         onSelect(selectedEntries, payload.event);
       }
     };

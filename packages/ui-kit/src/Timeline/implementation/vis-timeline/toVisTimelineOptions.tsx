@@ -24,7 +24,7 @@ export function toVisTimelineOptions<T extends TimelineEntry>(options: TimelineO
     const defaultClassName = 'timeline-item';
     if (getEntryClassName) {
       const classNames = getEntryClassName(item, defaultClassName);
-      if (typeof classNames === 'string') {
+      if (typeof classNames === 'string' && classNames.length > 0) {
         classNames.split(' ').forEach((cn) => {
           entry.classList.add(cn);
         });
@@ -35,7 +35,11 @@ export function toVisTimelineOptions<T extends TimelineEntry>(options: TimelineO
 
     if (data.isCluster && getClusterClassName) {
       const clusterClassName = getClusterClassName(data.items);
-      entry.classList.add(clusterClassName);
+      if (typeof clusterClassName === 'string' && clusterClassName.length > 0) {
+        clusterClassName.split(' ').forEach((cn) => {
+          entry.classList.add(cn);
+        });
+      }
     }
 
     return entry;

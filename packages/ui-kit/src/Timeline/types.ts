@@ -36,8 +36,8 @@ export interface TimelineOptions<T extends TimelineEntry> {
   onSelect?: (item: T[], event: PointerEvent) => void;
   onHover?: (item: T[], event: PointerEvent) => void;
   margin?: VisTimelineOptions['margin'];
-  getEntryClassName?: (item: T, defaultClassName?: string) => string;
-  getClusterClassName?: (cluster: T[]) => string;
+  getEntryClassName?: (item: T, defaultClassName?: string) => string | undefined;
+  getClusterClassName?: (cluster: T[]) => string | undefined;
   tooltipComponent?: TimelineTooltipComponent<T>;
 }
 

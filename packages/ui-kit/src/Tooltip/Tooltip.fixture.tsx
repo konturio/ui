@@ -1,6 +1,6 @@
 import { forwardRef } from 'react';
 import { useSelect, useValue } from 'react-cosmos/fixture';
-import { Tooltip, useClickTooltip, useCoordsClickTooltip, useCoordsHoverTooltip, useHoverTooltip } from '.';
+import { Tooltip, useTooltip } from '.';
 
 const Dummy = forwardRef<HTMLDivElement, React.PropsWithChildren<React.HTMLAttributes<HTMLDivElement>>>(function Dummy2(
   { children, ...rest },
@@ -26,8 +26,8 @@ const Dummy = forwardRef<HTMLDivElement, React.PropsWithChildren<React.HTMLAttri
 
 export default {
   CoodsPositioning: () => {
-    const hoverTooltip = useCoordsHoverTooltip();
-    const clickTooltip = useCoordsClickTooltip();
+    const hoverTooltip = useTooltip('position.hover');
+    const clickTooltip = useTooltip('position.click');
 
     const [overflowX] = useValue('overflowX', { defaultValue: false });
     const [overflowY] = useValue('overflowY', { defaultValue: false });
@@ -89,9 +89,8 @@ export default {
     );
   },
   TriggerPositioning: () => {
-    const hoverTooltip = useHoverTooltip();
-
-    const clickTooltip = useClickTooltip();
+    const hoverTooltip = useTooltip('element.hover');
+    const clickTooltip = useTooltip('element.click');
 
     const [overflowX] = useValue('overflowX', { defaultValue: false });
     const [overflowY] = useValue('overflowY', { defaultValue: false });

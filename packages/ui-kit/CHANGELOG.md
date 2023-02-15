@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.17.0](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.16.0...@konturio/ui-kit@3.17.0) (2023-02-15)
+
+### Features
+
+- **timeline:** support for few classes in getEntryClassName ([44577f4](https://github.com/konturio/ui/commit/44577f49094e50cfa9e501f62836893a97601f53))
+
 # [3.16.0](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.15.0...@konturio/ui-kit@3.16.0) (2023-02-15)
 
 ### Features

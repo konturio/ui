@@ -1,7 +1,7 @@
 name: Deploy master branch to GitHub Pages
 on:
   push:
-    branches: [main]
+    branches: [v3]
 permissions:
   contents: write
 

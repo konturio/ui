@@ -1,24 +1,22 @@
-import { useEffect, useImperativeHandle, useMemo, useRef, forwardRef, useState, useCallback } from 'react';
+import { useEffect, useImperativeHandle, useMemo, useRef, forwardRef, useCallback, useState } from 'react';
+import { Tooltip, TooltipContent, TooltipTrigger } from '@konturio/floating';
 import { useVisTimeline } from './useVisTimeline';
 import type { TooltipEntry, TimelineProps, TimelineEntry } from '../../types';
 
 export interface TimelineImperativeApi {
   fit: () => void;
 }
+
 function VisTimelineComponent<T extends TimelineEntry>(
-  { dataset, selected, ...rest }: TimelineProps<T>,
+  { dataset, selected, getTooltipText, ...rest }: TimelineProps<T>,
   ref: React.ForwardedRef<TimelineImperativeApi | null>,
 ) {
   const options = useMemo(() => rest, Object.values(rest));
   const timelineContainerRef = useRef(null);
 
-  const { tooltipComponent: TooltipComponent } = options;
+  const tooltipTargetRef = useRef(null);
 
-  const tooltipTargetRef = useRef<Element | null>(null);
-
-  const [tooltipData, setTooltipData] = useState<{
-    entry: TooltipEntry<T>;
-  } | null>(null);
+  const [tooltipData, setTooltipData] = useState<TooltipEntry<T> | null>(null);
 
   const setTooltip = useCallback((payload: { entry: TooltipEntry<T>; target: Element } | null) => {
     setTooltipData(() => {
@@ -26,11 +24,9 @@ function VisTimelineComponent<T extends TimelineEntry>(
         tooltipTargetRef.current = null;
         return null;
       }
-
       const { entry, target } = payload;
-      tooltipTargetRef.current = target;
-
-      return { entry };
+      tooltipTargetRef.current = target as any;
+      return entry;
     });
   }, []);
 
@@ -63,7 +59,7 @@ function VisTimelineComponent<T extends TimelineEntry>(
 
   return (
     <>
-      <div style={{ position: 'absolute', width: 0, height: 0, overflow: 'hidden' }}>
+      <div style={{ position: 'absolute', width: 0, height: 0, overflow: 'auto' }}>
         <svg
           aria-hidden="true"
           version="1.1"
@@ -86,14 +82,11 @@ function VisTimelineComponent<T extends TimelineEntry>(
       </div>
 
       <div ref={timelineContainerRef}></div>
-      {TooltipComponent && tooltipData && (
-        <TooltipComponent
-          hoverBehavior
-          open={tooltipData !== null}
-          triggerRef={tooltipTargetRef}
-          entry={tooltipData.entry}
-          onClose={() => setTooltipData(null)}
-        />
+      {getTooltipText && tooltipData && (
+        <Tooltip>
+          <TooltipTrigger ref={tooltipTargetRef} />
+          <TooltipContent>{getTooltipText(tooltipData)}</TooltipContent>
+        </Tooltip>
       )}
     </>
   );

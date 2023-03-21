@@ -1,6 +1,6 @@
-import { forwardRef, useRef, useState } from 'react';
+import { forwardRef } from 'react';
 import { useSelect, useValue } from 'react-cosmos/fixture';
-import { Tooltip } from '.';
+import { Tooltip, TooltipContent, TooltipTrigger } from '@konturio/floating';
 
 const Dummy = forwardRef<HTMLDivElement, React.PropsWithChildren<React.HTMLAttributes<HTMLDivElement>>>(function Dummy2(
   { children, ...rest },
@@ -16,6 +16,7 @@ const Dummy = forwardRef<HTMLDivElement, React.PropsWithChildren<React.HTMLAttri
         borderRadius: '8px',
         border: '3px solid pink',
         fontWeight: 'bold',
+        cursor: 'pointer',
       }}
       {...rest}
     >
@@ -25,10 +26,8 @@ const Dummy = forwardRef<HTMLDivElement, React.PropsWithChildren<React.HTMLAttri
 });
 
 export default {
-  CoodsPositioning: () => {
-    const [hoverPosition, setHoverPosition] = useState<null | { x: number; y: number }>(null);
-    const [clickPosition, setClickPosition] = useState<null | { x: number; y: number }>(null);
-
+  Default: () => {
+    const [size] = useSelect('size', { options: ['default', 'bigger'], defaultValue: 'default' });
     const [overflowX] = useValue('overflowX', { defaultValue: false });
     const [overflowY] = useValue('overflowY', { defaultValue: false });
 
@@ -62,118 +61,13 @@ export default {
               alignItems: 'center',
             }}
           >
-            <div style={{ display: 'flex', flexFlow: 'column nowrap' }}>
-              <Dummy
-                onPointerEnter={(e) => setHoverPosition({ x: e.clientX, y: e.clientY })}
-                onPointerLeave={() => setHoverPosition(null)}
-              >
-                Hover me
-              </Dummy>
-              <Dummy onClick={(e) => setClickPosition({ x: e.clientX, y: e.clientY })}>Click me</Dummy>
-
-              <Tooltip placement={placement} position={hoverPosition} hoverBehavior={true} open={!!hoverPosition}>
-                <div>
-                  <div>Paragraph 1</div>
-                  <div>
-                    Long text long text long text long text long text long text long text long text long text long text
-                  </div>
-                  <div>
-                    Another long text long text long text long text long text long text long text long text long text
-                    long text
-                  </div>
-                </div>
-              </Tooltip>
-
-              <Tooltip
-                placement={placement}
-                onClose={() => setClickPosition(null)}
-                position={clickPosition}
-                open={!!clickPosition}
-              >
-                {'Some long long long long long long text in tooltip'}
-              </Tooltip>
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  },
-  TriggerPositioning: () => {
-    const targetHoverRef = useRef<HTMLDivElement>(null);
-    const [isHoverOpened, setIsHoverOpened] = useState(false);
-
-    const [isClickOpened, setIsClickOpened] = useState(false);
-    const targetClickRef = useRef<HTMLDivElement>(null);
-
-    const [overflowX] = useValue('overflowX', { defaultValue: false });
-    const [overflowY] = useValue('overflowY', { defaultValue: false });
-
-    const [placement] = useSelect('placement', {
-      options: [
-        'top',
-        'top-start',
-        'top-end',
-        'bottom',
-        'bottom-start',
-        'bottom-end',
-        'left',
-        'left-start',
-        'left-end',
-        'right',
-        'right-start',
-        'right-end',
-      ],
-      defaultValue: 'top',
-    });
-
-    return (
-      <div style={{ position: 'absolute', width: '100%', height: '100%', overflow: 'auto' }}>
-        <div style={{ minWidth: overflowX ? '200%' : '100%', minHeight: overflowY ? '200%' : '100%', display: 'flex' }}>
-          <div
-            style={{
-              flex: 1,
-              display: 'flex',
-              flexFlow: 'column nowrap',
-              justifyContent: 'center',
-              alignItems: 'center',
-            }}
-          >
-            <Dummy
-              ref={targetHoverRef}
-              onMouseEnter={() => setIsHoverOpened(true)}
-              onMouseLeave={() => setIsHoverOpened(false)}
-            >
-              Hover me
-            </Dummy>
-            <Dummy ref={targetClickRef} onClick={(e) => setIsClickOpened((prev) => !prev)}>
-              Click me
-            </Dummy>
-            <Tooltip placement={placement} triggerRef={targetHoverRef} open={isHoverOpened} hoverBehavior>
-              {'Some long long long long long long text in tooltip'}
-            </Tooltip>
-            <Tooltip
-              placement={placement}
-              triggerRef={targetClickRef}
-              open={isClickOpened}
-              onClose={() => setIsClickOpened(false)}
-            >
-              <div>
-                <div>Paragraph 1</div>
-                <div>
-                  Long text long text long text long text long text long text long text long text long text long text
-                </div>
-                <div>
-                  Another long text long text long text long text long text long text long text long text long text long
-                  text
-                </div>
-                <div>
-                  Long text long text long text long text long text long text long text long text long text long text
-                </div>
-                <div>
-                  Another long text long text long text long text long text long text long text long text long text long
-                  text
-                </div>
-              </div>
+            <Tooltip placement={placement} size={size}>
+              <TooltipTrigger asChild>
+                <Dummy>Hover me</Dummy>
+              </TooltipTrigger>
+              <TooltipContent>
+                {'Some long long long long long long long long long long long long long long text in tooltip'}
+              </TooltipContent>
             </Tooltip>
           </div>
         </div>

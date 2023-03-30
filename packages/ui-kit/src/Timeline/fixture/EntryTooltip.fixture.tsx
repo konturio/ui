@@ -1,10 +1,9 @@
 import { useCallback, useState } from 'react';
 import { useValue } from 'react-cosmos/fixture';
 import { Timeline } from '..';
-import { Tooltip } from '../../Tooltip';
+import { isTimelineEntry } from '../types';
 import testData from './testData';
 import { useSelectExtra } from './useSelectExtra';
-import type { EntryTooltipProps } from '../types';
 
 const episodesMap = testData.reduce(
   (acc, i, n) => {
@@ -23,19 +22,9 @@ const episodesMap = testData.reduce(
   >,
 );
 
-const TooltipComponent = ({ entry, ...rest }: EntryTooltipProps) => {
-  return (
-    <Tooltip {...rest} hoverBehavior>
-      <div style={{ padding: '5px' }}>
-        <strong>ID</strong>
-        <div>{entry.id}</div>
-        <strong>Start</strong>
-        <div>{entry.start.toISOString()}</div>
-        <strong>End</strong>
-        <div>{entry.end?.toISOString()}</div>
-      </div>
-    </Tooltip>
-  );
+const getTooltipText = (data) => {
+  const entry = isTimelineEntry(data) ? data : data.items[0];
+  return entry.start.toISOString();
 };
 
 export default {
@@ -66,7 +55,7 @@ export default {
           stack={stack}
           onSelect={onSelect}
           selected={selected}
-          tooltipComponent={TooltipComponent}
+          getTooltipText={getTooltipText}
         />
       </div>
     );
@@ -97,7 +86,7 @@ export default {
           stack={stack}
           onSelect={(entries) => setSelected(entries.map((e) => e.id))}
           selected={selected}
-          tooltipComponent={TooltipComponent}
+          getTooltipText={getTooltipText}
         />
         <ul>
           {Object.values(episodesMap)

@@ -1,0 +1,34 @@
+{
+  "name": "@konturio/floating",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:konturio/ui.git"
+  },
+  "sideEffects": false,
+  "type": "module",
+  "main": "tslib/index.js",
+  "types": "tslib/index.d.ts",
+  "files": [
+    "tslib"
+  ],
+  "scripts": {
+    "build": "node copy-css.mjs",
+    "lint": "node check-exports.mjs",
+    "typecheck": "tsc --noEmit -p tsconfig.json"
+  },
+  "keywords": [],
+  "author": "",
+  "peerDependencies": {
+    "clsx": "^1.2.1",
+    "react": "^18.2.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@floating-ui/core": "^1.2.4",
+    "@floating-ui/react": "^0.21.1",
+    "nanoid": "^4.0.0"
+  }
+}

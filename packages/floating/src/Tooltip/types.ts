@@ -9,3 +9,9 @@ export interface TooltipSettings {
 export interface TooltopTriggerOptions {
   asChild?: boolean;
 }
+
+export type ControlledProps = {
+  initialOpen?: boolean;
+  open?: boolean;
+  onOpenChange?: (open: boolean) => void;
+};

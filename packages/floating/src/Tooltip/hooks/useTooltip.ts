@@ -10,15 +10,24 @@ import {
   useRole,
   useInteractions,
 } from '@floating-ui/react';
-import type { TooltipSettings } from '../types';
+import type { ControlledProps, TooltipSettings } from '../types';
 
 const ARROW_HEIGHT = 8;
 
 export function useTooltip(
-  { placement = 'bottom', offset: offsetValue = 0 }: TooltipSettings = {},
+  {
+    initialOpen = false,
+    placement = 'bottom',
+    offset: offsetValue = 0,
+    open: controlledOpen,
+    onOpenChange: setControlledOpen,
+  }: TooltipSettings & ControlledProps = {},
   arrowRef: React.RefObject<SVGSVGElement>,
 ) {
-  const [open, setOpen] = React.useState(false);
+  const [uncontrolledOpen, setUncontrolledOpen] = React.useState(initialOpen);
+
+  const open = controlledOpen ?? uncontrolledOpen;
+  const setOpen = setControlledOpen ?? setUncontrolledOpen;
 
   const data = useFloating({
     placement,

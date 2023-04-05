@@ -1,4 +1,4 @@
-import { forwardRef } from 'react';
+import { forwardRef, useCallback } from 'react';
 import { useSelect, useValue } from 'react-cosmos/fixture';
 import * as Floating from '@konturio/floating';
 import { FloatingProvider } from '../OverlayService/FloatingProvider/FloatingProvider';
@@ -112,6 +112,20 @@ const ServiceTooltipFixture = () => {
 
   const tooltip = useTooltip({ placement });
 
+  const onHover = useCallback(
+    (e) => {
+      tooltip.show({ x: e.clientX, y: e.clientY });
+    },
+    [tooltip],
+  );
+
+  const onBlur = useCallback(
+    (e) => {
+      tooltip.close();
+    },
+    [tooltip],
+  );
+
   return (
     <div style={{ position: 'absolute', width: '100%', height: '100%', overflow: 'auto' }}>
       <div style={{ minWidth: overflowX ? '200%' : '100%', minHeight: overflowY ? '200%' : '100%', display: 'flex' }}>
@@ -125,10 +139,7 @@ const ServiceTooltipFixture = () => {
           }}
         >
           <div style={{ display: 'flex', flexFlow: 'column nowrap' }}>
-            <Dummy
-              onPointerEnter={(e) => tooltip.show({ x: e.clientX, y: e.clientY }, 'Hello world')}
-              onPointerLeave={() => tooltip.close()}
-            >
+            <Dummy onPointerEnter={onHover} onPointerLeave={onBlur}>
               Hover me
             </Dummy>
           </div>

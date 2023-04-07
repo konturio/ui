@@ -63,7 +63,6 @@ function MapTooltip() {
   useEffect(() => {
     if (!map) return;
     map.on('click', (e) => {
-      console.log(e);
       tooltip.close();
       tooltip.show(
         {

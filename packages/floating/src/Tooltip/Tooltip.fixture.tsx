@@ -114,7 +114,7 @@ const ServiceTooltipFixture = () => {
 
   const onHover = useCallback(
     (e) => {
-      tooltip.show({ x: e.clientX, y: e.clientY });
+      tooltip.show({ x: e.clientX, y: e.clientY }, 'Hello world');
     },
     [tooltip],
   );

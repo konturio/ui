@@ -62,6 +62,7 @@ function MapTooltip() {
 
   useEffect(() => {
     if (!map) return;
+
     map.on('click', (e) => {
       tooltip.close();
       tooltip.show(
@@ -72,7 +73,7 @@ function MapTooltip() {
         'blabla',
       );
     });
-  }, [map]);
+  }, [map, tooltip]);
 
   return <div ref={mapEl} style={{ width: '100%', height: '100%' }}></div>;
 }

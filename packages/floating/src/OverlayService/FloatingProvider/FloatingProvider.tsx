@@ -8,9 +8,11 @@ export type FloatingProviderProps = {
   tooltipService: Floating.TooltipService;
 };
 
+const mapTooltip = (tooltip: Floating.Tooltip) => tooltip.props;
+
 export const FloatingProvider = ({ children, tooltipService }: FloatingProviderProps) => {
-  const [tooltips, setOverlays] = useState<Floating.Tooltip[]>(() =>
-    tooltipService ? tooltipService.overlays : ([] as Floating.Tooltip[]),
+  const [tooltips, setTooltips] = useState(() =>
+    tooltipService ? tooltipService.overlays.map(mapTooltip) : ([] as Floating.TooltipProps[]),
   );
 
   useEffect(() => {
@@ -19,7 +21,7 @@ export const FloatingProvider = ({ children, tooltipService }: FloatingProviderP
     }
 
     const updateTooltips = (tooltips: Floating.Tooltip[]) => {
-      setOverlays(tooltips);
+      setTooltips(tooltips.map(mapTooltip));
     };
 
     const unsubscribe = tooltipService.subscribe(updateTooltips);
@@ -33,13 +35,13 @@ export const FloatingProvider = ({ children, tooltipService }: FloatingProviderP
     <FloatingContextProvider tooltipService={tooltipService}>
       {children}
       {tooltips.map((tooltip) => {
-        if (tooltip.props.isOpen === false) return null;
+        if (tooltip.isOpen === false) return null;
         return (
           <ServiceTooltip
             key={tooltip.key}
-            position={getRef(tooltip.props.position)}
-            content={tooltip.props.content}
-            settings={tooltip.props.settings}
+            position={getRef(tooltip.position)}
+            content={tooltip.content}
+            settings={tooltip.settings}
           />
         );
       })}

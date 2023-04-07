@@ -16,6 +16,10 @@ export class Tooltip {
     this.key = nanoid(4);
   }
 
+  private getPropsKey() {
+    return `key=${this.key};position=${JSON.stringify(this.position)};content=${this.content}`;
+  }
+
   show(position: Position | Element, content: string) {
     this.isOpen = true;
     this.position = position;
@@ -32,6 +36,7 @@ export class Tooltip {
   get props(): TooltipProps {
     if (this.isOpen && this.position && this.content) {
       return {
+        key: this.getPropsKey(),
         isOpen: true,
         settings: this.settings,
         position: this.position,
@@ -40,6 +45,7 @@ export class Tooltip {
     }
 
     return {
+      key: this.key,
       isOpen: false,
       settings: this.settings,
       position: null,
@@ -52,5 +58,13 @@ export class TooltipService extends OverlayService<Tooltip> {
   createTooltip(settings?: TooltipSettings): Tooltip {
     const tooltip = new Tooltip(settings, () => this.notifySubscribers());
     return this.add(tooltip);
+  }
+
+  remove(tooltip: Tooltip) {
+    this.removeByKey(tooltip.key);
+  }
+
+  private removeByKey(key: string) {
+    this.overlays = this.overlays.filter((overlay) => overlay.key !== key);
   }
 }

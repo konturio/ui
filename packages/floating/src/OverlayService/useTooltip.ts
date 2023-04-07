@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { useEffect, useMemo } from 'react';
 import { useFloatingContext } from './FloatingProvider/FloatingContext';
 import type { TooltipSettings } from '../Tooltip';
 import type { Tooltip } from '../Tooltip/TooltipService';
@@ -12,6 +12,12 @@ export const useTooltip = (settings?: TooltipSettings): Tooltip => {
     () => tooltipService.createTooltip({ placement, size, offset }),
     [tooltipService, placement, size, offset],
   );
+
+  useEffect(() => {
+    return () => {
+      tooltipService.remove(tooltip);
+    };
+  }, [tooltipService, tooltip]);
 
   return tooltip;
 };

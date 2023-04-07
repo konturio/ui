@@ -6,6 +6,6 @@ export interface Position {
 }
 
 export type TooltipProps =
-  | { isOpen: true; settings: TooltipSettings; position: Position; content: string }
-  | { isOpen: true; settings: TooltipSettings; position: Element; content: string }
-  | { isOpen: false; settings: TooltipSettings; position: null; content: null };
+  | { key: string; isOpen: true; settings: TooltipSettings; position: Position; content: string }
+  | { key: string; isOpen: true; settings: TooltipSettings; position: Element; content: string }
+  | { key: string; isOpen: false; settings: TooltipSettings; position: null; content: null };

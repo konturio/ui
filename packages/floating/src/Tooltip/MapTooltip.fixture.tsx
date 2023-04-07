@@ -74,11 +74,7 @@ function MapTooltip() {
     });
   }, [map]);
 
-  return (
-    <FloatingProvider tooltipService={tooltipService}>
-      <div ref={mapEl} style={{ width: '100%', height: '100%' }}></div>
-    </FloatingProvider>
-  );
+  return <div ref={mapEl} style={{ width: '100%', height: '100%' }}></div>;
 }
 
 export default function MapTooltipFixture() {

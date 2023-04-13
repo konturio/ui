@@ -20,10 +20,20 @@ const crtElm = <T extends keyof HTMLElementTagNameMap>(
   return el;
 };
 
+type Map = {
+  on: (
+    type: 'click' | 'move',
+    cb: (e: { point: { x: number; y: number }; target: { transform?: { width: number; height: number } } }) => void,
+  ) => void;
+  off: (
+    type: 'click' | 'move',
+    cb: (e: { point: { x: number; y: number }; target: { transform?: { width: number; height: number } } }) => void,
+  ) => void;
+  project: (pos: { lng: number; lat: number }) => { x: number; y: number };
+};
+
 function useMap(ref) {
-  const [map, setMap] = useState<null | {
-    on: (type: 'click' | 'move', cb: (e: { point: { x: number; y: number } }) => void) => void;
-  }>(null);
+  const [map, setMap] = useState<null | Map>(null);
   useLayoutEffect(() => {
     const loadings = [
       crtElm('script', {
@@ -46,29 +56,48 @@ function useMap(ref) {
           center: [-74.5, 40], // starting position [lng, lat]
           zoom: 9, // starting zoom
         });
-        function trackPoint(pos: { lng: number; lat: number }) {
-          let moveTooltip = (point: { x: number; y: number }) => {
-            /* Will be replaced in positionChanged */
-          };
-          const onMapMove = () => {
-            moveTooltip(this.project(pos));
-          };
-          map.on('move', onMapMove);
-          return {
-            positionChanged: (cb: (point: { x: number; y: number }) => void) => {
-              moveTooltip = cb;
-            },
-            destroy: () => {
-              map.off('move', onMapMove);
-            },
-          };
-        }
-        map.trackPoint = trackPoint;
         setMap(map);
       })
       .catch(console.error);
   }, [ref]);
   return map;
+}
+
+class MapPositionTracker {
+  map: Map;
+  private moveTooltip = (point: { x: number; y: number }) => {
+    /* Will be replaced in positionChanged */
+  };
+  private onMapMove = (e: { target: { transform?: { width: number; height: number } } }) => {
+    /* Will be replaced in positionChanged */
+  };
+
+  constructor(map: MapPositionTracker['map']) {
+    this.map = map;
+  }
+
+  public trackPointPosition(pos: { lng: number; lat: number }) {
+    this.onMapMove = (e) => {
+      const { width, height } = e.target.transform ?? {};
+      requestAnimationFrame(() => {
+        const { x, y } = this.map.project(pos);
+        if (width && height) {
+          this.moveTooltip({ x: Math.min(Math.max(0, x), width), y: Math.min(Math.max(0, y), height) });
+        } else {
+          this.moveTooltip({ x, y });
+        }
+      });
+    };
+    this.map.on('move', this.onMapMove);
+  }
+
+  public positionChanged(cb: (point: { x: number; y: number }) => void) {
+    this.moveTooltip = cb;
+  }
+
+  public destroy() {
+    this.map.off('move', this.onMapMove);
+  }
 }
 
 const tooltipService = new TooltipService();
@@ -80,8 +109,8 @@ function MapTooltip() {
 
   useEffect(() => {
     if (!map) return;
-
-    map.on('click', (e) => {
+    const tracker = new MapPositionTracker(map);
+    const createTooltipOnClickPosition = (e) => {
       tooltip.close();
       tooltip.show(
         {
@@ -90,13 +119,16 @@ function MapTooltip() {
         },
         'blabla',
       );
-      const tracker = map.trackPoint(e.lngLat);
+      tracker.trackPointPosition(e.lngLat);
       tracker.positionChanged(({ x, y }) => tooltip.move({ x, y }));
-      return () => {
-        tracker.destroy();
-        tooltip.close();
-      };
-    });
+    };
+
+    map.on('click', createTooltipOnClickPosition);
+    return () => {
+      map.off('click', createTooltipOnClickPosition);
+      tracker.destroy();
+      tooltip.close();
+    };
   }, [map, tooltip]);
 
   return <div ref={mapEl} style={{ width: '100%', height: '100%' }}></div>;

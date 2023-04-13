@@ -20,11 +20,15 @@ export class Tooltip {
     return `key=${this.key};position=${JSON.stringify(this.position)};content=${this.content}`;
   }
 
+  move(position: Position) {
+    this.position = position;
+    this.onChange();
+  }
+
   show(position: Position | Element, content: string) {
     this.isOpen = true;
     this.position = position;
     this.content = content;
-
     this.onChange();
   }
 

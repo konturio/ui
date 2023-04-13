@@ -22,7 +22,7 @@ const crtElm = <T extends keyof HTMLElementTagNameMap>(
 
 function useMap(ref) {
   const [map, setMap] = useState<null | {
-    on: (type: 'click', cb: (e: { point: { x: number; y: number } }) => void) => void;
+    on: (type: 'click' | 'move', cb: (e: { point: { x: number; y: number } }) => void) => void;
   }>(null);
   useLayoutEffect(() => {
     const loadings = [
@@ -46,6 +46,24 @@ function useMap(ref) {
           center: [-74.5, 40], // starting position [lng, lat]
           zoom: 9, // starting zoom
         });
+        function trackPoint(pos: { lng: number; lat: number }) {
+          let moveTooltip = (point: { x: number; y: number }) => {
+            /* Will be replaced in positionChanged */
+          };
+          const onMapMove = () => {
+            moveTooltip(this.project(pos));
+          };
+          map.on('move', onMapMove);
+          return {
+            positionChanged: (cb: (point: { x: number; y: number }) => void) => {
+              moveTooltip = cb;
+            },
+            destroy: () => {
+              map.off('move', onMapMove);
+            },
+          };
+        }
+        map.trackPoint = trackPoint;
         setMap(map);
       })
       .catch(console.error);
@@ -72,6 +90,12 @@ function MapTooltip() {
         },
         'blabla',
       );
+      const tracker = map.trackPoint(e.lngLat);
+      tracker.positionChanged(({ x, y }) => tooltip.move({ x, y }));
+      return () => {
+        tracker.destroy();
+        tooltip.close();
+      };
     });
   }, [map, tooltip]);
 

@@ -6,7 +6,7 @@
   font-weight: normal;
   background: var(--back-faint-weak-down);
   color: var(--base-weak);
-
+  pointer-events: none;
   max-width: 268px;
 }
 

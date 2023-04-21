@@ -10,7 +10,7 @@ export type FloatingProviderProps = {
 
 const mapTooltip = (tooltip: Floating.Tooltip) => tooltip.props;
 
-export const FloatingProvider = ({ children, tooltipService }: FloatingProviderProps) => {
+export function FloatingProvider({ children, tooltipService }: FloatingProviderProps) {
   const [tooltips, setTooltips] = useState(() =>
     tooltipService ? tooltipService.overlays.map(mapTooltip) : ([] as Floating.TooltipProps[]),
   );
@@ -47,7 +47,7 @@ export const FloatingProvider = ({ children, tooltipService }: FloatingProviderP
       })}
     </FloatingContextProvider>
   );
-};
+}
 
 const getRef = (position: Floating.Position | Element): Element => {
   if (position instanceof Element) return position;

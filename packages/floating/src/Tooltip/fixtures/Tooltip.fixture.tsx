@@ -1,9 +1,9 @@
 import { forwardRef, useCallback } from 'react';
 import { useSelect, useValue } from 'react-cosmos/fixture';
 import * as Floating from '@konturio/floating';
-import { FloatingProvider } from '../OverlayService/FloatingProvider/FloatingProvider';
-import { useTooltip } from '../OverlayService';
-import { TooltipService } from './TooltipService';
+import { FloatingProvider } from '../../OverlayService/FloatingProvider/FloatingProvider';
+import { useTooltip } from '../../OverlayService';
+import { TooltipService } from './../TooltipService';
 
 const Dummy = forwardRef<HTMLDivElement, React.PropsWithChildren<React.HTMLAttributes<HTMLDivElement>>>(function Dummy2(
   { children, ...rest },

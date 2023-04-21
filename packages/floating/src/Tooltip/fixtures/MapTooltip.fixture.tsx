@@ -1,7 +1,7 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
-import { FloatingProvider } from '../OverlayService/FloatingProvider/FloatingProvider';
-import { useTooltip } from '../OverlayService';
-import { TooltipService } from './TooltipService';
+import { FloatingProvider } from '../../OverlayService/FloatingProvider/FloatingProvider';
+import { useTooltip } from '../../OverlayService';
+import { TooltipService } from '../TooltipService';
 
 const crtElm = <T extends keyof HTMLElementTagNameMap>(
   tag: T,

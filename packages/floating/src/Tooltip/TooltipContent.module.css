@@ -8,6 +8,7 @@
   color: var(--base-weak);
   pointer-events: none;
   max-width: 268px;
+  z-index: 9999;
 }
 
 .bigger {

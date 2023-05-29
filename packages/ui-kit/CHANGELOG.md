@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.19.0](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.18.0...@konturio/ui-kit@3.19.0) (2023-05-29)
+
+### Features
+
+- **tooltip_service:** add tooltip service ([#77](https://github.com/konturio/ui/issues/77)) ([da52e9c](https://github.com/konturio/ui/commit/da52e9c518c9195d5884c6037ef45ec6ba03b4ba))
+- **tooltip:** create a new tooltip component ([#76](https://github.com/konturio/ui/issues/76)) ([4e11762](https://github.com/konturio/ui/commit/4e117628c18e640107172dd47326dda7b80ae24b))
+
 # [3.18.0](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.17.0...@konturio/ui-kit@3.18.0) (2023-02-15)
 
 ### Bug Fixes

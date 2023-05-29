@@ -4,8 +4,6 @@ import { useMergeRefs, FloatingPortal, FloatingArrow } from '@floating-ui/react'
 import s from './TooltipContent.module.css';
 import { useTooltipContext } from './hooks/useTolltipContext';
 
-const MAX_TOOLTIP_TEXT_LENGTH = 512;
-
 export const TooltipContent = React.forwardRef<HTMLDivElement, React.PropsWithChildren>(function TooltipContent(
   props,
   propRef,
@@ -17,18 +15,6 @@ export const TooltipContent = React.forwardRef<HTMLDivElement, React.PropsWithCh
   const ref = useMergeRefs([context.refs.setFloating, propRef]);
 
   const { children, ...rest } = props;
-
-  if (typeof children !== 'string') {
-    console.error(`TooltipContent: children must be a string, got ${typeof children}`);
-    return null;
-  }
-
-  if (children.length > MAX_TOOLTIP_TEXT_LENGTH) {
-    console.error(
-      `TooltipContent: children length must be less than ${MAX_TOOLTIP_TEXT_LENGTH}, got ${children.length}`,
-    );
-    return null;
-  }
 
   return (
     <FloatingPortal>

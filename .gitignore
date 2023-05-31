@@ -48,3 +48,4 @@ npm_error.log
 cosmos/dist/
 cosmos-export/
 packages/tsconfig.json
+cosmos/cosmos.userdeps.js

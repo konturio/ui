@@ -1,4 +1,4 @@
-import { createContext } from '@konturio/ui-kit/src/utils/helpers/context';
+import { createContext } from '../../utils/helpers/context';
 import type * as React from 'react';
 import type { TooltipSettings } from '../types';
 import type { useTooltip } from './useTooltip';

@@ -1,4 +1,4 @@
-import { createContext } from '@konturio/ui-kit/src/utils/helpers/context';
+import { createContext } from '../../utils/helpers/context';
 import type * as Floating from '../../Tooltip/TooltipService';
 
 type ContextType = {

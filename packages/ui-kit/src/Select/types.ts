@@ -14,7 +14,7 @@ export const SELECTION_NODES = {
   MULTI_AGGREGATED_CHIPS: 'multi_selection_aggregated_chips',
 } as const;
 
-export type SelectMode = typeof SELECTION_NODES[keyof typeof SELECTION_NODES];
+export type SelectMode = (typeof SELECTION_NODES)[keyof typeof SELECTION_NODES];
 
 export function getSelectMode(multiSelectProp: MultiSelectProp): SelectMode {
   switch (multiSelectProp) {

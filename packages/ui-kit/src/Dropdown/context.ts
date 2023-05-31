@@ -1,5 +1,5 @@
+import { createContext } from '@konturio/floating';
 import { createDescendantContext } from '../utils/component-helpers/descendants';
-import { createContext } from '../utils/helpers/context';
 import { makeId } from '../utils/helpers/helpers';
 import type React from 'react';
 import type { DropdownAction } from './reducer';

@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
+import { createContext } from '@konturio/floating';
 import { createDescendantContext } from '../utils/component-helpers/descendants';
-import { createContext } from '../utils/helpers/context';
 import type { InternalTabsContextValue, TabDescendant, TabPanelDescendant, TabsContextValue } from './types';
 
 const TabsDescendantsContext = createDescendantContext<TabDescendant>('TabsDescendantsContext');

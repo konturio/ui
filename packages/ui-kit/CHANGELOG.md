@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.0.0](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.19.0...@konturio/ui-kit@4.0.0) (2023-05-31)
+
+### Code Refactoring
+
+- **ui-kit:** move context helper to floating pkg ([#79](https://github.com/konturio/ui/issues/79)) ([a92e765](https://github.com/konturio/ui/commit/a92e7656b0ef4bd9b1cf1e47d82aae59eed98ffa))
+
+### BREAKING CHANGES
+
+- **ui-kit:** move context helper to floating package and refactor usage
+
 # [3.19.0](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.18.0...@konturio/ui-kit@3.19.0) (2023-05-29)
 
 ### Features

@@ -1,35 +1,40 @@
 .button {
   display: inline-flex;
-  flex-flow: row nowrap;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: var(--unit);
   cursor: pointer;
   border-radius: var(--border-radius);
+
   font-family: var(--font-family);
-  font-weight: 600;
-  letter-spacing: 0.2px;
-  line-height: 16px;
+  font-weight: 400;
+  line-height: 16px; /* 133.333% */
+  letter-spacing: 0.019px;
+  font-size: var(--font-xs);
 
-  --button-box-shadow: 0 0 0 2px var(--base-weak), 0 0 0 4px var(--complimentary-strong);
+  --box-shadow: 0 0 0 2px var(--base-weak), 0 0 0 4px var(--complimentary-strong);
 
-  --button-invert-background: var(--base-weak);
-  --button-invert-color: var(--accent-strong);
+  --invert-color: var(--base-strong);
+  --invert-background: var(--base-weak);
 
-  --button-invert-hover-background: var(--accent-weak);
+  --invert-hover-color: var(--base-strong);
+  --invert-hover-background: var(--accent-weak);
 
-  --button-invert-disabled-color: var(--faint-strong-down);
-  --button-invert-disabled-background: var(--faint-weak-down);
+  --invert-focus-color: var(--base-strong);
+  --invert-focus-background: var(--accent-weak);
 
-  --button-invert-active-color: var(--accent-strong-up);
-  --button-invert-active-background: var(--accent-weak);
+  --invert-active-color: var(--base-strong);
+  --invert-active-background: var(--accent-weak);
+
+  --invert-disabled-color: var(--faint-strong-down);
+  --invert-disabled-background: var(--faint-weak-down);
 
   /* Focus styles will appear when the element is focused using the keyboard.
    Browsers that don't support :focus-visible use the focus styles defined
    in the :focus rule and ignore the second style rule completely */
   &:focus {
     outline: none;
-    box-shadow: var(--button-box-shadow);
+    box-shadow: var(--box-shadow);
   }
 
   /* Focus styles defined in the :focus rule are only in effect when :focus-visible is also active. */
@@ -39,55 +44,108 @@
 }
 
 .buttonDark {
-  --button-box-shadow: 0 0 0 2px var(--complimentary-strong-down);
+  --invert-color: var(--faint-weak-up);
+  --invert-background: var(--base-strong-down);
 
-  --button-invert-background: var(--brand-strong-down);
-  --button-invert-color: var(--faint-weak-up);
+  --invert-hover-color: var(--base-weak);
+  --invert-hover-background: var(--base-strong);
 
-  --button-invert-hover-background: var(--brand-strong);
+  --invert-focus-color: var(--faint-weak-up);
+  --invert-focus-background: var(--base-strong-down);
 
-  --button-invert-disabled-color: var(--faint-strong-up);
-  --button-invert-disabled-background: var(--brand-strong-down);
+  --invert-active-color: var(--accent-strong-down);
+  --invert-active-background: var(--base-strong);
 
-  --button-invert-active-color: var(--accent-strong-down);
-  --button-invert-active-background: var(--brand-strong);
+  --invert-disabled-color: var(--faint-strong-up);
+  --invert-disabled-background: var(--base-strong-down);
 }
 
-.buttonTransparent {
-  --button-invert-background: transparent;
-
-  --button-invert-hover-background: rgba(0, 0, 0, 0.5);
-
-  --button-invert-disabled-background: rgba(0, 0, 0, 0.1);
-
-  --button-invert-active-background: rgba(0, 0, 0, 0.5);
+.buttonInner {
+  display: flex;
+  align-items: center;
 }
 
-.radio {
-  --button-box-shadow: inset 0 0 0 2px var(--complimentary-strong-down);
-  font-family: var(--font-xs);
-  font-weight: 400;
-  background-color: var(--base-weak);
-  color: var(--base-strong);
+.tiny {
+  height: 24px;
 
-  &:hover:not(:disabled) {
-    background-color: var(--faint-weak-up);
-  }
-  &:disabled {
-    cursor: default;
-    background-color: var(--faint-weak);
-    color: var(--text-faint-strong);
-  }
-  &:active:not(:disabled),
-  &.active {
-    font-weight: 600;
-    letter-spacing: 0;
-    background-color: var(--base-strong-down);
-    color: var(--base-weak);
-    &:hover {
-      background-color: var(--base-strong-down);
+  &.withContent {
+    .buttonInner {
+      padding: 0 8px;
     }
   }
+
+  .buttonInner {
+    padding: 0px 4px;
+  }
+}
+
+.small {
+  height: 32px;
+  padding: 0 8px;
+}
+
+.medium {
+  height: 38px;
+
+  &.withContent {
+    .buttonInner {
+      padding: 0 12px;
+    }
+  }
+
+  .buttonInner {
+    padding: 0 11px;
+  }
+}
+
+.large {
+  height: 40px;
+
+  &.withContent.withIcon {
+    height: 72px;
+    justify-content: flex-start;
+
+    .buttonInner {
+      flex-direction: column;
+      gap: 4px;
+    }
+  }
+
+  &.withContent {
+    .buttonInner {
+      padding: 12px 8px;
+    }
+  }
+
+  .buttonInner {
+    padding: 12px 12px;
+  }
+}
+
+.tiny,
+.small {
+  .buttonContent {
+    padding: 0 4px;
+  }
+}
+
+.medium,
+.large {
+  &.withContent {
+    .buttonInner {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+  }
+}
+
+.iconBefore,
+.iconAfter {
+  display: inline-flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
 }
 
 .primary {
@@ -97,7 +155,7 @@
     background-color: var(--accent-strong-up);
   }
   &:disabled {
-    cursor: default;
+    cursor: not-allowed;
     background-color: var(--faint-weak-down);
     color: var(--faint-strong-down);
   }
@@ -108,57 +166,66 @@
   }
 }
 
-.invert {
-  background-color: var(--button-invert-background);
-  color: var(--button-invert-color);
-  &:hover:not(:disabled) {
-    background-color: var(--button-invert-hover-background);
-  }
-  &:disabled {
-    cursor: default;
-    background-color: var(--button-invert-disabled-background);
-    color: var(--button-invert-disabled-color);
-  }
-  &:active:not(:disabled),
-  &.active {
-    background-color: var(--button-invert-active-background);
-    color: var(--button-invert-active-color);
-  }
-}
-
 .invert-outline {
-  background-color: var(--button-invert-background);
-  color: var(--button-invert-color);
-  border: 1px solid var(--accent-weak-up);
+  color: var(--base-strong);
+  background-color: var(--base-weak);
+  border: 1px solid var(--faint-weak);
+
   &:hover:not(:disabled) {
-    background-color: var(--button-invert-hover-background);
+    background-color: var(--accent-weak);
+    border-color: var(--accent-weak-up);
   }
+
   &:disabled {
-    cursor: default;
-    background-color: var(--button-invert-disabled-background);
-    color: var(--button-invert-disabled-color);
+    cursor: not-allowed;
+    color: var(--faint-strong-down);
+    border-color: var(--faint-weak-up);
   }
+
   &:active:not(:disabled),
   &.active {
-    background-color: var(--button-invert-active-background);
-    color: var(--button-invert-active-color);
-    border-color: var(--button-invert-active-color);
+    background-color: var(--accent-weak);
+    border-color: var(--accent-strong);
+  }
+
+  &:focus {
+    background-color: var(--accent-weak);
+    border-color: var(--accent-weak-up);
+  }
+
+  &:focus:not(:focus-visible):not(:active):not(:hover) {
+    background-color: var(--base-weak);
+    border-color: var(--faint-weak);
   }
 }
 
-.medium {
-  padding: 12px;
-}
+.invert {
+  background-color: var(--invert-background);
+  color: var(--invert-color);
 
-.small {
-  padding: var(--unit);
-}
+  &:hover:not(:disabled) {
+    background-color: var(--invert-hover-background);
+  }
 
-.small-xs {
-  padding: var(--half-unit);
-}
+  &:active:not(:disabled),
+  &.active {
+    color: var(--invert-active-color);
+    background-color: var(--invert-active-background);
+  }
 
-.buttonContent {
-  padding-right: 8px;
-  padding-left: 8px;
+  &:focus {
+    color: var(--invert-focus-color);
+    background-color: var(--invert-focus-background);
+  }
+
+  &:focus:not(:focus-visible):not(:active):not(:hover) {
+    color: var(--invert-color);
+    background-color: var(--invert-background);
+  }
+
+  &:disabled {
+    cursor: default;
+    color: var(--invert-disabled-color);
+    background-color: var(--invert-disabled-background);
+  }
 }

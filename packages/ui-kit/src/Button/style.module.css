@@ -229,3 +229,15 @@
     background-color: var(--invert-disabled-background);
   }
 }
+
+:not(.buttonDark).invert,
+:not(.buttonDark).invert-outline {
+  &.active,
+  &:active:not(:disabled),
+  &:hover:not(:disabled) {
+    .iconBefore,
+    .iconAfter {
+      color: var(--accent-strong);
+    }
+  }
+}

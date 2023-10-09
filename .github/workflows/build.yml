@@ -15,7 +15,7 @@ jobs:
       - name: Install packages, build, test
         run: |
           npm ci
-          npm i lerna -g
+          npm i lerna@4.0.0 -g
           lerna bootstrap
           npm run auto:lint
           npm run build
@@ -28,7 +28,7 @@ jobs:
           regex: '^v[0-9]+$'
 
       - name: Publish package to NPM
-        if:  ${{ steps.regex-match.outputs.match != '' }} && github.event_name == 'push'
+        if: ${{ steps.regex-match.outputs.match != '' }} && github.event_name == 'push'
         run: |
           echo "registry=https://registry.npmjs.org/" >> .npmrc
           echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_AUTH_TOKEN }}" >> .npmrc

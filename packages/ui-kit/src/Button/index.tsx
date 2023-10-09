@@ -1,14 +1,12 @@
 import cn from 'clsx';
 import { Children, forwardRef } from 'react';
-import { Text } from '../Text';
 import s from './style.module.css';
 import type { ButtonHTMLAttributes, ReactNode, JSXElementConstructor, ReactElement } from 'react';
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   dark?: boolean;
-  transparent?: boolean;
-  variant?: 'primary' | 'invert-outline' | 'invert' | 'radio';
-  size?: 'medium' | 'small' | 'small-xs';
+  variant?: 'primary' | 'invert-outline' | 'invert';
+  size?: 'large' | 'medium' | 'small' | 'tiny';
   id?: string;
   active?: boolean;
   iconBefore?: string | number | ReactElement<any, string | JSXElementConstructor<any>> | null;
@@ -25,13 +23,15 @@ export const Button = forwardRef<HTMLButtonElement, React.PropsWithChildren<Butt
       variant = 'primary',
       size = 'medium',
       dark = false,
-      transparent = false,
       iconBefore,
       iconAfter,
       ...props
     },
     ref,
   ) => {
+    const hasContent = Children.count(children) > 0;
+    const hasIcon = iconBefore || iconAfter;
+
     return (
       <button
         ref={ref}
@@ -40,28 +40,22 @@ export const Button = forwardRef<HTMLButtonElement, React.PropsWithChildren<Butt
           {
             [s.buttonDark]: dark,
           },
-          {
-            [s.buttonTransparent]: transparent,
-          },
           s[variant],
           s[size],
           className,
           {
             [s.active]: active,
+            [s.withContent]: hasContent,
+            [s.withIcon]: hasIcon,
           },
         )}
         {...props}
       >
-        {iconBefore}
-        {Children.count(children) > 0 &&
-          (size === 'small-xs' ? (
-            <Text type="caption">
-              <span className={s.buttonContent}>{children}</span>
-            </Text>
-          ) : (
-            <span className={s.buttonContent}>{children}</span>
-          ))}
-        {iconAfter}
+        <div className={cn(s.buttonInner)}>
+          {iconBefore && <div className={s.iconBefore}>{iconBefore}</div>}
+          {hasContent && <span className={s.buttonContent}>{children}</span>}
+          {iconAfter && <div className={s.iconAfter}>{iconAfter}</div>}
+        </div>
       </button>
     );
   },

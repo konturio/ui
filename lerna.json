@@ -5,7 +5,7 @@
   "npmClient": "npm",
   "command": {
     "version": {
-      "allowBranch": "v4"
+      "allowBranch": "v5"
     },
     "publish": {
       "conventionalCommits": true

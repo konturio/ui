@@ -91,3 +91,12 @@ If you need release modules in NPM nexus repo, you need some extra steps:
 8. Rebuild the app where you want to use the new modules
 
 > is something wrong in CI as workaround you can run `npm run publish` manually
+
+#### Major version release
+
+If you need to release major version of module:
+
+1. Create new branch from the current `vN` branch, where `N` is the current major version
+2. Change the version num from `vN` to `vN+1` in `leran.json` and `.github/workflows/deploy.yml` files
+3. Push the branch
+4. Run `npm run release`

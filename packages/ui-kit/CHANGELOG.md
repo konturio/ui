@@ -3,6 +3,32 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.19.0...@konturio/ui-kit@5.0.0) (2023-10-11)
+
+### Code Refactoring
+
+- **ui-kit:** move context helper to floating pkg ([#79](https://github.com/konturio/ui/issues/79)) ([a92e765](https://github.com/konturio/ui/commit/a92e7656b0ef4bd9b1cf1e47d82aae59eed98ffa))
+
+- 13316 update button component in the fe library (#81) ([70043a4](https://github.com/konturio/ui/commit/70043a442245a4d04131dd1c3a6e1984d7dc1ec8)), closes [#81](https://github.com/konturio/ui/issues/81)
+
+### BREAKING CHANGES
+
+- `small-xs` size replaced with `tiny`
+  remove `transparent` prop
+  remove `radio` variant
+
+- fix: set lerna version to 4
+
+- fix: return bach the userdeps
+
+- fix: add color to icon for invert variant
+
+- feat: set wrap rules in large button
+
+wrap text in the large buttons with icon no more than 2 lines or elipsis
+
+- **ui-kit:** move context helper to floating package and refactor usage
+
 # [4.0.0](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.19.0...@konturio/ui-kit@4.0.0) (2023-05-31)
 
 ### Code Refactoring

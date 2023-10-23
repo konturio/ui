@@ -41,11 +41,11 @@
     box-shadow: none;
   }
 
-  .buttonContent {
-    white-space: nowrap;
+  white-space: nowrap;
+  /* .buttonContent {
     overflow: hidden;
     text-overflow: ellipsis;
-  }
+  } */
 }
 
 .buttonDark {
@@ -102,15 +102,7 @@
   text-align: center;
   min-width: min-content;
 
-  &.withContent.withIcon .buttonContent {
-    white-space: normal;
-    display: -webkit-box;
-    overflow: hidden;
-    text-overflow: ellipsis;
-
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-  }
+  white-space: normal;
 
   &.withContent.withIcon {
     min-height: 76px;

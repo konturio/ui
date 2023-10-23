@@ -6,9 +6,9 @@ export default (
       <ActionsBarBTN>Test</ActionsBarBTN>
       <ActionsBarBTN>Test</ActionsBarBTN>
       <ActionsBarBTN active>Test</ActionsBarBTN>
-      <ActionsBarBTN size="small-xs">Test Small</ActionsBarBTN>
-      <ActionsBarBTN size="small-xs">Test Small</ActionsBarBTN>
-      <ActionsBarBTN size="small-xs">Test Small</ActionsBarBTN>
+      <ActionsBarBTN size="tiny">Test Small</ActionsBarBTN>
+      <ActionsBarBTN size="tiny">Test Small</ActionsBarBTN>
+      <ActionsBarBTN size="tiny">Test Small</ActionsBarBTN>
       <ActionsBarBTN>Test</ActionsBarBTN>
     </ActionsBar>
   </div>

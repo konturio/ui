@@ -1,5 +1,6 @@
 import { EyeBallIcon } from '@konturio/default-icons';
 import { useSelect, useValue } from 'react-cosmos/fixture';
+import s from './fixture-style.module.css';
 import { Button } from '.';
 
 export default {
@@ -29,7 +30,7 @@ export default {
           <Button onClick={console.log} size={size} disabled={disabled} iconBefore={<EyeBallIcon />} />
         </div>
         <h3>Invert-Outline</h3>
-        <div style={{ width: '250px', margin: '1em', gap: '1em', display: 'flex', flexFlow: 'row nowrap' }}>
+        <div style={{ width: '300px', margin: '1em', gap: '1em', display: 'flex', flexFlow: 'row nowrap' }}>
           <Button onClick={console.log} size={size} disabled={disabled} variant="invert-outline">
             Konturio
           </Button>
@@ -40,7 +41,7 @@ export default {
             disabled={disabled}
             iconAfter={<EyeBallIcon />}
           >
-            2 Lines
+            Two words
           </Button>
           <Button
             variant="invert-outline"
@@ -49,7 +50,7 @@ export default {
             disabled={disabled}
             iconBefore={<EyeBallIcon />}
           >
-            3 lines wrap text here
+            Three words here
           </Button>
           <Button
             variant="invert-outline"
@@ -99,6 +100,20 @@ export default {
             disabled={disabled}
             iconBefore={<EyeBallIcon />}
           />
+        </div>
+        <h3>Custom styles</h3>
+        <div style={{ margin: '1em' }}>
+          <Button
+            dark
+            variant="invert"
+            onClick={console.log}
+            size={size}
+            disabled={disabled}
+            iconBefore={<EyeBallIcon />}
+            className={size === 'large' ? s.customButton : ''}
+          >
+            {`Custom \n styles`}
+          </Button>
         </div>
       </div>
     );

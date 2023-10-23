@@ -42,12 +42,12 @@ export const Button = forwardRef<HTMLButtonElement, React.PropsWithChildren<Butt
           },
           s[variant],
           s[size],
-          className,
           {
             [s.active]: active,
             [s.withContent]: hasContent,
             [s.withIcon]: hasIcon,
           },
+          className,
         )}
         {...props}
       >

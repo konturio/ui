@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.1.0](https://github.com/konturio/ui/compare/@konturio/ui-kit@5.0.0...@konturio/ui-kit@5.1.0) (2023-10-23)
+
+### Features
+
+- **button:** remove custom wrap rules ([#82](https://github.com/konturio/ui/issues/82)) ([ec5e9ce](https://github.com/konturio/ui/commit/ec5e9ce9705a5ddf651ae1b35308c90cc9f9f0bb))
+
 # [5.0.0](https://github.com/konturio/ui/compare/@konturio/ui-kit@3.19.0...@konturio/ui-kit@5.0.0) (2023-10-11)
 
 ### Code Refactoring

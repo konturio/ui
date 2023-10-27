@@ -9,6 +9,8 @@ import type { MouseEventHandler, ReactElement } from 'react';
 
 export type PanelCustomControl = {
   icon: ReactElement;
+  disabled?: boolean;
+  className?: string;
   onWrapperClick: MouseEventHandler<HTMLButtonElement>;
 };
 interface Panel extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
@@ -73,8 +75,15 @@ export function Panel({
               <button className={cn(s.close, classes?.closeBtn)}>{isOpen ? <ChevronUp24 /> : <ChevronDown24 />}</button>
             )}
 
+            <div style={{ flex: 1 }}></div>
+
             {customControls?.map((control) => (
-              <button className={cn(s.close, classes?.closeBtn)} onClick={control.onWrapperClick} key={nanoid(4)}>
+              <button
+                disabled={control.disabled}
+                className={cn(s.close, classes?.closeBtn, control.className)}
+                onClick={control.onWrapperClick}
+                key={nanoid(4)}
+              >
                 {control.icon}
               </button>
             ))}

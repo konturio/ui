@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.1.1](https://github.com/konturio/ui/compare/@konturio/ui-kit@5.1.0...@konturio/ui-kit@5.1.1) (2023-10-27)
+
+### Bug Fixes
+
+- **panel:** add space fitter ([#83](https://github.com/konturio/ui/issues/83)) ([1d32053](https://github.com/konturio/ui/commit/1d3205338fea566f176ba1b79facfab509b1b326))
+
 # [5.1.0](https://github.com/konturio/ui/compare/@konturio/ui-kit@5.0.0...@konturio/ui-kit@5.1.0) (2023-10-23)
 
 ### Features

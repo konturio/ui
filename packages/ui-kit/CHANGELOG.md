@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.1.2](https://github.com/konturio/ui/compare/@konturio/ui-kit@5.1.1...@konturio/ui-kit@5.1.2) (2023-11-30)
+
+### Bug Fixes
+
+- **button:** update large button to center content ([3128d2f](https://github.com/konturio/ui/commit/3128d2f50d4747a2360c21b625e7ca5d05b6261d))
+- **panel:** remove unnecessary div in panel ([5d6e805](https://github.com/konturio/ui/commit/5d6e80593197db16809d9b236cfc169558db4d21))
+
 ## [5.1.1](https://github.com/konturio/ui/compare/@konturio/ui-kit@5.1.0...@konturio/ui-kit@5.1.1) (2023-10-27)
 
 ### Bug Fixes

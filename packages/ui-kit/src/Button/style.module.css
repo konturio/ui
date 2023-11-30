@@ -107,7 +107,7 @@
   &.withContent.withIcon {
     min-height: 76px;
     height: auto;
-    justify-content: flex-start;
+    justify-content: center;
 
     .buttonInner {
       padding-bottom: 16px;

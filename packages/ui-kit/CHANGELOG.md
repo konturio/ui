@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.1.3](https://github.com/konturio/ui/compare/@konturio/ui-kit@5.1.2...@konturio/ui-kit@5.1.3) (2023-11-30)
+
+### Bug Fixes
+
+- **panel:** pull custom controls to right ([b8f8665](https://github.com/konturio/ui/commit/b8f866566f2b694d05866798b95d6fc87404a35a))
+
 ## [5.1.2](https://github.com/konturio/ui/compare/@konturio/ui-kit@5.1.1...@konturio/ui-kit@5.1.2) (2023-11-30)
 
 ### Bug Fixes

@@ -75,8 +75,6 @@ export function Panel({
               <button className={cn(s.close, classes?.closeBtn)}>{isOpen ? <ChevronUp24 /> : <ChevronDown24 />}</button>
             )}
 
-            <div style={{ flex: 1 }}></div>
-
             {customControls?.map((control) => (
               <button
                 disabled={control.disabled}

@@ -75,6 +75,8 @@ export function Panel({
               <button className={cn(s.close, classes?.closeBtn)}>{isOpen ? <ChevronUp24 /> : <ChevronDown24 />}</button>
             )}
 
+            {customControls && <div style={{ marginLeft: 'auto' }}></div>}
+
             {customControls?.map((control) => (
               <button
                 disabled={control.disabled}

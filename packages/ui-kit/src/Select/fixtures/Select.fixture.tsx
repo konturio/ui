@@ -117,4 +117,9 @@ export default {
       Placeholder
     </Select>
   ),
+  MultiselectWithSearch: (
+    <Select label="Multiselect With Chips" items={items} multiselect="chips">
+      Placeholder
+    </Select>
+  ),
 };

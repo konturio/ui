@@ -23,13 +23,12 @@ function multiselectStateReducer(
 ): Partial<UseSelectState<SelectItemType>> {
   const { changes, type } = actionAndChanges;
   switch (type) {
-    case useSelect.stateChangeTypes.MenuKeyDownEnter:
-    case useSelect.stateChangeTypes.MenuKeyDownSpaceButton:
+    case useSelect.stateChangeTypes.ToggleButtonKeyDownEnter:
+    case useSelect.stateChangeTypes.ToggleButtonKeyDownSpaceButton:
     case useSelect.stateChangeTypes.ItemClick:
       return {
         ...changes,
-        isOpen: true, // keep menu open after selection.
-        highlightedIndex: state.highlightedIndex,
+        isOpen: true, // keep the menu open after selection.
       };
     default:
       return changes;

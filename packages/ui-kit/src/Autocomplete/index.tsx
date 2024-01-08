@@ -1,7 +1,6 @@
 import React, { forwardRef, useCallback, useEffect, useMemo, useState } from 'react';
 import { useCombobox } from 'downshift';
 import cn from 'clsx';
-import { useComposedRefs } from '../utils/hooks/useComposedRefs';
 import { AutocompleteButton } from './components/AutocompleteButton';
 import { AutocompleteItem } from './components/AutocompleteItem';
 import style from './style.module.css';
@@ -109,31 +108,20 @@ export const Autocomplete = forwardRef(
       }
     }, [setSelectedItem, defaultSelectedItem, onChange, onSelect]);
 
-    const {
-      isOpen,
-      getToggleButtonProps,
-      getLabelProps,
-      getMenuProps,
-      getComboboxProps,
-      getInputProps,
-      highlightedIndex,
-      getItemProps,
-    } = useCombobox({
-      items: filteredItems,
-      itemToString,
-      onSelectedItemChange: onAutocompleteChange,
-      onInputValueChange({ inputValue }) {
-        if (inputValue) {
-          setFilteredItems(filterFunction(inputValue, items));
-        } else {
-          setFilteredItems(items);
-        }
-      },
-      selectedItem,
-    });
-
-    const { ref, ...restComboProps } = getComboboxProps();
-    const combinedRef = useComposedRefs(forwardedRef, ref);
+    const { isOpen, getToggleButtonProps, getLabelProps, getMenuProps, getInputProps, highlightedIndex, getItemProps } =
+      useCombobox({
+        items: filteredItems,
+        itemToString,
+        onSelectedItemChange: onAutocompleteChange,
+        onInputValueChange({ inputValue }) {
+          if (inputValue) {
+            setFilteredItems(filterFunction(inputValue, items));
+          } else {
+            setFilteredItems(items);
+          }
+        },
+        selectedItem,
+      });
 
     return (
       <div
@@ -142,8 +130,7 @@ export const Autocomplete = forwardRef(
           [style.open]: isOpen,
         })}
         {...props}
-        {...restComboProps}
-        ref={combinedRef}
+        ref={forwardedRef}
       >
         <AutocompleteButton
           item={itemToString(selectedItem)}

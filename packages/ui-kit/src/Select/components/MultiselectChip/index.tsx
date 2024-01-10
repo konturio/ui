@@ -1,29 +1,30 @@
-import { forwardRef, useCallback } from 'react';
+import { type PropsWithChildren, useCallback } from 'react';
 import { Close16 } from '@konturio/default-icons';
 import cn from 'clsx';
 import style from './style.module.css';
-import type { ForwardRefComponent } from '../../../utils/component-helpers/polymorphic';
-import type { HTMLAttributes } from 'react';
-import type { SelectItemType } from '../../types';
 
-export interface MultiselectChipProps extends HTMLAttributes<HTMLSpanElement> {
-  value?: SelectItemType['value'];
-  onBtnClick?: (val?: SelectItemType['value']) => void;
+export interface MultiselectChipProps<Item> {
+  value: Item;
+  onBtnClick?: (val: Item) => void;
   className?: string;
 }
 
-export const MultiselectChip = forwardRef(({ children, value, onBtnClick, className, ...rest }, ref) => {
+export function MultiselectChip<Item>({
+  children,
+  value,
+  onBtnClick,
+  className,
+}: PropsWithChildren<MultiselectChipProps<Item>>) {
   const onClick = useCallback(
     (ev: React.MouseEvent<any>) => {
       ev.stopPropagation();
-
       onBtnClick && onBtnClick(value);
     },
     [value, onBtnClick],
   );
 
   return (
-    <span className={cn('multiselectChip', style.root, className)} ref={ref} {...rest}>
+    <span className={cn('multiselectChip', style.root, className)}>
       <span className={cn('textContainer', style.textContainer)}>{children}</span>
       {onBtnClick && (
         <span className={cn('btnContainer', style.btnContainer)}>
@@ -32,6 +33,4 @@ export const MultiselectChip = forwardRef(({ children, value, onBtnClick, classN
       )}
     </span>
   );
-}) as ForwardRefComponent<'span', MultiselectChipProps>;
-
-MultiselectChip.displayName = 'MultiselectChip';
+}

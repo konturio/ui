@@ -14,9 +14,10 @@
       padding: var(--unit);
       display: flex;
       flex-direction: row;
-      align-items: center;
+      align-items: flex-start;
       justify-content: space-between;
-      height: 36px;
+      /* height: 36px; - disabled because input with chips must grow */
+      box-sizing: border-box;
     }
   }
 
@@ -48,16 +49,28 @@
   & .buttonsContainer {
     display: flex;
     align-items: center;
-    cursor: pointer;
-    color: var(--faint-strong);
     margin-left: var(--unit);
-
-    & .resetIcon {
-      margin-right: 2px;
-
+    gap: 4px;
+    & button {
+      width: 16px;
+      height: 16;
+      box-sizing: border-box;
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content: center;
+      align-content: center;
+      color: var(--faint-strong);
       &:hover {
         color: var(--faint-strong-up);
       }
+    }
+
+    .delimiter {
+      background-color: var(--faint-weak, #eceeef);
+      width: 1px;
+      height: 24px;
+      margin: 0 4px;
     }
   }
 
@@ -68,7 +81,7 @@
     white-space: nowrap;
     text-overflow: ellipsis;
     display: flex;
-    flex-direction: row;
+    flex-flow: row wrap;
     gap: 4px;
     font-family: var(--font-family);
     font-weight: 400;
@@ -107,6 +120,7 @@
       background-color: var(--base-weak-up);
     }
 
+    &:focus-within,
     &:active,
     &:focus {
       box-shadow: 0 0 0 2px var(--complimentary-strong-down);

@@ -1,18 +1,20 @@
 import { MultiselectChip } from '../MultiselectChip';
 import { SELECTION_NODES } from '../../types';
 import style from './style.module.css';
-import type { SelectMode } from '../../types';
+import type { SelectMode, SelectableItem } from '../../types';
 
-export function SelectContent({
+export function SelectContent<I extends SelectableItem>({
   selectMode,
-  onReset,
+  onRemove,
   children,
   alwaysShowPlaceholder,
   placeholder = null,
+  onReset,
 }: {
   selectMode: SelectMode;
-  onReset?: (val?: string | number | undefined) => void;
-  children: Array<{ value: string | number | undefined; title: React.ReactNode }> | React.ReactNode;
+  onRemove?: (item: I) => void;
+  onReset?: () => void;
+  children: Array<I> | React.ReactNode;
   placeholder?: JSX.Element | null;
   alwaysShowPlaceholder?: boolean;
 }): JSX.Element | null {
@@ -25,7 +27,11 @@ export function SelectContent({
         console.error(`Wrong children type in <MultiselectContent />. Primitive expected`);
         return placeholder;
       }
-      return <MultiselectChip onBtnClick={onReset}>{String(children)}</MultiselectChip>;
+      return (
+        <MultiselectChip onBtnClick={() => onReset?.()} value={null}>
+          {String(children)}
+        </MultiselectChip>
+      );
 
     // < (item1), (items2), (item3) >
     case SELECTION_NODES.MULTI_CHIPS:
@@ -36,7 +42,7 @@ export function SelectContent({
       return (
         <>
           {children.map((itm, index) => (
-            <MultiselectChip key={`${itm.value}_${index}`} value={itm.value} onBtnClick={onReset}>
+            <MultiselectChip key={`${itm.value}_${index}`} value={itm} onBtnClick={onRemove}>
               {itm.title}
             </MultiselectChip>
           ))}

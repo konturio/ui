@@ -1,10 +1,3 @@
-export type SelectItemType = {
-  title: string;
-  value: string | number;
-  disabled?: boolean;
-  hasDivider?: boolean;
-};
-
 export type MultiSelectProp = undefined | boolean | 'aggregate' | 'chips';
 
 export const SELECTION_NODES = {
@@ -28,4 +21,11 @@ export function getSelectMode(multiSelectProp: MultiSelectProp): SelectMode {
     case 'chips':
       return SELECTION_NODES.MULTI_CHIPS;
   }
+}
+
+export interface SelectableItem {
+  value: unknown;
+  title: string;
+  disabled?: boolean;
+  hasDivider?: boolean;
 }

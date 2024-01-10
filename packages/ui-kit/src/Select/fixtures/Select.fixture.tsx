@@ -1,8 +1,8 @@
 import { useValue } from 'react-cosmos/fixture';
 import { Select } from '../index';
-import type { SelectItemType } from '../types';
+import type { SelectableItem } from '../types';
 
-const items: SelectItemType[] = [
+const items: SelectableItem[] = [
   { title: 'Multiple Choice Questions', value: 1 },
   { title: 'True and False Statements', value: 2 },
   { title: 'Pair Matching', value: 3 },
@@ -12,7 +12,7 @@ const items: SelectItemType[] = [
   { title: 'Computational Questions', value: 7 },
 ];
 
-function customItemToString(item: SelectItemType | SelectItemType[] | null): string {
+function customItemToString(item: SelectableItem | SelectableItem[] | null): string {
   if (Array.isArray(item)) {
     return item.length ? item.map((itm) => `${itm.value}_${itm.title}`).join(', ') : '';
   }
@@ -22,7 +22,7 @@ function customItemToString(item: SelectItemType | SelectItemType[] | null): str
 export default {
   Interactive: () => {
     const [state, setState] = useValue('selected', { defaultValue: {} } as {
-      defaultValue: SelectItemType | null | undefined;
+      defaultValue: SelectableItem | null | undefined;
     });
 
     return (
@@ -40,7 +40,7 @@ export default {
   },
   InteractiveWithDefaultValue: () => {
     const [state, setState] = useValue('selected', { defaultValue: {} } as {
-      defaultValue: SelectItemType | SelectItemType[] | null | undefined;
+      defaultValue: SelectableItem | SelectableItem[] | null | undefined;
     });
 
     return (
@@ -58,7 +58,7 @@ export default {
   },
   InteractiveWithInitialValue: () => {
     const [state, setState] = useValue('selected', { defaultValue: items[3] } as {
-      defaultValue: SelectItemType | null | undefined;
+      defaultValue: SelectableItem | null | undefined;
     });
 
     return (

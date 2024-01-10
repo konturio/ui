@@ -3,12 +3,12 @@ import cn from 'clsx';
 import { ArrowRight24, Finish24 } from '@konturio/default-icons';
 import style from './style.module.css';
 import type { ForwardRefComponent } from '../../../utils/component-helpers/polymorphic';
-import type { SelectItemType } from '../../types';
+import type { SelectableItem } from '../../types';
 
 export interface SelectItemProps {
   className?: string;
   itemProps: any;
-  item: SelectItemType;
+  item: SelectableItem;
   title?: string;
   highlighted?: boolean;
   selected?: boolean;

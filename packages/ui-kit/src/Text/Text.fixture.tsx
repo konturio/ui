@@ -28,5 +28,6 @@ export default (
     <Text type="caption">
       <div className="custom-style">Custom style check</div>
     </Text>
+    <Text type="label">Label for inputs</Text>
   </div>
 );

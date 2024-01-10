@@ -7,10 +7,10 @@ import { SelectItem } from './components/SelectItem';
 import style from './style.module.css';
 import type { SelectButtonClasses } from './components/SelectButton';
 import type { UseSelectProps, UseSelectState, UseSelectStateChange, UseSelectStateChangeOptions } from 'downshift';
-import type { SelectItemType, MultiSelectProp } from './types';
+import type { SelectableItem, MultiSelectProp } from './types';
 import type { ForwardRefComponent } from '../utils/component-helpers/polymorphic';
 
-function defaultItemToString(item: SelectItemType | SelectItemType[] | null): string {
+function defaultItemToString(item: SelectableItem | SelectableItem[] | null): string {
   if (Array.isArray(item)) {
     return item.length ? item.map((itm) => itm.title).join(', ') : '';
   }
@@ -18,9 +18,9 @@ function defaultItemToString(item: SelectItemType | SelectItemType[] | null): st
 }
 
 function multiselectStateReducer(
-  state: UseSelectState<SelectItemType>,
-  actionAndChanges: UseSelectStateChangeOptions<SelectItemType>,
-): Partial<UseSelectState<SelectItemType>> {
+  state: UseSelectState<SelectableItem>,
+  actionAndChanges: UseSelectStateChangeOptions<SelectableItem>,
+): Partial<UseSelectState<SelectableItem>> {
   const { changes, type } = actionAndChanges;
   switch (type) {
     case useSelect.stateChangeTypes.ToggleButtonKeyDownEnter:
@@ -36,14 +36,14 @@ function multiselectStateReducer(
 }
 
 export interface SelectProps {
-  items: SelectItemType[];
-  value?: SelectItemType['value'] | SelectItemType['value'][];
-  defaultValue?: SelectItemType['value'] | SelectItemType['value'][];
+  items: SelectableItem[];
+  value?: SelectableItem['value'] | SelectableItem['value'][];
+  defaultValue?: SelectableItem['value'] | SelectableItem['value'][];
   showSelectedIcon?: boolean;
   showEntryIcon?: boolean;
   multiselect?: MultiSelectProp;
   withResetButton?: boolean;
-  itemToString?: (item: SelectItemType | SelectItemType[] | null) => string;
+  itemToString?: (item: SelectableItem | SelectableItem[] | null) => string;
   label?: string | number | React.ReactElement | React.ReactElement[];
   disabled?: boolean;
   error?: string;
@@ -54,9 +54,9 @@ export interface SelectProps {
     menuItem?: string;
     noValue?: string;
   };
-  onChange?: (changes: UseSelectStateChange<SelectItemType>) => void;
-  onSelect?: (selection: SelectItemType | SelectItemType[] | null | undefined) => void;
-  onClose?: (selection: SelectItemType | SelectItemType[] | null | undefined) => void;
+  onChange?: (changes: UseSelectStateChange<SelectableItem>) => void;
+  onSelect?: (selection: SelectableItem | SelectableItem[] | null | undefined) => void;
+  onClose?: (selection: SelectableItem | SelectableItem[] | null | undefined) => void;
   onReset?: () => void;
   alwaysShowPlaceholder?: boolean;
 }
@@ -95,14 +95,14 @@ export const Select = forwardRef(
     const defaultSelectedItem =
       !multiselect && defaultValue && items ? items.find((itm) => itm.value === defaultValue) : null;
 
-    const [selectedItems, setSelectedItems] = useState<SelectItemType[]>([]);
+    const [selectedItems, setSelectedItems] = useState<SelectableItem[]>([]);
 
     useEffect(() => {
       if (value) {
         setSelectedItems(
           (Array.isArray(value) ? value : [value])
             .map((initItm) => items.find((itm) => itm.value === initItm))
-            .filter((itm) => itm !== undefined) as SelectItemType[],
+            .filter((itm) => itm !== undefined) as SelectableItem[],
         );
       } else {
         if (selectedItems.length) {
@@ -112,7 +112,7 @@ export const Select = forwardRef(
     }, [value]);
 
     const resetMultiselect = useCallback(
-      (val?: SelectItemType['value']) => {
+      (val?: SelectableItem['value']) => {
         if (val !== undefined) {
           const index = selectedItems.findIndex((itm) => itm.value === val);
           if (index >= 0) {
@@ -154,7 +154,7 @@ export const Select = forwardRef(
     );
 
     const onSelectChange = useCallback(
-      (changes: UseSelectStateChange<SelectItemType>) => {
+      (changes: UseSelectStateChange<SelectableItem>) => {
         if (onChange && typeof onChange === 'function') {
           onChange(changes);
         }
@@ -162,7 +162,7 @@ export const Select = forwardRef(
           if (changes.selectedItem === null || changes.selectedItem === undefined) return;
           const index = selectedItems.indexOf(changes.selectedItem);
 
-          let newSelectedItems: SelectItemType[];
+          let newSelectedItems: SelectableItem[];
 
           if (index >= 0) {
             newSelectedItems = [...selectedItems.slice(0, index), ...selectedItems.slice(index + 1)];
@@ -185,7 +185,7 @@ export const Select = forwardRef(
     );
 
     const onOpenChange = useCallback(
-      (changes: UseSelectStateChange<SelectItemType>) => {
+      (changes: UseSelectStateChange<SelectableItem>) => {
         if (!changes.isOpen && onClose && typeof onClose === 'function') {
           onClose(multiselect ? selectedItems : changes.selectedItem);
         }
@@ -193,7 +193,7 @@ export const Select = forwardRef(
       [onClose, multiselect, selectedItems],
     );
 
-    const useSelectProps: UseSelectProps<SelectItemType> = {
+    const useSelectProps: UseSelectProps<SelectableItem> = {
       items,
       itemToString,
       initialSelectedItem: initialSelectedItem || defaultSelectedItem,
@@ -219,7 +219,7 @@ export const Select = forwardRef(
       getItemProps,
     } = useSelect(useSelectProps);
 
-    let selectButtonItems: undefined | string | { title: string; value: SelectItemType['value'] }[];
+    let selectButtonItems: undefined | string | { title: string; value: SelectableItem['value'] }[];
     if (selectionMode === SELECTION_NODES.MULTI_CHIPS && selectedItems.length) {
       selectButtonItems = selectedItems.map((slItm) => ({
         title: itemToString(slItm),
@@ -231,19 +231,25 @@ export const Select = forwardRef(
       selectButtonItems = itemToString(selectedItem);
     }
 
-    const resetFunc = useCallback(
-      (val?: SelectItemType['value']) => {
+    const removeFunc = useCallback(
+      (item: SelectableItem) => {
         if (multiselect) {
-          resetMultiselect(val);
+          resetMultiselect(item.value);
         } else {
           reset();
         }
-        if (!val && onReset && typeof onReset === 'function') {
-          onReset();
-        }
       },
-      [multiselect, resetMultiselect, reset, onReset],
+      [multiselect, resetMultiselect, reset],
     );
+
+    const resetFunc = useCallback(() => {
+      if (multiselect) {
+        resetMultiselect();
+      } else {
+        reset();
+      }
+      onReset?.();
+    }, [multiselect, resetMultiselect, reset, onReset]);
 
     const noValue = !selectedItem && !selectedItems.length;
 
@@ -265,6 +271,7 @@ export const Select = forwardRef(
           open={isOpen}
           error={error}
           type={type}
+          remove={removeFunc}
           reset={resetFunc}
           selectMode={selectionMode}
           withResetButton={withResetButton}

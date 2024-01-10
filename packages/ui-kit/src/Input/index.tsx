@@ -1,6 +1,7 @@
 import React, { forwardRef, useCallback, useEffect, useImperativeHandle, useRef, useState } from 'react';
 import cn from 'clsx';
 import { Eye16, EyeOff16 } from '@konturio/default-icons';
+import { Text } from '../Text';
 import s from './style.module.css';
 
 export interface InputProps extends React.HTMLProps<HTMLInputElement> {
@@ -129,7 +130,11 @@ function InputComponent(
 
   return (
     <div className={cn(s.root, className, dynamicClasses)}>
-      {renderLabel && <div className={cn(s.label, classes?.label)}>{renderLabel}</div>}
+      {renderLabel && (
+        <Text type="label" className={cn(s.label, classes?.label)}>
+          {renderLabel}
+        </Text>
+      )}
       <div className={cn(s.inputBox, classes?.inputBox, children && s.inputBoxIcon)}>
         {getPlaceholder()}
 

@@ -1,11 +1,12 @@
 import React, { useCallback } from 'react';
 import { ChevronDown16, ChevronUp16, Close16 } from '@konturio/default-icons';
 import cn from 'clsx';
-import { SELECTION_NODES } from '../../types';
+import { Text } from '../../../Text';
+import { checkSelectionModeInteractivity } from '../../checkSelectionModeInteractivity';
 import style from './style.module.css';
 import { SelectContent } from './SelectContent';
 import { Placeholder } from './Placeholder';
-import type { SelectItemType, SelectMode } from '../../types';
+import type { SelectableItem, SelectMode } from '../../types';
 import type { ForwardRefComponent } from '../../../utils/component-helpers/polymorphic';
 
 export interface SelectButtonClasses {
@@ -23,14 +24,15 @@ export interface SelectButtonProps {
   labelProps: Record<string, unknown>;
   withResetButton?: boolean;
   selectMode: SelectMode;
-  value?: SelectItemType;
+  value?: SelectableItem;
   open?: boolean;
-  item?: string | { title: string; value: SelectItemType['value'] }[];
+  item?: string | { title: string; value: SelectableItem['value'] }[];
   classes?: SelectButtonClasses;
   disabled?: boolean;
   error?: boolean | string;
   type: 'classic' | 'inline';
-  reset: (val?: SelectItemType['value']) => void;
+  remove: (val: SelectableItem) => void;
+  reset?: () => void;
   alwaysShowPlaceholder?: boolean;
 }
 
@@ -49,38 +51,42 @@ export const SelectButton = React.forwardRef(
       error,
       type,
       withResetButton = true,
-      reset,
+      remove,
       selectMode,
       value,
       alwaysShowPlaceholder,
+      reset,
       ...props
     },
     ref,
   ) => {
-    const dynamicClasses = cn('selectButton', className, {
-      [style.root]: true,
-      [style.disabled]: disabled,
-      [style.error]: error,
-      [style.inline]: type === 'inline',
-    });
-
     const onReset = useCallback(
       (e: React.MouseEvent) => {
-        reset();
+        reset?.();
         e.stopPropagation();
       },
       [reset],
     );
 
-    const isInteractiveSelectionMode =
-      selectMode === SELECTION_NODES.SINGLE || selectMode === SELECTION_NODES.MULTI_AGGREGATED_STRING;
+    const isInteractiveSelectionMode = checkSelectionModeInteractivity(selectMode);
 
     return (
-      <div className={dynamicClasses} {...props} ref={ref}>
+      <div
+        className={cn('selectButton', className, {
+          [style.root]: true,
+          [style.disabled]: disabled,
+          [style.error]: error,
+          [style.inline]: type === 'inline',
+        })}
+        {...props}
+        ref={ref}
+      >
         {label && (
-          <label className={cn(style.label, classes?.label)} {...labelProps}>
-            {label}
-          </label>
+          <Text type="label">
+            <label className={cn(style.label, classes?.label)} {...labelProps}>
+              {label}
+            </label>
+          </Text>
         )}
         <button
           disabled={disabled}
@@ -104,6 +110,7 @@ export const SelectButton = React.forwardRef(
           >
             <SelectContent
               selectMode={selectMode}
+              onRemove={remove}
               onReset={reset}
               placeholder={<Placeholder>{children}</Placeholder>}
               alwaysShowPlaceholder={alwaysShowPlaceholder}

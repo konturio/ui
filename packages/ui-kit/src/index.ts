@@ -26,6 +26,7 @@ export { Modal } from './Modal';
 export { Heading } from './Heading';
 export { Animation } from './Animation';
 export { Tooltip } from './Tooltip';
+export * from './MCDALegend';
 export * from './Timeline';
 export * from './Legend';
 export * from './Popover';

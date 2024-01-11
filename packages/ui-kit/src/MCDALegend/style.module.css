@@ -1,0 +1,39 @@
+.mcdaLegend {
+  display: flex;
+  flex-flow: column nowrap;
+  min-width: 100px;
+  gap: calc(var(--unit) / 2);
+}
+
+.subtitle {
+  color: var(--text-faint-strong, #69737d);
+}
+
+.ruler {
+  height: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.division {
+  width: 1px;
+  height: 4px;
+  background-color: hsla(0, 0%, 0%, 0.5);
+}
+.division:nth-child(6) {
+  height: 6px;
+}
+
+.division:last-child,
+.division:first-child {
+  height: 18px;
+  align-self: flex-start;
+}
+
+.signatures {
+  margin-top: calc(var(--unit) / 2);
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}

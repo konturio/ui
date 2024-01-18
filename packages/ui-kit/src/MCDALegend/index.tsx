@@ -27,7 +27,6 @@ export function MCDALegend({
   subtitle?: string;
   fromValue?: string;
   toValue?: string;
-  toColor?: string;
   colors?: string[];
   steps?: number;
 }) {

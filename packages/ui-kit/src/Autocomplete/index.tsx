@@ -42,6 +42,7 @@ export interface AutocompleteProps {
   onChange?: (changes: UseComboboxStateChange<AutocompleteItemType>) => void;
   onSelect?: (selection: AutocompleteItemType | AutocompleteItemType[] | null | undefined) => void;
   children?: string;
+  placeholder?: string;
 }
 
 export const Autocomplete = forwardRef(

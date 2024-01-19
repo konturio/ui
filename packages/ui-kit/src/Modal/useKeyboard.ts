@@ -10,8 +10,9 @@ export function useKeyboard(
       const onKeyPress = (event: KeyboardEvent) => {
         if (event.key === key) cb();
       };
-      document.addEventListener(event, onKeyPress);
-      return () => document.removeEventListener(event, onKeyPress);
+      document?.addEventListener(event, onKeyPress);
+      return () => document?.removeEventListener(event, onKeyPress);
     }
+    return;
   }, [cb, key, event]);
 }

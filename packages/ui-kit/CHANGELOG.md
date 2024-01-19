@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.1.4](https://github.com/konturio/ui/compare/@konturio/ui-kit@5.1.3...@konturio/ui-kit@5.1.4) (2024-01-19)
+
+**Note:** Version bump only for package @konturio/ui-kit
+
 ## [5.1.3](https://github.com/konturio/ui/compare/@konturio/ui-kit@5.1.2...@konturio/ui-kit@5.1.3) (2023-11-30)
 
 ### Bug Fixes

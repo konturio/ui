@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.2.5](https://github.com/konturio/ui/compare/@konturio/default-theme@3.2.4...@konturio/default-theme@3.2.5) (2024-01-19)
+
+**Note:** Version bump only for package @konturio/default-theme
+
 ## [3.2.4](https://github.com/konturio/ui/compare/@konturio/default-theme@3.2.3...@konturio/default-theme@3.2.4) (2023-01-27)
 
 **Note:** Version bump only for package @konturio/default-theme

@@ -62,6 +62,6 @@ export function Panel({
     </Card>
   );
 
-  if (isOpen && modal?.showInModal) return <Modal onBackdropClick={modal.onModalClick}>{panel}</Modal>;
+  if (isOpen && modal?.showInModal) return <Modal onCancel={modal.onModalClick}>{panel}</Modal>;
   return <>{panel}</>;
 }

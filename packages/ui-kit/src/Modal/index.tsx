@@ -1,7 +1,9 @@
 import { createPortal } from 'react-dom';
+import { useCallback } from 'react';
 import { useContainer } from './useContainer';
 import { ModalBackdrop } from './ModalBackdrop';
 import { ModalContent } from './ModalContent';
+import { useKeyboard } from './useKeyboard';
 import type { PropsWithChildren } from 'react';
 
 interface ModalProps {
@@ -11,20 +13,17 @@ interface ModalProps {
    * @default document.body
    **/
   modalContainer?: string | HTMLElement;
-  onBackdropClick?: () => void;
+  onCancel?: (reason: 'esc' | 'click_outside') => void;
   /**
    * any css value for backdrop z-index
    */
   zIndex?: string;
 }
 
-export function Modal({
-  children,
-  modalContainer = document?.body,
-  onBackdropClick,
-  zIndex,
-}: PropsWithChildren<ModalProps>) {
+export function Modal({ children, modalContainer = document?.body, onCancel, zIndex }: PropsWithChildren<ModalProps>) {
   const container = useContainer(modalContainer);
+  useKeyboard('Escape', () => onCancel?.('esc'));
+  const onBackdropClick = useCallback(() => onCancel?.('click_outside'), [onCancel]);
 
   if (!container) return null;
 

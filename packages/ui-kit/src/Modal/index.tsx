@@ -1,47 +1,37 @@
-import { useCallback, useRef } from 'react';
-import clsx from 'clsx';
-import s from './style.module.css';
+import { createPortal } from 'react-dom';
+import { useContainer } from './useContainer';
+import { ModalBackdrop } from './ModalBackdrop';
+import { ModalContent } from './ModalContent';
 import type { PropsWithChildren } from 'react';
 
 interface ModalProps {
-  className?: string;
-  classes?: {
-    content?: string;
-  };
-  closeOnBackdropClick?: boolean;
-  onModalCloseCallback?: () => void;
+  /**
+   * Pass element itself or it id.
+   * This element MUST be outside of react root.
+   * @default document.body
+   **/
+  modalContainer?: string | HTMLElement;
+  onBackdropClick?: () => void;
+  /**
+   * any css value for backdrop z-index
+   */
+  zIndex?: string;
 }
 
 export function Modal({
-  closeOnBackdropClick = true,
-  className,
   children,
-  classes,
-  onModalCloseCallback,
+  modalContainer = document?.body,
+  onBackdropClick,
+  zIndex,
 }: PropsWithChildren<ModalProps>) {
-  const backdrpopRef = useRef<HTMLDivElement>(null);
+  const container = useContainer(modalContainer);
 
-  const onBackdropClick = useCallback(
-    (ev) => {
-      if (closeOnBackdropClick) {
-        if (onModalCloseCallback) {
-          onModalCloseCallback();
-        }
-      }
-    },
-    [closeOnBackdropClick, onModalCloseCallback],
-  );
+  if (!container) return null;
 
-  // need this function to overcatch click events
-  const onSectionClick = useCallback((ev) => {
-    ev.stopPropagation();
-  }, []);
-
-  return (
-    <div ref={backdrpopRef} className={clsx(s.modalContainer, className)} onMouseDown={onBackdropClick}>
-      <section onMouseDown={onSectionClick} className={clsx(s.modalContent, classes?.content)}>
-        {children}
-      </section>
-    </div>
+  return createPortal(
+    <ModalBackdrop onBackdropClick={onBackdropClick} zIndex={zIndex}>
+      <ModalContent>{children}</ModalContent>
+    </ModalBackdrop>,
+    container,
   );
 }

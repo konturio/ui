@@ -62,11 +62,6 @@ export function Panel({
     </Card>
   );
 
-  if (isOpen && modal?.showInModal)
-    return (
-      <Modal onModalCloseCallback={modal.onModalClick} className={cn(s.modalCover, classes?.modal)}>
-        {panel}
-      </Modal>
-    );
+  if (isOpen && modal?.showInModal) return <Modal onBackdropClick={modal.onModalClick}>{panel}</Modal>;
   return <>{panel}</>;
 }

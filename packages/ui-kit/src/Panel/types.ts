@@ -15,7 +15,6 @@ export interface Panel extends React.DetailedHTMLProps<React.HTMLAttributes<HTML
     header?: string;
     headerTitle?: string;
     closeBtn?: string;
-    modal?: string;
   };
   modal?: {
     onModalClick: () => void;

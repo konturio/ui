@@ -58,6 +58,7 @@ export interface SelectProps {
   onSelect?: (selection: SelectableItem | SelectableItem[] | null | undefined) => void;
   onClose?: (selection: SelectableItem | SelectableItem[] | null | undefined) => void;
   onReset?: () => void;
+  placeholder: string;
   alwaysShowPlaceholder?: boolean;
 }
 

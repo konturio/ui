@@ -1,59 +1,36 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
-import clsx from 'clsx';
-import s from './style.module.css';
+import { createPortal } from 'react-dom';
+import { useCallback } from 'react';
+import { useContainer } from './useContainer';
+import { ModalBackdrop } from './ModalBackdrop';
+import { ModalContent } from './ModalContent';
+import { useKeyboard } from './useKeyboard';
 import type { PropsWithChildren } from 'react';
 
 interface ModalProps {
-  show?: boolean;
-  className?: string;
-  classes?: {
-    content?: string;
-  };
-  closeOnBackdropClick?: boolean;
-  onModalCloseCallback?: () => void;
+  /**
+   * Pass element itself or it id.
+   * This element MUST be outside of react root.
+   * @default document.body
+   **/
+  modalContainer?: string | HTMLElement;
+  onCancel?: (reason: 'esc' | 'click_outside') => void;
+  /**
+   * any css value for backdrop z-index
+   */
+  zIndex?: string;
 }
 
-export function Modal({
-  show = true,
-  closeOnBackdropClick = true,
-  className,
-  children,
-  classes,
-  onModalCloseCallback,
-}: PropsWithChildren<ModalProps>) {
-  const [showModal, setShowModal] = useState<boolean>(show);
-  const backdrpopRef = useRef<HTMLDivElement>(null);
+export function Modal({ children, modalContainer = document?.body, onCancel, zIndex }: PropsWithChildren<ModalProps>) {
+  const container = useContainer(modalContainer);
+  useKeyboard('Escape', () => onCancel?.('esc'));
+  const onBackdropClick = useCallback(() => onCancel?.('click_outside'), [onCancel]);
 
-  useEffect(() => {
-    setShowModal(show);
-  }, [show]);
+  if (!container) return null;
 
-  const onBackdropClick = useCallback(
-    (ev) => {
-      if (closeOnBackdropClick && showModal) {
-        setShowModal(false);
-        if (onModalCloseCallback) {
-          onModalCloseCallback();
-        }
-      }
-    },
-    [closeOnBackdropClick, backdrpopRef],
-  );
-
-  // need this function to overcatch click events
-  const onSectionClick = useCallback((ev) => {
-    ev.stopPropagation();
-  }, []);
-
-  return (
-    <div
-      ref={backdrpopRef}
-      className={clsx(s.modalContainer, showModal ? s.show : s.hide, className)}
-      onMouseDown={onBackdropClick}
-    >
-      <section onMouseDown={onSectionClick} className={clsx(s.modalContent, classes?.content)}>
-        {children}
-      </section>
-    </div>
+  return createPortal(
+    <ModalBackdrop onBackdropClick={onBackdropClick} zIndex={zIndex}>
+      <ModalContent>{children}</ModalContent>
+    </ModalBackdrop>,
+    container,
   );
 }

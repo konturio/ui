@@ -1,0 +1,18 @@
+.modalDialog {
+  min-width: 300px;
+  max-width: 540px;
+  width: 90%;
+}
+
+.modalDialogHeader {
+  margin: 8px 24px;
+}
+
+.modalDialogBody {
+  padding: 16px 32px;
+}
+
+.modalDialogFooter {
+  padding: 16px 32px;
+  border-top: 1px solid var(--faint-weak);
+}

@@ -43,3 +43,4 @@ export * from './Select/types';
 export * from './Autocomplete';
 export * from './Autocomplete/components';
 export * from './Autocomplete/types';
+export * from './ModalDialog';

@@ -33,11 +33,6 @@
     }
   }
 
-  & .label {
-    font-size: 14px;
-    font-weight: 500;
-  }
-
   & .icons {
     color: var(--faint-strong);
     display: flex;

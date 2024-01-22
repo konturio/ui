@@ -1,9 +1,3 @@
-.modalDialog {
-  min-width: 300px;
-  max-width: 540px;
-  width: 90%;
-}
-
 .modalDialogHeader {
   margin: 8px 24px;
 }

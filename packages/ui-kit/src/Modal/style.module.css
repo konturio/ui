@@ -14,4 +14,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   pointer-events: auto;
+  min-width: 300px;
+  max-width: 540px;
+  width: 90%;
 }

@@ -6,6 +6,7 @@
   & .searchBox {
     display: flex;
     flex-flow: row nowrap;
+    flex: 1;
   }
 
   & .searchInput {

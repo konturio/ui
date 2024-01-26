@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.1.7](https://github.com/konturio/ui/compare/@konturio/ui-kit@5.1.6...@konturio/ui-kit@5.1.7) (2024-01-26)
+
+### Bug Fixes
+
+- modal styles on mobile devices ([9005e25](https://github.com/konturio/ui/commit/9005e25bc241c9fa4620ae19eb67cb9cf44d5241))
+
 ## [5.1.6](https://github.com/konturio/ui/compare/@konturio/ui-kit@5.1.5...@konturio/ui-kit@5.1.6) (2024-01-24)
 
 **Note:** Version bump only for package @konturio/ui-kit

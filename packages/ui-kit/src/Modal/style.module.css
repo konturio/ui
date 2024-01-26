@@ -10,11 +10,24 @@
 
 .modalContent {
   position: fixed;
-  top: 20%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   pointer-events: auto;
-  min-width: 300px;
-  max-width: 540px;
-  width: 90%;
+}
+
+@media screen and (width >= 960px) {
+  .modalContent {
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 300px;
+    max-width: 540px;
+    width: 90%;
+  }
+}
+
+@media screen and (width < 960px) {
+  .modalContent {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
 }

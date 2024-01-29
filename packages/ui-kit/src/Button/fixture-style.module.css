@@ -1,3 +1,14 @@
 .customButton {
   white-space: pre-line;
+  text-decoration: dotted;
+  font-family: monospace;
+  color: blueviolet;
+}
+
+.section {
+  /* width: 300px; */
+  margin: 1em;
+  gap: 1em;
+  display: flex;
+  flex-flow: row nowrap;
 }

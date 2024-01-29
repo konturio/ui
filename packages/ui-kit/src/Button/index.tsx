@@ -1,7 +1,7 @@
 import cn from 'clsx';
 import { Children, forwardRef } from 'react';
 import s from './style.module.css';
-import type { ButtonHTMLAttributes, ReactNode, JSXElementConstructor, ReactElement } from 'react';
+import type { ButtonHTMLAttributes, ReactNode } from 'react';
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   dark?: boolean;
@@ -9,8 +9,8 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   size?: 'large' | 'medium' | 'small' | 'tiny';
   id?: string;
   active?: boolean;
-  iconBefore?: string | number | ReactElement<any, string | JSXElementConstructor<any>> | null;
-  iconAfter?: string | number | ReactElement<any, string | JSXElementConstructor<any>> | null;
+  iconBefore?: ReactNode;
+  iconAfter?: ReactNode;
   children?: ReactNode;
 }
 

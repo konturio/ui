@@ -6,6 +6,8 @@
   cursor: pointer;
   border-radius: var(--border-radius);
 
+  user-select: none;
+
   font: var(--font-xs);
   font-weight: 400;
   line-height: 16px; /* 133.333% */
@@ -39,6 +41,11 @@
   /* Focus styles defined in the :focus rule are only in effect when :focus-visible is also active. */
   &:focus:not(:focus-visible) {
     box-shadow: none;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    pointer-events: none;
   }
 
   white-space: nowrap;
@@ -156,15 +163,14 @@
 .primary {
   background-color: var(--accent-strong);
   color: var(--base-weak);
-  &:hover:not(:disabled) {
-    background-color: var(--accent-strong-up);
-  }
   &:disabled {
-    cursor: not-allowed;
     background-color: var(--faint-weak-down);
     color: var(--faint-strong-down);
   }
-  &:active:not(:disabled),
+  &:hover {
+    background-color: var(--accent-strong-up);
+  }
+  &:active,
   &.active {
     background-color: var(--back-accent-strong);
     color: var(--base-weak);
@@ -175,71 +181,51 @@
   color: var(--base-strong);
   background-color: var(--base-weak);
   border: 1px solid var(--faint-weak);
-
-  &:hover:not(:disabled) {
-    background-color: var(--accent-weak);
-    border-color: var(--accent-weak-up);
-  }
-
   &:disabled {
-    cursor: not-allowed;
     color: var(--faint-strong-down);
     border-color: var(--faint-weak-up);
   }
-
-  &:active:not(:disabled),
-  &.active {
+  &:hover {
     background-color: var(--accent-weak);
-    border-color: var(--accent-strong);
+    border-color: var(--accent-weak-up);
   }
-
   &:focus {
     background-color: var(--accent-weak);
     border-color: var(--accent-weak-up);
   }
-
-  &:focus:not(:focus-visible):not(:active):not(:hover) {
-    background-color: var(--base-weak);
-    border-color: var(--faint-weak);
+  &:active,
+  &.active {
+    background-color: var(--accent-weak);
+    border-color: var(--accent-strong);
   }
 }
 
 .invert {
   background-color: var(--invert-background);
   color: var(--invert-color);
-
-  &:hover:not(:disabled) {
+  &:disabled {
+    color: var(--invert-disabled-color);
+    background-color: var(--invert-disabled-background);
+  }
+  &:hover {
     background-color: var(--invert-hover-background);
   }
-
-  &:active:not(:disabled),
-  &.active {
-    color: var(--invert-active-color);
-    background-color: var(--invert-active-background);
-  }
-
   &:focus {
     color: var(--invert-focus-color);
     background-color: var(--invert-focus-background);
   }
-
-  &:focus:not(:focus-visible):not(:active):not(:hover) {
-    color: var(--invert-color);
-    background-color: var(--invert-background);
-  }
-
-  &:disabled {
-    cursor: default;
-    color: var(--invert-disabled-color);
-    background-color: var(--invert-disabled-background);
+  &:active,
+  &.active {
+    color: var(--invert-active-color);
+    background-color: var(--invert-active-background);
   }
 }
 
 :not(.buttonDark).invert,
 :not(.buttonDark).invert-outline {
   &.active,
-  &:active:not(:disabled),
-  &:hover:not(:disabled) {
+  &:active,
+  &:hover {
     .iconBefore,
     .iconAfter {
       color: var(--accent-strong);

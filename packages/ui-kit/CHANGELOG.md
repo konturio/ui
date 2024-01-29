@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.1.8](https://github.com/konturio/ui/compare/@konturio/ui-kit@5.1.7...@konturio/ui-kit@5.1.8) (2024-01-29)
+
+### Bug Fixes
+
+- **buttons:** css fixes and better fixture ([0534f12](https://github.com/konturio/ui/commit/0534f12e70491f6a666281ff08b7fa1905c91abd))
+
 ## [5.1.7](https://github.com/konturio/ui/compare/@konturio/ui-kit@5.1.6...@konturio/ui-kit@5.1.7) (2024-01-26)
 
 ### Bug Fixes

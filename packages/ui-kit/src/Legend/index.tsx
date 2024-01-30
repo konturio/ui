@@ -10,7 +10,7 @@ type Quotient = [string, string];
 interface AxisProp {
   label: string;
   steps: { label?: string; value: number }[];
-  quality: number;
+  quality?: number;
   quotient: Quotient;
 }
 

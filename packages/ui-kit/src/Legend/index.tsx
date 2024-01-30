@@ -7,12 +7,12 @@ import type { Cell } from './types';
 /* Divisor and denominator pair */
 type Quotient = [string, string];
 
-type Axis = {
+interface AxisProp {
   label: string;
   steps: { label?: string; value: number }[];
   quality: number;
   quotient: Quotient;
-};
+}
 
 function safeReverse(arr) {
   return [...arr].reverse();
@@ -23,21 +23,23 @@ const getCellPositionStyle = (col: number, row: number) => ({
   gridRow: `${row + 1} / ${row + 2}`,
 });
 
-export interface LegendProps {
+export interface LegendProps<
+  Axis extends {
+    x: AxisProp;
+    y: AxisProp;
+  },
+> {
   cells: Cell[];
   size: number;
   title?: string;
   showAxisLabels?: boolean;
   showSteps?: boolean;
   showArrowHeads?: boolean;
-  axis: {
-    x: Axis;
-    y: Axis;
-  };
+  axis: Axis;
   onCellPointerOver?: (e: MouseEvent, cell: Cell, i: number) => void;
   onCellPointerLeave?: (e: MouseEvent, cell: Cell, i: number) => void;
-  renderXAxisLabel?: (axis: Axis, rootClassName: string) => JSX.Element;
-  renderYAxisLabel?: (axis: Axis, rootClassName: string) => JSX.Element;
+  renderXAxisLabel?: (axis: Axis['x'], rootClassName: string) => JSX.Element;
+  renderYAxisLabel?: (axis: Axis['y'], rootClassName: string) => JSX.Element;
 }
 
 interface ArrowHeadProps {
@@ -59,7 +61,12 @@ const ArrowHead = ({ className, type }: ArrowHeadProps) => (
   </div>
 );
 
-export const Legend = ({
+export function Legend<
+  Axis extends {
+    x: AxisProp;
+    y: AxisProp;
+  },
+>({
   cells,
   size,
   axis,
@@ -71,7 +78,7 @@ export const Legend = ({
   onCellPointerLeave,
   renderXAxisLabel,
   renderYAxisLabel,
-}: LegendProps) => {
+}: LegendProps<Axis>) {
   const TEMPLATE = useMemo(
     () => [
       `y ${new Array(size + 1).fill('.').join(' ')}`,
@@ -162,4 +169,4 @@ export const Legend = ({
       </div>
     </div>
   );
-};
+}

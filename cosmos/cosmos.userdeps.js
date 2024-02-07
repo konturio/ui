@@ -32,28 +32,29 @@ import fixture21 from './../packages/ui-kit/src/MenuButton/fixtures/MenuButton.f
 import fixture22 from './../packages/ui-kit/src/Modal/Modal.fixture.tsx';
 import fixture23 from './../packages/ui-kit/src/ModalDialog/ModalDialog.fixture.tsx';
 import fixture24 from './../packages/ui-kit/src/Panel/Panel.fixture.tsx';
-import fixture25 from './../packages/ui-kit/src/Radio/Radio.fixture.tsx';
-import fixture26 from './../packages/ui-kit/src/Select/fixtures/MultiselectWithSearch.fixture.tsx';
-import fixture27 from './../packages/ui-kit/src/Select/fixtures/Select.fixture.tsx';
-import fixture28 from './../packages/ui-kit/src/Selector/Selector.fixture.tsx';
-import fixture29 from './../packages/ui-kit/src/Tabs/fixtures/Tabs.fixture.tsx';
-import fixture30 from './../packages/ui-kit/src/Text/Text.fixture.tsx';
-import fixture31 from './../packages/ui-kit/src/Textarea/Textarea.fixture.tsx';
-import fixture32 from './../packages/ui-kit/src/Timeline/fixture/ChangeMargins.fixture.tsx';
-import fixture33 from './../packages/ui-kit/src/Timeline/fixture/CustomTemplate.fixture.tsx';
-import fixture34 from './../packages/ui-kit/src/Timeline/fixture/EntryTooltip.fixture.tsx';
-import fixture35 from './../packages/ui-kit/src/Timeline/fixture/ImperativeApi.fixture.tsx';
-import fixture36 from './../packages/ui-kit/src/Timeline/fixture/Timeline.fixture.tsx';
-import fixture37 from './../packages/ui-kit/src/Timeline/fixture/TimeLineWithDropDown.fixture.tsx';
-import fixture38 from './../packages/ui-kit/src/TimeSlider/TimeSlider.fixture.tsx';
-import fixture39 from './../packages/ui-kit/src/Toggler/Toggler.fixture.tsx';
-import fixture40 from './../packages/ui-kit/src/Tooltip/Tooltip.fixture.tsx';
+import fixture25 from './../packages/ui-kit/src/Panel/PanelPlayground.fixture.tsx';
+import fixture26 from './../packages/ui-kit/src/Radio/Radio.fixture.tsx';
+import fixture27 from './../packages/ui-kit/src/Select/fixtures/MultiselectWithSearch.fixture.tsx';
+import fixture28 from './../packages/ui-kit/src/Select/fixtures/Select.fixture.tsx';
+import fixture29 from './../packages/ui-kit/src/Selector/Selector.fixture.tsx';
+import fixture30 from './../packages/ui-kit/src/Tabs/fixtures/Tabs.fixture.tsx';
+import fixture31 from './../packages/ui-kit/src/Text/Text.fixture.tsx';
+import fixture32 from './../packages/ui-kit/src/Textarea/Textarea.fixture.tsx';
+import fixture33 from './../packages/ui-kit/src/Timeline/fixture/ChangeMargins.fixture.tsx';
+import fixture34 from './../packages/ui-kit/src/Timeline/fixture/CustomTemplate.fixture.tsx';
+import fixture35 from './../packages/ui-kit/src/Timeline/fixture/EntryTooltip.fixture.tsx';
+import fixture36 from './../packages/ui-kit/src/Timeline/fixture/ImperativeApi.fixture.tsx';
+import fixture37 from './../packages/ui-kit/src/Timeline/fixture/Timeline.fixture.tsx';
+import fixture38 from './../packages/ui-kit/src/Timeline/fixture/TimeLineWithDropDown.fixture.tsx';
+import fixture39 from './../packages/ui-kit/src/TimeSlider/TimeSlider.fixture.tsx';
+import fixture40 from './../packages/ui-kit/src/Toggler/Toggler.fixture.tsx';
+import fixture41 from './../packages/ui-kit/src/Tooltip/Tooltip.fixture.tsx';
 
 import decorator0 from './../cosmos.decorator.tsx';
 import decorator1 from './../packages/ui-kit/cosmos.decorator.tsx';
 
 export const rendererConfig = {
-  port: 5001,
+  "port": 5001
 };
 
 export const fixtures = {
@@ -82,25 +83,26 @@ export const fixtures = {
   'packages/ui-kit/src/Modal/Modal.fixture.tsx': { module: { default: fixture22 } },
   'packages/ui-kit/src/ModalDialog/ModalDialog.fixture.tsx': { module: { default: fixture23 } },
   'packages/ui-kit/src/Panel/Panel.fixture.tsx': { module: { default: fixture24 } },
-  'packages/ui-kit/src/Radio/Radio.fixture.tsx': { module: { default: fixture25 } },
-  'packages/ui-kit/src/Select/fixtures/MultiselectWithSearch.fixture.tsx': { module: { default: fixture26 } },
-  'packages/ui-kit/src/Select/fixtures/Select.fixture.tsx': { module: { default: fixture27 } },
-  'packages/ui-kit/src/Selector/Selector.fixture.tsx': { module: { default: fixture28 } },
-  'packages/ui-kit/src/Tabs/fixtures/Tabs.fixture.tsx': { module: { default: fixture29 } },
-  'packages/ui-kit/src/Text/Text.fixture.tsx': { module: { default: fixture30 } },
-  'packages/ui-kit/src/Textarea/Textarea.fixture.tsx': { module: { default: fixture31 } },
-  'packages/ui-kit/src/Timeline/fixture/ChangeMargins.fixture.tsx': { module: { default: fixture32 } },
-  'packages/ui-kit/src/Timeline/fixture/CustomTemplate.fixture.tsx': { module: { default: fixture33 } },
-  'packages/ui-kit/src/Timeline/fixture/EntryTooltip.fixture.tsx': { module: { default: fixture34 } },
-  'packages/ui-kit/src/Timeline/fixture/ImperativeApi.fixture.tsx': { module: { default: fixture35 } },
-  'packages/ui-kit/src/Timeline/fixture/Timeline.fixture.tsx': { module: { default: fixture36 } },
-  'packages/ui-kit/src/Timeline/fixture/TimeLineWithDropDown.fixture.tsx': { module: { default: fixture37 } },
-  'packages/ui-kit/src/TimeSlider/TimeSlider.fixture.tsx': { module: { default: fixture38 } },
-  'packages/ui-kit/src/Toggler/Toggler.fixture.tsx': { module: { default: fixture39 } },
-  'packages/ui-kit/src/Tooltip/Tooltip.fixture.tsx': { module: { default: fixture40 } },
+  'packages/ui-kit/src/Panel/PanelPlayground.fixture.tsx': { module: { default: fixture25 } },
+  'packages/ui-kit/src/Radio/Radio.fixture.tsx': { module: { default: fixture26 } },
+  'packages/ui-kit/src/Select/fixtures/MultiselectWithSearch.fixture.tsx': { module: { default: fixture27 } },
+  'packages/ui-kit/src/Select/fixtures/Select.fixture.tsx': { module: { default: fixture28 } },
+  'packages/ui-kit/src/Selector/Selector.fixture.tsx': { module: { default: fixture29 } },
+  'packages/ui-kit/src/Tabs/fixtures/Tabs.fixture.tsx': { module: { default: fixture30 } },
+  'packages/ui-kit/src/Text/Text.fixture.tsx': { module: { default: fixture31 } },
+  'packages/ui-kit/src/Textarea/Textarea.fixture.tsx': { module: { default: fixture32 } },
+  'packages/ui-kit/src/Timeline/fixture/ChangeMargins.fixture.tsx': { module: { default: fixture33 } },
+  'packages/ui-kit/src/Timeline/fixture/CustomTemplate.fixture.tsx': { module: { default: fixture34 } },
+  'packages/ui-kit/src/Timeline/fixture/EntryTooltip.fixture.tsx': { module: { default: fixture35 } },
+  'packages/ui-kit/src/Timeline/fixture/ImperativeApi.fixture.tsx': { module: { default: fixture36 } },
+  'packages/ui-kit/src/Timeline/fixture/Timeline.fixture.tsx': { module: { default: fixture37 } },
+  'packages/ui-kit/src/Timeline/fixture/TimeLineWithDropDown.fixture.tsx': { module: { default: fixture38 } },
+  'packages/ui-kit/src/TimeSlider/TimeSlider.fixture.tsx': { module: { default: fixture39 } },
+  'packages/ui-kit/src/Toggler/Toggler.fixture.tsx': { module: { default: fixture40 } },
+  'packages/ui-kit/src/Tooltip/Tooltip.fixture.tsx': { module: { default: fixture41 } }
 };
 
 export const decorators = {
   'cosmos.decorator.tsx': decorator0,
-  'packages/ui-kit/cosmos.decorator.tsx': decorator1,
+  'packages/ui-kit/cosmos.decorator.tsx': decorator1
 };

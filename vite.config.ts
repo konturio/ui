@@ -8,7 +8,6 @@ declare const process: {
   };
 };
 
-
 const { PORT } = process.env;
 
 // https://vitejs.dev/config/
@@ -16,6 +15,7 @@ export default ({ mode }) => {
   return defineConfig({
     plugins: [react()],
     server: {
+      host: '127.0.0.1',
       port: (PORT && parseInt(PORT)) || 3000,
     },
     esbuild: {
@@ -36,10 +36,10 @@ export default ({ mode }) => {
     base: '',
     root: './cosmos',
     optimizeDeps: {
-      exclude: ['vis-timeline', 'vis-data']
+      exclude: ['vis-timeline', 'vis-data'],
     },
     define: {
-      __DEV__: mode === 'development'
-    }
+      __DEV__: mode === 'development',
+    },
   });
 };

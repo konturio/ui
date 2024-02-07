@@ -3,11 +3,13 @@
   "watchDirs": ["packages"],
   "staticPath": "public",
   "userDepsFilePath": "cosmos/cosmos.userdeps.js",
-  "experimentalRendererUrl": "http://localhost:8080/renderer.html",
+  "experimentalRendererUrl": "http://127.0.0.1:8080/renderer.html",
   "globalImports": [
     "packages/default-theme/variables.css",
     "packages/default-theme/defaults.css",
     "packages/default-theme/typography.css"
   ],
-  "port": 5001
+  "port": 5001,
+  "hostname": "127.0.0.1",
+  "https": false
 }

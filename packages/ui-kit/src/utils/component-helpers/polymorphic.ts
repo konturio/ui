@@ -36,10 +36,10 @@ interface ForwardRefComponent<
     props: As extends ''
       ? { as: keyof JSX.IntrinsicElements }
       : As extends React.ComponentType<infer P>
-      ? Merge<P, OwnProps & { as: As }>
-      : As extends keyof JSX.IntrinsicElements
-      ? Merge<JSX.IntrinsicElements[As], OwnProps & { as: As }>
-      : never,
+        ? Merge<P, OwnProps & { as: As }>
+        : As extends keyof JSX.IntrinsicElements
+          ? Merge<JSX.IntrinsicElements[As], OwnProps & { as: As }>
+          : never,
   ): React.ReactElement | null;
 }
 
@@ -49,10 +49,10 @@ interface MemoComponent<IntrinsicElementString, OwnProps = Record<string, unknow
     props: As extends ''
       ? { as: keyof JSX.IntrinsicElements }
       : As extends React.ComponentType<infer P>
-      ? Merge<P, OwnProps & { as: As }>
-      : As extends keyof JSX.IntrinsicElements
-      ? Merge<JSX.IntrinsicElements[As], OwnProps & { as: As }>
-      : never,
+        ? Merge<P, OwnProps & { as: As }>
+        : As extends keyof JSX.IntrinsicElements
+          ? Merge<JSX.IntrinsicElements[As], OwnProps & { as: As }>
+          : never,
   ): React.ReactElement | null;
 }
 

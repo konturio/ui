@@ -70,7 +70,7 @@ export function Tooltip({
         '--tooltip-x-position': `${floatingX ?? 0}px`,
         '--tooltip-y-position': `${floatingY ?? 0}px`,
         '--tooltip-placement': strategy,
-      } as CSSProperties),
+      }) as CSSProperties,
     [arrowX, arrowY, floatingX, floatingY, strategy],
   );
 

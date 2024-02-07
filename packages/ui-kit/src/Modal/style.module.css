@@ -15,12 +15,10 @@
 
 @media screen and (width >= 960px) {
   .modalContent {
-    top: 20%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     min-width: 300px;
-    max-width: 540px;
-    width: 90%;
   }
 }
 

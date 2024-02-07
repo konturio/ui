@@ -1,66 +1,17 @@
-import { useValue } from 'react-cosmos/fixture';
 import {
   ChevronDown24,
   ChevronUp24,
-  Close24,
   Disasters24,
   DoubleChevronDown24,
   DoubleChevronUp24,
 } from '@konturio/default-icons';
 import { useEffect, useRef, useState } from 'react';
-import { Button } from '../Button';
+import { MultiselectLimitedWidth } from '../Select/fixtures/MultiselectWithSearch.fixture';
 import { Panel } from '.';
 import type { PanelCustomControl } from '.';
 
-const content = <div style={{ margin: 'auto', padding: '1em' }}>Content</div>;
-
 export default {
-  Default: <Panel header="Title">{content}</Panel>,
-  'With Collapse Button': () => {
-    // eslint-disable-next-line react-hooks/rules-of-hooks
-    const [collapseState, setState] = useValue('collapseState', { defaultValue: true as boolean });
-    return (
-      <Panel header="Title" onHeaderClick={() => setState((s) => !s)} isOpen={collapseState}>
-        {content}
-      </Panel>
-    );
-  },
-  'With Close Button': () => {
-    // eslint-disable-next-line react-hooks/rules-of-hooks
-    const [show, setState] = useValue('collapseState', { defaultValue: true as boolean });
-    return show ? (
-      <Panel
-        header="Title"
-        isOpen={show}
-        headerIcon={<Disasters24 />}
-        customControls={[{ icon: <Close24 />, onWrapperClick: () => setState(false) }]}
-      >
-        {content}
-      </Panel>
-    ) : (
-      <Button onClick={() => setState(true)}>Open panel</Button>
-    );
-  },
-  'Panel Inside Modal': () => {
-    // eslint-disable-next-line react-hooks/rules-of-hooks
-    const [show, setState] = useValue('collapseState', { defaultValue: true as boolean });
-    return show ? (
-      <Panel
-        header="Title"
-        isOpen={show}
-        customControls={[{ icon: <Close24 />, onWrapperClick: () => setState(false) }]}
-        modal={{
-          showInModal: true,
-          onModalClick: () => setState(false),
-        }}
-      >
-        {content}
-      </Panel>
-    ) : (
-      <Button onClick={() => setState(true)}>Open panel</Button>
-    );
-  },
-  Playground: () => {
+  Default: () => {
     // This whole thing can be wrapped into custom hook
     const [panelState, setPanelState] = useState<'full' | 'short' | 'closed'>('full');
     const panelApiRef = useRef<Record<string, PanelCustomControl>>({
@@ -147,11 +98,16 @@ export default {
           header={'Wide panel with controls'}
           resize="vertical"
           minContentHeight={60}
-          maxContentHeight={150}
+          maxContentHeight={999}
           isOpen={true}
           style={{ width: '100%' }}
           customControls={[panelApiRef.current.openHalfwayControl, panelApiRef.current.closeHalfwayControl]}
         >
+          <h5 style={{ padding: '2em' }}>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas aliquid maiores minima veniam vitae! Non
+            repellat esse, cupiditate earum minus dolore cum quas, accusantium deleniti quod, inventore ea nisi vitae?
+          </h5>
+          <MultiselectLimitedWidth />
           <h5 style={{ padding: '2em' }}>
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas aliquid maiores minima veniam vitae! Non
             repellat esse, cupiditate earum minus dolore cum quas, accusantium deleniti quod, inventore ea nisi vitae?

@@ -1,3 +1,11 @@
+.modalDialog {
+  min-height: 1rem;
+}
+
+.modalDialogContent {
+  overflow: initial;
+}
+
 .modalDialogHeader {
   margin: 8px 24px;
 }

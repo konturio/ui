@@ -30,22 +30,24 @@ export default {
       ></MultiselectChipWithSearch>
     );
   },
-  LimitedWidth: () => {
-    const [state, setState] = useValue('selected', { defaultValue: [items[3]] } as {
-      defaultValue: Array<SelectableItem>;
-    });
-
-    return (
-      <div style={{ width: '210px', border: '2px solid hsla(0, 0%, 0%, 0.2)', padding: '8px', borderRadius: '8px' }}>
-        <MultiselectChipWithSearch
-          selectedItems={state}
-          onChange={(e) => setState(e.selectedItems ?? [])}
-          label="Multi select with search"
-          placeholder="Select something"
-          items={items}
-          noOptionsText="No options"
-        ></MultiselectChipWithSearch>
-      </div>
-    );
-  },
+  MultiselectLimitedWidth,
 };
+
+export function MultiselectLimitedWidth() {
+  const [state, setState] = useValue('selected', { defaultValue: [items[3]] } as {
+    defaultValue: Array<SelectableItem>;
+  });
+
+  return (
+    <div style={{ width: '210px', border: '2px solid hsla(0, 0%, 0%, 0.2)', padding: '8px', borderRadius: '8px' }}>
+      <MultiselectChipWithSearch
+        selectedItems={state}
+        onChange={(e) => setState(e.selectedItems ?? [])}
+        label="Multi select with search"
+        placeholder="Select something"
+        items={items}
+        noOptionsText="No options"
+      ></MultiselectChipWithSearch>
+    </div>
+  );
+}

@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.3.0](https://github.com/konturio/ui/compare/@konturio/default-icons@2.2.2...@konturio/default-icons@2.3.0) (2024-02-09)
+
+### Bug Fixes
+
+- **icons:** Fix UploadAnalysis16 icon attributes ([d76cb4c](https://github.com/konturio/ui/commit/d76cb4c8b404f5af53becb523aa3e8ff6b15e08f))
+
+### Features
+
+- **icons:** UploadAnalysis16 icon added ([b80dbdd](https://github.com/konturio/ui/commit/b80dbdd11f213766c1e8e003afd3974d075d23cf))
+
 ## [2.2.2](https://github.com/konturio/ui/compare/@konturio/default-icons@2.2.1...@konturio/default-icons@2.2.2) (2023-01-31)
 
 **Note:** Version bump only for package @konturio/default-icons

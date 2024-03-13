@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.1.12](https://github.com/konturio/ui/compare/@konturio/ui-kit@5.1.11...@konturio/ui-kit@5.1.12) (2024-03-13)
+
+### Bug Fixes
+
+- **17879:** Fix the lack of scroll in Select and MultiselectChipWithSearch components ([#88](https://github.com/konturio/ui/issues/88)) ([1422adc](https://github.com/konturio/ui/commit/1422adc04372f75ba40b8c88678133e0b9538f0e))
+
 ## [5.1.11](https://github.com/konturio/ui/compare/@konturio/ui-kit@5.1.10...@konturio/ui-kit@5.1.11) (2024-02-07)
 
 **Note:** Version bump only for package @konturio/ui-kit

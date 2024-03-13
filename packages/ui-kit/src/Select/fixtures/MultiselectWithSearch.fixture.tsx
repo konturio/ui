@@ -11,6 +11,9 @@ const items: SelectableItem[] = [
   { title: 'Short questions and answers', value: 6 },
   { title: 'Computational Questions', value: 7 },
   { title: 'Test with an incredibly long name', value: 8 },
+  { title: 'Additional Options', value: 9 },
+  { title: 'User Prompts', value: 10 },
+  { title: 'Preferences', value: 11 },
 ];
 
 export default {

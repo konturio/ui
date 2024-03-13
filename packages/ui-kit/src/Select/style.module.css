@@ -23,6 +23,8 @@
 
   & .menu {
     position: absolute;
+    overflow-y: auto;
+    max-height: 33vh;
     z-index: 1;
     right: 0;
     list-style: none;

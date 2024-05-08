@@ -177,3 +177,5 @@ export { default as SmartCity24 } from './SmartCity24';
 export { default as Car16 } from './Car16';
 export { default as UploadAnalysis16 } from './UploadAnalysis16';
 export { default as Reference16 } from './Reference16';
+export { default as Rubber16 } from './Rubber16';
+export { default as Rubber24 } from './Rubber24';

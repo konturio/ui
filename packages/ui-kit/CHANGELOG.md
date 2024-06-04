@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.2.0](https://github.com/konturio/ui/compare/@konturio/ui-kit@5.1.12...@konturio/ui-kit@5.2.0) (2024-06-04)
+
+### Bug Fixes
+
+- **18688:** trim whitespaces in Multiselect chips content ([#92](https://github.com/konturio/ui/issues/92)) ([ef7facc](https://github.com/konturio/ui/commit/ef7facc5071fc50a80fe8e315f96b3de383ccba7))
+
+### Features
+
+- **18222:** add transformSearchResults prop to MultiselectChipWithSearch ([#91](https://github.com/konturio/ui/issues/91)) ([0e65ebd](https://github.com/konturio/ui/commit/0e65ebdd8a3a087dd0cdb7e47efc712752d55abf))
+
 ## [5.1.12](https://github.com/konturio/ui/compare/@konturio/ui-kit@5.1.11...@konturio/ui-kit@5.1.12) (2024-03-13)
 
 ### Bug Fixes

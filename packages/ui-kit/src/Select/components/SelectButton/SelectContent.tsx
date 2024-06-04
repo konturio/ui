@@ -29,7 +29,7 @@ export function SelectContent<I extends SelectableItem>({
       }
       return (
         <MultiselectChip onBtnClick={() => onReset?.()} value={null}>
-          {String(children)}
+          {String(children).trim()}
         </MultiselectChip>
       );
 
@@ -43,7 +43,7 @@ export function SelectContent<I extends SelectableItem>({
         <>
           {children.map((itm, index) => (
             <MultiselectChip key={`${itm.value}_${index}`} value={itm} onBtnClick={onRemove}>
-              {itm.title}
+              {itm.title.trim()}
             </MultiselectChip>
           ))}
         </>

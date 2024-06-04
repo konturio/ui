@@ -89,7 +89,7 @@ export function MultiselectChipWithSearch<I extends SelectableItem>({
       transformSearchResults(filtered, inputValue);
     }
     return filtered;
-  }, [items, selectedItems, filter, inputValue]);
+  }, [items, selectedItems, filter, transformSearchResults, inputValue]);
 
   const { getDropdownProps, removeSelectedItem, reset } = useMultipleSelection({
     selectedItems: selectedItems,

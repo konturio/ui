@@ -85,10 +85,7 @@ export function MultiselectChipWithSearch<I extends SelectableItem>({
       search: inputValue,
       filter,
     });
-    if (transformSearchResults) {
-      return transformSearchResults(filtered, inputValue);
-    }
-    return filtered;
+    return transformSearchResults ? transformSearchResults(filtered, inputValue) : filtered;
   }, [items, selectedItems, filter, transformSearchResults, inputValue]);
 
   const { getDropdownProps, removeSelectedItem, reset } = useMultipleSelection({

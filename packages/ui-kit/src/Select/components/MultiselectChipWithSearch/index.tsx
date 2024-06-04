@@ -55,6 +55,7 @@ export function MultiselectChipWithSearch<I extends SelectableItem>({
   withResetButton = true,
   type = 'classic',
   filter = defaultFilterByTitle,
+  transformSearchResults,
   itemToString = defaultItemToString,
   className,
 }: {
@@ -69,20 +70,26 @@ export function MultiselectChipWithSearch<I extends SelectableItem>({
   error?: boolean;
   type?: 'classic' | 'inline';
   filter?: (item: I, search: string) => boolean;
+  /**
+   * Apply any modifications (sorting etc) to the filtered items here
+   */
+  transformSearchResults?: (items: I[], search: string) => I[];
   itemToString?: (item: I | null) => string;
   className?: string;
 }) {
   const [inputValue, setInputValue] = useState('');
-  const filteredItems = useMemo(
-    () =>
-      getFilteredList({
-        list: items,
-        exclude: selectedItems,
-        search: inputValue,
-        filter,
-      }),
-    [items, selectedItems, filter, inputValue],
-  );
+  const resultItems = useMemo(() => {
+    const filtered = getFilteredList({
+      list: items,
+      exclude: selectedItems,
+      search: inputValue,
+      filter,
+    });
+    if (transformSearchResults) {
+      transformSearchResults(filtered, inputValue);
+    }
+    return filtered;
+  }, [items, selectedItems, filter, inputValue]);
 
   const { getDropdownProps, removeSelectedItem, reset } = useMultipleSelection({
     selectedItems: selectedItems,
@@ -111,7 +118,7 @@ export function MultiselectChipWithSearch<I extends SelectableItem>({
 
   const { isOpen, getToggleButtonProps, getLabelProps, getMenuProps, getInputProps, highlightedIndex, getItemProps } =
     useCombobox({
-      items: filteredItems,
+      items: resultItems,
       itemToString: itemToString,
       defaultHighlightedIndex: 0, // after selection, highlight the first item.
       selectedItem: null,
@@ -207,8 +214,8 @@ export function MultiselectChipWithSearch<I extends SelectableItem>({
       </div>
       <ul {...getMenuProps()} className={cn({ [style.menu]: true })}>
         {isOpen &&
-          (filteredItems.length ? (
-            filteredItems.map((item, index) => (
+          (resultItems.length ? (
+            resultItems.map((item, index) => (
               <SelectItem
                 key={`${item.value}${index}`}
                 item={item}

@@ -86,7 +86,7 @@ export function MultiselectChipWithSearch<I extends SelectableItem>({
       filter,
     });
     if (transformSearchResults) {
-      transformSearchResults(filtered, inputValue);
+      return transformSearchResults(filtered, inputValue);
     }
     return filtered;
   }, [items, selectedItems, filter, transformSearchResults, inputValue]);

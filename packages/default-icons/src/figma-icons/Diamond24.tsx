@@ -10,6 +10,7 @@ const Diamond24 = (props: SVGProps<SVGSVGElement>) => (
     />
   </svg>
 );
+
 Diamond24.displayName = 'Diamond24';
 const Memo = memo(Diamond24);
 export default Memo;

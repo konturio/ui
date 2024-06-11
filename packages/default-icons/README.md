@@ -60,7 +60,7 @@ Before export icons, you will need to generate a Personal Access Token in Figma.
 
 Copy the token. Now you can start export!
 
-`export FIGMA_TOKEN=<personalAccessToken>`
+`export FIGMA_TOKEN=<personalAccessToken>` or on **Windows** `set FIGMA_TOKEN=<personalAccessToken>`
 `npm run figma:export`
 
 You also can save this token in `.env.local` file in the root with content

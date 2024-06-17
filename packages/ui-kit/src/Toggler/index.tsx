@@ -27,8 +27,8 @@ export function Toggler({
       className={cn(s.root, { [s.checked]: on, [s.disabled]: native.disabled, [s.twoLabels]: leftLabel }, className)}
     >
       <input id={id} className={s.hidden} type="checkbox" {...native} checked={on} />
-      {leftLabel && <div className={cn(s.label, s.leftLabel, { [s.active]: !on })}>{leftLabel}</div>}
-      <div className={cn(s.toggle)}></div>
+      {leftLabel && <div className={cn(s.label, { [s.active]: !on })}>{leftLabel}</div>}
+      <div className={s.toggle}></div>
       <div className={cn(s.label, { [s.active]: on })}>{label}</div>
     </label>
   );

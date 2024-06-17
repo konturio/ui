@@ -17,16 +17,15 @@ export default {
       foo: false,
       bar: true,
       baz: false,
-      payment: false,
+      isAnnualPayment: false,
     });
 
-    const classes = {
-      label: s.label,
-      activeLabel: s.active,
-    };
-
     const onChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-      setState((state) => ((state[e.target.id] = e.target.checked), { ...state }));
+      const { id, checked } = e.target;
+      setState((prevState) => ({
+        ...prevState,
+        [id]: checked,
+      }));
     }, []);
 
     return (
@@ -35,12 +34,15 @@ export default {
         <Toggler id="bar" label="Bar" on={state['bar']} onChange={onChange} />
         <Toggler id="baz" label="Baz" on={state['baz']} onChange={onChange} />
         <Toggler
-          id="payment"
+          id="isAnnualPayment"
           label="Annually"
-          leftLabel="Monthly"
-          on={state['payment']}
+          offValueLabel="Monthly"
+          on={state['isAnnualPayment']}
           onChange={onChange}
-          classes={classes}
+          classes={{
+            label: s.label,
+            activeLabel: s.active,
+          }}
         />
         <code style={{ whiteSpace: 'pre', marginTop: '1em' }}>{JSON.stringify(state, null, 2)}</code>
       </div>

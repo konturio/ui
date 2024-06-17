@@ -7,6 +7,10 @@ interface Toggler {
   name?: string;
   label?: React.ReactNode;
   leftLabel?: React.ReactNode;
+  classes?: {
+    label?: string;
+    activeLabel?: string;
+  };
   className?: string;
   onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
   on?: boolean;
@@ -17,6 +21,7 @@ export function Toggler({
   label,
   leftLabel,
   className = '',
+  classes,
   id,
   on = false,
   ...native
@@ -24,12 +29,18 @@ export function Toggler({
   React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>): React.ReactElement {
   return (
     <label
-      className={cn(s.root, { [s.checked]: on, [s.disabled]: native.disabled, [s.twoLabels]: leftLabel }, className)}
+      className={cn(
+        s.root,
+        { [s.checked]: on, [s.disabled]: native.disabled, [s.twoDirectional]: leftLabel },
+        className,
+      )}
     >
       <input id={id} className={s.hidden} type="checkbox" {...native} checked={on} />
-      {leftLabel && <div className={cn(s.label, { [s.active]: !on })}>{leftLabel}</div>}
+      {leftLabel && (
+        <div className={cn(s.label, classes?.label, { [classes?.activeLabel || '']: !on })}>{leftLabel}</div>
+      )}
       <div className={s.toggle}></div>
-      <div className={cn(s.label, { [s.active]: on })}>{label}</div>
+      <div className={cn(s.label, classes?.label, { [classes?.activeLabel || '']: on })}>{label}</div>
     </label>
   );
 }

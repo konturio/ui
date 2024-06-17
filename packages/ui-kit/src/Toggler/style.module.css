@@ -57,6 +57,23 @@
   }
 }
 
+.twoLabels {
+  .toggle {
+    background-color: var(--base-strong);
+    margin: 0 0.5em 0 0.5em;
+  }
+  .label {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    color: var(--faint-strong-up);
+
+    &.active {
+      color: var(--base-strong);
+    }
+  }
+}
+
 /* I am not use hidden true since it's broke auto focus in firefox */
 .hidden {
   position: absolute;

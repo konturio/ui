@@ -16,6 +16,7 @@ export default {
       foo: false,
       bar: true,
       baz: false,
+      payment: false,
     });
 
     const onChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
@@ -27,6 +28,7 @@ export default {
         <Toggler id="foo" label="Foo" on={state['foo']} onChange={onChange} />
         <Toggler id="bar" label="Bar" on={state['bar']} onChange={onChange} />
         <Toggler id="baz" label="Baz" on={state['baz']} onChange={onChange} />
+        <Toggler id="payment" label="Annualy" leftLabel="Monthly" on={state['payment']} onChange={onChange} />
         <code style={{ whiteSpace: 'pre', marginTop: '1em' }}>{JSON.stringify(state, null, 2)}</code>
       </div>
     );

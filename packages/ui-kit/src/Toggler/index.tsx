@@ -5,7 +5,8 @@ import type { ChangeEvent } from 'react';
 interface Toggler {
   id: string;
   name?: string;
-  label?: React.ReactChild | React.ReactChild[];
+  label?: React.ReactNode;
+  leftLabel?: React.ReactNode;
   className?: string;
   onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
   on?: boolean;
@@ -14,6 +15,7 @@ interface Toggler {
 export function Toggler({
   name,
   label,
+  leftLabel,
   className = '',
   id,
   on = false,
@@ -21,10 +23,13 @@ export function Toggler({
 }: Toggler &
   React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>): React.ReactElement {
   return (
-    <label className={cn(s.root, { [s.checked]: on, [s.disabled]: native.disabled }, className)}>
+    <label
+      className={cn(s.root, { [s.checked]: on, [s.disabled]: native.disabled, [s.twoLabels]: leftLabel }, className)}
+    >
       <input id={id} className={s.hidden} type="checkbox" {...native} checked={on} />
-      <div className={s.toggle}></div>
-      <div className={s.label}>{label}</div>
+      {leftLabel && <div className={cn(s.label, s.leftLabel, { [s.active]: !on })}>{leftLabel}</div>}
+      <div className={cn(s.toggle)}></div>
+      <div className={cn(s.label, { [s.active]: on })}>{label}</div>
     </label>
   );
 }

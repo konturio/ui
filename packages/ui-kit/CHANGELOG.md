@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.3.0](https://github.com/konturio/ui/compare/@konturio/ui-kit@5.2.0...@konturio/ui-kit@5.3.0) (2024-06-18)
+
+### Features
+
+- **18794:** add two-directional feature to toggle component ([#94](https://github.com/konturio/ui/issues/94)) ([38cb9fa](https://github.com/konturio/ui/commit/38cb9fa303d144efc446747412a9f05b70656fbd))
+
 # [5.2.0](https://github.com/konturio/ui/compare/@konturio/ui-kit@5.1.12...@konturio/ui-kit@5.2.0) (2024-06-04)
 
 ### Bug Fixes

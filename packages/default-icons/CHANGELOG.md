@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.4.0](https://github.com/konturio/ui/compare/@konturio/default-icons@2.3.3...@konturio/default-icons@2.4.0) (2024-06-18)
+
+### Features
+
+- **18794:** add two-directional feature to toggle component ([#94](https://github.com/konturio/ui/issues/94)) ([38cb9fa](https://github.com/konturio/ui/commit/38cb9fa303d144efc446747412a9f05b70656fbd))
+
 ## [2.3.3](https://github.com/konturio/ui/compare/@konturio/default-icons@2.3.2...@konturio/default-icons@2.3.3) (2024-06-11)
 
 **Note:** Version bump only for package @konturio/default-icons

@@ -180,3 +180,4 @@ export { default as Reference16 } from './Reference16';
 export { default as Rubber16 } from './Rubber16';
 export { default as Rubber24 } from './Rubber24';
 export { default as Diamond24 } from './Diamond24';
+export { default as FavAdded16 } from './FavAdded16';

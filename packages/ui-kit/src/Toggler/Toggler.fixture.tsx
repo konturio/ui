@@ -1,4 +1,5 @@
 import { useCallback, useState } from 'react';
+import s from './Toggler.fixture.style.module.css';
 import { Toggler } from '.';
 
 export default {
@@ -16,10 +17,15 @@ export default {
       foo: false,
       bar: true,
       baz: false,
+      isAnnualPayment: false,
     });
 
     const onChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-      setState((state) => ((state[e.target.id] = e.target.checked), { ...state }));
+      const { id, checked } = e.target;
+      setState((prevState) => ({
+        ...prevState,
+        [id]: checked,
+      }));
     }, []);
 
     return (
@@ -27,6 +33,17 @@ export default {
         <Toggler id="foo" label="Foo" on={state['foo']} onChange={onChange} />
         <Toggler id="bar" label="Bar" on={state['bar']} onChange={onChange} />
         <Toggler id="baz" label="Baz" on={state['baz']} onChange={onChange} />
+        <Toggler
+          id="isAnnualPayment"
+          label="Annually"
+          offValueLabel="Monthly"
+          on={state['isAnnualPayment']}
+          onChange={onChange}
+          classes={{
+            label: s.label,
+            activeLabel: s.active,
+          }}
+        />
         <code style={{ whiteSpace: 'pre', marginTop: '1em' }}>{JSON.stringify(state, null, 2)}</code>
       </div>
     );

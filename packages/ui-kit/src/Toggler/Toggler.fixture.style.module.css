@@ -1,0 +1,10 @@
+.label {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  color: var(--faint-strong-up);
+
+  &.active {
+    color: var(--base-strong);
+  }
+}

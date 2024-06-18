@@ -57,6 +57,13 @@
   }
 }
 
+.twoDirectional {
+  .toggle {
+    background-color: var(--base-strong);
+    margin-left: 0.5em;
+  }
+}
+
 /* I am not use hidden true since it's broke auto focus in firefox */
 .hidden {
   position: absolute;

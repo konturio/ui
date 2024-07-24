@@ -12,6 +12,12 @@ Lerna allows target versions of local dependent packages to be written as a `git
 
 Version track starts from v1.0.0 at `main` branch.
 
+## Local Development
+
+- `npm run bootstrap`
+- `npm run build`
+- `npm run dev` for running local dev server
+
 ## Setup
 
 ### Package management

@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.3.1](https://github.com/konturio/ui/compare/@konturio/ui-kit@5.3.0...@konturio/ui-kit@5.3.1) (2024-07-24)
+
+### Bug Fixes
+
+- **19131:** left align select dropdown list ([#95](https://github.com/konturio/ui/issues/95)) ([9439930](https://github.com/konturio/ui/commit/94399302704c4f69050feaac7154a5e25ae1a397))
+
 # [5.3.0](https://github.com/konturio/ui/compare/@konturio/ui-kit@5.2.0...@konturio/ui-kit@5.3.0) (2024-06-18)
 
 ### Features

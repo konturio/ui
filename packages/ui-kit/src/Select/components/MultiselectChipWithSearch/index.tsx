@@ -117,7 +117,7 @@ export function MultiselectChipWithSearch<I extends SelectableItem>({
     useCombobox({
       items: resultItems,
       itemToString: itemToString,
-      defaultHighlightedIndex: 0, // after selection, highlight the first item.
+      defaultHighlightedIndex: 0,
       selectedItem: null,
       inputValue,
       stateReducer(state, actionAndChanges) {
@@ -129,7 +129,7 @@ export function MultiselectChipWithSearch<I extends SelectableItem>({
             return {
               ...changes,
               isOpen: true, // keep the menu open after selection.
-              highlightedIndex: 0, // with the first option highlighted.
+              highlightedIndex: state.highlightedIndex, // do not reset highlighted index to prevent scroll
             };
           default:
             return changes;

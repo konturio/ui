@@ -1,11 +1,11 @@
 import React, { forwardRef, useCallback, useEffect, useState } from 'react';
 import { useSelect } from 'downshift';
 import cn from 'clsx';
-import { SelectButton } from './components/SelectButton';
+import { SelectButton } from './components';
 import { getSelectMode, SELECTION_NODES } from './types';
-import { SelectItem } from './components/SelectItem';
+import { SelectItem } from './components';
 import style from './style.module.css';
-import type { SelectButtonClasses } from './components/SelectButton';
+import type { SelectButtonClasses } from './components';
 import type { UseSelectProps, UseSelectState, UseSelectStateChange, UseSelectStateChangeOptions } from 'downshift';
 import type { SelectableItem, MultiSelectProp } from './types';
 import type { ForwardRefComponent } from '../utils/component-helpers/polymorphic';

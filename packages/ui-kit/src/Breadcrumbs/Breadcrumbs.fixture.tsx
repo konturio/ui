@@ -25,8 +25,8 @@ const classes = {
 const BreadcrumbsContainer = () => {
   const [activeCrumb, setActiveCrumb] = useState<string | null>(null);
 
-  const handleClick = (item: { label: string; value: string }) => {
-    setActiveCrumb(item.value);
+  const handleClick = (value: string) => {
+    setActiveCrumb(value);
   };
 
   return (

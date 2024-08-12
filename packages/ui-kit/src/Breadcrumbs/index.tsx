@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, useCallback } from 'react';
 import cn from 'clsx';
 import BreadcrumbItem from './BreadcrumbItem'; // Import the new BreadcrumbItem component
 import styles from './style.module.css';
@@ -12,7 +12,7 @@ interface BreadcrumbBase {
 interface BreadcrumbsProps<T extends BreadcrumbBase> {
   items: T[];
   separator?: string | ReactElement;
-  onClick?: (item: T) => void;
+  onClick?: (value: string) => void;
   active?: string | null;
   classes?: {
     breadcrumbs: string;
@@ -95,11 +95,14 @@ const Breadcrumbs = <T extends BreadcrumbBase>({ items, separator, active, onCli
     };
   }, [itemWidths, items]);
 
-  function onItemClick(item: T) {
-    if (item.value !== ellipsis) {
-      onClick && onClick(item);
-    }
-  }
+  const handleItemClick = useCallback(
+    (value: string) => {
+      if (value !== ellipsis) {
+        onClick && onClick(value);
+      }
+    },
+    [onClick], // Dependencies: this will only change if onClick changes
+  );
 
   return (
     <nav aria-label="breadcrumb" className={`${styles.breadcrumbsContainer} ${isVisible ? styles.visible : ''}`}>
@@ -110,7 +113,7 @@ const Breadcrumbs = <T extends BreadcrumbBase>({ items, separator, active, onCli
             label={crumb.label}
             value={crumb.value}
             active={active === crumb.value}
-            onClick={() => onItemClick(crumb)}
+            onClick={handleItemClick}
             separator={separator}
             isLastItem={index === displayItems.length - 1}
           />

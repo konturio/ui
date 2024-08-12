@@ -8,16 +8,23 @@ interface BreadcrumbItemProps {
   label: string;
   value: string;
   active?: boolean;
-  onClick?: () => void;
+  onClick: (value: string) => void;
   separator?: React.ReactNode;
   isLastItem?: boolean;
 }
 
 const BreadcrumbItem = React.memo(
-  ({ label, active = false, onClick, separator = <ChevronRight16 />, isLastItem = false }: BreadcrumbItemProps) => {
+  ({
+    label,
+    value,
+    active = false,
+    onClick,
+    separator = <ChevronRight16 />,
+    isLastItem = false,
+  }: BreadcrumbItemProps) => {
     return (
       <li className={cn(styles.breadcrumbItem)}>
-        <button className={cn(styles.button, { [styles.active]: active })} onClick={onClick}>
+        <button className={cn(styles.button, { [styles.active]: active })} onClick={() => onClick(value)}>
           <Text type="caption" className={styles.breadcrumbLabel}>
             {label}
           </Text>

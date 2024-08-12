@@ -1,8 +1,8 @@
 import { useState, useRef, useEffect, useCallback } from 'react';
 import cn from 'clsx';
-import BreadcrumbItem from './BreadcrumbItem'; // Import the new BreadcrumbItem component
+import BreadcrumbItem from './BreadcrumbItem';
 import styles from './style.module.css';
-import type { ReactElement } from 'react';
+import type { ReactNode } from 'react';
 
 interface BreadcrumbBase {
   label: string;
@@ -11,7 +11,7 @@ interface BreadcrumbBase {
 
 interface BreadcrumbsProps<T extends BreadcrumbBase> {
   items: T[];
-  separator?: string | ReactElement;
+  separator?: ReactNode;
   onClick?: (value: string) => void;
   active?: string | null;
   classes?: {
@@ -101,7 +101,7 @@ const Breadcrumbs = <T extends BreadcrumbBase>({ items, separator, active, onCli
         onClick && onClick(value);
       }
     },
-    [onClick], // Dependencies: this will only change if onClick changes
+    [onClick],
   );
 
   return (

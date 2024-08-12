@@ -3,13 +3,14 @@ import { ChevronRight16 } from '@konturio/default-icons';
 import cn from 'clsx';
 import { Text } from '../Text';
 import styles from './BreadcrumbItem.module.css';
+import type { ReactNode } from 'react';
 
 interface BreadcrumbItemProps {
   label: string;
   value: string;
   active?: boolean;
   onClick: (value: string) => void;
-  separator?: React.ReactNode;
+  separator?: ReactNode;
   isLastItem?: boolean;
 }
 

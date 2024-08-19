@@ -1,28 +1,24 @@
 import React from 'react';
-import { ChevronRight16 } from '@konturio/default-icons';
 import cn from 'clsx';
-import { Text } from '../Text';
+import { Text } from '../../../Text';
+import commonStyles from '../commonStyles.module.css';
 import styles from './BreadcrumbItem.module.css';
 import type { ReactNode } from 'react';
 
-interface BreadcrumbItemProps {
+export interface BreadcrumbBase {
   label: string;
   value: string;
+}
+
+interface BreadcrumbItemProps extends BreadcrumbBase {
   active?: boolean;
   onClick: (value: string) => void;
   separator?: ReactNode;
   isLastItem?: boolean;
 }
 
-const BreadcrumbItem = React.memo(
-  ({
-    label,
-    value,
-    active = false,
-    onClick,
-    separator = <ChevronRight16 />,
-    isLastItem = false,
-  }: BreadcrumbItemProps) => {
+export const BreadcrumbItem = React.memo(
+  ({ label, value, active = false, onClick, separator, isLastItem = false }: BreadcrumbItemProps) => {
     return (
       <li className={cn(styles.breadcrumbItem)}>
         <button className={cn(styles.button, { [styles.active]: active })} onClick={() => onClick(value)}>
@@ -30,12 +26,10 @@ const BreadcrumbItem = React.memo(
             {label}
           </Text>
         </button>
-        {!isLastItem && <div className={styles.separator}>{separator}</div>}
+        {!isLastItem && <div className={commonStyles.separator}>{separator}</div>}
       </li>
     );
   },
 );
 
 BreadcrumbItem.displayName = 'BreadcrumbItem';
-
-export default BreadcrumbItem;

@@ -27,6 +27,7 @@ const BreadcrumbsContainer = () => {
 
   const handleClick = (value: string) => {
     setActiveCrumb(value);
+    console.log('active crumb', value);
   };
 
   return (

@@ -9,7 +9,7 @@
   border-radius: var(--border-radius);
   color: var(--text-faint-strong-up);
 
-  &:focus {
+  &:focus-visible {
     outline: none;
     box-shadow:
       0 0 0 2px var(--base-weak),
@@ -25,10 +25,4 @@
 
 .breadcrumbLabel {
   text-wrap: nowrap;
-}
-
-.separator {
-  margin: 0 4px;
-  display: flex;
-  color: var(--faint-strong-down);
 }

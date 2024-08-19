@@ -1,11 +1,3 @@
-.breadcrumbsContainer {
-  visibility: hidden;
-}
-
-.breadcrumbsContainer.visible {
-  visibility: visible;
-}
-
 .breadcrumbs {
   background-color: var(--base-weak);
   box-shadow: var(--shadow-medium);

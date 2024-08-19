@@ -1,123 +1,68 @@
-import { useState, useRef, useEffect, useCallback } from 'react';
 import cn from 'clsx';
-import BreadcrumbItem from './BreadcrumbItem';
+import { ChevronRight16 } from '@konturio/default-icons';
+import { BreadcrumbItem, Ellipsis, ellipsisWidth } from './components';
 import styles from './style.module.css';
+import { useModel } from './hooks/useModelHook';
+import type { BreadcrumbBase } from './components';
 import type { ReactNode } from 'react';
-
-interface BreadcrumbBase {
-  label: string;
-  value: string;
-}
 
 interface BreadcrumbsProps<T extends BreadcrumbBase> {
   items: T[];
   separator?: ReactNode;
-  onClick?: (value: string) => void;
+  onClick: (value: string) => void;
   active?: string | null;
   classes?: {
     breadcrumbs: string;
   };
 }
 
-const ellipsis = '...';
-const ellipsisWidth = 35; // Approximate width of the `... >` element
+const Breadcrumbs = <T extends BreadcrumbBase>({
+  items,
+  separator = <ChevronRight16 />,
+  active,
+  onClick,
+  classes,
+}: BreadcrumbsProps<T>) => {
+  const { leftHiddenItemIndex, rightHiddenItemIndex, olRef } = useModel({
+    items,
+    ellipsisWidth,
+  });
 
-const Breadcrumbs = <T extends BreadcrumbBase>({ items, separator, active, onClick, classes }: BreadcrumbsProps<T>) => {
-  const [displayItems, setDisplayItems] = useState<T[]>(items);
-  const [itemWidths, setItemWidths] = useState<number[]>([]);
-  const [isVisible, setIsVisible] = useState(false);
-  const olRef = useRef<HTMLOListElement>(null);
-
-  useEffect(() => {
-    if (!olRef.current) return;
-    const widths = Array.from(olRef.current.children).map((child) => (child as HTMLElement).offsetWidth);
-    setItemWidths(widths);
-  }, [items]);
-
-  useEffect(() => {
-    const calculateBreadcrumbs = () => {
-      if (!olRef.current || itemWidths.length === 0) return;
-
-      const olComputedStyle = window.getComputedStyle(olRef.current);
-      const paddingLeft = parseFloat(olComputedStyle.paddingLeft);
-      const paddingRight = parseFloat(olComputedStyle.paddingRight);
-      const containerWidth = olRef.current.clientWidth - paddingLeft - paddingRight;
-
-      const totalWidth = itemWidths.reduce((acc, width) => acc + width, 0);
-
-      if (totalWidth <= containerWidth) {
-        return;
-      } else {
-        let start = 0;
-        let end = items.length - 1;
-        let displayedWidth = itemWidths[end];
-
-        while (start < end && displayedWidth + ellipsisWidth <= containerWidth) {
-          if (displayedWidth + itemWidths[start] + ellipsisWidth <= containerWidth) {
-            displayedWidth += itemWidths[start];
-            start++;
-          }
-
-          if (start < end && displayedWidth + itemWidths[end - 1] + ellipsisWidth <= containerWidth) {
-            displayedWidth += itemWidths[end - 1];
-            end--;
-          } else {
-            break;
-          }
-        }
-
-        const newDisplayItems = [
-          ...items.slice(0, start),
-          {
-            label: ellipsis,
-            value: ellipsis,
-          } as T,
-          ...items.slice(end),
-        ];
-        setDisplayItems(newDisplayItems);
-      }
-      setIsVisible(true);
-    };
-
-    calculateBreadcrumbs();
-    const observer = new ResizeObserver(() => {
-      calculateBreadcrumbs();
-    });
-
-    if (olRef.current) {
-      observer.observe(olRef.current);
-    }
-
-    return () => {
-      if (olRef.current) {
-        observer.unobserve(olRef.current);
-      }
-    };
-  }, [itemWidths, items]);
-
-  const handleItemClick = useCallback(
-    (value: string) => {
-      if (value !== ellipsis) {
-        onClick && onClick(value);
-      }
-    },
-    [onClick],
-  );
+  const renderItems = (start: number, end: number) => {
+    return items
+      .slice(start, end + 1)
+      .map((crumb, index) => (
+        <BreadcrumbItem
+          key={start + index}
+          label={crumb.label}
+          value={crumb.value}
+          active={active === crumb.value}
+          onClick={onClick}
+          separator={separator}
+          isLastItem={start + index === items.length - 1}
+        />
+      ));
+  };
 
   return (
-    <nav aria-label="breadcrumb" className={`${styles.breadcrumbsContainer} ${isVisible ? styles.visible : ''}`}>
+    <nav aria-label="breadcrumb" className={`${styles.breadcrumbsContainer}`}>
       <ol ref={olRef} className={cn(styles.breadcrumbs, classes?.breadcrumbs)}>
-        {displayItems.map((crumb, index) => (
-          <BreadcrumbItem
-            key={index}
-            label={crumb.label}
-            value={crumb.value}
-            active={active === crumb.value}
-            onClick={handleItemClick}
-            separator={separator}
-            isLastItem={index === displayItems.length - 1}
-          />
-        ))}
+        {/* Render all items if no overflow */}
+        {leftHiddenItemIndex === -1 && rightHiddenItemIndex === items.length ? (
+          renderItems(0, items.length - 1)
+        ) : (
+          <>
+            {renderItems(0, leftHiddenItemIndex - 1)}
+            <Ellipsis
+              items={items}
+              leftHiddenItemIndex={leftHiddenItemIndex}
+              rightHiddenItemIndex={rightHiddenItemIndex}
+              separator={separator}
+              onItemClick={onClick}
+            />
+            {renderItems(rightHiddenItemIndex, items.length - 1)}
+          </>
+        )}
       </ol>
     </nav>
   );

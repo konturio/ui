@@ -19,7 +19,7 @@ input,
 select,
 button,
 a {
-  &:focus {
+  &:focus-visible {
     outline-color: var(--complimentary-strong);
   }
 }

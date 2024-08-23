@@ -31,7 +31,7 @@
     border-color: var(--base-strong);
   }
 
-  &:focus {
+  &:focus-visible {
     box-shadow: 0px 0px 0px 2px var(--complimentary-strong-down);
   }
 

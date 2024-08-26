@@ -115,7 +115,7 @@
       background-color: var(--base-weak-up);
     }
 
-    &:focus-within,
+    &:has(:focus),
     &:focus-visible {
       box-shadow: 0 0 0 2px var(--complimentary-strong-down);
       background-color: var(--base-weak-up);

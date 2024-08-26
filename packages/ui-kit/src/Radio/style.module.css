@@ -6,7 +6,6 @@
   width: var(--double-unit);
   height: var(--double-unit);
   border-radius: 50%;
-  outline: none;
   margin: 0;
   cursor: pointer;
   margin-right: var(--unit);
@@ -33,6 +32,7 @@
 
   &:focus-visible {
     box-shadow: 0px 0px 0px 2px var(--complimentary-strong-down);
+    outline: none;
   }
 
   &:disabled {

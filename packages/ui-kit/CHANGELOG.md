@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.3.3](https://github.com/konturio/ui/compare/@konturio/ui-kit@5.3.2...@konturio/ui-kit@5.3.3) (2024-08-29)
+
+### Bug Fixes
+
+- **14063:** fix some components focused states ([#98](https://github.com/konturio/ui/issues/98)) ([f89fef0](https://github.com/konturio/ui/commit/f89fef0177e19b8c530fd68c008ff064e11af2d5))
+
 ## [5.3.2](https://github.com/konturio/ui/compare/@konturio/ui-kit@5.3.1...@konturio/ui-kit@5.3.2) (2024-08-01)
 
 ### Bug Fixes

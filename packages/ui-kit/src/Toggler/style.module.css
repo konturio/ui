@@ -19,7 +19,7 @@
       }
     }
   }
-  :focus ~ .toggle {
+  :focus-visible ~ .toggle {
     box-shadow: 0px 0px 0px 2px var(--complimentary-strong-down);
   }
 }

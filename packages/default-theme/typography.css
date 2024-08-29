@@ -20,7 +20,11 @@ select,
 button,
 a {
   &:focus {
-    outline-color: var(--complimentary-strong);
+    outline: none;
+    box-shadow: none;
+  }
+  &:focus-visible {
+    outline: 2px solid var(--complimentary-strong);
   }
 }
 

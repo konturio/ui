@@ -11,9 +11,13 @@ import type { ForwardRefComponent } from '../../../utils/component-helpers/polym
 export interface MenuListProps {
   portal?: boolean;
   children: React.ReactNode;
+  className?: string;
+  classes?: {
+    popover?: string;
+  };
 }
 
-export const MenuList = React.forwardRef(({ portal = true, className, ...props }, forwardedRef) => {
+export const MenuList = React.forwardRef(({ portal = true, className, classes, ...props }, forwardedRef) => {
   const dynamicClasses = cn(
     {
       [style.menuList]: true,
@@ -22,7 +26,7 @@ export const MenuList = React.forwardRef(({ portal = true, className, ...props }
   );
 
   return (
-    <MenuPopover portal={portal}>
+    <MenuPopover className={classes?.popover} portal={portal}>
       <MenuItems {...props} ref={forwardedRef} className={dynamicClasses} />
     </MenuPopover>
   );

@@ -45,10 +45,12 @@ const PopoverImpl = forwardRef(function PopoverImpl(
 
   useSimulateTabNavigationForReactTree(targetRef as any, popoverRef);
 
-  const dynamicClasses = cn({
-    [style.popover]: true,
+  const dynamicClasses = cn(
+    {
+      [style.popover]: true,
+    },
     className,
-  });
+  );
 
   return (
     <Comp

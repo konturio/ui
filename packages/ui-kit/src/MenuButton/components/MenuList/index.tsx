@@ -14,10 +14,12 @@ export interface MenuListProps {
 }
 
 export const MenuList = React.forwardRef(({ portal = true, className, ...props }, forwardedRef) => {
-  const dynamicClasses = cn({
-    [style.menuList]: true,
+  const dynamicClasses = cn(
+    {
+      [style.menuList]: true,
+    },
     className,
-  });
+  );
 
   return (
     <MenuPopover portal={portal}>

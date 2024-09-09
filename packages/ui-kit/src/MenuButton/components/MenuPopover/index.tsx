@@ -21,11 +21,13 @@ export const MenuPopover = React.forwardRef(({ as: Comp = 'div', className, ...r
     props,
   } = useDropdownPopover({ ...rest, ref: forwardedRef });
 
-  const dynamicClasses = cn({
-    [style.menuPopover]: true,
-    [style.hidden]: props.hidden,
+  const dynamicClasses = cn(
+    {
+      [style.menuPopover]: true,
+      [style.hidden]: props.hidden,
+    },
     className,
-  });
+  );
 
   return portal ? (
     <Popover {...props} as={Comp} targetRef={targetRef as any} position={position} className={dynamicClasses} />

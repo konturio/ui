@@ -21,14 +21,16 @@ export const SelectItem = forwardRef(
     { className, highlighted, selected, item, title, itemProps, showSelectedIcon = true, showEntryIcon = false },
     ref,
   ) => {
-    const dynamicClasses = cn({
-      [style.selectItem]: true,
-      [style.highlighted]: !item.disabled && highlighted,
-      [style.selected]: !item.disabled && selected,
-      [style.disabled]: item.disabled,
-      [style.hasDivider]: item.hasDivider,
+    const dynamicClasses = cn(
+      {
+        [style.selectItem]: true,
+        [style.highlighted]: !item.disabled && highlighted,
+        [style.selected]: !item.disabled && selected,
+        [style.disabled]: item.disabled,
+        [style.hasDivider]: item.hasDivider,
+      },
       className,
-    });
+    );
 
     return (
       <li className={dynamicClasses} ref={ref} {...(!item.disabled ? itemProps : {})}>

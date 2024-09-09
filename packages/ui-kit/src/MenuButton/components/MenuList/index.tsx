@@ -11,7 +11,6 @@ import type { ForwardRefComponent } from '../../../utils/component-helpers/polym
 export interface MenuListProps {
   portal?: boolean;
   children: React.ReactNode;
-  className?: string;
   classes?: {
     popover?: string;
   };

@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.3.5](https://github.com/konturio/ui/compare/@konturio/ui-kit@5.3.4...@konturio/ui-kit@5.3.5) (2024-09-11)
+
+### Bug Fixes
+
+- **MenuButton:** 14063 Allow to pass popover classname as a prop. Fix passing className prop to MenuList, MenuPopover, DropdownPopover ([#100](https://github.com/konturio/ui/issues/100)) ([0975f9b](https://github.com/konturio/ui/commit/0975f9b9a2463f49e1c659ca7a48cf8b7bf3dae5))
+
 ## [5.3.4](https://github.com/konturio/ui/compare/@konturio/ui-kit@5.3.3...@konturio/ui-kit@5.3.4) (2024-09-11)
 
 ### Bug Fixes

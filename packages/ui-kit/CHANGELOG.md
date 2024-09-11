@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.3.4](https://github.com/konturio/ui/compare/@konturio/ui-kit@5.3.3...@konturio/ui-kit@5.3.4) (2024-09-11)
+
+### Bug Fixes
+
+- select item custom class passing ([#99](https://github.com/konturio/ui/issues/99)) ([814f158](https://github.com/konturio/ui/commit/814f158842718041cacb594961198880f891a13c))
+
 ## [5.3.3](https://github.com/konturio/ui/compare/@konturio/ui-kit@5.3.2...@konturio/ui-kit@5.3.3) (2024-08-29)
 
 ### Bug Fixes

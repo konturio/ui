@@ -31,6 +31,11 @@ const getInputStates = (props: {
     <>
       Placeholder on top: <WrappedTextarea value="test" placeholder="Placeholder" showTopPlaceholder {...props} />
     </>
+
+    <>
+      Placeholder on top + textarea placeholder:
+      <WrappedTextarea value="test" placeholder="Placeholder" showTopPlaceholder topPlaceholder="bio" {...props} />
+    </>
     <>
       Long placeholder on top:
       <WrappedTextarea

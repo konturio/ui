@@ -116,21 +116,22 @@ function TextareaComponent(
   );
 
   const getPlaceholders = () => {
-    if (!placeholder) return;
+    if (!placeholder && !topPlaceholder) return;
 
-    if (!showTopPlaceholder) {
-      if (value) return;
-      return <div className={cn(s.placeholder, classes?.placeholder)}>{placeholder}</div>;
-    }
-
-    /* Case with both placeholders: on top and over textarea */
-    if (showTopPlaceholder && topPlaceholder) {
+    /* If topPlaceholder is defined always render it on top of textarea */
+    if (topPlaceholder) {
       return (
         <>
           <div className={cn(s.placeholder, classes?.topPlaceholder, s.topPlaceholder)}>{topPlaceholder}</div>
-          {!value && <div className={cn(s.placeholder, classes?.placeholder)}>{placeholder}</div>}
+          {placeholder && !value && <div className={cn(s.placeholder, classes?.placeholder)}>{placeholder}</div>}
         </>
       );
+    }
+
+    /* Case with only teaxtarea placeholder */
+    if (!showTopPlaceholder) {
+      if (value) return;
+      return <div className={cn(s.placeholder, classes?.placeholder)}>{placeholder}</div>;
     }
 
     /* Case where textarea placeholder is animated into top placeholder */

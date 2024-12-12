@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.4.0](https://github.com/konturio/ui/compare/@konturio/ui-kit@5.3.5...@konturio/ui-kit@5.4.0) (2024-12-12)
+
+### Features
+
+- add ability to have top placeholder alongside with textarea placeholder ([#101](https://github.com/konturio/ui/issues/101)) ([a3ed292](https://github.com/konturio/ui/commit/a3ed292a26ff73bb30e1f63373da8d5eba30d7bc))
+
 ## [5.3.5](https://github.com/konturio/ui/compare/@konturio/ui-kit@5.3.4...@konturio/ui-kit@5.3.5) (2024-09-11)
 
 ### Bug Fixes

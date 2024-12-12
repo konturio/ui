@@ -9,6 +9,7 @@ export interface TextareaProps extends React.HTMLProps<HTMLTextAreaElement> {
   message?: string;
   isFocused?: boolean;
   showTopPlaceholder?: boolean;
+  topPlaceholder?: string;
   renderLabel?: JSX.Element | string;
   classes?: {
     inputBox?: string;
@@ -46,6 +47,7 @@ function TextareaComponent(
     isFocused,
     classes,
     showTopPlaceholder = false,
+    topPlaceholder,
     placeholder,
     value,
     maxWidth,
@@ -113,14 +115,26 @@ function TextareaComponent(
     [onChange],
   );
 
-  const getPlaceholder = () => {
-    if (!placeholder) return;
+  const getPlaceholders = () => {
+    if (!placeholder && !topPlaceholder) return;
 
+    /* If topPlaceholder is defined always render it on top of textarea */
+    if (topPlaceholder) {
+      return (
+        <>
+          <div className={cn(s.placeholder, classes?.topPlaceholder, s.topPlaceholder)}>{topPlaceholder}</div>
+          {placeholder && !value && <div className={cn(s.placeholder, classes?.placeholder)}>{placeholder}</div>}
+        </>
+      );
+    }
+
+    /* Case with only teaxtarea placeholder */
     if (!showTopPlaceholder) {
       if (value) return;
       return <div className={cn(s.placeholder, classes?.placeholder)}>{placeholder}</div>;
     }
 
+    /* Case where textarea placeholder is animated into top placeholder */
     return (
       <div className={cn(s.placeholder, classes?.topPlaceholder, value && showTopPlaceholder && s.topPlaceholder)}>
         {placeholder}
@@ -132,7 +146,7 @@ function TextareaComponent(
     <div className={cn(s.root, className, dynamicClasses)}>
       {renderLabel && <div className={cn(s.label, classes?.label)}>{renderLabel}</div>}
       <div className={cn(s.inputBox, classes?.inputBox)}>
-        {getPlaceholder()}
+        {getPlaceholders()}
 
         {children && <div className={s.icons}>{children}</div>}
         <textarea

@@ -20,7 +20,7 @@ const getInputStates = (props: {
 }) => (
   <div style={{ display: 'flex', flexFlow: 'column nowrap', gap: '1em' }}>
     <>
-      Empty: <WrappedTextarea value="" placeholder="" {...props} />
+      Empty: <WrappedTextarea value="" {...props} />
     </>
     <>
       Placeholder: <WrappedTextarea placeholder="Placeholder" value="" {...props} />
@@ -29,7 +29,16 @@ const getInputStates = (props: {
       Long placeholder: <WrappedTextarea placeholder="Looooong long long long long placeholder" value="" {...props} />
     </>
     <>
-      Placeholder on top: <WrappedTextarea value="test" placeholder="Placeholder" showTopPlaceholder {...props} />
+      Placeholder is animated to top placeholder:{' '}
+      <WrappedTextarea value="test" placeholder="Placeholder" showTopPlaceholder {...props} />
+    </>
+    <>
+      Only top placeholder
+      <WrappedTextarea value="test" topPlaceholder="bio" {...props} />
+    </>
+    <>
+      Placeholder on top + textarea placeholder:
+      <WrappedTextarea value="test" placeholder="placeholder" topPlaceholder="bio" {...props} />
     </>
     <>
       Long placeholder on top:

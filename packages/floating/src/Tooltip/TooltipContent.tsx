@@ -2,7 +2,7 @@ import cn from 'clsx';
 import * as React from 'react';
 import { useMergeRefs, FloatingPortal, FloatingArrow } from '@floating-ui/react';
 import s from './TooltipContent.module.css';
-import { useTooltipContext } from './hooks/useTolltipContext';
+import { useTooltipContext } from './hooks/useTooltipContext';
 
 export const TooltipContent = React.forwardRef<HTMLDivElement, React.PropsWithChildren>(
   function TooltipContent(props, propRef) {

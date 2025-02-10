@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useMergeRefs } from '@floating-ui/react';
-import { useTooltipContext } from './hooks/useTolltipContext';
+import { useTooltipContext } from './hooks/useTooltipContext';
 import type { TooltopTriggerOptions } from './types';
 
 export const TooltipTrigger = React.forwardRef<HTMLElement, React.HTMLProps<HTMLElement> & TooltopTriggerOptions>(

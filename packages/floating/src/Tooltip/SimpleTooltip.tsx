@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { TooltipProvider } from './hooks/useTolltipContext';
+import { TooltipProvider } from './hooks/useTooltipContext';
 import { useTooltip } from './hooks/useTooltip';
 import { TooltipContent } from './TooltipContent';
 import { TooltipTrigger } from './TooltipTrigger';

@@ -86,6 +86,31 @@ export default {
       </FloatingProvider>
     );
   },
+  Simple: () => {
+    const [placement] = useSelect('placement', {
+      options: [
+        'top',
+        'top-start',
+        'top-end',
+        'bottom',
+        'bottom-start',
+        'bottom-end',
+        'left',
+        'left-start',
+        'left-end',
+        'right',
+        'right-start',
+        'right-end',
+      ],
+      defaultValue: 'top',
+    });
+    const [size] = useSelect('size', { options: ['default', 'bigger'], defaultValue: 'default' });
+    return (
+      <Floating.SimpleTooltip placement={placement} size={size} content="Simple tooltip content">
+        <Dummy>Hover me</Dummy>
+      </Floating.SimpleTooltip>
+    );
+  },
 };
 
 const ServiceTooltipFixture = () => {

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useTooltip } from './hooks/useTooltip';
-import { TooltipProvider } from './hooks/useTolltipContext';
+import { TooltipProvider } from './hooks/useTooltipContext';
 import type { ControlledProps, TooltipSettings } from './types';
 
 export function Tooltip({ children, ...options }: { children: React.ReactNode } & TooltipSettings & ControlledProps) {

@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.5.0](https://github.com/konturio/ui/compare/@konturio/default-icons@2.4.0...@konturio/default-icons@2.5.0) (2025-02-10)
+
+### Features
+
+- **default-icons:** add OsmGaps16 ([79f96e3](https://github.com/konturio/ui/commit/79f96e3e8274aa774b4da959cfb2317316a42418))
+
 # [2.4.0](https://github.com/konturio/ui/compare/@konturio/default-icons@2.3.3...@konturio/default-icons@2.4.0) (2024-06-18)
 
 ### Features

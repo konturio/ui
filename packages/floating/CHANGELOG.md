@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](https://github.com/konturio/ui/compare/@konturio/floating@1.1.2...@konturio/floating@1.2.0) (2025-02-10)
+
+### Features
+
+- **floating-ui:** add SimpleTooltip ([71f41ec](https://github.com/konturio/ui/commit/71f41ec3fa8f4ef564f17de6a5bc9b581104c178))
+
 ## [1.1.2](https://github.com/konturio/ui/compare/@konturio/floating@1.1.1...@konturio/floating@1.1.2) (2024-02-07)
 
 **Note:** Version bump only for package @konturio/floating

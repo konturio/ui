@@ -1,0 +1,327 @@
+strict digraph "dependency-cruiser output"{
+    rankdir="LR" splines="true" overlap="false" nodesep="0.16" ranksep="0.18" fontname="Helvetica-bold" fontsize="9" style="rounded,bold,filled" fillcolor="#ffffff" compound="true"
+    node [shape="box" style="rounded, filled" height="0.2" color="black" fillcolor="#ffffcc" fontcolor="black" fontname="Helvetica" fontsize="9"]
+    edge [arrowhead="normal" arrowsize="0.6" penwidth="2.0" color="#00000033" fontname="Helvetica" fontsize="9"]
+
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/ActionsBar" {label="ActionsBar" "src/ActionsBar/index.tsx" [label=<index.tsx> tooltip="index.tsx" URL="src/ActionsBar/index.tsx" fillcolor="#bbfeff"] } }
+    "src/ActionsBar/index.tsx" -> "src/Button/index.tsx"
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/Animation" {label="Animation" "src/Animation/index.tsx" [label=<index.tsx> tooltip="index.tsx" URL="src/Animation/index.tsx" fillcolor="#bbfeff"] } }
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/AppHeader" {label="AppHeader" "src/AppHeader/index.tsx" [label=<index.tsx> tooltip="index.tsx" URL="src/AppHeader/index.tsx" fillcolor="#bbfeff"] } }
+    "src/AppHeader/index.tsx" -> "src/Logo/index.tsx"
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/Autocomplete" {label="Autocomplete" subgraph "cluster_src/Autocomplete/components" {label="components" subgraph "cluster_src/Autocomplete/components/AutocompleteButton" {label="AutocompleteButton" "src/Autocomplete/components/AutocompleteButton/index.tsx" [label=<index.tsx> tooltip="index.tsx" URL="src/Autocomplete/components/AutocompleteButton/index.tsx" fillcolor="#bbfeff"] } } } }
+    "src/Autocomplete/components/AutocompleteButton/index.tsx" -> "src/utils/component-helpers/polymorphic.ts" [arrowhead="onormal" penwidth="1.0"]
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/Autocomplete" {label="Autocomplete" subgraph "cluster_src/Autocomplete/components" {label="components" subgraph "cluster_src/Autocomplete/components/AutocompleteItem" {label="AutocompleteItem" "src/Autocomplete/components/AutocompleteItem/index.tsx" [label=<index.tsx> tooltip="index.tsx" URL="src/Autocomplete/components/AutocompleteItem/index.tsx" fillcolor="#bbfeff"] } } } }
+    "src/Autocomplete/components/AutocompleteItem/index.tsx" -> "src/utils/component-helpers/polymorphic.ts" [arrowhead="onormal" penwidth="1.0"]
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/Autocomplete" {label="Autocomplete" subgraph "cluster_src/Autocomplete/components" {label="components" "src/Autocomplete/components/index.ts" [label=<index.ts> tooltip="index.ts" URL="src/Autocomplete/components/index.ts" fillcolor="#ddfeff"] } } }
+    "src/Autocomplete/components/index.ts" -> "src/Autocomplete/components/AutocompleteButton/index.tsx" [arrowhead="inv"]
+    "src/Autocomplete/components/index.ts" -> "src/Autocomplete/components/AutocompleteItem/index.tsx" [arrowhead="inv"]
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/Autocomplete" {label="Autocomplete" "src/Autocomplete/index.tsx" [label=<index.tsx> tooltip="index.tsx" URL="src/Autocomplete/index.tsx" fillcolor="#bbfeff"] } }
+    "src/Autocomplete/index.tsx" -> "src/utils/component-helpers/polymorphic.ts" [arrowhead="onormal" penwidth="1.0"]
+    "src/Autocomplete/index.tsx" -> "src/Autocomplete/components/AutocompleteButton/index.tsx"
+    "src/Autocomplete/index.tsx" -> "src/Autocomplete/components/AutocompleteItem/index.tsx"
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/Button" {label="Button" "src/Button/index.tsx" [label=<index.tsx> tooltip="index.tsx" URL="src/Button/index.tsx" fillcolor="#bbfeff"] } }
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/ButtonGroup" {label="ButtonGroup" "src/ButtonGroup/index.tsx" [label=<index.tsx> tooltip="index.tsx" URL="src/ButtonGroup/index.tsx" fillcolor="#bbfeff"] } }
+    "src/ButtonGroup/index.tsx" -> "src/Button/index.tsx" [arrowhead="onormal" penwidth="1.0"]
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/Card" {label="Card" "src/Card/index.tsx" [label=<index.tsx> tooltip="index.tsx" URL="src/Card/index.tsx" fillcolor="#bbfeff"] } }
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/Checkbox" {label="Checkbox" "src/Checkbox/index.tsx" [label=<index.tsx> tooltip="index.tsx" URL="src/Checkbox/index.tsx" fillcolor="#bbfeff"] } }
+    "src/Checkbox/index.tsx" -> "src/LineItem/index.tsx"
+    "src/Checkbox/index.tsx" -> "src/utils/component-helpers/polymorphic.ts" [arrowhead="onormal" penwidth="1.0"]
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/Details" {label="Details" "src/Details/index.tsx" [label=<index.tsx> tooltip="index.tsx" URL="src/Details/index.tsx" fillcolor="#bbfeff"] } }
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/Divider" {label="Divider" "src/Divider/index.tsx" [label=<index.tsx> tooltip="index.tsx" URL="src/Divider/index.tsx" fillcolor="#bbfeff"] } }
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/DropDown_old" {label="DropDown_old" "src/DropDown_old/HighlightSpan.tsx" [label=<HighlightSpan.tsx> tooltip="HighlightSpan.tsx" URL="src/DropDown_old/HighlightSpan.tsx" fillcolor="#bbfeff"] } }
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/DropDown_old" {label="DropDown_old" "src/DropDown_old/SelectableElement.tsx" [label=<SelectableElement.tsx> tooltip="SelectableElement.tsx" URL="src/DropDown_old/SelectableElement.tsx" fillcolor="#bbfeff"] } }
+    "src/DropDown_old/SelectableElement.tsx" -> "src/DropDown_old/scrollIntoView.ts"
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/DropDown_old" {label="DropDown_old" "src/DropDown_old/index.tsx" [label=<index.tsx> tooltip="index.tsx" URL="src/DropDown_old/index.tsx" fillcolor="#bbfeff"] } }
+    "src/DropDown_old/index.tsx" -> "src/DropDown_old/HighlightSpan.tsx"
+    "src/DropDown_old/index.tsx" -> "src/DropDown_old/SelectableElement.tsx"
+    "src/DropDown_old/index.tsx" -> "src/DropDown_old/useKeyPress.ts"
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/DropDown_old" {label="DropDown_old" "src/DropDown_old/scrollIntoView.ts" [label=<scrollIntoView.ts> tooltip="scrollIntoView.ts" URL="src/DropDown_old/scrollIntoView.ts" fillcolor="#ddfeff"] } }
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/DropDown_old" {label="DropDown_old" "src/DropDown_old/useKeyPress.ts" [label=<useKeyPress.ts> tooltip="useKeyPress.ts" URL="src/DropDown_old/useKeyPress.ts" fillcolor="#ddfeff"] } }
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/Dropdown" {label="Dropdown" subgraph "cluster_src/Dropdown/components" {label="components" subgraph "cluster_src/Dropdown/components/DropdownItem" {label="DropdownItem" "src/Dropdown/components/DropdownItem/index.tsx" [label=<index.tsx> tooltip="index.tsx" URL="src/Dropdown/components/DropdownItem/index.tsx" fillcolor="#bbfeff"] } } } }
+    "src/Dropdown/components/DropdownItem/index.tsx" -> "src/utils/component-helpers/descendants.tsx"
+    "src/Dropdown/components/DropdownItem/index.tsx" -> "src/utils/component-helpers/polymorphic.ts" [arrowhead="onormal" penwidth="1.0"]
+    "src/Dropdown/components/DropdownItem/index.tsx" -> "src/utils/helpers/events.ts"
+    "src/Dropdown/components/DropdownItem/index.tsx" -> "src/utils/helpers/helpers.ts"
+    "src/Dropdown/components/DropdownItem/index.tsx" -> "src/utils/hooks/useComposedRefs.ts"
+    "src/Dropdown/components/DropdownItem/index.tsx" -> "src/utils/hooks/useStatefulRefValue.ts"
+    "src/Dropdown/components/DropdownItem/index.tsx" -> "src/Dropdown/constants.ts"
+    "src/Dropdown/components/DropdownItem/index.tsx" -> "src/Dropdown/context.ts"
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/Dropdown" {label="Dropdown" subgraph "cluster_src/Dropdown/components" {label="components" subgraph "cluster_src/Dropdown/components/DropdownItems" {label="DropdownItems" "src/Dropdown/components/DropdownItems/index.tsx" [label=<index.tsx> tooltip="index.tsx" URL="src/Dropdown/components/DropdownItems/index.tsx" fillcolor="#bbfeff"] } } } }
+    "src/Dropdown/components/DropdownItems/index.tsx" -> "src/utils/component-helpers/descendants.tsx"
+    "src/Dropdown/components/DropdownItems/index.tsx" -> "src/utils/component-helpers/polymorphic.ts" [arrowhead="onormal" penwidth="1.0"]
+    "src/Dropdown/components/DropdownItems/index.tsx" -> "src/utils/helpers/events.ts"
+    "src/Dropdown/components/DropdownItems/index.tsx" -> "src/utils/helpers/helpers.ts"
+    "src/Dropdown/components/DropdownItems/index.tsx" -> "src/utils/helpers/typecheck.ts"
+    "src/Dropdown/components/DropdownItems/index.tsx" -> "src/utils/hooks/useComposedRefs.ts"
+    "src/Dropdown/components/DropdownItems/index.tsx" -> "src/utils/hooks/usePrevious.ts"
+    "src/Dropdown/components/DropdownItems/index.tsx" -> "src/Dropdown/constants.ts"
+    "src/Dropdown/components/DropdownItems/index.tsx" -> "src/Dropdown/context.ts"
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/Dropdown" {label="Dropdown" subgraph "cluster_src/Dropdown/components" {label="components" subgraph "cluster_src/Dropdown/components/DropdownPopover" {label="DropdownPopover" "src/Dropdown/components/DropdownPopover/index.tsx" [label=<index.tsx> tooltip="index.tsx" URL="src/Dropdown/components/DropdownPopover/index.tsx" fillcolor="#bbfeff"] } } } }
+    "src/Dropdown/components/DropdownPopover/index.tsx" -> "src/Popover/index.tsx"
+    "src/Dropdown/components/DropdownPopover/index.tsx" -> "src/utils/component-helpers/polymorphic.ts" [arrowhead="onormal" penwidth="1.0"]
+    "src/Dropdown/components/DropdownPopover/index.tsx" -> "src/utils/helpers/events.ts"
+    "src/Dropdown/components/DropdownPopover/index.tsx" -> "src/utils/helpers/helpers.ts"
+    "src/Dropdown/components/DropdownPopover/index.tsx" -> "src/utils/hooks/useComposedRefs.ts"
+    "src/Dropdown/components/DropdownPopover/index.tsx" -> "src/utils/position/position.ts" [arrowhead="onormal" penwidth="1.0"]
+    "src/Dropdown/components/DropdownPopover/index.tsx" -> "src/Dropdown/constants.ts"
+    "src/Dropdown/components/DropdownPopover/index.tsx" -> "src/Dropdown/context.ts"
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/Dropdown" {label="Dropdown" subgraph "cluster_src/Dropdown/components" {label="components" "src/Dropdown/components/DropdownProviderContainer.tsx" [label=<DropdownProviderContainer.tsx> tooltip="DropdownProviderContainer.tsx" URL="src/Dropdown/components/DropdownProviderContainer.tsx" fillcolor="#bbfeff"] } } }
+    "src/Dropdown/components/DropdownProviderContainer.tsx" -> "src/utils/component-helpers/descendants.tsx"
+    "src/Dropdown/components/DropdownProviderContainer.tsx" -> "src/utils/helpers/helpers.ts"
+    "src/Dropdown/components/DropdownProviderContainer.tsx" -> "src/utils/helpers/typecheck.ts"
+    "src/Dropdown/components/DropdownProviderContainer.tsx" -> "src/Dropdown/constants.ts"
+    "src/Dropdown/components/DropdownProviderContainer.tsx" -> "src/Dropdown/context.ts"
+    "src/Dropdown/components/DropdownProviderContainer.tsx" -> "src/Dropdown/reducer.ts"
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/Dropdown" {label="Dropdown" subgraph "cluster_src/Dropdown/components" {label="components" subgraph "cluster_src/Dropdown/components/DropdownTrigger" {label="DropdownTrigger" "src/Dropdown/components/DropdownTrigger/index.tsx" [label=<index.tsx> tooltip="index.tsx" URL="src/Dropdown/components/DropdownTrigger/index.tsx" fillcolor="#bbfeff"] } } } }
+    "src/Dropdown/components/DropdownTrigger/index.tsx" -> "src/utils/component-helpers/descendants.tsx"
+    "src/Dropdown/components/DropdownTrigger/index.tsx" -> "src/utils/component-helpers/polymorphic.ts" [arrowhead="onormal" penwidth="1.0"]
+    "src/Dropdown/components/DropdownTrigger/index.tsx" -> "src/utils/helpers/events.ts"
+    "src/Dropdown/components/DropdownTrigger/index.tsx" -> "src/utils/helpers/helpers.ts"
+    "src/Dropdown/components/DropdownTrigger/index.tsx" -> "src/utils/hooks/useComposedRefs.ts"
+    "src/Dropdown/components/DropdownTrigger/index.tsx" -> "src/Dropdown/constants.ts"
+    "src/Dropdown/components/DropdownTrigger/index.tsx" -> "src/Dropdown/context.ts"
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/Dropdown" {label="Dropdown" subgraph "cluster_src/Dropdown/components" {label="components" "src/Dropdown/components/index.ts" [label=<index.ts> tooltip="index.ts" URL="src/Dropdown/components/index.ts" fillcolor="#ddfeff"] } } }
+    "src/Dropdown/components/index.ts" -> "src/Dropdown/components/DropdownItem/index.tsx" [arrowhead="inv"]
+    "src/Dropdown/components/index.ts" -> "src/Dropdown/components/DropdownItems/index.tsx" [arrowhead="inv"]
+    "src/Dropdown/components/index.ts" -> "src/Dropdown/components/DropdownPopover/index.tsx" [arrowhead="inv"]
+    "src/Dropdown/components/index.ts" -> "src/Dropdown/components/DropdownProviderContainer.tsx" [arrowhead="inv"]
+    "src/Dropdown/components/index.ts" -> "src/Dropdown/components/DropdownTrigger/index.tsx" [arrowhead="inv"]
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/Dropdown" {label="Dropdown" "src/Dropdown/constants.ts" [label=<constants.ts> tooltip="constants.ts" URL="src/Dropdown/constants.ts" fillcolor="#ddfeff"] } }
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/Dropdown" {label="Dropdown" "src/Dropdown/context.ts" [label=<context.ts> tooltip="context.ts" URL="src/Dropdown/context.ts" fillcolor="#ddfeff"] } }
+    "src/Dropdown/context.ts" -> "src/utils/component-helpers/descendants.tsx"
+    "src/Dropdown/context.ts" -> "src/utils/helpers/helpers.ts"
+    "src/Dropdown/context.ts" -> "src/Dropdown/reducer.ts" [arrowhead="onormal" penwidth="1.0"]
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/Dropdown" {label="Dropdown" "src/Dropdown/index.tsx" [label=<index.tsx> tooltip="index.tsx" URL="src/Dropdown/index.tsx" fillcolor="#bbfeff"] } }
+    "src/Dropdown/index.tsx" -> "src/Dropdown/components/index.ts" [arrowhead="inv"]
+    "src/Dropdown/index.tsx" -> "src/Dropdown/context.ts" [arrowhead="inv"]
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/Dropdown" {label="Dropdown" "src/Dropdown/reducer.ts" [label=<reducer.ts> tooltip="reducer.ts" URL="src/Dropdown/reducer.ts" fillcolor="#ddfeff"] } }
+    "src/Dropdown/reducer.ts" -> "src/utils/helpers/helpers.ts"
+    "src/Dropdown/reducer.ts" -> "src/Dropdown/constants.ts"
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/Heading" {label="Heading" "src/Heading/index.tsx" [label=<index.tsx> tooltip="index.tsx" URL="src/Heading/index.tsx" fillcolor="#bbfeff"] } }
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/Input" {label="Input" "src/Input/index.tsx" [label=<index.tsx> tooltip="index.tsx" URL="src/Input/index.tsx" fillcolor="#bbfeff"] } }
+    "src/Input/index.tsx" -> "src/Text/index.tsx"
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/IsochroneSlider" {label="IsochroneSlider" subgraph "cluster_src/IsochroneSlider/Slider" {label="Slider" "src/IsochroneSlider/Slider/ColorsLegend.tsx" [label=<ColorsLegend.tsx> tooltip="ColorsLegend.tsx" URL="src/IsochroneSlider/Slider/ColorsLegend.tsx" fillcolor="#bbfeff"] } } }
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/IsochroneSlider" {label="IsochroneSlider" subgraph "cluster_src/IsochroneSlider/Slider" {label="Slider" "src/IsochroneSlider/Slider/StartCaptureMovement.ts" [label=<StartCaptureMovement.ts> tooltip="StartCaptureMovement.ts" URL="src/IsochroneSlider/Slider/StartCaptureMovement.ts" fillcolor="#ddfeff"] } } }
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/IsochroneSlider" {label="IsochroneSlider" subgraph "cluster_src/IsochroneSlider/Slider" {label="Slider" "src/IsochroneSlider/Slider/index.tsx" [label=<index.tsx> tooltip="index.tsx" URL="src/IsochroneSlider/Slider/index.tsx" fillcolor="#bbfeff"] } } }
+    "src/IsochroneSlider/Slider/index.tsx" -> "src/IsochroneSlider/Slider/ColorsLegend.tsx"
+    "src/IsochroneSlider/Slider/index.tsx" -> "src/IsochroneSlider/Slider/StartCaptureMovement.ts"
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/IsochroneSlider" {label="IsochroneSlider" "src/IsochroneSlider/index.tsx" [label=<index.tsx> tooltip="index.tsx" URL="src/IsochroneSlider/index.tsx" fillcolor="#bbfeff"] } }
+    "src/IsochroneSlider/index.tsx" -> "src/Card/index.tsx"
+    "src/IsochroneSlider/index.tsx" -> "src/IsochroneSlider/Slider/index.tsx"
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/LanguageSelect" {label="LanguageSelect" "src/LanguageSelect/index.tsx" [label=<index.tsx> tooltip="index.tsx" URL="src/LanguageSelect/index.tsx" fillcolor="#bbfeff"] } }
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/Legend" {label="Legend" "src/Legend/gridTemplate.test.ts" [label=<gridTemplate.test.ts> tooltip="gridTemplate.test.ts" URL="src/Legend/gridTemplate.test.ts" fillcolor="#ddfeff"] } }
+    "src/Legend/gridTemplate.test.ts" -> "src/Legend/gridTemplate.ts"
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/Legend" {label="Legend" "src/Legend/gridTemplate.ts" [label=<gridTemplate.ts> tooltip="gridTemplate.ts" URL="src/Legend/gridTemplate.ts" fillcolor="#ddfeff"] } }
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/Legend" {label="Legend" "src/Legend/index.tsx" [label=<index.tsx> tooltip="index.tsx" URL="src/Legend/index.tsx" fillcolor="#bbfeff"] } }
+    "src/Legend/index.tsx" -> "src/Legend/gridTemplate.ts"
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/Legend" {label="Legend" "src/Legend/matrix.ts" [label=<matrix.ts> tooltip="matrix.ts" URL="src/Legend/matrix.ts" fillcolor="#ccffcc"] } }
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/Legend" {label="Legend" "src/Legend/styleGen.ts" [label=<styleGen.ts> tooltip="styleGen.ts" URL="src/Legend/styleGen.ts" fillcolor="#ccffcc"] } }
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/LineItem" {label="LineItem" "src/LineItem/index.tsx" [label=<index.tsx> tooltip="index.tsx" URL="src/LineItem/index.tsx" fillcolor="#bbfeff"] } }
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/Logo" {label="Logo" "src/Logo/index.tsx" [label=<index.tsx> tooltip="index.tsx" URL="src/Logo/index.tsx" fillcolor="#bbfeff"] } }
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/MCDALegend" {label="MCDALegend" "src/MCDALegend/index.tsx" [label=<index.tsx> tooltip="index.tsx" URL="src/MCDALegend/index.tsx" fillcolor="#bbfeff"] } }
+    "src/MCDALegend/index.tsx" -> "src/Heading/index.tsx"
+    "src/MCDALegend/index.tsx" -> "src/Text/index.tsx"
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/MenuButton" {label="MenuButton" subgraph "cluster_src/MenuButton/components" {label="components" subgraph "cluster_src/MenuButton/components/Menu" {label="Menu" "src/MenuButton/components/Menu/index.tsx" [label=<index.tsx> tooltip="index.tsx" URL="src/MenuButton/components/Menu/index.tsx" fillcolor="#bbfeff"] } } } }
+    "src/MenuButton/components/Menu/index.tsx" -> "src/Dropdown/index.tsx"
+    "src/MenuButton/components/Menu/index.tsx" -> "src/utils/component-helpers/polymorphic.ts" [arrowhead="onormal" penwidth="1.0"]
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/MenuButton" {label="MenuButton" subgraph "cluster_src/MenuButton/components" {label="components" subgraph "cluster_src/MenuButton/components/MenuButton" {label="MenuButton" "src/MenuButton/components/MenuButton/index.tsx" [label=<index.tsx> tooltip="index.tsx" URL="src/MenuButton/components/MenuButton/index.tsx" fillcolor="#bbfeff"] } } } }
+    "src/MenuButton/components/MenuButton/index.tsx" -> "src/Dropdown/index.tsx"
+    "src/MenuButton/components/MenuButton/index.tsx" -> "src/utils/component-helpers/polymorphic.ts" [arrowhead="onormal" penwidth="1.0"]
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/MenuButton" {label="MenuButton" subgraph "cluster_src/MenuButton/components" {label="components" subgraph "cluster_src/MenuButton/components/MenuItem" {label="MenuItem" "src/MenuButton/components/MenuItem/index.tsx" [label=<index.tsx> tooltip="index.tsx" URL="src/MenuButton/components/MenuItem/index.tsx" fillcolor="#bbfeff"] } } } }
+    "src/MenuButton/components/MenuItem/index.tsx" -> "src/Dropdown/index.tsx"
+    "src/MenuButton/components/MenuItem/index.tsx" -> "src/utils/component-helpers/polymorphic.ts" [arrowhead="onormal" penwidth="1.0"]
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/MenuButton" {label="MenuButton" subgraph "cluster_src/MenuButton/components" {label="components" subgraph "cluster_src/MenuButton/components/MenuLink" {label="MenuLink" "src/MenuButton/components/MenuLink/index.tsx" [label=<index.tsx> tooltip="index.tsx" URL="src/MenuButton/components/MenuLink/index.tsx" fillcolor="#bbfeff"] } } } }
+    "src/MenuButton/components/MenuLink/index.tsx" -> "src/utils/component-helpers/polymorphic.ts" [arrowhead="onormal" penwidth="1.0"]
+    "src/MenuButton/components/MenuLink/index.tsx" -> "src/utils/helpers/helpers.ts"
+    "src/MenuButton/components/MenuLink/index.tsx" -> "src/MenuButton/components/MenuItem/index.tsx"
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/MenuButton" {label="MenuButton" subgraph "cluster_src/MenuButton/components" {label="components" subgraph "cluster_src/MenuButton/components/MenuList" {label="MenuList" "src/MenuButton/components/MenuList/index.tsx" [label=<index.tsx> tooltip="index.tsx" URL="src/MenuButton/components/MenuList/index.tsx" fillcolor="#bbfeff"] } } } }
+    "src/MenuButton/components/MenuList/index.tsx" -> "src/utils/component-helpers/polymorphic.ts" [arrowhead="onormal" penwidth="1.0"]
+    "src/MenuButton/components/MenuList/index.tsx" -> "src/MenuButton/components/MenuItem/index.tsx"
+    "src/MenuButton/components/MenuList/index.tsx" -> "src/MenuButton/components/MenuPopover/index.tsx"
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/MenuButton" {label="MenuButton" subgraph "cluster_src/MenuButton/components" {label="components" subgraph "cluster_src/MenuButton/components/MenuPopover" {label="MenuPopover" "src/MenuButton/components/MenuPopover/index.tsx" [label=<index.tsx> tooltip="index.tsx" URL="src/MenuButton/components/MenuPopover/index.tsx" fillcolor="#bbfeff"] } } } }
+    "src/MenuButton/components/MenuPopover/index.tsx" -> "src/Dropdown/index.tsx"
+    "src/MenuButton/components/MenuPopover/index.tsx" -> "src/Popover/index.tsx"
+    "src/MenuButton/components/MenuPopover/index.tsx" -> "src/utils/component-helpers/polymorphic.ts" [arrowhead="onormal" penwidth="1.0"]
+    "src/MenuButton/components/MenuPopover/index.tsx" -> "src/utils/position/position.ts" [arrowhead="onormal" penwidth="1.0"]
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/MenuButton" {label="MenuButton" subgraph "cluster_src/MenuButton/components" {label="components" "src/MenuButton/components/index.ts" [label=<index.ts> tooltip="index.ts" URL="src/MenuButton/components/index.ts" fillcolor="#ddfeff"] } } }
+    "src/MenuButton/components/index.ts" -> "src/MenuButton/components/MenuItem/index.tsx" [arrowhead="inv"]
+    "src/MenuButton/components/index.ts" -> "src/MenuButton/components/MenuLink/index.tsx" [arrowhead="inv"]
+    "src/MenuButton/components/index.ts" -> "src/MenuButton/components/MenuList/index.tsx" [arrowhead="inv"]
+    "src/MenuButton/components/index.ts" -> "src/MenuButton/components/MenuPopover/index.tsx" [arrowhead="inv"]
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/MenuButton" {label="MenuButton" "src/MenuButton/index.tsx" [label=<index.tsx> tooltip="index.tsx" URL="src/MenuButton/index.tsx" fillcolor="#bbfeff"] } }
+    "src/MenuButton/index.tsx" -> "src/MenuButton/components/Menu/index.tsx" [arrowhead="inv"]
+    "src/MenuButton/index.tsx" -> "src/MenuButton/components/MenuButton/index.tsx" [arrowhead="inv"]
+    "src/MenuButton/index.tsx" -> "src/MenuButton/components/MenuItem/index.tsx" [arrowhead="inv"]
+    "src/MenuButton/index.tsx" -> "src/MenuButton/components/MenuList/index.tsx" [arrowhead="inv"]
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/Modal" {label="Modal" "src/Modal/ModalBackdrop.tsx" [label=<ModalBackdrop.tsx> tooltip="ModalBackdrop.tsx" URL="src/Modal/ModalBackdrop.tsx" fillcolor="#bbfeff"] } }
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/Modal" {label="Modal" "src/Modal/ModalContent.tsx" [label=<ModalContent.tsx> tooltip="ModalContent.tsx" URL="src/Modal/ModalContent.tsx" fillcolor="#bbfeff"] } }
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/Modal" {label="Modal" "src/Modal/index.tsx" [label=<index.tsx> tooltip="index.tsx" URL="src/Modal/index.tsx" fillcolor="#bbfeff"] } }
+    "src/Modal/index.tsx" -> "src/Modal/ModalBackdrop.tsx"
+    "src/Modal/index.tsx" -> "src/Modal/ModalContent.tsx"
+    "src/Modal/index.tsx" -> "src/Modal/useContainer.ts"
+    "src/Modal/index.tsx" -> "src/Modal/useKeyboard.ts"
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/Modal" {label="Modal" "src/Modal/useContainer.ts" [label=<useContainer.ts> tooltip="useContainer.ts" URL="src/Modal/useContainer.ts" fillcolor="#ddfeff"] } }
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/Modal" {label="Modal" "src/Modal/useKeyboard.ts" [label=<useKeyboard.ts> tooltip="useKeyboard.ts" URL="src/Modal/useKeyboard.ts" fillcolor="#ddfeff"] } }
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/ModalDialog" {label="ModalDialog" "src/ModalDialog/ModalBody.tsx" [label=<ModalBody.tsx> tooltip="ModalBody.tsx" URL="src/ModalDialog/ModalBody.tsx" fillcolor="#bbfeff"] } }
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/ModalDialog" {label="ModalDialog" "src/ModalDialog/ModalDialog.tsx" [label=<ModalDialog.tsx> tooltip="ModalDialog.tsx" URL="src/ModalDialog/ModalDialog.tsx" fillcolor="#bbfeff"] } }
+    "src/ModalDialog/ModalDialog.tsx" -> "src/Panel/index.tsx"
+    "src/ModalDialog/ModalDialog.tsx" -> "src/ModalDialog/ModalBody.tsx"
+    "src/ModalDialog/ModalDialog.tsx" -> "src/ModalDialog/ModalFooter.tsx"
+    "src/ModalDialog/ModalDialog.tsx" -> "src/ModalDialog/ModalHeader.tsx"
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/ModalDialog" {label="ModalDialog" "src/ModalDialog/ModalFooter.tsx" [label=<ModalFooter.tsx> tooltip="ModalFooter.tsx" URL="src/ModalDialog/ModalFooter.tsx" fillcolor="#bbfeff"] } }
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/ModalDialog" {label="ModalDialog" "src/ModalDialog/ModalHeader.tsx" [label=<ModalHeader.tsx> tooltip="ModalHeader.tsx" URL="src/ModalDialog/ModalHeader.tsx" fillcolor="#bbfeff"] } }
+    "src/ModalDialog/ModalHeader.tsx" -> "src/Heading/index.tsx"
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/ModalDialog" {label="ModalDialog" "src/ModalDialog/index.ts" [label=<index.ts> tooltip="index.ts" URL="src/ModalDialog/index.ts" fillcolor="#ddfeff"] } }
+    "src/ModalDialog/index.ts" -> "src/ModalDialog/ModalDialog.tsx" [arrowhead="inv"]
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/Panel" {label="Panel" "src/Panel/Controls.tsx" [label=<Controls.tsx> tooltip="Controls.tsx" URL="src/Panel/Controls.tsx" fillcolor="#bbfeff"] } }
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/Panel" {label="Panel" "src/Panel/Panel.tsx" [label=<Panel.tsx> tooltip="Panel.tsx" URL="src/Panel/Panel.tsx" fillcolor="#bbfeff"] } }
+    "src/Panel/Panel.tsx" -> "src/Card/index.tsx"
+    "src/Panel/Panel.tsx" -> "src/Heading/index.tsx"
+    "src/Panel/Panel.tsx" -> "src/Modal/index.tsx"
+    "src/Panel/Panel.tsx" -> "src/Panel/Controls.tsx"
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/Panel" {label="Panel" "src/Panel/PanelIcon.tsx" [label=<PanelIcon.tsx> tooltip="PanelIcon.tsx" URL="src/Panel/PanelIcon.tsx" fillcolor="#bbfeff"] } }
+    "src/Panel/PanelIcon.tsx" -> "src/Card/index.tsx"
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/Panel" {label="Panel" "src/Panel/index.tsx" [label=<index.tsx> tooltip="index.tsx" URL="src/Panel/index.tsx" fillcolor="#bbfeff"] } }
+    "src/Panel/index.tsx" -> "src/Panel/Panel.tsx" [arrowhead="inv"]
+    "src/Panel/index.tsx" -> "src/Panel/PanelIcon.tsx" [arrowhead="inv"]
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/Popover" {label="Popover" "src/Popover/index.tsx" [label=<index.tsx> tooltip="index.tsx" URL="src/Popover/index.tsx" fillcolor="#bbfeff"] } }
+    "src/Popover/index.tsx" -> "src/Portal/index.tsx"
+    "src/Popover/index.tsx" -> "src/utils/component-helpers/polymorphic.ts" [arrowhead="onormal" penwidth="1.0"]
+    "src/Popover/index.tsx" -> "src/utils/helpers/helpers.ts"
+    "src/Popover/index.tsx" -> "src/utils/hooks/useComposedRefs.ts"
+    "src/Popover/index.tsx" -> "src/utils/position/position.ts"
+    "src/Popover/index.tsx" -> "src/utils/position/rect.ts"
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/Portal" {label="Portal" "src/Portal/index.tsx" [label=<index.tsx> tooltip="index.tsx" URL="src/Portal/index.tsx" fillcolor="#bbfeff"] } }
+    "src/Portal/index.tsx" -> "src/utils/hooks/useForceUpdate.ts"
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/Radio" {label="Radio" "src/Radio/index.tsx" [label=<index.tsx> tooltip="index.tsx" URL="src/Radio/index.tsx" fillcolor="#bbfeff"] } }
+    "src/Radio/index.tsx" -> "src/LineItem/index.tsx"
+    "src/Radio/index.tsx" -> "src/utils/component-helpers/polymorphic.ts" [arrowhead="onormal" penwidth="1.0"]
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/Rotator" {label="Rotator" "src/Rotator/index.tsx" [label=<index.tsx> tooltip="index.tsx" URL="src/Rotator/index.tsx" fillcolor="#bbfeff"] } }
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/Select" {label="Select" "src/Select/checkSelectionModeInteractivity.ts" [label=<checkSelectionModeInteractivity.ts> tooltip="checkSelectionModeInteractivity.ts" URL="src/Select/checkSelectionModeInteractivity.ts" fillcolor="#ddfeff"] } }
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/Select" {label="Select" subgraph "cluster_src/Select/components" {label="components" subgraph "cluster_src/Select/components/MultiselectChip" {label="MultiselectChip" "src/Select/components/MultiselectChip/index.tsx" [label=<index.tsx> tooltip="index.tsx" URL="src/Select/components/MultiselectChip/index.tsx" fillcolor="#bbfeff"] } } } }
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/Select" {label="Select" subgraph "cluster_src/Select/components" {label="components" subgraph "cluster_src/Select/components/MultiselectChipWithSearch" {label="MultiselectChipWithSearch" "src/Select/components/MultiselectChipWithSearch/index.tsx" [label=<index.tsx> tooltip="index.tsx" URL="src/Select/components/MultiselectChipWithSearch/index.tsx" fillcolor="#bbfeff"] } } } }
+    "src/Select/components/MultiselectChipWithSearch/index.tsx" -> "src/Text/index.tsx"
+    "src/Select/components/MultiselectChipWithSearch/index.tsx" -> "src/Select/components/SelectButton/SelectContent.tsx"
+    "src/Select/components/MultiselectChipWithSearch/index.tsx" -> "src/Select/components/SelectItem/index.tsx"
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/Select" {label="Select" subgraph "cluster_src/Select/components" {label="components" subgraph "cluster_src/Select/components/SelectButton" {label="SelectButton" "src/Select/components/SelectButton/Placeholder.tsx" [label=<Placeholder.tsx> tooltip="Placeholder.tsx" URL="src/Select/components/SelectButton/Placeholder.tsx" fillcolor="#bbfeff"] } } } }
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/Select" {label="Select" subgraph "cluster_src/Select/components" {label="components" subgraph "cluster_src/Select/components/SelectButton" {label="SelectButton" "src/Select/components/SelectButton/SelectContent.tsx" [label=<SelectContent.tsx> tooltip="SelectContent.tsx" URL="src/Select/components/SelectButton/SelectContent.tsx" fillcolor="#bbfeff"] } } } }
+    "src/Select/components/SelectButton/SelectContent.tsx" -> "src/Select/components/MultiselectChip/index.tsx"
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/Select" {label="Select" subgraph "cluster_src/Select/components" {label="components" subgraph "cluster_src/Select/components/SelectButton" {label="SelectButton" "src/Select/components/SelectButton/index.tsx" [label=<index.tsx> tooltip="index.tsx" URL="src/Select/components/SelectButton/index.tsx" fillcolor="#bbfeff"] } } } }
+    "src/Select/components/SelectButton/index.tsx" -> "src/Text/index.tsx"
+    "src/Select/components/SelectButton/index.tsx" -> "src/utils/component-helpers/polymorphic.ts" [arrowhead="onormal" penwidth="1.0"]
+    "src/Select/components/SelectButton/index.tsx" -> "src/Select/checkSelectionModeInteractivity.ts"
+    "src/Select/components/SelectButton/index.tsx" -> "src/Select/components/SelectButton/Placeholder.tsx"
+    "src/Select/components/SelectButton/index.tsx" -> "src/Select/components/SelectButton/SelectContent.tsx"
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/Select" {label="Select" subgraph "cluster_src/Select/components" {label="components" subgraph "cluster_src/Select/components/SelectItem" {label="SelectItem" "src/Select/components/SelectItem/index.tsx" [label=<index.tsx> tooltip="index.tsx" URL="src/Select/components/SelectItem/index.tsx" fillcolor="#bbfeff"] } } } }
+    "src/Select/components/SelectItem/index.tsx" -> "src/utils/component-helpers/polymorphic.ts" [arrowhead="onormal" penwidth="1.0"]
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/Select" {label="Select" subgraph "cluster_src/Select/components" {label="components" "src/Select/components/index.ts" [label=<index.ts> tooltip="index.ts" URL="src/Select/components/index.ts" fillcolor="#ddfeff"] } } }
+    "src/Select/components/index.ts" -> "src/Select/components/MultiselectChipWithSearch/index.tsx" [arrowhead="inv"]
+    "src/Select/components/index.ts" -> "src/Select/components/SelectButton/index.tsx" [arrowhead="inv"]
+    "src/Select/components/index.ts" -> "src/Select/components/SelectItem/index.tsx" [arrowhead="inv"]
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/Select" {label="Select" "src/Select/index.tsx" [label=<index.tsx> tooltip="index.tsx" URL="src/Select/index.tsx" fillcolor="#bbfeff"] } }
+    "src/Select/index.tsx" -> "src/utils/component-helpers/polymorphic.ts" [arrowhead="onormal" penwidth="1.0"]
+    "src/Select/index.tsx" -> "src/Select/components/index.ts"
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/Selector" {label="Selector" "src/Selector/Option.tsx" [label=<Option.tsx> tooltip="Option.tsx" URL="src/Selector/Option.tsx" fillcolor="#bbfeff"] } }
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/Selector" {label="Selector" "src/Selector/SelectedItems.tsx" [label=<SelectedItems.tsx> tooltip="SelectedItems.tsx" URL="src/Selector/SelectedItems.tsx" fillcolor="#bbfeff"] } }
+    "src/Selector/SelectedItems.tsx" -> "src/Selector/Option.tsx" [arrowhead="onormal" penwidth="1.0"]
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/Selector" {label="Selector" "src/Selector/SimpleSelector.tsx" [label=<SimpleSelector.tsx> tooltip="SimpleSelector.tsx" URL="src/Selector/SimpleSelector.tsx" fillcolor="#bbfeff"] } }
+    "src/Selector/SimpleSelector.tsx" -> "src/Selector/Option.tsx"
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/Selector" {label="Selector" "src/Selector/index.tsx" [label=<index.tsx> tooltip="index.tsx" URL="src/Selector/index.tsx" fillcolor="#bbfeff"] } }
+    "src/Selector/index.tsx" -> "src/Selector/Option.tsx" [arrowhead="onormal" penwidth="1.0"]
+    "src/Selector/index.tsx" -> "src/Selector/SelectedItems.tsx"
+    "src/Selector/index.tsx" -> "src/Selector/SimpleSelector.tsx"
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/Slider" {label="Slider" "src/Slider/ColorsLegend.tsx" [label=<ColorsLegend.tsx> tooltip="ColorsLegend.tsx" URL="src/Slider/ColorsLegend.tsx" fillcolor="#bbfeff"] } }
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/Slider" {label="Slider" "src/Slider/index.tsx" [label=<index.tsx> tooltip="index.tsx" URL="src/Slider/index.tsx" fillcolor="#bbfeff"] } }
+    "src/Slider/index.tsx" -> "src/Slider/ColorsLegend.tsx"
+    "src/Slider/index.tsx" -> "src/Slider/sliderPositionToValue.ts"
+    "src/Slider/index.tsx" -> "src/Slider/startCaptureMovement.ts"
+    "src/Slider/index.tsx" -> "src/Slider/valueToSliderPosition.ts"
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/Slider" {label="Slider" "src/Slider/sliderPositionToValue.ts" [label=<sliderPositionToValue.ts> tooltip="sliderPositionToValue.ts" URL="src/Slider/sliderPositionToValue.ts" fillcolor="#ddfeff"] } }
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/Slider" {label="Slider" "src/Slider/startCaptureMovement.ts" [label=<startCaptureMovement.ts> tooltip="startCaptureMovement.ts" URL="src/Slider/startCaptureMovement.ts" fillcolor="#ddfeff"] } }
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/Slider" {label="Slider" "src/Slider/valueToSliderPosition.ts" [label=<valueToSliderPosition.ts> tooltip="valueToSliderPosition.ts" URL="src/Slider/valueToSliderPosition.ts" fillcolor="#ddfeff"] } }
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/Tabs" {label="Tabs" subgraph "cluster_src/Tabs/components" {label="components" subgraph "cluster_src/Tabs/components/Tab" {label="Tab" "src/Tabs/components/Tab/index.tsx" [label=<index.tsx> tooltip="index.tsx" URL="src/Tabs/components/Tab/index.tsx" fillcolor="#bbfeff"] } } } }
+    "src/Tabs/components/Tab/index.tsx" -> "src/utils/component-helpers/descendants.tsx"
+    "src/Tabs/components/Tab/index.tsx" -> "src/utils/component-helpers/polymorphic.ts" [arrowhead="onormal" penwidth="1.0"]
+    "src/Tabs/components/Tab/index.tsx" -> "src/utils/helpers/events.ts"
+    "src/Tabs/components/Tab/index.tsx" -> "src/utils/helpers/helpers.ts"
+    "src/Tabs/components/Tab/index.tsx" -> "src/utils/hooks/useComposedRefs.ts"
+    "src/Tabs/components/Tab/index.tsx" -> "src/utils/hooks/useStatefulRefValue.ts"
+    "src/Tabs/components/Tab/index.tsx" -> "src/Tabs/context.ts"
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/Tabs" {label="Tabs" subgraph "cluster_src/Tabs/components" {label="components" subgraph "cluster_src/Tabs/components/TabList" {label="TabList" "src/Tabs/components/TabList/index.tsx" [label=<index.tsx> tooltip="index.tsx" URL="src/Tabs/components/TabList/index.tsx" fillcolor="#bbfeff"] } } } }
+    "src/Tabs/components/TabList/index.tsx" -> "src/utils/component-helpers/descendants.tsx"
+    "src/Tabs/components/TabList/index.tsx" -> "src/utils/component-helpers/polymorphic.ts" [arrowhead="onormal" penwidth="1.0"]
+    "src/Tabs/components/TabList/index.tsx" -> "src/utils/helpers/events.ts"
+    "src/Tabs/components/TabList/index.tsx" -> "src/utils/helpers/typecheck.ts"
+    "src/Tabs/components/TabList/index.tsx" -> "src/utils/hooks/useComposedRefs.ts"
+    "src/Tabs/components/TabList/index.tsx" -> "src/Tabs/context.ts"
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/Tabs" {label="Tabs" subgraph "cluster_src/Tabs/components" {label="components" subgraph "cluster_src/Tabs/components/TabPanel" {label="TabPanel" "src/Tabs/components/TabPanel/index.tsx" [label=<index.tsx> tooltip="index.tsx" URL="src/Tabs/components/TabPanel/index.tsx" fillcolor="#bbfeff"] } } } }
+    "src/Tabs/components/TabPanel/index.tsx" -> "src/utils/component-helpers/descendants.tsx"
+    "src/Tabs/components/TabPanel/index.tsx" -> "src/utils/component-helpers/polymorphic.ts" [arrowhead="onormal" penwidth="1.0"]
+    "src/Tabs/components/TabPanel/index.tsx" -> "src/utils/helpers/helpers.ts"
+    "src/Tabs/components/TabPanel/index.tsx" -> "src/utils/hooks/useComposedRefs.ts"
+    "src/Tabs/components/TabPanel/index.tsx" -> "src/utils/hooks/useStatefulRefValue.ts"
+    "src/Tabs/components/TabPanel/index.tsx" -> "src/Tabs/context.ts"
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/Tabs" {label="Tabs" subgraph "cluster_src/Tabs/components" {label="components" "src/Tabs/components/index.ts" [label=<index.ts> tooltip="index.ts" URL="src/Tabs/components/index.ts" fillcolor="#ddfeff"] } } }
+    "src/Tabs/components/index.ts" -> "src/Tabs/components/Tab/index.tsx" [arrowhead="inv"]
+    "src/Tabs/components/index.ts" -> "src/Tabs/components/TabList/index.tsx" [arrowhead="inv"]
+    "src/Tabs/components/index.ts" -> "src/Tabs/components/TabPanel/index.tsx" [arrowhead="inv"]
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/Tabs" {label="Tabs" "src/Tabs/context.ts" [label=<context.ts> tooltip="context.ts" URL="src/Tabs/context.ts" fillcolor="#ddfeff"] } }
+    "src/Tabs/context.ts" -> "src/utils/component-helpers/descendants.tsx"
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/Tabs" {label="Tabs" "src/Tabs/index.tsx" [label=<index.tsx> tooltip="index.tsx" URL="src/Tabs/index.tsx" fillcolor="#bbfeff"] } }
+    "src/Tabs/index.tsx" -> "src/utils/component-helpers/descendants.tsx"
+    "src/Tabs/index.tsx" -> "src/utils/component-helpers/polymorphic.ts" [arrowhead="onormal" penwidth="1.0"]
+    "src/Tabs/index.tsx" -> "src/utils/helpers/helpers.ts"
+    "src/Tabs/index.tsx" -> "src/utils/helpers/typecheck.ts"
+    "src/Tabs/index.tsx" -> "src/utils/hooks/useControlledState.ts"
+    "src/Tabs/index.tsx" -> "src/Tabs/context.ts"
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/Text" {label="Text" "src/Text/index.tsx" [label=<index.tsx> tooltip="index.tsx" URL="src/Text/index.tsx" fillcolor="#bbfeff"] } }
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/Textarea" {label="Textarea" "src/Textarea/index.tsx" [label=<index.tsx> tooltip="index.tsx" URL="src/Textarea/index.tsx" fillcolor="#bbfeff"] } }
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/TimeSlider" {label="TimeSlider" "src/TimeSlider/index.tsx" [label=<index.tsx> tooltip="index.tsx" URL="src/TimeSlider/index.tsx" fillcolor="#bbfeff"] } }
+    "src/TimeSlider/index.tsx" -> "src/Slider/index.tsx"
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/Timeline" {label="Timeline" "src/Timeline/TimeLineWithDropDown.tsx" [label=<TimeLineWithDropDown.tsx> tooltip="TimeLineWithDropDown.tsx" URL="src/Timeline/TimeLineWithDropDown.tsx" fillcolor="#bbfeff"] } }
+    "src/Timeline/TimeLineWithDropDown.tsx" -> "src/Dropdown/index.tsx"
+    "src/Timeline/TimeLineWithDropDown.tsx" -> "src/MenuButton/index.tsx"
+    "src/Timeline/TimeLineWithDropDown.tsx" -> "src/Timeline/index.tsx"
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/Timeline" {label="Timeline" subgraph "cluster_src/Timeline/implementation" {label="implementation" subgraph "cluster_src/Timeline/implementation/vis-timeline" {label="vis-timeline" "src/Timeline/implementation/vis-timeline/VisTimeline.tsx" [label=<VisTimeline.tsx> tooltip="VisTimeline.tsx" URL="src/Timeline/implementation/vis-timeline/VisTimeline.tsx" fillcolor="#bbfeff"] } } } }
+    "src/Timeline/implementation/vis-timeline/VisTimeline.tsx" -> "src/Timeline/implementation/vis-timeline/useVisTimeline.ts"
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/Timeline" {label="Timeline" subgraph "cluster_src/Timeline/implementation" {label="implementation" subgraph "cluster_src/Timeline/implementation/vis-timeline" {label="vis-timeline" "src/Timeline/implementation/vis-timeline/defaultOptions.ts" [label=<defaultOptions.ts> tooltip="defaultOptions.ts" URL="src/Timeline/implementation/vis-timeline/defaultOptions.ts" fillcolor="#ddfeff"] } } } }
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/Timeline" {label="Timeline" subgraph "cluster_src/Timeline/implementation" {label="implementation" subgraph "cluster_src/Timeline/implementation/vis-timeline" {label="vis-timeline" "src/Timeline/implementation/vis-timeline/getClusterById.ts" [label=<getClusterById.ts> tooltip="getClusterById.ts" URL="src/Timeline/implementation/vis-timeline/getClusterById.ts" fillcolor="#ddfeff"] } } } }
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/Timeline" {label="Timeline" subgraph "cluster_src/Timeline/implementation" {label="implementation" subgraph "cluster_src/Timeline/implementation/vis-timeline" {label="vis-timeline" "src/Timeline/implementation/vis-timeline/toTimlineEntry.ts" [label=<toTimlineEntry.ts> tooltip="toTimlineEntry.ts" URL="src/Timeline/implementation/vis-timeline/toTimlineEntry.ts" fillcolor="#ddfeff"] } } } }
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/Timeline" {label="Timeline" subgraph "cluster_src/Timeline/implementation" {label="implementation" subgraph "cluster_src/Timeline/implementation/vis-timeline" {label="vis-timeline" "src/Timeline/implementation/vis-timeline/toTooltipEntry.ts" [label=<toTooltipEntry.ts> tooltip="toTooltipEntry.ts" URL="src/Timeline/implementation/vis-timeline/toTooltipEntry.ts" fillcolor="#ddfeff"] } } } }
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/Timeline" {label="Timeline" subgraph "cluster_src/Timeline/implementation" {label="implementation" subgraph "cluster_src/Timeline/implementation/vis-timeline" {label="vis-timeline" "src/Timeline/implementation/vis-timeline/toVisTimelineDataset.ts" [label=<toVisTimelineDataset.ts> tooltip="toVisTimelineDataset.ts" URL="src/Timeline/implementation/vis-timeline/toVisTimelineDataset.ts" fillcolor="#ddfeff"] } } } }
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/Timeline" {label="Timeline" subgraph "cluster_src/Timeline/implementation" {label="implementation" subgraph "cluster_src/Timeline/implementation/vis-timeline" {label="vis-timeline" "src/Timeline/implementation/vis-timeline/toVisTimelineOptions.tsx" [label=<toVisTimelineOptions.tsx> tooltip="toVisTimelineOptions.tsx" URL="src/Timeline/implementation/vis-timeline/toVisTimelineOptions.tsx" fillcolor="#bbfeff"] } } } }
+    "src/Timeline/implementation/vis-timeline/toVisTimelineOptions.tsx" -> "src/Timeline/implementation/vis-timeline/defaultOptions.ts"
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/Timeline" {label="Timeline" subgraph "cluster_src/Timeline/implementation" {label="implementation" subgraph "cluster_src/Timeline/implementation/vis-timeline" {label="vis-timeline" "src/Timeline/implementation/vis-timeline/useVisTimeline.ts" [label=<useVisTimeline.ts> tooltip="useVisTimeline.ts" URL="src/Timeline/implementation/vis-timeline/useVisTimeline.ts" fillcolor="#ddfeff"] } } } }
+    "src/Timeline/implementation/vis-timeline/useVisTimeline.ts" -> "src/Timeline/implementation/vis-timeline/getClusterById.ts"
+    "src/Timeline/implementation/vis-timeline/useVisTimeline.ts" -> "src/Timeline/implementation/vis-timeline/toTimlineEntry.ts"
+    "src/Timeline/implementation/vis-timeline/useVisTimeline.ts" -> "src/Timeline/implementation/vis-timeline/toTooltipEntry.ts"
+    "src/Timeline/implementation/vis-timeline/useVisTimeline.ts" -> "src/Timeline/implementation/vis-timeline/toVisTimelineDataset.ts"
+    "src/Timeline/implementation/vis-timeline/useVisTimeline.ts" -> "src/Timeline/implementation/vis-timeline/toVisTimelineOptions.tsx"
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/Timeline" {label="Timeline" "src/Timeline/index.tsx" [label=<index.tsx> tooltip="index.tsx" URL="src/Timeline/index.tsx" fillcolor="#bbfeff"] } }
+    "src/Timeline/index.tsx" -> "src/Timeline/implementation/vis-timeline/VisTimeline.tsx"
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/Toggler" {label="Toggler" "src/Toggler/index.tsx" [label=<index.tsx> tooltip="index.tsx" URL="src/Toggler/index.tsx" fillcolor="#bbfeff"] } }
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/Tooltip" {label="Tooltip" subgraph "cluster_src/Tooltip/Tooltip" {label="Tooltip" "src/Tooltip/Tooltip/Tooltip.tsx" [label=<Tooltip.tsx> tooltip="Tooltip.tsx" URL="src/Tooltip/Tooltip/Tooltip.tsx" fillcolor="#bbfeff"] } } }
+    "src/Tooltip/Tooltip/Tooltip.tsx" -> "src/Tooltip/Tooltip/calculatePlacement.ts"
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/Tooltip" {label="Tooltip" subgraph "cluster_src/Tooltip/Tooltip" {label="Tooltip" "src/Tooltip/Tooltip/calculatePlacement.ts" [label=<calculatePlacement.ts> tooltip="calculatePlacement.ts" URL="src/Tooltip/Tooltip/calculatePlacement.ts" fillcolor="#ddfeff"] } } }
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/Tooltip" {label="Tooltip" "src/Tooltip/index.ts" [label=<index.ts> tooltip="index.ts" URL="src/Tooltip/index.ts" fillcolor="#ddfeff"] } }
+    "src/Tooltip/index.ts" -> "src/Tooltip/Tooltip/Tooltip.tsx" [arrowhead="inv"]
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/utils" {label="utils" subgraph "cluster_src/utils/component-helpers" {label="component-helpers" "src/utils/component-helpers/descendants.tsx" [label=<descendants.tsx> tooltip="descendants.tsx" URL="src/utils/component-helpers/descendants.tsx" fillcolor="#bbfeff"] } } }
+    "src/utils/component-helpers/descendants.tsx" -> "src/utils/helpers/helpers.ts"
+    "src/utils/component-helpers/descendants.tsx" -> "src/utils/hooks/useForceUpdate.ts"
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/utils" {label="utils" subgraph "cluster_src/utils/component-helpers" {label="component-helpers" "src/utils/component-helpers/polymorphic.ts" [label=<polymorphic.ts> tooltip="polymorphic.ts" URL="src/utils/component-helpers/polymorphic.ts" fillcolor="#ddfeff"] } } }
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/utils" {label="utils" subgraph "cluster_src/utils/helpers" {label="helpers" "src/utils/helpers/events.ts" [label=<events.ts> tooltip="events.ts" URL="src/utils/helpers/events.ts" fillcolor="#ddfeff"] } } }
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/utils" {label="utils" subgraph "cluster_src/utils/helpers" {label="helpers" "src/utils/helpers/helpers.ts" [label=<helpers.ts> tooltip="helpers.ts" URL="src/utils/helpers/helpers.ts" fillcolor="#ddfeff"] } } }
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/utils" {label="utils" subgraph "cluster_src/utils/helpers" {label="helpers" "src/utils/helpers/typecheck.ts" [label=<typecheck.ts> tooltip="typecheck.ts" URL="src/utils/helpers/typecheck.ts" fillcolor="#ddfeff"] } } }
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/utils" {label="utils" subgraph "cluster_src/utils/hooks" {label="hooks" "src/utils/hooks/useComposedRefs.ts" [label=<useComposedRefs.ts> tooltip="useComposedRefs.ts" URL="src/utils/hooks/useComposedRefs.ts" fillcolor="#ddfeff"] } } }
+    "src/utils/hooks/useComposedRefs.ts" -> "src/utils/helpers/typecheck.ts"
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/utils" {label="utils" subgraph "cluster_src/utils/hooks" {label="hooks" "src/utils/hooks/useControlledState.ts" [label=<useControlledState.ts> tooltip="useControlledState.ts" URL="src/utils/hooks/useControlledState.ts" fillcolor="#ddfeff"] } } }
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/utils" {label="utils" subgraph "cluster_src/utils/hooks" {label="hooks" "src/utils/hooks/useForceUpdate.ts" [label=<useForceUpdate.ts> tooltip="useForceUpdate.ts" URL="src/utils/hooks/useForceUpdate.ts" fillcolor="#ddfeff"] } } }
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/utils" {label="utils" subgraph "cluster_src/utils/hooks" {label="hooks" "src/utils/hooks/usePrevious.ts" [label=<usePrevious.ts> tooltip="usePrevious.ts" URL="src/utils/hooks/usePrevious.ts" fillcolor="#ddfeff"] } } }
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/utils" {label="utils" subgraph "cluster_src/utils/hooks" {label="hooks" "src/utils/hooks/useStatefulRefValue.ts" [label=<useStatefulRefValue.ts> tooltip="useStatefulRefValue.ts" URL="src/utils/hooks/useStatefulRefValue.ts" fillcolor="#ddfeff"] } } }
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/utils" {label="utils" subgraph "cluster_src/utils/position" {label="position" "src/utils/position/observeRect.ts" [label=<observeRect.ts> tooltip="observeRect.ts" URL="src/utils/position/observeRect.ts" fillcolor="#ddfeff"] } } }
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/utils" {label="utils" subgraph "cluster_src/utils/position" {label="position" "src/utils/position/position.ts" [label=<position.ts> tooltip="position.ts" URL="src/utils/position/position.ts" fillcolor="#ddfeff"] } } }
+    "src/utils/position/position.ts" -> "src/utils/position/rect.ts" [arrowhead="onormal" penwidth="1.0"]
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/utils" {label="utils" subgraph "cluster_src/utils/position" {label="position" "src/utils/position/rect.ts" [label=<rect.ts> tooltip="rect.ts" URL="src/utils/position/rect.ts" fillcolor="#ddfeff"] } } }
+    "src/utils/position/rect.ts" -> "src/utils/helpers/typecheck.ts"
+    "src/utils/position/rect.ts" -> "src/utils/position/observeRect.ts"
+}

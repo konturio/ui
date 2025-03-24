@@ -133,8 +133,8 @@
   --ease-in: cubic-bezier(0.4, 0, 1, 1);
 
   /* zIndex */
-  --modal: 1000;
-  --tooltip: 1100;
+  --modal: 10000;
+  --tooltip: 11000;
 
   /* DEPRECATED - Old Theme shadow variables */
   /* TODO: remove this section after we migrate all old variables usages to new ones */

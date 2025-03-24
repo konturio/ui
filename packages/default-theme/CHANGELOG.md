@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.2.7](https://github.com/konturio/ui/compare/@konturio/default-theme@3.2.6...@konturio/default-theme@3.2.7) (2025-03-24)
+
+### Bug Fixes
+
+- **21077:** increase floating elements z index ([#103](https://github.com/konturio/ui/issues/103)) ([b087fea](https://github.com/konturio/ui/commit/b087fea9d5788acd6c7bdb324c0f876462194e6e))
+
 ## [3.2.6](https://github.com/konturio/ui/compare/@konturio/default-theme@3.2.5...@konturio/default-theme@3.2.6) (2024-08-29)
 
 ### Bug Fixes

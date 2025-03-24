@@ -1,0 +1,10 @@
+.breadcrumbs {
+  background-color: var(--base-weak);
+  box-shadow: var(--shadow-medium);
+  border-radius: var(--half-unit);
+  display: flex;
+  list-style: none;
+  padding: 5px 8px;
+  margin: 0;
+  overflow: hidden;
+}

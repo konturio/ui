@@ -37,10 +37,10 @@ function useMap(ref) {
   useLayoutEffect(() => {
     const loadings = [
       crtElm('script', {
-        src: 'https://unpkg.com/maplibre-gl@2.4.0/dist/maplibre-gl.js',
+        src: 'https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.js',
       }),
       crtElm('link', {
-        href: 'https://unpkg.com/maplibre-gl@2.4.0/dist/maplibre-gl.css',
+        href: 'https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.css',
         rel: 'stylesheet',
       }),
     ].map((node) => {

@@ -20,15 +20,15 @@
   "keywords": [],
   "author": "",
   "peerDependencies": {
-    "clsx": "^1.2.1",
+    "clsx": "^2.1.1",
     "react": "^18.2.0"
   },
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
-    "@floating-ui/core": "^1.2.4",
-    "@floating-ui/react": "^0.21.1",
+    "@floating-ui/core": "^1.6.9",
+    "@floating-ui/react": "^0.27.8",
     "nanoid": "^4.0.0"
   }
 }

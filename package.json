@@ -80,8 +80,8 @@
     "@types/react-dom": "^18.2.19",
     "@typescript-eslint/eslint-plugin": "^6.21.0",
     "@typescript-eslint/parser": "^6.21.0",
-    "autoprefixer": "^10.4.12",
-    "clsx": "^1.2.1",
+    "autoprefixer": "^10.4.21",
+    "clsx": "^2.1.1",
     "dependency-cruiser": "^16.10.0",
     "eslint": "^8.56.0",
     "eslint-config-prettier": "^9.1.0",
@@ -119,7 +119,6 @@
     "open-cli": "^7.0.0",
     "patch-package": "6.4.7",
     "postcss-cli": "^10.0.0",
-    "postcss-custom-media": "^8.0.0",
     "react-cosmos": "5.7.2",
     "react-github-corner": "2.5.0"
   }

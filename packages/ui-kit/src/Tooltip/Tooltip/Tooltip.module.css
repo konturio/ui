@@ -1,6 +1,3 @@
-@custom-media --mobile (max-width: 960px);
-/* var(--md) */
-
 .tooltipContainer {
   position: absolute;
   left: 0;
@@ -49,12 +46,6 @@
   padding: 5px;
 }
 
-@media (--mobile) {
-  .arrow {
-    display: none;
-  }
-}
-
 .arrow-top {
   bottom: -10px;
 }
@@ -99,22 +90,24 @@
   height: var(--double-unit);
 }
 
-@media (--mobile) {
+@media (max-width: 960px) {
+  .arrow {
+    display: none;
+  }
+
   .closeIcon {
     cursor: pointer;
     height: 10px;
     display: flex;
     color: var(--base-strong);
   }
-}
 
-@media (--mobile) {
   .tooltipContent {
     position: absolute;
     display: flex;
     z-index: var(--tooltip);
     left: 0;
-    bottom: calc(0px - var(--half-unit));
+    bottom: calc(0px + var(--half-unit));
     width: 100%;
     padding: var(--double-unit);
     max-height: 90%;

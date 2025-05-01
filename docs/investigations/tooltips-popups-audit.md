@@ -34,7 +34,7 @@ graph TD
     end
 
     Modern -.->|planned| J[MapPopup]
-    Legacy -->|conflict| K[@konturio/floating]
+    Legacy -->|conflict| K["@konturio/floating"]
 ```
 
 ## Key Findings
@@ -79,12 +79,12 @@ map.on('click', (e) => {
 
 ```mermaid
 graph LR
-    A[1. Dependency Resolution] --> B[2. Coordinate System Unification]
-    B --> C[3. Portal Implementation]
-    C --> D[4. Legacy Deprecation]
-    D --> E[5. MapPopup Integration]
+    A[Dependency Resolution] --> B[Coordinate System Unification]
+    B --> C[Portal Implementation]
+    C --> D[Legacy Deprecation]
+    D --> E[MapPopup Integration]
 
-    classDef critical fill:#f96;
+    classDef critical fill:red;
     class A,B critical
 ```
 

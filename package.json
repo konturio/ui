@@ -12,10 +12,9 @@
     "postinstall": "patch-package",
     "build": "run-s ts:clean auto:ts:references auto:lerna:pre-build auto:ts:build auto:lerna:build",
     "build:watch": "run-s auto:ts:references auto:lerna:pre-build auto:ts:build:watch auto:lerna:build",
-    "dev": "run-p auto:lerna:pre-start auto:cosmos:renderer auto:cosmos auto:open",
+    "dev": "run-p auto:lerna:pre-start auto:cosmos auto:open",
     "bootstrap": "run-s auto:lerna:bootstrap auto:lerna:link",
-    "cosmos:build:export": "run-s auto:cosmos:export cosmos:renderer:export",
-    "cosmos:renderer:export": "vite build",
+    "cosmos:build:export": "run-s auto:cosmos:export",
     "publish": "run-s build auto:lerna:publish",
     "lint:fix": "eslint \"*/**/*.{ts,tsx}\" --fix",
     "lint-staged": "npx --no-install lint-staged --concurrent false",
@@ -36,7 +35,6 @@
     "auto:lerna:link": "lerna link",
     "auto:cosmos": "cosmos --config cosmos.config.json",
     "auto:cosmos:export": "patch-package && cosmos-export --config cosmos.config.export.json",
-    "auto:cosmos:renderer": "vite --force serve --port=8080",
     "auto:lerna:pre-build": "lerna run pre-build",
     "auto:lerna:pre-start": "lerna run pre-start",
     "auto:lerna:build": "lerna run build",
@@ -74,7 +72,6 @@
     "@turf/difference": "6.0.1"
   },
   "dependencies": {
-    "@floating-ui/react-dom": "^1.2.2",
     "@types/jest": "^27.0.0",
     "@types/react": "^18.2.55",
     "@types/react-dom": "^18.2.19",
@@ -110,16 +107,17 @@
     "stylelint-config-recommended": "^6.0.0",
     "ts-jest": "^27.0.4",
     "typescript": "^4.9.5",
-    "vite": "^3.1.8"
+    "vite": "^5.4.19"
   },
   "devDependencies": {
-    "@vitejs/plugin-react": "^2.1.0",
+    "@vitejs/plugin-react": "^4.4.1",
     "husky": "^8.0.2",
     "lint-staged": "^11.2.6",
     "open-cli": "^7.0.0",
     "patch-package": "6.4.7",
     "postcss-cli": "^10.0.0",
-    "react-cosmos": "5.7.2",
-    "react-github-corner": "2.5.0"
+    "react-cosmos": "7.0.0-beta.2",
+    "react-cosmos-plugin-vite": "7.0.0-beta.0",
+    "vite-tsconfig-paths": "^5.1.4"
   }
 }

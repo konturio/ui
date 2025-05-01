@@ -24,17 +24,20 @@ export default ({ mode }) => {
       jsxFragment: '_implicit_React.Fragment',
       jsxInject: 'import _implicit_React from "react"',
     },
+    css: {
+      devSourcemap: true,
+    },
     build: {
       target: 'esnext',
-      outDir: '../cosmos-export',
-      rollupOptions: {
-        input: {
-          renderer: path.resolve(__dirname, 'cosmos/renderer.html'), // for cosmos experimentalRendererUrl
-        },
-      },
+      // outDir: '../cosmos-export',
+      // rollupOptions: {
+      //   input: {
+      //     renderer: path.resolve(__dirname, 'cosmos/renderer.html'), // for cosmos experimentalRendererUrl
+      //   },
+      // },
     },
     base: '',
-    root: './cosmos',
+    // root: './cosmos',
     optimizeDeps: {
       exclude: ['vis-timeline', 'vis-data'],
     },

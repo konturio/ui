@@ -1,4 +1,4 @@
-import { useValue } from 'react-cosmos/fixture';
+import { useValue } from 'react-cosmos/client';
 import { InfoOutline16 } from '@konturio/default-icons';
 import { Button } from '../Button';
 import s from './ButtonGroup.fixture.style.module.css';

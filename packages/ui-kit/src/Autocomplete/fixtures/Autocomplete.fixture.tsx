@@ -1,4 +1,4 @@
-import { useValue } from 'react-cosmos/fixture';
+import { useValue } from 'react-cosmos/client';
 import { Autocomplete } from '../index';
 import type { AutocompleteItemType } from '../types';
 

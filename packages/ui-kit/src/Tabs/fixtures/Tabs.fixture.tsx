@@ -1,4 +1,4 @@
-import { useValue } from 'react-cosmos/fixture';
+import { useValue } from 'react-cosmos/client';
 import { TabList } from '../components/TabList';
 import { TabPanel, TabPanels } from '../components/TabPanel';
 import { Tab } from '../components/Tab';

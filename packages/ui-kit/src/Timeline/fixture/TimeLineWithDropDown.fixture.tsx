@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useValue } from 'react-cosmos/fixture';
+import { useValue } from 'react-cosmos/client';
 import { TimeLineWithDropDown } from '../TimeLineWithDropDown';
 import testData from './testData';
 

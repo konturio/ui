@@ -1,4 +1,4 @@
-import { useValue } from 'react-cosmos/fixture';
+import { useValue } from 'react-cosmos/client';
 import { MultiselectChipWithSearch } from '../components/MultiselectChipWithSearch';
 import type { SelectableItem } from '../types';
 

@@ -1,8 +1,7 @@
 {
   "$schema": "./node_modules/react-cosmos/config.schema.json",
+  "plugins": ["react-cosmos-plugin-vite"],
   "watchDirs": ["packages"],
-  "userDepsFilePath": "cosmos/cosmos.userdeps.js",
-  "experimentalRendererUrl": "renderer.html",
   "globalImports": [
     "packages/default-theme/variables.css",
     "packages/default-theme/defaults.css",

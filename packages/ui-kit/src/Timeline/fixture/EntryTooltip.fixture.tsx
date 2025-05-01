@@ -1,5 +1,5 @@
 import { useCallback, useState } from 'react';
-import { useValue } from 'react-cosmos/fixture';
+import { useValue } from 'react-cosmos/client';
 import { Timeline } from '..';
 import { isTimelineEntry } from '../types';
 import testData from './testData';

@@ -1,4 +1,4 @@
-import { useValue } from 'react-cosmos/fixture';
+import { useValue } from 'react-cosmos/client';
 import {
   ChevronDown24,
   ChevronUp24,

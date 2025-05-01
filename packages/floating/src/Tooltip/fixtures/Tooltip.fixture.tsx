@@ -1,5 +1,5 @@
 import { forwardRef, useCallback } from 'react';
-import { useSelect, useValue } from 'react-cosmos/fixture';
+import { useSelect, useValue } from 'react-cosmos/client';
 import * as Floating from '@konturio/floating';
 import { FloatingProvider } from '../../OverlayService/FloatingProvider/FloatingProvider';
 import { useTooltip } from '../../OverlayService';

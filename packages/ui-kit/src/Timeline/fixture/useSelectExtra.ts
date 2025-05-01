@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import { useSelect } from 'react-cosmos/fixture';
+import { useSelect } from 'react-cosmos/client';
 
 export function useSelectExtra<T>(clusterPropsVariants: T[]) {
   const [cluster] = useSelect('cluster', {

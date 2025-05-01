@@ -1,5 +1,5 @@
 import { forwardRef, useRef, useState } from 'react';
-import { useSelect, useValue } from 'react-cosmos/fixture';
+import { useSelect, useValue } from 'react-cosmos/client';
 import { Tooltip } from '.';
 
 const Dummy = forwardRef<HTMLDivElement, React.PropsWithChildren<React.HTMLAttributes<HTMLDivElement>>>(function Dummy2(

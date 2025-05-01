@@ -1,0 +1,477 @@
+{
+  "rendererUrl": "renderer.html",
+  "fixtures": [
+    {
+      "filePath": "packages/default-icons/Icons.fixture.tsx",
+      "cleanPath": [
+        "packages",
+        "default-icons",
+        "Icons"
+      ],
+      "rendererUrl": "renderer.html?fixtureId=%7B%22path%22%3A%22packages%2Fdefault-icons%2FIcons.fixture.tsx%22%7D&locked=true"
+    },
+    {
+      "filePath": "packages/default-theme/src/Colors.fixture.tsx",
+      "cleanPath": [
+        "packages",
+        "default-theme",
+        "src",
+        "Colors"
+      ],
+      "rendererUrl": "renderer.html?fixtureId=%7B%22path%22%3A%22packages%2Fdefault-theme%2Fsrc%2FColors.fixture.tsx%22%7D&locked=true"
+    },
+    {
+      "filePath": "packages/floating/src/Tooltip/fixtures/MapTooltip.fixture.tsx",
+      "cleanPath": [
+        "packages",
+        "floating",
+        "src",
+        "Tooltip",
+        "fixtures",
+        "MapTooltip"
+      ],
+      "rendererUrl": "renderer.html?fixtureId=%7B%22path%22%3A%22packages%2Ffloating%2Fsrc%2FTooltip%2Ffixtures%2FMapTooltip.fixture.tsx%22%7D&locked=true"
+    },
+    {
+      "filePath": "packages/floating/src/Tooltip/fixtures/Tooltip.fixture.tsx",
+      "cleanPath": [
+        "packages",
+        "floating",
+        "src",
+        "Tooltip",
+        "fixtures",
+        "Tooltip"
+      ],
+      "rendererUrl": "renderer.html?fixtureId=%7B%22path%22%3A%22packages%2Ffloating%2Fsrc%2FTooltip%2Ffixtures%2FTooltip.fixture.tsx%22%7D&locked=true"
+    },
+    {
+      "filePath": "packages/ui-kit/src/ActionsBar/ActionsBar.fixture.tsx",
+      "cleanPath": [
+        "packages",
+        "ui-kit",
+        "src",
+        "ActionsBar",
+        "ActionsBar"
+      ],
+      "rendererUrl": "renderer.html?fixtureId=%7B%22path%22%3A%22packages%2Fui-kit%2Fsrc%2FActionsBar%2FActionsBar.fixture.tsx%22%7D&locked=true"
+    },
+    {
+      "filePath": "packages/ui-kit/src/Animation/Animation.fixture.tsx",
+      "cleanPath": [
+        "packages",
+        "ui-kit",
+        "src",
+        "Animation",
+        "Animation"
+      ],
+      "rendererUrl": "renderer.html?fixtureId=%7B%22path%22%3A%22packages%2Fui-kit%2Fsrc%2FAnimation%2FAnimation.fixture.tsx%22%7D&locked=true"
+    },
+    {
+      "filePath": "packages/ui-kit/src/AppHeader/AppHeader.fixture.tsx",
+      "cleanPath": [
+        "packages",
+        "ui-kit",
+        "src",
+        "AppHeader",
+        "AppHeader"
+      ],
+      "rendererUrl": "renderer.html?fixtureId=%7B%22path%22%3A%22packages%2Fui-kit%2Fsrc%2FAppHeader%2FAppHeader.fixture.tsx%22%7D&locked=true"
+    },
+    {
+      "filePath": "packages/ui-kit/src/Autocomplete/fixtures/Autocomplete.fixture.tsx",
+      "cleanPath": [
+        "packages",
+        "ui-kit",
+        "src",
+        "Autocomplete",
+        "fixtures",
+        "Autocomplete"
+      ],
+      "rendererUrl": "renderer.html?fixtureId=%7B%22path%22%3A%22packages%2Fui-kit%2Fsrc%2FAutocomplete%2Ffixtures%2FAutocomplete.fixture.tsx%22%7D&locked=true"
+    },
+    {
+      "filePath": "packages/ui-kit/src/Button/Button.fixture.tsx",
+      "cleanPath": [
+        "packages",
+        "ui-kit",
+        "src",
+        "Button",
+        "Button"
+      ],
+      "rendererUrl": "renderer.html?fixtureId=%7B%22path%22%3A%22packages%2Fui-kit%2Fsrc%2FButton%2FButton.fixture.tsx%22%7D&locked=true"
+    },
+    {
+      "filePath": "packages/ui-kit/src/ButtonGroup/ButtonGroup.fixture.tsx",
+      "cleanPath": [
+        "packages",
+        "ui-kit",
+        "src",
+        "ButtonGroup",
+        "ButtonGroup"
+      ],
+      "rendererUrl": "renderer.html?fixtureId=%7B%22path%22%3A%22packages%2Fui-kit%2Fsrc%2FButtonGroup%2FButtonGroup.fixture.tsx%22%7D&locked=true"
+    },
+    {
+      "filePath": "packages/ui-kit/src/Card/Card.fixture.tsx",
+      "cleanPath": [
+        "packages",
+        "ui-kit",
+        "src",
+        "Card",
+        "Card"
+      ],
+      "rendererUrl": "renderer.html?fixtureId=%7B%22path%22%3A%22packages%2Fui-kit%2Fsrc%2FCard%2FCard.fixture.tsx%22%7D&locked=true"
+    },
+    {
+      "filePath": "packages/ui-kit/src/Checkbox/Checkbox.fixture.tsx",
+      "cleanPath": [
+        "packages",
+        "ui-kit",
+        "src",
+        "Checkbox",
+        "Checkbox"
+      ],
+      "rendererUrl": "renderer.html?fixtureId=%7B%22path%22%3A%22packages%2Fui-kit%2Fsrc%2FCheckbox%2FCheckbox.fixture.tsx%22%7D&locked=true"
+    },
+    {
+      "filePath": "packages/ui-kit/src/Details/Details.fixture.jsx",
+      "cleanPath": [
+        "packages",
+        "ui-kit",
+        "src",
+        "Details",
+        "Details"
+      ],
+      "rendererUrl": "renderer.html?fixtureId=%7B%22path%22%3A%22packages%2Fui-kit%2Fsrc%2FDetails%2FDetails.fixture.jsx%22%7D&locked=true"
+    },
+    {
+      "filePath": "packages/ui-kit/src/Divider/Divider.fixture.tsx",
+      "cleanPath": [
+        "packages",
+        "ui-kit",
+        "src",
+        "Divider",
+        "Divider"
+      ],
+      "rendererUrl": "renderer.html?fixtureId=%7B%22path%22%3A%22packages%2Fui-kit%2Fsrc%2FDivider%2FDivider.fixture.tsx%22%7D&locked=true"
+    },
+    {
+      "filePath": "packages/ui-kit/src/DropDown_old/Dropdown.fixture.tsx",
+      "cleanPath": [
+        "packages",
+        "ui-kit",
+        "src",
+        "DropDown_old",
+        "Dropdown"
+      ],
+      "rendererUrl": "renderer.html?fixtureId=%7B%22path%22%3A%22packages%2Fui-kit%2Fsrc%2FDropDown_old%2FDropdown.fixture.tsx%22%7D&locked=true"
+    },
+    {
+      "filePath": "packages/ui-kit/src/Heading/Heading.fixture.tsx",
+      "cleanPath": [
+        "packages",
+        "ui-kit",
+        "src",
+        "Heading",
+        "Heading"
+      ],
+      "rendererUrl": "renderer.html?fixtureId=%7B%22path%22%3A%22packages%2Fui-kit%2Fsrc%2FHeading%2FHeading.fixture.tsx%22%7D&locked=true"
+    },
+    {
+      "filePath": "packages/ui-kit/src/Input/Input.fixture.tsx",
+      "cleanPath": [
+        "packages",
+        "ui-kit",
+        "src",
+        "Input",
+        "Input"
+      ],
+      "rendererUrl": "renderer.html?fixtureId=%7B%22path%22%3A%22packages%2Fui-kit%2Fsrc%2FInput%2FInput.fixture.tsx%22%7D&locked=true"
+    },
+    {
+      "filePath": "packages/ui-kit/src/Legend/Legend.fixture.tsx",
+      "cleanPath": [
+        "packages",
+        "ui-kit",
+        "src",
+        "Legend",
+        "Legend"
+      ],
+      "rendererUrl": "renderer.html?fixtureId=%7B%22path%22%3A%22packages%2Fui-kit%2Fsrc%2FLegend%2FLegend.fixture.tsx%22%7D&locked=true"
+    },
+    {
+      "filePath": "packages/ui-kit/src/LineItem/LineItem.fixture.tsx",
+      "cleanPath": [
+        "packages",
+        "ui-kit",
+        "src",
+        "LineItem",
+        "LineItem"
+      ],
+      "rendererUrl": "renderer.html?fixtureId=%7B%22path%22%3A%22packages%2Fui-kit%2Fsrc%2FLineItem%2FLineItem.fixture.tsx%22%7D&locked=true"
+    },
+    {
+      "filePath": "packages/ui-kit/src/Logo/Logo.fixture.tsx",
+      "cleanPath": [
+        "packages",
+        "ui-kit",
+        "src",
+        "Logo",
+        "Logo"
+      ],
+      "rendererUrl": "renderer.html?fixtureId=%7B%22path%22%3A%22packages%2Fui-kit%2Fsrc%2FLogo%2FLogo.fixture.tsx%22%7D&locked=true"
+    },
+    {
+      "filePath": "packages/ui-kit/src/MCDALegend/MCDALegend.fixture.tsx",
+      "cleanPath": [
+        "packages",
+        "ui-kit",
+        "src",
+        "MCDALegend",
+        "MCDALegend"
+      ],
+      "rendererUrl": "renderer.html?fixtureId=%7B%22path%22%3A%22packages%2Fui-kit%2Fsrc%2FMCDALegend%2FMCDALegend.fixture.tsx%22%7D&locked=true"
+    },
+    {
+      "filePath": "packages/ui-kit/src/MenuButton/fixtures/MenuButton.fixture.tsx",
+      "cleanPath": [
+        "packages",
+        "ui-kit",
+        "src",
+        "MenuButton",
+        "fixtures",
+        "MenuButton"
+      ],
+      "rendererUrl": "renderer.html?fixtureId=%7B%22path%22%3A%22packages%2Fui-kit%2Fsrc%2FMenuButton%2Ffixtures%2FMenuButton.fixture.tsx%22%7D&locked=true"
+    },
+    {
+      "filePath": "packages/ui-kit/src/Modal/Modal.fixture.tsx",
+      "cleanPath": [
+        "packages",
+        "ui-kit",
+        "src",
+        "Modal",
+        "Modal"
+      ],
+      "rendererUrl": "renderer.html?fixtureId=%7B%22path%22%3A%22packages%2Fui-kit%2Fsrc%2FModal%2FModal.fixture.tsx%22%7D&locked=true"
+    },
+    {
+      "filePath": "packages/ui-kit/src/ModalDialog/ModalDialog.fixture.tsx",
+      "cleanPath": [
+        "packages",
+        "ui-kit",
+        "src",
+        "ModalDialog",
+        "ModalDialog"
+      ],
+      "rendererUrl": "renderer.html?fixtureId=%7B%22path%22%3A%22packages%2Fui-kit%2Fsrc%2FModalDialog%2FModalDialog.fixture.tsx%22%7D&locked=true"
+    },
+    {
+      "filePath": "packages/ui-kit/src/Panel/Panel.fixture.tsx",
+      "cleanPath": [
+        "packages",
+        "ui-kit",
+        "src",
+        "Panel",
+        "Panel"
+      ],
+      "rendererUrl": "renderer.html?fixtureId=%7B%22path%22%3A%22packages%2Fui-kit%2Fsrc%2FPanel%2FPanel.fixture.tsx%22%7D&locked=true"
+    },
+    {
+      "filePath": "packages/ui-kit/src/Panel/PanelPlayground.fixture.tsx",
+      "cleanPath": [
+        "packages",
+        "ui-kit",
+        "src",
+        "Panel",
+        "PanelPlayground"
+      ],
+      "rendererUrl": "renderer.html?fixtureId=%7B%22path%22%3A%22packages%2Fui-kit%2Fsrc%2FPanel%2FPanelPlayground.fixture.tsx%22%7D&locked=true"
+    },
+    {
+      "filePath": "packages/ui-kit/src/Radio/Radio.fixture.tsx",
+      "cleanPath": [
+        "packages",
+        "ui-kit",
+        "src",
+        "Radio",
+        "Radio"
+      ],
+      "rendererUrl": "renderer.html?fixtureId=%7B%22path%22%3A%22packages%2Fui-kit%2Fsrc%2FRadio%2FRadio.fixture.tsx%22%7D&locked=true"
+    },
+    {
+      "filePath": "packages/ui-kit/src/Select/fixtures/MultiselectWithSearch.fixture.tsx",
+      "cleanPath": [
+        "packages",
+        "ui-kit",
+        "src",
+        "Select",
+        "fixtures",
+        "MultiselectWithSearch"
+      ],
+      "rendererUrl": "renderer.html?fixtureId=%7B%22path%22%3A%22packages%2Fui-kit%2Fsrc%2FSelect%2Ffixtures%2FMultiselectWithSearch.fixture.tsx%22%7D&locked=true"
+    },
+    {
+      "filePath": "packages/ui-kit/src/Select/fixtures/Select.fixture.tsx",
+      "cleanPath": [
+        "packages",
+        "ui-kit",
+        "src",
+        "Select",
+        "fixtures",
+        "Select"
+      ],
+      "rendererUrl": "renderer.html?fixtureId=%7B%22path%22%3A%22packages%2Fui-kit%2Fsrc%2FSelect%2Ffixtures%2FSelect.fixture.tsx%22%7D&locked=true"
+    },
+    {
+      "filePath": "packages/ui-kit/src/Selector/Selector.fixture.tsx",
+      "cleanPath": [
+        "packages",
+        "ui-kit",
+        "src",
+        "Selector",
+        "Selector"
+      ],
+      "rendererUrl": "renderer.html?fixtureId=%7B%22path%22%3A%22packages%2Fui-kit%2Fsrc%2FSelector%2FSelector.fixture.tsx%22%7D&locked=true"
+    },
+    {
+      "filePath": "packages/ui-kit/src/Tabs/fixtures/Tabs.fixture.tsx",
+      "cleanPath": [
+        "packages",
+        "ui-kit",
+        "src",
+        "Tabs",
+        "fixtures",
+        "Tabs"
+      ],
+      "rendererUrl": "renderer.html?fixtureId=%7B%22path%22%3A%22packages%2Fui-kit%2Fsrc%2FTabs%2Ffixtures%2FTabs.fixture.tsx%22%7D&locked=true"
+    },
+    {
+      "filePath": "packages/ui-kit/src/Text/Text.fixture.tsx",
+      "cleanPath": [
+        "packages",
+        "ui-kit",
+        "src",
+        "Text",
+        "Text"
+      ],
+      "rendererUrl": "renderer.html?fixtureId=%7B%22path%22%3A%22packages%2Fui-kit%2Fsrc%2FText%2FText.fixture.tsx%22%7D&locked=true"
+    },
+    {
+      "filePath": "packages/ui-kit/src/Textarea/Textarea.fixture.tsx",
+      "cleanPath": [
+        "packages",
+        "ui-kit",
+        "src",
+        "Textarea",
+        "Textarea"
+      ],
+      "rendererUrl": "renderer.html?fixtureId=%7B%22path%22%3A%22packages%2Fui-kit%2Fsrc%2FTextarea%2FTextarea.fixture.tsx%22%7D&locked=true"
+    },
+    {
+      "filePath": "packages/ui-kit/src/TimeSlider/TimeSlider.fixture.tsx",
+      "cleanPath": [
+        "packages",
+        "ui-kit",
+        "src",
+        "TimeSlider",
+        "TimeSlider"
+      ],
+      "rendererUrl": "renderer.html?fixtureId=%7B%22path%22%3A%22packages%2Fui-kit%2Fsrc%2FTimeSlider%2FTimeSlider.fixture.tsx%22%7D&locked=true"
+    },
+    {
+      "filePath": "packages/ui-kit/src/Timeline/fixture/ChangeMargins.fixture.tsx",
+      "cleanPath": [
+        "packages",
+        "ui-kit",
+        "src",
+        "Timeline",
+        "fixture",
+        "ChangeMargins"
+      ],
+      "rendererUrl": "renderer.html?fixtureId=%7B%22path%22%3A%22packages%2Fui-kit%2Fsrc%2FTimeline%2Ffixture%2FChangeMargins.fixture.tsx%22%7D&locked=true"
+    },
+    {
+      "filePath": "packages/ui-kit/src/Timeline/fixture/CustomTemplate.fixture.tsx",
+      "cleanPath": [
+        "packages",
+        "ui-kit",
+        "src",
+        "Timeline",
+        "fixture",
+        "CustomTemplate"
+      ],
+      "rendererUrl": "renderer.html?fixtureId=%7B%22path%22%3A%22packages%2Fui-kit%2Fsrc%2FTimeline%2Ffixture%2FCustomTemplate.fixture.tsx%22%7D&locked=true"
+    },
+    {
+      "filePath": "packages/ui-kit/src/Timeline/fixture/EntryTooltip.fixture.tsx",
+      "cleanPath": [
+        "packages",
+        "ui-kit",
+        "src",
+        "Timeline",
+        "fixture",
+        "EntryTooltip"
+      ],
+      "rendererUrl": "renderer.html?fixtureId=%7B%22path%22%3A%22packages%2Fui-kit%2Fsrc%2FTimeline%2Ffixture%2FEntryTooltip.fixture.tsx%22%7D&locked=true"
+    },
+    {
+      "filePath": "packages/ui-kit/src/Timeline/fixture/ImperativeApi.fixture.tsx",
+      "cleanPath": [
+        "packages",
+        "ui-kit",
+        "src",
+        "Timeline",
+        "fixture",
+        "ImperativeApi"
+      ],
+      "rendererUrl": "renderer.html?fixtureId=%7B%22path%22%3A%22packages%2Fui-kit%2Fsrc%2FTimeline%2Ffixture%2FImperativeApi.fixture.tsx%22%7D&locked=true"
+    },
+    {
+      "filePath": "packages/ui-kit/src/Timeline/fixture/TimeLineWithDropDown.fixture.tsx",
+      "cleanPath": [
+        "packages",
+        "ui-kit",
+        "src",
+        "Timeline",
+        "fixture",
+        "TimeLineWithDropDown"
+      ],
+      "rendererUrl": "renderer.html?fixtureId=%7B%22path%22%3A%22packages%2Fui-kit%2Fsrc%2FTimeline%2Ffixture%2FTimeLineWithDropDown.fixture.tsx%22%7D&locked=true"
+    },
+    {
+      "filePath": "packages/ui-kit/src/Timeline/fixture/Timeline.fixture.tsx",
+      "cleanPath": [
+        "packages",
+        "ui-kit",
+        "src",
+        "Timeline",
+        "fixture",
+        "Timeline"
+      ],
+      "rendererUrl": "renderer.html?fixtureId=%7B%22path%22%3A%22packages%2Fui-kit%2Fsrc%2FTimeline%2Ffixture%2FTimeline.fixture.tsx%22%7D&locked=true"
+    },
+    {
+      "filePath": "packages/ui-kit/src/Toggler/Toggler.fixture.tsx",
+      "cleanPath": [
+        "packages",
+        "ui-kit",
+        "src",
+        "Toggler",
+        "Toggler"
+      ],
+      "rendererUrl": "renderer.html?fixtureId=%7B%22path%22%3A%22packages%2Fui-kit%2Fsrc%2FToggler%2FToggler.fixture.tsx%22%7D&locked=true"
+    },
+    {
+      "filePath": "packages/ui-kit/src/Tooltip/Tooltip.fixture.tsx",
+      "cleanPath": [
+        "packages",
+        "ui-kit",
+        "src",
+        "Tooltip",
+        "Tooltip"
+      ],
+      "rendererUrl": "renderer.html?fixtureId=%7B%22path%22%3A%22packages%2Fui-kit%2Fsrc%2FTooltip%2FTooltip.fixture.tsx%22%7D&locked=true"
+    }
+  ]
+}

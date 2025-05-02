@@ -4,7 +4,7 @@
   font-weight: normal;
   background: var(--back-faint-weak-down);
   color: var(--base-weak);
-  pointer-events: none;
+  pointer-events: all;
   max-width: 268px;
   z-index: 9999;
 }

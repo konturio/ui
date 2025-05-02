@@ -30,6 +30,7 @@ type Map = {
     cb: (e: { point: { x: number; y: number }; target: { transform?: { width: number; height: number } } }) => void,
   ) => void;
   project: (pos: { lng: number; lat: number }) => { x: number; y: number };
+  queryRenderedFeatures: (point: { x: number; y: number }, options?: { layers?: string[]; filter?: any[] }) => any[];
 };
 
 function useMap(ref) {
@@ -52,9 +53,9 @@ function useMap(ref) {
         // @ts-expect-error
         const map = new maplibregl.Map({
           container: ref.current,
-          style: 'https://demotiles.maplibre.org/style.json', // stylesheet location
-          center: [-74.5, 40], // starting position [lng, lat]
-          zoom: 9, // starting zoom
+          style: 'https://demotiles.maplibre.org/styles/osm-bright-gl-style/style.json', //'https://demotiles.maplibre.org/style.json'
+          center: [11.4, 47.25], // starting position [lng, lat]
+          zoom: 11, // starting zoom
         });
         setMap(map);
       })
@@ -111,13 +112,34 @@ function MapTooltip() {
     if (!map) return;
     const tracker = new MapPositionTracker(map);
     const createTooltipOnClickPosition = (e) => {
+      // Retrieve map features at clicked point
+      const features = map.queryRenderedFeatures(e.point);
+      const cards = features.reduce((a, c) => {
+        a[c.sourceLayer] = JSON.stringify(c.properties || {})
+          .substring(1, 80)
+          .replaceAll(/\,\"/g, '\n')
+          .replaceAll(/[\"}]/g, '');
+        return a;
+      }, {});
+      const plist = Object.entries(cards).map(([k, v], i) => (
+        <dl key={i}>
+          <dt style={{ backgroundColor: '#999', padding: 2 }}>{k}</dt>
+          <dd style={{ margin: 0, textOverflow: 'ellipsis', whiteSpace: 'pre' }}>{v}</dd>
+        </dl>
+      ));
+      console.log('Clicked features:', { e, features });
       tooltip.close();
       tooltip.show(
         {
           x: e.point.x,
           y: e.point.y,
         },
-        'blabla',
+        <div>
+          <button onClick={(_) => tooltip.close()} style={{ padding: 4 }}>
+            ☒
+          </button>
+          {plist}
+        </div>,
       );
       tracker.trackPointPosition(e.lngLat);
       tracker.positionChanged(({ x, y }) => tooltip.move({ x, y }));

@@ -22,18 +22,28 @@ importers:
       '@types/react-dom':
         specifier: ^18.2.19
         version: 18.3.7(@types/react@18.3.20)
+      clsx:
+        specifier: ^2.1.1
+        version: 2.1.1
+      react:
+        specifier: ^18.2.0
+        version: 18.3.1
+      react-dom:
+        specifier: ^18.2.0
+        version: 18.3.1(react@18.3.1)
+    devDependencies:
       '@typescript-eslint/eslint-plugin':
         specifier: ^8.31.1
         version: 8.31.1(@typescript-eslint/parser@8.31.1(eslint@8.57.1)(typescript@5.8.3))(eslint@8.57.1)(typescript@5.8.3)
       '@typescript-eslint/parser':
         specifier: ^8.31.1
         version: 8.31.1(eslint@8.57.1)(typescript@5.8.3)
+      '@vitejs/plugin-react':
+        specifier: ^4.4.1
+        version: 4.4.1(vite@6.3.4(@types/node@22.15.3)(yaml@2.7.1))
       autoprefixer:
         specifier: ^10.4.21
         version: 10.4.21(postcss@8.5.3)
-      clsx:
-        specifier: ^2.1.1
-        version: 2.1.1
       dependency-cruiser:
         specifier: ^16.10.1
         version: 16.10.1
@@ -58,18 +68,24 @@ importers:
       eslint-plugin-react-hooks:
         specifier: ^5.2.0
         version: 5.2.0(eslint@8.57.1)
-      identity-obj-proxy:
-        specifier: ^3.0.0
-        version: 3.0.0
+      husky:
+        specifier: ^8.0.2
+        version: 8.0.3
       lerna:
         specifier: ^4.0.0
         version: 4.0.0(encoding@0.1.13)
-      moment:
-        specifier: ^2.30.1
-        version: 2.30.1
+      lint-staged:
+        specifier: ^15.5.1
+        version: 15.5.1
+      parse5:
+        specifier: ^7.3.0
+        version: 7.3.0
       postcss:
         specifier: ^8.5.3
         version: 8.5.3
+      postcss-cli:
+        specifier: ^11.0.1
+        version: 11.0.1(postcss@8.5.3)
       postcss-csso:
         specifier: ^6.0.1
         version: 6.0.1(postcss@8.5.3)
@@ -83,14 +99,17 @@ importers:
         specifier: ^13.0.1
         version: 13.0.1(browserslist@4.24.5)(postcss@8.5.3)
       prettier:
-        specifier: ^3.2.5
+        specifier: ^3.5.3
         version: 3.5.3
-      react:
-        specifier: ^18.2.0
-        version: 18.3.1
-      react-dom:
-        specifier: ^18.2.0
-        version: 18.3.1(react@18.3.1)
+      react-cosmos:
+        specifier: 7.0.0-beta.2
+        version: 7.0.0-beta.2
+      react-cosmos-plugin-vite:
+        specifier: 7.0.0-beta.0
+        version: 7.0.0-beta.0(vite@6.3.4(@types/node@22.15.3)(yaml@2.7.1))
+      rimraf:
+        specifier: ^6.0.1
+        version: 6.0.1
       stylelint:
         specifier: ^16.19.1
         version: 16.19.1(typescript@5.8.3)
@@ -103,31 +122,6 @@ importers:
       vite:
         specifier: ^6.3.4
         version: 6.3.4(@types/node@22.15.3)(yaml@2.7.1)
-    devDependencies:
-      '@vitejs/plugin-react':
-        specifier: ^4.4.1
-        version: 4.4.1(vite@6.3.4(@types/node@22.15.3)(yaml@2.7.1))
-      husky:
-        specifier: ^8.0.2
-        version: 8.0.3
-      lint-staged:
-        specifier: ^15.5.1
-        version: 15.5.1
-      parse5:
-        specifier: ^7.3.0
-        version: 7.3.0
-      postcss-cli:
-        specifier: ^11.0.1
-        version: 11.0.1(postcss@8.5.3)
-      react-cosmos:
-        specifier: 7.0.0-beta.2
-        version: 7.0.0-beta.2
-      react-cosmos-plugin-vite:
-        specifier: 7.0.0-beta.0
-        version: 7.0.0-beta.0(vite@6.3.4(@types/node@22.15.3)(yaml@2.7.1))
-      rimraf:
-        specifier: ^6.0.1
-        version: 6.0.1
       vite-tsconfig-paths:
         specifier: ^5.1.4
         version: 5.1.4(typescript@5.8.3)(vite@6.3.4(@types/node@22.15.3)(yaml@2.7.1))
@@ -2718,9 +2712,6 @@ packages:
     resolution: {integrity: sha512-VIZB+ibDhx7ObhAe7OVtoEbuP4h/MuOTHJ+J8h/eBXotJYl0fBgR72xDFCKgIh22OJZIOVNxBMWuhAr10r8HdA==}
     engines: {node: '>=6'}
 
-  harmony-reflect@1.6.2:
-    resolution: {integrity: sha512-HIp/n38R9kQjDEziXyDTuW3vvoxxyxjxFzXLrBr18uB47GnSt+G9D29fqrpM5ZkspMcPICud3XsBJQ4Y2URg8g==}
-
   has-bigints@1.1.0:
     resolution: {integrity: sha512-R3pbpkcIqv2Pm3dUwgjclDRVmWpTJW2DcMzcIhEXEx1oh/CEMObMm3KLmRJOdvhM7o4uQBnwr8pzRK2sJWIqfg==}
     engines: {node: '>= 0.4'}
@@ -2824,10 +2815,6 @@ packages:
   iconv-lite@0.6.3:
     resolution: {integrity: sha512-4fCk79wshMdzMp2rH06qWrJE4iolqLhCUH+OiuIgU++RB0+94NlDL81atO7GX55uUKueo0txHNtvEyI6D7WdMw==}
     engines: {node: '>=0.10.0'}
-
-  identity-obj-proxy@3.0.0:
-    resolution: {integrity: sha512-00n6YnVHKrinT9t0d9+5yZC6UBNJANpYEQvL2LlX6Ab9lnmxzIRcEmTPuyGScvl1+jKuCICX1Z0Ab1pPKKdikA==}
-    engines: {node: '>=4'}
 
   ieee754@1.2.1:
     resolution: {integrity: sha512-dcyqhDvX1C46lXZcVqCpK+FtMRQVdIMN6/Df5js2zouUsqG7I6sFxitIC+7KYK29KdXOLHdu9zL4sFnoVQnqaA==}
@@ -8212,8 +8199,6 @@ snapshots:
 
   hard-rejection@2.1.0: {}
 
-  harmony-reflect@1.6.2: {}
-
   has-bigints@1.1.0: {}
 
   has-flag@3.0.0: {}
@@ -8317,10 +8302,6 @@ snapshots:
     dependencies:
       safer-buffer: 2.1.2
     optional: true
-
-  identity-obj-proxy@3.0.0:
-    dependencies:
-      harmony-reflect: 1.6.2
 
   ieee754@1.2.1: {}
 

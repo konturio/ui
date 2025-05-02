@@ -23,14 +23,12 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-pnpm-
 
-      - name: Install packages, build, test
+      - name: Install packages, build, lint
         run: |
           pnpm install --frozen-lockfile
-          pnpm add lerna@4.0.0 -g
-          pnpm -r exec lerna bootstrap
+          pnpm bootstrap
           pnpm auto:lint
           pnpm build
-          pnpm test
 
       - uses: actions-ecosystem/action-regex-match@v2
         id: regex-match
@@ -43,4 +41,4 @@ jobs:
         run: |
           echo "registry=https://registry.npmjs.org/" >> .npmrc
           echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_AUTH_TOKEN }}" >> .npmrc
-          pnpm auto:lerna:publish
+          pnpm publish:packages

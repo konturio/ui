@@ -9,6 +9,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 9
+      - name: Setup pnpm cache
+        uses: actions/cache@v3
+        with:
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-
       - uses: afc163/surge-preview@v1
         id: preview_step
         with:
@@ -17,8 +27,8 @@ jobs:
           dist: cosmos-export
           teardown: 'true'
           build: |
-            npm ci
-            npm run build
-            npm run cosmos:build:export
+            pnpm install --frozen-lockfile
+            pnpm build
+            pnpm cosmos:build:export
       - name: Get the preview_url
         run: echo "URL => ${{ steps.preview_step.outputs.preview_url }}"

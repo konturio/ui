@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "@floating-ui/react-dom": "^2.1.2",
+    "@konturio/default-icons": "^2.5.0",
     "@konturio/floating": "^1.2.1",
     "downshift": "^8.0.0",
     "nanoid": "^4.0.2",

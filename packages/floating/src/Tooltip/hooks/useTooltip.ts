@@ -9,10 +9,17 @@ import {
   useHover,
   useRole,
   useInteractions,
+  type UseFloatingReturn,
 } from '@floating-ui/react';
 import type { ControlledProps, TooltipSettings } from '../types';
 
 const ARROW_HEIGHT = 8;
+
+export type UseTooltipReturn = {
+  open: boolean;
+  setOpen: (open: boolean) => void;
+} & UseFloatingReturn &
+  ReturnType<typeof useInteractions>;
 
 export function useTooltip(
   {
@@ -23,7 +30,7 @@ export function useTooltip(
     onOpenChange: setControlledOpen,
   }: TooltipSettings & ControlledProps = {},
   arrowRef: React.RefObject<SVGSVGElement>,
-) {
+): UseTooltipReturn {
   const [uncontrolledOpen, setUncontrolledOpen] = React.useState(initialOpen);
 
   const open = controlledOpen ?? uncontrolledOpen;

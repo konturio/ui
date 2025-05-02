@@ -2,7 +2,7 @@
   "useWorkspaces": true,
   "packages": ["packages/*"],
   "version": "independent",
-  "npmClient": "npm",
+  "npmClient": "pnpm",
   "command": {
     "version": {
       "allowBranch": "v5"
@@ -11,7 +11,7 @@
       "conventionalCommits": true
     },
     "bootstrap": {
-      "npmClientArgs": ["--no-package-lock", "--legacy-peer-deps"]
+      "npmClientArgs": ["--no-lockfile"]
     }
   }
 }

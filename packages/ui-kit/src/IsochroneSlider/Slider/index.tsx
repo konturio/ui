@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import cn from 'clsx';
 import s from './style.module.css';
 import { ColorsLegend } from './ColorsLegend';
@@ -13,7 +12,7 @@ const getLastColor = (color) => color[0] && color[0][1];
 
 const STICK_ID = 'stick';
 
-export function Slider({ className, steps, value, onChange }) {
+export function Slider({ className = '', steps, value, onChange }) {
   const allColorsExceptLast = steps.slice(0, -1);
   const lastColor = getLastColor(steps.slice(-1));
 
@@ -34,22 +33,3 @@ export function Slider({ className, steps, value, onChange }) {
     </div>
   );
 }
-
-Stick.propTypes = {
-  className: PropTypes.string,
-};
-
-Slider.propTypes = {
-  className: PropTypes.string,
-  steps: PropTypes.arrayOf(
-    PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired).isRequired,
-  ).isRequired,
-  value: (props, propName, componentName) => {
-    const val = props[propName];
-    if (typeof val !== 'number' || val < 0 || val > 1) {
-      const message = `Invalid prop in <${componentName} />: ${propName} must be number between 0 and 1 (got ${val}))`;
-      throw new Error(message);
-    }
-  },
-  onChange: PropTypes.func,
-};

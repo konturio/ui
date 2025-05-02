@@ -139,6 +139,20 @@ Package-specific test command:
 
 ### 4. Package Versioning & Publishing
 
+#### Workspace Protocol for Internal Dependencies
+
+```json
+// Example package.json dependency section
+"dependencies": {
+  // For internal workspace packages
+  "@konturio/package-a": "workspace:*",
+  "@konturio/package-b": "workspace:*",
+
+  // For external dependencies
+  "react": "^18.2.0"
+}
+```
+
 #### Changesets Configuration
 
 ```json
@@ -161,7 +175,8 @@ Package-specific test command:
   "scripts": {
     "changeset": "changeset",
     "version": "changeset version",
-    "publish": "pnpm build && changeset publish"
+    "ci:publish": "pnpm publish -r",
+    "release": "pnpm build && pnpm changeset version && pnpm install && pnpm ci:publish"
   }
 }
 ```
@@ -171,50 +186,37 @@ Package-specific test command:
 #### GitHub Actions Workflow
 
 ```yaml
-name: CI
+name: Changesets
 
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - main
+
+env:
+  CI: true
 
 jobs:
-  build:
+  version:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
         with:
-          fetch-depth: 0
-      - uses: pnpm/action-setup@v2
+          version: 10
+      - uses: actions/setup-node@v4
         with:
-          version: 7
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16
+          node-version: 20
           cache: 'pnpm'
-      - run: pnpm install --frozen-lockfile
-      - run: pnpm run build
-      - run: pnpm run test
-
-  release:
-    if: github.ref == 'refs/heads/main' && !contains(github.event.head_commit.message, 'ci skip')
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-      - uses: pnpm/action-setup@v2
-        with:
-          version: 7
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16
-          cache: 'pnpm'
-          registry-url: 'https://registry.npmjs.org'
-      - run: pnpm install --frozen-lockfile
-      - name: Create Release Pull Request or Publish
-        id: changesets
+      - run: pnpm install
+      - run: pnpm build
+      - run: pnpm test
+      - name: Create and publish versions
         uses: changesets/action@v1
         with:
-          publish: pnpm run publish
+          commit: 'chore: update versions'
+          title: 'chore: update versions'
+          publish: pnpm ci:publish
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
@@ -244,6 +246,17 @@ jobs:
 4. **Verification**:
    - Run full build/test cycle
    - Simulate version bump and publish workflow
+
+## Migration Considerations
+
+### Transitioning from Lerna
+
+When migrating from Lerna to pnpm workspaces:
+
+1. **Sequence matters**: Complete the full migration to pnpm workspaces before introducing workspace-specific features like `workspace:*` protocol
+2. **Dependency conversion**: After migration, update all internal package references to use the workspace protocol
+3. **Backwards compatibility**: During transition, maintain standard versioning (e.g., `^2.5.0`) until Lerna is completely removed
+4. **Script alignment**: Ensure all package scripts follow pnpm conventions rather than Lerna commands
 
 ## Benefits
 

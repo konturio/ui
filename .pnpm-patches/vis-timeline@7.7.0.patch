@@ -1,7 +1,7 @@
-diff --git a/node_modules/vis-timeline/peer/esm/vis-timeline-graph2d.js b/node_modules/vis-timeline/peer/esm/vis-timeline-graph2d.js
+diff --git a/peer/esm/vis-timeline-graph2d.js b/peer/esm/vis-timeline-graph2d.js
 index 35bbc84..7259908 100644
---- a/node_modules/vis-timeline/peer/esm/vis-timeline-graph2d.js
-+++ b/node_modules/vis-timeline/peer/esm/vis-timeline-graph2d.js
+--- a/peer/esm/vis-timeline-graph2d.js
++++ b/peer/esm/vis-timeline-graph2d.js
 @@ -27768,7 +27768,7 @@ var ClusterGenerator = /*#__PURE__*/function () {
          toTime: this.itemSet.body.util.toTime
        };

@@ -1,4 +1,4 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["./_virtual_cosmos-imports-BrhWm7sP.js","./_virtual_cosmos-imports-CG71NKPs.css"])))=>i.map(i=>d[i]);
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["./_virtual_cosmos-imports-CBPjzGQd.js","./_virtual_cosmos-imports-CG71NKPs.css"])))=>i.map(i=>d[i]);
 function _mergeNamespaces(n, m) {
   for (var i = 0; i < m.length; i++) {
     const e = m[i];
@@ -5412,7 +5412,7 @@ function mountDomRenderer({ rendererConfig, moduleWrappers }) {
 
 mount();
 async function mount() {
-  const args = await __vitePreload(() => import('./_virtual_cosmos-imports-BrhWm7sP.js'),true?__vite__mapDeps([0,1]):void 0,import.meta.url);
+  const args = await __vitePreload(() => import('./_virtual_cosmos-imports-CBPjzGQd.js'),true?__vite__mapDeps([0,1]):void 0,import.meta.url);
   mountDomRenderer(args);
 }
 

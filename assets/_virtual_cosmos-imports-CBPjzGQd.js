@@ -1,4 +1,4 @@
-import { u as useFixtureState, e as extendWithValue, R as React, c as createValue, i as isEqual, r as reactExports, a as reactDomExports, g as getDefaultExportFromCjs$2, b as React$1 } from './index-CD8_B4aV.js';
+import { u as useFixtureState, e as extendWithValue, R as React, c as createValue, i as isEqual, r as reactExports, a as reactDomExports, g as getDefaultExportFromCjs$2, b as React$1 } from './index-UmDJPnAO.js';
 
 function useCurrentInputValue(inputName, defaultValue) {
     const [fixtureState] = useFixtureState('inputs');
@@ -10698,23 +10698,6 @@ const fixture13 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty(
     default: MCDALegend_fixture
 }, Symbol.toStringTag, { value: 'Module' }));
 
-const LineItem_fixture = {
-  LineItem: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { whiteSpace: "pre-line" }, children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: `This item common for checkbox and radio inputs components.
-      Also useful for static lists` }),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { display: "flex", flexFlow: "column nowrap" }, children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx(LineItem, { label: "withoutId" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(LineItem, { id: "withId", label: "withId" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(LineItem, { label: "<- withChildren", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { paddingRight: "4px" }, children: "(Some icon)" }) })
-    ] })
-  ] })
-};
-
-const fixture14 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
-    __proto__: null,
-    default: LineItem_fixture
-}, Symbol.toStringTag, { value: 'Module' }));
-
 const colors = {
   colorful: "url(#paint0_linear)",
   dark: "black",
@@ -10912,9 +10895,26 @@ const Logo_fixture = {
   ] })
 };
 
-const fixture15 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+const fixture14 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
     __proto__: null,
     default: Logo_fixture
+}, Symbol.toStringTag, { value: 'Module' }));
+
+const LineItem_fixture = {
+  LineItem: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { whiteSpace: "pre-line" }, children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: `This item common for checkbox and radio inputs components.
+      Also useful for static lists` }),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { display: "flex", flexFlow: "column nowrap" }, children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(LineItem, { label: "withoutId" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(LineItem, { id: "withId", label: "withId" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(LineItem, { label: "<- withChildren", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { paddingRight: "4px" }, children: "(Some icon)" }) })
+    ] })
+  ] })
+};
+
+const fixture15 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+    __proto__: null,
+    default: LineItem_fixture
 }, Symbol.toStringTag, { value: 'Module' }));
 
 const legendTitle = "_legendTitle_sgaz8_1";
@@ -83498,8 +83498,8 @@ const fixtures = {
   'packages/ui-kit/src/ModalDialog/ModalDialog.fixture.tsx': { module: fixture11 },
   'packages/ui-kit/src/Modal/Modal.fixture.tsx': { module: fixture12 },
   'packages/ui-kit/src/MCDALegend/MCDALegend.fixture.tsx': { module: fixture13 },
-  'packages/ui-kit/src/LineItem/LineItem.fixture.tsx': { module: fixture14 },
-  'packages/ui-kit/src/Logo/Logo.fixture.tsx': { module: fixture15 },
+  'packages/ui-kit/src/Logo/Logo.fixture.tsx': { module: fixture14 },
+  'packages/ui-kit/src/LineItem/LineItem.fixture.tsx': { module: fixture15 },
   'packages/ui-kit/src/Legend/Legend.fixture.tsx': { module: fixture16 },
   'packages/ui-kit/src/Input/Input.fixture.tsx': { module: fixture17 },
   'packages/ui-kit/src/Heading/Heading.fixture.tsx': { module: fixture18 },

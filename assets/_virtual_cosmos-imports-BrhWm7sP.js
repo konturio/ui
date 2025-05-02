@@ -1,4 +1,4 @@
-import { u as useFixtureState, e as extendWithValue, R as React, c as createValue, i as isEqual, r as reactExports, a as reactDomExports, g as getDefaultExportFromCjs$2, b as React$1 } from './index-Dheb33Lp.js';
+import { u as useFixtureState, e as extendWithValue, R as React, c as createValue, i as isEqual, r as reactExports, a as reactDomExports, g as getDefaultExportFromCjs$2, b as React$1 } from './index-CD8_B4aV.js';
 
 function useCurrentInputValue(inputName, defaultValue) {
     const [fixtureState] = useFixtureState('inputs');
@@ -7321,7 +7321,7 @@ function LineItem({
 }
 
 const radio$1 = "_radio_11tfx_1";
-const style$n = {
+const style$m = {
 	radio: radio$1};
 
 const Radio = reactExports.forwardRef(
@@ -7348,7 +7348,7 @@ const Radio = reactExports.forwardRef(
             id,
             name,
             type: "radio",
-            className: clsx(style$n.radio, classes?.input),
+            className: clsx(style$m.radio, classes?.input),
             onChange: onRadioChange,
             disabled,
             ref,
@@ -7361,7 +7361,7 @@ const Radio = reactExports.forwardRef(
 );
 Radio.displayName = "Radio";
 
-const css$3 = (s) => s.raw[0];
+const css$2 = (s) => s.raw[0];
 const Radio_fixture = {
   Checkbox: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { display: "flex", flexFlow: "column nowrap" }, children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(Radio, { id: "unchecked", label: "Unchecked", checked: false, readOnly: true }),
@@ -7384,7 +7384,7 @@ const Radio_fixture = {
     ] });
   },
   PlacementInRow: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { display: "flex", flexFlow: "column nowrap", width: "300px" }, children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx("style", { children: css$3`
+    /* @__PURE__ */ jsxRuntimeExports.jsx("style", { children: css$2`
           .black-back {
             background-color: rgba(0, 0, 0, 0.2);
           }
@@ -9600,7 +9600,7 @@ const error$2 = "_error_5n8eo_125";
 const placeholder$2 = "_placeholder_5n8eo_72";
 const alwaysShowPlaceholder = "_alwaysShowPlaceholder_5n8eo_150";
 const hasValue = "_hasValue_5n8eo_150";
-const style$m = {
+const style$l = {
 	root: root$4,
 	inline: inline$2,
 	label: label$3,
@@ -9624,7 +9624,7 @@ const searchBox = "_searchBox_1pejp_6";
 const searchInput = "_searchInput_1pejp_12";
 const menu$2 = "_menu_1pejp_24";
 const open$1 = "_open_1pejp_41";
-const style$l = {
+const style$k = {
 	select: select,
 	searchBox: searchBox,
 	searchInput: searchInput,
@@ -9636,7 +9636,7 @@ const root$3 = "_root_3ncq5_1";
 const textContainer = "_textContainer_3ncq5_14";
 const btnContainer$1 = "_btnContainer_3ncq5_20";
 const resetBtn = "_resetBtn_3ncq5_25";
-const style$k = {
+const style$j = {
 	root: root$3,
 	textContainer: textContainer,
 	btnContainer: btnContainer$1,
@@ -9656,9 +9656,9 @@ function MultiselectChip({
     },
     [value, onBtnClick]
   );
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: clsx("multiselectChip", style$k.root, className), children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: clsx("textContainer", style$k.textContainer), children }),
-    onBtnClick && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: clsx("btnContainer", style$k.btnContainer), children: /* @__PURE__ */ jsxRuntimeExports.jsx(Memo$d, { className: style$k.resetBtn, onClick }) })
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: clsx("multiselectChip", style$j.root, className), children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: clsx("textContainer", style$j.textContainer), children }),
+    onBtnClick && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: clsx("btnContainer", style$j.btnContainer), children: /* @__PURE__ */ jsxRuntimeExports.jsx(Memo$d, { className: style$j.resetBtn, onClick }) })
   ] });
 }
 
@@ -9705,7 +9705,7 @@ function SelectContent({
       }
       return /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children: children.map((itm, index) => /* @__PURE__ */ jsxRuntimeExports.jsx(MultiselectChip, { value: itm, onBtnClick: onRemove, children: itm.title.trim() }, `${itm.value}_${index}`)) });
     case SELECTION_NODES.MULTI_AGGREGATED_STRING:
-      return /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: style$m.textContent, children: String(children) });
+      return /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: style$l.textContent, children: String(children) });
     case SELECTION_NODES.SINGLE:
       if (Array.isArray(children)) {
         console.error(`Wrong children type in <MultiselectContent />. ReactNode expected`);
@@ -9713,7 +9713,7 @@ function SelectContent({
       }
       return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
         alwaysShowPlaceholder && placeholder,
-        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: style$m.textContent, children })
+        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: style$l.textContent, children })
       ] });
   }
 }
@@ -9726,7 +9726,7 @@ const hasDivider$1 = "_hasDivider_10k63_23";
 const titleContainer$1 = "_titleContainer_10k63_27";
 const entryIconContainer$1 = "_entryIconContainer_10k63_33";
 const selectedIconContainer$1 = "_selectedIconContainer_10k63_40";
-const style$j = {
+const style$i = {
 	selectItem: selectItem,
 	disabled: disabled$6,
 	highlighted: highlighted$1,
@@ -9741,20 +9741,20 @@ const SelectItem = reactExports.forwardRef(
   ({ className, highlighted, selected, item, title, itemProps, showSelectedIcon = true, showEntryIcon = false }, ref) => {
     const dynamicClasses = clsx(
       {
-        [style$j.selectItem]: true,
-        [style$j.highlighted]: !item.disabled && highlighted,
-        [style$j.selected]: !item.disabled && selected,
-        [style$j.disabled]: item.disabled,
-        [style$j.hasDivider]: item.hasDivider
+        [style$i.selectItem]: true,
+        [style$i.highlighted]: !item.disabled && highlighted,
+        [style$i.selected]: !item.disabled && selected,
+        [style$i.disabled]: item.disabled,
+        [style$i.hasDivider]: item.hasDivider
       },
       className
     );
     return /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { className: dynamicClasses, ref, ...!item.disabled ? itemProps : {}, children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: style$j.titleContainer, children: [
-        showEntryIcon && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: style$j.entryIconContainer, children: /* @__PURE__ */ jsxRuntimeExports.jsx(Memo$f, {}) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: style$i.titleContainer, children: [
+        showEntryIcon && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: style$i.entryIconContainer, children: /* @__PURE__ */ jsxRuntimeExports.jsx(Memo$f, {}) }),
         title || item.title
       ] }),
-      showSelectedIcon && !item.disabled && selected ? /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: style$j.selectedIconContainer, children: /* @__PURE__ */ jsxRuntimeExports.jsx(Memo$5, {}) }) : null
+      showSelectedIcon && !item.disabled && selected ? /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: style$i.selectedIconContainer, children: /* @__PURE__ */ jsxRuntimeExports.jsx(Memo$5, {}) }) : null
     ] });
   }
 );
@@ -9870,23 +9870,23 @@ function MultiselectChipWithSearch({
     "div",
     {
       className: clsx(className, {
-        [style$l.select]: true,
-        [style$l.open]: isOpen
+        [style$k.select]: true,
+        [style$k.open]: isOpen
       }),
       children: [
         /* @__PURE__ */ jsxRuntimeExports.jsxs(
           "div",
           {
             className: clsx("selectButton", className, {
-              [style$m.root]: true,
-              [style$m.disabled]: disabled,
-              [style$m.error]: error,
-              [style$m.inline]: type === "inline"
+              [style$l.root]: true,
+              [style$l.disabled]: disabled,
+              [style$l.error]: error,
+              [style$l.inline]: type === "inline"
             }),
             children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(Text, { type: "label", children: /* @__PURE__ */ jsxRuntimeExports.jsx("label", { className: style$m.label, ...getLabelProps(), children: label }) }),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: clsx("selectBox", style$m.selectBox, style$m.inheritFocus), children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: clsx(style$m.placeholderWrap), children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Text, { type: "label", children: /* @__PURE__ */ jsxRuntimeExports.jsx("label", { className: style$l.label, ...getLabelProps(), children: label }) }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: clsx("selectBox", style$l.selectBox, style$l.inheritFocus), children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: clsx(style$l.placeholderWrap), children: [
                   /* @__PURE__ */ jsxRuntimeExports.jsx(
                     SelectContent,
                     {
@@ -9897,25 +9897,25 @@ function MultiselectChipWithSearch({
                       children: selectedItems
                     }
                   ),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: style$l.searchBox, children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: style$k.searchBox, children: /* @__PURE__ */ jsxRuntimeExports.jsx(
                     "input",
                     {
                       placeholder,
                       ...getInputProps(getDropdownProps({ preventKeyAction: isOpen })),
-                      className: style$l.searchInput
+                      className: style$k.searchInput
                     }
                   ) })
                 ] }),
-                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: style$m.buttonsContainer, children: [
-                  withResetButton && selectedItems.length ? /* @__PURE__ */ jsxRuntimeExports.jsx("button", { onClick: reset, children: /* @__PURE__ */ jsxRuntimeExports.jsx(Memo$d, { className: style$m.resetIcon }) }) : null,
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: style$m.delimiter }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: style$l.buttonsContainer, children: [
+                  withResetButton && selectedItems.length ? /* @__PURE__ */ jsxRuntimeExports.jsx("button", { onClick: reset, children: /* @__PURE__ */ jsxRuntimeExports.jsx(Memo$d, { className: style$l.resetIcon }) }) : null,
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: style$l.delimiter }),
                   /* @__PURE__ */ jsxRuntimeExports.jsx("button", { ...getToggleButtonProps(), children: isOpen ? /* @__PURE__ */ jsxRuntimeExports.jsx(Memo$9, {}) : /* @__PURE__ */ jsxRuntimeExports.jsx(Memo$b, {}) })
                 ] })
               ] })
             ]
           }
         ),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("ul", { ...getMenuProps(), className: clsx({ [style$l.menu]: true }), children: isOpen && (resultItems.length ? resultItems.map((item, index) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+        /* @__PURE__ */ jsxRuntimeExports.jsx("ul", { ...getMenuProps(), className: clsx({ [style$k.menu]: true }), children: isOpen && (resultItems.length ? resultItems.map((item, index) => /* @__PURE__ */ jsxRuntimeExports.jsx(
           SelectItem,
           {
             item,
@@ -10698,6 +10698,23 @@ const fixture13 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty(
     default: MCDALegend_fixture
 }, Symbol.toStringTag, { value: 'Module' }));
 
+const LineItem_fixture = {
+  LineItem: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { whiteSpace: "pre-line" }, children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: `This item common for checkbox and radio inputs components.
+      Also useful for static lists` }),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { display: "flex", flexFlow: "column nowrap" }, children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(LineItem, { label: "withoutId" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(LineItem, { id: "withId", label: "withId" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(LineItem, { label: "<- withChildren", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { paddingRight: "4px" }, children: "(Some icon)" }) })
+    ] })
+  ] })
+};
+
+const fixture14 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+    __proto__: null,
+    default: LineItem_fixture
+}, Symbol.toStringTag, { value: 'Module' }));
+
 const colors = {
   colorful: "url(#paint0_linear)",
   dark: "black",
@@ -10895,26 +10912,9 @@ const Logo_fixture = {
   ] })
 };
 
-const fixture14 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
-    __proto__: null,
-    default: Logo_fixture
-}, Symbol.toStringTag, { value: 'Module' }));
-
-const LineItem_fixture = {
-  LineItem: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { whiteSpace: "pre-line" }, children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: `This item common for checkbox and radio inputs components.
-      Also useful for static lists` }),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { display: "flex", flexFlow: "column nowrap" }, children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx(LineItem, { label: "withoutId" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(LineItem, { id: "withId", label: "withId" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(LineItem, { label: "<- withChildren", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { paddingRight: "4px" }, children: "(Some icon)" }) })
-    ] })
-  ] })
-};
-
 const fixture15 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
     __proto__: null,
-    default: LineItem_fixture
+    default: Logo_fixture
 }, Symbol.toStringTag, { value: 'Module' }));
 
 const legendTitle = "_legendTitle_sgaz8_1";
@@ -11876,7 +11876,7 @@ const fixture21 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty(
 
 const checkbox = "_checkbox_1ajta_1";
 const icon = "_icon_1ajta_23";
-const style$i = {
+const style$h = {
 	checkbox: checkbox,
 	icon: icon};
 
@@ -11921,7 +11921,7 @@ const Checkbox = reactExports.forwardRef(
               id,
               name,
               type: "checkbox",
-              className: clsx(style$i.checkbox, classes?.input),
+              className: clsx(style$h.checkbox, classes?.input),
               checked,
               onChange: onCheckboxChange,
               ref,
@@ -11929,7 +11929,7 @@ const Checkbox = reactExports.forwardRef(
               ...nativeProps
             }
           ),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: clsx(style$i.icon, classes?.input), children: /* @__PURE__ */ jsxRuntimeExports.jsx(Memo$4, {}) })
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: clsx(style$h.icon, classes?.input), children: /* @__PURE__ */ jsxRuntimeExports.jsx(Memo$4, {}) })
         ]
       }
     );
@@ -11937,7 +11937,7 @@ const Checkbox = reactExports.forwardRef(
 );
 Checkbox.displayName = "Checkbox";
 
-const css$2 = (s) => s.raw[0];
+const css$1 = (s) => s.raw[0];
 const Checkbox_fixture = {
   Uncontrolled: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { display: "flex", flexFlow: "column nowrap" }, children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(Checkbox, { id: "unchecked", label: "Unchecked", readOnly: true }),
@@ -11993,7 +11993,7 @@ const Checkbox_fixture = {
     ] });
   },
   PlacementInRow: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { display: "flex", flexFlow: "column nowrap", width: "300px" }, children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx("style", { children: css$2`
+    /* @__PURE__ */ jsxRuntimeExports.jsx("style", { children: css$1`
           .black-back {
             background-color: rgba(0, 0, 0, 0.2);
           }
@@ -12008,12 +12008,12 @@ const fixture22 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty(
     default: Checkbox_fixture
 }, Symbol.toStringTag, { value: 'Module' }));
 
-const style$h = `
+const style$g = `
 .card-fixture-wrapper {
   margin: 16px
 }`;
 const Card_fixture = /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-  /* @__PURE__ */ jsxRuntimeExports.jsx("style", { children: style$h }),
+  /* @__PURE__ */ jsxRuntimeExports.jsx("style", { children: style$g }),
   /* @__PURE__ */ jsxRuntimeExports.jsx(Card, { className: "card-fixture-wrapper", inline: true, children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { display: "flex", margin: "auto" }, children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { margin: "auto", padding: "1em" }, children: "Content" }) }) }),
   /* @__PURE__ */ jsxRuntimeExports.jsx(Card, { inline: true, children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { display: "flex", margin: "auto" }, children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { margin: "auto", padding: "1em" }, children: "Content" }) }) })
 ] });
@@ -14090,13 +14090,13 @@ const TooltipTrigger$1 = reactExports.forwardRef(function TooltipTrigger({ child
     return (jsxRuntimeExports.jsx("div", { ref: ref, ...context.getReferenceProps(props), children: children }));
 });
 
-const tooltipContent$1 = "_tooltipContent_j6zie_1";
-const bigger$1 = "_bigger_j6zie_12";
-const arrow$1 = "_arrow_j6zie_24";
+const tooltipContent$1 = "_tooltipContent_1k4lm_1";
+const bigger$1 = "_bigger_1k4lm_12";
+const arrow$1 = "_arrow_1k4lm_24";
 const s$1 = {
 	tooltipContent: tooltipContent$1,
 	bigger: bigger$1,
-	"default": "_default_j6zie_18",
+	"default": "_default_1k4lm_18",
 	arrow: arrow$1
 };
 
@@ -14120,6 +14120,7 @@ function useTooltip$2({ initialOpen = false, placement = 'bottom', offset: offse
     const data = useFloating({
         placement,
         open,
+        strategy: 'fixed',
         onOpenChange: setOpen,
         whileElementsMounted: autoUpdate,
         middleware: [
@@ -45919,7 +45920,7 @@ FilterCSS$2.prototype.process = function (css) {
   return retCSS;
 };
 
-var css$1 = FilterCSS$2;
+var css = FilterCSS$2;
 
 /**
  * cssfilter
@@ -45929,7 +45930,7 @@ var css$1 = FilterCSS$2;
 
 (function (module, exports) {
   var DEFAULT = _default;
-  var FilterCSS = css$1;
+  var FilterCSS = css;
   /**
    * XSS过滤
    *
@@ -79734,7 +79735,7 @@ const [DropdownProvider, useDropdownContext] = createContext$1("Dropdown");
 const dropdownItem = "_dropdownItem_7do7x_1";
 const selected$3 = "_selected_7do7x_7";
 const disabled$4 = "_disabled_7do7x_13";
-const style$g = {
+const style$f = {
 	dropdownItem: dropdownItem,
 	selected: selected$3,
 	disabled: disabled$4
@@ -79922,7 +79923,7 @@ function useDropdownItem({
       ...props,
       ref,
       "data-valuetext": valueText,
-      className: clsx({ [style$g.disabled]: disabled, [style$g.selected]: isSelected }),
+      className: clsx({ [style$f.disabled]: disabled, [style$f.selected]: isSelected }),
       selected: isSelected,
       onClick: composeEventHandlers(onClick, handleClick),
       onDragStart: composeEventHandlers(onDragStart, handleDragStart),
@@ -79938,7 +79939,7 @@ function useDropdownItem({
 const DropdownItem = React.forwardRef(({ as: Comp = "div", className, ...rest }, forwardedRef) => {
   const { props } = useDropdownItem({ ...rest, ref: forwardedRef });
   const { className: useClassName, ...restProps } = props;
-  const dynamicClasses = clsx({ [style$g.dropdownItem]: true, [props.className]: props.className, className });
+  const dynamicClasses = clsx({ [style$f.dropdownItem]: true, [props.className]: props.className, className });
   return /* @__PURE__ */ jsxRuntimeExports.jsx(Comp, { className: dynamicClasses, ...restProps });
 });
 DropdownItem.displayName = "DropdownItem";
@@ -79952,7 +79953,7 @@ function usePrevious(value) {
 }
 
 const dropdownItems = "_dropdownItems_zbmnn_1";
-const style$f = {
+const style$e = {
 	dropdownItems: dropdownItems
 };
 
@@ -80092,7 +80093,7 @@ function useDropdownItems({
 }
 const DropdownItems = React.forwardRef(({ as: Comp = "div", className, ...rest }, forwardedRef) => {
   const { props } = useDropdownItems({ ...rest, ref: forwardedRef });
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(Comp, { className: clsx({ [style$f.dropdownItems]: true, className }), ...props });
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(Comp, { className: clsx({ [style$e.dropdownItems]: true, className }), ...props });
 });
 DropdownItems.displayName = "DropdownItems";
 
@@ -80697,7 +80698,7 @@ function useRect(nodeRef, observeOrOptions) {
 }
 
 const popover = "_popover_142yw_1";
-const style$e = {
+const style$d = {
 	popover: popover
 };
 
@@ -80713,7 +80714,7 @@ const PopoverImpl = reactExports.forwardRef(function PopoverImpl2({ as: Comp = "
   useSimulateTabNavigationForReactTree(targetRef, popoverRef);
   const dynamicClasses = clsx(
     {
-      [style$e.popover]: true
+      [style$d.popover]: true
     },
     className
   );
@@ -80848,7 +80849,7 @@ function useSimulateTabNavigationForReactTree(triggerRef, popoverRef) {
 
 const dropdownPopover = "_dropdownPopover_2u793_1";
 const hidden$1 = "_hidden_2u793_5";
-const style$d = {
+const style$c = {
 	dropdownPopover: dropdownPopover,
 	hidden: hidden$1
 };
@@ -80911,13 +80912,13 @@ const DropdownPopover = React.forwardRef(({ as: Comp = "div", className, ...rest
     data: { portal, targetRef, position },
     props
   } = useDropdownPopover({ ...rest, ref: forwardedRef });
-  const dynamicClasses = clsx({ [style$d.dropdownPopover]: true, [style$d.hidden]: props.hidden }, className);
+  const dynamicClasses = clsx({ [style$c.dropdownPopover]: true, [style$c.hidden]: props.hidden }, className);
   return portal ? /* @__PURE__ */ jsxRuntimeExports.jsx(Popover, { ...props, className: dynamicClasses, as: Comp, targetRef, position }) : /* @__PURE__ */ jsxRuntimeExports.jsx(Comp, { className: dynamicClasses, ...props });
 });
 DropdownPopover.displayName = "DropdownPopover";
 
 const dropdownTrigger = "_dropdownTrigger_17os7_1";
-const style$c = {
+const style$b = {
 	dropdownTrigger: dropdownTrigger
 };
 
@@ -81024,7 +81025,7 @@ const DropdownTrigger = React.forwardRef(
   ({ as: Comp = "button", children, className, ...rest }, forwardedRef) => {
     const { props } = useDropdownTrigger({ ...rest, ref: forwardedRef });
     const dynamicClasses = clsx({
-      [style$c.dropdownTrigger]: true,
+      [style$b.dropdownTrigger]: true,
       className
     });
     return /* @__PURE__ */ jsxRuntimeExports.jsx(Comp, { ...props, className: dynamicClasses, children });
@@ -81189,7 +81190,7 @@ reactIs_production_min.isValidElementType=function(a){return "string"===typeof a
 var reactIsExports = reactIs.exports;
 
 const menu$1 = "_menu_1cafh_1";
-const style$b = {
+const style$a = {
 	menu: menu$1
 };
 
@@ -81206,7 +81207,7 @@ const Menu = React.forwardRef(
       ref: forwardedRef,
       id,
       className: clsx({
-        [style$b.menu]: true,
+        [style$a.menu]: true,
         className
       }),
       ...rest
@@ -81217,7 +81218,7 @@ const Menu = React.forwardRef(
 Menu.displayName = "Menu";
 
 const menuButton = "_menuButton_tzgmg_1";
-const style$a = {
+const style$9 = {
 	menuButton: menuButton
 };
 
@@ -81227,7 +81228,7 @@ const MenuButton = React.forwardRef(({ as: Comp = "button", className, ...rest }
     props
   } = useDropdownTrigger({ ...rest, ref: forwardedRef });
   const dynamicClasses = clsx({
-    [style$a.menuButton]: true,
+    [style$9.menuButton]: true,
     className
   });
   return /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -81247,7 +81248,7 @@ const menuItem = "_menuItem_scg3m_1";
 const selected$2 = "_selected_scg3m_10";
 const disabled$3 = "_disabled_scg3m_15";
 const menuItems = "_menuItems_scg3m_25";
-const style$9 = {
+const style$8 = {
 	menuItem: menuItem,
 	selected: selected$2,
 	disabled: disabled$3,
@@ -81260,9 +81261,9 @@ const MenuItemImpl = React.forwardRef(({ as: Comp = "div", className, ...rest },
     props
   } = useDropdownItem({ ...rest, ref: forwardedRef });
   const dynamicClasses = clsx({
-    [style$9.menuItem]: true,
-    [style$9.disabled]: disabled,
-    [style$9.selected]: props.selected,
+    [style$8.menuItem]: true,
+    [style$8.disabled]: disabled,
+    [style$8.selected]: props.selected,
     className
   });
   return /* @__PURE__ */ jsxRuntimeExports.jsx(Comp, { role: "menuitem", ...props, "aria-disabled": disabled || void 0, className: dynamicClasses });
@@ -81278,7 +81279,7 @@ const MenuItems = React.forwardRef(({ as: Comp = "div", className, ...rest }, fo
     props
   } = useDropdownItems({ ...rest, ref: forwardedRef });
   const dynamicClasses = clsx({
-    [style$9.menuItems]: true,
+    [style$8.menuItems]: true,
     className
   });
   return /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -81296,7 +81297,7 @@ MenuItems.displayName = "MenuItems";
 
 const menuPopover = "_menuPopover_1ym3r_1";
 const hidden = "_hidden_1ym3r_5";
-const style$8 = {
+const style$7 = {
 	menuPopover: menuPopover,
 	hidden: hidden
 };
@@ -81308,8 +81309,8 @@ const MenuPopover = React.forwardRef(({ as: Comp = "div", className, ...rest }, 
   } = useDropdownPopover({ ...rest, ref: forwardedRef });
   const dynamicClasses = clsx(
     {
-      [style$8.menuPopover]: true,
-      [style$8.hidden]: props.hidden
+      [style$7.menuPopover]: true,
+      [style$7.hidden]: props.hidden
     },
     className
   );
@@ -81318,14 +81319,14 @@ const MenuPopover = React.forwardRef(({ as: Comp = "div", className, ...rest }, 
 MenuPopover.displayName = "MenuPopover";
 
 const menuList = "_menuList_aejiz_1";
-const style$7 = {
+const style$6 = {
 	menuList: menuList
 };
 
 const MenuList = React.forwardRef(({ portal = true, className, classes, ...props }, forwardedRef) => {
   const dynamicClasses = clsx(
     {
-      [style$7.menuList]: true
+      [style$6.menuList]: true
     },
     className
   );
@@ -81655,7 +81656,7 @@ const [TabsProvider, useTabsCtx] = createContext$1("Tabs");
 const tabList = "_tabList_4y1rx_1";
 const vertical$1 = "_vertical_4y1rx_6";
 const horizontal$1 = "_horizontal_4y1rx_11";
-const style$6 = {
+const style$5 = {
 	tabList: tabList,
 	vertical: vertical$1,
 	horizontal: horizontal$1
@@ -81695,9 +81696,9 @@ const TabListImpl = reactExports.forwardRef(({ children, as: Comp = "div", onKey
       }
     }
   }, [tabs, isControlled, selectedIndex, setSelectedIndex]);
-  const dynamicClasses = clsx(className, style$6.tabList, {
-    [style$6.horizontal]: orientation === TABS_ORIENTATION_HORIZONTAL,
-    [style$6.vertical]: orientation === TABS_ORIENTATION_VERTICAL
+  const dynamicClasses = clsx(className, style$5.tabList, {
+    [style$5.horizontal]: orientation === TABS_ORIENTATION_HORIZONTAL,
+    [style$5.vertical]: orientation === TABS_ORIENTATION_VERTICAL
   });
   return /* @__PURE__ */ jsxRuntimeExports.jsx(Comp, { role: "tablist", ...props, className: dynamicClasses, ref, onKeyDown: handleKeyDown, children });
 });
@@ -81750,7 +81751,7 @@ const tab = "_tab_1dhdh_1";
 const horizontal = "_horizontal_1dhdh_15";
 const disabled$2 = "_disabled_1dhdh_19";
 const selected$1 = "_selected_1dhdh_37";
-const style$5 = {
+const style$4 = {
 	tab: tab,
 	horizontal: horizontal,
 	disabled: disabled$2,
@@ -81775,11 +81776,11 @@ const Tab = reactExports.forwardRef(
     function onSelect() {
       onSelectTab(index);
     }
-    const dynamicClasses = clsx(className, style$5.tab, isSelected && classes?.selected, {
-      [style$5.horizontal]: orientation === TABS_ORIENTATION_HORIZONTAL,
-      [style$5.vertical]: orientation === TABS_ORIENTATION_VERTICAL,
-      [style$5.selected]: isSelected,
-      [style$5.disabled]: disabled
+    const dynamicClasses = clsx(className, style$4.tab, isSelected && classes?.selected, {
+      [style$4.horizontal]: orientation === TABS_ORIENTATION_HORIZONTAL,
+      [style$4.vertical]: orientation === TABS_ORIENTATION_VERTICAL,
+      [style$4.selected]: isSelected,
+      [style$4.disabled]: disabled
     });
     return /* @__PURE__ */ jsxRuntimeExports.jsx(
       Comp,
@@ -81837,7 +81838,7 @@ function useControlledState({
 
 const tabs = "_tabs_1bzet_1";
 const vertical = "_vertical_1bzet_2";
-const style$4 = {
+const style$3 = {
 	tabs: tabs,
 	vertical: vertical
 };
@@ -81892,9 +81893,9 @@ const Tabs = reactExports.forwardRef(
       [keyboardActivation, onChange, setSelectedIndex, tabs]
     );
     const dynamicClasses = clsx(className, {
-      [style$4.tabs]: true,
-      [style$4.horizonal]: orientation === TABS_ORIENTATION_HORIZONTAL,
-      [style$4.vertical]: orientation === TABS_ORIENTATION_VERTICAL
+      [style$3.tabs]: true,
+      [style$3.horizonal]: orientation === TABS_ORIENTATION_HORIZONTAL,
+      [style$3.vertical]: orientation === TABS_ORIENTATION_VERTICAL
     });
     return /* @__PURE__ */ jsxRuntimeExports.jsx(DescendantProvider, { context: TabsDescendantsContext, items: tabs, set: setTabs, children: /* @__PURE__ */ jsxRuntimeExports.jsx(
       TabsProvider,
@@ -82009,7 +82010,7 @@ function Placeholder({ children }) {
   if (typeof children === "string") {
     if (children.length === 0) return null;
   }
-  return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: style$m.placeholder, children: String(children) });
+  return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: style$l.placeholder, children: String(children) });
 }
 
 const SelectButton = React.forwardRef(
@@ -82045,15 +82046,15 @@ const SelectButton = React.forwardRef(
       "div",
       {
         className: clsx("selectButton", className, {
-          [style$m.root]: true,
-          [style$m.disabled]: disabled,
-          [style$m.error]: error,
-          [style$m.inline]: type === "inline"
+          [style$l.root]: true,
+          [style$l.disabled]: disabled,
+          [style$l.error]: error,
+          [style$l.inline]: type === "inline"
         }),
         ...props,
         ref,
         children: [
-          label && /* @__PURE__ */ jsxRuntimeExports.jsx(Text, { type: "label", children: /* @__PURE__ */ jsxRuntimeExports.jsx("label", { className: clsx(style$m.label, classes?.label), ...labelProps, children: label }) }),
+          label && /* @__PURE__ */ jsxRuntimeExports.jsx(Text, { type: "label", children: /* @__PURE__ */ jsxRuntimeExports.jsx("label", { className: clsx(style$l.label, classes?.label), ...labelProps, children: label }) }),
           /* @__PURE__ */ jsxRuntimeExports.jsxs(
             "button",
             {
@@ -82061,17 +82062,17 @@ const SelectButton = React.forwardRef(
               type: "button",
               "aria-label": "toggle menu",
               ...toggleProps,
-              className: clsx("selectBox", style$m.selectBox, classes?.selectBox),
+              className: clsx("selectBox", style$l.selectBox, classes?.selectBox),
               children: [
                 /* @__PURE__ */ jsxRuntimeExports.jsx(
                   "div",
                   {
                     className: clsx(
-                      style$m.placeholderWrap,
-                      item === null || item === void 0 || Array.isArray(item) && !item.length ? style$m.noValue : style$m.hasValue,
+                      style$l.placeholderWrap,
+                      item === null || item === void 0 || Array.isArray(item) && !item.length ? style$l.noValue : style$l.hasValue,
                       {
-                        [style$m.nonInteractable]: !isInteractiveSelectionMode,
-                        [style$m.alwaysShowPlaceholder]: alwaysShowPlaceholder,
+                        [style$l.nonInteractable]: !isInteractiveSelectionMode,
+                        [style$l.alwaysShowPlaceholder]: alwaysShowPlaceholder,
                         className
                       }
                     ),
@@ -82088,14 +82089,14 @@ const SelectButton = React.forwardRef(
                     )
                   }
                 ),
-                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: clsx(style$m.buttonsContainer, "buttonsContainer"), children: [
-                  withResetButton && item && !isInteractiveSelectionMode ? /* @__PURE__ */ jsxRuntimeExports.jsx(Memo$d, { className: style$m.resetIcon, onClick: onReset }) : null,
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: clsx(style$l.buttonsContainer, "buttonsContainer"), children: [
+                  withResetButton && item && !isInteractiveSelectionMode ? /* @__PURE__ */ jsxRuntimeExports.jsx(Memo$d, { className: style$l.resetIcon, onClick: onReset }) : null,
                   open ? /* @__PURE__ */ jsxRuntimeExports.jsx(Memo$9, {}) : /* @__PURE__ */ jsxRuntimeExports.jsx(Memo$b, {})
                 ] })
               ]
             }
           ),
-          error && typeof error === "string" ? /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: clsx("errorMessage", style$m.errorMessage, classes?.error), children: error }) : null
+          error && typeof error === "string" ? /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: clsx("errorMessage", style$l.errorMessage, classes?.error), children: error }) : null
         ]
       }
     );
@@ -82295,8 +82296,8 @@ const Select = reactExports.forwardRef(
       {
         ref,
         className: clsx(className, noValue && classes?.noValue, {
-          [style$l.select]: true,
-          [style$l.open]: isOpen
+          [style$k.select]: true,
+          [style$k.open]: isOpen
         }),
         ...props,
         children: [
@@ -82320,7 +82321,7 @@ const Select = reactExports.forwardRef(
               children: children ?? placeholder
             }
           ),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("ul", { ...getMenuProps(), className: clsx({ [style$l.menu]: true, [classes?.menu || ""]: classes?.menu }), children: isOpen && items.map((item, index) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+          /* @__PURE__ */ jsxRuntimeExports.jsx("ul", { ...getMenuProps(), className: clsx({ [style$k.menu]: true, [classes?.menu || ""]: classes?.menu }), children: isOpen && items.map((item, index) => /* @__PURE__ */ jsxRuntimeExports.jsx(
             SelectItem,
             {
               item,
@@ -82563,7 +82564,7 @@ const placeholder = "_placeholder_eg0xd_86";
 const errorMessage = "_errorMessage_eg0xd_135";
 const disabled$1 = "_disabled_eg0xd_142";
 const error = "_error_eg0xd_135";
-const style$3 = {
+const style$2 = {
 	autocompleteButton: autocompleteButton,
 	input: input,
 	inline: inline,
@@ -82597,10 +82598,10 @@ const AutocompleteButton = reactExports.forwardRef(
   }, ref) => {
     const dynamicClasses = clsx(
       {
-        [style$3.autocompleteButton]: true,
-        [style$3.disabled]: disabled,
-        [style$3.error]: error,
-        [style$3.inline]: type === "inline"
+        [style$2.autocompleteButton]: true,
+        [style$2.disabled]: disabled,
+        [style$2.error]: error,
+        [style$2.inline]: type === "inline"
       },
       className
     );
@@ -82612,7 +82613,7 @@ const AutocompleteButton = reactExports.forwardRef(
       [reset]
     );
     return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: dynamicClasses, ...props, ref, children: [
-      label && /* @__PURE__ */ jsxRuntimeExports.jsx("label", { className: clsx(style$3.label, classes?.label), ...labelProps, children: label }),
+      label && /* @__PURE__ */ jsxRuntimeExports.jsx("label", { className: clsx(style$2.label, classes?.label), ...labelProps, children: label }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs(
         "button",
         {
@@ -82620,25 +82621,25 @@ const AutocompleteButton = reactExports.forwardRef(
           type: "button",
           "aria-label": "toggle menu",
           ...toggleProps,
-          className: clsx(style$3.selectBox, classes?.selectBox),
+          className: clsx(style$2.selectBox, classes?.selectBox),
           children: [
             /* @__PURE__ */ jsxRuntimeExports.jsx(
               "div",
               {
-                className: clsx(style$3.placeholder, {
+                className: clsx(style$2.placeholder, {
                   [classes?.placeholder || ""]: classes?.placeholder
                 }),
-                children: /* @__PURE__ */ jsxRuntimeExports.jsx("input", { placeholder: children, className: style$3.input, ...inputProps })
+                children: /* @__PURE__ */ jsxRuntimeExports.jsx("input", { placeholder: children, className: style$2.input, ...inputProps })
               }
             ),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: style$3.buttonsContainer, children: [
-              withResetButton && item ? /* @__PURE__ */ jsxRuntimeExports.jsx(Memo$d, { className: style$3.resetIcon, onClick: onReset }) : null,
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: style$2.buttonsContainer, children: [
+              withResetButton && item ? /* @__PURE__ */ jsxRuntimeExports.jsx(Memo$d, { className: style$2.resetIcon, onClick: onReset }) : null,
               open ? /* @__PURE__ */ jsxRuntimeExports.jsx(Memo$9, {}) : /* @__PURE__ */ jsxRuntimeExports.jsx(Memo$b, {})
             ] })
           ]
         }
       ),
-      error && typeof error === "string" ? /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: clsx(style$3.errorMessage, classes?.error), children: error }) : null
+      error && typeof error === "string" ? /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: clsx(style$2.errorMessage, classes?.error), children: error }) : null
     ] });
   }
 );
@@ -82652,7 +82653,7 @@ const hasDivider = "_hasDivider_kfobz_23";
 const titleContainer = "_titleContainer_kfobz_27";
 const entryIconContainer = "_entryIconContainer_kfobz_33";
 const selectedIconContainer = "_selectedIconContainer_kfobz_40";
-const style$2 = {
+const style$1 = {
 	autocompleteItem: autocompleteItem,
 	disabled: disabled,
 	highlighted: highlighted,
@@ -82666,19 +82667,19 @@ const style$2 = {
 const AutocompleteItem = reactExports.forwardRef(
   ({ className, highlighted, selected, item, title, itemProps, showSelectedIcon = true, showEntryIcon = false }, ref) => {
     const dynamicClasses = clsx({
-      [style$2.autocompleteItem]: true,
-      [style$2.highlighted]: !item.disabled && highlighted,
-      [style$2.selected]: !item.disabled && selected,
-      [style$2.disabled]: item.disabled,
-      [style$2.hasDivider]: item.hasDivider,
+      [style$1.autocompleteItem]: true,
+      [style$1.highlighted]: !item.disabled && highlighted,
+      [style$1.selected]: !item.disabled && selected,
+      [style$1.disabled]: item.disabled,
+      [style$1.hasDivider]: item.hasDivider,
       className
     });
     return /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { className: dynamicClasses, ref, ...!item.disabled ? itemProps : {}, children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: style$2.titleContainer, children: [
-        showEntryIcon && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: style$2.entryIconContainer, children: /* @__PURE__ */ jsxRuntimeExports.jsx(Memo$f, {}) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: style$1.titleContainer, children: [
+        showEntryIcon && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: style$1.entryIconContainer, children: /* @__PURE__ */ jsxRuntimeExports.jsx(Memo$f, {}) }),
         title || item.title
       ] }),
-      showSelectedIcon && !item.disabled && selected ? /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: style$2.selectedIconContainer, children: /* @__PURE__ */ jsxRuntimeExports.jsx(Memo$5, {}) }) : null
+      showSelectedIcon && !item.disabled && selected ? /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: style$1.selectedIconContainer, children: /* @__PURE__ */ jsxRuntimeExports.jsx(Memo$5, {}) }) : null
     ] });
   }
 );
@@ -82688,7 +82689,7 @@ const autocomplete = "_autocomplete_1t2hs_1";
 const menu = "_menu_1t2hs_6";
 const noItems = "_noItems_1t2hs_20";
 const open = "_open_1t2hs_25";
-const style$1 = {
+const style = {
 	autocomplete: autocomplete,
 	menu: menu,
 	noItems: noItems,
@@ -82776,8 +82777,8 @@ const Autocomplete = reactExports.forwardRef(
       "div",
       {
         className: clsx(className, {
-          [style$1.autocomplete]: true,
-          [style$1.open]: isOpen
+          [style.autocomplete]: true,
+          [style.open]: isOpen
         }),
         ...props,
         ref: forwardedRef,
@@ -82803,7 +82804,7 @@ const Autocomplete = reactExports.forwardRef(
             "ul",
             {
               ...getMenuProps(),
-              className: clsx(classes?.menu, { [style$1.menu]: true, [style$1.noItems]: filteredItems.length === 0 }),
+              className: clsx(classes?.menu, { [style.menu]: true, [style.noItems]: filteredItems.length === 0 }),
               children: isOpen && filteredItems.map((item, index) => /* @__PURE__ */ jsxRuntimeExports.jsx(
                 AutocompleteItem,
                 {
@@ -82953,13 +82954,13 @@ const TooltipTrigger = reactExports.forwardRef(
   }
 );
 
-const tooltipContent = "_tooltipContent_j6zie_1";
-const bigger = "_bigger_j6zie_12";
-const arrow = "_arrow_j6zie_24";
+const tooltipContent = "_tooltipContent_1k4lm_1";
+const bigger = "_bigger_1k4lm_12";
+const arrow = "_arrow_1k4lm_24";
 const s = {
 	tooltipContent: tooltipContent,
 	bigger: bigger,
-	"default": "_default_j6zie_18",
+	"default": "_default_1k4lm_18",
 	arrow: arrow
 };
 
@@ -83014,6 +83015,7 @@ function useTooltip$1({
   const data = useFloating({
     placement,
     open,
+    strategy: "fixed",
     onOpenChange: setOpen,
     whileElementsMounted: autoUpdate,
     middleware: [
@@ -83377,11 +83379,11 @@ function useMap(ref) {
     Promise.all(loadings).then(() => {
       const map2 = new maplibregl.Map({
         container: ref.current,
-        style: "https://demotiles.maplibre.org/style.json",
-        // stylesheet location
-        center: [-74.5, 40],
+        style: "https://demotiles.maplibre.org/styles/osm-bright-gl-style/style.json",
+        //'https://demotiles.maplibre.org/style.json'
+        center: [11.4, 47.25],
         // starting position [lng, lat]
-        zoom: 9
+        zoom: 11
         // starting zoom
       });
       setMap(map2);
@@ -83428,13 +83430,26 @@ function MapTooltip() {
     if (!map) return;
     const tracker = new MapPositionTracker(map);
     const createTooltipOnClickPosition = (e) => {
+      const features = map.queryRenderedFeatures(e.point);
+      const cards = features.reduce((a, c) => {
+        a[c.sourceLayer] = JSON.stringify(c.properties || {}).substring(1, 80).replaceAll(/\,\"/g, "\n").replaceAll(/[\"}]/g, "");
+        return a;
+      }, {});
+      const plist = Object.entries(cards).map(([k, v], i) => /* @__PURE__ */ jsxRuntimeExports.jsxs("dl", { children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("dt", { style: { backgroundColor: "#999", padding: 2 }, children: k }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("dd", { style: { margin: 0, textOverflow: "ellipsis", whiteSpace: "pre" }, children: v })
+      ] }, i));
+      console.log("Clicked features:", { e, features });
       tooltip.close();
       tooltip.show(
         {
           x: e.point.x,
           y: e.point.y
         },
-        "blabla"
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("button", { onClick: (_) => tooltip.close(), style: { padding: 4 }, children: "☒" }),
+          plist
+        ] })
       );
       tracker.trackPointPosition(e.lngLat);
       tracker.positionChanged(({ x, y }) => tooltip.move({ x, y }));
@@ -83446,7 +83461,7 @@ function MapTooltip() {
       tooltip.close();
     };
   }, [map, tooltip]);
-  return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { ref: mapEl, style: { width: "100%", height: "100%" } });
+  return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { ref: mapEl, className: "map" });
 }
 function MapTooltipFixture() {
   return /* @__PURE__ */ jsxRuntimeExports.jsx(FloatingProvider, { tooltipService, children: /* @__PURE__ */ jsxRuntimeExports.jsx(MapTooltip, {}) });
@@ -83455,45 +83470,6 @@ function MapTooltipFixture() {
 const fixture41 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
     __proto__: null,
     default: MapTooltipFixture
-}, Symbol.toStringTag, { value: 'Module' }));
-
-const css = (s) => s.raw[0];
-const style = css`
-  .cosmos-ui-kit-decorator {
-    padding: 1em;
-    display: flex;
-    gap: 2em;
-    flex-flow: row nowrap;
-    align-items: center;
-    justify-content: center;
-    min-height: 100%;
-    box-sizing: border-box;
-    background-color: #fff;
-    --transp-clr: #f5f5f5;
-    background-image: linear-gradient(
-        45deg,
-        var(--transp-clr) 25%,
-        transparent 25%,
-        transparent 75%,
-        var(--transp-clr) 75%
-      ),
-      linear-gradient(45deg, var(--transp-clr) 25%, transparent 25%, transparent 75%, var(--transp-clr) 75%);
-    background-size: 24px 24px;
-    background-position:
-      0 0,
-      12px 12px;
-  }
-`;
-function ComsosDecorator({ children }) {
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx("style", { dangerouslySetInnerHTML: { __html: style } }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "cosmos-ui-kit-decorator", children })
-  ] });
-}
-
-const decorator0 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
-    __proto__: null,
-    default: ComsosDecorator
 }, Symbol.toStringTag, { value: 'Module' }));
 
 // NOTE: This file is auto-generated by React Cosmos.
@@ -83522,8 +83498,8 @@ const fixtures = {
   'packages/ui-kit/src/ModalDialog/ModalDialog.fixture.tsx': { module: fixture11 },
   'packages/ui-kit/src/Modal/Modal.fixture.tsx': { module: fixture12 },
   'packages/ui-kit/src/MCDALegend/MCDALegend.fixture.tsx': { module: fixture13 },
-  'packages/ui-kit/src/Logo/Logo.fixture.tsx': { module: fixture14 },
-  'packages/ui-kit/src/LineItem/LineItem.fixture.tsx': { module: fixture15 },
+  'packages/ui-kit/src/LineItem/LineItem.fixture.tsx': { module: fixture14 },
+  'packages/ui-kit/src/Logo/Logo.fixture.tsx': { module: fixture15 },
   'packages/ui-kit/src/Legend/Legend.fixture.tsx': { module: fixture16 },
   'packages/ui-kit/src/Input/Input.fixture.tsx': { module: fixture17 },
   'packages/ui-kit/src/Heading/Heading.fixture.tsx': { module: fixture18 },
@@ -83552,9 +83528,7 @@ const fixtures = {
   'packages/floating/src/Tooltip/fixtures/MapTooltip.fixture.tsx': { module: fixture41 }
 };
 
-const decorators = {
-  'packages/ui-kit/cosmos.decorator.tsx': { module: decorator0 }
-};
+const decorators = {};
 
 const moduleWrappers = {
   lazy: false,

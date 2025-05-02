@@ -2562,30 +2562,30 @@ input:focus-visible, select:focus-visible, button:focus-visible, a:focus-visible
 ._actionsBTN_1qnbo_8._small_1qnbo_12 {
   margin: var(--half-unit);
 }
-._tooltipContent_j6zie_1 {
+._tooltipContent_1k4lm_1 {
   font-family: var(--font-family);
   font-style: normal;
   font-weight: normal;
   background: var(--back-faint-weak-down);
   color: var(--base-weak);
-  pointer-events: none;
+  pointer-events: all;
   max-width: 268px;
   z-index: 9999;
 }
 
-._bigger_j6zie_12 {
+._bigger_1k4lm_12 {
   font-size: 14px;
   padding: 8px 12px;
   border-radius: 4px;
 }
 
-._default_j6zie_18 {
+._default_1k4lm_18 {
   font-size: 12px;
   padding: 4px 8px;
   border-radius: 2px;
 }
 
-._arrow_j6zie_24 {
+._arrow_1k4lm_24 {
   fill: currentColor;
   color: var(--back-faint-weak-down);
 }
@@ -2593,7 +2593,7 @@ input:focus-visible, select:focus-visible, button:focus-visible, a:focus-visible
 /* Mobile breakpoint */
 
 @media (max-width: 960px) {
-  ._tooltipContent_j6zie_1 {
+  ._tooltipContent_1k4lm_1 {
     top: unset !important;
     left: 0 !important;
     right: 0 !important;
@@ -2612,7 +2612,7 @@ input:focus-visible, select:focus-visible, button:focus-visible, a:focus-visible
     box-sizing: border-box;
   }
 
-  ._arrow_j6zie_24 {
+  ._arrow_1k4lm_24 {
     display: none;
   }
 }
@@ -3095,30 +3095,30 @@ input:focus-visible, select:focus-visible, button:focus-visible, a:focus-visible
   ._autocomplete_1t2hs_1._open_1t2hs_25 ._menu_1t2hs_6 {
       min-width: 100%;
     }
-._tooltipContent_j6zie_1 {
+._tooltipContent_1k4lm_1 {
   font-family: var(--font-family);
   font-style: normal;
   font-weight: normal;
   background: var(--back-faint-weak-down);
   color: var(--base-weak);
-  pointer-events: none;
+  pointer-events: all;
   max-width: 268px;
   z-index: 9999;
 }
 
-._bigger_j6zie_12 {
+._bigger_1k4lm_12 {
   font-size: 14px;
   padding: 8px 12px;
   border-radius: 4px;
 }
 
-._default_j6zie_18 {
+._default_1k4lm_18 {
   font-size: 12px;
   padding: 4px 8px;
   border-radius: 2px;
 }
 
-._arrow_j6zie_24 {
+._arrow_1k4lm_24 {
   fill: currentColor;
   color: var(--back-faint-weak-down);
 }
@@ -3126,7 +3126,7 @@ input:focus-visible, select:focus-visible, button:focus-visible, a:focus-visible
 /* Mobile breakpoint */
 
 @media (max-width: 960px) {
-  ._tooltipContent_j6zie_1 {
+  ._tooltipContent_1k4lm_1 {
     top: unset !important;
     left: 0 !important;
     right: 0 !important;
@@ -3145,7 +3145,7 @@ input:focus-visible, select:focus-visible, button:focus-visible, a:focus-visible
     box-sizing: border-box;
   }
 
-  ._arrow_j6zie_24 {
+  ._arrow_1k4lm_24 {
     display: none;
   }
 }

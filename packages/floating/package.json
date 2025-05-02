@@ -27,7 +27,6 @@
     "access": "public"
   },
   "dependencies": {
-    "@floating-ui/core": "^1.6.9",
     "@floating-ui/react": "^0.27.8",
     "nanoid": "^4.0.0"
   }

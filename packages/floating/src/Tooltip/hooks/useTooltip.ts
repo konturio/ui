@@ -9,6 +9,7 @@ import {
   useHover,
   useRole,
   useInteractions,
+  autoPlacement,
 } from '@floating-ui/react';
 import type { ControlledProps, TooltipSettings } from '../types';
 
@@ -32,12 +33,15 @@ export function useTooltip(
   const data = useFloating({
     placement,
     open,
+    strategy: 'fixed',
     onOpenChange: setOpen,
     whileElementsMounted: autoUpdate,
     middleware: [
       offset(offsetValue + ARROW_HEIGHT),
       flip({ fallbackAxisSideDirection: 'start' }),
       shift({ padding: 5 }),
+
+      // autoPlacement(),
       arrow({ element: arrowRef }),
     ],
   });

@@ -131,7 +131,7 @@ function MapTooltip() {
     };
   }, [map, tooltip]);
 
-  return <div ref={mapEl} style={{ width: '100%', height: '100%' }}></div>;
+  return <div ref={mapEl} className="map"></div>;
 }
 
 export default function MapTooltipFixture() {

@@ -9,9 +9,9 @@
   ],
   "homepage": "https://konturio.github.io/ui",
   "scripts": {
-    "build": "pnpm ts:clean && pnpm auto:ts:references && pnpm -r --filter=\"./packages/*\" pre-build && pnpm auto:ts:build && pnpm -r build",
-    "build:watch": "pnpm auto:ts:references && pnpm -r --filter=\"./packages/*\" pre-build && pnpm auto:ts:build:watch && pnpm -r build",
-    "dev": "pnpm -r --filter=\"./packages/*\" pre-start && pnpm auto:cosmos",
+    "build": "pnpm ts:clean && pnpm auto:ts:references && pnpm auto:ts:build && pnpm -r build",
+    "build:watch": "pnpm auto:ts:references && pnpm auto:ts:build:watch && pnpm -r build",
+    "dev": "pnpm auto:cosmos",
     "bootstrap": "pnpm -r install",
     "cosmos:build:export": "cosmos-export --config cosmos.config.export.json",
     "publish": "pnpm build && pnpm publish:packages",

@@ -10,12 +10,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 9
+      - name: Setup pnpm cache
+        uses: actions/cache@v3
+        with:
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-
 
       - name: Run cosmos-export to build static
         run: |
-          npm ci
-          npm run build
-          npm run cosmos:build:export
+          pnpm install --frozen-lockfile
+          pnpm build
+          pnpm cosmos:build:export
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4.3.3

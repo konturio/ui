@@ -56,6 +56,8 @@
     "@typescript-eslint/no-explicit-any": "warn",
     "react/react-in-jsx-scope": "off",
     "@typescript-eslint/no-unused-vars": "off",
+    "no-unused-expressions": "off",
+    "@typescript-eslint/no-unused-expressions": "warn",
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "react/jsx-filename-extension": [
       "warn",
@@ -76,7 +78,10 @@
     },
     "import/resolver": {
       "typescript": {
-        "project": "tsconfig.json"
+        "project": [
+          "tsconfig.json",
+          "packages/*/tsconfig.json"
+        ]
       }
     }
   }

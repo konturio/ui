@@ -1,6 +1,10 @@
 {
   "files": [],
-  "references": [{ "path": "packages" }],
+  "references": [
+    {
+      "path": "packages"
+    }
+  ],
   "compilerOptions": {
     "noErrorTruncation": true,
     "noImplicitAny": false,
@@ -22,13 +26,31 @@
     "module": "ESNext",
     "moduleResolution": "node",
     "jsx": "react-jsx",
-    "lib": ["dom", "ESNext"],
+    "lib": [
+      "dom",
+      "ESNext"
+    ],
     "strict": true,
     "esModuleInterop": true,
-    "typeRoots": ["./node_modules/@types"],
+    "typeRoots": [
+      "./node_modules/@types"
+    ],
     "allowSyntheticDefaultImports": true,
-    "isolatedModules": true
+    "isolatedModules": true,
+    "composite": true,
+    "baseUrl": ".",
+    "paths": {
+      "@konturio/*": [
+        "packages/*/src"
+      ]
+    }
   },
-  "exclude": ["node_modules", "packages/*/node_modules", "packages/*/tslib"],
-  "include": ["./global.d.ts"]
+  "exclude": [
+    "node_modules",
+    "packages/*/node_modules",
+    "packages/*/tslib"
+  ],
+  "include": [
+    "./global.d.ts"
+  ]
 }

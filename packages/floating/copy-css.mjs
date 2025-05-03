@@ -1,5 +1,5 @@
 import { copyFile, readdir } from 'fs/promises';
-import { resolve } from 'path';
+import { resolve, sep } from 'path';
 
 const CONFIG = {
   outputDir: 'tslib',
@@ -27,7 +27,7 @@ async function getCssFiles(dir) {
 }
 
 (async () => {
-  const cssFiles = (await getCssFiles(CONFIG.srcDir)).filter((file) => !file.includes('/fixture/'));
+  const cssFiles = (await getCssFiles(CONFIG.srcDir)).filter((file) => !file.includes(`${sep}fixture${sep}`));
 
   cssFiles.forEach((cssFile) => {
     copyFile(cssFile, cssFile.replace(CONFIG.srcDir, CONFIG.outputDir));

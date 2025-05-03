@@ -12,12 +12,48 @@ const CONFIG = {
 };
 
 async function getTopology() {
-  const { stdout, stderr } = await exec('lerna ls --toposort');
+  const { stdout, stderr } = await exec('pnpm ls -r --depth -1 --json');
   if (stderr) {
     console.log(stderr);
   }
-  const topology = stdout.trim().split('\n');
-  return topology;
+  const packages = JSON.parse(stdout);
+
+  // Sort packages by dependencies to ensure correct build order
+  const packageMap = new Map();
+  packages.forEach((pkg) => {
+    packageMap.set(pkg.name, pkg);
+  });
+
+  // Sort topologically
+  const sorted = [];
+  const visited = new Set();
+
+  function visit(pkgName) {
+    if (visited.has(pkgName)) return;
+    visited.add(pkgName);
+
+    const pkg = packageMap.get(pkgName);
+    if (!pkg) return;
+
+    // Process dependencies first
+    const deps = {
+      ...(pkg.dependencies || {}),
+      ...(pkg.devDependencies || {}),
+    };
+
+    Object.keys(deps).forEach((dep) => {
+      if (packageMap.has(dep)) {
+        visit(dep);
+      }
+    });
+
+    sorted.push(pkg.name);
+  }
+
+  // Visit all packages
+  packages.forEach((pkg) => visit(pkg.name));
+
+  return sorted;
 }
 
 const pathExists = (path) => {

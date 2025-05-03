@@ -78,7 +78,10 @@
     },
     "import/resolver": {
       "typescript": {
-        "project": "tsconfig.json"
+        "project": [
+          "tsconfig.json",
+          "packages/*/tsconfig.json"
+        ]
       }
     }
   }

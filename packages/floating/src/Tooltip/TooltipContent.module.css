@@ -6,7 +6,7 @@
   color: var(--base-weak);
   pointer-events: all;
   max-width: 268px;
-  z-index: 9999;
+  z-index: var(--tooltip);
 }
 
 .bigger {

@@ -79,7 +79,7 @@
     "@typescript-eslint/parser": "^6.21.0",
     "autoprefixer": "^10.4.21",
     "clsx": "^2.1.1",
-    "dependency-cruiser": "^16.10.0",
+    "dependency-cruiser": "^16.10.1",
     "eslint": "^8.56.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-import-resolver-typescript": "^3.6.1",
@@ -106,8 +106,8 @@
     "stylelint": "^14.1.0",
     "stylelint-config-recommended": "^6.0.0",
     "ts-jest": "^27.0.4",
-    "typescript": "^4.9.5",
-    "vite": "^5.4.19"
+    "typescript": "^5.7.2",
+    "vite": "^6.3.5"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.4.1",

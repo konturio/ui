@@ -1,4 +1,4 @@
-import { u as useFixtureState, e as extendWithValue, R as React, c as createValue, i as isEqual, r as reactExports, a as reactDomExports, g as getDefaultExportFromCjs$2, b as React$1 } from './index-UmDJPnAO.js';
+import { u as useFixtureState, e as extendWithValue, R as React, c as createValue, i as isEqual, r as reactExports, a as reactDomExports, g as getDefaultExportFromCjs$2, b as React$1 } from './index-BqWi5RzN.js';
 
 function useCurrentInputValue(inputName, defaultValue) {
     const [fixtureState] = useFixtureState('inputs');
@@ -11778,6 +11778,27 @@ const fixture19 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty(
     default: Dropdown_fixture
 }, Symbol.toStringTag, { value: 'Module' }));
 
+const summary = "_summary_1oebb_1";
+const content = "_content_1oebb_11";
+const s$8 = {
+	summary: summary,
+	content: content
+};
+
+function Details({ summary, children }) {
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("details", { className: s$8.details, children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx("summary", { className: s$8.summary, children: summary }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: s$8.content, children })
+  ] });
+}
+
+const Details_fixture = /* @__PURE__ */ jsxRuntimeExports.jsx(Details, { summary: "Some summary", children: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim, iste. Labore cupiditate maiores ipsam odio quo dolor, mollitia iusto molestias voluptas, laborum doloremque, asperiores excepturi non repellendus? Minima, id repudiandae?" });
+
+const fixture20 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+    __proto__: null,
+    default: Details_fixture
+}, Symbol.toStringTag, { value: 'Module' }));
+
 const divider = "_divider_dx95w_1";
 const vertical$2 = "_vertical_dx95w_12";
 const horizontal$2 = "_horizontal_dx95w_12";
@@ -11848,35 +11869,29 @@ const Divider_fixture = /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: {
   ] })
 ] });
 
-const fixture20 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+const fixture21 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
     __proto__: null,
     default: Divider_fixture
 }, Symbol.toStringTag, { value: 'Module' }));
 
-const summary = "_summary_1oebb_1";
-const content = "_content_1oebb_11";
-const s$8 = {
-	summary: summary,
-	content: content
-};
+const style$h = `
+.card-fixture-wrapper {
+  margin: 16px
+}`;
+const Card_fixture = /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+  /* @__PURE__ */ jsxRuntimeExports.jsx("style", { children: style$h }),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(Card, { className: "card-fixture-wrapper", inline: true, children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { display: "flex", margin: "auto" }, children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { margin: "auto", padding: "1em" }, children: "Content" }) }) }),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(Card, { inline: true, children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { display: "flex", margin: "auto" }, children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { margin: "auto", padding: "1em" }, children: "Content" }) }) })
+] });
 
-function Details({ summary, children }) {
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs("details", { className: s$8.details, children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx("summary", { className: s$8.summary, children: summary }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: s$8.content, children })
-  ] });
-}
-
-const Details_fixture = /* @__PURE__ */ jsxRuntimeExports.jsx(Details, { summary: "Some summary", children: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim, iste. Labore cupiditate maiores ipsam odio quo dolor, mollitia iusto molestias voluptas, laborum doloremque, asperiores excepturi non repellendus? Minima, id repudiandae?" });
-
-const fixture21 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+const fixture22 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
     __proto__: null,
-    default: Details_fixture
+    default: Card_fixture
 }, Symbol.toStringTag, { value: 'Module' }));
 
 const checkbox = "_checkbox_1ajta_1";
 const icon = "_icon_1ajta_23";
-const style$h = {
+const style$g = {
 	checkbox: checkbox,
 	icon: icon};
 
@@ -11921,7 +11936,7 @@ const Checkbox = reactExports.forwardRef(
               id,
               name,
               type: "checkbox",
-              className: clsx(style$h.checkbox, classes?.input),
+              className: clsx(style$g.checkbox, classes?.input),
               checked,
               onChange: onCheckboxChange,
               ref,
@@ -11929,7 +11944,7 @@ const Checkbox = reactExports.forwardRef(
               ...nativeProps
             }
           ),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: clsx(style$h.icon, classes?.input), children: /* @__PURE__ */ jsxRuntimeExports.jsx(Memo$4, {}) })
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: clsx(style$g.icon, classes?.input), children: /* @__PURE__ */ jsxRuntimeExports.jsx(Memo$4, {}) })
         ]
       }
     );
@@ -12003,24 +12018,9 @@ const Checkbox_fixture = {
   ] })
 };
 
-const fixture22 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
-    __proto__: null,
-    default: Checkbox_fixture
-}, Symbol.toStringTag, { value: 'Module' }));
-
-const style$g = `
-.card-fixture-wrapper {
-  margin: 16px
-}`;
-const Card_fixture = /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-  /* @__PURE__ */ jsxRuntimeExports.jsx("style", { children: style$g }),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(Card, { className: "card-fixture-wrapper", inline: true, children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { display: "flex", margin: "auto" }, children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { margin: "auto", padding: "1em" }, children: "Content" }) }) }),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(Card, { inline: true, children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { display: "flex", margin: "auto" }, children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { margin: "auto", padding: "1em" }, children: "Content" }) }) })
-] });
-
 const fixture23 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
     __proto__: null,
-    default: Card_fixture
+    default: Checkbox_fixture
 }, Symbol.toStringTag, { value: 'Module' }));
 
 const btnContainer = "_btnContainer_17jbh_1";
@@ -14090,13 +14090,13 @@ const TooltipTrigger$1 = reactExports.forwardRef(function TooltipTrigger({ child
     return (jsxRuntimeExports.jsx("div", { ref: ref, ...context.getReferenceProps(props), children: children }));
 });
 
-const tooltipContent$1 = "_tooltipContent_1k4lm_1";
-const bigger$1 = "_bigger_1k4lm_12";
-const arrow$1 = "_arrow_1k4lm_24";
+const tooltipContent$1 = "_tooltipContent_x44qn_1";
+const bigger$1 = "_bigger_x44qn_12";
+const arrow$1 = "_arrow_x44qn_24";
 const s$1 = {
 	tooltipContent: tooltipContent$1,
 	bigger: bigger$1,
-	"default": "_default_1k4lm_18",
+	"default": "_default_x44qn_18",
 	arrow: arrow$1
 };
 
@@ -82954,13 +82954,13 @@ const TooltipTrigger = reactExports.forwardRef(
   }
 );
 
-const tooltipContent = "_tooltipContent_1k4lm_1";
-const bigger = "_bigger_1k4lm_12";
-const arrow = "_arrow_1k4lm_24";
+const tooltipContent = "_tooltipContent_x44qn_1";
+const bigger = "_bigger_x44qn_12";
+const arrow = "_arrow_x44qn_24";
 const s = {
 	tooltipContent: tooltipContent,
 	bigger: bigger,
-	"default": "_default_1k4lm_18",
+	"default": "_default_x44qn_18",
 	arrow: arrow
 };
 
@@ -83504,10 +83504,10 @@ const fixtures = {
   'packages/ui-kit/src/Input/Input.fixture.tsx': { module: fixture17 },
   'packages/ui-kit/src/Heading/Heading.fixture.tsx': { module: fixture18 },
   'packages/ui-kit/src/DropDown_old/Dropdown.fixture.tsx': { module: fixture19 },
-  'packages/ui-kit/src/Divider/Divider.fixture.tsx': { module: fixture20 },
-  'packages/ui-kit/src/Details/Details.fixture.jsx': { module: fixture21 },
-  'packages/ui-kit/src/Checkbox/Checkbox.fixture.tsx': { module: fixture22 },
-  'packages/ui-kit/src/Card/Card.fixture.tsx': { module: fixture23 },
+  'packages/ui-kit/src/Details/Details.fixture.jsx': { module: fixture20 },
+  'packages/ui-kit/src/Divider/Divider.fixture.tsx': { module: fixture21 },
+  'packages/ui-kit/src/Card/Card.fixture.tsx': { module: fixture22 },
+  'packages/ui-kit/src/Checkbox/Checkbox.fixture.tsx': { module: fixture23 },
   'packages/ui-kit/src/ButtonGroup/ButtonGroup.fixture.tsx': { module: fixture24 },
   'packages/ui-kit/src/Button/Button.fixture.tsx': { module: fixture25 },
   'packages/ui-kit/src/AppHeader/AppHeader.fixture.tsx': { module: fixture26 },

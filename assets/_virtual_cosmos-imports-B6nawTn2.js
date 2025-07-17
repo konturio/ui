@@ -1,4 +1,4 @@
-import { u as useFixtureState, e as extendWithValue, R as React, c as createValue, i as isEqual, r as reactExports, a as reactDomExports, g as getDefaultExportFromCjs$2, b as React$1 } from './index-BMZgRo-T.js';
+import { u as useFixtureState, e as extendWithValue, R as React, c as createValue, i as isEqual, r as reactExports, a as reactDomExports, g as getDefaultExportFromCjs$2, b as React$1 } from './index-BKeWKMiU.js';
 
 function useCurrentInputValue(inputName, defaultValue) {
     const [fixtureState] = useFixtureState('inputs');
@@ -12239,43 +12239,9 @@ const fixture24 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty(
     default: Fixture
 }, Symbol.toStringTag, { value: 'Module' }));
 
-const appHeader = "_appHeader_1xs4a_1";
-const title = "_title_1xs4a_13";
-const logo = "_logo_1xs4a_21";
-const children = "_children_1xs4a_26";
-const afterChatContent = "_afterChatContent_1xs4a_30";
-const s$5 = {
-	appHeader: appHeader,
-	title: title,
-	logo: logo,
-	children: children,
-	afterChatContent: afterChatContent
-};
-
-function AppHeader({
-  title,
-  children,
-  logo = /* @__PURE__ */ jsxRuntimeExports.jsx(Logo, { height: 24 }),
-  afterChatContent
-}) {
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: s$5.appHeader, children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: s$5.logo, children: logo }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: s$5.title, children: title }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: s$5.children, children }),
-    afterChatContent && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: s$5.afterChatContent, children: afterChatContent })
-  ] });
-}
-
-const AppHeader_fixture = /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { flex: "1" }, children: /* @__PURE__ */ jsxRuntimeExports.jsx(AppHeader, { title: "Example" }) });
-
-const fixture25 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
-    __proto__: null,
-    default: AppHeader_fixture
-}, Symbol.toStringTag, { value: 'Module' }));
-
 const customButton = "_customButton_1i1o6_1";
 const section = "_section_1i1o6_8";
-const s$4 = {
+const s$5 = {
 	customButton: customButton,
 	section: section
 };
@@ -12305,7 +12271,7 @@ const Button_fixture = {
           "size=",
           `"${size}"`
         ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: s$4.section, children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: s$5.section, children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx(
             Button,
             {
@@ -12378,7 +12344,7 @@ const Button_fixture = {
               size,
               disabled,
               iconBefore: /* @__PURE__ */ jsxRuntimeExports.jsx(EyeBallIcon, {}),
-              className: s$4.customButton,
+              className: s$5.customButton,
               children: "with custom style"
             }
           )
@@ -12388,9 +12354,43 @@ const Button_fixture = {
   }
 };
 
-const fixture26 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+const fixture25 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
     __proto__: null,
     default: Button_fixture
+}, Symbol.toStringTag, { value: 'Module' }));
+
+const appHeader = "_appHeader_1xs4a_1";
+const title = "_title_1xs4a_13";
+const logo = "_logo_1xs4a_21";
+const children = "_children_1xs4a_26";
+const afterChatContent = "_afterChatContent_1xs4a_30";
+const s$4 = {
+	appHeader: appHeader,
+	title: title,
+	logo: logo,
+	children: children,
+	afterChatContent: afterChatContent
+};
+
+function AppHeader({
+  title,
+  children,
+  logo = /* @__PURE__ */ jsxRuntimeExports.jsx(Logo, { height: 24 }),
+  afterChatContent
+}) {
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: s$4.appHeader, children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: s$4.logo, children: logo }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: s$4.title, children: title }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: s$4.children, children }),
+    afterChatContent && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: s$4.afterChatContent, children: afterChatContent })
+  ] });
+}
+
+const AppHeader_fixture = /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { flex: "1" }, children: /* @__PURE__ */ jsxRuntimeExports.jsx(AppHeader, { title: "Example" }) });
+
+const fixture26 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+    __proto__: null,
+    default: AppHeader_fixture
 }, Symbol.toStringTag, { value: 'Module' }));
 
 const s$3 = {
@@ -83604,8 +83604,8 @@ const fixtures = {
   'packages/ui-kit/src/Checkbox/Checkbox.fixture.tsx': { module: fixture22 },
   'packages/ui-kit/src/Card/Card.fixture.tsx': { module: fixture23 },
   'packages/ui-kit/src/ButtonGroup/ButtonGroup.fixture.tsx': { module: fixture24 },
-  'packages/ui-kit/src/AppHeader/AppHeader.fixture.tsx': { module: fixture25 },
-  'packages/ui-kit/src/Button/Button.fixture.tsx': { module: fixture26 },
+  'packages/ui-kit/src/Button/Button.fixture.tsx': { module: fixture25 },
+  'packages/ui-kit/src/AppHeader/AppHeader.fixture.tsx': { module: fixture26 },
   'packages/ui-kit/src/Animation/Animation.fixture.tsx': { module: fixture27 },
   'packages/ui-kit/src/ActionsBar/ActionsBar.fixture.tsx': { module: fixture28 },
   'packages/ui-kit/src/Timeline/fixture/Timeline.fixture.tsx': { module: fixture29 },

@@ -1,0 +1,20 @@
+import { SVGProps, memo } from 'react';
+const PrismHigh = (props: SVGProps<SVGSVGElement>) => (
+  <svg width={16} height={16} viewBox="0 0 16 16" fill="none" {...props}>
+    <path
+      d="M14 11.1629L11 8.38049L5.00002 8.38049L2.00002 11.1629L5.00002 13.9453L11 13.9453L14 11.1629Z"
+      fill="#40AD5A"
+    />
+    <path
+      d="M14 11.1629L11 8.38049L5.00002 8.38049L2.00002 11.1629L5.00002 13.9453L11 13.9453L14 11.1629Z"
+      fill="#40AD5A"
+    />
+    <path d="M11 12.6538L11 14L5 14L5 10.7692L5 7L11 7L11 12.6538Z" fill="#40AD5A" />
+    <path d="M5 14L2 11.4453L2 4.5L5 7L5 14Z" fill="#53C66F" />
+    <path d="M11 14L14 11.4453L14 4.5L11 7L11 14Z" fill="#267D3B" />
+    <path d="M14 4.5L11 2L5.00001 2L2.00001 4.5L5.00001 7L11 7L14 4.5Z" fill="#61D77D" />
+  </svg>
+);
+PrismHigh.displayName = 'PrismHigh';
+const Memo = memo(PrismHigh);
+export default Memo;

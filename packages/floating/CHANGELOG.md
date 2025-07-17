@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.2](https://github.com/konturio/ui/compare/@konturio/floating@1.2.1...@konturio/floating@1.2.2) (2025-07-17)
+
+**Note:** Version bump only for package @konturio/floating
+
 ## [1.2.1](https://github.com/konturio/ui/compare/@konturio/floating@1.2.0...@konturio/floating@1.2.1) (2025-05-02)
 
 **Note:** Version bump only for package @konturio/floating

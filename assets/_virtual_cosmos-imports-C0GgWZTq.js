@@ -1,4 +1,4 @@
-import { u as useFixtureState, e as extendWithValue, R as React, c as createValue, i as isEqual, r as reactExports, a as reactDomExports, g as getDefaultExportFromCjs$2, b as React$1 } from './index-BF6CmUqP.js';
+import { u as useFixtureState, e as extendWithValue, R as React, c as createValue, i as isEqual, r as reactExports, a as reactDomExports, g as getDefaultExportFromCjs$2, b as React$1 } from './index-BMZgRo-T.js';
 
 function useCurrentInputValue(inputName, defaultValue) {
     const [fixtureState] = useFixtureState('inputs');
@@ -10617,32 +10617,6 @@ const fixture10 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty(
     default: Panel_fixture
 }, Symbol.toStringTag, { value: 'Module' }));
 
-const content$2 = /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { backgroundColor: "white", padding: "3em" }, children: "Hello world" });
-const Modal_fixture = {
-  Default: /* @__PURE__ */ jsxRuntimeExports.jsx(Modal, { children: content$2 }),
-  "Custom container": () => {
-    const ref = reactExports.useRef(null);
-    reactExports.useLayoutEffect(() => {
-      const customEl = document.createElement("dialog");
-      customEl.open = true;
-      document.body.appendChild(customEl);
-      ref.current = customEl;
-      return () => {
-        document.body.removeChild(customEl);
-      };
-    }, []);
-    return /* @__PURE__ */ jsxRuntimeExports.jsx(Modal, { modalContainer: ref.current, children: content$2 });
-  },
-  "Backdrop listener": /* @__PURE__ */ jsxRuntimeExports.jsx(Modal, { onCancel: (reason) => alert(`Closed
-Reason: ${reason}`), children: content$2 }),
-  "Custom z-index": /* @__PURE__ */ jsxRuntimeExports.jsx(Modal, { zIndex: "10", children: content$2 })
-};
-
-const fixture11 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
-    __proto__: null,
-    default: Modal_fixture
-}, Symbol.toStringTag, { value: 'Module' }));
-
 const modalDialog = "_modalDialog_1u4ab_1";
 const modalDialogContent = "_modalDialogContent_1u4ab_5";
 const modalDialogHeader = "_modalDialogHeader_1u4ab_9";
@@ -10692,7 +10666,7 @@ function ModalDialog({
   );
 }
 
-const content$1 = /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { backgroundColor: "white", padding: "3em" }, children: "Hello world" });
+const content$2 = /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { backgroundColor: "white", padding: "3em" }, children: "Hello world" });
 const ModalDialog_fixture = {
   Default: /* @__PURE__ */ jsxRuntimeExports.jsx(
     ModalDialog,
@@ -10714,14 +10688,109 @@ const ModalDialog_fixture = {
           ]
         }
       ),
-      children: /* @__PURE__ */ jsxRuntimeExports.jsx("form", { children: content$1 })
+      children: /* @__PURE__ */ jsxRuntimeExports.jsx("form", { children: content$2 })
     }
   )
 };
 
-const fixture12 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+const fixture11 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
     __proto__: null,
     default: ModalDialog_fixture
+}, Symbol.toStringTag, { value: 'Module' }));
+
+const content$1 = /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { backgroundColor: "white", padding: "3em" }, children: "Hello world" });
+const Modal_fixture = {
+  Default: /* @__PURE__ */ jsxRuntimeExports.jsx(Modal, { children: content$1 }),
+  "Custom container": () => {
+    const ref = reactExports.useRef(null);
+    reactExports.useLayoutEffect(() => {
+      const customEl = document.createElement("dialog");
+      customEl.open = true;
+      document.body.appendChild(customEl);
+      ref.current = customEl;
+      return () => {
+        document.body.removeChild(customEl);
+      };
+    }, []);
+    return /* @__PURE__ */ jsxRuntimeExports.jsx(Modal, { modalContainer: ref.current, children: content$1 });
+  },
+  "Backdrop listener": /* @__PURE__ */ jsxRuntimeExports.jsx(Modal, { onCancel: (reason) => alert(`Closed
+Reason: ${reason}`), children: content$1 }),
+  "Custom z-index": /* @__PURE__ */ jsxRuntimeExports.jsx(Modal, { zIndex: "10", children: content$1 })
+};
+
+const fixture12 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+    __proto__: null,
+    default: Modal_fixture
+}, Symbol.toStringTag, { value: 'Module' }));
+
+const mcdaLegend = "_mcdaLegend_d1htu_1";
+const subtitle = "_subtitle_d1htu_8";
+const ruler = "_ruler_d1htu_12";
+const division = "_division_d1htu_19";
+const signatures = "_signatures_d1htu_34";
+const s$b = {
+	mcdaLegend: mcdaLegend,
+	subtitle: subtitle,
+	ruler: ruler,
+	division: division,
+	signatures: signatures
+};
+
+function MCDALegend({
+  title,
+  subtitle,
+  fromValue = "0",
+  toValue = "1",
+  /** Generated in www.joshwcomeau.com/gradient-generator (HCL) */
+  colors = [
+    "hsl(140deg 47% 64%)",
+    "hsl(117deg 44% 71%)",
+    "hsl(95deg 50% 72%)",
+    "hsl(78deg 55% 74%)",
+    "hsl(62deg 60% 77%)",
+    "hsl(50deg 91% 83%)",
+    "hsl(38deg 96% 79%)",
+    "hsl(30deg 98% 76%)",
+    "hsl(21deg 97% 74%)",
+    "hsl(12deg 93% 73%)",
+    "hsl(0deg 83% 72%)"
+  ],
+  steps = 10
+}) {
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: s$b.mcdaLegend, children: [
+    title && /* @__PURE__ */ jsxRuntimeExports.jsx(Heading, { type: "heading-05", margins: false, children: title }),
+    subtitle && /* @__PURE__ */ jsxRuntimeExports.jsx(Text, { type: "caption", className: s$b.subtitle, children: subtitle }),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        "div",
+        {
+          className: s$b.ruler,
+          style: {
+            backgroundImage: `linear-gradient(90deg, ${colors.join(",")})`
+          },
+          children: Array.from(Array(steps + 1)).map((_, i) => /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: s$b.division }, `l-${i}`))
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: s$b.signatures, children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(Text, { type: "caption", children: fromValue }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(Text, { type: "caption", children: toValue })
+      ] })
+    ] })
+  ] });
+}
+
+const MCDALegend_fixture = /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { width: "210px", border: "2px solid hsla(0, 0%, 0%, 0.2)", padding: "8px", borderRadius: "8px" }, children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+  MCDALegend,
+  {
+    title: "Legend",
+    subtitle: "Hexagons are colored as weighted average of normalized and transformed layers values"
+  }
+) });
+
+const fixture13 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+    __proto__: null,
+    default: MCDALegend_fixture
 }, Symbol.toStringTag, { value: 'Module' }));
 
 const colors = {
@@ -10921,78 +10990,9 @@ const Logo_fixture = {
   ] })
 };
 
-const fixture13 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
-    __proto__: null,
-    default: Logo_fixture
-}, Symbol.toStringTag, { value: 'Module' }));
-
-const mcdaLegend = "_mcdaLegend_d1htu_1";
-const subtitle = "_subtitle_d1htu_8";
-const ruler = "_ruler_d1htu_12";
-const division = "_division_d1htu_19";
-const signatures = "_signatures_d1htu_34";
-const s$b = {
-	mcdaLegend: mcdaLegend,
-	subtitle: subtitle,
-	ruler: ruler,
-	division: division,
-	signatures: signatures
-};
-
-function MCDALegend({
-  title,
-  subtitle,
-  fromValue = "0",
-  toValue = "1",
-  /** Generated in www.joshwcomeau.com/gradient-generator (HCL) */
-  colors = [
-    "hsl(140deg 47% 64%)",
-    "hsl(117deg 44% 71%)",
-    "hsl(95deg 50% 72%)",
-    "hsl(78deg 55% 74%)",
-    "hsl(62deg 60% 77%)",
-    "hsl(50deg 91% 83%)",
-    "hsl(38deg 96% 79%)",
-    "hsl(30deg 98% 76%)",
-    "hsl(21deg 97% 74%)",
-    "hsl(12deg 93% 73%)",
-    "hsl(0deg 83% 72%)"
-  ],
-  steps = 10
-}) {
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: s$b.mcdaLegend, children: [
-    title && /* @__PURE__ */ jsxRuntimeExports.jsx(Heading, { type: "heading-05", margins: false, children: title }),
-    subtitle && /* @__PURE__ */ jsxRuntimeExports.jsx(Text, { type: "caption", className: s$b.subtitle, children: subtitle }),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx(
-        "div",
-        {
-          className: s$b.ruler,
-          style: {
-            backgroundImage: `linear-gradient(90deg, ${colors.join(",")})`
-          },
-          children: Array.from(Array(steps + 1)).map((_, i) => /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: s$b.division }, `l-${i}`))
-        }
-      ),
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: s$b.signatures, children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx(Text, { type: "caption", children: fromValue }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(Text, { type: "caption", children: toValue })
-      ] })
-    ] })
-  ] });
-}
-
-const MCDALegend_fixture = /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { width: "210px", border: "2px solid hsla(0, 0%, 0%, 0.2)", padding: "8px", borderRadius: "8px" }, children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-  MCDALegend,
-  {
-    title: "Legend",
-    subtitle: "Hexagons are colored as weighted average of normalized and transformed layers values"
-  }
-) });
-
 const fixture14 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
     __proto__: null,
-    default: MCDALegend_fixture
+    default: Logo_fixture
 }, Symbol.toStringTag, { value: 'Module' }));
 
 const LineItem_fixture = {
@@ -12239,9 +12239,43 @@ const fixture24 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty(
     default: Fixture
 }, Symbol.toStringTag, { value: 'Module' }));
 
+const appHeader = "_appHeader_1xs4a_1";
+const title = "_title_1xs4a_13";
+const logo = "_logo_1xs4a_21";
+const children = "_children_1xs4a_26";
+const afterChatContent = "_afterChatContent_1xs4a_30";
+const s$5 = {
+	appHeader: appHeader,
+	title: title,
+	logo: logo,
+	children: children,
+	afterChatContent: afterChatContent
+};
+
+function AppHeader({
+  title,
+  children,
+  logo = /* @__PURE__ */ jsxRuntimeExports.jsx(Logo, { height: 24 }),
+  afterChatContent
+}) {
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: s$5.appHeader, children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: s$5.logo, children: logo }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: s$5.title, children: title }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: s$5.children, children }),
+    afterChatContent && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: s$5.afterChatContent, children: afterChatContent })
+  ] });
+}
+
+const AppHeader_fixture = /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { flex: "1" }, children: /* @__PURE__ */ jsxRuntimeExports.jsx(AppHeader, { title: "Example" }) });
+
+const fixture25 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+    __proto__: null,
+    default: AppHeader_fixture
+}, Symbol.toStringTag, { value: 'Module' }));
+
 const customButton = "_customButton_1i1o6_1";
 const section = "_section_1i1o6_8";
-const s$5 = {
+const s$4 = {
 	customButton: customButton,
 	section: section
 };
@@ -12271,7 +12305,7 @@ const Button_fixture = {
           "size=",
           `"${size}"`
         ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: s$5.section, children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: s$4.section, children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx(
             Button,
             {
@@ -12344,7 +12378,7 @@ const Button_fixture = {
               size,
               disabled,
               iconBefore: /* @__PURE__ */ jsxRuntimeExports.jsx(EyeBallIcon, {}),
-              className: s$5.customButton,
+              className: s$4.customButton,
               children: "with custom style"
             }
           )
@@ -12354,43 +12388,9 @@ const Button_fixture = {
   }
 };
 
-const fixture25 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
-    __proto__: null,
-    default: Button_fixture
-}, Symbol.toStringTag, { value: 'Module' }));
-
-const appHeader = "_appHeader_1xs4a_1";
-const title = "_title_1xs4a_13";
-const logo = "_logo_1xs4a_21";
-const children = "_children_1xs4a_26";
-const afterChatContent = "_afterChatContent_1xs4a_30";
-const s$4 = {
-	appHeader: appHeader,
-	title: title,
-	logo: logo,
-	children: children,
-	afterChatContent: afterChatContent
-};
-
-function AppHeader({
-  title,
-  children,
-  logo = /* @__PURE__ */ jsxRuntimeExports.jsx(Logo, { height: 24 }),
-  afterChatContent
-}) {
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: s$4.appHeader, children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: s$4.logo, children: logo }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: s$4.title, children: title }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: s$4.children, children }),
-    afterChatContent && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: s$4.afterChatContent, children: afterChatContent })
-  ] });
-}
-
-const AppHeader_fixture = /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { flex: "1" }, children: /* @__PURE__ */ jsxRuntimeExports.jsx(AppHeader, { title: "Example" }) });
-
 const fixture26 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
     __proto__: null,
-    default: AppHeader_fixture
+    default: Button_fixture
 }, Symbol.toStringTag, { value: 'Module' }));
 
 const s$3 = {
@@ -83590,10 +83590,10 @@ const fixtures = {
   'packages/ui-kit/src/Radio/Radio.fixture.tsx': { module: fixture8 },
   'packages/ui-kit/src/Panel/PanelPlayground.fixture.tsx': { module: fixture9 },
   'packages/ui-kit/src/Panel/Panel.fixture.tsx': { module: fixture10 },
-  'packages/ui-kit/src/Modal/Modal.fixture.tsx': { module: fixture11 },
-  'packages/ui-kit/src/ModalDialog/ModalDialog.fixture.tsx': { module: fixture12 },
-  'packages/ui-kit/src/Logo/Logo.fixture.tsx': { module: fixture13 },
-  'packages/ui-kit/src/MCDALegend/MCDALegend.fixture.tsx': { module: fixture14 },
+  'packages/ui-kit/src/ModalDialog/ModalDialog.fixture.tsx': { module: fixture11 },
+  'packages/ui-kit/src/Modal/Modal.fixture.tsx': { module: fixture12 },
+  'packages/ui-kit/src/MCDALegend/MCDALegend.fixture.tsx': { module: fixture13 },
+  'packages/ui-kit/src/Logo/Logo.fixture.tsx': { module: fixture14 },
   'packages/ui-kit/src/LineItem/LineItem.fixture.tsx': { module: fixture15 },
   'packages/ui-kit/src/Legend/Legend.fixture.tsx': { module: fixture16 },
   'packages/ui-kit/src/Input/Input.fixture.tsx': { module: fixture17 },
@@ -83604,8 +83604,8 @@ const fixtures = {
   'packages/ui-kit/src/Checkbox/Checkbox.fixture.tsx': { module: fixture22 },
   'packages/ui-kit/src/Card/Card.fixture.tsx': { module: fixture23 },
   'packages/ui-kit/src/ButtonGroup/ButtonGroup.fixture.tsx': { module: fixture24 },
-  'packages/ui-kit/src/Button/Button.fixture.tsx': { module: fixture25 },
-  'packages/ui-kit/src/AppHeader/AppHeader.fixture.tsx': { module: fixture26 },
+  'packages/ui-kit/src/AppHeader/AppHeader.fixture.tsx': { module: fixture25 },
+  'packages/ui-kit/src/Button/Button.fixture.tsx': { module: fixture26 },
   'packages/ui-kit/src/Animation/Animation.fixture.tsx': { module: fixture27 },
   'packages/ui-kit/src/ActionsBar/ActionsBar.fixture.tsx': { module: fixture28 },
   'packages/ui-kit/src/Timeline/fixture/Timeline.fixture.tsx': { module: fixture29 },

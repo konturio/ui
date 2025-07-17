@@ -2425,21 +2425,6 @@ input:focus-visible, select:focus-visible, button:focus-visible, a:focus-visible
 ._groupContainer_wy6cu_12 ._button_wy6cu_13:last-child button {
     border-radius: 0 var(--half-unit) var(--half-unit) 0;
   }
-._customButton_1i1o6_1 {
-  white-space: pre-line;
-  -webkit-text-decoration: dotted;
-          text-decoration: dotted;
-  font-family: monospace;
-  color: blueviolet;
-}
-
-._section_1i1o6_8 {
-  /* width: 300px; */
-  margin: 1em;
-  gap: 1em;
-  display: flex;
-  flex-flow: row nowrap;
-}
 ._appHeader_1xs4a_1 {
   display: flex;
   align-items: center;
@@ -2470,6 +2455,21 @@ input:focus-visible, select:focus-visible, button:focus-visible, a:focus-visible
 }
 
 ._afterChatContent_1xs4a_30 {
+}
+._customButton_1i1o6_1 {
+  white-space: pre-line;
+  -webkit-text-decoration: dotted;
+          text-decoration: dotted;
+  font-family: monospace;
+  color: blueviolet;
+}
+
+._section_1i1o6_8 {
+  /* width: 300px; */
+  margin: 1em;
+  gap: 1em;
+  display: flex;
+  flex-flow: row nowrap;
 }
 ._ease-out_1f6w1_1 {
   animation-duration: 0.4s;

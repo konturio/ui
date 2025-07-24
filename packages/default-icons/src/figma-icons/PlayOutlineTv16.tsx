@@ -1,0 +1,20 @@
+import { SVGProps, memo } from 'react';
+const PlayOutlineTv16 = (props: SVGProps<SVGSVGElement>) => (
+  <svg width={16} height={16} viewBox="0 0 16 16" fill="none" {...props}>
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M5.5 6.30176C5.5 5.67719 6.13171 5.38104 6.61523 5.55176L6.70996 5.5918L10.0576 7.29004C10.6477 7.58968 10.6477 8.41032 10.0576 8.70996L6.70996 10.4082C6.21899 10.6573 5.5 10.3644 5.5 9.69824V6.30176ZM6.5 9.39258L9.24609 8L6.5 6.60645V9.39258Z"
+      fill="currentColor"
+    />
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M13.834 2.16699C14.9383 2.16735 15.834 3.06264 15.834 4.16699V11.834C15.8336 12.938 14.938 13.8336 13.834 13.834H2.16699C1.06264 13.834 0.167349 12.9383 0.166992 11.834V4.16699C0.166993 3.06242 1.06242 2.16699 2.16699 2.16699H13.834ZM2.16699 3.16699C1.61471 3.16699 1.16699 3.61471 1.16699 4.16699V11.834C1.16735 12.386 1.61493 12.834 2.16699 12.834H13.834C14.3857 12.8336 14.8336 12.3857 14.834 11.834V4.16699C14.834 3.61493 14.386 3.16735 13.834 3.16699H2.16699Z"
+      fill="currentColor"
+    />
+  </svg>
+);
+PlayOutlineTv16.displayName = 'PlayOutlineTv16';
+const Memo = memo(PlayOutlineTv16);
+export default Memo;

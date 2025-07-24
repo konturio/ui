@@ -1,5 +1,4 @@
 import { SVGProps, memo } from 'react';
-
 const Kontur24 = (props: SVGProps<SVGSVGElement>) => (
   <svg width={24} height={24} viewBox="0 0 24 24" fill="none" {...props}>
     <path
@@ -16,7 +15,6 @@ const Kontur24 = (props: SVGProps<SVGSVGElement>) => (
     />
   </svg>
 );
-
 Kontur24.displayName = 'Kontur24';
 const Memo = memo(Kontur24);
 export default Memo;

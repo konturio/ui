@@ -1,5 +1,4 @@
 import { SVGProps, memo } from 'react';
-
 const LocationFilled24 = (props: SVGProps<SVGSVGElement>) => (
   <svg width={24} height={24} viewBox="0 0 24 24" fill="none" {...props}>
     <path
@@ -8,7 +7,6 @@ const LocationFilled24 = (props: SVGProps<SVGSVGElement>) => (
     />
   </svg>
 );
-
 LocationFilled24.displayName = 'LocationFilled24';
 const Memo = memo(LocationFilled24);
 export default Memo;

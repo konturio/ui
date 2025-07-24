@@ -1,9 +1,8 @@
 import { SVGProps, memo } from 'react';
-
 const LayerPeriphery = (props: SVGProps<SVGSVGElement>) => (
   <svg width={24} height={24} viewBox="0 0 24 24" fill="none" {...props}>
     <path
-      d="M12 5.1547L17.9282 8.57735L17.9282 15.4226L12 18.8453L6.0718 15.4227L6.0718 8.57735L12 5.1547Z"
+      d="M17.9277 8.57715V15.4229L12 18.8457L6.07227 15.4229V8.57715L12 5.1543L17.9277 8.57715Z"
       fill="white"
       stroke="#24D225"
       strokeWidth={2}
@@ -16,7 +15,6 @@ const LayerPeriphery = (props: SVGProps<SVGSVGElement>) => (
     />
   </svg>
 );
-
 LayerPeriphery.displayName = 'LayerPeriphery';
 const Memo = memo(LayerPeriphery);
 export default Memo;

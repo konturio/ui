@@ -1,5 +1,4 @@
 import { SVGProps, memo } from 'react';
-
 const Poly16 = (props: SVGProps<SVGSVGElement>) => (
   <svg width={16} height={16} viewBox="0 0 16 16" fill="none" {...props}>
     <path
@@ -10,7 +9,6 @@ const Poly16 = (props: SVGProps<SVGSVGElement>) => (
     />
   </svg>
 );
-
 Poly16.displayName = 'Poly16';
 const Memo = memo(Poly16);
 export default Memo;

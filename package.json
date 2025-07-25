@@ -24,7 +24,7 @@
     "test": "jest",
     "test:coverage": "jest --coverage",
     "test:watch": "jest --watchAll",
-    "ts:clean": "find ./packages -type d -name 'tslib' -exec rm -rf '{}' \\; & tsc --build --clean",
+    "ts:clean": "rimraf \"packages/*/tslib\" && tsc --build --clean",
     "ts:watch": "tsc --build --watch",
     "auto:lerna:publish": "lerna publish from-package --yes --no-verify-access",
     "auto:lerna:version": "lerna version",
@@ -118,6 +118,7 @@
     "postcss-cli": "^10.0.0",
     "react-cosmos": "7.0.0-beta.2",
     "react-cosmos-plugin-vite": "7.0.0-beta.0",
-    "vite-tsconfig-paths": "^5.1.4"
+    "vite-tsconfig-paths": "^5.1.4",
+    "rimraf": "^5.0.5"
   }
 }

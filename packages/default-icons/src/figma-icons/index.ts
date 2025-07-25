@@ -82,6 +82,7 @@ export { default as Trash16 } from './Trash16';
 export { default as CloseFilled24 } from './CloseFilled24';
 export { default as CloseFilled16 } from './CloseFilled16';
 export { default as InfoError16 } from './InfoError16';
+export { default as ErrorMinus16 } from './ErrorMinus16';
 export { default as SortDrag16 } from './SortDrag16';
 export { default as Search24 } from './Search24';
 export { default as Search16 } from './Search16';

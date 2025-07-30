@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.5.0](https://github.com/konturio/ui/compare/@konturio/ui-kit@5.4.4...@konturio/ui-kit@5.5.0) (2025-07-30)
+
+### Features
+
+- **Legend:** allow to set showSteps separately for each axis ([#107](https://github.com/konturio/ui/issues/107)) ([1547054](https://github.com/konturio/ui/commit/1547054f0b31f73bafd9890ae40b540138a9b3f8))
+
 ## [5.4.4](https://github.com/konturio/ui/compare/@konturio/ui-kit@5.4.3...@konturio/ui-kit@5.4.4) (2025-07-17)
 
 **Note:** Version bump only for package @konturio/ui-kit

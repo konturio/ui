@@ -33,7 +33,7 @@ export interface LegendProps<
   size: number;
   title?: string;
   showAxisLabels?: boolean;
-  showSteps?: boolean;
+  showSteps?: boolean | { x: boolean; y: boolean };
   showArrowHeads?: boolean;
   axis: Axis;
   onCellPointerOver?: (e: MouseEvent, cell: Cell, i: number) => void;
@@ -89,7 +89,7 @@ export function Legend<
   );
 
   const gridCells = fillTemplate(TEMPLATE, {
-    x: showSteps
+    x: (typeof showSteps === 'object' ? showSteps.x : showSteps)
       ? axis.x.steps.map((step) => ({
           label: step.label || step.value.toFixed(1),
           className: styles.xStepsCell,
@@ -98,7 +98,7 @@ export function Legend<
           label: '',
           className: styles.xStepsCellNoLabel,
         })),
-    y: showSteps
+    y: (typeof showSteps === 'object' ? showSteps.y : showSteps)
       ? safeReverse(axis.y.steps).map((step) => ({
           label: step.label || step.value.toFixed(1),
           className: styles.yStepsCell,

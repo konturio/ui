@@ -1,4 +1,4 @@
-import { u as useFixtureState, e as extendWithValue, R as React, c as createValue, i as isEqual, r as reactExports, a as reactDomExports, g as getDefaultExportFromCjs$2, b as React$1 } from './index-BKeWKMiU.js';
+import { u as useFixtureState, e as extendWithValue, R as React, c as createValue, i as isEqual, r as reactExports, a as reactDomExports, g as getDefaultExportFromCjs$2, b as React$1 } from './index-DtZZT2pF.js';
 
 function useCurrentInputValue(inputName, defaultValue) {
     const [fixtureState] = useFixtureState('inputs');
@@ -11101,14 +11101,14 @@ function Legend$1({
     [size]
   );
   const gridCells = fillTemplate(TEMPLATE, {
-    x: showSteps ? axis.x.steps.map((step) => ({
+    x: (typeof showSteps === "object" ? showSteps.x : showSteps) ? axis.x.steps.map((step) => ({
       label: step.label || step.value.toFixed(1),
       className: styles$1.xStepsCell
     })) : axis.x.steps.map((step) => ({
       label: "",
       className: styles$1.xStepsCellNoLabel
     })),
-    y: showSteps ? safeReverse(axis.y.steps).map((step) => ({
+    y: (typeof showSteps === "object" ? showSteps.y : showSteps) ? safeReverse(axis.y.steps).map((step) => ({
       label: step.label || step.value.toFixed(1),
       className: styles$1.yStepsCell
     })) : safeReverse(axis.y.steps).map((step) => ({
@@ -11413,6 +11413,60 @@ const Legend_fixture = /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.
         }
       },
       title: "Custom Axis Labels"
+    }
+  ),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(
+    Legend$1,
+    {
+      showSteps: { x: false, y: true },
+      showArrowHeads: true,
+      showAxisLabels: true,
+      size: 2,
+      cells: [
+        { label: "A1", color: "gray" },
+        { label: "B1", color: "silver" },
+        { label: "A2", color: "silver" },
+        { label: "B2", color: "gray" },
+        { label: "A3", color: "gray" },
+        { label: "B3", color: "silver" },
+        { label: "A4", color: "silver" },
+        { label: "B4", color: "gray" }
+      ],
+      axis: {
+        x: {
+          label: "X axis",
+          quality: 2,
+          quotient: ["quotient1", "quotient2"],
+          steps: [
+            {
+              value: 0
+            },
+            {
+              value: 3
+            },
+            {
+              value: 6
+            }
+          ]
+        },
+        y: {
+          label: "Y axis",
+          quality: 3,
+          quotient: ["quotient1", "quotient2"],
+          steps: [
+            {
+              value: 0
+            },
+            {
+              value: 0.3
+            },
+            {
+              value: 0.6
+            }
+          ]
+        }
+      },
+      title: "Hide steps for separate axis"
     }
   )
 ] });

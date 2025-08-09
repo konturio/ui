@@ -1,5 +1,4 @@
 import { SVGProps, memo } from 'react';
-
 const InfoErrorOutline16 = (props: SVGProps<SVGSVGElement>) => (
   <svg width={16} height={16} viewBox="0 0 16 16" fill="none" {...props}>
     <path
@@ -22,7 +21,6 @@ const InfoErrorOutline16 = (props: SVGProps<SVGSVGElement>) => (
     />
   </svg>
 );
-
 InfoErrorOutline16.displayName = 'InfoErrorOutline16';
 const Memo = memo(InfoErrorOutline16);
 export default Memo;

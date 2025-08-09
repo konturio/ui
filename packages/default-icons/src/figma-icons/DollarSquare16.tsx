@@ -1,5 +1,4 @@
 import { SVGProps, memo } from 'react';
-
 const DollarSquare16 = (props: SVGProps<SVGSVGElement>) => (
   <svg width={16} height={16} viewBox="0 0 16 16" fill="none" {...props}>
     <path
@@ -16,7 +15,6 @@ const DollarSquare16 = (props: SVGProps<SVGSVGElement>) => (
     />
   </svg>
 );
-
 DollarSquare16.displayName = 'DollarSquare16';
 const Memo = memo(DollarSquare16);
 export default Memo;

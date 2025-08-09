@@ -1,5 +1,4 @@
 import { SVGProps, memo } from 'react';
-
 const UploadAnalysis16 = (props: SVGProps<SVGSVGElement>) => (
   <svg width={16} height={16} viewBox="0 0 16 16" fill="none" {...props}>
     <path
@@ -26,7 +25,6 @@ const UploadAnalysis16 = (props: SVGProps<SVGSVGElement>) => (
     />
   </svg>
 );
-
 UploadAnalysis16.displayName = 'UploadAnalysis16';
 const Memo = memo(UploadAnalysis16);
 export default Memo;

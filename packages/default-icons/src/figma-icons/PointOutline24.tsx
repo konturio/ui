@@ -1,5 +1,4 @@
 import { SVGProps, memo } from 'react';
-
 const PointOutline24 = (props: SVGProps<SVGSVGElement>) => (
   <svg width={24} height={24} viewBox="0 0 24 24" fill="none" {...props}>
     <path
@@ -14,7 +13,6 @@ const PointOutline24 = (props: SVGProps<SVGSVGElement>) => (
     />
   </svg>
 );
-
 PointOutline24.displayName = 'PointOutline24';
 const Memo = memo(PointOutline24);
 export default Memo;

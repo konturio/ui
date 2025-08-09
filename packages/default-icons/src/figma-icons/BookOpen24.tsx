@@ -1,5 +1,4 @@
 import { SVGProps, memo } from 'react';
-
 const BookOpen24 = (props: SVGProps<SVGSVGElement>) => (
   <svg width={24} height={24} viewBox="0 0 24 24" fill="none" {...props}>
     <path
@@ -10,7 +9,6 @@ const BookOpen24 = (props: SVGProps<SVGSVGElement>) => (
     />
   </svg>
 );
-
 BookOpen24.displayName = 'BookOpen24';
 const Memo = memo(BookOpen24);
 export default Memo;

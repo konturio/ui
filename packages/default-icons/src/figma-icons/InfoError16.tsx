@@ -1,5 +1,4 @@
 import { SVGProps, memo } from 'react';
-
 const InfoError16 = (props: SVGProps<SVGSVGElement>) => (
   <svg width={16} height={16} viewBox="0 0 16 16" fill="none" {...props}>
     <g clipPath="url(#clip0_302_731)">
@@ -17,7 +16,6 @@ const InfoError16 = (props: SVGProps<SVGSVGElement>) => (
     </defs>
   </svg>
 );
-
 InfoError16.displayName = 'InfoError16';
 const Memo = memo(InfoError16);
 export default Memo;

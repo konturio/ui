@@ -18,6 +18,17 @@ Version track starts from v1.0.0 at `main` branch.
 - `npm run build`
 - `npm run dev` for running local dev server
 
+### Updating icons
+
+Icons used across packages are sourced from Figma. To export the latest icons:
+
+1. Navigate to `packages/default-icons`.
+2. [Generate a Personal Access Token in Figma](packages/default-icons/README.md#export-icons-from-figma).
+3. Run `npm run figma:export` (or `npm run figma:export-env` if you saved the
+   token in a `.env.local` file).
+
+After exporting icons, run `npm run build` to regenerate package bundles.
+
 ## Setup
 
 ### Package management
@@ -103,6 +114,6 @@ If you need release modules in NPM nexus repo, you need some extra steps:
 If you need to release major version of module:
 
 1. Create new branch from the current `vN` branch, where `N` is the current major version
-2. Change the version num from `vN` to `vN+1` in `leran.json` and `.github/workflows/deploy.yml` files
+2. Change the version num from `vN` to `vN+1` in `lerna.json` and `.github/workflows/deploy.yml` files
 3. Push the branch
 4. Run `npm run release`

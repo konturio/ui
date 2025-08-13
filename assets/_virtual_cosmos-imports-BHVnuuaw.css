@@ -138,18 +138,23 @@
 
   /* DEPRECATED - Old Theme shadow variables */
   /* TODO: remove this section after we migrate all old variables usages to new ones */
-  --elevation-1: 0 1px 2px rgba(0, 0, 0, 0.3), 0 16px 24px rgba(0, 0, 0, 0.06), 0 2px 6px rgba(0, 0, 0, 0.04),
+  --elevation-1:
+    0 1px 2px rgba(0, 0, 0, 0.3), 0 16px 24px rgba(0, 0, 0, 0.06), 0 2px 6px rgba(0, 0, 0, 0.04),
     0 0 1px rgba(0, 0, 0, 0.04);
-  --elevation-2: 0 4px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.3), 0 16px 24px rgba(0, 0, 0, 0.06),
+  --elevation-2:
+    0 4px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.3), 0 16px 24px rgba(0, 0, 0, 0.06),
     0 2px 6px rgba(0, 0, 0, 0.04), 0 0 1px rgba(0, 0, 0, 0.04);
-  --elevation-3: 0px 1px 2px rgba(0, 0, 0, 0.15), 0px 6px 12px rgba(0, 0, 0, 0.06), 0px 2px 6px rgba(0, 0, 0, 0.1),
+  --elevation-3:
+    0px 1px 2px rgba(0, 0, 0, 0.15), 0px 6px 12px rgba(0, 0, 0, 0.06), 0px 2px 6px rgba(0, 0, 0, 0.1),
     0px 0px 1px rgba(0, 0, 0, 0.02);
 
   /* New shadows */
   --shadow-small: 0px 1px 4px rgba(0, 0, 0, 0.2);
-  --shadow-medium: 0px 1px 2px rgba(0, 0, 0, 0.15), 0px 6px 8px rgba(0, 0, 0, 0.06), 0px 2px 6px rgba(0, 0, 0, 0.1),
+  --shadow-medium:
+    0px 1px 2px rgba(0, 0, 0, 0.15), 0px 6px 8px rgba(0, 0, 0, 0.06), 0px 2px 6px rgba(0, 0, 0, 0.1),
     0px 0px 1px rgba(0, 0, 0, 0.02);
-  --shadow-large: 0px 4px 8px rgba(0, 0, 0, 0.15), 0px 1px 2px rgba(0, 0, 0, 0.2), 0px 16px 24px rgba(0, 0, 0, 0.06),
+  --shadow-large:
+    0px 4px 8px rgba(0, 0, 0, 0.15), 0px 1px 2px rgba(0, 0, 0, 0.2), 0px 16px 24px rgba(0, 0, 0, 0.06),
     0px 2px 6px rgba(0, 0, 0, 0.04);
 }
 html,
@@ -2116,7 +2121,7 @@ input:focus-visible, select:focus-visible, button:focus-visible, a:focus-visible
 ._disabled_1gpld_130._topPlaceholderValue_1gpld_163 ._placeholder_1gpld_65 {
     color: var(--icon-base-strong) !important;
   }
-._root_7y9mm_1 {
+._root_fingg_1 {
   margin: 0;
   margin-top: var(--unit);
   padding: 0;
@@ -2124,30 +2129,30 @@ input:focus-visible, select:focus-visible, button:focus-visible, a:focus-visible
   overflow: auto;
 }
 
-._selectable_7y9mm_9 {
+._selectable_fingg_9 {
   position: relative;
 }
 
-._option_7y9mm_13 {
+._option_fingg_13 {
   display: flex;
   padding-right: 2em;
   position: relative;
 }
 
-._option_7y9mm_13:hover {
+._option_fingg_13:hover {
   background-color: rgba(var(--primary-color), 0.2);
 }
 
-._selected_7y9mm_23 {
+._selected_fingg_23 {
   background-color: var(--secondary-color);
   color: var(--secondary-text-color);
 }
 
-._highlight_7y9mm_28 {
+._highlight_fingg_28 {
   background-color: rgba(251, 255, 0, 0.4);
 }
 
-._radio_7y9mm_32 {
+._radio_fingg_32 {
   position: absolute;
   opacity: 0;
   height: 100%;
@@ -2155,7 +2160,7 @@ input:focus-visible, select:focus-visible, button:focus-visible, a:focus-visible
   padding: 0;
 }
 
-._radio_7y9mm_32:focus ~ ._option_7y9mm_13:after {
+._radio_fingg_32:focus ~ ._option_fingg_13:after {
   height: 100%;
   width: 4px;
   background-color: var(--primary-color);
@@ -2166,19 +2171,21 @@ input:focus-visible, select:focus-visible, button:focus-visible, a:focus-visible
   left: 0;
 }
 
-._badge_7y9mm_51 {
+._badge_fingg_51 {
   right: var(--unit);
   position: absolute;
 
   top: var(--double-unit);
 }
 
-._bind_7y9mm_58 {
+._bind_fingg_58 {
   border-radius: 4px;
   height: 1em;
   border: 1px solid rgba(255, 255, 255, 0.25);
   background-color: #e6e6e6;
-  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.25), inset 0px 0px 1px rgba(255, 255, 255, 0.25);
+  box-shadow:
+    0px 1px 0px rgba(0, 0, 0, 0.25),
+    inset 0px 0px 1px rgba(255, 255, 255, 0.25);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -2440,7 +2447,7 @@ input:focus-visible, select:focus-visible, button:focus-visible, a:focus-visible
   display: flex;
   flex-flow: row nowrap;
 }
-._appHeader_1xs4a_1 {
+._appHeader_182uu_1 {
   display: flex;
   align-items: center;
   background-color: var(--brand-strong);
@@ -2448,28 +2455,31 @@ input:focus-visible, select:focus-visible, button:focus-visible, a:focus-visible
   font-weight: 500;
   letter-spacing: 0.03em;
   padding: 2px var(--unit);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1), 0px 16px 24px rgba(0, 0, 0, 0.06), 0px 2px 6px rgba(0, 0, 0, 0.04),
+  box-shadow:
+    0px 4px 4px rgba(0, 0, 0, 0.1),
+    0px 16px 24px rgba(0, 0, 0, 0.06),
+    0px 2px 6px rgba(0, 0, 0, 0.04),
     0px 0px 1px rgba(0, 0, 0, 0.04);
 }
 
-._title_1xs4a_13 {
+._title_182uu_16 {
   padding: var(--unit);
 }
 
-._chatIcon_1xs4a_17 {
+._chatIcon_182uu_20 {
   margin-right: var(--unit);
 }
 
-._logo_1xs4a_21 {
+._logo_182uu_24 {
   padding: var(--unit) 0;
   display: inline-flex;
 }
 
-._children_1xs4a_26 {
+._children_182uu_29 {
   flex: 1;
 }
 
-._afterChatContent_1xs4a_30 {
+._afterChatContent_182uu_33 {
 }
 ._ease-out_1f6w1_1 {
   animation-duration: 0.4s;

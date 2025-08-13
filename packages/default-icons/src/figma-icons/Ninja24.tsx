@@ -1,5 +1,4 @@
 import { SVGProps, memo } from 'react';
-
 const Ninja24 = (props: SVGProps<SVGSVGElement>) => (
   <svg width={24} height={24} viewBox="0 0 24 24" fill="none" {...props}>
     <path
@@ -16,7 +15,6 @@ const Ninja24 = (props: SVGProps<SVGSVGElement>) => (
     />
   </svg>
 );
-
 Ninja24.displayName = 'Ninja24';
 const Memo = memo(Ninja24);
 export default Memo;

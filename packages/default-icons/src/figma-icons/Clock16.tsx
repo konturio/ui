@@ -1,5 +1,4 @@
 import { SVGProps, memo } from 'react';
-
 const Clock16 = (props: SVGProps<SVGSVGElement>) => (
   <svg width={16} height={16} viewBox="0 0 16 16" fill="none" {...props}>
     <path
@@ -11,12 +10,11 @@ const Clock16 = (props: SVGProps<SVGSVGElement>) => (
     <path
       fillRule="evenodd"
       clipRule="evenodd"
-      d="M6.9 4.4H7.9V8.04133L10.3293 10.4707L9.62223 11.1778L6.9 8.45554V4.4Z"
+      d="M6.9 4.9C6.9 4.62386 7.12386 4.4 7.4 4.4C7.67614 4.4 7.9 4.62386 7.9 4.9V7.83422C7.9 7.96683 7.95268 8.09401 8.04644 8.18777L9.97578 10.1171C10.171 10.3124 10.171 10.629 9.97578 10.8242C9.78052 11.0195 9.46393 11.0195 9.26867 10.8242L7.19289 8.74843C7.00535 8.5609 6.9 8.30654 6.9 8.04133V4.9Z"
       fill="currentColor"
     />
   </svg>
 );
-
 Clock16.displayName = 'Clock16';
 const Memo = memo(Clock16);
 export default Memo;

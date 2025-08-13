@@ -1,0 +1,12 @@
+import { SVGProps, memo } from 'react';
+const Hospital16 = (props: SVGProps<SVGSVGElement>) => (
+  <svg width={16} height={16} viewBox="0 0 16 16" fill="none" {...props}>
+    <path
+      d="M7.46154 1C6.81538 1 6.38462 1.43077 6.38462 2.07692V6.38462H2.07692C1.43077 6.38462 1 6.81538 1 7.46154V8.53846C1 9.18462 1.43077 9.61538 2.07692 9.61538H6.38462V13.9231C6.38462 14.5692 6.81538 15 7.46154 15H8.53846C9.18462 15 9.61538 14.5692 9.61538 13.9231V9.61538H13.9231C14.5692 9.61538 15 9.18462 15 8.53846V7.46154C15 6.81538 14.5692 6.38462 13.9231 6.38462H9.61538V2.07692C9.61538 1.43077 9.18462 1 8.53846 1H7.46154Z"
+      fill="black"
+    />
+  </svg>
+);
+Hospital16.displayName = 'Hospital16';
+const Memo = memo(Hospital16);
+export default Memo;

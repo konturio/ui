@@ -1,5 +1,4 @@
 import { SVGProps, memo } from 'react';
-
 const ChevronDown24 = (props: SVGProps<SVGSVGElement>) => (
   <svg width={24} height={24} viewBox="0 0 24 24" fill="none" {...props}>
     <path
@@ -10,7 +9,6 @@ const ChevronDown24 = (props: SVGProps<SVGSVGElement>) => (
     />
   </svg>
 );
-
 ChevronDown24.displayName = 'ChevronDown24';
 const Memo = memo(ChevronDown24);
 export default Memo;

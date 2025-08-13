@@ -1,5 +1,4 @@
 import { SVGProps, memo } from 'react';
-
 const Intercom = (props: SVGProps<SVGSVGElement>) => (
   <svg width={108} height={108} viewBox="0 0 108 108" fill="none" {...props}>
     <g filter="url(#filter0_ddddd_130_814)">
@@ -79,7 +78,6 @@ const Intercom = (props: SVGProps<SVGSVGElement>) => (
     </defs>
   </svg>
 );
-
 Intercom.displayName = 'Intercom';
 const Memo = memo(Intercom);
 export default Memo;

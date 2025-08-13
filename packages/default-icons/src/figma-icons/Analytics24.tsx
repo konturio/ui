@@ -1,5 +1,4 @@
 import { SVGProps, memo } from 'react';
-
 const Analytics24 = (props: SVGProps<SVGSVGElement>) => (
   <svg width={24} height={24} viewBox="0 0 24 24" fill="none" {...props}>
     <path
@@ -16,7 +15,6 @@ const Analytics24 = (props: SVGProps<SVGSVGElement>) => (
     />
   </svg>
 );
-
 Analytics24.displayName = 'Analytics24';
 const Memo = memo(Analytics24);
 export default Memo;

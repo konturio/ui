@@ -1,4 +1,4 @@
-import { u as useFixtureState, e as extendWithValue, R as React, c as createValue, i as isEqual, r as reactExports, a as reactDomExports, g as getDefaultExportFromCjs$2, b as React$1 } from './index-BuGrt1MZ.js';
+import { u as useFixtureState, e as extendWithValue, R as React, c as createValue, i as isEqual, r as reactExports, a as reactDomExports, g as getDefaultExportFromCjs$2, b as React$1 } from './index-D9-yXfGj.js';
 
 function useCurrentInputValue(inputName, defaultValue) {
     const [fixtureState] = useFixtureState('inputs');
@@ -187,26 +187,6 @@ function q$2(c,a,g){var b,d={},e=null,h=null;void 0!==g&&(e=""+g);void 0!==a.key
 }
 
 var jsxRuntimeExports = jsxRuntime.exports;
-
-const OFFOnFocusOffActiveOnHoverOff = (props) => /* @__PURE__ */ jsxRuntimeExports.jsxs("svg", { width: 24, height: 24, viewBox: "0 0 24 24", fill: "none", ...props, children: [
-  /* @__PURE__ */ jsxRuntimeExports.jsx(
-    "rect",
-    {
-      x: 3.5,
-      y: 3.5,
-      width: 17,
-      height: 17,
-      rx: 1.5,
-      fill: "currentColor",
-      stroke: "currentColor",
-      strokeLinecap: "round",
-      strokeLinejoin: "round"
-    }
-  ),
-  /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M7.5 12.5L11 16L18.5 8.5", stroke: "white", strokeLinecap: "round", strokeLinejoin: "round" })
-] });
-OFFOnFocusOffActiveOnHoverOff.displayName = "OFFOnFocusOffActiveOnHoverOff";
-const Memo$47 = reactExports.memo(OFFOnFocusOffActiveOnHoverOff);
 
 const HoverFalseSize24px = (props) => /* @__PURE__ */ jsxRuntimeExports.jsx("svg", { width: 24, height: 24, viewBox: "0 0 24 24", fill: "none", ...props, children: /* @__PURE__ */ jsxRuntimeExports.jsx(
   "path",
@@ -4866,7 +4846,6 @@ const icons$2 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
     More24: Memo$2r,
     Ninja24: Memo$1j,
     North16: Memo$1f,
-    OFFOnFocusOffActiveOnHoverOff: Memo$47,
     OsmGaps16: Memo$k,
     Pause24: Memo$1V,
     People16: Memo$2j,
